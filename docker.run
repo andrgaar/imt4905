@@ -1,0 +1,13 @@
+# peer1
+docker run -d -it --rm \
+-v"/root/.local/share/torpy/:/root/.local/share/torpy/" \
+-v"/root/git/peers/peer1:/root/peer" \
+--cap-add=NET_ADMIN --device /dev/net/tun:/dev/net/tun -t rtun-routing
+
+#sleep 5
+
+# peer2
+docker run -d -it --rm \
+-v"/root/.local/share/torpy/:/root/.local/share/torpy/" \
+-v"/root/git/peers/peer2:/root/peer" \
+--cap-add=NET_ADMIN --device /dev/net/tun:/dev/net/tun -t rtun-routing
