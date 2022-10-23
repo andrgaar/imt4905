@@ -15,4 +15,4 @@ export PYTHONPATH=/root/git/torpy-rtun-fork/
 
 # Start rtun server
 #python3 rtun.py -g Quintex13 -p -l -t peer1peer2 -n default -i 1 -d 2
-python3 rtun.py -g vanguardarchie -r Toray -k eb688e4f52df90278063 -l -t peer1peer2 -n default -i 1 -d 2
+python3 rtun.py -g vanguardarchie -r Unnamed -k eb688e4f52df90278060 -l -t peer1peer2 -n default -i 1 -d 2

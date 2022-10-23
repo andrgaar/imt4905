@@ -7,11 +7,20 @@ from datetime import datetime, timedelta
 from threading import Thread, Lock, Timer
 from socket import socket, AF_INET, SOCK_DGRAM
 
+from torpy.circuit import TorCircuit
+from torpy.stream import TorStream
+
 UPDATE_INTERVAL = 1
 ROUTE_UPDATE_INTERVAL = 30
-PERIODIC_HEART_BEAT = 0.5
+PERIODIC_HEART_BEAT = 5.0
 NODE_FAILURE_INTERVAL = 4
 TIMEOUT = 15
+
+# Global graph object to represent network topology
+global graph
+global router_information
+global threadLock
+global threads 
 
 class ReceiveThread(Thread):
 
@@ -447,27 +456,32 @@ class HeartBeatThread(Thread):
         self.HB_message = HB_message
         self.neighbours = neighbours
         self.thread_lock = thread_lock
-        self.HB_socket = socket(AF_INET , SOCK_DGRAM)
+        #self.HB_socket = socket(AF_INET , SOCK_DGRAM)
 
     def run(self):
         self.broadcastHB()
 
     def broadcastHB(self):
 
-        server_name = 'localhost'
         while True:
             for neighbour in self.neighbours:
+                print("Sending HB to " + neighbour['NID'])
+                #with neighbour['Circuit'].create_stream((neighbour['Hostname'], int(neighbour['Port']))) as stream:
                 message = pickle.dumps(self.HB_message)
-                self.HB_socket.sendto(message, (server_name, int(neighbour['Port'])))
+                #self.HB_socket.sendto(message, (server_name, int(neighbour['Port'])))
+                neighbour['Stream'].send(message)
             time.sleep(PERIODIC_HEART_BEAT)
 
     def __del__(self):
         self.HB_socket.close()
 
-# Global graph object to represent network topology
-global graph
 
 def start_router(router_id, router_port):
+
+    global router_information
+    global threads
+    global threadLock
+
     # Dictionary to hold data of current router
     router_information = {}
 
@@ -485,31 +499,22 @@ def start_router(router_id, router_port):
     # Create a lock to be used by all threads
     threadLock = Lock()
 
-    # Create heart beat message to transmit
-    HB_message = [{'RID' : router_information['RID']}]
+    print("Started router")
 
-    sender_thread = SendThread("SENDER", router_information, threadLock)
-    receiver_thread = ReceiveThread("RECEIVER", router_information, threadLock)
-    heartbeat_thread = HeartBeatThread("HEART BEAT", HB_message, router_information['Neighbours Data'], threadLock)
+def add_neighbour(r_id, r_cost, r_hostname, r_port, circuit, stream):
 
-    # Start each thread
-    sender_thread.start()
-    receiver_thread.start()
-    heartbeat_thread.start()
+    # Dict to hold data regarding each of this router's neighbours
+     router_dict = {}
 
-    # Append each thread to list of threads
-    threads.append(sender_thread)
-    threads.append(receiver_thread)
-    threads.append(heartbeat_thread)
+     router_dict['NID']  = r_id
+     router_dict['Cost'] = float(r_cost)
+     router_dict['Hostname'] = r_hostname
+     router_dict['Port'] = r_port
+     router_dict['Circuit'] = circuit
+     router_dict['Stream'] = stream
 
-    # Call join on each tread (so that they wait)
-    try:
-        for thread in threads:
-            thread.join()
-    except KeyboardInterrupt:
-        print(graph)
-
-    print("Exiting Main Thread")
+     # Append the dict to current routers dict of neighbours data
+     router_information['Neighbours Data'].append(router_dict)
 
 
 if __name__ == "__main__":
