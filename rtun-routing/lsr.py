@@ -5,7 +5,7 @@ import heapq
 
 from datetime import datetime, timedelta
 from threading import Thread, Lock, Timer
-from socket import socket, AF_INET, SOCK_DGRAM
+from socket import socket, create_server, AF_INET, SOCK_STREAM
 
 from torpy.circuit import TorCircuit
 from torpy.stream import TorStream
@@ -29,7 +29,7 @@ class ReceiveThread(Thread):
         self.name = name
         self.router_data = router_data
         self.thread_lock = thread_lock
-        self.server_socket = socket(AF_INET, SOCK_DGRAM)
+        self.server_socket = socket(AF_INET, SOCK_STREAM)
         self.packets = set()
         self.LSA_SN = {}
         self.HB_set = {}
@@ -55,8 +55,12 @@ class ReceiveThread(Thread):
         server_port = int(self.router_data['Port'])
         print("Binding to localhost port " + str(server_port))
         self.server_socket.bind((server_name, server_port))
+        self.server_socket.listen()
         inactive_list_size = len(self.inactive_list)
 
+        conn, addr = self.server_socket.accept()
+        self.server_socket = conn
+        print(f"Connected by {addr}")
         while True:
 
             print("Socket ready to receive!")
@@ -427,7 +431,7 @@ class SendThread(Thread):
         self.name = name
         self.router_data = router_data
         self.thread_lock = thread_lock
-        self.client_socket = socket(AF_INET, SOCK_DGRAM)
+        self.client_socket = socket(AF_INET, SOCK_STREAM)
 
     def run(self):
         self.clientSide()

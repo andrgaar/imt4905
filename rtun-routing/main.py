@@ -1,4 +1,5 @@
 import os
+import socket
 from functools import partial
 from torpy import TorClient
 import logging
@@ -12,8 +13,9 @@ from torpy.crypto_state import CryptoState
 from torpy.keyagreement import NtorKeyAgreement, FastKeyAgreement
 from torpy.guard import TorGuard
 
+import server
 import lsr
-from lsr import HeartBeatThread
+from lsr import HeartBeatThread, ReceiveThread, SendThread
 import pickle
 
 import logging
@@ -100,37 +102,44 @@ def setup_rendezvous(guard_nick, rendp_nick, rendezvous_cookie, port_num):
     lsr.start_router(1, 5000)
     lsr.add_neighbour(peer_id, 100, '127.0.0.1', 5000, circuit, stream)
 
-    print("Creating HB thread")
+    print("Creating router thread")
     HB_message = [{'RID' : lsr.router_information['RID']}]
     heartbeat_thread = HeartBeatThread("HEART BEAT", HB_message, lsr.router_information['Neighbours Data'], lsr.threadLock)
-    
+    sender_thread = SendThread("SENDER", lsr.router_information, lsr.threadLock)
+    receiver_thread = ReceiveThread("RECEIVER", lsr.router_information, lsr.threadLock)
+
     # Start each thread
-    #sender_thread.start()
-    #receiver_thread.start()
+    sender_thread.start()
+    receiver_thread.start()
     heartbeat_thread.start()
 
     # Append each thread to list of threads
-    #threads.append(sender_thread)
-    #threads.append(receiver_thread)
+    lsr.threads.append(sender_thread)
+    lsr.threads.append(receiver_thread)
     lsr.threads.append(heartbeat_thread)
 
+    # Here we enter a read/write loop for the router
+    #
+    tor_socket = TorCellSocket(rendp_router)
+    tor_socket.connect()
 
-    #print("Connect a Tor socket to peer")
-    #tor_cell_socket = TorCellSocket(rendp_router)
-    #tor_cell_socket.connect()
+    router_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-    # Open a routing stream with the peer
-    #logger.info("Sending routing cell")
-    #inner_cell = CellRelayConnected("1.1.1.1", 5000, circuit.id)
-    #inner_cell = CellRelayData("torrelay:0x92382432423".encode('utf-8'), circuit.id)
-    #circuit.send_relay(inner_cell, stream_id=1)
-    
-    # Wait for RELAY_CONNECTED or RELAY_END
-    #inner_cell = CellRelayBegin("127.0.0.1", port_num, circuit.id)
-    #with circuit.send_relay_wait(inner_cell, [ CellRelayConnected ], stream_id=1) as w:
-    #    recv_cell = w.get(timeout=200)
-    #    logger.info('Got ' + str(type(recv_cell)))
- 
+    while True:
+        try:
+            rcv_cell = tor_socket.recv_cell()
+            if isinstance(rcv_cell, CellRelayData):
+                print("Received CellRelayData:")
+                s = router_socket.connect(("127.0.0.1", 5000))
+                print(rcv_cell.data)
+                s.send(rcv_cell.data)
+            else:
+                print(type(rcv_cell))
+                s.send(1)
+
+        except Exception as e:
+            print("Error in receive on socket: " + str(e))
+            continue
 
 
     #for thread in threading.enumerate(): 
@@ -138,7 +147,7 @@ def setup_rendezvous(guard_nick, rendp_nick, rendezvous_cookie, port_num):
 
     # Here we implement the SOCKS5 connection
     print("Starting SOCKS5")
-    with SocksServer(circuit, "127.0.0.1", port_num) as socks_serv:
+    with SocksServer(circuit, "127.0.0.1", 5000) as socks_serv:
         socks_serv.start()
 
     print("Closing circuit")
