@@ -10,6 +10,12 @@ from socket import socket, create_server, AF_INET, SOCK_STREAM
 from torpy.circuit import TorCircuit
 from torpy.stream import TorStream
 
+import server
+
+import logging
+logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.INFO)
+
 UPDATE_INTERVAL = 15
 ROUTE_UPDATE_INTERVAL = 30
 PERIODIC_HEART_BEAT = 5.0
@@ -53,21 +59,19 @@ class ReceiveThread(Thread):
 
         server_name = 'localhost'
         server_port = int(global_router['Port'])
-        print("Binding to localhost port " + str(server_port))
+        logger.debug("Binding to localhost port " + str(server_port))
         self.server_socket.bind((server_name, server_port))
         self.server_socket.listen()
         inactive_list_size = len(self.inactive_list)
 
         conn, addr = self.server_socket.accept()
         self.server_socket = conn
-        print(f"Connected by {addr}")
+        logger.debug(f"Connected by {addr}")
         while True:
 
-            print("Socket ready to receive!")
             data, client_address = self.server_socket.recvfrom(1024)
             local_copy_LSA = pickle.loads(data)
 
-            print("Received message")
             # Handle case if message received is a heartbeat message
             if isinstance(local_copy_LSA , list):
 
@@ -75,6 +79,8 @@ class ReceiveThread(Thread):
                 # respective router was received
                 now = datetime.now()
                 RID = local_copy_LSA[0]['RID']
+
+                logger.info(f"Received HB from {RID}") 
 
                 # Update local routers database of heart beat timestamps
                 # for each neighbouring router (provided it is still alive)
@@ -443,13 +449,10 @@ class SendThread(Thread):
 
     def clientSide(self):
 
-        #server_name = 'localhost'
         message = pickle.dumps(global_router)
-        print(global_router)
 
         while True:
             for dict in global_router['Neighbours Data']:
-                #self.client_socket.sendto(message, (server_name, int(dict['Port'])))
                 circuit_info[dict['NID']]['Stream'].send(message)
             time.sleep(UPDATE_INTERVAL)
 
@@ -469,10 +472,8 @@ class HeartBeatThread(Thread):
 
         while True:
             for neighbour in global_router['Neighbours Data']:
-                print("Sending HB to " + str(neighbour['NID']))
-                #with neighbour['Circuit'].create_stream((neighbour['Hostname'], int(neighbour['Port']))) as stream:
+                logger.info("Sending HB to " + str(neighbour['NID']))
                 message = pickle.dumps(self.HB_message)
-                #self.HB_socket.sendto(message, (server_name, int(neighbour['Port'])))
                 send_to_stream( neighbour['NID'], message)
             time.sleep(PERIODIC_HEART_BEAT)
 
@@ -570,7 +571,8 @@ def send_to_stream(router_id, message):
                         stream_data['Circuit ID'], 
                         stream_data['Extend Node'], 
                         stream_data['Receive Node'], 
-                        stream_data['Receive Socket'])
+                        stream_data['Receive Socket'],
+                        stream_data['Stream ID'])
 
 if __name__ == "__main__":
 
