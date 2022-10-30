@@ -12,6 +12,7 @@ from torpy.consesus import TorConsensus
 from torpy.crypto_state import CryptoState
 from torpy.keyagreement import NtorKeyAgreement, FastKeyAgreement
 from torpy.guard import TorGuard
+from torpy.stream import TorStream
 
 import server
 import lsr
@@ -19,10 +20,11 @@ from lsr import HeartBeatThread, ReceiveThread, SendThread
 import pickle
 
 import logging
-logging.basicConfig(level=logging.INFO)
 
 # Threading 
 import threading
+from threading import Event
+from selectors import EVENT_READ, DefaultSelector
 import time
 
 exitFlag = 0
@@ -50,7 +52,7 @@ def print_time(threadName, delay, counter):
 
 logger = logging.getLogger(__name__)
 
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.DEBUG)
 
 def send_routing_update(circuit):
     pass
@@ -82,6 +84,8 @@ def setup_rendezvous(guard_nick, rendp_nick, rendezvous_cookie, port_num):
         rendezvous2_cell = w.get(timeout=200)
         logger.info('Got REND2 message')
           
+    # Here we wait for the peer to open a stream to our router
+    #
     logger.info("Derive shared secret with peer")
     extend_node = CircuitNode(rendp_router, key_agreement_cls=FastKeyAgreement)
     shared_sec = "000000000000000000010000000000000000000100000000000000010000000000000001".encode('utf-8')
@@ -90,6 +94,12 @@ def setup_rendezvous(guard_nick, rendp_nick, rendezvous_cookie, port_num):
 
     ## TODO: Exchange nodeIDs to determine which peers are connecting
     ##        create a class Peer  
+    #logger.info("Waiting for xchangeID")
+    #with circuit.create_waiter(CellRelayData) as w:
+    #    data_cell = w.get(timeout=10)
+    #    logger.info('Got CellRelayData')
+
+    # Here we have connected with a peer
     peer_id = 'PEER2'
 
     logger.info("Built circuit with " + str(circuit.nodes_count) + " nodes")
@@ -103,46 +113,24 @@ def setup_rendezvous(guard_nick, rendp_nick, rendezvous_cookie, port_num):
     lsr.add_neighbour(peer_id, 100, '127.0.0.1', 5000, circuit, stream)
 
     print("Creating router thread")
-    HB_message = [{'RID' : lsr.router_information['RID']}]
-    heartbeat_thread = HeartBeatThread("HEART BEAT", HB_message, lsr.router_information['Neighbours Data'], lsr.threadLock)
-    sender_thread = SendThread("SENDER", lsr.router_information, lsr.threadLock)
-    receiver_thread = ReceiveThread("RECEIVER", lsr.router_information, lsr.threadLock)
+    #HB_message = [{'RID' : lsr.router_information['RID']}]
+    #heartbeat_thread = HeartBeatThread("HEART BEAT", HB_message, lsr.router_information['Neighbours Data'], lsr.threadLock)
+    #sender_thread = SendThread("SENDER", lsr.router_information, lsr.threadLock)
+    #receiver_thread = ReceiveThread("RECEIVER", lsr.router_information, lsr.threadLock)
 
     # Start each thread
-    sender_thread.start()
-    receiver_thread.start()
-    heartbeat_thread.start()
+    #sender_thread.start()
+    #heartbeat_thread.start()
+    #receiver_thread.start()
 
     # Append each thread to list of threads
-    lsr.threads.append(sender_thread)
-    lsr.threads.append(receiver_thread)
-    lsr.threads.append(heartbeat_thread)
+    #lsr.threads.append(sender_thread)
+    #lsr.threads.append(heartbeat_thread)
+    #lsr.threads.append(receiver_thread)
 
     # Here we enter a read/write loop for the router
     #
-    tor_socket = TorCellSocket(rendp_router)
-    tor_socket.connect()
-
-    router_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-    while True:
-        try:
-            rcv_cell = tor_socket.recv_cell()
-            if isinstance(rcv_cell, CellRelayData):
-                print("Received CellRelayData:")
-                s = router_socket.connect(("127.0.0.1", 5000))
-                print(rcv_cell.data)
-                s.send(rcv_cell.data)
-            else:
-                print(type(rcv_cell))
-                s.send(1)
-
-        except Exception as e:
-            print("Error in receive on socket: " + str(e))
-            continue
-
-
-    #for thread in threading.enumerate(): 
+    #socket_router = consensus.get_router_using_nick(guard_nick)
     #    print(thread.name)
 
     # Here we implement the SOCKS5 connection
@@ -152,6 +140,90 @@ def setup_rendezvous(guard_nick, rendp_nick, rendezvous_cookie, port_num):
 
     print("Closing circuit")
     circuit.close()
+
+def setup_rendezvous2(guard_nick, rendp_nick, rendezvous_cookie, port_num):
+    # Setup a rendezvous point and wait
+    consensus = TorConsensus()
+    guard_router = TorGuard(consensus.get_router_using_nick(guard_nick))
+    rendp_router = consensus.get_router_using_nick(rendp_nick)
+
+    # Build circuit to rendezvous point
+    circuit = build_circuit(guard_router, [ rendp_router ])
+
+    # Establish a rendezvous point
+    establish_rendezvous(circuit, rendezvous_cookie)
+    
+    logger.info("Waiting for connections...")
+    with circuit.create_waiter(CellRelayRendezvous2) as w:
+        rendezvous2_cell = w.get(timeout=200)
+        logger.info('Got REND2 message')
+          
+    logger.debug("Derive shared secret with peer")
+    extend_node = CircuitNode(rendp_router, key_agreement_cls=FastKeyAgreement)
+    shared_sec = "000000000000000000010000000000000000000100000000000000010000000000000001".encode('utf-8')
+    extend_node._crypto_state = CryptoState(shared_sec)
+    circuit._circuit_nodes.append(extend_node)
+
+    sock_r, sock_w = socket.socketpair()
+
+    events = {TorStream: {'data': Event(), 'close': Event()},
+              socket.socket: {'data': Event(), 'close': Event()}}
+
+    # 
+    # Create a stream to the peer router port and start a router thread
+    # 
+    lsr.start_router(1, 5000)
+
+    hostname = '127.0.0.1'
+    with guard_router as guard:
+
+        def recv_callback(sock_or_stream, mask):
+            logger.debug(f'recv_callback {sock_or_stream}')
+            kind = type(sock_or_stream)
+            data = sock_or_stream.recv(1024)
+            logger.info('%s', kind.__name__)
+            if data:
+                events[kind]['data'].set()
+            else:
+                logger.debug('closing')
+                guard.unregister(sock_or_stream)
+                events[kind]['close'].set()
+
+        with circuit as c:
+            with c.create_stream((hostname, 5000)) as stream:
+                guard.register(sock_r, EVENT_READ, recv_callback)
+                guard.register(stream, EVENT_READ, recv_callback)
+                   
+                lsr.add_neighbour(2, 100, '127.0.0.1', 5000, circuit, circuit.id, stream, stream.id)
+                
+                receiver_thread = ReceiveThread("RECEIVER", lsr.threadLock)
+                sender_thread = SendThread("SENDER", lsr.threadLock)
+
+                HB_message = [{'RID' : lsr.global_router['RID']}]
+                heartbeat_thread = HeartBeatThread("HEART BEAT", HB_message, lsr.threadLock)
+                
+                receiver_thread.start()
+                sender_thread.start()
+                heartbeat_thread.start()
+                
+                lsr.threads.append(receiver_thread)
+                lsr.threads.append(sender_thread)
+                lsr.threads.append(heartbeat_thread)
+                
+                # Call join on each tread (so that they wait)
+                try:
+                    for thread in lsr.threads:
+                        thread.join()
+                except KeyboardInterrupt:
+                    print("Caught keyboard interrupt, exiting...")
+                    print("Graph:")
+                    print(lsr.graph)
+
+                #while True:
+                    #stream.send(b'GET / HTTP/1.0\r\nHost: %s\r\n\r\n' % hostname.encode())
+                    #sock_w.send(b'some data')
+                #    time.sleep(10)
+
 
 def set_up_rendezvous_point(nick, cookie):
 

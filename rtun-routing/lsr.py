@@ -10,7 +10,7 @@ from socket import socket, create_server, AF_INET, SOCK_STREAM
 from torpy.circuit import TorCircuit
 from torpy.stream import TorStream
 
-UPDATE_INTERVAL = 1
+UPDATE_INTERVAL = 15
 ROUTE_UPDATE_INTERVAL = 30
 PERIODIC_HEART_BEAT = 5.0
 NODE_FAILURE_INTERVAL = 4
@@ -18,16 +18,16 @@ TIMEOUT = 15
 
 # Global graph object to represent network topology
 global graph
-global router_information
+global global_router
+global circuit_info
 global threadLock
 global threads 
 
 class ReceiveThread(Thread):
 
-    def __init__(self, name, router_data , thread_lock):
+    def __init__(self, name, thread_lock):
         Thread.__init__(self)
         self.name = name
-        self.router_data = router_data
         self.thread_lock = thread_lock
         self.server_socket = socket(AF_INET, SOCK_STREAM)
         self.packets = set()
@@ -42,8 +42,8 @@ class ReceiveThread(Thread):
 
     def __str__(self):
         return "I am Router {0} with PORT {1} - READY TO RECEIVE".format(
-            self.router_data['RID'],
-            self.router_data['Port']
+            global_router['RID'],
+            global_router['Port']
         )
 
     def __del__(self):
@@ -52,7 +52,7 @@ class ReceiveThread(Thread):
     def serverSide(self):
 
         server_name = 'localhost'
-        server_port = int(self.router_data['Port'])
+        server_port = int(global_router['Port'])
         print("Binding to localhost port " + str(server_port))
         self.server_socket.bind((server_name, server_port))
         self.server_socket.listen()
@@ -109,13 +109,13 @@ class ReceiveThread(Thread):
             else:
 
                 # Grab list of neighbouring routers of router that sent this LSA
-                neighbour_routers = self.router_data['Neighbours Data']
+                neighbour_routers = global_router['Neighbours Data']
 
                 # Grab 'FLAG' field from LSA received
                 flag = local_copy_LSA['FLAG']
 
                 # Append this router's ID to LSA_SN database
-                self.LSA_SN.update({self.router_data['RID'] : 0})
+                self.LSA_SN.update({global_router['RID'] : 0})
 
                 # Any new LSA received that have not been seen before are stored within this
                 # routers local link-state database
@@ -161,8 +161,8 @@ class ReceiveThread(Thread):
                     else:
                         # If old data is being received, that is, there is no new LSA, we simply forward the message
                         # onto our neighbours (now with the list of updated neighbours and higher SN)
-                        for new_router in self.router_data['Neighbours Data']:
-                            if new_router['NID'] != self.router_data['RID']:
+                        for new_router in global_router['Neighbours Data']:
+                            if new_router['NID'] != global_router['RID']:
                                 try:
                                     self.server_socket.sendto(
                                         pickle.dumps(self.LSA_DB[local_copy_LSA['RID']]),
@@ -216,34 +216,34 @@ class ReceiveThread(Thread):
     # of active neighbours after a router fails
     def updateNeighboursList(self):
 
-        for node in self.router_data['Neighbours Data']:
+        for node in global_router['Neighbours Data']:
             if node['NID'] in self.inactive_list:
-                self.router_data['Neighbours Data'].remove(node)
+                global_router['Neighbours Data'].remove(node)
 
     # Triggered by all active neighbouring routers
     # when a neighbour to them fails
     def transmitNewLSA(self):
 
         server_name = 'localhost'
-        updated_router_information = {}
+        updated_global_router = {}
 
-        updated_router_information['RID'] = self.router_data['RID']
-        updated_router_information['Port'] = self.router_data['Port']
+        updated_global_router['RID'] = global_router['RID']
+        updated_global_router['Port'] = global_router['Port']
 
-        self.router_data['Neighbours'] = self.router_data['Neighbours'] - 1
+        global_router['Neighbours'] = global_router['Neighbours'] - 1
 
-        updated_router_information['Neighbours'] = self.router_data['Neighbours']
-        updated_router_information['Neighbours Data'] = self.router_data['Neighbours Data']
+        updated_global_router['Neighbours'] = global_router['Neighbours']
+        updated_global_router['Neighbours Data'] = global_router['Neighbours Data']
 
-        self.router_data['SN'] = self.router_data['SN'] + 1
-        updated_router_information['SN'] = self.router_data['SN']
+        global_router['SN'] = global_router['SN'] + 1
+        updated_global_router['SN'] = global_router['SN']
 
-        updated_router_information['FLAG'] = 1
-        updated_router_information['DEAD'] = self.inactive_list
+        updated_global_router['FLAG'] = 1
+        updated_global_router['DEAD'] = self.inactive_list
 
-        new_data = pickle.dumps(updated_router_information)
+        new_data = pickle.dumps(updated_global_router)
 
-        for router in self.router_data['Neighbours Data']:
+        for router in global_router['Neighbours Data']:
             #print("SENT THIS NEW LSA TO {0}".format(router['NID']))
             self.server_socket.sendto(new_data , (server_name , int(router['Port'])))
         time.sleep(1)
@@ -359,7 +359,7 @@ class ReceiveThread(Thread):
     def runDijkstra(self, *args):
 
         # Use each router ID as start vertex for algorithm
-        start_vertex = self.router_data['RID']
+        start_vertex = global_router['RID']
         # Initially, distances to all vertices (except source) is infinity
         distances = {vertex: float('infinity') for vertex in args[0]}
         # Distance to source node is 0
@@ -393,9 +393,9 @@ class ReceiveThread(Thread):
         final_paths = []
         for node in args[0]:
             path_string = ""
-            if node != self.router_data['RID']:
+            if node != global_router['RID']:
                 end_node = node
-                while(not (path_string.endswith(self.router_data['RID']))):
+                while(not (path_string.endswith(global_router['RID']))):
                     temp_path = least_cost_path[node][-1]
                     path_string = path_string + temp_path
                     node = temp_path
@@ -403,7 +403,7 @@ class ReceiveThread(Thread):
                 final_paths.append(path_string)
 
         # Display final output after Dijkstra computation
-        self.showPaths(final_paths , distances , self.router_data['RID'])
+        self.showPaths(final_paths , distances , global_router['RID'])
 
     def showPaths(path, graph_nodes, distances, source_node):
 
@@ -426,10 +426,9 @@ class ReceiveThread(Thread):
 
 class SendThread(Thread):
 
-    def __init__(self, name, router_data , thread_lock):
+    def __init__(self, name, thread_lock):
         Thread.__init__(self)
         self.name = name
-        self.router_data = router_data
         self.thread_lock = thread_lock
         self.client_socket = socket(AF_INET, SOCK_STREAM)
 
@@ -437,28 +436,29 @@ class SendThread(Thread):
         self.clientSide()
 
     def __str__(self):
-        return "I am Router {0}".format(self.router_data['RID'])
+        return "I am Router {0}".format(global_router['RID'])
 
     def __del__(self):
         self.client_socket.close()
 
     def clientSide(self):
 
-        server_name = 'localhost'
-        message = pickle.dumps(self.router_data)
+        #server_name = 'localhost'
+        message = pickle.dumps(global_router)
+        print(global_router)
 
         while True:
-            for dict in self.router_data['Neighbours Data']:
-                self.client_socket.sendto(message, (server_name, int(dict['Port'])))
+            for dict in global_router['Neighbours Data']:
+                #self.client_socket.sendto(message, (server_name, int(dict['Port'])))
+                circuit_info[dict['NID']]['Stream'].send(message)
             time.sleep(UPDATE_INTERVAL)
 
 class HeartBeatThread(Thread):
 
-    def __init__(self, name, HB_message, neighbours, thread_lock):
+    def __init__(self, name, HB_message, thread_lock):
         Thread.__init__(self)
         self.name = name
         self.HB_message = HB_message
-        self.neighbours = neighbours
         self.thread_lock = thread_lock
         #self.HB_socket = socket(AF_INET , SOCK_DGRAM)
 
@@ -468,12 +468,12 @@ class HeartBeatThread(Thread):
     def broadcastHB(self):
 
         while True:
-            for neighbour in self.neighbours:
-                print("Sending HB to " + neighbour['NID'])
+            for neighbour in global_router['Neighbours Data']:
+                print("Sending HB to " + str(neighbour['NID']))
                 #with neighbour['Circuit'].create_stream((neighbour['Hostname'], int(neighbour['Port']))) as stream:
                 message = pickle.dumps(self.HB_message)
                 #self.HB_socket.sendto(message, (server_name, int(neighbour['Port'])))
-                neighbour['Stream'].send(message)
+                send_to_stream( neighbour['NID'], message)
             time.sleep(PERIODIC_HEART_BEAT)
 
     def __del__(self):
@@ -482,20 +482,22 @@ class HeartBeatThread(Thread):
 
 def start_router(router_id, router_port):
 
-    global router_information
+    global global_router
+    global circuit_info
     global threads
     global threadLock
 
     # Dictionary to hold data of current router
-    router_information = {}
+    global_router = {}
+    circuit_info = {}
 
     # Parse data related to the current router
-    router_information['RID'] = router_id
-    router_information['Port'] = router_port
-    router_information['Neighbours'] = 0
-    router_information['Neighbours Data'] = []
-    router_information['SN'] = 0
-    router_information['FLAG'] = 0
+    global_router['RID'] = router_id
+    global_router['Port'] = router_port
+    global_router['Neighbours'] = 0
+    global_router['Neighbours Data'] = []
+    global_router['SN'] = 0
+    global_router['FLAG'] = 0
 
     # Create a list to hold each thread
     threads = []
@@ -505,26 +507,75 @@ def start_router(router_id, router_port):
 
     print("Started router")
 
-def add_neighbour(r_id, r_cost, r_hostname, r_port, circuit, stream):
+def add_neighbour(r_id, r_cost, r_hostname, r_port, circuit, circuit_id, stream, stream_id, receive_node=None, extend_node=None, receive_socket=None):
 
     # Dict to hold data regarding each of this router's neighbours
-     router_dict = {}
+    global graph
+    router_dict = {}
+    circuit_dict = {}
 
-     router_dict['NID']  = r_id
-     router_dict['Cost'] = float(r_cost)
-     router_dict['Hostname'] = r_hostname
-     router_dict['Port'] = r_port
-     router_dict['Circuit'] = circuit
-     router_dict['Stream'] = stream
+    # For LSA
+    router_dict['NID']  = r_id
+    router_dict['Cost'] = float(r_cost)
+    router_dict['Hostname'] = r_hostname
+    router_dict['Port'] = r_port
 
-     # Append the dict to current routers dict of neighbours data
-     router_information['Neighbours Data'].append(router_dict)
+    # Internal to router
+    circuit_dict['NID']  = r_id
+    circuit_dict['Circuit'] = circuit
+    circuit_dict['Circuit ID'] = circuit_id
+    circuit_dict['Stream'] = stream
+    circuit_dict['Stream ID'] = stream_id
+    circuit_dict['Receive Node'] = receive_node
+    circuit_dict['Extend Node'] = extend_node
+    circuit_dict['Receive Socket'] = receive_socket
 
+    # Append the dict to current routers dict of neighbours data
+    global_router['Neighbours Data'].append(router_dict)
+    circuit_info[r_id] = circuit_dict
+
+    # Temporary graph list to hold state of current network topology
+    temp_graph = []
+
+    # Grab data about all the neighbours of this router
+    for neighbour in global_router['Neighbours Data']:
+
+        # Dict to hold data regarding each of this router's neighbours
+        router_dict = {}
+
+        router_dict['NID']  = neighbour['NID']
+        router_dict['Cost'] = float(neighbour['Cost'])
+        router_dict['Port'] = neighbour['Port']
+
+        # Package this routers data in a useful format and append to temporary graph list
+        if(str(global_router['RID']) < str(router_dict['NID'])):
+             graph_data = [global_router['RID'], router_dict['NID'], router_dict['Cost'], router_dict['Port']]
+        else:
+             graph_data = [router_dict['NID'], global_router['RID'], router_dict['Cost'], router_dict['Port']]
+        temp_graph.append(graph_data)
+
+    # Copy over the data in temporary graph to global graph object (used elsewhere)
+    graph = temp_graph[:]
+
+def send_to_stream(router_id, message):
+
+    stream_data = circuit_info[router_id]
+
+    # If we have a stream object send to it 
+    if stream_data['Stream']:
+        stream_data['Stream'].send(message)
+    else:
+        # else create the cells
+        server.snd_data(message, 
+                        stream_data['Circuit ID'], 
+                        stream_data['Extend Node'], 
+                        stream_data['Receive Node'], 
+                        stream_data['Receive Socket'])
 
 if __name__ == "__main__":
 
     # Dictionary to hold data of current router
-    router_information = {}
+    global_router = {}
 
     # Open file for reading
     with open(sys.argv[1]) as f:
@@ -534,12 +585,12 @@ if __name__ == "__main__":
     ID = data[0].split(" ")
 
     # Parse data related to the current router
-    router_information['RID'] = ID[0]
-    router_information['Port'] = ID[1]
-    router_information['Neighbours'] = int(data[1])
-    router_information['Neighbours Data'] = []
-    router_information['SN'] = 0
-    router_information['FLAG'] = 0
+    global_router['RID'] = ID[0]
+    global_router['Port'] = ID[1]
+    global_router['Neighbours'] = int(data[1])
+    global_router['Neighbours Data'] = []
+    global_router['SN'] = 0
+    global_router['FLAG'] = 0
 
     # Temporary graph list to hold state of current network topology
     temp_graph = []
@@ -557,13 +608,13 @@ if __name__ == "__main__":
         router_dict['Port'] = neighbour[2]
 
         # Append the dict to current routers dict of neighbours data
-        router_information['Neighbours Data'].append(router_dict)
+        global_router['Neighbours Data'].append(router_dict)
 
         # Package this routers data in a useful format and append to temporary graph list
-        if(router_information['RID'] < router_dict['NID']):
-             graph_data = [router_information['RID'], router_dict['NID'], router_dict['Cost'], router_dict['Port']]
+        if(global_router['RID'] < router_dict['NID']):
+             graph_data = [global_router['RID'], router_dict['NID'], router_dict['Cost'], router_dict['Port']]
         else:
-             graph_data = [router_dict['NID'], router_information['RID'], router_dict['Cost'], router_dict['Port']]
+             graph_data = [router_dict['NID'], global_router['RID'], router_dict['Cost'], router_dict['Port']]
         temp_graph.append(graph_data)
 
     # Copy over the data in temporary graph to global graph object (used elsewhere)
@@ -576,11 +627,11 @@ if __name__ == "__main__":
     threadLock = Lock()
 
     # Create heart beat message to transmit
-    HB_message = [{'RID' : router_information['RID']}]
+    HB_message = [{'RID' : global_router['RID']}]
 
-    sender_thread = SendThread("SENDER", router_information, threadLock)
-    receiver_thread = ReceiveThread("RECEIVER", router_information, threadLock)
-    heartbeat_thread = HeartBeatThread("HEART BEAT", HB_message, router_information['Neighbours Data'], threadLock)
+    sender_thread = SendThread("SENDER", global_router, threadLock)
+    receiver_thread = ReceiveThread("RECEIVER", global_router, threadLock)
+    heartbeat_thread = HeartBeatThread("HEART BEAT", HB_message, global_router['Neighbours Data'], threadLock)
 
     # Start each thread
     sender_thread.start()

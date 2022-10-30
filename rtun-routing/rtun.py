@@ -109,7 +109,7 @@ if args.listen:
 
     #main.two_hop(cookie, relay_nick, guard_nick, int("105"+str(args.did)))
     #server.setup_rendserver(cookie, relay_nick, guard_nick, int("105"+str(args.did)))
-    main.setup_rendezvous(guard_nick, relay_nick, cookie, int("105"+str(args.did)))
+    main.setup_rendezvous2(guard_nick, relay_nick, cookie, int("105"+str(args.did)))
 
     #openvpn_client.terminate()
 
