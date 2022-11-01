@@ -472,7 +472,7 @@ class HeartBeatThread(Thread):
 
         while True:
             for neighbour in global_router['Neighbours Data']:
-                logger.info("Sending HB to " + str(neighbour['NID']))
+                logger.debug("Sending HB to " + str(neighbour['NID']))
                 message = pickle.dumps(self.HB_message)
                 send_to_stream( neighbour['NID'], message)
             time.sleep(PERIODIC_HEART_BEAT)
