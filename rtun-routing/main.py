@@ -1,4 +1,5 @@
 import os
+import sys
 import socket
 from functools import partial
 from torpy import TorClient
@@ -53,8 +54,33 @@ import logging
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
 
-def send_routing_update(circuit):
-    pass
+# Socket to connect to router port
+global_router_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+def setup_router(router_id, router_port):
+    
+    # 
+    # Initialize the router
+    # 
+    lsr.start_router(router_id, router_port)
+
+    receiver_thread = ReceiveThread("RECEIVER", lsr.threadLock)
+    sender_thread = SendThread("SENDER", lsr.threadLock)
+
+    HB_message = [{'RID' : lsr.global_router['RID']}]
+    heartbeat_thread = HeartBeatThread("HEART BEAT", HB_message, lsr.threadLock)
+                
+    receiver_thread.start()
+    sender_thread.start()
+    heartbeat_thread.start()
+                
+    lsr.threads.append(receiver_thread)
+    lsr.threads.append(sender_thread)
+    lsr.threads.append(heartbeat_thread)
+
+    # Connect to router socket
+    global_router_sock.connect(('127.0.0.1', 5000))
+
 
 def build_circuit(guard_router, extend_routers): # returns Circuit
     # Build a circuit OP->Guard->RendPoint
@@ -79,7 +105,7 @@ def setup_rendezvous2(guard_nick, rendp_nick, rendezvous_cookie, port_num):
     # Establish a rendezvous point
     establish_rendezvous(circuit, rendezvous_cookie)
     
-    logger.info("Waiting for connections...")
+    logger.info("Waiting for connections at relay {0} for cookie {1} ...".format(rendp_nick, rendezvous_cookie))
     with circuit.create_waiter(CellRelayRendezvous2) as w:
         rendezvous2_cell = w.get(timeout=200)
         logger.info('Got REND2 message')
@@ -95,15 +121,6 @@ def setup_rendezvous2(guard_nick, rendp_nick, rendezvous_cookie, port_num):
     events = {TorStream: {'data': Event(), 'close': Event()},
               socket.socket: {'data': Event(), 'close': Event()}}
 
-    # 
-    # Create a stream to the peer router port and start a router thread
-    # 
-    lsr.start_router("P1", 5000)
-
-    # Socket to connect to router port
-    router_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-    hostname = '127.0.0.1'
     with guard_router as guard:
 
         def recv_callback(sock_or_stream, mask):
@@ -114,100 +131,21 @@ def setup_rendezvous2(guard_nick, rendp_nick, rendezvous_cookie, port_num):
             print(data)
             if data:
                 events[kind]['data'].set()
-                router_sock.send(data)
+                global_router_sock.send(data)
             else:
                 logger.debug('closing')
                 guard.unregister(sock_or_stream)
                 events[kind]['close'].set()
 
         with circuit as c:
-            with c.create_stream((hostname, 5000)) as stream:
+            with c.create_stream(('127.0.0.1', 5000)) as stream:
                 guard.register(sock_r, EVENT_READ, recv_callback)
                 guard.register(stream, EVENT_READ, recv_callback)
                    
-                lsr.add_neighbour("P2", 100, '127.0.0.1', 5000, circuit, circuit.id, stream, stream.id)
-                
-                receiver_thread = ReceiveThread("RECEIVER", lsr.threadLock)
-                sender_thread = SendThread("SENDER", lsr.threadLock)
+                lsr.add_neighbour("PEER2::{rendp_nick}", 100, '127.0.0.1', 5000, circuit, circuit.id, stream, stream.id)
 
-                HB_message = [{'RID' : lsr.global_router['RID']}]
-                heartbeat_thread = HeartBeatThread("HEART BEAT", HB_message, lsr.threadLock)
-                
-                receiver_thread.start()
-                sender_thread.start()
-                heartbeat_thread.start()
-                
-                lsr.threads.append(receiver_thread)
-                lsr.threads.append(sender_thread)
-                lsr.threads.append(heartbeat_thread)
-               
-                # Connect to router socket
-                router_sock.connect(('127.0.0.1', 5000))
-
-                # Call join on each tread (so that they wait)
-                try:
-                    for thread in lsr.threads:
-                        thread.join()
-                except KeyboardInterrupt:
-                    print("Caught keyboard interrupt, exiting...")
-                    print("Graph:")
-                    print(lsr.graph)
-
-                #while True:
-                    #stream.send(b'GET / HTTP/1.0\r\nHost: %s\r\n\r\n' % hostname.encode())
-                    #sock_w.send(b'some data')
-                #    time.sleep(10)
-
-
-def set_up_rendezvous_point(nick, cookie):
-
-    consensus = TorConsensus()
-    router = consensus.get_router_using_nick(nick)
-    tor_cell_socket = TorCellSocket(router)
-    tor_cell_socket.connect()
-
-    circuit_id = 0x80000001
-
-    if False:
-        key_agreement_cls = NtorKeyAgreement
-        create_cls = partial(CellCreate2, key_agreement_cls.TYPE)
-        created_cls = CellCreated2
-    else:
-        key_agreement_cls = FastKeyAgreement
-        create_cls = CellCreateFast
-        created_cls = CellCreatedFast
-
-    circuit_node = CircuitNode(router, key_agreement_cls=key_agreement_cls)
-    onion_skin = circuit_node.create_onion_skin()
-
-    cell_create = create_cls(onion_skin, circuit_id)
-
-    tor_cell_socket.send_cell(cell_create)
-    cell_created = tor_cell_socket.recv_cell()
-
-    logger.debug('Verifying response...')
-    circuit_node.complete_handshake(cell_created.handshake_data)
-
-    logger.debug(cell_created.circuit_id)
-
-    circuit_node.complete_handshake(cell_created.handshake_data)
-
-    rendezvous_cookie = cookie
-
-    inner_cell = CellRelayEstablishRendezvous(rendezvous_cookie, cell_created.circuit_id)
-
-    relay_cell = CellRelay(inner_cell, stream_id=0, circuit_id=circuit_id)
-
-    circuit_node.encrypt_forward(relay_cell)
-
-    tor_cell_socket.send_cell(relay_cell)
-    rcv_cell = tor_cell_socket.recv_cell()
-    circuit_node.decrypt_backward(rcv_cell)
-
-    logger.debug(rcv_cell)
-
-    return tor_cell_socket, circuit_node, cell_created.circuit_id
-
+                while True:
+                    time.sleep(5)
 
 def connect_to_rendezvous_point(nick, cookie):
     print("Connect to rendezvous point " + nick)

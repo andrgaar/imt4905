@@ -1,8 +1,10 @@
 import argparse
 import main
 import server
+import lsr
 import subprocess
 from time import sleep
+from threading import Thread
 import pandas as pd
 import hashlib
 import traceback
@@ -63,6 +65,8 @@ parser.add_argument('-n', '--namespace', help="secret key used to differentiate 
 parser.add_argument('-i', '--id', help="id of our own client(used for addressing and port allocation)", type=int)
 parser.add_argument('-d', '--did', help="destination id", type=int)
 
+parser.add_argument('-f', '--file', help="filename of connection info", type=str)
+
 parser.add_argument('-x', '--dummy', action="store_true",  help="do not connect, only test")
 
 args = parser.parse_args()
@@ -94,6 +98,11 @@ else:
         exit()
     cookie = args.cookie.encode("UTF-8")
 
+file_rendps = []
+if args.file:
+    with open(args.file) as f:
+        [file_rendps.append(line.strip()) for line in f.readlines()]
+
 if args.dummy:
     exit()
 
@@ -101,7 +110,8 @@ if args.dummy:
 vpn_log = open('/tmp/openvpn.out', 'w')
 
 if args.listen:
-    print(relay_nick)
+    port_num = int("105"+str(args.did))
+
     #openvpn_client = subprocess.Popen(["/usr/sbin/openvpn", "--remote", "127.0.0.1", "--proto", "tcp-client", "--cipher", "AES-256-CBC",
     #                                   "--secret", "static.key", "--socks-proxy", "127.0.0.1", f"105{args.did}",
     #                                   "--ifconfig", f"10.{args.id}.0.1", f"10.{args.did}.0.1",
@@ -109,8 +119,43 @@ if args.listen:
 
     #main.two_hop(cookie, relay_nick, guard_nick, int("105"+str(args.did)))
     #server.setup_rendserver(cookie, relay_nick, guard_nick, int("105"+str(args.did)))
-    main.setup_rendezvous2(guard_nick, relay_nick, cookie, int("105"+str(args.did)))
 
+    main.setup_router("PEER1", 5000)
+    
+    rendp_threads = []
+
+    if len(file_rendps) > 0:
+        for rp in file_rendps:
+            a, b, c = rp.split()
+            relay_nick = a
+            cookie = b.encode("UTF-8")
+            port_num = int("105"+str(c))
+
+            rendp_threads.append(Thread(name='Thread-' + relay_nick, target=main.setup_rendezvous2, args=(guard_nick, relay_nick, cookie, port_num)))
+    else:
+            rendp_threads.append(Thread(name='Thread-' + relay_nick, target=main.setup_rendezvous2, args=(guard_nick, relay_nick, cookie, port_num)))
+            
+    for rendp_thread in rendp_threads:
+        print("Starting thread " + str(rendp_thread.name))
+        rendp_thread.start()
+        lsr.threads.append(rendp_thread)
+
+    # Call join on each tread (so that they wait)
+    try:
+        for thread in lsr.threads:
+            thread.join()
+    
+    except KeyboardInterrupt:
+        print("Caught keyboard interrupt, exiting...")
+        print("Graph:")
+        print(lsr.graph)
+        sys.exit()
+            
+    except Exception as e:
+        template = "An exception of type {0} occurred. Arguments:\n{1!r}"
+        message = template.format(type(e).__name__, e.args)
+        print(message)
+    
     #openvpn_client.terminate()
 
 
