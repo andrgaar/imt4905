@@ -2,10 +2,12 @@ import sys
 import pickle
 import time
 import heapq
+import socket
 
 from datetime import datetime, timedelta
 from threading import Thread, Lock, Timer
-from socket import socket, create_server, AF_INET, SOCK_STREAM
+from socket import socket, create_server, AF_INET, SOCK_STREAM, SOL_SOCKET, SO_REUSEADDR
+
 
 from torpy.circuit import TorCircuit
 from torpy.stream import TorStream
@@ -42,6 +44,12 @@ class ReceiveThread(Thread):
         self.LSA_DB = {}
         self.inactive_list = set()
         self.forward_set = set()
+
+    def __exit__(self, exc_type, exc_value, traceback):
+
+        print("\nReceiveThread __exit__")
+        print("Closing socket") 
+        self.server_socket.close()
 
     def run(self):
         self.serverSide()
@@ -95,7 +103,7 @@ class ReceiveThread(Thread):
                 # a new LSA to notify other routers of the update to the topology
                 if len(self.inactive_list) > inactive_list_size:
 
-                    #print("UPDATING NEIGHBOURS")
+                    logger.debug("UPDATING NEIGHBOURS")
 
                     # Update this router's list of neighbours using inactive list
                     self.updateNeighboursList()
@@ -113,6 +121,7 @@ class ReceiveThread(Thread):
 
             # Handle case if the message received is an LSA
             else:
+                logger.info("Received LSA from " + str(local_copy_LSA['RID']))
 
                 # Grab list of neighbouring routers of router that sent this LSA
                 neighbour_routers = global_router['Neighbours Data']
@@ -453,7 +462,7 @@ class SendThread(Thread):
 
         while True:
             for dict in global_router['Neighbours Data']:
-                circuit_info[dict['NID']]['Stream'].send(message)
+                send_to_stream(dict['NID'], message)
             time.sleep(UPDATE_INTERVAL)
 
 class HeartBeatThread(Thread):
@@ -506,7 +515,7 @@ def start_router(router_id, router_port):
     # Create a lock to be used by all threads
     threadLock = Lock()
 
-    print("Started router")
+    logger.info("Started router")
 
 def add_neighbour(r_id, r_cost, r_hostname, r_port, circuit, circuit_id, stream, stream_id, receive_node=None, extend_node=None, receive_socket=None):
 
@@ -557,6 +566,8 @@ def add_neighbour(r_id, r_cost, r_hostname, r_port, circuit, circuit_id, stream,
 
     # Copy over the data in temporary graph to global graph object (used elsewhere)
     graph = temp_graph[:]
+
+    logger.info("Added neighbour " + str(r_id))
 
 def send_to_stream(router_id, message):
 
