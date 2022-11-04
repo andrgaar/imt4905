@@ -80,8 +80,8 @@ class ReceiveThread(Thread):
             data, client_address = self.server_socket.recvfrom(1024)
             local_copy_LSA = pickle.loads(data)
 
-            logger.info(f"Received below: ") 
-            print(local_copy_LSA)
+            #logger.info(f"Received below: ") 
+            #print(local_copy_LSA)
             
             # Handle case if message received is a heartbeat message
             if isinstance(local_copy_LSA , list):
@@ -125,7 +125,7 @@ class ReceiveThread(Thread):
             # Handle case if the message received is an LSA
             else:
                 logger.info("Received LSA from " + str(local_copy_LSA['RID']))
-                print(local_copy_LSA)
+                # print(local_copy_LSA)
 
                 # Grab list of neighbouring routers of router that sent this LSA
                 neighbour_routers = global_router['Neighbours Data']
@@ -139,7 +139,7 @@ class ReceiveThread(Thread):
                 # Any new LSA received that have not been seen before are stored within this
                 # routers local link-state database
                 if local_copy_LSA['RID'] not in self.packets:
-                    logger.info("LSA received is NEW")
+                    logger.info("LSA received from {0} is NEW".format(local_copy_LSA['RID'])
 
                     for router in neighbour_routers:
                         if router['NID'] != local_copy_LSA['RID']:
@@ -164,6 +164,7 @@ class ReceiveThread(Thread):
                     # If the LSA received has a SN number that is greater than the existing record of
                     # SN for that router, we can confirm that the LSA received is a fresh LSA
                     if local_copy_LSA['SN'] > self.LSA_SN[local_copy_LSA['RID']]:
+                        logger.info("LSA has flag 1 and SN is greater than {0}".format(self.LSA_SN[local_copy_LSA['RID']]))
                         self.LSA_SN.update({local_copy_LSA['RID'] : local_copy_LSA['SN']})
                         self.LSA_DB.update({local_copy_LSA['RID'] : local_copy_LSA})
                         # If the new LSA has any router listed as inactive (i.e dead) we remove these explicitly from
@@ -177,19 +178,22 @@ class ReceiveThread(Thread):
                         #    pickle.dumps(self.LSA_DB[local_copy_LSA['RID']]),
                         #    (server_name, int(local_copy_LSA['Port']))
                         #)
+                        logger.info("Sending update to " + str(local_copy_LSA['RID']))
                         send_to_stream(local_copy_LSA['RID'], pickle.dumps(self.LSA_DB[local_copy_LSA['RID']]))
                         time.sleep(1)
                     else:
                         # If old data is being received, that is, there is no new LSA, we simply forward the message
                         # onto our neighbours (now with the list of updated neighbours and higher SN)
+                        logger.info("LSA is old - forwarding to my neighbours")
                         for new_router in global_router['Neighbours Data']:
                             if new_router['NID'] != global_router['RID']:
                                 try:
-                                    self.server_socket.sendto(
-                                        pickle.dumps(self.LSA_DB[local_copy_LSA['RID']]),
-                                        (server_name, int(new_router['Port']))
-                                    )
-                                    send_to_stream(new_router['NID'])
+                                    logger.info("Sending update to " + str(local_copy_LSA['RID']))
+                                    #self.server_socket.sendto(
+                                    #    pickle.dumps(self.LSA_DB[local_copy_LSA['RID']]),
+                                    #    (server_name, int(new_router['Port']))
+                                    #)
+                                    send_to_stream(new_router['NID'], pickle.dumps(self.LSA_DB[local_copy_LSA['RID']]))
                                 except KeyError:
                                     pass
                             time.sleep(1)
@@ -446,6 +450,7 @@ class ReceiveThread(Thread):
             )
             index = index + 1
         print()
+        print(graph)
 
 class SendThread(Thread):
 
