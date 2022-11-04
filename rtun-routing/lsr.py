@@ -522,7 +522,7 @@ def start_router(router_id, router_port):
     # Create a lock to be used by all threads
     threadLock = Lock()
 
-    logger.info("Started router")
+    logger.info("Started router " + str(router_id))
 
 def add_neighbour(r_id, r_cost, r_hostname, r_port, circuit, circuit_id, stream, stream_id, receive_node=None, extend_node=None, receive_socket=None):
 

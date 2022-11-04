@@ -1,4 +1,5 @@
 import argparse
+import sys
 import main
 import server
 import lsr
@@ -120,7 +121,7 @@ if args.listen:
     #main.two_hop(cookie, relay_nick, guard_nick, int("105"+str(args.did)))
     #server.setup_rendserver(cookie, relay_nick, guard_nick, int("105"+str(args.did)))
 
-    main.setup_router("PEER1", 5000)
+    main.setup_router("PEER" + str(args.id), 5000)
     
     rendp_threads = []
 
@@ -168,7 +169,7 @@ if args.connect:
     sleep(1)
     while True:
         try:
-            server.list_rend_server(cookie, relay_nick)
+            server.list_rend_server(cookie, relay_nick, args.id, args.did)
         except Exception as e:
             print("Error, trying again in 5 seconds..." + str(e))
             #tb = traceback.format_exc()

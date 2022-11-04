@@ -41,10 +41,10 @@ def snd_data(rsp, circuit_id, extend_node, rcv_cn, rcv_sock, stream_id=0):
     print("Sent cell:" + str(inner_cell))
 
 
-def list_rend_server(cookie, router_nick):
+def list_rend_server(cookie, router_nick, router_id, peer_id):
 
     # Start router
-    lsr.start_router("P3", 5000)
+    lsr.start_router("PEER" + str(router_id), 5000)
 
     receiver_thread = ReceiveThread("RECEIVER", lsr.threadLock)
     sender_thread = SendThread("SENDER", lsr.threadLock)
