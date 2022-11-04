@@ -139,17 +139,17 @@ class ReceiveThread(Thread):
                 # Any new LSA received that have not been seen before are stored within this
                 # routers local link-state database
                 if local_copy_LSA['RID'] not in self.packets:
+                    logger.info("LSA received is NEW")
+
                     for router in neighbour_routers:
                         if router['NID'] != local_copy_LSA['RID']:
+                            logger.info("Adding router " + str(local_copy_LSA['RID']))
                             self.packets.add(local_copy_LSA['RID'])
                             self.LSA_SN.update({local_copy_LSA['RID']: local_copy_LSA['SN']})
                             self.LSA_DB.update({local_copy_LSA['RID'] : local_copy_LSA})
                             # If the LSA received does not exist within router database , forward it to neighbours
                             # If LSA exists within database, do not forward it (silently drop it)
-                            #self.server_socket.sendto(
-                            #    pickle.dumps(self.LSA_DB[local_copy_LSA['RID']]),
-                            #    (server_name, int(router['Port']))
-                            #)
+                            logger.info("Sending update to " + str(local_copy_LSA['RID']))
                             send_to_stream(router['NID'], pickle.dumps(self.LSA_DB[local_copy_LSA['RID']]))
                             time.sleep(1)
                     # Update global graph using constructed link-state database
@@ -466,9 +466,10 @@ class SendThread(Thread):
 
     def clientSide(self):
 
-        message = pickle.dumps(global_router)
-
         while True:
+            
+            message = pickle.dumps(global_router)
+            
             for dict in global_router['Neighbours Data']:
                 print("Sending neighbour data for " + str(dict['NID']))
                 print(global_router)
