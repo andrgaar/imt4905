@@ -44,7 +44,7 @@ def snd_data(rsp, circuit_id, extend_node, rcv_cn, rcv_sock, stream_id=0):
 def list_rend_server(cookie, router_nick):
 
     # Start router
-    lsr.start_router("P2", 5000)
+    lsr.start_router("P3", 5000)
 
     receiver_thread = ReceiveThread("RECEIVER", lsr.threadLock)
     sender_thread = SendThread("SENDER", lsr.threadLock)
