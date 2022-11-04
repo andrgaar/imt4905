@@ -49,6 +49,7 @@ def list_rend_server(cookie, router_nick, my_id, peer_id):
     receiver_thread = ReceiveThread("RECEIVER", lsr.threadLock)
     sender_thread = SendThread("SENDER", lsr.threadLock)
 
+
     HB_message = [{'RID' : lsr.global_router['RID']}]
     heartbeat_thread = HeartBeatThread("HEART BEAT", HB_message, lsr.threadLock)
                 
