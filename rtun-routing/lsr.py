@@ -139,7 +139,7 @@ class ReceiveThread(Thread):
                 # Any new LSA received that have not been seen before are stored within this
                 # routers local link-state database
                 if local_copy_LSA['RID'] not in self.packets:
-                    logger.info("LSA received from {0} is NEW".format(local_copy_LSA['RID']))
+                    logger.info("LSA received from {0} is new".format(local_copy_LSA['RID']))
                     self.packets.add(local_copy_LSA['RID'])
                     self.LSA_SN.update({local_copy_LSA['RID']: local_copy_LSA['SN']})
                     self.LSA_DB.update({local_copy_LSA['RID'] : local_copy_LSA})
@@ -154,8 +154,8 @@ class ReceiveThread(Thread):
                     # Update global graph using constructed link-state database
                     self.updateGraph(graph, self.LSA_DB, 0)
 
-                    print("New LSA_DB is:")
-                    print(self.LSA_DB)
+                    #print("New LSA_DB is:")
+                    #print(self.LSA_DB)
 
                 # If a router is removed from the topology, we receive an updated LSA
                 # which we use to update the graph network.
@@ -165,9 +165,9 @@ class ReceiveThread(Thread):
                 if flag is 1:
                     # If the LSA received has a SN number that is greater than the existing record of
                     # SN for that router, we can confirm that the LSA received is a fresh LSA
-                    logger.info("Flag is set")
+                    logger.debug("Flag is set")
                     if local_copy_LSA['SN'] > self.LSA_SN[local_copy_LSA['RID']]:
-                        logger.info("LSA SN is {0} greater than {1}".format(local_copy_LSA['SN'], self.LSA_SN[local_copy_LSA['RID']]))
+                        logger.debug("LSA SN is {0} greater than {1}".format(local_copy_LSA['SN'], self.LSA_SN[local_copy_LSA['RID']]))
                         self.LSA_SN.update({local_copy_LSA['RID'] : local_copy_LSA['SN']})
                         self.LSA_DB.update({local_copy_LSA['RID'] : local_copy_LSA})
                         # If the new LSA has any router listed as inactive (i.e dead) we remove these explicitly from
@@ -177,25 +177,17 @@ class ReceiveThread(Thread):
                             self.updateGraphOnly(graph, local_copy_LSA['DEAD'])
                         # Send the new LSA received back to the sending router (so as to ensure that it is a two-way
                         # update for the sender and recipient's local database)
-                        #self.server_socket.sendto(
-                        #    pickle.dumps(self.LSA_DB[local_copy_LSA['RID']]),
-                        #    (server_name, int(local_copy_LSA['Port']))
-                        #)
                         logger.info("Sending update to " + str(local_copy_LSA['RID']))
                         send_to_stream(local_copy_LSA['RID'], pickle.dumps(self.LSA_DB[local_copy_LSA['RID']]))
                         time.sleep(1)
                     else:
                         # If old data is being received, that is, there is no new LSA, we simply forward the message
                         # onto our neighbours (now with the list of updated neighbours and higher SN)
-                        logger.info("LSA is old - forwarding to my neighbours")
+                        logger.debug("LSA is old - forwarding to my neighbours")
                         for new_router in global_router['Neighbours Data']:
                             if new_router['NID'] != global_router['RID']:
                                 try:
-                                    logger.info("Sending update to " + str(local_copy_LSA['RID']))
-                                    #self.server_socket.sendto(
-                                    #    pickle.dumps(self.LSA_DB[local_copy_LSA['RID']]),
-                                    #    (server_name, int(new_router['Port']))
-                                    #)
+                                    logger.info("Nothing to do, forwarding LSA to " + str(local_copy_LSA['RID']))
                                     send_to_stream(new_router['NID'], pickle.dumps(self.LSA_DB[local_copy_LSA['RID']]))
                                 except KeyError:
                                     pass
@@ -273,7 +265,7 @@ class ReceiveThread(Thread):
         new_data = pickle.dumps(updated_global_router)
 
         for router in global_router['Neighbours Data']:
-            print("SENT THIS NEW LSA TO {0}".format(router['NID']))
+            logger.debug("SENT THIS NEW LSA TO {0}".format(router['NID']))
             #self.server_socket.sendto(new_data , (server_name , int(router['Port'])))
             send_to_stream(router['NID'], new_data)
         time.sleep(1)
@@ -308,10 +300,10 @@ class ReceiveThread(Thread):
     # Dijkstra function to compute shortest path
     def updateGraph(self, graph_arg, lsa_data, flag):
 
-        logger.info("Updating graph:")
-        print(graph_arg)
-        logger.info("With LSA data:")
-        print(lsa_data)
+        logger.debug("Updating graph:")
+        logger.debug(graph_arg)
+        logger.debug("With LSA data:")
+        logger.debug(lsa_data)
 
         if flag is 1:
 
@@ -484,8 +476,8 @@ class SendThread(Thread):
             message = pickle.dumps(global_router)
             
             for dict in global_router['Neighbours Data']:
-                print("Sending neighbour data for " + str(dict['NID']))
-                print(global_router)
+                logger.debug("Sending neighbour data for " + str(dict['NID']))
+                logger.debug(global_router)
                 send_to_stream(dict['NID'], message)
             time.sleep(UPDATE_INTERVAL)
 

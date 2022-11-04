@@ -107,7 +107,7 @@ def setup_rendezvous2(guard_nick, rendp_nick, rendezvous_cookie, port_num, peer_
     
     logger.info("Waiting for connections at relay {0} for cookie {1} ...".format(rendp_nick, rendezvous_cookie))
     with circuit.create_waiter(CellRelayRendezvous2) as w:
-        rendezvous2_cell = w.get(timeout=200)
+        rendezvous2_cell = w.get(timeout=600)
         logger.info('Got REND2 message')
           
     logger.debug("Derive shared secret with peer")
