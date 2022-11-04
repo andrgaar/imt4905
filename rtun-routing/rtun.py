@@ -169,9 +169,13 @@ if args.connect:
                                        "--ifconfig", f"10.{args.id}.0.1", f"10.{args.did}.0.1",
                                        "--dev", f"tun{args.did}", "--port", f"119{args.id}"], stdout=vpn_log)
     sleep(1)
+
+    my_id = "PEER" + str(args.id)
+    peer_id = "PEER" + str(args.did)
+
     while True:
         try:
-            server.list_rend_server(cookie, relay_nick, args.id, args.did)
+            server.list_rend_server(cookie, relay_nick, my_id, peer_id)
         except Exception as e:
             print("Error, trying again in 5 seconds..." + str(e))
             #tb = traceback.format_exc()
