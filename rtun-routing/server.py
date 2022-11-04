@@ -11,6 +11,10 @@ from torpy.guard import TorGuard
 import lsr
 from lsr import ReceiveThread, SendThread, HeartBeatThread
 
+import logging
+
+logger = logging.getLogger(__name__)
+
 def rcv_data(rcv_sock, rcv_cn, extend_node):
     b = rcv_sock.recv_cell()
     rcv_cn.decrypt_backward(b)

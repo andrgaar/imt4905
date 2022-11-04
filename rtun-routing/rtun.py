@@ -10,8 +10,10 @@ import pandas as pd
 import hashlib
 import traceback
 import logging
-logging.basicConfig(level=logging.DEBUG)
 
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', filename='rtun.log', encoding='utf-8')
+
+logger = logging.getLogger(__name__)
 
 def choose_relay(tun_name, namespace='default', time_frame="1 min"):
     all_relays = []

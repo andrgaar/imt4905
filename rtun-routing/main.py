@@ -20,12 +20,12 @@ import lsr
 from lsr import HeartBeatThread, ReceiveThread, SendThread
 import pickle
 
-
-# Threading 
 import threading
 from threading import Event
 from selectors import EVENT_READ, DefaultSelector
 import time
+
+logger = logging.getLogger(__name__)
 
 exitFlag = 0
 
@@ -48,11 +48,6 @@ def print_time(threadName, delay, counter):
       print ("%s: %s" % (threadName, time.ctime(time.time())))
       counter -= 1
 
-
-
-import logging
-logger = logging.getLogger(__name__)
-logging.basicConfig(level=logging.INFO)
 
 # Socket to connect to router port
 global_router_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -128,7 +123,7 @@ def setup_rendezvous2(guard_nick, rendp_nick, rendezvous_cookie, port_num, peer_
             kind = type(sock_or_stream)
             data = sock_or_stream.recv(1024)
             logger.debug('%s', kind.__name__)
-            print(data)
+
             if data:
                 events[kind]['data'].set()
                 global_router_sock.send(data)
@@ -148,7 +143,7 @@ def setup_rendezvous2(guard_nick, rendp_nick, rendezvous_cookie, port_num, peer_
                     time.sleep(5)
 
 def connect_to_rendezvous_point(nick, cookie):
-    print("Connect to rendezvous point " + nick)
+    logger.info("Connect to rendezvous point " + nick)
 
     consensus = TorConsensus()
     router = consensus.get_router_using_nick(nick)

@@ -1,3 +1,4 @@
+import os
 import sys
 import pickle
 import time
@@ -16,7 +17,6 @@ import server
 
 import logging
 logger = logging.getLogger(__name__)
-logging.basicConfig(level=logging.INFO)
 
 UPDATE_INTERVAL = 15
 ROUTE_UPDATE_INTERVAL = 30
@@ -28,6 +28,7 @@ TIMEOUT = 15
 global graph
 global global_router
 global circuit_info
+global neighbour_stats
 global threadLock
 global threads 
 
@@ -47,8 +48,8 @@ class ReceiveThread(Thread):
 
     def __exit__(self, exc_type, exc_value, traceback):
 
-        print("\nReceiveThread __exit__")
-        print("Closing socket") 
+        logger.debug("ReceiveThread __exit__")
+        logger.info("Closing socket") 
         self.server_socket.close()
 
     def run(self):
@@ -80,9 +81,6 @@ class ReceiveThread(Thread):
             data, client_address = self.server_socket.recvfrom(1024)
             local_copy_LSA = pickle.loads(data)
 
-            #logger.info(f"Received below: ") 
-            #print(local_copy_LSA)
-            
             # Handle case if message received is a heartbeat message
             if isinstance(local_copy_LSA , list):
 
@@ -125,7 +123,6 @@ class ReceiveThread(Thread):
             # Handle case if the message received is an LSA
             else:
                 logger.info("Received LSA from " + str(local_copy_LSA['RID']))
-                # print(local_copy_LSA)
 
                 # Grab list of neighbouring routers of router that sent this LSA
                 neighbour_routers = global_router['Neighbours Data']
@@ -153,9 +150,6 @@ class ReceiveThread(Thread):
                             time.sleep(1)
                     # Update global graph using constructed link-state database
                     self.updateGraph(graph, self.LSA_DB, 0)
-
-                    #print("New LSA_DB is:")
-                    #print(self.LSA_DB)
 
                 # If a router is removed from the topology, we receive an updated LSA
                 # which we use to update the graph network.
@@ -450,7 +444,6 @@ class ReceiveThread(Thread):
             )
             index = index + 1
         print()
-        print(graph)
 
 class SendThread(Thread):
 
@@ -488,7 +481,6 @@ class HeartBeatThread(Thread):
         self.name = name
         self.HB_message = HB_message
         self.thread_lock = thread_lock
-        #self.HB_socket = socket(AF_INET , SOCK_DGRAM)
 
     def run(self):
         self.broadcastHB()
@@ -500,22 +492,45 @@ class HeartBeatThread(Thread):
                 logger.debug("Sending HB to " + str(neighbour['NID']))
                 message = pickle.dumps(self.HB_message)
                 send_to_stream( neighbour['NID'], message)
+                neighbour_stats[neighbour['NID']]['HB sent'] += 1 
+            
+            print_stats()
             time.sleep(PERIODIC_HEART_BEAT)
 
     def __del__(self):
         self.HB_socket.close()
 
 
+
+
+def print_stats():
+    os.system('clear')
+    print("Router ID: " + str(global_router['RID']))
+    print("SN: " + str(global_router['SN']))
+    print("Flag: " + str(global_router['FLAG']))
+    print()
+    print("Number of neighbours: " + str(global_router['Neighbours']))
+    print()
+    print("Neighbours:")
+    print()
+    print(" %-15s %5s %15s" % ('Peer', 'Cost', 'HB sent'))
+    
+    for neighbour in global_router['Neighbours Data']:
+        print(" %-15s %5s %15s" % (neighbour['NID'], neighbour['Cost'], neighbour_stats[neighbour['NID']]['HB sent']))
+        
+
 def start_router(router_id, router_port):
 
     global global_router
     global circuit_info
+    global neighbour_stats
     global threads
     global threadLock
 
     # Dictionary to hold data of current router
     global_router = {}
     circuit_info = {}
+    neighbour_stats = {}
 
     # Parse data related to the current router
     global_router['RID'] = router_id
@@ -539,6 +554,7 @@ def add_neighbour(r_id, r_cost, r_hostname, r_port, circuit, circuit_id, stream,
     global graph
     router_dict = {}
     circuit_dict = {}
+    stats_dict = {}
 
     # For LSA
     router_dict['NID']  = r_id
@@ -563,6 +579,14 @@ def add_neighbour(r_id, r_cost, r_hostname, r_port, circuit, circuit_id, stream,
 
     # Add circuit info for this neighbour
     circuit_info[r_id] = circuit_dict
+
+    # Add stats for this neighbour
+    stats_dict['HB sent'] = 0
+    stats_dict['HB received'] = 0
+    stats_dict['LSA sent'] = 0
+    stats_dict['LSA received'] = 0
+
+    neighbour_stats[r_id] = stats_dict    
 
     # Temporary graph list to hold state of current network topology
     temp_graph = []
@@ -683,5 +707,5 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         print(graph)
 
-    print("Exiting Main Thread")
+    logger.debug("Exiting Main Thread")
     
