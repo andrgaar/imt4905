@@ -142,10 +142,11 @@ class ReceiveThread(Thread):
                             self.LSA_DB.update({local_copy_LSA['RID'] : local_copy_LSA})
                             # If the LSA received does not exist within router database , forward it to neighbours
                             # If LSA exists within database, do not forward it (silently drop it)
-                            self.server_socket.sendto(
-                                pickle.dumps(self.LSA_DB[local_copy_LSA['RID']]),
-                                (server_name, int(router['Port']))
-                            )
+                            #self.server_socket.sendto(
+                            #    pickle.dumps(self.LSA_DB[local_copy_LSA['RID']]),
+                            #    (server_name, int(router['Port']))
+                            #)
+                            send_to_stream(router['NID'], pickle.dumps(self.LSA_DB[local_copy_LSA['RID']]))
                             time.sleep(1)
                     # Update global graph using constructed link-state database
                     self.updateGraph(graph, self.LSA_DB, 0)
@@ -168,10 +169,11 @@ class ReceiveThread(Thread):
                             self.updateGraphOnly(graph, local_copy_LSA['DEAD'])
                         # Send the new LSA received back to the sending router (so as to ensure that it is a two-way
                         # update for the sender and recipient's local database)
-                        self.server_socket.sendto(
-                            pickle.dumps(self.LSA_DB[local_copy_LSA['RID']]),
-                            (server_name, int(local_copy_LSA['Port']))
-                        )
+                        #self.server_socket.sendto(
+                        #    pickle.dumps(self.LSA_DB[local_copy_LSA['RID']]),
+                        #    (server_name, int(local_copy_LSA['Port']))
+                        #)
+                        send_to_stream(local_copy_LSA['RID'], pickle.dumps(self.LSA_DB[local_copy_LSA['RID']]))
                         time.sleep(1)
                     else:
                         # If old data is being received, that is, there is no new LSA, we simply forward the message
@@ -183,6 +185,7 @@ class ReceiveThread(Thread):
                                         pickle.dumps(self.LSA_DB[local_copy_LSA['RID']]),
                                         (server_name, int(new_router['Port']))
                                     )
+                                    send_to_stream(new_router['NID'])
                                 except KeyError:
                                     pass
                             time.sleep(1)
@@ -259,8 +262,9 @@ class ReceiveThread(Thread):
         new_data = pickle.dumps(updated_global_router)
 
         for router in global_router['Neighbours Data']:
-            #print("SENT THIS NEW LSA TO {0}".format(router['NID']))
-            self.server_socket.sendto(new_data , (server_name , int(router['Port'])))
+            print("SENT THIS NEW LSA TO {0}".format(router['NID']))
+            #self.server_socket.sendto(new_data , (server_name , int(router['Port'])))
+            send_to_stream(router['NID'], new_data)
         time.sleep(1)
 
     def updateGraphAfterFailure(self, *args):
@@ -462,6 +466,8 @@ class SendThread(Thread):
 
         while True:
             for dict in global_router['Neighbours Data']:
+                print("Sending neighbour data for " + str(dict['NID']))
+                print(message)
                 send_to_stream(dict['NID'], message)
             time.sleep(UPDATE_INTERVAL)
 

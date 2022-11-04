@@ -142,7 +142,7 @@ def setup_rendezvous2(guard_nick, rendp_nick, rendezvous_cookie, port_num):
                 guard.register(sock_r, EVENT_READ, recv_callback)
                 guard.register(stream, EVENT_READ, recv_callback)
                    
-                lsr.add_neighbour("PEER2::{rendp_nick}", 100, '127.0.0.1', 5000, circuit, circuit.id, stream, stream.id)
+                lsr.add_neighbour("PEER::{0}".format(rendp_nick), 100, '127.0.0.1', 5000, circuit, circuit.id, stream, stream.id)
 
                 while True:
                     time.sleep(5)
