@@ -139,7 +139,7 @@ class ReceiveThread(Thread):
                 # Any new LSA received that have not been seen before are stored within this
                 # routers local link-state database
                 if local_copy_LSA['RID'] not in self.packets:
-                    logger.info("LSA received from {0} is NEW".format(local_copy_LSA['RID'])
+                    logger.info("LSA received from {0} is NEW".format(local_copy_LSA['RID']))
 
                     for router in neighbour_routers:
                         if router['NID'] != local_copy_LSA['RID']:
