@@ -2,6 +2,8 @@
 
 set -x
 
+export PYTHONPATH=/root/git/imt4905/torpy-rtun-fork/
+
 # Setup OpenVPN
 #mkdir -p /dev/net
 #mknod /dev/net/tun c 10 200
@@ -11,8 +13,8 @@ set -x
 #python3 -m torpy --url https://facebookcorewwwi.onion
 
 # Start rtun server
-python3 rtun.py -p -c -t peer1peer2 -n default -i 2 -d 1 &
-#python3 rtun.py -r MonsterEdgeRangers -k 3148d35cc3353845db51 -c -t peer1peer2 -n default -i 2 -d 1 &
+#python3 rtun.py -p -c -t peer1peer2 -n default -i 2 -d 1 &
+python3 rtun.py -r bauruine -k eb688e4f52df90278060 -c -t peer1peer2 -n default -i 2 -d 1 
 
 sleep 10
 
