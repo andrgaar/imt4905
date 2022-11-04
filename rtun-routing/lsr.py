@@ -122,6 +122,7 @@ class ReceiveThread(Thread):
             # Handle case if the message received is an LSA
             else:
                 logger.info("Received LSA from " + str(local_copy_LSA['RID']))
+                print(local_copy_LSA)
 
                 # Grab list of neighbouring routers of router that sent this LSA
                 neighbour_routers = global_router['Neighbours Data']
