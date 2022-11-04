@@ -27,7 +27,8 @@ def rcv_data(rcv_sock, rcv_cn, extend_node):
         print("Got SENDME")
         return 404
     else:
-        print("Got " + str(type(cellrelaydata)))
+        #print("Got " + str(type(cellrelaydata)))
+        pass
 
     return cellrelaydata.data
 
