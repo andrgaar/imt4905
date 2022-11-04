@@ -119,7 +119,6 @@ def list_rend_server(cookie, router_nick, my_id, peer_id):
     lsr.add_neighbour(peer_id, 100, '127.0.0.1', 5000, None, circuit_id, None, stream_id, 
                         receive_node=rcv_cn, extend_node=extend_node, receive_socket=rcv_sock)
 
-    print("Socket select")
     while True:
         try:
             r, w, _ = select.select([rcv_sock.ssl_socket, s], [], [])

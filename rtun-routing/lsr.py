@@ -155,6 +155,9 @@ class ReceiveThread(Thread):
                     # Update global graph using constructed link-state database
                     self.updateGraph(graph, self.LSA_DB, 0)
 
+                    print("New LSA_DB is:")
+                    print(self.LSA_DB)
+
                 # If a router is removed from the topology, we receive an updated LSA
                 # which we use to update the graph network.
                 
@@ -550,6 +553,7 @@ def add_neighbour(r_id, r_cost, r_hostname, r_port, circuit, circuit_id, stream,
     router_dict['Cost'] = float(r_cost)
     router_dict['Hostname'] = r_hostname
     router_dict['Port'] = r_port
+    router_dict['FLAG'] = 0
 
     # Internal to router
     circuit_dict['NID']  = r_id
