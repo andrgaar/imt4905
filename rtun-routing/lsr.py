@@ -140,16 +140,15 @@ class ReceiveThread(Thread):
                 # routers local link-state database
                 if local_copy_LSA['RID'] not in self.packets:
                     logger.info("LSA received from {0} is NEW".format(local_copy_LSA['RID']))
-
+                    self.packets.add(local_copy_LSA['RID'])
+                    self.LSA_SN.update({local_copy_LSA['RID']: local_copy_LSA['SN']})
+                    self.LSA_DB.update({local_copy_LSA['RID'] : local_copy_LSA})
+                    
                     for router in neighbour_routers:
                         if router['NID'] != local_copy_LSA['RID']:
-                            logger.info("Adding router " + str(local_copy_LSA['RID']))
-                            self.packets.add(local_copy_LSA['RID'])
-                            self.LSA_SN.update({local_copy_LSA['RID']: local_copy_LSA['SN']})
-                            self.LSA_DB.update({local_copy_LSA['RID'] : local_copy_LSA})
                             # If the LSA received does not exist within router database , forward it to neighbours
                             # If LSA exists within database, do not forward it (silently drop it)
-                            logger.info("Sending update to " + str(local_copy_LSA['RID']))
+                            logger.info("Sending update to " + str(router['NID']))
                             send_to_stream(router['NID'], pickle.dumps(self.LSA_DB[local_copy_LSA['RID']]))
                             time.sleep(1)
                     # Update global graph using constructed link-state database
@@ -166,8 +165,9 @@ class ReceiveThread(Thread):
                 if flag is 1:
                     # If the LSA received has a SN number that is greater than the existing record of
                     # SN for that router, we can confirm that the LSA received is a fresh LSA
+                    logger.info("Flag is set")
                     if local_copy_LSA['SN'] > self.LSA_SN[local_copy_LSA['RID']]:
-                        logger.info("LSA has flag 1 and SN is greater than {0}".format(self.LSA_SN[local_copy_LSA['RID']]))
+                        logger.info("LSA SN is {0} greater than {1}".format(local_copy_LSA['SN'], self.LSA_SN[local_copy_LSA['RID']]))
                         self.LSA_SN.update({local_copy_LSA['RID'] : local_copy_LSA['SN']})
                         self.LSA_DB.update({local_copy_LSA['RID'] : local_copy_LSA})
                         # If the new LSA has any router listed as inactive (i.e dead) we remove these explicitly from
