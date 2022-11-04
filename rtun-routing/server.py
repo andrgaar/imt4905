@@ -38,7 +38,7 @@ def snd_data(rsp, circuit_id, extend_node, rcv_cn, rcv_sock, stream_id=0):
     extend_node.encrypt_forward(relay_cell)
     rcv_cn.encrypt_forward(relay_cell)
     rcv_sock.send_cell(relay_cell)
-    print("Sent cell:" + str(inner_cell))
+#    print("Sent cell:" + str(inner_cell))
 
 
 def list_rend_server(cookie, router_nick, my_id, peer_id):
@@ -124,16 +124,14 @@ def list_rend_server(cookie, router_nick, my_id, peer_id):
             r, w, _ = select.select([rcv_sock.ssl_socket, s], [], [])
             if rcv_sock.ssl_socket in r:
                 buf = rcv_data(rcv_sock, rcv_cn, extend_node)
-                print("rcv_sock:")
-                print(buf)
+
                 if buf == 404:
                     continue
                 if len(buf) == 0:
                     break
-                #print("Sending buf to s")
+                
                 s.send(buf)
-                #print("Echoing to peer")
-                #snd_data(buf, circuit_id, extend_node, rcv_cn, rcv_sock, stream_id)
+
             if s in r:
                 buf = s.recv(498)
                 if len(buf) == 0:
