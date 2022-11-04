@@ -80,6 +80,9 @@ class ReceiveThread(Thread):
             data, client_address = self.server_socket.recvfrom(1024)
             local_copy_LSA = pickle.loads(data)
 
+            logger.info(f"Received below: ") 
+            print(local_copy_LSA)
+            
             # Handle case if message received is a heartbeat message
             if isinstance(local_copy_LSA , list):
 
@@ -468,7 +471,7 @@ class SendThread(Thread):
         while True:
             for dict in global_router['Neighbours Data']:
                 print("Sending neighbour data for " + str(dict['NID']))
-                print(message)
+                print(global_router)
                 send_to_stream(dict['NID'], message)
             time.sleep(UPDATE_INTERVAL)
 
@@ -549,6 +552,9 @@ def add_neighbour(r_id, r_cost, r_hostname, r_port, circuit, circuit_id, stream,
 
     # Append the dict to current routers dict of neighbours data
     global_router['Neighbours Data'].append(router_dict)
+    global_router['Neighbours'] += 1
+
+    # Add circuit info for this neighbour
     circuit_info[r_id] = circuit_dict
 
     # Temporary graph list to hold state of current network topology
