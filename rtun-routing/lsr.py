@@ -20,7 +20,7 @@ logging.basicConfig(level=logging.INFO)
 
 UPDATE_INTERVAL = 15
 ROUTE_UPDATE_INTERVAL = 30
-PERIODIC_HEART_BEAT = 5.0
+PERIODIC_HEART_BEAT = 10
 NODE_FAILURE_INTERVAL = 4
 TIMEOUT = 15
 
@@ -304,6 +304,11 @@ class ReceiveThread(Thread):
     # The adjacency list is then in turn used by the
     # Dijkstra function to compute shortest path
     def updateGraph(self, graph_arg, lsa_data, flag):
+
+        logger.info("Updating graph:")
+        print(graph_arg)
+        logger.info("With LSA data:")
+        print(lsa_data)
 
         if flag is 1:
 
