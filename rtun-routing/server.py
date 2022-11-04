@@ -41,10 +41,10 @@ def snd_data(rsp, circuit_id, extend_node, rcv_cn, rcv_sock, stream_id=0):
     print("Sent cell:" + str(inner_cell))
 
 
-def list_rend_server(cookie, router_nick, router_id, peer_id):
+def list_rend_server(cookie, router_nick, my_id, peer_id):
 
     # Start router
-    lsr.start_router("PEER" + str(router_id), 5000)
+    lsr.start_router(my_id, 5000)
 
     receiver_thread = ReceiveThread("RECEIVER", lsr.threadLock)
     sender_thread = SendThread("SENDER", lsr.threadLock)
@@ -114,7 +114,7 @@ def list_rend_server(cookie, router_nick, router_id, peer_id):
     rcv_sock.send_cell(relay_cell)
 
     # Add neighbour
-    lsr.add_neighbour("P1", 100, '127.0.0.1', 5000, None, circuit_id, None, stream_id, 
+    lsr.add_neighbour(peer_id, 100, '127.0.0.1', 5000, None, circuit_id, None, stream_id, 
                         receive_node=rcv_cn, extend_node=extend_node, receive_socket=rcv_sock)
 
     print("Socket select")

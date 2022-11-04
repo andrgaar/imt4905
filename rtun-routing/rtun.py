@@ -120,8 +120,9 @@ if args.listen:
 
     #main.two_hop(cookie, relay_nick, guard_nick, int("105"+str(args.did)))
     #server.setup_rendserver(cookie, relay_nick, guard_nick, int("105"+str(args.did)))
+    my_id = "PEER" + str(args.id)
 
-    main.setup_router("PEER" + str(args.id), 5000)
+    main.setup_router(my_id, 5000)
     
     rendp_threads = []
 
@@ -131,10 +132,11 @@ if args.listen:
             relay_nick = a
             cookie = b.encode("UTF-8")
             port_num = int("105"+str(c))
+            peer_id = "PEER" + str(c)
 
-            rendp_threads.append(Thread(name='Thread-' + relay_nick, target=main.setup_rendezvous2, args=(guard_nick, relay_nick, cookie, port_num)))
+            rendp_threads.append(Thread(name='Thread-' + relay_nick, target=main.setup_rendezvous2, args=(guard_nick, relay_nick, cookie, port_num, peer_id)))
     else:
-            rendp_threads.append(Thread(name='Thread-' + relay_nick, target=main.setup_rendezvous2, args=(guard_nick, relay_nick, cookie, port_num)))
+            rendp_threads.append(Thread(name='Thread-' + relay_nick, target=main.setup_rendezvous2, args=(guard_nick, relay_nick, cookie, port_num. peer_id)))
             
     for rendp_thread in rendp_threads:
         print("Starting thread " + str(rendp_thread.name))
