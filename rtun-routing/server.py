@@ -43,7 +43,7 @@ def snd_data(rsp, circuit_id, extend_node, rcv_cn, rcv_sock, stream_id=0):
     extend_node.encrypt_forward(relay_cell)
     rcv_cn.encrypt_forward(relay_cell)
     rcv_sock.send_cell(relay_cell)
-#    print("Sent cell:" + str(inner_cell))
+    logger.debug("Sent cell:" + str(inner_cell))
 
 
 def list_rend_server(cookie, router_nick, my_id, peer_id):
@@ -66,44 +66,44 @@ def list_rend_server(cookie, router_nick, my_id, peer_id):
     lsr.threads.append(sender_thread)
     lsr.threads.append(heartbeat_thread)
     
-    print("Calling connect_to_rendezvous_point")
+    logger.info("Calling connect_to_rendezvous_point")
     rcv_sock, rcv_cn, circuit_id = main.connect_to_rendezvous_point(router_nick, cookie)
 
-    print("Derive shared secret")
+    logger.debug("Derive shared secret")
     extend_node = main.CircuitNode("a")
     shared_sec = "000000000000000000010000000000000000000100000000000000010000000000000001".encode('utf-8')
     extend_node._crypto_state = main.CryptoState(shared_sec)
 
-    print("Waiting for cell")
+    logger.debug("Waiting for cell")
     while True:
         try:
             b = rcv_sock.recv_cell()
             if b:
-                print("Received cell")
+                logger.debug("Received cell")
                 break
         except socket.timeout:
             continue
 
-    print(type(b))
+    logger.debug(type(b))
     if b.NUM == 4:
-        print(b.reason)
+        logger.debug(b.reason)
 
-    print("Decrypting cells")
+    logger.debug("Decrypting cells")
     rcv_cn.decrypt_backward(b)
     extend_node.decrypt_backward(b)
     cellbegin = b.get_decrypted()
     stream_id = b.stream_id
-    print("CellRelay received, stream_id: " + str(stream_id))
-    print(cellbegin.address)
-    print(cellbegin.port)
+    logger.debug("CellRelay received, stream_id: " + str(stream_id))
+    logger.debug(cellbegin.address)
+    logger.debug(cellbegin.port)
 
 
 
-    print("Creating socket")
+    logger.debug("Creating socket")
     try:
         s = create_sock(cellbegin.address, cellbegin.port)
     except Exception as e:
-        print("Error creating socket: " + str(e))
+        logger.error("Error creating socket: " + str(e))
         inner_cell = main.CellRelayEnd(StreamReason(7), circuit_id)
         relay_cell = main.CellRelay(inner_cell, stream_id=stream_id, circuit_id=circuit_id, padding=None)
         extend_node.encrypt_forward(relay_cell)
@@ -112,7 +112,7 @@ def list_rend_server(cookie, router_nick, my_id, peer_id):
     
         raise Exception
 
-    print("Stream opened successfully")
+    logger.info("Stream opened successfully")
     inner_cell = main.CellRelayConnected("127.0.0.1", 5000, circuit_id)
     relay_cell = main.CellRelay(inner_cell, stream_id=stream_id, circuit_id=circuit_id, padding=None)
     extend_node.encrypt_forward(relay_cell)
