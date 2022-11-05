@@ -132,6 +132,7 @@ class ReceiveThread(Thread):
                 try:
                     neighbour_stats[RID]['LSA received'] += 1 
                 except KeyError:
+                    stats_dict = {}
                     stats_dict['HB sent'] = 0
                     stats_dict['HB received'] = 0
                     stats_dict['LSA sent'] = 0
