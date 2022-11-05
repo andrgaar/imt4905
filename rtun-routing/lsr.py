@@ -25,12 +25,13 @@ NODE_FAILURE_INTERVAL = 4
 TIMEOUT = 15
 
 # Global graph object to represent network topology
-global graph
-global global_router
-global circuit_info
-global neighbour_stats
-global threadLock
-global threads 
+graph = {}
+global_router = {}
+circuit_info = {}
+neighbour_stats = {}
+display_paths = None
+threadLock = None
+threads = None
 
 class ReceiveThread(Thread):
 
@@ -89,6 +90,7 @@ class ReceiveThread(Thread):
                 now = datetime.now()
                 RID = local_copy_LSA[0]['RID']
 
+                neighbour_stats[RID]['HB received'] += 1 
                 logger.info(f"Received HB from {RID}") 
 
                 # Update local routers database of heart beat timestamps
@@ -122,7 +124,10 @@ class ReceiveThread(Thread):
 
             # Handle case if the message received is an LSA
             else:
-                logger.info("Received LSA from " + str(local_copy_LSA['RID']))
+                RID = local_copy_LSA['RID']
+
+                logger.info("Received LSA from {RID}")
+                neighbour_stats[RID]['LSA received'] += 1 
 
                 # Grab list of neighbouring routers of router that sent this LSA
                 neighbour_routers = global_router['Neighbours Data']
@@ -147,6 +152,7 @@ class ReceiveThread(Thread):
                             # If LSA exists within database, do not forward it (silently drop it)
                             logger.info("Sending update to " + str(router['NID']))
                             send_to_stream(router['NID'], pickle.dumps(self.LSA_DB[local_copy_LSA['RID']]))
+                            neighbour_stats[router['NID']]['LSA sent'] += 1
                             time.sleep(1)
                     # Update global graph using constructed link-state database
                     self.updateGraph(graph, self.LSA_DB, 0)
@@ -173,6 +179,7 @@ class ReceiveThread(Thread):
                         # update for the sender and recipient's local database)
                         logger.info("Sending update to " + str(local_copy_LSA['RID']))
                         send_to_stream(local_copy_LSA['RID'], pickle.dumps(self.LSA_DB[local_copy_LSA['RID']]))
+                        neighbour_stats[local_copy_LSA['RID']]['LSA sent'] += 1
                         time.sleep(1)
                     else:
                         # If old data is being received, that is, there is no new LSA, we simply forward the message
@@ -181,8 +188,9 @@ class ReceiveThread(Thread):
                         for new_router in global_router['Neighbours Data']:
                             if new_router['NID'] != global_router['RID']:
                                 try:
-                                    logger.info("Nothing to do, forwarding LSA to " + str(local_copy_LSA['RID']))
+                                    logger.debug("Nothing to do, forwarding LSA to " + str(local_copy_LSA['RID']))
                                     send_to_stream(new_router['NID'], pickle.dumps(self.LSA_DB[local_copy_LSA['RID']]))
+                                    neighbour_stats[new_router['NID']]['LSA sent'] += 1
                                 except KeyError:
                                     pass
                             time.sleep(1)
@@ -262,6 +270,8 @@ class ReceiveThread(Thread):
             logger.debug("SENT THIS NEW LSA TO {0}".format(router['NID']))
             #self.server_socket.sendto(new_data , (server_name , int(router['Port'])))
             send_to_stream(router['NID'], new_data)
+            neighbour_stats[router['NID']]['LSA sent'] += 1
+
         time.sleep(1)
 
     def updateGraphAfterFailure(self, *args):
@@ -428,22 +438,23 @@ class ReceiveThread(Thread):
 
     def showPaths(path, graph_nodes, distances, source_node):
 
+        global display_paths
+
         # Delete source node from list of paths
         del distances[source_node]
 
         # Print router ID
-        print("I am Router {0}".format(source_node))
+        display_paths = "I am Router {0} and know these paths:\n".format(source_node)
 
         index = 0
         # Display output for dijkstra
         for vertex in distances:
-            print("Least cost path to router {0}:{1} and the cost is {2}".format(
+            display_paths = display_paths + "Least cost path to router {0}:{1} and the cost is {2}\n".format(
                 vertex,
                 graph_nodes[index],
                 distances[vertex])
-            )
+            
             index = index + 1
-        print()
 
 class SendThread(Thread):
 
@@ -472,6 +483,8 @@ class SendThread(Thread):
                 logger.debug("Sending neighbour data for " + str(dict['NID']))
                 logger.debug(global_router)
                 send_to_stream(dict['NID'], message)
+                neighbour_stats[dict['NID']]['LSA sent'] += 1
+
             time.sleep(UPDATE_INTERVAL)
 
 class HeartBeatThread(Thread):
@@ -494,7 +507,6 @@ class HeartBeatThread(Thread):
                 send_to_stream( neighbour['NID'], message)
                 neighbour_stats[neighbour['NID']]['HB sent'] += 1 
             
-            print_stats()
             time.sleep(PERIODIC_HEART_BEAT)
 
     def __del__(self):
@@ -513,11 +525,23 @@ def print_stats():
     print()
     print("Neighbours:")
     print()
-    print(" %-15s %5s %15s" % ('Peer', 'Cost', 'HB sent'))
+    print(" %-15s %5s %8s %8s %8s %8s" % ('Peer', 'Cost', 'HB sent', 'HB rcvd', 'LSA sent', 'LSA rcvd'))
     
     for neighbour in global_router['Neighbours Data']:
-        print(" %-15s %5s %15s" % (neighbour['NID'], neighbour['Cost'], neighbour_stats[neighbour['NID']]['HB sent']))
-        
+        print( " %-15s %5s %8s %8s %8s %8s" % 
+                (neighbour['NID'], neighbour['Cost'], 
+                 neighbour_stats[neighbour['NID']]['HB sent'],
+                 neighbour_stats[neighbour['NID']]['HB received'],
+                 neighbour_stats[neighbour['NID']]['LSA sent'],
+                 neighbour_stats[neighbour['NID']]['LSA received'])
+                )
+    
+    print()
+    print("Learned network paths:")
+    print()
+    if display_paths:
+        print(display_paths)
+
 
 def start_router(router_id, router_port):
 
@@ -531,6 +555,7 @@ def start_router(router_id, router_port):
     global_router = {}
     circuit_info = {}
     neighbour_stats = {}
+    display_paths = 'No current paths'
 
     # Parse data related to the current router
     global_router['RID'] = router_id

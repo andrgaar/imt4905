@@ -1,5 +1,6 @@
 import argparse
 import sys
+import time
 import main
 import server
 import lsr
@@ -120,8 +121,6 @@ if args.listen:
     #                                   "--ifconfig", f"10.{args.id}.0.1", f"10.{args.did}.0.1",
     #                                   "--dev", f"tun{args.did}", "--port", f"119{args.did}"], stdout=vpn_log)
 
-    #main.two_hop(cookie, relay_nick, guard_nick, int("105"+str(args.did)))
-    #server.setup_rendserver(cookie, relay_nick, guard_nick, int("105"+str(args.did)))
     my_id = "PEER" + str(args.id)
 
     main.setup_router(my_id, 5000)
@@ -144,6 +143,11 @@ if args.listen:
         print("Starting thread " + str(rendp_thread.name))
         rendp_thread.start()
         lsr.threads.append(rendp_thread)
+
+    # Display program statistics
+    while True:
+        lsr.print_stats()
+        time.sleep(3)
 
     # Call join on each tread (so that they wait)
     try:
