@@ -36,16 +36,16 @@ class myThread (threading.Thread):
       self.name = name
       self.counter = counter
    def run(self):
-      print ("Starting " + self.name)
+      logger.debug ("Starting " + self.name)
       print_time(self.name, self.counter, 5)
-      print ("Exiting " + self.name)
+      logger.debug ("Exiting " + self.name)
 
 def print_time(threadName, delay, counter):
    while counter:
       if exitFlag:
          threadName.exit()
       time.sleep(delay)
-      print ("%s: %s" % (threadName, time.ctime(time.time())))
+      logger.debug ("%s: %s" % (threadName, time.ctime(time.time())))
       counter -= 1
 
 
@@ -153,7 +153,7 @@ def connect_to_rendezvous_point(nick, cookie):
 
     circuit_id = 0x80000002
 
-    print("Key agreement")
+    logger.debug("Key agreement")
     if False:
         key_agreement_cls = NtorKeyAgreement
         create_cls = partial(CellCreate2, key_agreement_cls.TYPE)
@@ -172,7 +172,7 @@ def connect_to_rendezvous_point(nick, cookie):
     circuit_node.complete_handshake(cell_created.handshake_data)
 
 
-    print("Cell created circuit ID: " + str(cell_created.circuit_id))
+    logger.debug("Cell created circuit ID: " + str(cell_created.circuit_id))
 
     circuit_node.complete_handshake(cell_created.handshake_data)
 
@@ -184,7 +184,7 @@ def connect_to_rendezvous_point(nick, cookie):
 
     tor_cell_socket.send_cell(relay_cell)
 
-    print("Sent cookie")
+    logger.debug("Sent cookie")
 
     return tor_cell_socket, circuit_node, circuit_id
 
@@ -214,7 +214,7 @@ def two_hop(cookie, router_nick, guard_nick, port_num):
 
                 circuit._circuit_nodes.append(extend_node)
                 
-                print("Starting SOCKS5")
+                logger.debug("Starting SOCKS5")
                 with SocksServer(circuit, "127.0.0.1", port_num) as socks_serv:
                     socks_serv.start()
 

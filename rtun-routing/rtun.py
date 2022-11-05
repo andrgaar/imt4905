@@ -182,6 +182,12 @@ if args.connect:
     while True:
         try:
             server.list_rend_server(cookie, relay_nick, my_id, peer_id)
+
+            # Display program statistics
+            while True:
+                lsr.print_stats()
+                time.sleep(3)
+
         except Exception as e:
             print("Error, trying again in 5 seconds..." + str(e))
             #tb = traceback.format_exc()
