@@ -127,7 +127,17 @@ class ReceiveThread(Thread):
                 RID = local_copy_LSA['RID']
 
                 logger.info("Received LSA from {RID}")
-                neighbour_stats[RID]['LSA received'] += 1 
+
+                # Might get a LSA from non-neighbour
+                try:
+                    neighbour_stats[RID]['LSA received'] += 1 
+                except KeyError:
+                    stats_dict['HB sent'] = 0
+                    stats_dict['HB received'] = 0
+                    stats_dict['LSA sent'] = 0
+                    stats_dict['LSA received'] = 1
+
+                    neighbour_stats[RID] = stats_dict 
 
                 # Grab list of neighbouring routers of router that sent this LSA
                 neighbour_routers = global_router['Neighbours Data']
@@ -537,7 +547,7 @@ def print_stats():
                 )
     
     print()
-    print("Learned network paths:")
+    print("Computed shortest paths (Dijsktra)")
     print()
     if display_paths:
         print(display_paths)
