@@ -82,6 +82,8 @@ class ReceiveThread(Thread):
             data, client_address = self.server_socket.recvfrom(1024)
             local_copy_LSA = pickle.loads(data)
 
+            logger.debug("Received local_copy_LSA: " +str(local_copy_LSA))
+
             # Handle case if message received is a heartbeat message
             if isinstance(local_copy_LSA , list):
 
