@@ -125,7 +125,7 @@ if args.file:
 
     main.setup_router(my_id, 5000)
     
-    threads = []
+    lsr.threads = []
 
     for rp in file_rendps:
         a, b, c, d = rp.split()
@@ -138,13 +138,13 @@ if args.file:
         if connection == "LISTEN": 
             # Start a listening thread
             logger.info("Adding listener for {relay_nick}")
-            threads.append(Thread(name='Thread-' + relay_nick, 
+            lsr.threads.append(Thread(name='Thread-' + relay_nick, 
                                         target=main.setup_rendezvous2, 
                                         args=(guard_nick, relay_nick, cookie, port_num, peer_id)))
         elif connection == "CONNECT": 
             # Start a connecting thread
             logger.info("Adding a connection to {relay_nick}")
-            threads.append(Thread(name='Thread-' + relay_nick, 
+            lsr.threads.append(Thread(name='Thread-' + relay_nick, 
                                         target=server.list_rend_server, 
                                         args=(cookie, relay_nick, my_id, peer_id)))
         else:
@@ -155,15 +155,15 @@ if args.file:
         sys.exit()
             
     # Display program statistics
-    threads.append(Thread(name='Thread-Stats', target=lsr.print_stats))
+    lsr.threads.append(Thread(name='Thread-Stats', target=lsr.print_stats))
 
-    for thread in threads:
+    for thread in lsr.threads:
         logger.info("Starting thread " + str(thread.name))
         thread.start()
 
     # Call join on each tread (so that they wait)
     try:
-        for thread in threads:
+        for thread in lsr.threads:
             thread.join()
     
     except KeyboardInterrupt:
