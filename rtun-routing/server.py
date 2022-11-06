@@ -48,24 +48,7 @@ def snd_data(rsp, circuit_id, extend_node, rcv_cn, rcv_sock, stream_id=0):
 
 def list_rend_server(cookie, router_nick, my_id, peer_id):
 
-    # Start router
-    lsr.start_router(my_id, 5000)
-
-    receiver_thread = ReceiveThread("RECEIVER", lsr.threadLock)
-    sender_thread = SendThread("SENDER", lsr.threadLock)
-
-
-    HB_message = [{'RID' : lsr.global_router['RID']}]
-    heartbeat_thread = HeartBeatThread("HEART BEAT", HB_message, lsr.threadLock)
-                
-    receiver_thread.start()
-    sender_thread.start()
-    heartbeat_thread.start()
-                
-    lsr.threads.append(receiver_thread)
-    lsr.threads.append(sender_thread)
-    lsr.threads.append(heartbeat_thread)
-    
+    # Try to connect to rendezvous point
     while True:
         try:
             logger.info("Calling connect_to_rendezvous_point")
