@@ -126,7 +126,7 @@ class ReceiveThread(Thread):
             else:
                 RID = local_copy_LSA['RID']
 
-                logger.info("Received LSA from {RID}")
+                logger.info("Received LSA from {RID}".format(RID))
 
                 # Might get a LSA from non-neighbour
                 try:
@@ -527,19 +527,21 @@ class HeartBeatThread(Thread):
 
 
 def print_stats():
-    os.system('clear')
-    print("Router ID: " + str(global_router['RID']))
-    print("SN: " + str(global_router['SN']))
-    print("Flag: " + str(global_router['FLAG']))
-    print()
-    print("Number of neighbours: " + str(global_router['Neighbours']))
-    print()
-    print("Neighbours:")
-    print()
-    print(" %-15s %5s %8s %8s %8s %8s" % ('Peer', 'Cost', 'HB sent', 'HB rcvd', 'LSA sent', 'LSA rcvd'))
+
+    while True:
+        os.system('clear')
+        print("Router ID: " + str(global_router['RID']))
+        print("SN: " + str(global_router['SN']))
+        print("Flag: " + str(global_router['FLAG']))
+        print()
+        print("Number of neighbours: " + str(global_router['Neighbours']))
+        print()
+        print("Neighbours:")
+        print()
+        print(" %-15s %5s %8s %8s %8s %8s" % ('Peer', 'Cost', 'HB sent', 'HB rcvd', 'LSA sent', 'LSA rcvd'))
     
-    for neighbour in global_router['Neighbours Data']:
-        print( " %-15s %5s %8s %8s %8s %8s" % 
+        for neighbour in global_router['Neighbours Data']:
+            print( " %-15s %5s %8s %8s %8s %8s" % 
                 (neighbour['NID'], neighbour['Cost'], 
                  neighbour_stats[neighbour['NID']]['HB sent'],
                  neighbour_stats[neighbour['NID']]['HB received'],
@@ -547,11 +549,14 @@ def print_stats():
                  neighbour_stats[neighbour['NID']]['LSA received'])
                 )
     
-    print()
-    print("Computed shortest paths (Dijsktra)")
-    print()
-    if display_paths:
-        print(display_paths)
+        print()
+        print("Computed shortest paths (Dijsktra)")
+        print()
+        if display_paths:
+            print(display_paths)
+
+        time.sleep(3)
+
 
 
 def start_router(router_id, router_port):

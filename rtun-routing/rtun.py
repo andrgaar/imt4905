@@ -102,19 +102,18 @@ else:
         exit()
     cookie = args.cookie.encode("UTF-8")
 
-file_rendps = []
-if args.file:
-    with open(args.file) as f:
-        [file_rendps.append(line.strip()) for line in f.readlines()]
 
 if args.dummy:
     exit()
 
 # Open an OpenVPN log file
-vpn_log = open('/tmp/openvpn.out', 'w')
+vpn_log = open('openvpn.out', 'w')
 
-if args.listen:
-    port_num = int("105"+str(args.did))
+file_rendps = []
+if args.file:
+    with open(args.file) as f:
+        [file_rendps.append(line.strip()) for line in f.readlines()]
+
 
     #openvpn_client = subprocess.Popen(["/usr/sbin/openvpn", "--remote", "127.0.0.1", "--proto", "tcp-client", "--cipher", "AES-256-CBC",
     #                                   "--secret", "static.key", "--socks-proxy", "127.0.0.1", f"105{args.did}",
@@ -122,36 +121,47 @@ if args.listen:
     #                                   "--dev", f"tun{args.did}", "--port", f"119{args.did}"], stdout=vpn_log)
 
     my_id = "PEER" + str(args.id)
+    port_num = int("105"+str(args.did))
 
     main.setup_router(my_id, 5000)
     
-    rendp_threads = []
+    threads = []
 
-    if len(file_rendps) > 0:
-        for rp in file_rendps:
-            a, b, c = rp.split()
-            relay_nick = a
-            cookie = b.encode("UTF-8")
-            port_num = int("105"+str(c))
-            peer_id = "PEER" + str(c)
+    for rp in file_rendps:
+        a, b, c, d = rp.split()
+        connection = a
+        relay_nick = b
+        cookie = c.encode("UTF-8")
+        port_num = int("105"+str(d))
+        peer_id = "PEER" + str(d)
 
-            rendp_threads.append(Thread(name='Thread-' + relay_nick, target=main.setup_rendezvous2, args=(guard_nick, relay_nick, cookie, port_num, peer_id)))
-    else:
-            rendp_threads.append(Thread(name='Thread-' + relay_nick, target=main.setup_rendezvous2, args=(guard_nick, relay_nick, cookie, port_num. peer_id)))
+        if connection == "LISTEN": 
+            # Start a listening thread
+            threads.append(Thread(name='Thread-' + relay_nick, 
+                                        target=main.setup_rendezvous2, 
+                                        args=(guard_nick, relay_nick, cookie, port_num, peer_id)))
+        elif connection == "CONNECT": 
+            # Start a connecting thread
+            threads.append(Thread(name='Thread-' + relay_nick, 
+                                        target=server.list_rend_server, 
+                                        args=(cookie, relay_nick, my_id, peer_id)))
+        else:
+            logger.info("Unknown connection option: {connection}")
+
+    if not threads:
+        logger.info("No threads to start")
+        sys.exit()
             
-    for rendp_thread in rendp_threads:
-        print("Starting thread " + str(rendp_thread.name))
-        rendp_thread.start()
-        lsr.threads.append(rendp_thread)
-
     # Display program statistics
-    while True:
-        lsr.print_stats()
-        time.sleep(3)
+    threads.append(Thread(name='Thread-Stats', target=lsr.print_stats))
+
+    for thread in threads:
+        logger.info("Starting thread " + str(thread.name))
+        thread.start()
 
     # Call join on each tread (so that they wait)
     try:
-        for thread in lsr.threads:
+        for thread in threads:
             thread.join()
     
     except KeyboardInterrupt:
@@ -179,6 +189,7 @@ if args.connect:
     my_id = "PEER" + str(args.id)
     peer_id = "PEER" + str(args.did)
 
+    ## TODO: thread this
     while True:
         try:
             server.list_rend_server(cookie, relay_nick, my_id, peer_id)

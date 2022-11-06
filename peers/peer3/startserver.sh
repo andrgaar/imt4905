@@ -14,7 +14,7 @@ export PYTHONPATH=/root/git/imt4905/torpy-rtun-fork/
 
 # Start rtun server
 #python3 rtun.py -p -c -t peer1peer2 -n default -i 2 -d 1 &
-python3 rtun.py -r MIGHTYWANG -k eb688e4f52df90278060 -c -t peer1peer2 -n default -i 3 -d 1 
+python3 rtun.py -f ../peers/peer3/rendezvous.txt -t peer1peer2 -n default -i 3 -d 1 
 
 sleep 10
 

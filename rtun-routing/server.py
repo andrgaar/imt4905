@@ -66,8 +66,20 @@ def list_rend_server(cookie, router_nick, my_id, peer_id):
     lsr.threads.append(sender_thread)
     lsr.threads.append(heartbeat_thread)
     
-    logger.info("Calling connect_to_rendezvous_point")
-    rcv_sock, rcv_cn, circuit_id = main.connect_to_rendezvous_point(router_nick, cookie)
+    while True:
+        try:
+            logger.info("Calling connect_to_rendezvous_point")
+            rcv_sock, rcv_cn, circuit_id = main.connect_to_rendezvous_point(router_nick, cookie)
+
+        except KeyboardInterrupt:
+            logger.warn("Caught keyboard interrupt, exiting...")
+            raise KeyboardInterrupt
+
+        except Exception as e:
+            logger.warn("Could not connect to rendezvous point {router_nick}, retrying in 5 seconds...")
+            time.sleep(5)
+            continue
+        break
 
     logger.debug("Derive shared secret")
     extend_node = main.CircuitNode("a")
@@ -144,7 +156,7 @@ def list_rend_server(cookie, router_nick, my_id, peer_id):
                 snd_data(buf, circuit_id, extend_node, rcv_cn, rcv_sock, stream_id)
 
         except Exception as e:
-            print("Error in receive on socket: " + str(e))
+            logger.error("Error in receive on socket: " + str(e))
             continue
 
 def create_sock(target_host, target_port):
