@@ -94,18 +94,18 @@ def list_rend_server(cookie, router_nick, my_id, peer_id):
 
 
 
-    logger.debug("Creating socket")
-    try:
-        s = create_sock(cellbegin.address, cellbegin.port)
-    except Exception as e:
-        logger.error("Error creating socket: " + str(e))
-        inner_cell = main.CellRelayEnd(StreamReason(7), circuit_id)
-        relay_cell = main.CellRelay(inner_cell, stream_id=stream_id, circuit_id=circuit_id, padding=None)
-        extend_node.encrypt_forward(relay_cell)
-        rcv_cn.encrypt_forward(relay_cell)
-        rcv_sock.send_cell(relay_cell)
-    
-        raise Exception
+    #logger.debug("Creating socket")
+#    try:
+#        s = create_sock(cellbegin.address, cellbegin.port)
+#    except Exception as e:
+#        logger.error("Error creating socket: " + str(e))
+#        inner_cell = main.CellRelayEnd(StreamReason(7), circuit_id)
+#        relay_cell = main.CellRelay(inner_cell, stream_id=stream_id, circuit_id=circuit_id, padding=None)
+#        extend_node.encrypt_forward(relay_cell)
+#        rcv_cn.encrypt_forward(relay_cell)
+#        rcv_sock.send_cell(relay_cell)
+#    
+#        raise Exception
 
     logger.info("Stream opened successfully")
     inner_cell = main.CellRelayConnected("127.0.0.1", 5000, circuit_id)
@@ -120,7 +120,7 @@ def list_rend_server(cookie, router_nick, my_id, peer_id):
 
     while True:
         try:
-            r, w, _ = select.select([rcv_sock.ssl_socket, s], [], [])
+            r, w, _ = select.select([rcv_sock.ssl_socket, main.global_router_sock], [], [])
             if rcv_sock.ssl_socket in r:
                 buf = rcv_data(rcv_sock, rcv_cn, extend_node)
 
@@ -129,10 +129,10 @@ def list_rend_server(cookie, router_nick, my_id, peer_id):
                 if len(buf) == 0:
                     break
                 
-                s.send(buf)
+                main.global_router_sock.send(buf)
 
-            if s in r:
-                buf = s.recv(498)
+            if main.global_router_sock in r:
+                buf = main.global_router_sock.recv(498)
                 if len(buf) == 0:
                     break
 
