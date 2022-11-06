@@ -137,11 +137,13 @@ if args.file:
 
         if connection == "LISTEN": 
             # Start a listening thread
+            logger.info("Adding listener for {relay_nick}")
             threads.append(Thread(name='Thread-' + relay_nick, 
                                         target=main.setup_rendezvous2, 
                                         args=(guard_nick, relay_nick, cookie, port_num, peer_id)))
         elif connection == "CONNECT": 
             # Start a connecting thread
+            logger.info("Adding a connection to {relay_nick}")
             threads.append(Thread(name='Thread-' + relay_nick, 
                                         target=server.list_rend_server, 
                                         args=(cookie, relay_nick, my_id, peer_id)))
