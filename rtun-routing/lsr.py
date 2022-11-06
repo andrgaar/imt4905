@@ -126,9 +126,12 @@ class ReceiveThread(Thread):
 
             # Handle case if the message received is an LSA
             else:
+
+                logger.debug("Received LSA: " + str(local_copy_LSA))
+
                 RID = local_copy_LSA['RID']
 
-                logger.info("Received LSA from {RID}".format(RID))
+                logger.info("Received LSA from {0}".format(RID))
 
                 # Might get a LSA from non-neighbour
                 try:
