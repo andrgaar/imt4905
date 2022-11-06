@@ -54,7 +54,11 @@ class ReceiveThread(Thread):
         self.server_socket.close()
 
     def run(self):
-        self.serverSide()
+        try:
+            self.serverSide()
+        except Exception as e:
+            logger.error("Error in ReceiveThread: " + str(e))
+
 
     def __str__(self):
         return "I am Router {0} with PORT {1} - READY TO RECEIVE".format(

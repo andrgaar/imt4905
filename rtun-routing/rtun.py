@@ -12,9 +12,6 @@ import hashlib
 import traceback
 import logging
 
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s', filename='rtun.log', encoding='utf-8')
-
-logger = logging.getLogger(__name__)
 
 def choose_relay(tun_name, namespace='default', time_frame="1 min"):
     all_relays = []
@@ -70,10 +67,22 @@ parser.add_argument('-i', '--id', help="id of our own client(used for addressing
 parser.add_argument('-d', '--did', help="destination id", type=int)
 
 parser.add_argument('-f', '--file', help="filename of connection info", type=str)
+parser.add_argument('-v', '--loglevel', help="override log level (DEBUG,INFO,WARNING,ERROR,CRITICAL)", type=str)
 
 parser.add_argument('-x', '--dummy', action="store_true",  help="do not connect, only test")
 
 args = parser.parse_args()
+
+# Define a log handler for application
+if args.loglevel:
+    numeric_level = getattr(logging, loglevel.upper(), None)
+    if not isinstance(numeric_level, int):
+        raise ValueError('Invalid log level: %s' % args.loglevel)
+else:
+    numeric_level = logging.INFO
+
+logging.basicConfig(level=numeric_level, format='%(asctime)s - %(levelname)s - %(message)s', filename='rtun.log', encoding='utf-8')
+logger = logging.getLogger(__name__)
 
 if args.connect and args.listen:
     print(f"Illegal combination of arguments")
