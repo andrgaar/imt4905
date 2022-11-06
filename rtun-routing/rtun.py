@@ -150,7 +150,7 @@ if args.file:
         else:
             logger.info("Unknown connection option: {connection}")
 
-    if not threads:
+    if not lsr.threads:
         logger.info("No threads to start")
         sys.exit()
             
