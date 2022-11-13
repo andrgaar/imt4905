@@ -57,7 +57,7 @@ def setup_router(router_id, router_port):
     # 
     # Initialize the router
     # 
-    lsr.start_router(router_id, router_port)
+    lsr.init_router(router_id, router_port)
 
     receiver_thread = ReceiveThread("RECEIVER", lsr.threadLock)
     sender_thread = SendThread("SENDER", lsr.threadLock)
@@ -74,7 +74,7 @@ def setup_router(router_id, router_port):
     lsr.threads.append(heartbeat_thread)
 
     # Connect to router socket
-    global_router_sock.connect(('127.0.0.1', 5000))
+    global_router_sock.connect(('127.0.0.1', router_port))
 
 
 def build_circuit(guard_router, extend_routers): # returns Circuit
@@ -88,11 +88,13 @@ def establish_rendezvous(circuit, rendezvous_cookie):
     circuit._rendezvous_establish(rendezvous_cookie)
 
 
-def setup_rendezvous2(guard_nick, rendp_nick, rendezvous_cookie, port_num, peer_id):
+def setup_rendezvous2(guard_nick, rendp_nick, rendezvous_cookie, port_num, peer_id, peer_router_addr):
     # Setup a rendezvous point and wait
     consensus = TorConsensus()
     guard_router = TorGuard(consensus.get_router_using_nick(guard_nick))
     rendp_router = consensus.get_router_using_nick(rendp_nick)
+    peer_port = str(peer_id)
+    peer_router_ip, peer_router_port = peer_router_addr.split(':')
 
     # Build circuit to rendezvous point
     circuit = build_circuit(guard_router, [ rendp_router ])
@@ -103,7 +105,7 @@ def setup_rendezvous2(guard_nick, rendp_nick, rendezvous_cookie, port_num, peer_
     logger.info("Waiting for connections at relay {0} for cookie {1} ...".format(rendp_nick, rendezvous_cookie))
     with circuit.create_waiter(CellRelayRendezvous2) as w:
         rendezvous2_cell = w.get(timeout=600)
-        logger.info('Got REND2 message')
+        logger.info(f"Got REND2 message from {rendp_nick}")
           
     logger.debug("Derive shared secret with peer")
     extend_node = CircuitNode(rendp_router, key_agreement_cls=FastKeyAgreement)
@@ -133,11 +135,11 @@ def setup_rendezvous2(guard_nick, rendp_nick, rendezvous_cookie, port_num, peer_
                 events[kind]['close'].set()
 
         with circuit as c:
-            with c.create_stream(('127.0.0.1', 5000)) as stream:
+            with c.create_stream((peer_router_ip, peer_router_port)) as stream:
                 guard.register(sock_r, EVENT_READ, recv_callback)
                 guard.register(stream, EVENT_READ, recv_callback)
                    
-                lsr.add_neighbour(peer_id, 100, '127.0.0.1', 5000, circuit, circuit.id, stream, stream.id)
+                lsr.add_neighbour(peer_id, 100, peer_router_ip, peer_router_port, circuit, circuit.id, stream, stream.id)
 
                 while True:
                     time.sleep(5)
@@ -189,37 +191,3 @@ def connect_to_rendezvous_point(nick, cookie):
     return tor_cell_socket, circuit_node, circuit_id
 
 
-def two_hop(cookie, router_nick, guard_nick, port_num):
-    with TorClient() as tor:
-
-        with tor.get_guard(nick=guard_nick) as guard:
-            circuit = guard._circuits.create_new()
-            try:
-                circuit.create()
-
-                router = circuit._guard.consensus.get_router_using_nick(router_nick)
-                circuit.extend(router)
-                circuit._rendezvous_establish(cookie)
-                #logger.info('Rendezvous established')
-
-                logger.info("Waiting for REND2")
-                with circuit.create_waiter(CellRelayRendezvous2) as w:
-                        rendezvous2_cell = w.get(timeout=200)
-                        logger.info('Got REND2 message')
-
-                extend_node = CircuitNode(router, key_agreement_cls=FastKeyAgreement)
-                shared_sec = "000000000000000000010000000000000000000100000000000000010000000000000001".encode('utf-8')
-
-                extend_node._crypto_state = CryptoState(shared_sec)
-
-                circuit._circuit_nodes.append(extend_node)
-                
-                logger.debug("Starting SOCKS5")
-                with SocksServer(circuit, "127.0.0.1", port_num) as socks_serv:
-                    socks_serv.start()
-
-            except Exception:
-                # We must close here because we didn't enter to circuit yet to guard by context manager
-                circuit.close()
-                raise
-            circuit.close()

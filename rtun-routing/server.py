@@ -46,7 +46,7 @@ def snd_data(rsp, circuit_id, extend_node, rcv_cn, rcv_sock, stream_id=0):
     logger.debug("Sent cell:" + str(inner_cell))
 
 
-def list_rend_server(cookie, router_nick, my_id, peer_id):
+def list_rend_server(cookie, router_nick, my_id, peer_id, peer_router_addr):
 
     # Try to connect to rendezvous point
     while True:
@@ -55,11 +55,11 @@ def list_rend_server(cookie, router_nick, my_id, peer_id):
             rcv_sock, rcv_cn, circuit_id = main.connect_to_rendezvous_point(router_nick, cookie)
 
         except KeyboardInterrupt:
-            logger.warn("Caught keyboard interrupt, exiting...")
+            logger.info("Caught keyboard interrupt, exiting...")
             raise KeyboardInterrupt
 
         except Exception as e:
-            logger.warn("Could not connect to rendezvous point {router_nick}, retrying in 5 seconds...")
+            logger.warn(f"Could not connect to rendezvous point {router_nick}, retrying in 5 seconds...")
             time.sleep(5)
             continue
         break
@@ -92,30 +92,16 @@ def list_rend_server(cookie, router_nick, my_id, peer_id):
     logger.debug(cellbegin.address)
     logger.debug(cellbegin.port)
 
-
-
-    #logger.debug("Creating socket")
-#    try:
-#        s = create_sock(cellbegin.address, cellbegin.port)
-#    except Exception as e:
-#        logger.error("Error creating socket: " + str(e))
-#        inner_cell = main.CellRelayEnd(StreamReason(7), circuit_id)
-#        relay_cell = main.CellRelay(inner_cell, stream_id=stream_id, circuit_id=circuit_id, padding=None)
-#        extend_node.encrypt_forward(relay_cell)
-#        rcv_cn.encrypt_forward(relay_cell)
-#        rcv_sock.send_cell(relay_cell)
-#    
-#        raise Exception
-
-    logger.info("Stream opened successfully")
-    inner_cell = main.CellRelayConnected("127.0.0.1", 5000, circuit_id)
+    inner_cell = main.CellRelayConnected("127.0.0.1", 6000, circuit_id)
     relay_cell = main.CellRelay(inner_cell, stream_id=stream_id, circuit_id=circuit_id, padding=None)
     extend_node.encrypt_forward(relay_cell)
     rcv_cn.encrypt_forward(relay_cell)
     rcv_sock.send_cell(relay_cell)
+    logger.info("Stream opened successfully")
 
     # Add neighbour
-    lsr.add_neighbour(peer_id, 100, '127.0.0.1', 5000, None, circuit_id, None, stream_id, 
+    peer_router_ip, peer_router_port = peer_router_addr.split(':')
+    lsr.add_neighbour(peer_id, 100, '127.0.0.1', peer_router_port, None, circuit_id, None, stream_id, 
                         receive_node=rcv_cn, extend_node=extend_node, receive_socket=rcv_sock)
 
     while True:

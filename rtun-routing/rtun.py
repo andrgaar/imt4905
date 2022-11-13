@@ -131,33 +131,35 @@ if args.file:
 
     my_id = "PEER" + str(args.id)
     port_num = int("105"+str(args.did))
+    my_router_port = int("5" + f'{args.id:03}')
 
-    main.setup_router(my_id, 5000)
+    main.setup_router(my_id, my_router_port)
     
     lsr.threads = []
 
     for rp in file_rendps:
-        a, b, c, d = rp.split()
+        a, b, c, d, e = rp.split()
         connection = a
         relay_nick = b
         cookie = c.encode("UTF-8")
         port_num = int("105"+str(d))
         peer_id = "PEER" + str(d)
+        peer_router_addr = e
 
         if connection == "LISTEN": 
             # Start a listening thread
-            logger.info("Adding listener for {relay_nick}")
+            logger.info(f"Adding listener for {relay_nick}")
             lsr.threads.append(Thread(name='Thread-' + relay_nick, 
                                         target=main.setup_rendezvous2, 
-                                        args=(guard_nick, relay_nick, cookie, port_num, peer_id)))
+                                        args=(guard_nick, relay_nick, cookie, port_num, peer_id, peer_router_addr)))
         elif connection == "CONNECT": 
             # Start a connecting thread
-            logger.info("Adding a connection to {relay_nick}")
+            logger.info(f"Adding a connection to {relay_nick}")
             lsr.threads.append(Thread(name='Thread-' + relay_nick, 
                                         target=server.list_rend_server, 
-                                        args=(cookie, relay_nick, my_id, peer_id)))
+                                        args=(cookie, relay_nick, my_id, peer_id, peer_router_addr)))
         else:
-            logger.info("Unknown connection option: {connection}")
+            logger.info(f"Unknown connection option: {connection}")
 
     if not lsr.threads:
         logger.info("No threads to start")

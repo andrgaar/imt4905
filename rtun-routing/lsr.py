@@ -29,6 +29,7 @@ graph = {}
 global_router = {}
 circuit_info = {}
 neighbour_stats = {}
+rendp_conn = set()
 display_paths = None
 threadLock = None
 threads = None
@@ -112,7 +113,7 @@ class ReceiveThread(Thread):
                 # a new LSA to notify other routers of the update to the topology
                 if len(self.inactive_list) > inactive_list_size:
 
-                    logger.debug("UPDATING NEIGHBOURS")
+                    logger.info("Dead routes - updating neighbours")
 
                     # Update this router's list of neighbours using inactive list
                     self.updateNeighboursList()
@@ -134,6 +135,11 @@ class ReceiveThread(Thread):
                 logger.debug("Received LSA: " + str(local_copy_LSA))
 
                 RID = local_copy_LSA['RID']
+
+                # If LSA is from ourselves we drop it
+                if RID == global_router['RID']:
+                    logger.info("Received LSA from ourselves - dropping")
+                    break
 
                 logger.info("Received LSA from {0}".format(RID))
 
@@ -187,7 +193,7 @@ class ReceiveThread(Thread):
                     # SN for that router, we can confirm that the LSA received is a fresh LSA
                     logger.debug("Flag is set")
                     if local_copy_LSA['SN'] > self.LSA_SN[local_copy_LSA['RID']]:
-                        logger.debug("LSA SN is {0} greater than {1}".format(local_copy_LSA['SN'], self.LSA_SN[local_copy_LSA['RID']]))
+                        logger.info("LSA SN is {0} greater than {1}".format(local_copy_LSA['SN'], self.LSA_SN[local_copy_LSA['RID']]))
                         self.LSA_SN.update({local_copy_LSA['RID'] : local_copy_LSA['SN']})
                         self.LSA_DB.update({local_copy_LSA['RID'] : local_copy_LSA})
                         # If the new LSA has any router listed as inactive (i.e dead) we remove these explicitly from
@@ -197,14 +203,14 @@ class ReceiveThread(Thread):
                             self.updateGraphOnly(graph, local_copy_LSA['DEAD'])
                         # Send the new LSA received back to the sending router (so as to ensure that it is a two-way
                         # update for the sender and recipient's local database)
-                        logger.info("Sending update to " + str(local_copy_LSA['RID']))
+                        logger.info("Sending update back to sender " + str(local_copy_LSA['RID']))
                         send_to_stream(local_copy_LSA['RID'], pickle.dumps(self.LSA_DB[local_copy_LSA['RID']]))
                         neighbour_stats[local_copy_LSA['RID']]['LSA sent'] += 1
                         time.sleep(1)
                     else:
                         # If old data is being received, that is, there is no new LSA, we simply forward the message
                         # onto our neighbours (now with the list of updated neighbours and higher SN)
-                        logger.debug("LSA is old - forwarding to my neighbours")
+                        logger.info("LSA is old - forwarding to my neighbours")
                         for new_router in global_router['Neighbours Data']:
                             if new_router['NID'] != global_router['RID']:
                                 try:
@@ -564,11 +570,19 @@ def print_stats():
         if display_paths:
             print(display_paths)
 
+        print()
+        print("-------------------------------------------------------------------------")
+        print(" %-25s %-15s" % ('Circuit neighbour', 'Circuit ID'))
+        print()
+        for k in circuit_info:
+            c = circuit_info[k]
+            print(" %-25s #%x" % (c['NID'], c['Circuit ID']))
+
         time.sleep(3)
 
 
 
-def start_router(router_id, router_port):
+def init_router(router_id, router_port):
 
     global global_router
     global circuit_info
@@ -596,7 +610,7 @@ def start_router(router_id, router_port):
     # Create a lock to be used by all threads
     threadLock = Lock()
 
-    logger.info("Started router " + str(router_id))
+    logger.info(f"Initialized router {router_id} at port {router_port}")
 
 def add_neighbour(r_id, r_cost, r_hostname, r_port, circuit, circuit_id, stream, stream_id, receive_node=None, extend_node=None, receive_socket=None):
 
