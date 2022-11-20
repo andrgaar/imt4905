@@ -74,8 +74,11 @@ def list_rend_server(cookie, router_nick, my_id, peer_id, peer_router_addr):
         try:
             b = rcv_sock.recv_cell()
             if b:
-                logger.debug("Received cell")
-                break
+                logger.info("Received cell: " + str(type(b)))
+                if isinstance(b, CellDestroy):
+                    logger.debug("Received CellDestroy")
+                else:
+                    break
         except socket.timeout:
             continue
 

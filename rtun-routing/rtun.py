@@ -75,13 +75,13 @@ args = parser.parse_args()
 
 # Define a log handler for application
 if args.loglevel:
-    numeric_level = getattr(logging, loglevel.upper(), None)
+    numeric_level = getattr(logging, args.loglevel.upper(), None)
     if not isinstance(numeric_level, int):
         raise ValueError('Invalid log level: %s' % args.loglevel)
 else:
     numeric_level = logging.INFO
 
-logging.basicConfig(level=numeric_level, format='%(asctime)s - %(levelname)s - %(message)s', filename='rtun.log', encoding='utf-8')
+logging.basicConfig(level=numeric_level, format='%(asctime)s - %(levelname)s - [%(threadName)s] - %(message)s', filename='rtun.log', encoding='utf-8')
 logger = logging.getLogger(__name__)
 
 if args.connect and args.listen:

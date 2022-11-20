@@ -454,9 +454,11 @@ class ReceiveThread(Thread):
                 end_node = node
                 while(not (path_string.endswith(global_router['RID']))):
                     temp_path = least_cost_path[node][-1]
-                    path_string = path_string + temp_path
+                    #path_string = path_string + temp_path
+                    path_string = path_string + temp_path + '->'
                     node = temp_path
-                path_string = (path_string)[::-1] + end_node
+                #path_string = (path_string)[::-1] + end_node
+                path_string = path_string + end_node
                 final_paths.append(path_string)
 
         # Display final output after Dijkstra computation

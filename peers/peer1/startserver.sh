@@ -2,9 +2,11 @@
 
 set -x
 
-SCRIPTPATH="/root/git/imt4905/rtun-routing"
+BASEDIR=$(dirname $0)
 
-export PYTHONPATH=/root/git/imt4905/torpy-rtun-fork/
+SCRIPTPATH="${BASEDIR}/../../rtun-routing"
+
+export PYTHONPATH="${BASEDIR}/../../torpy-rtun-fork/"
 
 # Setup OpenVPN
 #mkdir -p /dev/net
@@ -18,4 +20,4 @@ export PYTHONPATH=/root/git/imt4905/torpy-rtun-fork/
 # Start rtun server
 #python3 rtun.py -g Quintex13 -p -l -t peer1peer2 -n default -i 1 -d 2
 #python3 rtun.py -g Unnamed -r bauruine -k eb688e4f52df90278060 -l -t peer1peer2 -n default -i 1 -d 2
-python3 "$SCRIPTPATH/rtun.py" -g Unnamed -f rendezvous.txt -l -t peer1peer2 -n default -i 1 -d 2
+python3 "$SCRIPTPATH/rtun.py" -g Unnamed -f rendezvous.txt -l -t peer1peer2 -n default -i 1 -d 2 2>$SCRIPTPATH/stderr.out
