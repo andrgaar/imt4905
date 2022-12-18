@@ -118,6 +118,10 @@ class ReceiveThread(Thread):
                     # Update this router's list of neighbours using inactive list
                     self.updateNeighboursList()
 
+                    # Update the LSA_DB and graph
+                    self.updateLSADB(self.inactive_list)
+                    self.updateGraphOnly(graph, self.inactive_list)
+                    
                     # If new routers have been declared dead, we need to transmit
                     # a fresh LSA with updated neighbour information
                     self.transmitNewLSA()
@@ -141,7 +145,7 @@ class ReceiveThread(Thread):
                     logger.info("Received LSA from ourselves - dropping")
                     break
 
-                logger.info("Received LSA from {0}".format(RID))
+                logger.info("Received LSA from {0} with SN: {1}".format(RID, local_copy_LSA['SN']))
 
                 # Might get a LSA from non-neighbour
                 try:
@@ -191,7 +195,7 @@ class ReceiveThread(Thread):
                 if flag is 1:
                     # If the LSA received has a SN number that is greater than the existing record of
                     # SN for that router, we can confirm that the LSA received is a fresh LSA
-                    logger.debug("Flag is set")
+                    logger.info("Flag is set")
                     if local_copy_LSA['SN'] > self.LSA_SN[local_copy_LSA['RID']]:
                         logger.info("LSA SN is {0} greater than {1}".format(local_copy_LSA['SN'], self.LSA_SN[local_copy_LSA['RID']]))
                         self.LSA_SN.update({local_copy_LSA['RID'] : local_copy_LSA['SN']})
@@ -199,14 +203,16 @@ class ReceiveThread(Thread):
                         # If the new LSA has any router listed as inactive (i.e dead) we remove these explicitly from
                         # the topology so that they are excluded from future shortest path calculations
                         if len(local_copy_LSA['DEAD']) > 0:
+                            logger.info("LSA contains dead routes")
                             self.updateLSADB(local_copy_LSA['DEAD'])
                             self.updateGraphOnly(graph, local_copy_LSA['DEAD'])
                         # Send the new LSA received back to the sending router (so as to ensure that it is a two-way
                         # update for the sender and recipient's local database)
-                        logger.info("Sending update back to sender " + str(local_copy_LSA['RID']))
-                        send_to_stream(local_copy_LSA['RID'], pickle.dumps(self.LSA_DB[local_copy_LSA['RID']]))
-                        neighbour_stats[local_copy_LSA['RID']]['LSA sent'] += 1
-                        time.sleep(1)
+                        #if local_copy_LSA['RID'] != global_router['RID']:
+                        #    logger.info("Sending update back to sender " + str(local_copy_LSA['RID']))
+                        #    send_to_stream(local_copy_LSA['RID'], pickle.dumps(self.LSA_DB[local_copy_LSA['RID']]))
+                        #    neighbour_stats[local_copy_LSA['RID']]['LSA sent'] += 1
+                            time.sleep(1)
                     else:
                         # If old data is being received, that is, there is no new LSA, we simply forward the message
                         # onto our neighbours (now with the list of updated neighbours and higher SN)
@@ -260,6 +266,7 @@ class ReceiveThread(Thread):
             if difference > td:
                 if node not in self.inactive_list:
                     self.inactive_list.add(node)
+                    logger.info("Adding " + node + " to list of inactive")
 
     # Helper function to update this router's list
     # of active neighbours after a router fails
@@ -268,6 +275,7 @@ class ReceiveThread(Thread):
         for node in global_router['Neighbours Data']:
             if node['NID'] in self.inactive_list:
                 global_router['Neighbours Data'].remove(node)
+                logger.info("Removing " + node['NID'] + " from neighbours")
 
     # Triggered by all active neighbouring routers
     # when a neighbour to them fails
@@ -293,7 +301,7 @@ class ReceiveThread(Thread):
         new_data = pickle.dumps(updated_global_router)
 
         for router in global_router['Neighbours Data']:
-            logger.debug("SENT THIS NEW LSA TO {0}".format(router['NID']))
+            logger.info("SENT THIS NEW LSA TO {0}".format(router['NID']))
             #self.server_socket.sendto(new_data , (server_name , int(router['Port'])))
             send_to_stream(router['NID'], new_data)
             neighbour_stats[router['NID']]['LSA sent'] += 1
@@ -415,6 +423,7 @@ class ReceiveThread(Thread):
     # python's heapq
     def runDijkstra(self, *args):
 
+        logger.debug("Running Dijkstra")
         # Use each router ID as start vertex for algorithm
         start_vertex = global_router['RID']
         # Initially, distances to all vertices (except source) is infinity
@@ -454,11 +463,9 @@ class ReceiveThread(Thread):
                 end_node = node
                 while(not (path_string.endswith(global_router['RID']))):
                     temp_path = least_cost_path[node][-1]
-                    #path_string = path_string + temp_path
-                    path_string = path_string + temp_path + '->'
+                    path_string = path_string + temp_path
                     node = temp_path
-                #path_string = (path_string)[::-1] + end_node
-                path_string = path_string + end_node
+                path_string = (path_string)[::-1] + end_node
                 final_paths.append(path_string)
 
         # Display final output after Dijkstra computation

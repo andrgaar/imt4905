@@ -48,11 +48,30 @@ def snd_data(rsp, circuit_id, extend_node, rcv_cn, rcv_sock, stream_id=0):
 
 def list_rend_server(cookie, router_nick, my_id, peer_id, peer_router_addr):
 
-    # Try to connect to rendezvous point
+    # Try to connect to rendezvous point - restart on failure
     while True:
         try:
             logger.info("Calling connect_to_rendezvous_point")
             rcv_sock, rcv_cn, circuit_id = main.connect_to_rendezvous_point(router_nick, cookie)
+
+            logger.debug("Derive shared secret")
+            extend_node = main.CircuitNode("a")
+            shared_sec = "000000000000000000010000000000000000000100000000000000010000000000000001".encode('utf-8')
+            extend_node._crypto_state = main.CryptoState(shared_sec)
+
+            logger.debug("Waiting for peer to open stream")
+            while True:
+                try:
+                    b = rcv_sock.recv_cell()
+                    if b:
+                        logger.info("Received cell: " + str(type(b)))
+                        if isinstance(b, CellDestroy):
+                            logger.debug("Received CellDestroy reason: " + str(b.reason))
+                            raise Exception("Receive CellDestroy from RP")
+                        else:
+                            break
+                except socket.timeout:
+                    continue
 
         except KeyboardInterrupt:
             logger.info("Caught keyboard interrupt, exiting...")
@@ -62,29 +81,7 @@ def list_rend_server(cookie, router_nick, my_id, peer_id, peer_router_addr):
             logger.warn(f"Could not connect to rendezvous point {router_nick}, retrying in 5 seconds...")
             time.sleep(5)
             continue
-        break
-
-    logger.debug("Derive shared secret")
-    extend_node = main.CircuitNode("a")
-    shared_sec = "000000000000000000010000000000000000000100000000000000010000000000000001".encode('utf-8')
-    extend_node._crypto_state = main.CryptoState(shared_sec)
-
-    logger.debug("Waiting for cell")
-    while True:
-        try:
-            b = rcv_sock.recv_cell()
-            if b:
-                logger.info("Received cell: " + str(type(b)))
-                if isinstance(b, CellDestroy):
-                    logger.debug("Received CellDestroy")
-                else:
-                    break
-        except socket.timeout:
-            continue
-
-    logger.debug(type(b))
-    if b.NUM == 4:
-        logger.debug(b.reason)
+        break # break and continue
 
     logger.debug("Decrypting cells")
     rcv_cn.decrypt_backward(b)

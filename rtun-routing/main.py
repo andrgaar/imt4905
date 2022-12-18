@@ -74,6 +74,7 @@ def setup_router(router_id, router_port):
     lsr.threads.append(heartbeat_thread)
 
     # Connect to router socket
+    logger.info(f"Connecting to router socket at port {router_port}")
     global_router_sock.connect(('127.0.0.1', router_port))
 
 
