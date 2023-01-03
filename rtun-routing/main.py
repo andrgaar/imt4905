@@ -114,14 +114,6 @@ def setup_rendezvous2(guard_nick, rendp_nick, rendezvous_cookie, port_num, peer_
     extend_node._crypto_state = CryptoState(shared_sec)
     circuit._circuit_nodes.append(extend_node)
 
-    # Receive a HELLO message from connecting peer
-    with circuit.create_waiter(CellRelayData) as w:
-        logger.info(f"Waiting for HELLO")
-        data_cell = w.get(timeout=10)
-        hello_msg = data_cell.data()
-        logger.info(f"Got HELLO from peer: {hello_msg}")
-
-
     # Set up streams
     sock_r, sock_w = socket.socketpair()
 
@@ -146,9 +138,15 @@ def setup_rendezvous2(guard_nick, rendp_nick, rendezvous_cookie, port_num, peer_
 
         with circuit as c:
             with c.create_stream((peer_router_ip, peer_router_port)) as stream:
+    
+                # Wait for HELLO message
+                logger.info("Waiting for HELLO")
+                hello_data = stream.recv(1024)
+                logger.info("Received HELLO: " + hello_data.decode('utf-8'))
+
                 guard.register(sock_r, EVENT_READ, recv_callback)
                 guard.register(stream, EVENT_READ, recv_callback)
-                   
+
                 lsr.add_neighbour(peer_id, 100, peer_router_ip, peer_router_port, circuit, circuit.id, stream, stream.id)
 
                 while True:

@@ -59,11 +59,6 @@ def list_rend_server(cookie, router_nick, my_id, peer_id, peer_router_addr):
             shared_sec = "000000000000000000010000000000000000000100000000000000010000000000000001".encode('utf-8')
             extend_node._crypto_state = main.CryptoState(shared_sec)
 
-            # Send a HELLO message to the other side
-            logger.info("Sending HELLO to peer")
-            snd__data("HELLO " + global_router['RID'] + ":" + global_router['Port'], circuit_id, extend_node, rcv_cn, rcv_sock)
-            
-
             logger.debug("Waiting for peer to open stream")
             while True:
                 try:
@@ -83,7 +78,7 @@ def list_rend_server(cookie, router_nick, my_id, peer_id, peer_router_addr):
             raise KeyboardInterrupt
 
         except Exception as e:
-            logger.warn(f"Could not connect to rendezvous point {router_nick}, retrying in 5 seconds...")
+            logger.warn(f"Could not connect to rendezvous point {router_nick}: {e}, retrying in 5 seconds...")
             time.sleep(5)
             continue
         break # break and continue
@@ -103,6 +98,11 @@ def list_rend_server(cookie, router_nick, my_id, peer_id, peer_router_addr):
     rcv_cn.encrypt_forward(relay_cell)
     rcv_sock.send_cell(relay_cell)
     logger.info("Stream opened successfully")
+
+    # Send a HELLO message to the other side
+    logger.info("Sending HELLO to peer")
+    hello_msg = "HELLO " + lsr.global_router['RID'] + ":" + str(lsr.global_router['Port'])
+    snd_data(hello_msg.encode('utf-8'), circuit_id, extend_node, rcv_cn, rcv_sock, stream_id)
 
     # Add neighbour
     peer_router_ip, peer_router_port = peer_router_addr.split(':')
