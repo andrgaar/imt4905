@@ -59,6 +59,11 @@ def list_rend_server(cookie, router_nick, my_id, peer_id, peer_router_addr):
             shared_sec = "000000000000000000010000000000000000000100000000000000010000000000000001".encode('utf-8')
             extend_node._crypto_state = main.CryptoState(shared_sec)
 
+            # Send a HELLO message to the other side
+            logger.info("Sending HELLO to peer")
+            snd__data("HELLO " + global_router['RID'] + ":" + global_router['Port'], circuit_id, extend_node, rcv_cn, rcv_sock)
+            
+
             logger.debug("Waiting for peer to open stream")
             while True:
                 try:

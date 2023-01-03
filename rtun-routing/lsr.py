@@ -20,8 +20,8 @@ logger = logging.getLogger(__name__)
 
 UPDATE_INTERVAL = 15
 ROUTE_UPDATE_INTERVAL = 30
-PERIODIC_HEART_BEAT = 10
-NODE_FAILURE_INTERVAL = 4
+PERIODIC_HEART_BEAT = 2.5
+NODE_FAILURE_INTERVAL = 5
 TIMEOUT = 15
 
 # Global graph object to represent network topology
@@ -33,6 +33,25 @@ rendp_conn = set()
 display_paths = None
 threadLock = None
 threads = None
+
+'''
+LSA structure:
+
+RID = str : Own ID
+Port = int: Own router port
+SN = int : Sequence no of LSA
+FLAG = 0|1 : Update flag
+RP = tuple ( relay, cookie ) : RP to connect to this node
+Neighbours = int : Number of neighbours
+Neighbours Data = []
+    {
+     NID  = str : ID of neighbour
+     Cost = float : Cost of route
+     Hostname = str : Hostname of neighbour
+     Port = int : Router port of neighbour
+     FLAG = 0
+    }
+'''
 
 class ReceiveThread(Thread):
 
@@ -94,16 +113,45 @@ class ReceiveThread(Thread):
 
                 # Get current date and time at which heart beat for
                 # respective router was received
-                now = datetime.now()
+                now = current_milli_time()
                 RID = local_copy_LSA[0]['RID']
+                HBref = local_copy_LSA[0]['HBref']
+                HBresp = local_copy_LSA[0]['HBresp']
 
                 neighbour_stats[RID]['HB received'] += 1 
-                logger.info(f"Received HB from {RID}") 
+                logger.info(f"Received HB from {RID} ref: {HBref} resp: {HBresp}") 
 
                 # Update local routers database of heart beat timestamps
                 # for each neighbouring router (provided it is still alive)
                 if RID not in self.inactive_list:
-                    self.HB_set.update({RID : now})
+                    self.HB_set.update({RID : datetime.now()})
+
+                    # Craft a response HB message if it is a ping
+                    if HBresp == 0:
+                        HB_message = [{'RID' : global_router['RID'], 'HBref' : HBref, 'HBresp' : now}]
+                        logger.info("Sending HB response to " + str(RID))
+                        message = pickle.dumps(HB_message)
+                        send_to_stream( RID, message)
+                    else:
+                        # Set the latency for the neighbour
+                        latency_list = neighbour_stats[RID]['Latencies MS']
+                        latency = now - HBref
+                        latency_list.append(latency) 
+                        # If we have 10 measurements update the cost
+                        if len(latency_list) == 10:
+                            avg_latency = sum(latency_list) / len(latency_list)
+                            latency_list = list()
+
+                            for i in range(len(global_router['Neighbours Data'])):
+                                if global_router['Neighbours Data'][i]['NID'] == RID:
+                                    global_router['Neighbours Data'][i]['Cost'] = float(avg_latency)
+                                    global_router['FLAG'] = 1 # update LSA
+                                    global_router['SN'] = global_router['SN'] + 1 # increment to trigger update LSA
+                                    logger.info(f"Updated average latency for {RID} to {avg_latency} ms") 
+                                    break
+
+                        neighbour_stats[RID]['Latencies MS'] = latency_list 
+
 
                 # Periodically check for any dead neighbours and update
                 # inactive list of routers
@@ -113,7 +161,7 @@ class ReceiveThread(Thread):
                 # a new LSA to notify other routers of the update to the topology
                 if len(self.inactive_list) > inactive_list_size:
 
-                    logger.info("Dead routes - updating neighbours")
+                    logger.info(f"Dead routes ({self.inactive_list} > {inactive_list_size}) - updating neighbours")
 
                     # Update this router's list of neighbours using inactive list
                     self.updateNeighboursList()
@@ -132,6 +180,14 @@ class ReceiveThread(Thread):
 
                     # Update size of inactive list
                     inactive_list_size = len(self.inactive_list)
+
+                    Timer(10, self.updateGraphAfterFailure, [
+                        graph,
+                        self.inactive_list,
+                        self.LSA_DB,
+                        1,
+                        self.thread_lock]
+                    ).start()
 
             # Handle case if the message received is an LSA
             else:
@@ -192,7 +248,7 @@ class ReceiveThread(Thread):
                 
                 # (ALL UPDATED LSA HAVE A UNIQUE 'FLAG' WITH VALUE 1 TO IDENTIFY THEM)
                 
-                if flag is 1:
+                if flag == 1:
                     # If the LSA received has a SN number that is greater than the existing record of
                     # SN for that router, we can confirm that the LSA received is a fresh LSA
                     logger.info("Flag is set")
@@ -202,7 +258,7 @@ class ReceiveThread(Thread):
                         self.LSA_DB.update({local_copy_LSA['RID'] : local_copy_LSA})
                         # If the new LSA has any router listed as inactive (i.e dead) we remove these explicitly from
                         # the topology so that they are excluded from future shortest path calculations
-                        if len(local_copy_LSA['DEAD']) > 0:
+                        if 'DEAD' in local_copy_LSA and len(local_copy_LSA['DEAD']) > 0:
                             logger.info("LSA contains dead routes")
                             self.updateLSADB(local_copy_LSA['DEAD'])
                             self.updateGraphOnly(graph, local_copy_LSA['DEAD'])
@@ -343,7 +399,7 @@ class ReceiveThread(Thread):
         logger.debug("With LSA data:")
         logger.debug(lsa_data)
 
-        if flag is 1:
+        if flag == 1:
 
             graph.clear()
 
@@ -491,6 +547,7 @@ class ReceiveThread(Thread):
             
             index = index + 1
 
+
 class SendThread(Thread):
 
     def __init__(self, name, thread_lock):
@@ -520,6 +577,7 @@ class SendThread(Thread):
                 send_to_stream(dict['NID'], message)
                 neighbour_stats[dict['NID']]['LSA sent'] += 1
 
+            global_router['FLAG'] = 0 # reset update LSA
             time.sleep(UPDATE_INTERVAL)
 
 class HeartBeatThread(Thread):
@@ -536,9 +594,12 @@ class HeartBeatThread(Thread):
     def broadcastHB(self):
 
         while True:
+            HB_time = current_milli_time()
+            HB_message = [{'RID' : global_router['RID'], 'HBref' : HB_time, 'HBresp' : 0}]
+
             for neighbour in global_router['Neighbours Data']:
                 logger.debug("Sending HB to " + str(neighbour['NID']))
-                message = pickle.dumps(self.HB_message)
+                message = pickle.dumps(HB_message)
                 send_to_stream( neighbour['NID'], message)
                 neighbour_stats[neighbour['NID']]['HB sent'] += 1 
             
@@ -548,7 +609,9 @@ class HeartBeatThread(Thread):
         self.HB_socket.close()
 
 
-
+# Get current time in ms
+def current_milli_time():
+    return round(time.time() * 1000)
 
 def print_stats():
 
@@ -658,7 +721,7 @@ def add_neighbour(r_id, r_cost, r_hostname, r_port, circuit, circuit_id, stream,
     stats_dict['HB received'] = 0
     stats_dict['LSA sent'] = 0
     stats_dict['LSA received'] = 0
-
+    stats_dict['Latencies MS'] = list()
     neighbour_stats[r_id] = stats_dict    
 
     # Temporary graph list to hold state of current network topology

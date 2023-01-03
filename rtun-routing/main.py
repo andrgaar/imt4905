@@ -114,6 +114,15 @@ def setup_rendezvous2(guard_nick, rendp_nick, rendezvous_cookie, port_num, peer_
     extend_node._crypto_state = CryptoState(shared_sec)
     circuit._circuit_nodes.append(extend_node)
 
+    # Receive a HELLO message from connecting peer
+    with circuit.create_waiter(CellRelayData) as w:
+        logger.info(f"Waiting for HELLO")
+        data_cell = w.get(timeout=10)
+        hello_msg = data_cell.data()
+        logger.info(f"Got HELLO from peer: {hello_msg}")
+
+
+    # Set up streams
     sock_r, sock_w = socket.socketpair()
 
     events = {TorStream: {'data': Event(), 'close': Event()},
@@ -176,18 +185,14 @@ def connect_to_rendezvous_point(nick, cookie):
 
 
     logger.debug("Cell created circuit ID: " + str(cell_created.circuit_id))
-
     circuit_node.complete_handshake(cell_created.handshake_data)
-
     inner_cell = CellRelayRendezvous1(os.urandom(128+20), cookie, cell_created.circuit_id)
-
     relay_cell = CellRelay(inner_cell, stream_id=0, circuit_id=circuit_id)
-
     circuit_node.encrypt_forward(relay_cell)
-
     tor_cell_socket.send_cell(relay_cell)
-
     logger.debug("Sent cookie")
+
+    logger.info("Connected to rendezvous point " + nick)
 
     return tor_cell_socket, circuit_node, circuit_id
 
