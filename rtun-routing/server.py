@@ -8,9 +8,11 @@ from torpy.cells import CellRelayEnd, CellDestroy, CellRelaySendMe, StreamReason
 from torpy.circuit import TorCircuit, TorCircuitState
 from torpy.guard import TorGuard
 
+from messages import HelloMessage
 import lsr
 from lsr import ReceiveThread, SendThread, HeartBeatThread
 
+import pickle
 import logging
 
 logger = logging.getLogger(__name__)
@@ -100,18 +102,21 @@ def list_rend_server(cookie, router_nick, my_id, peer_id, peer_router_addr):
     logger.info("Stream opened successfully")
 
     # Send a HELLO message to the other side
-    logger.info("Sending HELLO to peer")
-    hello_msg = "HELLO " + lsr.global_router['RID'] + ":" + str(lsr.global_router['Port'])
-    snd_data(hello_msg.encode('utf-8'), circuit_id, extend_node, rcv_cn, rcv_sock, stream_id)
+    hello_msg = HelloMessage( lsr.global_router['RID'] ) 
+    #hello_data = pickle.dumps(hello_msg)
+    hello_data = [{'Message' : 'HELLO', 'Peer' : lsr.global_router['RID']}]
+    hello_data = pickle.dumps(hello_data)
+    logger.info(f"Sending HELLO to peer: {hello_data}")
+    snd_data(hello_data, circuit_id, extend_node, rcv_cn, rcv_sock, stream_id)
 
     # Add neighbour
-    peer_router_ip, peer_router_port = peer_router_addr.split(':')
-    lsr.add_neighbour(peer_id, 100, '127.0.0.1', peer_router_port, None, circuit_id, None, stream_id, 
-                        receive_node=rcv_cn, extend_node=extend_node, receive_socket=rcv_sock)
+    #peer_router_ip, peer_router_port = peer_router_addr.split(':')
+    #lsr.add_neighbour(peer_id, 100, '127.0.0.1', peer_router_port, None, circuit_id, None, stream_id, 
+    #                    receive_node=rcv_cn, extend_node=extend_node, receive_socket=rcv_sock)
 
     while True:
         try:
-            r, w, _ = select.select([rcv_sock.ssl_socket, main.global_router_sock], [], [])
+            r, w, _ = select.select([rcv_sock.ssl_socket], [], [])
             if rcv_sock.ssl_socket in r:
                 buf = rcv_data(rcv_sock, rcv_cn, extend_node)
 
@@ -120,14 +125,24 @@ def list_rend_server(cookie, router_nick, my_id, peer_id, peer_router_addr):
                 if len(buf) == 0:
                     break
                 
-                main.global_router_sock.send(buf)
+                #Put the received data into the ReceiverThread input queue with circuit data
+                main.rcv_queue.put_nowait( [{'data' : buf, 
+                                            'circuit' : None, 
+                                            'circuit_id' : circuit_id, 
+                                            'stream' : None, 
+                                            'stream_id' : stream_id,
+                                            'receive_node' : rcv_cn,
+                                            'extend_node' : extend_node,
+                                            'receive_socket' : rcv_sock
+                                            }]
+                                    )                
 
-            if main.global_router_sock in r:
-                buf = main.global_router_sock.recv(498)
-                if len(buf) == 0:
-                    break
+            #if main.global_router_sock in r:
+            #    buf = main.global_router_sock.recv(498)
+            #    if len(buf) == 0:
+            #        break
 
-                snd_data(buf, circuit_id, extend_node, rcv_cn, rcv_sock, stream_id)
+            #    snd_data(buf, circuit_id, extend_node, rcv_cn, rcv_sock, stream_id)
 
         except Exception as e:
             logger.error("Error in receive on socket: " + str(e))

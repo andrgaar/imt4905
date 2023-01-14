@@ -45,6 +45,7 @@ from torpy.cells import (
     CellRelayIntroduceAck,
     CellRelayEstablishRendezvous,
     CellRelayRendezvousEstablished,
+    CellRelayRendezvous1,
 )
 from torpy.utils import ignore
 from torpy.http.client import HttpStreamClient

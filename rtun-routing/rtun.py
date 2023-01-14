@@ -158,6 +158,9 @@ if args.file:
             lsr.threads.append(Thread(name='Thread-' + relay_nick, 
                                         target=server.list_rend_server, 
                                         args=(cookie, relay_nick, my_id, peer_id, peer_router_addr)))
+            #lsr.threads.append(Thread(name='Thread-' + relay_nick, 
+            #                            target=main.connect_to_rendezvous_point2, 
+            #                            args=(guard_nick, relay_nick, cookie)))
         else:
             logger.info(f"Unknown connection option: {connection}")
 
