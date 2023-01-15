@@ -164,6 +164,7 @@ def setup_rendezvous2(guard_nick, rendp_nick, rendezvous_cookie, port_num, peer_
                                             'receive_node' : None,
                                             'extend_node' : None,
                                             'receive_socket' : None,
+                                            'rendpoint' : rendp_nick
 
                                             }]
                                         )

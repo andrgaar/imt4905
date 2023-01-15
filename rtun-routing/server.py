@@ -133,7 +133,8 @@ def list_rend_server(cookie, router_nick, my_id, peer_id, peer_router_addr):
                                             'stream_id' : stream_id,
                                             'receive_node' : rcv_cn,
                                             'extend_node' : extend_node,
-                                            'receive_socket' : rcv_sock
+                                            'receive_socket' : rcv_sock,
+                                            'rendpoint' : router_nick
                                             }]
                                     )                
 

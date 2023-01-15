@@ -22,7 +22,7 @@ logger = logging.getLogger(__name__)
 
 UPDATE_INTERVAL = 15
 ROUTE_UPDATE_INTERVAL = 30
-PERIODIC_HEART_BEAT = 2.5
+PERIODIC_HEART_BEAT = 5
 NODE_FAILURE_INTERVAL = 5
 TIMEOUT = 15
 
@@ -50,7 +50,7 @@ Neighbours Data = []
      NID  = str : ID of neighbour
      Cost = float : Cost of route
      Hostname = str : Hostname of neighbour
-     Port = int : Router port of neighbour
+     RP = str : Rendezvous Point
      FLAG = 0
     }
 '''
@@ -86,9 +86,8 @@ class ReceiveThread(Thread):
 
 
     def __str__(self):
-        return "I am Router {0} with PORT {1} - READY TO RECEIVE".format(
-            global_router['RID'],
-            global_router['Port']
+        return "I am Router {0} with - READY TO RECEIVE".format(
+            global_router['RID']
         )
 
     def __del__(self):
@@ -105,6 +104,7 @@ class ReceiveThread(Thread):
         receive_node = queue_data[0]['receive_node']
         extend_node = queue_data[0]['extend_node']
         receive_socket = queue_data[0]['receive_socket']
+        rendpoint = queue_data[0]['rendpoint']
         
 
         logger.debug("Received local_copy_LSA: " +str(local_copy_LSA))
@@ -117,7 +117,7 @@ class ReceiveThread(Thread):
             if message == 'HB':
                 self.handle_HB(local_copy_LSA)
             elif message == 'HELLO':
-                self.handle_HELLO(local_copy_LSA, circuit, circuit_id, stream, stream_id, receive_node, extend_node, receive_socket)
+                self.handle_HELLO(local_copy_LSA, rendpoint, circuit, circuit_id, stream, stream_id, receive_node, extend_node, receive_socket)
             else:
                 logger.info(f"Unknown message: {message}")
             
@@ -224,11 +224,11 @@ class ReceiveThread(Thread):
                 ).start()
 
     # Handle receive of HELLO
-    def handle_HELLO(self, msg_data, circuit, circuit_id, stream, stream_id, receive_node=None, extend_node=None, receive_socket=None):
+    def handle_HELLO(self, msg_data, rendpoint, circuit, circuit_id, stream, stream_id, receive_node=None, extend_node=None, receive_socket=None):
         logger.debug(f"handle_HELLO: {msg_data}")        
         peer_id = msg_data[0]['Peer']
 
-        add_neighbour(peer_id, 100, '127.0.0.1', 5000, circuit, circuit_id, stream, stream_id, receive_node, extend_node, receive_socket)
+        add_neighbour(peer_id, '127.0.0.1', rendpoint, 100, circuit, circuit_id, stream, stream_id, receive_node, extend_node, receive_socket)
 
 
     # Handle receive of HeartBeat
@@ -247,7 +247,7 @@ class ReceiveThread(Thread):
             return
 
         neighbour_stats[RID]['HB received'] += 1 
-        logger.info(f"Received HB from {RID} ref: {HBref} resp: {HBresp}") 
+        #logger.info(f"Received HB from {RID} ref: {HBref} resp: {HBresp}") 
 
         # Update local routers database of heart beat timestamps
         # for each neighbouring router (provided it is still alive)
@@ -257,7 +257,7 @@ class ReceiveThread(Thread):
             # Craft a response HB message if it is a ping
             if HBresp == 0:
                 HB_message = [{'Message' : 'HB', 'RID' : global_router['RID'], 'HBref' : HBref, 'HBresp' : now}]
-                logger.info("Sending HB response to " + str(RID))
+                #logger.info("Sending HB response to " + str(RID))
                 message = pickle.dumps(HB_message)
                 send_to_stream( RID, message)
             else:
@@ -265,9 +265,9 @@ class ReceiveThread(Thread):
                 latency_list = neighbour_stats[RID]['Latencies MS']
                 latency = now - HBref
                 latency_list.append(latency) 
-                # If we have 10 measurements update the cost
-                if len(latency_list) == 10:
-                    avg_latency = sum(latency_list) / len(latency_list)
+                # If we have 3 measurements update the cost
+                if len(latency_list) == 3:
+                    avg_latency = round( sum(latency_list) / len(latency_list) )
                     latency_list = list()
 
                     for i in range(len(global_router['Neighbours Data'])):
@@ -275,7 +275,7 @@ class ReceiveThread(Thread):
                             global_router['Neighbours Data'][i]['Cost'] = float(avg_latency)
                             global_router['FLAG'] = 1 # update LSA
                             global_router['SN'] = global_router['SN'] + 1 # increment to trigger update LSA
-                            logger.info(f"Updated average latency for {RID} to {avg_latency} ms") 
+                            #logger.info(f"Updated average latency for {RID} to {avg_latency} ms") 
                             break
 
                     neighbour_stats[RID]['Latencies MS'] = latency_list 
@@ -437,9 +437,9 @@ class ReceiveThread(Thread):
 
             for neighbour in neighbours_dict:
                 if (source_node < neighbour['NID']):
-                    graph_data = [source_node, neighbour['NID'], neighbour['Cost'], neighbour['Port']]
+                    graph_data = [source_node, neighbour['NID'], neighbour['Cost'], neighbour['RP']]
                 else:
-                    graph_data = [neighbour['NID'], source_node, neighbour['Cost'], neighbour['Port']]
+                    graph_data = [neighbour['NID'], source_node, neighbour['Cost'], neighbour['RP']]
                 neighbours_list.append(graph_data)
 
             for node in neighbours_list:
@@ -452,16 +452,18 @@ class ReceiveThread(Thread):
                     graph_arg.append(node)
 
         # Get adjacency list and list of graph nodes
-        adjacency_list , graph_nodes = self.organizeGraph(graph_arg)
+        adjacency_list , graph_nodes, rp_nodes = self.organizeGraph(graph_arg)
+
 
         # Run Dijkstra's algorithm periodically
-        Timer(ROUTE_UPDATE_INTERVAL, self.runDijkstra, [adjacency_list, graph_nodes]).start()
+        Timer(ROUTE_UPDATE_INTERVAL, self.runDijkstra, [adjacency_list, graph_nodes, rp_nodes]).start()
 
     # Uses the global graph to construct a adjacency list
     # (represented using python 'dict') which in turn is
     # used by the Dijkstra function to compute shortest paths
     def organizeGraph(self, graph_arg):
 
+        logger.info(f"organizeGraph(graph_arg): {graph_arg}")
         # Set to contain nodes within graph
         nodes = set()
 
@@ -470,8 +472,10 @@ class ReceiveThread(Thread):
         for node in graph_arg:
             if node[0] not in nodes:
                 nodes.add(node[0])
+                #nodes.add(node[0] + node[3])
             if node[1] not in nodes:
                 nodes.add(node[1])
+                #nodes.add(node[1]+node[3])
 
         # Sort nodes alphabetically
         sorted_nodes = sorted(nodes)
@@ -479,8 +483,10 @@ class ReceiveThread(Thread):
         # Create dict to store all edges between
         # vertices as an adjacency list
         new_LL = dict()
+        new_RP = dict() # holds RP of peer
         for node in sorted_nodes:
             new_LL[node] = dict()
+            new_RP[node] = dict()
 
         # Using all link-state advertisement received
         # from all nodes, create the initial adjacency list
@@ -489,23 +495,28 @@ class ReceiveThread(Thread):
             for link in graph_arg:
                 if node == link[0]:
                     new_LL[node].update({link[1] : link[2]})
+                    new_RP[node].update({link[1] : link[3]})
+                    logger.info(f"adjancency list update: {link}")
 
         # Update adjacency list so as to reflect all outgoing/incoming
         # links (Graph should now fully represent the network topology
         for node in sorted_nodes:
             for source_node , cost in new_LL[node].items():
                 new_LL[source_node].update({node : cost})
+            for source_node , rp_node in new_RP[node].items():
+                new_RP[source_node].update({node : rp_node})
+
 
         # Return adjacency list and least_cost_path dict
         # to use for Dijkstra Computation
-        return (new_LL , sorted_nodes)
+        return (new_LL , sorted_nodes, new_RP)
 
     # Runs Dijkstra's algorithm on the given adjacency list
     # and prints out the shortest paths. Makes use of
     # python's heapq
     def runDijkstra(self, *args):
 
-        logger.debug("Running Dijkstra")
+        logger.info(f"Running Dijkstra: {args}")
         # Use each router ID as start vertex for algorithm
         start_vertex = global_router['RID']
         # Initially, distances to all vertices (except source) is infinity
@@ -536,18 +547,55 @@ class ReceiveThread(Thread):
                     least_cost_path[n].append(current_vertex)
                     # Push next neighbour onto queue
                     heapq.heappush(pq , (distance , n))
+        # Test
+        for node in args[1]:
+            logger.info(f"least cost path: {node} : {least_cost_path[node]}")
+            
 
         # Finalise path array
         final_paths = []
-        for node in args[0]:
+        temp_paths = []
+        rp_paths = args[2]
+        for node in args[1]:
             path_string = ""
             if node != global_router['RID']:
                 end_node = node
-                while(not (path_string.endswith(global_router['RID']))):
-                    temp_path = least_cost_path[node][-1]
-                    path_string = path_string + temp_path
-                    node = temp_path
-                path_string = (path_string)[::-1] + end_node
+                temp_node = node
+                #temp_paths.append(temp_node)
+                logger.info(f"Build path for: {node}")
+                #while(not (path_string.endswith(global_router['RID']))):
+                #while( temp_node != global_router['RID'] ):
+                #    logger.info(f"least cost path: {temp_node} : {least_cost_path[temp_node]}")
+                #    temp_node = least_cost_path[node][-1]
+                #    temp_paths.append(temp_node)
+                
+
+                for temp_node in least_cost_path[node]:
+                    logger.info(f"temp_node: {temp_node}")
+                    if temp_node == global_router['RID']:
+                        temp_paths.append(node)
+                    else:
+                        temp_paths.append(temp_node)
+
+                prev_node = global_router['RID']
+
+                while len(temp_paths) > 0:
+                    next_node = temp_paths.pop()
+                    logger.info(f"prev_node: {prev_node} next_node: {next_node}")
+                    rp_node = rp_paths[prev_node][next_node]
+                    path_string = prev_node + '<<' + rp_node + '>>' + next_node
+
+
+                #    if path_string == "":
+                #        path_string = temp_path
+                #    else:
+                #        rp_node = rp_paths[temp_path][node]
+                #        path_string = path_string + '<<' + rp_node + '>>' + temp_path
+                #    node = temp_path
+                #    logger.info(f"path_string: {path_string}")
+                #path_string = (path_string)[::-1] + end_node
+                #rp_node = rp_paths[node][end_node]
+                #path_string = path_string + '<<' + rp_node + '>>' + end_node
                 final_paths.append(path_string)
 
         # Display final output after Dijkstra computation
@@ -561,12 +609,12 @@ class ReceiveThread(Thread):
         del distances[source_node]
 
         # Print router ID
-        display_paths = "I am Router {0} and know these paths:\n".format(source_node)
+        display_paths = "I am {0} and know these paths:\n".format(source_node)
 
         index = 0
         # Display output for dijkstra
         for vertex in distances:
-            display_paths = display_paths + "Least cost path to router {0}:{1} and the cost is {2}\n".format(
+            display_paths = display_paths + "{0}: {1} and the cost is {2}\n".format(
                 vertex,
                 graph_nodes[index],
                 distances[vertex])
@@ -644,6 +692,16 @@ def get_receiver_thread():
 def current_milli_time():
     return round(time.time() * 1000)
 
+# Lookup a value in the Neighbours list
+def lookup_neighbour(NID, item):
+
+    logger.info(f"Lookup {NID} : {item}")
+    for n in global_router['Neighbours Data']:
+        if n['NID'] == NID:
+            logger.info(f"Lookup return: {n[item]}")
+            return n[item]
+    return "<none>"
+
 def print_stats():
 
     while True:
@@ -668,7 +726,7 @@ def print_stats():
                 )
     
         print()
-        print("Computed shortest paths (Dijsktra)")
+        print("-------------------------------------------------------------------------")
         print()
         if display_paths:
             print(display_paths)
@@ -715,7 +773,7 @@ def init_router(router_id, router_port):
 
     logger.info(f"Initialized router {router_id} at port {router_port}")
 
-def add_neighbour(r_id, r_hostname, r_port, r_cost, circuit, circuit_id, stream, stream_id, receive_node=None, extend_node=None, receive_socket=None):
+def add_neighbour(r_id, r_hostname, rendpoint, r_cost, circuit, circuit_id, stream, stream_id, receive_node=None, extend_node=None, receive_socket=None):
 
     # Dict to hold data regarding each of this router's neighbours
     global graph
@@ -727,7 +785,7 @@ def add_neighbour(r_id, r_hostname, r_port, r_cost, circuit, circuit_id, stream,
     router_dict['NID']  = r_id
     router_dict['Cost'] = float(r_cost)
     router_dict['Hostname'] = r_hostname
-    router_dict['Port'] = r_port
+    router_dict['RP'] = rendpoint
     router_dict['FLAG'] = 0
 
     # Internal to router
@@ -744,7 +802,7 @@ def add_neighbour(r_id, r_hostname, r_port, r_cost, circuit, circuit_id, stream,
     # Replace any old neighbour info
     i = 0
     while i < len(global_router['Neighbours Data']):
-        if global_router['Neighbours Data'][i]['NID'] == r_id:
+        if global_router['Neighbours Data'][i]['NID'] == r_id and global_router['Neighbours Data'][i]['RP'] == rendpoint:
             global_router['Neighbours Data'] = router_dict
             break
         i = i + 1
@@ -775,13 +833,13 @@ def add_neighbour(r_id, r_hostname, r_port, r_cost, circuit, circuit_id, stream,
 
         router_dict['NID']  = neighbour['NID']
         router_dict['Cost'] = float(neighbour['Cost'])
-        router_dict['Port'] = neighbour['Port']
+        router_dict['RP'] = neighbour['RP']
 
         # Package this routers data in a useful format and append to temporary graph list
         if(str(global_router['RID']) < str(router_dict['NID'])):
-             graph_data = [global_router['RID'], router_dict['NID'], router_dict['Cost'], router_dict['Port']]
+             graph_data = [global_router['RID'], router_dict['NID'], router_dict['Cost'], router_dict['RP']]
         else:
-             graph_data = [router_dict['NID'], global_router['RID'], router_dict['Cost'], router_dict['Port']]
+             graph_data = [router_dict['NID'], global_router['RID'], router_dict['Cost'], router_dict['RP']]
         temp_graph.append(graph_data)
 
     # Copy over the data in temporary graph to global graph object (used elsewhere)
