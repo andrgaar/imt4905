@@ -5,6 +5,7 @@ import time
 import heapq
 import socket
 import traceback
+import json
 
 from datetime import datetime, timedelta
 from threading import Thread, Lock, Timer
@@ -25,6 +26,9 @@ ROUTE_UPDATE_INTERVAL = 30
 PERIODIC_HEART_BEAT = 5
 NODE_FAILURE_INTERVAL = 5
 TIMEOUT = 15
+
+# Log metrics to file
+graph_metrics_file = "metrics.log"
 
 # Global graph object to represent network topology
 graph = {}
@@ -454,6 +458,11 @@ class ReceiveThread(Thread):
         # Get adjacency list and list of graph nodes
         adjacency_list , graph_nodes, rp_nodes = self.organizeGraph(graph_arg)
 
+        # Log the updated graph to a metrics file
+        if graph_metrics_file:
+            time_stamp = time.time()
+            with open(graph_metrics_file, "a") as f:
+                f.write("{0};{1};{2};{3};{4}\n".format(time_stamp, global_router['RID'], json.dumps(adjacency_list), json.dumps(graph_nodes), json.dumps(rp_nodes)))
 
         # Run Dijkstra's algorithm periodically
         Timer(ROUTE_UPDATE_INTERVAL, self.runDijkstra, [adjacency_list, graph_nodes, rp_nodes]).start()
