@@ -32,6 +32,7 @@ graph_metrics_file = "metrics.log"
 
 # Global graph object to represent network topology
 graph = {}
+global_least_cost_path = {}
 global_router = {}
 circuit_info = {}
 neighbour_stats = {}
@@ -47,7 +48,7 @@ RID = str : Own ID
 Port = int: Own router port
 SN = int : Sequence no of LSA
 FLAG = 0|1 : Update flag
-RP = tuple ( relay, cookie ) : RP to connect to this node
+RP = set { relay|cookie } : RPs to connect to this node
 Neighbours = int : Number of neighbours
 Neighbours Data = []
     {
@@ -122,6 +123,8 @@ class ReceiveThread(Thread):
                 self.handle_HB(local_copy_LSA)
             elif message == 'HELLO':
                 self.handle_HELLO(local_copy_LSA, rendpoint, circuit, circuit_id, stream, stream_id, receive_node, extend_node, receive_socket)
+            elif message == 'QUERY':
+                self.route_query(local_copy_LSA)
             else:
                 logger.info(f"Unknown message: {message}")
             
@@ -320,6 +323,17 @@ class ReceiveThread(Thread):
                         1,
                         self.thread_lock]
                     ).start()
+    
+    # Handles a QUERY message
+    # Routes it along the least cost path
+    def route_query(self, msg_data):
+        logger.debug(f"route_query: {msg_data}")
+
+        source = msg_data[0]['Source']
+        destination = msg_data[0]['Destination']
+        query_id = msg_data[0]['ID']
+    
+        # Find the neighbour with the least cost path to destination
 
 
     # Helper function to update the global graph when a router
@@ -524,6 +538,7 @@ class ReceiveThread(Thread):
     # and prints out the shortest paths. Makes use of
     # python's heapq
     def runDijkstra(self, *args):
+        global global_least_cost_path
 
         logger.info(f"Running Dijkstra: {args}")
         # Use each router ID as start vertex for algorithm
@@ -556,6 +571,9 @@ class ReceiveThread(Thread):
                     least_cost_path[n].append(current_vertex)
                     # Push next neighbour onto queue
                     heapq.heappush(pq , (distance , n))
+    
+        global_least_cost_path = least_cost_path
+
         # Test
         for node in args[1]:
             logger.info(f"least cost path: {node} : {least_cost_path[node]}")
@@ -630,6 +648,9 @@ class ReceiveThread(Thread):
             
             index = index + 1
 
+        for vertex in distances:
+            display_paths = display_paths + "{0} next hop {1}\n".format(vertex, next_hop(vertex))
+
 
 class SendThread(Thread):
 
@@ -689,6 +710,23 @@ class HeartBeatThread(Thread):
 
     def __del__(self):
         pass
+
+# Return the next hop in least cost path
+def next_hop(dst_peer):
+    global global_least_cost_path
+    logger.info(f"next_hop: {global_least_cost_path}")
+    
+    this_peer = global_router['RID']
+    
+    # Work our way back the least path route to find
+    # the next hop
+    next_peer = global_least_cost_path[dst_peer][0]
+    current_peer = dst_peer
+    while next_peer != this_peer:
+        current_peer = next_peer
+        next_peer = global_least_cost_path[current_peer][0]
+    
+    return current_peer
 
 # Return the ReceiveThread thread
 def get_receiver_thread():
@@ -773,6 +811,7 @@ def init_router(router_id, router_port):
     global_router['Neighbours Data'] = []
     global_router['SN'] = 0
     global_router['FLAG'] = 0
+    global_router['RP'] = set()
 
     # Create a list to hold each thread
     threads = []

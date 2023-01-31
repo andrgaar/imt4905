@@ -12,6 +12,7 @@ import hashlib
 import traceback
 import logging
 
+condition = None # acquired by executing thread to notify main thread to unblock
 
 def choose_relay(tun_name, namespace='default', time_frame="1 min"):
     all_relays = []
@@ -175,8 +176,34 @@ if args.file:
         logger.info("Starting thread " + str(thread.name))
         thread.start()
 
-    # Call join on each tread (so that they wait)
     try:
+        # Create RP loop - creates new rendezvous points for peers to connect
+        """
+        while True:
+            # Get a new RP
+            rp_relay, rp_cookie = choose_relay(lsr.global_router['RID'])
+            logger.info(f"Establishing waiting RP {rp_relay} with cookie '{rp_cookie}"
+
+            # Acquire a lock and wait for thread to release it, i.e. connecting peer
+            condition = threading.Condition()
+
+            rp_thread = Thread(name='Thread-' + rp_relay, 
+                                        target=main.setup_rendezvous2, 
+                                        args=(guard_nick, rp_relay, rp_cookie, 0, 0, 0))
+            rp_thread.start()
+            
+            # Add to list of RPs announced to network
+            rp_id = f"{rp_relay}|{rp_cookie}"
+            lsr.global_router['RP'].add(rp_id)
+
+            # Waits for thread to notify us to continue
+            with condition:
+                condition.wait()
+            
+            logger.info(f"RP {rp_relay} has either connected or timed out - create new")
+            lsr.global_router['RP'].remove(rp_id)
+        """
+        # Call join on each tread (so that they wait)
         for thread in lsr.threads:
             thread.join()
     

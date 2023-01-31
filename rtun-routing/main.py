@@ -15,6 +15,7 @@ from torpy.keyagreement import NtorKeyAgreement, FastKeyAgreement
 from torpy.guard import TorGuard
 from torpy.stream import TorStream
 
+#import rtun
 import server
 from messages import HelloMessage
 import lsr
@@ -69,13 +70,17 @@ def establish_rendezvous(circuit, rendezvous_cookie):
     circuit._rendezvous_establish(rendezvous_cookie)
 
 
-def setup_rendezvous2(guard_nick, rendp_nick, rendezvous_cookie, port_num, peer_id, peer_router_addr):
+def setup_rendezvous2(guard_nick, rendp_nick, rendezvous_cookie, port_num, peer_id, peer_router_addr, condition=None):
     # Setup a rendezvous point and wait
     consensus = TorConsensus()
     guard_router = TorGuard(consensus.get_router_using_nick(guard_nick))
     rendp_router = consensus.get_router_using_nick(rendp_nick)
     peer_port = str(peer_id)
     peer_router_ip, peer_router_port = peer_router_addr.split(':')
+
+    # Acquire a condition if this is a waiting RP
+    if condition:
+        condition.acquire()
 
     # Build circuit to rendezvous point
     circuit = build_circuit(guard_router, [ rendp_router ])
@@ -88,6 +93,10 @@ def setup_rendezvous2(guard_nick, rendp_nick, rendezvous_cookie, port_num, peer_
         rendezvous2_cell = w.get(timeout=600)
         logger.info(f"Got REND2 message from {rendp_nick}")
           
+    # Here someone has connected - we notify a waiting thread
+    if condition:
+        condition.release()
+
     logger.debug("Derive shared secret with peer")
     extend_node = CircuitNode(rendp_router, key_agreement_cls=FastKeyAgreement)
     shared_sec = "000000000000000000010000000000000000000100000000000000010000000000000001".encode('utf-8')
