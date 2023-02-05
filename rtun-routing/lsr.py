@@ -28,7 +28,7 @@ NODE_FAILURE_INTERVAL = 5
 TIMEOUT = 15
 
 # Log metrics to file
-graph_metrics_file = "metrics.log"
+graph_metrics_file = "router.log"
 
 # Global graph object to represent network topology
 graph = {}
@@ -75,8 +75,11 @@ class ReceiveThread(Thread):
         self.inactive_list_size = 0
         self.forward_set = set()
 
+        log_metrics("PEER ENTERED", "")
+
     def __exit__(self, exc_type, exc_value, traceback):
 
+        log_metric("PEER EXIT", "")
         logger.debug("ReceiveThread __exit__")
 
     def run(self):
@@ -96,6 +99,7 @@ class ReceiveThread(Thread):
         )
 
     def __del__(self):
+        log_metric("PEER ABORTED", "")
         pass
 
     def serverSide(self, queue_data):
@@ -275,6 +279,7 @@ class ReceiveThread(Thread):
                 # If we have 3 measurements update the cost
                 if len(latency_list) == 3:
                     avg_latency = round( sum(latency_list) / len(latency_list) )
+                    logger.info(f"Calculated latency for {RID} to {avg_latency} : { latency_list }")
                     latency_list = list()
 
                     for i in range(len(global_router['Neighbours Data'])):
@@ -429,6 +434,8 @@ class ReceiveThread(Thread):
                 if router['NID'] in args[1]:
                     args[2][node]['Neighbours Data'].remove(router)
 
+        log_metrics("NODE FAILURE", args[1])
+
         self.updateGraph(args[0], args[2], 1)
 
     # Helper function that builds a useful data structure
@@ -472,11 +479,13 @@ class ReceiveThread(Thread):
         # Get adjacency list and list of graph nodes
         adjacency_list , graph_nodes, rp_nodes = self.organizeGraph(graph_arg)
 
+        # Display the graph
+        #if global_router['RID'] == "P1":
+        #    from graphplot import display_graph
+        #    display_graph(adjacency_list)
+
         # Log the updated graph to a metrics file
-        if graph_metrics_file:
-            time_stamp = time.time()
-            with open(graph_metrics_file, "a") as f:
-                f.write("{0};{1};{2};{3};{4}\n".format(time_stamp, global_router['RID'], json.dumps(adjacency_list), json.dumps(graph_nodes), json.dumps(rp_nodes)))
+        log_metrics("TOPOLOGY UPDATE", json.dumps(adjacency_list))
 
         # Run Dijkstra's algorithm periodically
         Timer(ROUTE_UPDATE_INTERVAL, self.runDijkstra, [adjacency_list, graph_nodes, rp_nodes]).start()
@@ -574,10 +583,7 @@ class ReceiveThread(Thread):
     
         global_least_cost_path = least_cost_path
 
-        # Test
-        for node in args[1]:
-            logger.info(f"least cost path: {node} : {least_cost_path[node]}")
-            
+        log_metrics("LEAST COST PATH", json.dumps(least_cost_path))
 
         # Finalise path array
         final_paths = []
@@ -627,6 +633,7 @@ class ReceiveThread(Thread):
 
         # Display final output after Dijkstra computation
         self.showPaths(final_paths , distances , global_router['RID'])
+        
 
     def showPaths(path, graph_nodes, distances, source_node):
 
@@ -650,6 +657,8 @@ class ReceiveThread(Thread):
 
         for vertex in distances:
             display_paths = display_paths + "{0} next hop {1}\n".format(vertex, next_hop(vertex))
+
+
 
 
 class SendThread(Thread):
@@ -788,7 +797,15 @@ def print_stats():
 
         time.sleep(3)
 
+# Log metrics to file
+def log_metrics(event, msg):
 
+    time_stamp = time.time()
+    with open(graph_metrics_file, "a") as f:
+        f.write("{0};{1};{2};{3}\n".format(time_stamp, 
+                                            global_router['RID'], 
+                                            event,
+                                            msg))
 
 def init_router(router_id, router_port):
 

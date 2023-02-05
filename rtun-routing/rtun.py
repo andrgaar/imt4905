@@ -130,7 +130,7 @@ if args.file:
     #                                   "--ifconfig", f"10.{args.id}.0.1", f"10.{args.did}.0.1",
     #                                   "--dev", f"tun{args.did}", "--port", f"119{args.did}"], stdout=vpn_log)
 
-    my_id = "PEER" + str(args.id)
+    my_id = "P" + str(args.id)
     port_num = int("105"+str(args.did))
     my_router_port = int("5" + f'{args.id:03}')
 
@@ -211,6 +211,7 @@ if args.file:
         print("Caught keyboard interrupt, exiting...")
         print("Graph:")
         print(lsr.graph)
+        lsr.log_metrics("PEER EXITED", "")
         sys.exit()
             
     except Exception as e:
