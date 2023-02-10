@@ -15,7 +15,7 @@ from queue import Queue # Queues messages to a thread
 from torpy.circuit import TorCircuit
 from torpy.stream import TorStream
 
-import server
+#import server
 import messages
 
 import logging

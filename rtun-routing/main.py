@@ -67,7 +67,7 @@ def build_circuit(guard_router, extend_routers): # returns Circuit
             
 def establish_rendezvous(circuit, rendezvous_cookie):
     # Establish a rendezvous point
-    circuit._rendezvous_establish(rendezvous_cookie)
+    circuit._rendezvous_establish(rendezvous_cookie.encode('UTF-8'))
 
 
 def setup_rendezvous2(guard_nick, rendp_nick, rendezvous_cookie, port_num, peer_id, peer_router_addr, condition=None):
