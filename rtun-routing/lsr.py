@@ -17,6 +17,7 @@ from torpy.stream import TorStream
 
 #import server
 import messages
+import rendezvous
 
 import logging
 logger = logging.getLogger(__name__)
@@ -26,6 +27,7 @@ ROUTE_UPDATE_INTERVAL = 30
 PERIODIC_HEART_BEAT = 5
 NODE_FAILURE_INTERVAL = 5
 TIMEOUT = 15
+LATENCY_SAMPLES = 10
 
 # Log metrics to file
 graph_metrics_file = "router.log"
@@ -40,6 +42,7 @@ rendp_conn = set()
 display_paths = None
 threadLock = None
 threads = None
+HB_time = 0 #  the last HB to be sent
 
 '''
 LSA structure:
@@ -53,7 +56,7 @@ Neighbours = int : Number of neighbours
 Neighbours Data = []
     {
      NID  = str : ID of neighbour
-     Cost = float : Cost of route
+     Cost = int : Cost of route
      Hostname = str : Hostname of neighbour
      RP = str : Rendezvous Point
      FLAG = 0
@@ -69,6 +72,7 @@ class ReceiveThread(Thread):
         self.thread_lock = thread_lock
         self.packets = set()
         self.LSA_SN = {}
+        self.LSA_SN_forwarded = {}
         self.HB_set = {}
         self.LSA_DB = {}
         self.inactive_list = set()
@@ -79,7 +83,7 @@ class ReceiveThread(Thread):
 
     def __exit__(self, exc_type, exc_value, traceback):
 
-        log_metric("PEER EXIT", "")
+        log_metrics("PEER EXIT", "")
         logger.debug("ReceiveThread __exit__")
 
     def run(self):
@@ -143,12 +147,13 @@ class ReceiveThread(Thread):
                 logger.info("Received LSA from ourselves - dropping")
                 return
 
-            logger.info("Received LSA from {0} with SN: {1}".format(RID, local_copy_LSA['SN']))
+            logger.info("Received LSA from {0} with SN: {1} and FLAG: {2}".format(RID, local_copy_LSA['SN'], local_copy_LSA['FLAG']))
 
             # Might get a LSA from non-neighbour
             try:
                 neighbour_stats[RID]['LSA received'] += 1 
             except KeyError:
+                logger.info(f"LSA from {RID} is not a neighbour")
                 stats_dict = {}
                 stats_dict['HB sent'] = 0
                 stats_dict['HB received'] = 0
@@ -164,7 +169,7 @@ class ReceiveThread(Thread):
             flag = local_copy_LSA['FLAG']
 
             # Append this router's ID to LSA_SN database
-            self.LSA_SN.update({global_router['RID'] : 0})
+            #self.LSA_SN.update({global_router['RID'] : 0})
 
             # Any new LSA received that have not been seen before are stored within this
             # routers local link-state database
@@ -172,16 +177,9 @@ class ReceiveThread(Thread):
                 logger.info("LSA received from {0} is new".format(local_copy_LSA['RID']))
                 self.packets.add(local_copy_LSA['RID'])
                 self.LSA_SN.update({local_copy_LSA['RID']: local_copy_LSA['SN']})
+                self.LSA_SN_forwarded.update({local_copy_LSA['RID']: -1})
                 self.LSA_DB.update({local_copy_LSA['RID'] : local_copy_LSA})
                 
-                for router in neighbour_routers:
-                    if router['NID'] != local_copy_LSA['RID']:
-                        # If the LSA received does not exist within router database , forward it to neighbours
-                        # If LSA exists within database, do not forward it (silently drop it)
-                        logger.info("Sending update to " + str(router['NID']))
-                        send_to_stream(router['NID'], pickle.dumps(self.LSA_DB[local_copy_LSA['RID']]))
-                        neighbour_stats[router['NID']]['LSA sent'] += 1
-                        time.sleep(1)
                 # Update global graph using constructed link-state database
                 self.updateGraph(graph, self.LSA_DB, 0)
 
@@ -204,35 +202,33 @@ class ReceiveThread(Thread):
                         logger.info("LSA contains dead routes")
                         self.updateLSADB(local_copy_LSA['DEAD'])
                         self.updateGraphOnly(graph, local_copy_LSA['DEAD'])
-                    # Send the new LSA received back to the sending router (so as to ensure that it is a two-way
-                    # update for the sender and recipient's local database)
-                    #if local_copy_LSA['RID'] != global_router['RID']:
-                    #    logger.info("Sending update back to sender " + str(local_copy_LSA['RID']))
-                    #    send_to_stream(local_copy_LSA['RID'], pickle.dumps(self.LSA_DB[local_copy_LSA['RID']]))
-                    #    neighbour_stats[local_copy_LSA['RID']]['LSA sent'] += 1
-                        time.sleep(1)
+                
+                    # After getting a fresh LSA, we wait for sometime (so that the global graph can update) and then
+                    # recompute shortest paths using Dijkstra algorithm
+                    Timer(10, self.updateGraphAfterFailure, [
+                            graph,
+                            self.inactive_list,
+                            self.LSA_DB,
+                            1,
+                            self.thread_lock]
+                        ).start()
                 else:
-                    # If old data is being received, that is, there is no new LSA, we simply forward the message
-                    # onto our neighbours (now with the list of updated neighbours and higher SN)
-                    logger.info("LSA is old - forwarding to my neighbours")
-                    for new_router in global_router['Neighbours Data']:
-                        if new_router['NID'] != global_router['RID']:
-                            try:
-                                logger.debug("Nothing to do, forwarding LSA to " + str(local_copy_LSA['RID']))
-                                send_to_stream(new_router['NID'], pickle.dumps(self.LSA_DB[local_copy_LSA['RID']]))
-                                neighbour_stats[new_router['NID']]['LSA sent'] += 1
-                            except KeyError:
-                                pass
+                    logger.debug("Update LSA is old, forwarding only")
+
+            # Forward the LSA to our neighbours if it hasn't already
+            if self.LSA_SN_forwarded[RID] < local_copy_LSA['SN']:
+                logger.debug("Forwarding LSA to neighbours")
+                for router in neighbour_routers:
+                    if router['NID'] != local_copy_LSA['RID']:
+                        logger.info("Sending update to " + str(router['NID']))
+                        send_to_stream(router['NID'], pickle.dumps(self.LSA_DB[local_copy_LSA['RID']]))
+                        neighbour_stats[router['NID']]['LSA sent'] += 1
                         time.sleep(1)
-                # After getting a fresh LSA, we wait for sometime (so that the global graph can update) and then
-                # recompute shortest paths using Dijkstra algorithm
-                Timer(10, self.updateGraphAfterFailure, [
-                    graph,
-                    self.inactive_list,
-                    self.LSA_DB,
-                    1,
-                    self.thread_lock]
-                ).start()
+                # Update the forwarded SN for this peer
+                self.LSA_SN_forwarded.update({local_copy_LSA['RID']: local_copy_LSA['SN']})
+
+
+
 
     # Handle receive of HELLO
     def handle_HELLO(self, msg_data, rendpoint, circuit, circuit_id, stream, stream_id, receive_node=None, extend_node=None, receive_socket=None):
@@ -271,26 +267,30 @@ class ReceiveThread(Thread):
                 #logger.info("Sending HB response to " + str(RID))
                 message = pickle.dumps(HB_message)
                 send_to_stream( RID, message)
-            else:
+
+            # Last sent HB timestamp matches received HB
+            elif HBref == HB_time:
                 # Set the latency for the neighbour
                 latency_list = neighbour_stats[RID]['Latencies MS']
                 latency = now - HBref
                 latency_list.append(latency) 
-                # If we have 3 measurements update the cost
-                if len(latency_list) == 3:
+                # If we have enough measurements update the cost
+                if len(latency_list) == LATENCY_SAMPLES:
                     avg_latency = round( sum(latency_list) / len(latency_list) )
                     logger.info(f"Calculated latency for {RID} to {avg_latency} : { latency_list }")
                     latency_list = list()
 
                     for i in range(len(global_router['Neighbours Data'])):
                         if global_router['Neighbours Data'][i]['NID'] == RID:
-                            global_router['Neighbours Data'][i]['Cost'] = float(avg_latency)
+                            global_router['Neighbours Data'][i]['Cost'] = int(avg_latency)
                             global_router['FLAG'] = 1 # update LSA
                             global_router['SN'] = global_router['SN'] + 1 # increment to trigger update LSA
                             #logger.info(f"Updated average latency for {RID} to {avg_latency} ms") 
                             break
 
                     neighbour_stats[RID]['Latencies MS'] = latency_list 
+            else:
+                logger.debug("HBref does not match last sent, skipping")
 
 
             # Periodically check for any dead neighbours and update
@@ -528,7 +528,7 @@ class ReceiveThread(Thread):
                 if node == link[0]:
                     new_LL[node].update({link[1] : link[2]})
                     new_RP[node].update({link[1] : link[3]})
-                    logger.info(f"adjancency list update: {link}")
+                    logger.debug(f"adjancency list update: {link}")
 
         # Update adjacency list so as to reflect all outgoing/incoming
         # links (Graph should now fully represent the network topology
@@ -595,7 +595,7 @@ class ReceiveThread(Thread):
                 end_node = node
                 temp_node = node
                 #temp_paths.append(temp_node)
-                logger.info(f"Build path for: {node}")
+                logger.debug(f"Build path for: {node}")
                 #while(not (path_string.endswith(global_router['RID']))):
                 #while( temp_node != global_router['RID'] ):
                 #    logger.info(f"least cost path: {temp_node} : {least_cost_path[temp_node]}")
@@ -604,7 +604,7 @@ class ReceiveThread(Thread):
                 
 
                 for temp_node in least_cost_path[node]:
-                    logger.info(f"temp_node: {temp_node}")
+                    logger.debug(f"temp_node: {temp_node}")
                     if temp_node == global_router['RID']:
                         temp_paths.append(node)
                     else:
@@ -614,7 +614,7 @@ class ReceiveThread(Thread):
 
                 while len(temp_paths) > 0:
                     next_node = temp_paths.pop()
-                    logger.info(f"prev_node: {prev_node} next_node: {next_node}")
+                    logger.debug(f"prev_node: {prev_node} next_node: {next_node}")
                     rp_node = rp_paths[prev_node][next_node]
                     path_string = prev_node + '<<' + rp_node + '>>' + next_node
 
@@ -680,8 +680,10 @@ class SendThread(Thread):
     def clientSide(self):
 
         while True:
+            lsa_tmp = global_router
+            #lsa_tmp['FLAG'] = 1
             
-            message = pickle.dumps(global_router)
+            message = pickle.dumps(lsa_tmp)
             
             for dict in global_router['Neighbours Data']:
                 logger.debug("Sending neighbour data for " + str(dict['NID']))
@@ -704,6 +706,7 @@ class HeartBeatThread(Thread):
         self.broadcastHB()
 
     def broadcastHB(self):
+        global HB_time
 
         while True:
             HB_time = current_milli_time()
@@ -723,7 +726,7 @@ class HeartBeatThread(Thread):
 # Return the next hop in least cost path
 def next_hop(dst_peer):
     global global_least_cost_path
-    logger.info(f"next_hop: {global_least_cost_path}")
+    logger.debug(f"next_hop: {global_least_cost_path}")
     
     this_peer = global_router['RID']
     
@@ -807,6 +810,32 @@ def log_metrics(event, msg):
                                             event,
                                             msg))
 
+def setup_router(router_id, router_port):
+    
+    # 
+    # Initialize the router
+    # 
+    init_router(router_id, router_port)
+
+    # Setup a queue for communicating with ReceiveThread
+    rcv_queue = Queue()
+
+    receiver_thread = ReceiveThread("RECEIVER", rcv_queue, threadLock)
+    sender_thread = SendThread("SENDER", threadLock)
+
+    HB_message = [{'RID' : global_router['RID']}]
+    heartbeat_thread = HeartBeatThread("HEART BEAT", HB_message, threadLock)
+                
+    receiver_thread.start()
+    sender_thread.start()
+    heartbeat_thread.start()
+                
+    threads.append(receiver_thread)
+    threads.append(sender_thread)
+    threads.append(heartbeat_thread)
+
+    return rcv_queue
+
 def init_router(router_id, router_port):
 
     global global_router
@@ -848,7 +877,7 @@ def add_neighbour(r_id, r_hostname, rendpoint, r_cost, circuit, circuit_id, stre
 
     # For LSA
     router_dict['NID']  = r_id
-    router_dict['Cost'] = float(r_cost)
+    router_dict['Cost'] = round(r_cost)
     router_dict['Hostname'] = r_hostname
     router_dict['RP'] = rendpoint
     router_dict['FLAG'] = 0
@@ -897,7 +926,7 @@ def add_neighbour(r_id, r_hostname, rendpoint, r_cost, circuit, circuit_id, stre
         router_dict = {}
 
         router_dict['NID']  = neighbour['NID']
-        router_dict['Cost'] = float(neighbour['Cost'])
+        router_dict['Cost'] = int(neighbour['Cost'])
         router_dict['RP'] = neighbour['RP']
 
         # Package this routers data in a useful format and append to temporary graph list
@@ -921,7 +950,7 @@ def send_to_stream(router_id, message):
         stream_data['Stream'].send(message)
     else:
         # else create the cells
-        server.snd_data(message, 
+        rendezvous.snd_data(message, 
                         stream_data['Circuit ID'], 
                         stream_data['Extend Node'], 
                         stream_data['Receive Node'], 
@@ -960,7 +989,7 @@ if __name__ == "__main__":
         neighbour = data[line].split(" ")
 
         router_dict['NID']  = neighbour[0]
-        router_dict['Cost'] = float(neighbour[1])
+        router_dict['Cost'] = int(neighbour[1])
         router_dict['Port'] = neighbour[2]
 
         # Append the dict to current routers dict of neighbours data

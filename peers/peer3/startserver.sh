@@ -19,5 +19,5 @@ export PYTHONPATH="${BASEDIR}/../../torpy-rtun-fork/"
 
 # Start rtun server
 #python3 rtun.py -p -c -t peer1peer2 -n default -i 2 -d 1 &
-python3 "$SCRIPTPATH/rtun.py" -v INFO -g BM10 -f rendezvous.txt -t peer1peer2 -n default -i 3 -d 2 
+python3 "$SCRIPTPATH/rtun.py" -v ERROR -g BM10 -f rendezvous.txt -t peer1peer2 -n default -i 3 -d 2 
 

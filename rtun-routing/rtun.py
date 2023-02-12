@@ -1,9 +1,7 @@
 import argparse
 import sys
 import time
-import main
-import server
-import lsr
+#import main
 import subprocess
 from time import sleep
 from threading import Thread
@@ -11,6 +9,10 @@ import pandas as pd
 import hashlib
 import traceback
 import logging
+
+import server
+import lsr
+from rendezvous import RendezvousEstablish, RendezvousConnect
 
 condition = None # acquired by executing thread to notify main thread to unblock
 
@@ -134,7 +136,7 @@ if args.file:
     port_num = int("105"+str(args.did))
     my_router_port = int("5" + f'{args.id:03}')
 
-    main.setup_router(my_id, my_router_port)
+    rcv_queue = lsr.setup_router(my_id, my_router_port)
     
     lsr.threads = []
 
@@ -150,18 +152,20 @@ if args.file:
         if connection == "LISTEN": 
             # Start a listening thread
             logger.info(f"Adding listener for {relay_nick}")
-            lsr.threads.append(Thread(name='Thread-' + relay_nick, 
-                                        target=main.setup_rendezvous2, 
-                                        args=(guard_nick, relay_nick, cookie, port_num, peer_id, peer_router_addr)))
+            #lsr.threads.append(Thread(name='Thread-' + relay_nick, 
+            #                            target=main.setup_rendezvous2, 
+            #                            args=(guard_nick, relay_nick, cookie, port_num, peer_id, peer_router_addr)))
+            lsr.threads.append( RendezvousEstablish(guard_nick, relay_nick, cookie, rcv_queue) )
+
+
+
         elif connection == "CONNECT": 
             # Start a connecting thread
             logger.info(f"Adding a connection to {relay_nick}")
-            lsr.threads.append(Thread(name='Thread-' + relay_nick, 
-                                        target=server.list_rend_server, 
-                                        args=(cookie, relay_nick, my_id, peer_id, peer_router_addr)))
             #lsr.threads.append(Thread(name='Thread-' + relay_nick, 
-            #                            target=main.connect_to_rendezvous_point2, 
-            #                            args=(guard_nick, relay_nick, cookie)))
+            #                            target=server.list_rend_server, 
+            #                            args=(cookie, relay_nick, my_id, peer_id, peer_router_addr)))
+            lsr.threads.append( RendezvousConnect(relay_nick, cookie, my_id, rcv_queue) )
         else:
             logger.info(f"Unknown connection option: {connection}")
 
