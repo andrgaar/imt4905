@@ -274,6 +274,7 @@ class ReceiveThread(Thread):
                 latency_list = neighbour_stats[RID]['Latencies MS']
                 latency = now - HBref
                 latency_list.append(latency) 
+                log_metrics("MEASURED LATENCY", latency)
                 # If we have enough measurements update the cost
                 if len(latency_list) == LATENCY_SAMPLES:
                     avg_latency = round( sum(latency_list) / len(latency_list) )
