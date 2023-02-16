@@ -1,0 +1,8 @@
+2023-02-12 19:36:56,464 - ERROR - [Connect-ichundes] - Error in receive on socket: 'CellPadding' object has no attribute 'get_encrypted'
+2023-02-12 19:36:56,464 - ERROR - [Connect-ichundes] - Error in receive on socket: 'CellPadding' object has no attribute 'get_encrypted'
+2023-02-12 19:36:56,464 - ERROR - [Connect-ichundes] - Error in receive on socket: 'CellPadding' object has no attribute 'get_encrypted'
+2023-02-12 19:36:56,465 - ERROR - [Connect-ichundes] - Error in receive on socket: 'CellPadding' object has no attribute 'get_encrypted'
+2023-02-12 19:36:56,465 - ERROR - [Connect-ichundes] - Error in receive on socket: 'CellPadding' object has no attribute 'get_encrypted'
+2023-02-12 19:36:58,112 - ERROR - [Connect-ichundes] - Error in receive on socket: 'CellPadding' object has no attribute 'get_encrypted'
+2023-02-12 19:36:58,112 - ERROR - [Connect-ichundes] - Error in receive on socket: 'CellPadding' object has no attribute 'get_encrypted'
+2023-02-12 19:36:58,334 - ERROR - [Connect-ichundes] - Error in receive on socket: 'CellDestroy' object has no attribute 'get_encrypted'
