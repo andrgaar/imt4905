@@ -1,0 +1,348 @@
+import sys
+import os
+import time
+import socket
+import select
+import pickle
+
+from time import sleep
+from threading import Event, Thread
+from selectors import EVENT_READ, DefaultSelector
+
+from torpy.consesus import TorConsensus
+from torpy.crypto_state import CryptoState
+from torpy.keyagreement import NtorKeyAgreement, FastKeyAgreement
+from torpy.guard import TorGuard
+from torpy.stream import TorStream
+from torpy.circuit import CircuitNode, CircuitsList
+from torpy.cli.socks import SocksServer
+from torpy.cells import CellRelayEstablishRendezvous, CellRelayRendezvousEstablished, CellCreate2, CellCreated2, CellRelaySendMe, \
+    CellRelay, CellCreateFast, CellCreatedFast, CellRelayRendezvous1, CellRelayBegin, CellRelayData, CellRelayRendezvous2, CellRelayEnd, CellRelayConnected, CellNetInfo, CellDestroy
+from torpy.cell_socket import TorCellSocket
+
+import lsr
+
+import logging
+logger = logging.getLogger(__name__)
+
+from messages import HelloMessage
+
+# Class to establish a Rendezvous Point
+class RendezvousEstablish(Thread):
+    def __init__(self, guard_nick, rendp_nick, rendezvous_cookie, receive_queue, condition=None):
+        # execute the base constructor
+        Thread.__init__(self)
+        # store the values
+        self.guard_nick = guard_nick
+        self.rendp_nick = rendp_nick
+        self.rendezvous_cookie = rendezvous_cookie
+        self.receive_queue = receive_queue
+        self.condition = condition
+
+        self.setName(f"Establish-{self.rendp_nick}")
+
+    # 
+    # Setup a rendezvous point and wait
+    #
+    def run(self):
+        logger.info(f"Establishing RP to {self.rendp_nick}")
+        consensus = TorConsensus()
+        guard_router = TorGuard(consensus.get_router_using_nick(self.guard_nick))
+        rendp_router = consensus.get_router_using_nick(self.rendp_nick)
+        peer_router_ip = "127.0.0.1"
+        peer_router_port = 5000
+
+        # Acquire a condition if this is a waiting RP
+        if self.condition:
+            self.condition.acquire()
+
+        # Build circuit to rendezvous point
+        circuit = self.build_circuit(guard_router, [ rendp_router ])
+        logger.info(type(circuit))
+
+        # Establish a rendezvous point
+        self.establish_rendezvous(circuit, self.rendezvous_cookie)
+    
+        logger.info("Waiting for connections at relay {0} for cookie {1} ...".format(self.rendp_nick, self.rendezvous_cookie))
+        with circuit.create_waiter(CellRelayRendezvous2) as w:
+            rendezvous2_cell = w.get(timeout=600)
+            logger.info(f"Got REND2 message from {self.rendp_nick}")
+          
+        # Here someone has connected - we notify a waiting thread
+        if self.condition:
+            self.condition.release()
+
+        logger.debug("Derive shared secret with peer")
+        extend_node = CircuitNode(rendp_router, key_agreement_cls=FastKeyAgreement)
+        shared_sec = "000000000000000000010000000000000000000100000000000000010000000000000001".encode('utf-8')
+        extend_node._crypto_state = CryptoState(shared_sec)
+        circuit._circuit_nodes.append(extend_node)
+
+        # Set up streams
+        sock_r, sock_w = socket.socketpair()
+
+        events = {TorStream: {'data': Event(), 'close': Event()},
+                  socket.socket: {'data': Event(), 'close': Event()}}
+
+        with guard_router as guard:
+
+            def recv_callback(sock_or_stream, mask):
+                logger.debug(f'recv_callback {sock_or_stream}')
+                kind = type(sock_or_stream)
+                data = sock_or_stream.recv(1024)
+                logger.debug('%s', kind.__name__)
+
+                if data:
+                    events[kind]['data'].set()
+                    #Put the received data into the ReceiverThread input queue with circuit data
+                    self.receive_queue.put_nowait( [{'data' : data, 
+                                            'circuit' : circuit, 
+                                            'circuit_id' : circuit.id, 
+                                            'stream' : stream, 
+                                            'stream_id' : stream.id}]
+                                        )
+                else:
+                    logger.debug('closing')
+                    guard.unregister(sock_or_stream)
+                    events[kind]['close'].set()
+
+            with circuit as c:
+
+                logger.info("Entered circuit context with id " + hex(c.id))
+
+                with c.create_stream((peer_router_ip, peer_router_port)) as stream:
+                    
+                    #logger.info("Entered stream context with id " + hex(stream.id))
+
+                    def recv_stream_callback(event):
+                        logger.debug(f"Receive callback event: {event}")
+                        data_str = stream._buffer.decode('utf-8')
+                        logger.debug(f"Data: {data_str}")
+        
+                    logger.info(f"Sending HELLO to peer")
+                    # Send a HELLO message to the other side
+                    hello_msg = HelloMessage( lsr.global_router['RID'] ) 
+                    hello_data = [{'Message' : 'HELLO', 'Peer' : lsr.global_router['RID']}]
+                    hello_data = pickle.dumps(hello_data)
+                    logger.info(f"Sending HELLO to peer: {hello_data}")
+                    stream.send(hello_data)
+
+                    while True:
+                        data = stream.recv(1024)
+                        logger.debug("Received data on stream: " + str(data))
+                        # Put the received data into the ReceiverThread input queue with circuit data
+                        self.receive_queue.put_nowait( [{'data' : data, 
+                                                'circuit' : circuit, 
+                                                'circuit_id' : circuit.id, 
+                                                'stream' : stream, 
+                                                'stream_id' : stream.id,
+                                                'receive_node' : None,
+                                                'extend_node' : None,
+                                                'receive_socket' : None,
+                                                'rendpoint' : self.rendp_nick
+
+                                                }]
+                                            )
+
+
+    def build_circuit(self, guard_router, extend_routers): # returns Circuit
+        # Build a circuit OP->Guard->RendPoint
+        circuit =  guard_router.create_circuit(hops_count=-1, extend_routers=extend_routers)
+
+        circuit_hex = hex(circuit.id)
+        logger.debug(f"Built circuit to {extend_routers} with ID {circuit_hex}")
+
+        return circuit
+                
+    def establish_rendezvous(self, circuit, rendezvous_cookie):
+        # Establish a rendezvous point
+        circuit._rendezvous_establish(rendezvous_cookie)
+
+
+# Client side class connecting to a rendezvous point
+class RendezvousConnect(Thread):
+
+    def __init__(self, rendp_nick, cookie, my_id, receive_queue):
+        # execute the base constructor
+        Thread.__init__(self)
+        # store the values
+        self.rendp_nick = rendp_nick
+        self.cookie = cookie
+        self.my_id = my_id
+        self.receive_queue = receive_queue
+
+        self.setName(f"Connect-{self.rendp_nick}")
+
+    def run(self):
+
+        # Try to connect to rendezvous point - restart on failure
+        while True:
+            try:
+                logger.info("Calling connect_to_rendezvous_point")
+                rcv_sock, rcv_cn, circuit_id = self.connect_to_rendezvous_point(self.rendp_nick, self.cookie)
+
+                logger.debug("Derive shared secret")
+                extend_node = CircuitNode("a")
+                shared_sec = "000000000000000000010000000000000000000100000000000000010000000000000001".encode('utf-8')
+                extend_node._crypto_state = CryptoState(shared_sec)
+
+                logger.info("Waiting for peer to open stream")
+                while True:
+                    try:
+                        b = rcv_sock.recv_cell()
+                        if b:
+                            logger.info("Received cell: " + str(type(b)))
+                            if isinstance(b, CellDestroy):
+                                logger.debug("Received CellDestroy reason: " + str(b.reason))
+                                raise Exception("Receive CellDestroy from RP")
+                            else:
+                                break
+                    except socket.timeout:
+                        continue
+
+            except KeyboardInterrupt:
+                logger.info("Caught keyboard interrupt, exiting...")
+                raise KeyboardInterrupt
+
+            except Exception as e:
+                logger.warn(f"Could not connect to rendezvous point {self.rendp_nick}: {e}, retrying in 5 seconds...")
+                time.sleep(5)
+                continue
+            break # break and continue
+
+        logger.debug("Decrypting cells")
+        rcv_cn.decrypt_backward(b)
+        extend_node.decrypt_backward(b)
+        cellbegin = b.get_decrypted()
+        stream_id = b.stream_id
+        logger.debug("CellRelay received, stream_id: " + str(stream_id))
+        logger.debug(cellbegin.address)
+        logger.debug(cellbegin.port)
+
+        inner_cell = CellRelayConnected("127.0.0.1", 6000, circuit_id)
+        relay_cell = CellRelay(inner_cell, stream_id=stream_id, circuit_id=circuit_id, padding=None)
+        extend_node.encrypt_forward(relay_cell)
+        rcv_cn.encrypt_forward(relay_cell)
+        rcv_sock.send_cell(relay_cell)
+        logger.info("Stream opened successfully")
+
+        # Send a HELLO message to the other side
+        hello_msg = HelloMessage( lsr.global_router['RID'] ) 
+        #hello_data = pickle.dumps(hello_msg)
+        hello_data = [{'Message' : 'HELLO', 'Peer' : lsr.global_router['RID']}]
+        hello_data = pickle.dumps(hello_data)
+        logger.info(f"Sending HELLO to peer: {hello_data}")
+        snd_data(hello_data, circuit_id, extend_node, rcv_cn, rcv_sock, stream_id)
+
+        while True:
+            try:
+                r, w, _ = select.select([rcv_sock.ssl_socket], [], [])
+                if rcv_sock.ssl_socket in r:
+                    buf = rcv_data(rcv_sock, rcv_cn, extend_node)
+
+                    if buf == 404:
+                        continue
+                    if len(buf) == 0:
+                        break
+                    
+                    #Put the received data into the ReceiverThread input queue with circuit data
+                    self.receive_queue.put_nowait( [{'data' : buf, 
+                                                'circuit' : None, 
+                                                'circuit_id' : circuit_id, 
+                                                'stream' : None, 
+                                                'stream_id' : stream_id,
+                                                'receive_node' : rcv_cn,
+                                                'extend_node' : extend_node,
+                                                'receive_socket' : rcv_sock,
+                                                'rendpoint' : self.rendp_nick
+                                                }]
+                                        )                
+
+            except Exception as e:
+                logger.error("Error in receive on socket: " + str(e))
+                continue
+    #
+    # Connect to a rendezvous point with one-hop to rendezvous
+    #
+    def connect_to_rendezvous_point(self, nick, cookie, circuit_id=0x80000002):
+        logger.info("Connect to rendezvous point " + nick)
+
+        consensus = TorConsensus()
+        router = consensus.get_router_using_nick(nick)
+
+        tor_cell_socket = TorCellSocket(router)
+        tor_cell_socket.connect()
+
+        #circuit_id = 0x80000002
+
+        logger.debug("Key agreement")
+        if False:
+            key_agreement_cls = NtorKeyAgreement
+            create_cls = partial(CellCreate2, key_agreement_cls.TYPE)
+            created_cls = CellCreated2
+        else:
+            key_agreement_cls = FastKeyAgreement
+            create_cls = CellCreateFast
+            created_cls = CellCreatedFast
+
+        circuit_node = CircuitNode(router, key_agreement_cls=key_agreement_cls)
+        onion_skin = circuit_node.create_onion_skin()
+        cell_create = create_cls(onion_skin, circuit_id)
+        tor_cell_socket.send_cell(cell_create)
+        cell_created = tor_cell_socket.recv_cell()
+        logger.debug('Complete handshake..."')
+        circuit_node.complete_handshake(cell_created.handshake_data)
+
+
+        logger.debug("Cell created circuit ID: " + str(cell_created.circuit_id))
+        circuit_node.complete_handshake(cell_created.handshake_data)
+        inner_cell = CellRelayRendezvous1(os.urandom(128+20), cookie, cell_created.circuit_id)
+        relay_cell = CellRelay(inner_cell, stream_id=0, circuit_id=circuit_id)
+        circuit_node.encrypt_forward(relay_cell)
+        tor_cell_socket.send_cell(relay_cell)
+        logger.debug("Sent cookie")
+
+        logger.info("Connected to rendezvous point " + nick)
+
+        return tor_cell_socket, circuit_node, circuit_id
+
+#
+# Receive data on socket created for rendezvous point
+#    
+def rcv_data(rcv_sock, rcv_cn, extend_node):
+    b = rcv_sock.recv_cell()
+    rcv_cn.decrypt_backward(b)
+    extend_node.decrypt_backward(b)
+
+    cellrelaydata = b.get_decrypted()
+    if isinstance(cellrelaydata, CellRelayEnd):
+        print("Got relayend, exiting")
+        exit()
+    elif isinstance(cellrelaydata, CellDestroy):
+        print("Got destroy, exiting")
+        exit()
+    elif isinstance(cellrelaydata, CellRelaySendMe):
+        print("Got SENDME")
+        return 404
+    else:
+        #print("Got " + str(type(cellrelaydata)))
+        pass
+
+    return cellrelaydata.data
+
+#
+# Send data on socket created for rendezvous point
+#    
+def snd_data(rsp, circuit_id, extend_node, rcv_cn, rcv_sock, stream_id=0):
+    logger.debug(f"Sending cell: {rsp} to {circuit_id}")
+    inner_cell = CellRelayData(rsp, circuit_id)
+    relay_cell = CellRelay(inner_cell, stream_id=stream_id, circuit_id=circuit_id, padding=None)
+
+    extend_node.encrypt_forward(relay_cell)
+    rcv_cn.encrypt_forward(relay_cell)
+    rcv_sock.send_cell(relay_cell)
+    logger.debug("Sent cell:" + str(inner_cell))
+
+
+
+

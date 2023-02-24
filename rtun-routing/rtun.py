@@ -5,52 +5,16 @@ import time
 import subprocess
 from time import sleep
 from threading import Thread
-import pandas as pd
-import hashlib
 import traceback
 import logging
 
 import server
 import lsr
+from lsr import ConnectionThread
 from rendezvous import RendezvousEstablish, RendezvousConnect
+from tester import RtunTest
 
 condition = None # acquired by executing thread to notify main thread to unblock
-
-def choose_relay(tun_name, namespace='default', time_frame="1 min"):
-    all_relays = []
-    a_r = []
-    blacklist = []
-    actual_relays = []
-    with open("/root/.local/share/torpy/network_status", 'r') as f:
-        line = True
-        while line:
-            line = f.readline()
-            spl = line.split(' ')
-            if spl[0] == "r":
-                if spl[1] in a_r:
-                    blacklist.append(spl[1])
-                a_r.append(spl[1])
-                all_relays.append([spl[1], spl[6], spl[7]])
-    for rel in all_relays:
-        if not rel[0] in blacklist:
-            actual_relays.append(rel)
-    all_relays = actual_relays
-    num_of_relays = len(all_relays)
-    print(num_of_relays)
-    # How long to use 1 relay as RP. Rotates every :30 seconds with the round-function in Pandas.
-    ts = pd.Timestamp.now().round(time_frame).value
-
-
-    h = str(ts)+namespace+tun_name  # Concat all values as input to hash function
-    h = hashlib.sha256(h.encode())
-    n = int(h.hexdigest(), base=16)  # Convert to integer to be able to use modulo
-
-    #print(n)
-    selected = n%num_of_relays
-    cookie = h.hexdigest().encode()[0:20]
-    logging.info(f"I want to connect to {all_relays[selected][0]}({selected}) at {all_relays[selected][1]}:{all_relays[selected][2]} with cookie {cookie}")
-    return all_relays[selected][0], cookie
-
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-r', '--relay', help="relay to be used as rendezvous point", type=str)
@@ -136,7 +100,7 @@ if args.file:
     port_num = int("105"+str(args.did))
     my_router_port = int("5" + f'{args.id:03}')
 
-    rcv_queue = lsr.setup_router(my_id, my_router_port)
+    rcv_queue, conn_queue = lsr.setup_router(my_id, my_router_port)
     
     lsr.threads = []
 
@@ -176,37 +140,41 @@ if args.file:
     # Display program statistics
     lsr.threads.append(Thread(name='Thread-Stats', target=lsr.print_stats))
 
+
     for thread in lsr.threads:
         logger.info("Starting thread " + str(thread.name))
         thread.start()
 
+    # Start a tester thread
+    logger.info("Starting testing thread")
+    tester_thread = RtunTest()
+    tester_thread.start()
+
+    # Start ConnectionThread
+    logger.info("Starting connection thread")
+    conn_thread = ConnectionThread("CONNECTION", conn_queue)
+    conn_thread.start()
+
     try:
         # Create RP loop - creates new rendezvous points for peers to connect
-        """
         while True:
-            # Get a new RP
-            rp_relay, rp_cookie = choose_relay(lsr.global_router['RID'])
-            logger.info(f"Establishing waiting RP {rp_relay} with cookie '{rp_cookie}"
+            conn = conn_queue.get()
 
-            # Acquire a lock and wait for thread to release it, i.e. connecting peer
-            condition = threading.Condition()
+            logger.info(conn)
+            conn_cmd = conn[0]
+            conn_nick = conn[1]
+            conn_cookie = conn[2]
 
-            rp_thread = Thread(name='Thread-' + rp_relay, 
-                                        target=main.setup_rendezvous2, 
-                                        args=(guard_nick, rp_relay, rp_cookie, 0, 0, 0))
-            rp_thread.start()
-            
-            # Add to list of RPs announced to network
-            rp_id = f"{rp_relay}|{rp_cookie}"
-            lsr.global_router['RP'].add(rp_id)
-
-            # Waits for thread to notify us to continue
-            with condition:
-                condition.wait()
-            
-            logger.info(f"RP {rp_relay} has either connected or timed out - create new")
-            lsr.global_router['RP'].remove(rp_id)
-        """
+            # Process the JOIN
+            if conn_cmd == "JOIN":
+                logger.info(f"Got JOIN to relay {conn_nick}")
+                lsr.threads.append( RendezvousConnect(conn_nick, conn_cookie, my_id, rcv_queue) )
+            elif conn_cmd == "ESTABLISH":
+                logger.info(f"Got ESTABLISH to relay {conn_nick}")
+                breakpoint()
+                establish_thread = RendezvousEstablish(guard_nick, conn_nick, conn_cookie, rcv_queue) 
+                lsr.threads.append(establish_thread)
+             
         # Call join on each tread (so that they wait)
         for thread in lsr.threads:
             thread.join()
@@ -222,6 +190,7 @@ if args.file:
         template = "An exception of type {0} occurred. Arguments:\n{1!r}"
         message = template.format(type(e).__name__, e.args)
         logger.error(message)
+        logger.error(traceback.print_exc())
     
     #openvpn_client.terminate()
 

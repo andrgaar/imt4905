@@ -6,6 +6,9 @@ import heapq
 import socket
 import traceback
 import json
+import jsonpickle
+import pandas as pd
+import hashlib
 
 from datetime import datetime, timedelta
 from threading import Thread, Lock, Timer
@@ -28,6 +31,8 @@ PERIODIC_HEART_BEAT = 5
 NODE_FAILURE_INTERVAL = 5
 TIMEOUT = 15
 LATENCY_SAMPLES = 10
+PERIODIC_CONN_CHECK = 60
+MIN_NEIGHBOUR_CONNECTIONS = 2
 
 # Log metrics to file
 graph_metrics_file = "router.log"
@@ -43,6 +48,7 @@ display_paths = None
 threadLock = None
 threads = None
 HB_time = 0 #  the last HB to be sent
+join_queue = [] # relays to join
 
 '''
 LSA structure:
@@ -61,14 +67,31 @@ Neighbours Data = []
      RP = str : Rendezvous Point
      FLAG = 0
     }
+
+JOIN message:
+{
+    Message: JOIN
+    Destination: <Peer ID>
+    Source: <Peer ID>
+    Relay: <RP relay>
+    Cookie: <Cookie>
+}
+
+LOOKUP message:
+{
+    Destination: <Peer ID>
+    Source: <Peer ID>
+    Path: [<path>]
+}
 '''
 # This class handles data that comes on the routing stream
 class ReceiveThread(Thread):
 
-    def __init__(self, name, queue, thread_lock):
+    def __init__(self, name, rcv_queue, conn_queue, thread_lock):
         Thread.__init__(self)
         self.name = name
-        self.queue = queue
+        self.queue = rcv_queue
+        self.conn_queue = conn_queue
         self.thread_lock = thread_lock
         self.packets = set()
         self.LSA_SN = {}
@@ -84,7 +107,6 @@ class ReceiveThread(Thread):
     def __exit__(self, exc_type, exc_value, traceback):
 
         log_metrics("PEER EXIT", "")
-        logger.debug("ReceiveThread __exit__")
 
     def run(self):
         try:
@@ -103,7 +125,7 @@ class ReceiveThread(Thread):
         )
 
     def __del__(self):
-        log_metric("PEER ABORTED", "")
+        log_metrics("PEER ABORTED", "")
         pass
 
     def serverSide(self, queue_data):
@@ -131,8 +153,10 @@ class ReceiveThread(Thread):
                 self.handle_HB(local_copy_LSA)
             elif message == 'HELLO':
                 self.handle_HELLO(local_copy_LSA, rendpoint, circuit, circuit_id, stream, stream_id, receive_node, extend_node, receive_socket)
-            elif message == 'QUERY':
-                self.route_query(local_copy_LSA)
+            elif message == 'JOIN':
+                self.handle_JOIN(local_copy_LSA)
+            elif message == 'LOOKUP':
+                self.handle_LOOKUP(local_copy_LSA)
             else:
                 logger.info(f"Unknown message: {message}")
             
@@ -199,7 +223,8 @@ class ReceiveThread(Thread):
                     # If the new LSA has any router listed as inactive (i.e dead) we remove these explicitly from
                     # the topology so that they are excluded from future shortest path calculations
                     if 'DEAD' in local_copy_LSA and len(local_copy_LSA['DEAD']) > 0:
-                        logger.info("LSA contains dead routes")
+                        logger.debug("LSA contains dead routes")
+                        log_metrics("DEAD ROUTES RECEIVED", json.dumps(local_copy_LSA['DEAD']))
                         self.updateLSADB(local_copy_LSA['DEAD'])
                         self.updateGraphOnly(graph, local_copy_LSA['DEAD'])
                 
@@ -274,11 +299,10 @@ class ReceiveThread(Thread):
                 latency_list = neighbour_stats[RID]['Latencies MS']
                 latency = now - HBref
                 latency_list.append(latency) 
-                log_metrics("MEASURED LATENCY", latency)
+                log_metrics("MEASURED LATENCY", {RID : latency})
                 # If we have enough measurements update the cost
                 if len(latency_list) == LATENCY_SAMPLES:
                     avg_latency = round( sum(latency_list) / len(latency_list) )
-                    logger.info(f"Calculated latency for {RID} to {avg_latency} : { latency_list }")
                     latency_list = list()
 
                     for i in range(len(global_router['Neighbours Data'])):
@@ -286,7 +310,7 @@ class ReceiveThread(Thread):
                             global_router['Neighbours Data'][i]['Cost'] = int(avg_latency)
                             global_router['FLAG'] = 1 # update LSA
                             global_router['SN'] = global_router['SN'] + 1 # increment to trigger update LSA
-                            #logger.info(f"Updated average latency for {RID} to {avg_latency} ms") 
+                            log_metrics("APPLIED LATENCY", json.dumps({RID : latency}))
                             break
 
                     neighbour_stats[RID]['Latencies MS'] = latency_list 
@@ -302,7 +326,7 @@ class ReceiveThread(Thread):
             # a new LSA to notify other routers of the update to the topology
             if len(self.inactive_list) > self.inactive_list_size:
 
-                logger.info(f"Dead routes ({self.inactive_list} > {self.inactive_list_size}) - updating neighbours")
+                log_metrics("DEAD ROUTES DETECTED", json.dumps(jsonpickle.encode(self.inactive_list)))
 
                 # Update this router's list of neighbours using inactive list
                 self.updateNeighboursList()
@@ -329,17 +353,45 @@ class ReceiveThread(Thread):
                         1,
                         self.thread_lock]
                     ).start()
-    
-    # Handles a QUERY message
-    # Routes it along the least cost path
-    def route_query(self, msg_data):
-        logger.debug(f"route_query: {msg_data}")
 
+    # Handles a JOIN message 
+    def handle_JOIN(self, msg_data):
+        logger.debug(f"handle_JOIN: {msg_data}")
+
+        destination = msg_data[0]['Destination']
+        source = msg_data[0]['Source']
+        relay = msg_data[0]['Relay']
+        cookie = msg_data[0]['Cookie']
+
+        # If we are the source - drop it
+        if source == global_router['RID']:
+            return
+
+        # If it's for us - add it to join queue
+        if destination == global_router['RID']:
+            self.conn_queue.put_nowait(["JOIN", relay, cookie])
+            logger.info(f"Added relay {relay} from {source} to JOIN queue")
+            return 
+
+        # If for someone else - route it along
+        route_message(msg_data)
+
+    # Handles a LOOKUP message
+    def handle_LOOKUP(self, msg_data):
+        logger.debug(f"handle_LOOKUP: {msg_data}")
+        
         source = msg_data[0]['Source']
         destination = msg_data[0]['Destination']
-        query_id = msg_data[0]['ID']
-    
-        # Find the neighbour with the least cost path to destination
+        msg_data[0]['Path'].append(global_router['RID'])
+
+        # This is for us
+        if destination == global_router['RID']:
+            log_metrics("LOOKUP RECEIVED", json.dumps(msg_data))
+        else:
+            route_message(msg_data)
+
+
+
 
 
     # Helper function to update the global graph when a router
@@ -407,8 +459,6 @@ class ReceiveThread(Thread):
         new_data = pickle.dumps(updated_global_router)
 
         for router in global_router['Neighbours Data']:
-            logger.info("SENT THIS NEW LSA TO {0}".format(router['NID']))
-            #self.server_socket.sendto(new_data , (server_name , int(router['Port'])))
             send_to_stream(router['NID'], new_data)
             neighbour_stats[router['NID']]['LSA sent'] += 1
 
@@ -435,7 +485,6 @@ class ReceiveThread(Thread):
                 if router['NID'] in args[1]:
                     args[2][node]['Neighbours Data'].remove(router)
 
-        log_metrics("NODE FAILURE", args[1])
 
         self.updateGraph(args[0], args[2], 1)
 
@@ -687,8 +736,6 @@ class SendThread(Thread):
             message = pickle.dumps(lsa_tmp)
             
             for dict in global_router['Neighbours Data']:
-                logger.debug("Sending neighbour data for " + str(dict['NID']))
-                logger.debug(global_router)
                 send_to_stream(dict['NID'], message)
                 neighbour_stats[dict['NID']]['LSA sent'] += 1
 
@@ -724,6 +771,88 @@ class HeartBeatThread(Thread):
     def __del__(self):
         pass
 
+# ConnectionThread periodically checks if neighbouring connections 
+# satisfy criteria
+class ConnectionThread(Thread):
+    def __init__(self, name, conn_queue):
+        Thread.__init__(self)
+        self.name = name
+        self.conn_queue = conn_queue
+
+    def run(self):
+        self.connections()
+
+    def connections(self):
+
+        while True:
+            time.sleep(PERIODIC_CONN_CHECK)
+
+            logger.info("Calculating neighbouring connections")
+
+            neighbours = set()
+            for n in global_router['Neighbours Data']:
+                neighbours.add(n['NID'])
+
+            if len(neighbours) > MIN_NEIGHBOUR_CONNECTIONS:
+                logger.info("No new connections needed")
+                continue
+            
+            logger.info("Neighbour connections ({0}) less than MIN_NEIGHBOUR_CONNECTIONS ({1})")
+    
+            # Tell main thread to establish RP
+            rp_relay, cookie = choose_relay(get_random_string(8))
+            self.conn_queue.put_nowait(["ESTABLISH", rp_relay, cookie])
+            time.sleep(5)
+
+            # Select a new neighbour 
+            peers = set()
+            for e in graph:
+                peers.add(e[0])
+                peers.add(e[1])
+            
+            join_peer = None
+            for peer in peers:
+                if peer <= global_router['RID'] or peer in neighbours:
+                    continue
+                else:
+                    join_peer = peer
+                    break
+            
+            if not join_peer:
+                continue
+
+            # Send JOIN to peer                
+            logger.info(f"Sending JOIN to {join_peer}")
+            message = [{'Message' : 'JOIN', 'Destination' : join_peer, 'Source' : global_router['RID'], 'Relay' : rp_relay, 'Cookie' : cookie}]
+            #route_message(message)
+
+
+    def __del__(self):
+        pass
+
+
+# Routes it along the least cost path
+def route_message(msg_data):
+    logger.debug(f"route_message: {msg_data}")
+
+    destination = msg_data[0]['Destination']
+    source = msg_data[0]['Source']
+
+    # If it's for us
+    if destination == global_router['RID']:
+        return destination
+
+    # Find the neighbour with the least cost path to destination
+    dst_relay = next_hop(destination)
+    if dst_relay:
+        # Send the message
+        send_to_stream(dst_relay, pickle.dumps(msg_data))
+        log_metrics("MESSAGE ROUTED", json.dumps(msg_data[0]))
+        
+    else:
+        return 0
+
+    return dst_relay
 # Return the next hop in least cost path
 def next_hop(dst_peer):
     global global_least_cost_path
@@ -733,12 +862,16 @@ def next_hop(dst_peer):
     
     # Work our way back the least path route to find
     # the next hop
+    if not dst_peer in global_least_cost_path:
+        return None
+
     next_peer = global_least_cost_path[dst_peer][0]
     current_peer = dst_peer
     while next_peer != this_peer:
         current_peer = next_peer
         next_peer = global_least_cost_path[current_peer][0]
     
+    logger.debug(f"Found next_hop: {current_peer}")
     return current_peer
 
 # Return the ReceiveThread thread
@@ -820,8 +953,9 @@ def setup_router(router_id, router_port):
 
     # Setup a queue for communicating with ReceiveThread
     rcv_queue = Queue()
+    conn_queue = Queue()
 
-    receiver_thread = ReceiveThread("RECEIVER", rcv_queue, threadLock)
+    receiver_thread = ReceiveThread("RECEIVER", rcv_queue, conn_queue, threadLock)
     sender_thread = SendThread("SENDER", threadLock)
 
     HB_message = [{'RID' : global_router['RID']}]
@@ -835,7 +969,7 @@ def setup_router(router_id, router_port):
     threads.append(sender_thread)
     threads.append(heartbeat_thread)
 
-    return rcv_queue
+    return rcv_queue, conn_queue
 
 def init_router(router_id, router_port):
 
@@ -942,7 +1076,68 @@ def add_neighbour(r_id, r_hostname, rendpoint, r_cost, circuit, circuit_id, stre
 
     logger.info("Added neighbour " + str(r_id))
 
+# Do route recalibration
+def route_recalibration(min_neigbours):
+    logger.debug(f"Route recalibration - min. neighbours: {min_neigbours}")
+    # Check if we need new neighbour connections
+    if len(global_router['Neighbours Data']) >= min_neigbours:
+        return None
+
+    needed_relays = min_neigbours - len(global_router['Neighbours Data'])
+    # If we do, find peers to connect to and send a JOIN message
+    selected_relays = ()
+    while selected_relays < needed_relays:
+        relay, cookie = choose_relay(get_random_string(8))
+        selected_relays.append((relay, cookie))
+        
+    return selected_relays
+    
+
+def choose_relay(tun_name, namespace='default', time_frame="1 min"):
+    all_relays = []
+    a_r = []
+    blacklist = []
+    actual_relays = []
+    with open("/root/.local/share/torpy/network_status", 'r') as f:
+        line = True
+        while line:
+            line = f.readline()
+            spl = line.split(' ')
+            if spl[0] == "r":
+                if spl[1] in a_r:
+                    blacklist.append(spl[1])
+                a_r.append(spl[1])
+                all_relays.append([spl[1], spl[6], spl[7]])
+    for rel in all_relays:
+        if not rel[0] in blacklist:
+            actual_relays.append(rel)
+    all_relays = actual_relays
+    num_of_relays = len(all_relays)
+    #print(num_of_relays)
+    # How long to use 1 relay as RP. Rotates every :30 seconds with the round-function in Pandas.
+    ts = pd.Timestamp.now().round(time_frame).value
+
+    h = str(ts)+namespace+tun_name  # Concat all values as input to hash function
+    h = hashlib.sha256(h.encode())
+    n = int(h.hexdigest(), base=16)  # Convert to integer to be able to use modulo
+
+    #print(n)
+    selected = n%num_of_relays
+    cookie = h.hexdigest().encode()[0:20]
+    logging.info(f"I want to connect to {all_relays[selected][0]}({selected}) at {all_relays[selected][1]}:{all_relays[selected][2]} with cookie {cookie}")
+    return all_relays[selected][0], cookie
+
+import random
+import string
+
+def get_random_string(length):
+    # choose from all lowercase letter
+    letters = string.ascii_lowercase
+    result_str = ''.join(random.choice(letters) for i in range(length))
+    return result_str
+
 def send_to_stream(router_id, message):
+    logger.debug(f"send_to_stream: {router_id} , {message}")
 
     stream_data = circuit_info[router_id]
 
@@ -957,6 +1152,9 @@ def send_to_stream(router_id, message):
                         stream_data['Receive Node'], 
                         stream_data['Receive Socket'],
                         stream_data['Stream ID'])
+
+    log_metrics("DATA SENT", "Payload: {0} bytes".format(sys.getsizeof(message)))
+
 
 if __name__ == "__main__":
 

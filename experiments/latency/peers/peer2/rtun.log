@@ -1,8 +1,4 @@
-2023-02-12 19:36:56,463 - ERROR - [Connect-jstark1809n0n0n0] - Error in receive on socket: 'CellPadding' object has no attribute 'get_encrypted'
-2023-02-12 19:36:56,464 - ERROR - [Connect-jstark1809n0n0n0] - Error in receive on socket: 'CellPadding' object has no attribute 'get_encrypted'
-2023-02-12 19:36:56,464 - ERROR - [Connect-jstark1809n0n0n0] - Error in receive on socket: 'CellPadding' object has no attribute 'get_encrypted'
-2023-02-12 19:36:56,464 - ERROR - [Connect-jstark1809n0n0n0] - Error in receive on socket: 'CellPadding' object has no attribute 'get_encrypted'
-2023-02-12 19:36:56,465 - ERROR - [Connect-jstark1809n0n0n0] - Error in receive on socket: 'CellPadding' object has no attribute 'get_encrypted'
-2023-02-12 19:36:58,112 - ERROR - [Connect-jstark1809n0n0n0] - Error in receive on socket: 'CellPadding' object has no attribute 'get_encrypted'
-2023-02-12 19:36:58,113 - ERROR - [Connect-jstark1809n0n0n0] - Error in receive on socket: 'CellPadding' object has no attribute 'get_encrypted'
-2023-02-12 19:36:58,126 - ERROR - [Connect-jstark1809n0n0n0] - Error in receive on socket: 'CellDestroy' object has no attribute 'get_encrypted'
+2023-02-16 13:50:51,494 - ERROR - [RecvLoop_80.66.1] - CellPadding() was received but no handlers for it
+2023-02-16 13:55:50,948 - ERROR - [RecvLoop_80.66.1] - CellPadding() was received but no handlers for it
+2023-02-16 14:00:49,360 - ERROR - [RecvLoop_80.66.1] - CellPadding() was received but no handlers for it
+2023-02-16 14:05:37,300 - ERROR - [Connect-SidRelay] - Error in receive on socket: 'CellDestroy' object has no attribute 'get_encrypted'
