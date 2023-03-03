@@ -1,0 +1,32 @@
+2023-02-26 15:04:46,191 - INFO - [MainThread] - Initialized router P4 at port 5004
+2023-02-26 15:04:46,199 - INFO - [MainThread] - Adding a connection to Stellvia
+2023-02-26 15:04:46,200 - INFO - [MainThread] - Adding a connection to SidRelay
+2023-02-26 15:04:46,200 - INFO - [MainThread] - Starting thread Connect-Stellvia
+2023-02-26 15:04:46,200 - INFO - [Connect-Stellvia] - Calling connect_to_rendezvous_point
+2023-02-26 15:04:46,200 - INFO - [Connect-Stellvia] - Connect to rendezvous point Stellvia
+2023-02-26 15:04:46,203 - INFO - [MainThread] - Starting thread Connect-SidRelay
+2023-02-26 15:04:46,204 - INFO - [Connect-SidRelay] - Calling connect_to_rendezvous_point
+2023-02-26 15:04:46,204 - INFO - [Connect-SidRelay] - Connect to rendezvous point SidRelay
+2023-02-26 15:04:46,208 - INFO - [Connect-Stellvia] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-02-26 15:04:46,216 - INFO - [Connect-SidRelay] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-02-26 15:04:46,591 - INFO - [Connect-Stellvia] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-02-26 15:04:46,615 - INFO - [Connect-SidRelay] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-02-26 15:04:46,740 - INFO - [Connect-Stellvia] - Connected to rendezvous point Stellvia
+2023-02-26 15:04:46,740 - INFO - [Connect-Stellvia] - Waiting for peer to open stream
+2023-02-26 15:04:46,761 - INFO - [Connect-SidRelay] - Connected to rendezvous point SidRelay
+2023-02-26 15:04:46,761 - INFO - [Connect-SidRelay] - Waiting for peer to open stream
+2023-02-26 15:04:46,822 - INFO - [Connect-Stellvia] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-02-26 15:04:46,823 - INFO - [Connect-Stellvia] - Stream opened successfully
+2023-02-26 15:04:46,823 - INFO - [Connect-Stellvia] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P4\x94ua.'
+2023-02-26 15:04:46,847 - INFO - [Connect-SidRelay] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-02-26 15:04:46,849 - INFO - [Connect-SidRelay] - Stream opened successfully
+2023-02-26 15:04:46,849 - INFO - [Connect-SidRelay] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P4\x94ua.'
+2023-02-26 15:04:47,028 - INFO - [RECEIVER] - Added neighbour P2
+2023-02-26 15:04:47,042 - INFO - [RECEIVER] - Added neighbour P3
+2023-02-26 15:06:22,750 - WARNING - [Connect-Stellvia] - Got SENDME
+2023-02-26 15:06:23,690 - WARNING - [Connect-SidRelay] - Got SENDME
+2023-02-26 15:06:37,525 - ERROR - [Connect-Stellvia] - Error in receive on socket: 'CellDestroy' object has no attribute 'get_encrypted'
+2023-02-26 15:06:52,418 - INFO - [Thread-109] - Adding P2 to list of inactive
+2023-02-26 15:06:53,379 - INFO - [RECEIVER] - Removing P2 from neighbours
+2023-02-26 15:07:58,557 - WARNING - [Connect-SidRelay] - Got SENDME
+2023-02-26 15:08:00,746 - WARNING - [Connect-SidRelay] - Got SENDME

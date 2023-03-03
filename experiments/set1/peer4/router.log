@@ -1,0 +1,866 @@
+1676837710.8068204;P4;PEER ENTERED;
+1676837716.1415057;P4;MEASURED LATENCY;{'P2': 329}
+1676837716.1644347;P4;MEASURED LATENCY;{'P3': 352}
+1676837717.3213038;P4;TOPOLOGY UPDATE;{"P1": {"P2": 100}, "P2": {"P4": 100, "P1": 100}, "P3": {"P4": 100}, "P4": {"P2": 100, "P3": 100}}
+1676837717.8206375;P4;LOOKUP SENT;{"Peer": "P2", "Relay": 0}
+1676837717.8216546;P4;LOOKUP SENT;{"Peer": "P1", "Relay": 0}
+1676837717.8218992;P4;LOOKUP SENT;{"Peer": "P3", "Relay": 0}
+1676837720.1225455;P4;TOPOLOGY UPDATE;{"P1": {"P2": 100, "P3": 100}, "P2": {"P4": 100, "P1": 100}, "P3": {"P4": 100, "P1": 100}, "P4": {"P2": 100, "P3": 100}}
+1676837721.1279511;P4;MEASURED LATENCY;{'P3': 309}
+1676837722.2819567;P4;MEASURED LATENCY;{'P2': 1463}
+1676837723.8311229;P4;LOOKUP SENT;{"Peer": "P2", "Relay": 0}
+1676837723.8312263;P4;LOOKUP SENT;{"Peer": "P1", "Relay": 0}
+1676837723.831262;P4;LOOKUP SENT;{"Peer": "P3", "Relay": 0}
+1676837731.061163;P4;MEASURED LATENCY;{'P2': 230}
+1676837731.1719327;P4;MEASURED LATENCY;{'P3': 341}
+1676837733.838326;P4;LOOKUP SENT;{"Peer": "P2", "Relay": 0}
+1676837733.8384323;P4;LOOKUP SENT;{"Peer": "P1", "Relay": 0}
+1676837733.8384676;P4;LOOKUP SENT;{"Peer": "P3", "Relay": 0}
+1676837735.9793873;P4;MEASURED LATENCY;{'P3': 141}
+1676837736.0688357;P4;MEASURED LATENCY;{'P2': 231}
+1676837741.1898541;P4;MEASURED LATENCY;{'P2': 349}
+1676837741.913194;P4;MEASURED LATENCY;{'P3': 1072}
+1676837746.0783272;P4;MEASURED LATENCY;{'P2': 230}
+1676837746.1856167;P4;MEASURED LATENCY;{'P3': 338}
+1676837747.3226955;P4;LEAST COST PATH;{"P1": ["P2"], "P2": ["P4"], "P3": ["P4"], "P4": []}
+1676837748.8504293;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676837748.8505723;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676837748.8509731;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676837748.8510349;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676837748.851417;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676837748.8514757;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676837750.1263573;P4;LEAST COST PATH;{"P1": ["P2"], "P2": ["P4"], "P3": ["P4"], "P4": []}
+1676837751.1351924;P4;MEASURED LATENCY;{'P2': 280}
+1676837751.5787709;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676837751.7429917;P4;MEASURED LATENCY;{'P3': 888}
+1676837755.0003443;P4;TOPOLOGY UPDATE;{"P1": {"P2": 100, "P3": 100}, "P2": {"P4": 100, "P1": 100}, "P3": {"P4": 100, "P1": 100}, "P4": {"P2": 100, "P3": 100}}
+1676837757.0041132;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676837757.0042288;P4;MEASURED LATENCY;{'P2': 1141}
+1676837757.076268;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676837759.8592904;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676837759.8594375;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676837759.86014;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676837759.8602057;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676837759.8606117;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676837759.8606746;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676837761.0958788;P4;MEASURED LATENCY;{'P2': 229}
+1676837761.2026258;P4;MEASURED LATENCY;{'P3': 336}
+1676837763.380877;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676837766.1696866;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676837766.1721787;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676837766.3279161;P4;MEASURED LATENCY;{'P3': 452}
+1676837767.327381;P4;MEASURED LATENCY;{'P2': 1451}
+1676837767.32748;P4;APPLIED LATENCY;{"P2": 1451}
+1676837768.8640366;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676837768.8641393;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676837768.8645484;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676837768.8645952;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676837768.8648908;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676837768.864944;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676837772.0149493;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676837772.0710392;P4;MEASURED LATENCY;{'P3': 1190}
+1676837772.0711594;P4;APPLIED LATENCY;{"P3": 1190}
+1676837772.0832727;P4;MEASURED LATENCY;{'P2': 1202}
+1676837772.3886096;P4;TOPOLOGY UPDATE;{"P1": {"P2": 300, "P3": 341}, "P2": {"P4": 360, "P1": 300}, "P3": {"P4": 100, "P1": 341}, "P4": {"P2": 360, "P3": 100}}
+1676837773.1286845;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676837773.5569358;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676837773.8709586;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676837773.871043;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676837773.871551;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676837773.8715956;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676837773.8718698;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676837773.871913;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676837775.1673396;P4;TOPOLOGY UPDATE;{"P1": {"P2": 300, "P3": 341}, "P2": {"P4": 360, "P1": 300}, "P3": {"P4": 100, "P1": 341}, "P4": {"P2": 360, "P3": 100}}
+1676837776.026191;P4;MEASURED LATENCY;{'P3': 136}
+1676837776.1447508;P4;MEASURED LATENCY;{'P2': 255}
+1676837780.0104647;P4;TOPOLOGY UPDATE;{"P1": {"P2": 300, "P3": 341}, "P2": {"P4": 360, "P1": 300}, "P3": {"P4": 100, "P1": 341}, "P4": {"P2": 360, "P3": 100}}
+1676837781.2575295;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676837781.260982;P4;MEASURED LATENCY;{'P3': 364}
+1676837782.344692;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676837782.407643;P4;MEASURED LATENCY;{'P2': 1511}
+1676837783.8861442;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676837783.8863108;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676837783.8867488;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676837783.8868105;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676837783.8871956;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676837783.887257;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676837784.219532;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676837785.0015888;P4;LEAST COST PATH;{"P1": ["P2"], "P2": ["P4"], "P3": ["P4"], "P4": []}
+1676837786.56189;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676837787.120513;P4;MEASURED LATENCY;{'P2': 1215}
+1676837790.2551396;P4;TOPOLOGY UPDATE;{"P1": {"P2": 300, "P3": 341}, "P2": {"P4": 360, "P1": 300}, "P3": {"P4": 860, "P1": 341}, "P4": {"P2": 360, "P3": 860}}
+1676837791.021689;P4;MEASURED LATENCY;{'P3': 112}
+1676837791.1481018;P4;MEASURED LATENCY;{'P2': 238}
+1676837795.9009097;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676837795.901036;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676837795.9016848;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676837795.9017477;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676837795.90212;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676837795.9021904;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676837796.1215146;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676837796.8262007;P4;MEASURED LATENCY;{'P3': 912}
+1676837796.8265803;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676837798.576202;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676837800.9058793;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676837800.9059668;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676837800.9063613;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676837800.9064066;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676837800.9066768;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676837800.9067194;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676837801.2164886;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P2", "Path": ["P2", "P4"]}]
+1676837801.2170658;P4;MEASURED LATENCY;{'P2': 300}
+1676837801.2530024;P4;MEASURED LATENCY;{'P3': 336}
+1676837802.3894193;P4;LEAST COST PATH;{"P1": ["P3"], "P2": ["P4"], "P3": ["P4"], "P4": []}
+1676837805.169023;P4;LEAST COST PATH;{"P1": ["P3"], "P2": ["P4"], "P3": ["P4"], "P4": []}
+1676837805.1724732;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676837806.0385923;P4;MEASURED LATENCY;{'P3': 120}
+1676837806.1487317;P4;MEASURED LATENCY;{'P2': 230}
+1676837807.261287;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P3", "Path": ["P3", "P4"]}]
+1676837808.4809644;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676837808.590955;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676837808.641661;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P2", "Path": ["P2", "P4"]}]
+1676837810.011853;P4;LEAST COST PATH;{"P1": ["P3"], "P2": ["P4"], "P3": ["P4"], "P4": []}
+1676837811.1548553;P4;MEASURED LATENCY;{'P2': 229}
+1676837811.7420187;P4;MEASURED LATENCY;{'P3': 816}
+1676837812.1978462;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676837814.9109187;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676837814.9110587;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676837814.9116018;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676837814.9116845;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P3"}
+1676837814.9121726;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676837814.912231;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676837817.12431;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P3", "Path": ["P3", "P4"]}]
+1676837817.124494;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676837817.1246338;P4;MEASURED LATENCY;{'P2': 1192}
+1676837817.3987753;P4;TOPOLOGY UPDATE;{"P1": {"P2": 548, "P3": 341}, "P2": {"P4": 360, "P1": 548}, "P3": {"P4": 860, "P1": 341}, "P4": {"P2": 360, "P3": 860}}
+1676837820.2560227;P4;LEAST COST PATH;{"P1": ["P2"], "P2": ["P4"], "P3": ["P4"], "P4": []}
+1676837820.5979464;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676837820.9191248;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676837820.9192123;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676837820.919615;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676837820.9196618;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676837820.9199388;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676837820.9199939;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676837821.274928;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P2", "Path": ["P2", "P4"]}]
+1676837821.2750669;P4;MEASURED LATENCY;{'P2': 336}
+1676837821.2751145;P4;APPLIED LATENCY;{"P2": 336}
+1676837822.1631901;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676837825.1189077;P4;TOPOLOGY UPDATE;{"P1": {"P2": 548, "P3": 341}, "P2": {"P4": 444, "P1": 548}, "P3": {"P4": 860, "P1": 341}, "P4": {"P2": 444, "P3": 860}}
+1676837826.3149548;P4;MEASURED LATENCY;{'P3': 369}
+1676837826.6135237;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676837827.3933558;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P2", "Path": ["P2", "P4"]}]
+1676837827.393465;P4;MEASURED LATENCY;{'P2': 1447}
+1676837829.1842031;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676837830.3190718;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676837830.9281642;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676837830.9283147;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676837830.9287977;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676837830.9289443;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676837830.9299645;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676837830.9301145;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676837832.136311;P4;MEASURED LATENCY;{'P2': 1187}
+1676837832.4676564;P4;TOPOLOGY UPDATE;{"P1": {"P2": 548, "P3": 346}, "P2": {"P4": 444, "P1": 548}, "P3": {"P4": 860, "P1": 346}, "P4": {"P2": 444, "P3": 860}}
+1676837835.2305768;P4;TOPOLOGY UPDATE;{"P1": {"P2": 548, "P3": 346}, "P2": {"P4": 444, "P1": 548}, "P3": {"P4": 860, "P1": 346}, "P4": {"P2": 444, "P3": 860}}
+1676837835.6659534;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676837836.0947127;P4;MEASURED LATENCY;{'P3': 139}
+1676837836.2269094;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P2", "Path": ["P2", "P4"]}]
+1676837836.2272375;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676837836.2828114;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676837837.437508;P4;MEASURED LATENCY;{'P2': 1481}
+1676837841.6861331;P4;MEASURED LATENCY;{'P3': 724}
+1676837841.6862311;P4;APPLIED LATENCY;{"P3": 724}
+1676837842.4030895;P4;MEASURED LATENCY;{'P2': 1441}
+1676837843.9341297;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676837843.9342237;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676837843.934631;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676837843.9346783;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676837843.9349594;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676837843.9350052;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676837844.2101886;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676837845.3168066;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676837847.0520942;P4;MEASURED LATENCY;{'P3': 1084}
+1676837847.1627781;P4;MEASURED LATENCY;{'P2': 1195}
+1676837847.401186;P4;LEAST COST PATH;{"P1": ["P2"], "P2": ["P4"], "P3": ["P4"], "P4": []}
+1676837848.6283317;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676837849.3705103;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P3", "P4"]}]
+1676837850.2984052;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676837850.683014;P4;TOPOLOGY UPDATE;{"P1": {"P2": 548, "P3": 346}, "P2": {"P4": 444, "P1": 548}, "P3": {"P4": 652, "P1": 346}, "P4": {"P2": 444, "P3": 652}}
+1676837851.0901332;P4;MEASURED LATENCY;{'P3': 117}
+1676837851.2036932;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P2", "Path": ["P2", "P4"]}]
+1676837851.2038476;P4;MEASURED LATENCY;{'P2': 231}
+1676837853.9374201;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676837853.9375303;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676837853.9377785;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676837853.9378405;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676837853.938004;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676837853.9380543;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676837855.11928;P4;LEAST COST PATH;{"P1": ["P2"], "P2": ["P4"], "P3": ["P4"], "P4": []}
+1676837856.1947188;P4;MEASURED LATENCY;{'P3': 214}
+1676837856.210544;P4;MEASURED LATENCY;{'P2': 230}
+1676837856.293949;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676837860.9456484;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676837860.9457397;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676837860.9461339;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676837860.9461792;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676837860.9469295;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676837860.9469852;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676837862.0681336;P4;MEASURED LATENCY;{'P2': 1081}
+1676837862.1576514;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P3", "P4"]}]
+1676837862.468822;P4;LEAST COST PATH;{"P1": ["P2"], "P2": ["P4"], "P3": ["P4"], "P4": []}
+1676837863.6410944;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676837865.2316887;P4;LEAST COST PATH;{"P1": ["P2"], "P2": ["P4"], "P3": ["P4"], "P4": []}
+1676837865.9503808;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676837865.95047;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676837865.9508815;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676837865.9509299;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676837865.9513655;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676837865.9514256;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676837866.1345763;P4;MEASURED LATENCY;{'P3': 147}
+1676837870.064456;P4;TOPOLOGY UPDATE;{"P1": {"P2": 442, "P3": 346}, "P2": {"P4": 706, "P1": 442}, "P3": {"P4": 652, "P1": 346}, "P4": {"P2": 706, "P3": 652}}
+1676837870.4390197;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P3", "P4"]}]
+1676837871.9584525;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676837871.958554;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676837871.9591098;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676837871.9591565;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676837871.95958;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676837871.959623;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676837872.3105814;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676837872.3106952;P4;MEASURED LATENCY;{'P3': 1310}
+1676837872.3110218;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676837872.418259;P4;MEASURED LATENCY;{'P2': 1417}
+1676837876.2301111;P4;MEASURED LATENCY;{'P3': 222}
+1676837876.2660577;P4;MEASURED LATENCY;{'P2': 258}
+1676837876.2661817;P4;APPLIED LATENCY;{"P2": 258}
+1676837877.499213;P4;TOPOLOGY UPDATE;{"P1": {"P2": 442, "P3": 407}, "P2": {"P4": 706, "P1": 442}, "P3": {"P4": 652, "P1": 407}, "P4": {"P2": 706, "P3": 652}}
+1676837879.206813;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P3", "P4"]}]
+1676837880.683493;P4;LEAST COST PATH;{"P1": ["P2"], "P2": ["P4"], "P3": ["P4"], "P4": []}
+1676837880.9693625;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676837880.9694498;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676837880.9696329;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676837880.9696794;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676837880.9698021;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676837880.96984;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676837881.3088706;P4;TOPOLOGY UPDATE;{"P1": {"P2": 442, "P3": 407}, "P2": {"P4": 706, "P1": 442}, "P3": {"P4": 652, "P1": 407}, "P4": {"P2": 706, "P3": 652}}
+1676837881.3259287;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676837881.6639037;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676837885.2064376;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P3", "P4"]}]
+1676837886.2589748;P4;MEASURED LATENCY;{'P2': 243}
+1676837886.5613503;P4;MEASURED LATENCY;{'P3': 545}
+1676837892.073075;P4;MEASURED LATENCY;{'P3': 1050}
+1676837892.197738;P4;MEASURED LATENCY;{'P2': 1175}
+1676837894.2145908;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P3", "P4"]}]
+1676837895.3578284;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676837895.9838681;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676837895.9839766;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676837895.9842665;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676837895.9843135;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676837895.9844866;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676837895.984542;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676837896.3135152;P4;MEASURED LATENCY;{'P2': 285}
+1676837896.6747108;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676837900.065523;P4;LEAST COST PATH;{"P1": ["P3"], "P2": ["P4"], "P3": ["P4"], "P4": []}
+1676837901.3301113;P4;MEASURED LATENCY;{'P3': 294}
+1676837902.4588742;P4;MEASURED LATENCY;{'P2': 1423}
+1676837903.222726;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P3", "P4"]}]
+1676837903.6853182;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676837907.112528;P4;MEASURED LATENCY;{'P2': 1072}
+1676837907.1128879;P4;MEASURED LATENCY;{'P3': 1072}
+1676837907.1129613;P4;APPLIED LATENCY;{"P3": 1072}
+1676837907.4999287;P4;LEAST COST PATH;{"P1": ["P3"], "P2": ["P4"], "P3": ["P4"], "P4": []}
+1676837907.9989033;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676837907.9991312;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676837907.9997778;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676837907.9998505;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P3"}
+1676837908.0003812;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676837908.0004535;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676837908.3893805;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P3", "P4"]}]
+1676837909.019914;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676837910.327292;P4;TOPOLOGY UPDATE;{"P1": {"P2": 442, "P3": 407}, "P2": {"P4": 706, "P1": 442}, "P3": {"P4": 626, "P1": 407}, "P4": {"P2": 706, "P3": 626}}
+1676837911.278307;P4;MEASURED LATENCY;{'P2': 230}
+1676837911.3095355;P4;LEAST COST PATH;{"P1": ["P3"], "P2": ["P4"], "P3": ["P4"], "P4": []}
+1676837913.5061338;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676837913.5533466;P4;MEASURED LATENCY;{'P3': 2505}
+1676837915.1076064;P4;TOPOLOGY UPDATE;{"P1": {"P2": 295, "P3": 407}, "P2": {"P4": 351, "P1": 295}, "P3": {"P4": 626, "P1": 407}, "P4": {"P2": 351, "P3": 626}}
+1676837916.4192774;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676837916.769535;P4;MEASURED LATENCY;{'P3': 713}
+1676837917.4818137;P4;MEASURED LATENCY;{'P2': 1426}
+1676837918.2446535;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P3", "P4"]}]
+1676837919.0099247;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676837919.0100214;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676837919.010615;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676837919.0106614;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P3"}
+1676837919.0110455;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676837919.0110903;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676837922.224638;P4;MEASURED LATENCY;{'P2': 1163}
+1676837922.5038533;P4;TOPOLOGY UPDATE;{"P1": {"P2": 295, "P3": 321}, "P2": {"P4": 351, "P1": 295}, "P3": {"P4": 626, "P1": 321}, "P4": {"P2": 351, "P3": 626}}
+1676837922.6928985;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676837925.0205026;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676837925.0205894;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676837925.0209079;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676837925.0209525;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P3"}
+1676837925.0212314;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676837925.0212748;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676837925.417072;P4;TOPOLOGY UPDATE;{"P1": {"P2": 295, "P3": 321}, "P2": {"P4": 351, "P1": 295}, "P3": {"P4": 626, "P1": 321}, "P4": {"P2": 351, "P3": 626}}
+1676837926.302075;P4;MEASURED LATENCY;{'P2': 233}
+1676837926.6492121;P4;MEASURED LATENCY;{'P3': 580}
+1676837929.7138264;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676837930.2048402;P4;TOPOLOGY UPDATE;{"P1": {"P2": 295, "P3": 321}, "P2": {"P4": 351, "P1": 295}, "P3": {"P4": 626, "P1": 321}, "P4": {"P2": 351, "P3": 626}}
+1676837931.3360813;P4;MEASURED LATENCY;{'P2': 261}
+1676837931.3365266;P4;APPLIED LATENCY;{"P2": 261}
+1676837931.4700356;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676837933.3689907;P4;MEASURED LATENCY;{'P3': 2294}
+1676837933.3695986;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P3", "P4"]}]
+1676837936.7166224;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676837937.2854502;P4;MEASURED LATENCY;{'P2': 1206}
+1676837938.0367947;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676837938.0369387;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676837938.0378258;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676837938.037907;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P3"}
+1676837938.0383267;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676837938.0383875;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676837940.3279018;P4;LEAST COST PATH;{"P1": ["P3"], "P2": ["P4"], "P3": ["P4"], "P4": []}
+1676837940.411293;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676837941.3289943;P4;MEASURED LATENCY;{'P2': 244}
+1676837941.4306283;P4;MEASURED LATENCY;{'P3': 346}
+1676837943.7200415;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676837945.1092327;P4;LEAST COST PATH;{"P1": ["P2"], "P2": ["P4"], "P3": ["P4"], "P4": []}
+1676837945.537851;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P3", "P4"]}]
+1676837946.3939173;P4;MEASURED LATENCY;{'P2': 308}
+1676837947.7383025;P4;MEASURED LATENCY;{'P3': 1652}
+1676837948.7636333;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676837949.0502062;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676837949.050294;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676837949.0506952;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676837949.0507398;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676837949.05112;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676837949.051164;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676837950.5243316;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676837951.459696;P4;MEASURED LATENCY;{'P2': 365}
+1676837951.5892985;P4;MEASURED LATENCY;{'P3': 494}
+1676837952.5242434;P4;LEAST COST PATH;{"P1": ["P2"], "P2": ["P4"], "P3": ["P4"], "P4": []}
+1676837954.4318793;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676837955.4194913;P4;LEAST COST PATH;{"P1": ["P2"], "P2": ["P4"], "P3": ["P4"], "P4": []}
+1676837956.2819932;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676837956.2822535;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676837956.2836306;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676837956.2839222;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676837956.285375;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676837956.2854662;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676837956.4603717;P4;MEASURED LATENCY;{'P2': 229}
+1676837956.4829712;P4;MEASURED LATENCY;{'P3': 252}
+1676837957.7492874;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676837960.270692;P4;LEAST COST PATH;{"P1": ["P2"], "P2": ["P4"], "P3": ["P4"], "P4": []}
+1676837961.4688427;P4;MEASURED LATENCY;{'P3': 224}
+1676837962.6359375;P4;MEASURED LATENCY;{'P2': 1391}
+1676837963.5835843;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676837967.2437947;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676837967.244028;P4;MEASURED LATENCY;{'P2': 987}
+1676837968.4727519;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676837969.3200333;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676837969.320121;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676837969.3206763;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676837969.3207211;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676837969.3210106;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676837969.3210535;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676837969.5731688;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676837970.3765488;P4;TOPOLOGY UPDATE;{"P1": {"P2": 295, "P3": 321}, "P2": {"P4": 351, "P1": 295}, "P3": {"P4": 942, "P1": 321}, "P4": {"P2": 351, "P3": 942}}
+1676837971.4862134;P4;MEASURED LATENCY;{'P3': 127}
+1676837971.4866211;P4;APPLIED LATENCY;{"P3": 127}
+1676837971.5934384;P4;MEASURED LATENCY;{'P2': 234}
+1676837975.1999822;P4;TOPOLOGY UPDATE;{"P1": {"P2": 361, "P3": 321}, "P2": {"P4": 771, "P1": 361}, "P3": {"P4": 942, "P1": 321}, "P4": {"P2": 771, "P3": 942}}
+1676837977.077544;P4;MEASURED LATENCY;{'P3': 686}
+1676837977.6080053;P4;MEASURED LATENCY;{'P2': 1216}
+1676837978.0472202;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676837978.331411;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676837978.3315015;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676837978.3321745;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676837978.3322213;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676837978.3325148;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676837978.3325605;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676837979.5220215;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676837981.6062849;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676837982.2755198;P4;MEASURED LATENCY;{'P3': 879}
+1676837982.3832698;P4;MEASURED LATENCY;{'P2': 986}
+1676837982.3833666;P4;APPLIED LATENCY;{"P2": 986}
+1676837983.1257217;P4;TOPOLOGY UPDATE;{"P1": {"P2": 361, "P3": 325}, "P2": {"P4": 771, "P1": 361}, "P3": {"P4": 942, "P1": 325}, "P4": {"P2": 771, "P3": 942}}
+1676837986.429984;P4;TOPOLOGY UPDATE;{"P1": {"P2": 361, "P3": 325}, "P2": {"P4": 771, "P1": 361}, "P3": {"P4": 942, "P1": 325}, "P4": {"P2": 771, "P3": 942}}
+1676837986.5226526;P4;MEASURED LATENCY;{'P3': 120}
+1676837986.6381805;P4;MEASURED LATENCY;{'P2': 235}
+1676837990.0997777;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676837990.3514876;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676837990.3515933;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676837990.352018;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676837990.352084;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676837990.3526485;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676837990.3526933;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676837990.94519;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676837991.617023;P4;MEASURED LATENCY;{'P3': 133}
+1676837991.7700434;P4;MEASURED LATENCY;{'P2': 286}
+1676837992.5144732;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676837997.398714;P4;MEASURED LATENCY;{'P2': 914}
+1676837998.1537151;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676837998.187756;P4;MEASURED LATENCY;{'P3': 1703}
+1676837999.6506548;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676838000.3778472;P4;LEAST COST PATH;{"P1": ["P2"], "P2": ["P4"], "P3": ["P4"], "P4": []}
+1676838001.515184;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676838001.768589;P4;MEASURED LATENCY;{'P2': 277}
+1676838001.824963;P4;MEASURED LATENCY;{'P3': 333}
+1676838002.365386;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676838002.365525;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676838002.3659837;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676838002.3661976;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676838002.366606;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676838002.3668199;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676838003.1283398;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838005.2013526;P4;LEAST COST PATH;{"P1": ["P2"], "P2": ["P4"], "P3": ["P4"], "P4": []}
+1676838006.871208;P4;MEASURED LATENCY;{'P3': 378}
+1676838007.9933727;P4;MEASURED LATENCY;{'P2': 1500}
+1676838009.3737803;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676838009.373875;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676838009.3742006;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676838009.3742473;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676838009.3745458;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676838009.3745904;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676838009.8883393;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676838010.110227;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838012.5500882;P4;MEASURED LATENCY;{'P2': 1029}
+1676838012.5504537;P4;MEASURED LATENCY;{'P3': 1029}
+1676838013.1324193;P4;LEAST COST PATH;{"P1": ["P2"], "P2": ["P4"], "P3": ["P4"], "P4": []}
+1676838015.4492211;P4;TOPOLOGY UPDATE;{"P1": {"P2": 361, "P3": 325}, "P2": {"P4": 771, "P1": 361}, "P3": {"P4": 846, "P1": 325}, "P4": {"P2": 771, "P3": 846}}
+1676838015.702549;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P3", "P4"]}]
+1676838016.3833442;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676838016.3843796;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676838016.3872423;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676838016.387393;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676838016.388217;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676838016.388291;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676838016.4412658;P4;LEAST COST PATH;{"P1": ["P2"], "P2": ["P4"], "P3": ["P4"], "P4": []}
+1676838016.777942;P4;MEASURED LATENCY;{'P2': 240}
+1676838019.913163;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676838020.1284208;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838020.4863706;P4;TOPOLOGY UPDATE;{"P1": {"P2": 220, "P3": 325}, "P2": {"P4": 355, "P1": 220}, "P3": {"P4": 846, "P1": 325}, "P4": {"P2": 355, "P3": 846}}
+1676838022.7143252;P4;MEASURED LATENCY;{'P2': 1158}
+1676838023.4250095;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676838023.4257092;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676838023.4261658;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676838023.4262414;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676838023.4264536;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676838023.4265141;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676838025.855764;P4;MEASURED LATENCY;{'P3': 4300}
+1676838026.8016288;P4;MEASURED LATENCY;{'P2': 241}
+1676838027.0740368;P4;MEASURED LATENCY;{'P3': 513}
+1676838027.0741827;P4;APPLIED LATENCY;{"P3": 513}
+1676838027.6928918;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P3", "P4"]}]
+1676838027.8932574;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676838028.2654822;P4;TOPOLOGY UPDATE;{"P1": {"P2": 220, "P3": 325}, "P2": {"P4": 355, "P1": 220}, "P3": {"P4": 846, "P1": 325}, "P4": {"P2": 355, "P3": 846}}
+1676838028.4300075;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676838028.430138;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676838028.4306858;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676838028.430774;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676838028.431306;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676838028.4313762;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676838031.0592468;P4;TOPOLOGY UPDATE;{"P1": {"P2": 220, "P3": 325}, "P2": {"P4": 355, "P1": 220}, "P3": {"P4": 846, "P1": 325}, "P4": {"P2": 355, "P3": 846}}
+1676838031.804137;P4;MEASURED LATENCY;{'P2': 238}
+1676838031.8042426;P4;APPLIED LATENCY;{"P2": 238}
+1676838032.0029676;P4;MEASURED LATENCY;{'P3': 437}
+1676838033.140698;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838036.8050582;P4;MEASURED LATENCY;{'P2': 235}
+1676838037.3564343;P4;MEASURED LATENCY;{'P3': 786}
+1676838037.4430358;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676838037.4433465;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676838037.4437346;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676838037.4438007;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676838037.4439769;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676838037.4440305;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676838038.828795;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P3", "P4"]}]
+1676838039.1787298;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838041.2776635;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676838042.555369;P4;MEASURED LATENCY;{'P2': 897}
+1676838042.6655285;P4;MEASURED LATENCY;{'P3': 1008}
+1676838045.449814;P4;LEAST COST PATH;{"P1": ["P2"], "P2": ["P4"], "P3": ["P4"], "P4": []}
+1676838046.834864;P4;MEASURED LATENCY;{'P3': 144}
+1676838046.92175;P4;MEASURED LATENCY;{'P2': 231}
+1676838048.624706;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P3", "P4"]}]
+1676838049.2030244;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838049.463355;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676838049.463455;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676838049.4640176;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676838049.4640718;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676838049.4643667;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676838049.4644692;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676838050.4908614;P4;LEAST COST PATH;{"P1": ["P2"], "P2": ["P4"], "P3": ["P4"], "P4": []}
+1676838052.203666;P4;MEASURED LATENCY;{'P2': 235}
+1676838052.8828523;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676838052.8829505;P4;MEASURED LATENCY;{'P3': 914}
+1676838057.9088588;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P3", "P4"]}]
+1676838057.908981;P4;MEASURED LATENCY;{'P2': 934}
+1676838058.2743156;P4;LEAST COST PATH;{"P1": ["P2"], "P2": ["P4"], "P3": ["P4"], "P4": []}
+1676838060.5242395;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676838060.5243344;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676838060.5246518;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676838060.5246968;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676838060.5249906;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676838060.5250347;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676838060.8152947;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676838061.1386054;P4;LEAST COST PATH;{"P1": ["P2"], "P2": ["P4"], "P3": ["P4"], "P4": []}
+1676838062.2048056;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838062.330466;P4;MEASURED LATENCY;{'P3': 336}
+1676838063.3573942;P4;MEASURED LATENCY;{'P2': 1363}
+1676838064.4223187;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676838065.9325113;P4;TOPOLOGY UPDATE;{"P1": {"P2": 192, "P3": 325}, "P2": {"P4": 318, "P1": 192}, "P3": {"P4": 846, "P1": 325}, "P4": {"P2": 318, "P3": 846}}
+1676838068.807968;P4;MEASURED LATENCY;{'P2': 1340}
+1676838072.6587772;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838072.7583055;P4;MEASURED LATENCY;{'P2': 276}
+1676838072.8586714;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676838073.3024695;P4;MEASURED LATENCY;{'P3': 820}
+1676838073.30298;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676838073.4052272;P4;TOPOLOGY UPDATE;{"P1": {"P2": 192, "P3": 245}, "P2": {"P4": 318, "P1": 192}, "P3": {"P4": 1136, "P1": 245}, "P4": {"P2": 318, "P3": 1136}}
+1676838075.6273522;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676838075.6277184;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676838075.6280515;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676838075.6281126;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676838075.6284094;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676838075.6285405;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676838077.7053638;P4;TOPOLOGY UPDATE;{"P1": {"P2": 192, "P3": 245}, "P2": {"P4": 318, "P1": 192}, "P3": {"P4": 1136, "P1": 245}, "P4": {"P2": 318, "P3": 1136}}
+1676838077.8304243;P4;MEASURED LATENCY;{'P2': 236}
+1676838080.0642736;P4;MEASURED LATENCY;{'P3': 2470}
+1676838080.8781781;P4;TOPOLOGY UPDATE;{"P1": {"P2": 192, "P3": 245}, "P2": {"P4": 318, "P1": 192}, "P3": {"P4": 1136, "P1": 245}, "P4": {"P2": 318, "P3": 1136}}
+1676838082.2937164;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838083.1289334;P4;MEASURED LATENCY;{'P2': 255}
+1676838083.1290848;P4;APPLIED LATENCY;{"P2": 255}
+1676838086.2720163;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676838087.7000837;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676838088.1038136;P4;MEASURED LATENCY;{'P2': 225}
+1676838090.3355637;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838090.6418307;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676838090.6419618;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676838090.6422899;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676838090.6423576;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676838090.6426113;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676838090.6426873;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676838096.010748;P4;LEAST COST PATH;{"P1": ["P2"], "P2": ["P4"], "P3": ["P4", "P1"], "P4": []}
+1676838099.659979;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676838099.6605682;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676838099.6618237;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676838099.6619668;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676838099.6649303;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676838099.6714203;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676838101.2565258;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676838101.25772;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676838103.129925;P4;MEASURED LATENCY;{'P2': 241}
+1676838103.4090724;P4;LEAST COST PATH;{"P1": ["P2"], "P2": ["P4"], "P3": ["P4", "P1"], "P4": []}
+1676838105.4107313;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838107.7307522;P4;LEAST COST PATH;{"P1": ["P2"], "P2": ["P4"], "P3": ["P4", "P1"], "P4": []}
+1676838108.1276748;P4;MEASURED LATENCY;{'P2': 234}
+1676838109.9938498;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676838110.8792462;P4;LEAST COST PATH;{"P1": ["P2"], "P2": ["P4"], "P3": ["P4", "P1"], "P4": []}
+1676838111.106192;P4;MEASURED LATENCY;{'P3': 3212}
+1676838111.1587746;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676838113.1244035;P4;MEASURED LATENCY;{'P2': 223}
+1676838113.6859362;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676838113.68607;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676838113.6864953;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676838113.6865714;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676838113.6869688;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676838113.6870375;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676838115.2470703;P4;MEASURED LATENCY;{'P3': 2346}
+1676838115.2471898;P4;APPLIED LATENCY;{"P3": 2346}
+1676838115.4222112;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838117.7775943;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676838118.133235;P4;MEASURED LATENCY;{'P2': 228}
+1676838121.438945;P4;MEASURED LATENCY;{'P3': 3534}
+1676838123.418221;P4;MEASURED LATENCY;{'P2': 267}
+1676838124.5401108;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838124.5640666;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676838125.579205;P4;MEASURED LATENCY;{'P3': 2428}
+1676838125.750269;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676838125.750509;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676838125.7508755;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676838125.7509232;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676838125.7523863;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676838125.7524388;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676838125.7761085;P4;TOPOLOGY UPDATE;{"P1": {"P2": 173, "P3": 245}, "P2": {"P4": 597, "P1": 173}, "P3": {"P4": 1136, "P1": 245}, "P4": {"P2": 597, "P3": 1136}}
+1676838128.4549332;P4;MEASURED LATENCY;{'P2': 230}
+1676838129.6879742;P4;MEASURED LATENCY;{'P3': 1463}
+1676838130.7682695;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676838130.7683673;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676838130.7687337;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676838130.7687852;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676838130.7689488;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676838130.768991;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676838131.038855;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676838132.4848135;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838133.5283659;P4;MEASURED LATENCY;{'P2': 250}
+1676838133.5374599;P4;TOPOLOGY UPDATE;{"P1": {"P2": 173, "P3": 463}, "P2": {"P4": 597, "P1": 173}, "P3": {"P4": 1136, "P1": 463}, "P4": {"P2": 597, "P3": 1136}}
+1676838136.128349;P4;TOPOLOGY UPDATE;{"P1": {"P2": 173, "P3": 463}, "P2": {"P4": 597, "P1": 173}, "P3": {"P4": 1136, "P1": 463}, "P4": {"P2": 597, "P3": 1136}}
+1676838138.6472073;P4;MEASURED LATENCY;{'P2': 366}
+1676838142.7897797;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676838142.7899067;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676838142.790123;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676838142.7901797;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676838142.790374;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676838142.7904155;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676838145.2941728;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838145.4064474;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676838145.505072;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838148.4798903;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676838148.5596337;P4;MEASURED LATENCY;{'P2': 229}
+1676838148.5597832;P4;APPLIED LATENCY;{"P2": 229}
+1676838148.8390064;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676838149.29119;P4;MEASURED LATENCY;{'P3': 960}
+1676838149.7979288;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676838149.7980542;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676838149.7984905;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676838149.7985656;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676838149.7989576;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676838149.7990172;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676838153.6779592;P4;MEASURED LATENCY;{'P2': 345}
+1676838155.8125155;P4;LEAST COST PATH;{"P1": ["P2"], "P2": ["P4"], "P3": ["P4", "P1"], "P4": []}
+1676838156.978841;P4;MEASURED LATENCY;{'P3': 3646}
+1676838157.188374;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676838157.5792038;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838158.591459;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838158.5915658;P4;MEASURED LATENCY;{'P2': 255}
+1676838159.8067453;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676838159.8068545;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676838159.8072815;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676838159.8073695;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676838159.8077292;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676838159.8078108;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676838160.7386432;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676838160.7393465;P4;MEASURED LATENCY;{'P3': 2402}
+1676838163.5387785;P4;LEAST COST PATH;{"P1": ["P2"], "P2": ["P4"], "P3": ["P4"], "P4": []}
+1676838163.5947604;P4;MEASURED LATENCY;{'P2': 246}
+1676838165.2425175;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676838165.430194;P4;MEASURED LATENCY;{'P3': 2081}
+1676838166.2455938;P4;LEAST COST PATH;{"P1": ["P2"], "P2": ["P4"], "P3": ["P4"], "P4": []}
+1676838166.8551548;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676838166.8552434;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676838166.8555787;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676838166.8556256;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676838166.8560476;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676838166.8560932;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676838167.5809765;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838168.55801;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838168.6852841;P4;MEASURED LATENCY;{'P2': 248}
+1676838170.9148428;P4;TOPOLOGY UPDATE;{"P1": {"P2": 173, "P3": 463}, "P2": {"P4": 597, "P1": 173}, "P3": {"P4": 1136, "P1": 463}, "P4": {"P2": 597, "P3": 1136}}
+1676838171.4125485;P4;MEASURED LATENCY;{'P3': 2976}
+1676838172.4691393;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676838173.6865985;P4;MEASURED LATENCY;{'P2': 246}
+1676838173.7701964;P4;MEASURED LATENCY;{'P3': 329}
+1676838174.2134383;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676838177.846865;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838178.8769255;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838178.8770742;P4;MEASURED LATENCY;{'P2': 432}
+1676838179.3572557;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676838179.8659341;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676838179.8660715;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676838179.8665073;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676838179.8665738;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676838179.866982;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676838179.8670466;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676838181.7203026;P4;TOPOLOGY UPDATE;{"P1": {"P2": 173, "P3": 555}, "P2": {"P4": 597, "P1": 173}, "P3": {"P4": 2524, "P1": 555}, "P4": {"P2": 597, "P3": 2524}}
+1676838184.5974934;P4;MEASURED LATENCY;{'P2': 1148}
+1676838185.0294783;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676838185.8372824;P4;TOPOLOGY UPDATE;{"P1": {"P2": 119, "P3": 555}, "P2": {"P4": 260, "P1": 119}, "P3": {"P4": 2524, "P1": 555}, "P4": {"P2": 260, "P3": 2524}}
+1676838185.8709457;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676838185.8714447;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676838185.87241;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676838185.8727262;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676838185.8741791;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676838185.8747907;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676838186.4017744;P4;MEASURED LATENCY;{'P3': 2953}
+1676838186.4019094;P4;APPLIED LATENCY;{"P3": 2953}
+1676838186.5929227;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838186.6546068;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838188.3410032;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676838188.6979318;P4;MEASURED LATENCY;{'P2': 245}
+1676838190.3273613;P4;MEASURED LATENCY;{'P3': 1874}
+1676838191.6128123;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838192.8819518;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676838192.8821204;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676838192.8830676;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676838192.8831654;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676838192.8839865;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676838192.8840528;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676838193.5958428;P4;TOPOLOGY UPDATE;{"P1": {"P2": 119, "P3": 555}, "P2": {"P4": 260, "P1": 119}, "P3": {"P4": 2524, "P1": 555}, "P4": {"P2": 260, "P3": 2524}}
+1676838193.717983;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838193.7185636;P4;MEASURED LATENCY;{'P2': 262}
+1676838194.6845353;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676838197.0046713;P4;MEASURED LATENCY;{'P3': 3548}
+1676838197.8859494;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676838197.8860993;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676838197.8865583;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676838197.8866315;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676838197.8870306;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676838197.887107;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676838198.429335;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676838198.7090247;P4;MEASURED LATENCY;{'P2': 242}
+1676838198.709166;P4;APPLIED LATENCY;{"P2": 242}
+1676838200.137116;P4;MEASURED LATENCY;{'P3': 1670}
+1676838200.612521;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838200.7457097;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838200.9301217;P4;LEAST COST PATH;{"P1": ["P2"], "P2": ["P4"], "P3": ["P4"], "P4": []}
+1676838202.3810616;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676838203.8147268;P4;MEASURED LATENCY;{'P2': 299}
+1676838203.8899174;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676838203.890043;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676838203.8904767;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676838203.8905463;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676838203.890942;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676838203.8910103;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676838205.0463622;P4;MEASURED LATENCY;{'P3': 1530}
+1676838208.742251;P4;MEASURED LATENCY;{'P2': 221}
+1676838210.6508617;P4;MEASURED LATENCY;{'P3': 2130}
+1676838211.7308707;P4;LEAST COST PATH;{"P1": ["P2"], "P2": ["P4"], "P3": ["P4", "P1"], "P4": []}
+1676838212.7895677;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676838213.7095034;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838213.7692995;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838213.8334835;P4;MEASURED LATENCY;{'P2': 234}
+1676838214.129768;P4;MEASURED LATENCY;{'P3': 531}
+1676838215.4186032;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676838215.8382201;P4;LEAST COST PATH;{"P1": ["P2"], "P2": ["P4"], "P3": ["P4", "P1"], "P4": []}
+1676838215.927374;P4;TOPOLOGY UPDATE;{"P1": {"P2": 119, "P3": 555}, "P2": {"P4": 260, "P1": 119}, "P3": {"P4": 2524, "P1": 555}, "P4": {"P2": 260, "P3": 2524}}
+1676838217.6767824;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676838217.902067;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676838217.902169;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676838217.9025805;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676838217.9026673;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676838217.9030983;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676838217.9031858;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676838218.8531394;P4;MEASURED LATENCY;{'P2': 252}
+1676838219.0491586;P4;MEASURED LATENCY;{'P3': 448}
+1676838222.9031303;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676838222.904331;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838223.598356;P4;LEAST COST PATH;{"P1": ["P2"], "P2": ["P4"], "P3": ["P4", "P1"], "P4": []}
+1676838223.8354704;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838223.8356268;P4;MEASURED LATENCY;{'P2': 227}
+1676838224.5441911;P4;MEASURED LATENCY;{'P3': 935}
+1676838226.6753972;P4;TOPOLOGY UPDATE;{"P1": {"P2": 119, "P3": 563}, "P2": {"P4": 260, "P1": 119}, "P3": {"P4": 2524, "P1": 563}, "P4": {"P2": 260, "P3": 2524}}
+1676838227.1186337;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676838229.6214347;P4;MEASURED LATENCY;{'P2': 1008}
+1676838230.8980887;P4;MEASURED LATENCY;{'P3': 2285}
+1676838230.900291;P4;TOPOLOGY UPDATE;{"P1": {"P2": 123, "P3": 563}, "P2": {"P4": 522, "P1": 123}, "P3": {"P4": 2524, "P1": 563}, "P4": {"P2": 522, "P3": 2524}}
+1676838231.4427705;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676838231.9140408;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676838231.9141443;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676838231.9146998;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676838231.914765;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676838231.9151516;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676838231.9152102;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676838232.7303185;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838232.7916753;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838233.9055066;P4;MEASURED LATENCY;{'P2': 287}
+1676838234.9205775;P4;MEASURED LATENCY;{'P3': 1303}
+1676838234.9209867;P4;APPLIED LATENCY;{"P3": 1303}
+1676838235.943167;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676838236.917948;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676838236.9180703;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676838236.9185667;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676838236.918652;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676838236.9188933;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676838236.9189625;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676838238.6200056;P4;TOPOLOGY UPDATE;{"P1": {"P2": 123, "P3": 563}, "P2": {"P4": 522, "P1": 123}, "P3": {"P4": 2524, "P1": 563}, "P4": {"P2": 522, "P3": 2524}}
+1676838238.8567245;P4;MEASURED LATENCY;{'P2': 232}
+1676838239.0797787;P4;MEASURED LATENCY;{'P3': 455}
+1676838239.7546883;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838240.7938337;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838241.4888794;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676838243.862554;P4;MEASURED LATENCY;{'P2': 233}
+1676838244.3262472;P4;MEASURED LATENCY;{'P3': 696}
+1676838245.9419026;P4;LEAST COST PATH;{"P1": ["P2"], "P2": ["P4"], "P3": ["P4", "P1"], "P4": []}
+1676838248.79672;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676838248.8963902;P4;MEASURED LATENCY;{'P2': 262}
+1676838248.8965242;P4;APPLIED LATENCY;{"P2": 262}
+1676838249.9320786;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676838249.9322171;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676838249.9324648;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676838249.9325361;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676838249.9327796;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676838249.9328485;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676838251.4763868;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676838252.3428495;P4;MEASURED LATENCY;{'P3': 3709}
+1676838253.8874516;P4;MEASURED LATENCY;{'P2': 250}
+1676838254.140003;P4;MEASURED LATENCY;{'P3': 503}
+1676838254.8021345;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838255.8149493;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838256.676528;P4;LEAST COST PATH;{"P1": ["P2"], "P2": ["P4"], "P3": ["P4", "P1"], "P4": []}
+1676838256.7015488;P4;TOPOLOGY UPDATE;{"P1": {"P2": 123, "P3": 563}, "P2": {"P4": 522, "P1": 123}, "P3": {"P4": 1855, "P1": 563}, "P4": {"P2": 522, "P3": 1855}}
+1676838256.9401681;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676838256.9402988;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676838256.940548;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676838256.9406188;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676838256.9408612;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676838256.9410357;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676838258.485603;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676838258.4961329;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676838258.7936015;P4;MEASURED LATENCY;{'P3': 153}
+1676838258.8641284;P4;MEASURED LATENCY;{'P2': 223}
+1676838260.9074821;P4;LEAST COST PATH;{"P1": ["P2"], "P2": ["P4"], "P3": ["P4", "P1"], "P4": []}
+1676838263.8951178;P4;MEASURED LATENCY;{'P3': 250}
+1676838263.910906;P4;MEASURED LATENCY;{'P2': 266}
+1676838264.512015;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676838264.9456623;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676838264.9457998;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676838264.946035;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676838264.9461098;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676838264.9463453;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676838264.9464016;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676838267.9467504;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838268.620633;P4;LEAST COST PATH;{"P1": ["P2"], "P2": ["P4"], "P3": ["P4", "P1"], "P4": []}
+1676838268.8076537;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676838268.8766928;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838269.2547045;P4;MEASURED LATENCY;{'P3': 605}
+1676838270.8345287;P4;MEASURED LATENCY;{'P2': 2185}
+1676838273.08314;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676838273.0832536;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676838273.0835092;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676838273.0835755;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676838273.0837755;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676838273.0838614;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676838274.6828332;P4;MEASURED LATENCY;{'P2': 1023}
+1676838274.6833467;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676838275.55826;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676838275.9433875;P4;TOPOLOGY UPDATE;{"P1": {"P2": 120, "P3": 563}, "P2": {"P4": 360, "P1": 120}, "P3": {"P4": 1855, "P1": 563}, "P4": {"P2": 360, "P3": 1855}}
+1676838276.0868733;P4;MEASURED LATENCY;{'P3': 2427}
+1676838277.7683241;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838277.7689922;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838278.7875755;P4;MEASURED LATENCY;{'P3': 123}
+1676838278.894915;P4;MEASURED LATENCY;{'P2': 230}
+1676838280.5121286;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676838281.0897794;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676838281.0899413;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676838281.0902574;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676838281.0903413;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676838281.090629;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676838281.090732;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676838282.8490763;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676838283.6807036;P4;TOPOLOGY UPDATE;{"P1": {"P2": 120, "P3": 686}, "P2": {"P4": 360, "P1": 120}, "P3": {"P4": 1855, "P1": 686}, "P4": {"P2": 360, "P3": 1855}}
+1676838283.9537702;P4;MEASURED LATENCY;{'P2': 285}
+1676838284.801693;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838285.8275795;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838286.702692;P4;LEAST COST PATH;{"P1": ["P2"], "P2": ["P4"], "P3": ["P4", "P1"], "P4": []}
+1676838286.767016;P4;TOPOLOGY UPDATE;{"P1": {"P2": 120, "P3": 686}, "P2": {"P4": 360, "P1": 120}, "P3": {"P4": 1855, "P1": 686}, "P4": {"P2": 360, "P3": 1855}}
+1676838288.6401541;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676838288.940409;P4;MEASURED LATENCY;{'P3': 267}
+1676838288.9405394;P4;APPLIED LATENCY;{"P3": 267}
+1676838288.966542;P4;MEASURED LATENCY;{'P2': 294}
+1676838292.1046858;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P4", "Path": ["P4"]}]
+1676838292.1048214;P4;LOOKUP SENT;{"Peer": "P3", "Relay": "P3"}
+1676838292.1050904;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "Path": ["P4"]}]
+1676838292.1051528;P4;LOOKUP SENT;{"Peer": "P1", "Relay": "P2"}
+1676838292.105474;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P2", "Source": "P4", "Path": ["P4"]}]
+1676838292.1055312;P4;LOOKUP SENT;{"Peer": "P2", "Relay": "P2"}
+1676838293.538207;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676838293.9377062;P4;MEASURED LATENCY;{'P2': 258}
+1676838294.2549431;P4;MEASURED LATENCY;{'P3': 575}
+1676838295.8212893;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838296.165596;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838298.8391166;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P3", "Path": ["P3", "P4"]}]
+1676838299.0669882;P4;MEASURED LATENCY;{'P3': 251}
+1676838299.095187;P4;MEASURED LATENCY;{'P2': 279}
+1676838299.0953088;P4;APPLIED LATENCY;{"P2": 279}
+1676838299.567539;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "Path": ["P1", "P2", "P4"]}]
+1676838300.8285248;P4;LOOKUP RECEIVED;[{"Message": "LOOKUP", "Destination": "P4", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838301.184579;P4;MESSAGE ROUTED;[{"Message": "LOOKUP", "Destination": "P3", "Source": "P2", "Path": ["P2", "P4"]}]
+1676838301.5912144;P4;PEER EXITED;

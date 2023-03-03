@@ -1,0 +1,530 @@
+2023-02-19 21:15:02,188 - INFO - [MainThread] - Initialized router P2 at port 5002
+2023-02-19 21:15:02,190 - INFO - [MainThread] - Adding a connection to SidRelay
+2023-02-19 21:15:02,190 - INFO - [MainThread] - Adding listener for mentoreth
+2023-02-19 21:15:02,190 - INFO - [MainThread] - Starting thread Connect-SidRelay
+2023-02-19 21:15:02,191 - INFO - [Connect-SidRelay] - Calling connect_to_rendezvous_point
+2023-02-19 21:15:02,191 - INFO - [Connect-SidRelay] - Connect to rendezvous point SidRelay
+2023-02-19 21:15:02,193 - INFO - [MainThread] - Starting thread Establish-mentoreth
+2023-02-19 21:15:02,195 - INFO - [MainThread] - Starting thread Thread-Stats
+2023-02-19 21:15:02,196 - INFO - [MainThread] - Starting testing thread
+2023-02-19 21:15:02,198 - INFO - [Connect-SidRelay] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-02-19 21:15:02,211 - INFO - [Establish-mentoreth] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-02-19 21:15:02,217 - INFO - [TESTER] - Started tester
+2023-02-19 21:15:02,436 - INFO - [Establish-mentoreth] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-02-19 21:15:02,437 - INFO - [Establish-mentoreth] - Connecting to guard node 80.66.135.123:9001 (TheGreatKing; Tor 0.4.7.13)... (None)
+2023-02-19 21:15:02,622 - INFO - [Connect-SidRelay] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-02-19 21:15:02,847 - INFO - [Connect-SidRelay] - Connected to rendezvous point SidRelay
+2023-02-19 21:15:02,847 - INFO - [Connect-SidRelay] - Waiting for peer to open stream
+2023-02-19 21:15:02,878 - INFO - [Establish-mentoreth] - Creating new circuit #80000001 with 80.66.135.123:9001 (TheGreatKing; Tor 0.4.7.13) router...
+2023-02-19 21:15:02,962 - INFO - [Connect-SidRelay] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-02-19 21:15:02,963 - INFO - [Connect-SidRelay] - Stream opened successfully
+2023-02-19 21:15:02,963 - INFO - [Connect-SidRelay] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P2\x94ua.'
+2023-02-19 21:15:02,984 - INFO - [Establish-mentoreth] - Building -1 hops circuit...
+2023-02-19 21:15:02,984 - INFO - [Establish-mentoreth] - Extending the circuit #80000001 with 103.251.167.20:9001 (mentoreth; Tor 0.4.7.13)...
+2023-02-19 21:15:02,984 - INFO - [Establish-mentoreth] - Getting descriptor for 103.251.167.20:9001 (mentoreth; Tor 0.4.7.13)...
+2023-02-19 21:15:02,988 - INFO - [Establish-mentoreth] - Connecting to guard node 185.82.217.49:9001 (Assange038bg; Tor 0.4.7.13)... (Internal dir client)
+2023-02-19 21:15:03,162 - INFO - [RECEIVER] - Added neighbour P1
+2023-02-19 21:15:03,560 - INFO - [Establish-mentoreth] - Creating new circuit #80000002 with 185.82.217.49:9001 (Assange038bg; Tor 0.4.7.13) router...
+2023-02-19 21:15:03,814 - INFO - [Establish-mentoreth] - Building 0 hops circuit...
+2023-02-19 21:15:03,814 - INFO - [Establish-mentoreth] - Stream #1: creating attached to #80000002 circuit...
+2023-02-19 21:15:03,814 - INFO - [Establish-mentoreth] - Stream #1: connecting to hsdir
+2023-02-19 21:15:04,010 - INFO - [RecvLoop_185.82.] - Stream #1: connected (remote ip '')
+2023-02-19 21:15:04,416 - INFO - [RecvLoop_185.82.] - Stream #1: remote disconnected (reason = DONE)
+2023-02-19 21:15:04,417 - INFO - [Establish-mentoreth] - Stream #1: closing (state = Disconnected)...
+2023-02-19 21:15:04,417 - INFO - [Establish-mentoreth] - Got descriptor
+2023-02-19 21:15:04,588 - INFO - [Establish-mentoreth] - <class 'torpy.circuit.TorCircuit'>
+2023-02-19 21:15:04,756 - INFO - [Establish-mentoreth] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-02-19 21:15:04,757 - INFO - [Establish-mentoreth] - Waiting for connections at relay mentoreth for cookie b'eb688e4f52df90278060' ...
+2023-02-19 21:15:09,883 - INFO - [RECEIVER] - Received LSA from P1 with SN: 0 and FLAG: 0
+2023-02-19 21:15:09,883 - INFO - [RECEIVER] - LSA received from P1 is new
+2023-02-19 21:15:09,883 - INFO - [RECEIVER] - organizeGraph(graph_arg): [['P1', 'P2', 100, 'SidRelay'], ['P1', 'P3', 100, 'sveahosting']]
+2023-02-19 21:15:11,672 - INFO - [Establish-mentoreth] - Got REND2 message from mentoreth
+2023-02-19 21:15:11,672 - INFO - [Establish-mentoreth] - Entered circuit context with id 0x80000001
+2023-02-19 21:15:11,672 - INFO - [Establish-mentoreth] - Stream #2: creating attached to #80000001 circuit...
+2023-02-19 21:15:11,672 - INFO - [Establish-mentoreth] - Stream #2: connecting to ('127.0.0.1', 5000)
+2023-02-19 21:15:11,894 - INFO - [RecvLoop_80.66.1] - Stream #2: connected (remote ip '127.0.0.1')
+2023-02-19 21:15:12,078 - INFO - [Establish-mentoreth] - Sending HELLO to peer
+2023-02-19 21:15:12,078 - INFO - [Establish-mentoreth] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P2\x94ua.'
+2023-02-19 21:15:12,079 - INFO - [RECEIVER] - Added neighbour P4
+2023-02-19 21:15:20,157 - INFO - [RECEIVER] - Received LSA from P3 with SN: 0 and FLAG: 0
+2023-02-19 21:15:20,158 - INFO - [RECEIVER] - LSA from P3 is not a neighbour
+2023-02-19 21:15:20,158 - INFO - [RECEIVER] - LSA received from P3 is new
+2023-02-19 21:15:20,158 - INFO - [RECEIVER] - organizeGraph(graph_arg): [['P1', 'P2', 100, 'SidRelay'], ['P2', 'P4', 100, 'mentoreth'], ['P1', 'P3', 100, 'sveahosting'], ['P3', 'P4', 100, 'Logforme3']]
+2023-02-19 21:15:20,159 - INFO - [RECEIVER] - Sending update to P1
+2023-02-19 21:15:21,162 - INFO - [RECEIVER] - Sending update to P4
+2023-02-19 21:15:22,165 - INFO - [RECEIVER] - Received LSA from P3 with SN: 0 and FLAG: 0
+2023-02-19 21:15:24,912 - INFO - [RECEIVER] - Received LSA from P1 with SN: 0 and FLAG: 0
+2023-02-19 21:15:25,944 - INFO - [RECEIVER] - Received LSA from P4 with SN: 0 and FLAG: 0
+2023-02-19 21:15:25,944 - INFO - [RECEIVER] - LSA received from P4 is new
+2023-02-19 21:15:25,944 - INFO - [RECEIVER] - organizeGraph(graph_arg): [['P1', 'P2', 100, 'SidRelay'], ['P2', 'P4', 100, 'mentoreth'], ['P1', 'P3', 100, 'sveahosting'], ['P3', 'P4', 100, 'Logforme3']]
+2023-02-19 21:15:25,944 - INFO - [RECEIVER] - Sending update to P1
+2023-02-19 21:15:26,953 - INFO - [RECEIVER] - Received LSA from P4 with SN: 0 and FLAG: 0
+2023-02-19 21:15:39,885 - INFO - [Thread-9] - Running Dijkstra: ({'P1': {'P2': 100, 'P3': 100}, 'P2': {'P1': 100}, 'P3': {'P1': 100}}, ['P1', 'P2', 'P3'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P1': 'SidRelay'}, 'P3': {'P1': 'sveahosting'}})
+2023-02-19 21:15:39,924 - INFO - [RECEIVER] - Received LSA from P1 with SN: 0 and FLAG: 0
+2023-02-19 21:15:40,957 - INFO - [RECEIVER] - Received LSA from P4 with SN: 0 and FLAG: 0
+2023-02-19 21:15:50,160 - INFO - [Thread-18] - Running Dijkstra: ({'P1': {'P2': 100, 'P3': 100}, 'P2': {'P4': 100, 'P1': 100}, 'P3': {'P4': 100, 'P1': 100}, 'P4': {'P2': 100, 'P3': 100}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:15:54,937 - INFO - [RECEIVER] - Received LSA from P1 with SN: 1 and FLAG: 1
+2023-02-19 21:15:54,937 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:15:54,937 - INFO - [RECEIVER] - LSA SN is 1 greater than 0
+2023-02-19 21:15:54,938 - INFO - [RECEIVER] - Sending update to P4
+2023-02-19 21:15:55,945 - INFO - [Thread-22] - Running Dijkstra: ({'P1': {'P2': 100, 'P3': 100}, 'P2': {'P4': 100, 'P1': 100}, 'P3': {'P4': 100, 'P1': 100}, 'P4': {'P2': 100, 'P3': 100}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:15:55,975 - INFO - [RECEIVER] - Received LSA from P4 with SN: 0 and FLAG: 0
+2023-02-19 21:15:56,176 - INFO - [RECEIVER] - Received LSA from P1 with SN: 1 and FLAG: 1
+2023-02-19 21:15:56,176 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:16:04,938 - INFO - [Thread-46] - organizeGraph(graph_arg): [['P1', 'P2', 663, 'SidRelay'], ['P1', 'P3', 100, 'sveahosting'], ['P3', 'P4', 100, 'Logforme3'], ['P2', 'P4', 100, 'mentoreth']]
+2023-02-19 21:16:05,201 - INFO - [RECEIVER] - Received LSA from P3 with SN: 1 and FLAG: 1
+2023-02-19 21:16:05,201 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:16:05,201 - INFO - [RECEIVER] - LSA SN is 1 greater than 0
+2023-02-19 21:16:05,202 - INFO - [RECEIVER] - Sending update to P1
+2023-02-19 21:16:06,203 - INFO - [RECEIVER] - Sending update to P4
+2023-02-19 21:16:07,206 - INFO - [RECEIVER] - Received LSA from P3 with SN: 1 and FLAG: 1
+2023-02-19 21:16:07,206 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:16:09,942 - INFO - [RECEIVER] - Received LSA from P1 with SN: 2 and FLAG: 1
+2023-02-19 21:16:09,942 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:16:09,942 - INFO - [RECEIVER] - LSA SN is 2 greater than 1
+2023-02-19 21:16:09,942 - INFO - [RECEIVER] - Sending update to P4
+2023-02-19 21:16:10,661 - INFO - [RecvLoop_185.82.] - On destroy: circuit #80000002
+2023-02-19 21:16:10,662 - INFO - [RecvLoop_185.82.] - Destroy circuit #80000002
+2023-02-19 21:16:10,969 - INFO - [RECEIVER] - Received LSA from P4 with SN: 1 and FLAG: 1
+2023-02-19 21:16:10,969 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:16:10,969 - INFO - [RECEIVER] - LSA SN is 1 greater than 0
+2023-02-19 21:16:10,969 - INFO - [RECEIVER] - Sending update to P1
+2023-02-19 21:16:11,971 - INFO - [RECEIVER] - Received LSA from P4 with SN: 1 and FLAG: 1
+2023-02-19 21:16:11,971 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:16:11,972 - INFO - [RECEIVER] - Received LSA from P1 with SN: 2 and FLAG: 1
+2023-02-19 21:16:11,972 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:16:15,205 - INFO - [Thread-57] - organizeGraph(graph_arg): [['P1', 'P2', 663, 'SidRelay'], ['P1', 'P3', 242, 'sveahosting'], ['P3', 'P4', 100, 'Logforme3'], ['P2', 'P4', 593, 'mentoreth']]
+2023-02-19 21:16:19,944 - INFO - [Thread-61] - organizeGraph(graph_arg): [['P1', 'P2', 663, 'SidRelay'], ['P1', 'P3', 242, 'sveahosting'], ['P3', 'P4', 100, 'Logforme3'], ['P2', 'P4', 593, 'mentoreth']]
+2023-02-19 21:16:20,214 - INFO - [RECEIVER] - Received LSA from P3 with SN: 2 and FLAG: 1
+2023-02-19 21:16:20,215 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:16:20,215 - INFO - [RECEIVER] - LSA SN is 2 greater than 1
+2023-02-19 21:16:20,215 - INFO - [RECEIVER] - Sending update to P1
+2023-02-19 21:16:20,969 - INFO - [Thread-63] - organizeGraph(graph_arg): [['P1', 'P2', 663, 'SidRelay'], ['P1', 'P3', 242, 'sveahosting'], ['P3', 'P4', 860, 'Logforme3'], ['P2', 'P4', 593, 'mentoreth']]
+2023-02-19 21:16:21,217 - INFO - [RECEIVER] - Sending update to P4
+2023-02-19 21:16:22,227 - INFO - [RECEIVER] - Received LSA from P3 with SN: 2 and FLAG: 1
+2023-02-19 21:16:22,227 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:16:24,961 - INFO - [RECEIVER] - Received LSA from P1 with SN: 2 and FLAG: 0
+2023-02-19 21:16:25,994 - INFO - [RECEIVER] - Received LSA from P4 with SN: 2 and FLAG: 1
+2023-02-19 21:16:25,994 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:16:25,994 - INFO - [RECEIVER] - LSA SN is 2 greater than 1
+2023-02-19 21:16:25,995 - INFO - [RECEIVER] - Sending update to P1
+2023-02-19 21:16:27,000 - INFO - [RECEIVER] - Received LSA from P4 with SN: 2 and FLAG: 1
+2023-02-19 21:16:27,000 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:16:30,215 - INFO - [Thread-74] - organizeGraph(graph_arg): [['P1', 'P2', 663, 'SidRelay'], ['P1', 'P3', 242, 'sveahosting'], ['P3', 'P4', 860, 'Logforme3'], ['P2', 'P4', 593, 'mentoreth']]
+2023-02-19 21:16:34,940 - INFO - [Thread-55] - Running Dijkstra: ({'P1': {'P2': 663, 'P3': 100}, 'P2': {'P4': 100, 'P1': 663}, 'P3': {'P4': 100, 'P1': 100}, 'P4': {'P2': 100, 'P3': 100}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:16:35,996 - INFO - [Thread-80] - organizeGraph(graph_arg): [['P1', 'P2', 663, 'SidRelay'], ['P1', 'P3', 242, 'sveahosting'], ['P3', 'P4', 860, 'Logforme3'], ['P2', 'P4', 593, 'mentoreth']]
+2023-02-19 21:16:39,963 - INFO - [RECEIVER] - Received LSA from P1 with SN: 2 and FLAG: 0
+2023-02-19 21:16:41,000 - INFO - [RECEIVER] - Received LSA from P4 with SN: 2 and FLAG: 0
+2023-02-19 21:16:45,208 - INFO - [Thread-68] - Running Dijkstra: ({'P1': {'P2': 663, 'P3': 242}, 'P2': {'P4': 593, 'P1': 663}, 'P3': {'P4': 100, 'P1': 242}, 'P4': {'P2': 593, 'P3': 100}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:16:49,948 - INFO - [Thread-72] - Running Dijkstra: ({'P1': {'P2': 663, 'P3': 242}, 'P2': {'P4': 593, 'P1': 663}, 'P3': {'P4': 100, 'P1': 242}, 'P4': {'P2': 593, 'P3': 100}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:16:50,975 - INFO - [Thread-75] - Running Dijkstra: ({'P1': {'P2': 663, 'P3': 242}, 'P2': {'P4': 593, 'P1': 663}, 'P3': {'P4': 860, 'P1': 242}, 'P4': {'P2': 593, 'P3': 860}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:16:54,960 - INFO - [RECEIVER] - Received LSA from P1 with SN: 4 and FLAG: 1
+2023-02-19 21:16:54,960 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:16:54,960 - INFO - [RECEIVER] - LSA SN is 4 greater than 2
+2023-02-19 21:16:54,961 - INFO - [RECEIVER] - Sending update to P4
+2023-02-19 21:16:56,006 - INFO - [RECEIVER] - Received LSA from P4 with SN: 2 and FLAG: 0
+2023-02-19 21:16:56,233 - INFO - [RECEIVER] - Received LSA from P1 with SN: 4 and FLAG: 1
+2023-02-19 21:16:56,233 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:17:00,217 - INFO - [Thread-85] - Running Dijkstra: ({'P1': {'P2': 663, 'P3': 242}, 'P2': {'P4': 593, 'P1': 663}, 'P3': {'P4': 860, 'P1': 242}, 'P4': {'P2': 593, 'P3': 860}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:17:04,962 - INFO - [Thread-105] - organizeGraph(graph_arg): [['P1', 'P2', 501, 'SidRelay'], ['P1', 'P3', 363, 'sveahosting'], ['P3', 'P4', 860, 'Logforme3'], ['P2', 'P4', 593, 'mentoreth']]
+2023-02-19 21:17:05,261 - INFO - [RECEIVER] - Received LSA from P3 with SN: 3 and FLAG: 1
+2023-02-19 21:17:05,261 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:17:05,261 - INFO - [RECEIVER] - LSA SN is 3 greater than 2
+2023-02-19 21:17:05,261 - INFO - [RECEIVER] - Sending update to P1
+2023-02-19 21:17:06,003 - INFO - [Thread-90] - Running Dijkstra: ({'P1': {'P2': 663, 'P3': 242}, 'P2': {'P4': 593, 'P1': 663}, 'P3': {'P4': 860, 'P1': 242}, 'P4': {'P2': 593, 'P3': 860}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:17:06,263 - INFO - [RECEIVER] - Sending update to P4
+2023-02-19 21:17:07,267 - INFO - [RECEIVER] - Received LSA from P3 with SN: 3 and FLAG: 1
+2023-02-19 21:17:07,267 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:17:09,987 - INFO - [RECEIVER] - Received LSA from P1 with SN: 4 and FLAG: 0
+2023-02-19 21:17:11,018 - INFO - [RECEIVER] - Received LSA from P4 with SN: 3 and FLAG: 1
+2023-02-19 21:17:11,018 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:17:11,018 - INFO - [RECEIVER] - LSA SN is 3 greater than 2
+2023-02-19 21:17:11,018 - INFO - [RECEIVER] - Sending update to P1
+2023-02-19 21:17:12,022 - INFO - [RECEIVER] - Received LSA from P4 with SN: 3 and FLAG: 1
+2023-02-19 21:17:12,022 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:17:15,263 - INFO - [Thread-115] - organizeGraph(graph_arg): [['P1', 'P2', 501, 'SidRelay'], ['P1', 'P3', 363, 'sveahosting'], ['P3', 'P4', 860, 'Logforme3'], ['P2', 'P4', 671, 'mentoreth']]
+2023-02-19 21:17:20,277 - INFO - [RECEIVER] - Received LSA from P3 with SN: 4 and FLAG: 1
+2023-02-19 21:17:20,277 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:17:20,277 - INFO - [RECEIVER] - LSA SN is 4 greater than 3
+2023-02-19 21:17:20,278 - INFO - [RECEIVER] - Sending update to P1
+2023-02-19 21:17:21,018 - INFO - [Thread-121] - organizeGraph(graph_arg): [['P1', 'P2', 501, 'SidRelay'], ['P1', 'P3', 363, 'sveahosting'], ['P3', 'P4', 652, 'Logforme3'], ['P2', 'P4', 671, 'mentoreth']]
+2023-02-19 21:17:21,279 - INFO - [RECEIVER] - Sending update to P4
+2023-02-19 21:17:22,281 - INFO - [RECEIVER] - Received LSA from P3 with SN: 4 and FLAG: 1
+2023-02-19 21:17:22,281 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:17:24,997 - INFO - [RECEIVER] - Received LSA from P1 with SN: 4 and FLAG: 0
+2023-02-19 21:17:26,043 - INFO - [RECEIVER] - Received LSA from P4 with SN: 4 and FLAG: 1
+2023-02-19 21:17:26,043 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:17:26,043 - INFO - [RECEIVER] - LSA SN is 4 greater than 3
+2023-02-19 21:17:26,044 - INFO - [RECEIVER] - Sending update to P1
+2023-02-19 21:17:27,047 - INFO - [RECEIVER] - Received LSA from P4 with SN: 4 and FLAG: 1
+2023-02-19 21:17:27,047 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:17:30,281 - INFO - [Thread-131] - organizeGraph(graph_arg): [['P1', 'P2', 501, 'SidRelay'], ['P1', 'P3', 363, 'sveahosting'], ['P3', 'P4', 652, 'Logforme3'], ['P2', 'P4', 671, 'mentoreth']]
+2023-02-19 21:17:34,964 - INFO - [Thread-113] - Running Dijkstra: ({'P1': {'P2': 501, 'P3': 363}, 'P2': {'P4': 593, 'P1': 501}, 'P3': {'P4': 860, 'P1': 363}, 'P4': {'P2': 593, 'P3': 860}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:17:36,044 - INFO - [Thread-137] - organizeGraph(graph_arg): [['P1', 'P2', 501, 'SidRelay'], ['P1', 'P3', 363, 'sveahosting'], ['P3', 'P4', 652, 'Logforme3'], ['P2', 'P4', 671, 'mentoreth']]
+2023-02-19 21:17:40,022 - INFO - [RECEIVER] - Received LSA from P1 with SN: 6 and FLAG: 1
+2023-02-19 21:17:40,022 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:17:40,022 - INFO - [RECEIVER] - LSA SN is 6 greater than 4
+2023-02-19 21:17:40,022 - INFO - [RECEIVER] - Sending update to P4
+2023-02-19 21:17:41,044 - INFO - [RECEIVER] - Received LSA from P4 with SN: 4 and FLAG: 0
+2023-02-19 21:17:45,264 - INFO - [Thread-126] - Running Dijkstra: ({'P1': {'P2': 501, 'P3': 363}, 'P2': {'P4': 671, 'P1': 501}, 'P3': {'P4': 860, 'P1': 363}, 'P4': {'P2': 671, 'P3': 860}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:17:50,023 - INFO - [Thread-151] - organizeGraph(graph_arg): [['P1', 'P2', 242, 'SidRelay'], ['P1', 'P3', 178, 'sveahosting'], ['P3', 'P4', 652, 'Logforme3'], ['P2', 'P4', 671, 'mentoreth']]
+2023-02-19 21:17:50,300 - INFO - [RECEIVER] - Received LSA from P3 with SN: 5 and FLAG: 1
+2023-02-19 21:17:50,300 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:17:50,300 - INFO - [RECEIVER] - LSA SN is 5 greater than 4
+2023-02-19 21:17:50,303 - INFO - [RECEIVER] - Sending update to P1
+2023-02-19 21:17:51,026 - INFO - [Thread-132] - Running Dijkstra: ({'P1': {'P2': 501, 'P3': 363}, 'P2': {'P4': 671, 'P1': 501}, 'P3': {'P4': 652, 'P1': 363}, 'P4': {'P2': 671, 'P3': 652}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:17:51,306 - INFO - [RECEIVER] - Sending update to P4
+2023-02-19 21:17:52,310 - INFO - [RECEIVER] - Received LSA from P3 with SN: 5 and FLAG: 1
+2023-02-19 21:17:52,310 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:17:55,021 - INFO - [RECEIVER] - Received LSA from P1 with SN: 6 and FLAG: 0
+2023-02-19 21:17:56,053 - INFO - [RECEIVER] - Received LSA from P4 with SN: 4 and FLAG: 0
+2023-02-19 21:18:00,283 - INFO - [Thread-142] - Running Dijkstra: ({'P1': {'P2': 501, 'P3': 363}, 'P2': {'P4': 671, 'P1': 501}, 'P3': {'P4': 652, 'P1': 363}, 'P4': {'P2': 671, 'P3': 652}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:18:00,301 - INFO - [Thread-161] - organizeGraph(graph_arg): [['P1', 'P2', 242, 'SidRelay'], ['P1', 'P3', 178, 'sveahosting'], ['P3', 'P4', 652, 'Logforme3'], ['P2', 'P4', 671, 'mentoreth']]
+2023-02-19 21:18:06,049 - INFO - [Thread-147] - Running Dijkstra: ({'P1': {'P2': 501, 'P3': 363}, 'P2': {'P4': 671, 'P1': 501}, 'P3': {'P4': 652, 'P1': 363}, 'P4': {'P2': 671, 'P3': 652}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:18:10,051 - INFO - [RECEIVER] - Received LSA from P1 with SN: 6 and FLAG: 0
+2023-02-19 21:18:11,077 - INFO - [RECEIVER] - Received LSA from P4 with SN: 5 and FLAG: 1
+2023-02-19 21:18:11,077 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:18:11,077 - INFO - [RECEIVER] - LSA SN is 5 greater than 4
+2023-02-19 21:18:11,078 - INFO - [RECEIVER] - Sending update to P1
+2023-02-19 21:18:12,080 - INFO - [RECEIVER] - Received LSA from P4 with SN: 5 and FLAG: 1
+2023-02-19 21:18:12,080 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:18:20,024 - INFO - [Thread-159] - Running Dijkstra: ({'P1': {'P2': 242, 'P3': 178}, 'P2': {'P4': 671, 'P1': 242}, 'P3': {'P4': 652, 'P1': 178}, 'P4': {'P2': 671, 'P3': 652}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:18:20,335 - INFO - [RECEIVER] - Received LSA from P3 with SN: 6 and FLAG: 1
+2023-02-19 21:18:20,335 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:18:20,335 - INFO - [RECEIVER] - LSA SN is 6 greater than 5
+2023-02-19 21:18:20,336 - INFO - [RECEIVER] - Sending update to P1
+2023-02-19 21:18:21,079 - INFO - [Thread-177] - organizeGraph(graph_arg): [['P1', 'P2', 242, 'SidRelay'], ['P1', 'P3', 178, 'sveahosting'], ['P3', 'P4', 626, 'Logforme3'], ['P2', 'P4', 997, 'mentoreth']]
+2023-02-19 21:18:21,337 - INFO - [RECEIVER] - Sending update to P4
+2023-02-19 21:18:22,341 - INFO - [RECEIVER] - Received LSA from P3 with SN: 6 and FLAG: 1
+2023-02-19 21:18:22,341 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:18:25,069 - INFO - [RECEIVER] - Received LSA from P1 with SN: 7 and FLAG: 1
+2023-02-19 21:18:25,070 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:18:25,070 - INFO - [RECEIVER] - LSA SN is 7 greater than 6
+2023-02-19 21:18:25,070 - INFO - [RECEIVER] - Sending update to P4
+2023-02-19 21:18:26,082 - INFO - [RECEIVER] - Received LSA from P4 with SN: 5 and FLAG: 0
+2023-02-19 21:18:26,288 - INFO - [RECEIVER] - Received LSA from P1 with SN: 7 and FLAG: 1
+2023-02-19 21:18:26,288 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:18:30,305 - INFO - [Thread-169] - Running Dijkstra: ({'P1': {'P2': 242, 'P3': 178}, 'P2': {'P4': 671, 'P1': 242}, 'P3': {'P4': 652, 'P1': 178}, 'P4': {'P2': 671, 'P3': 652}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:18:30,336 - INFO - [Thread-186] - organizeGraph(graph_arg): [['P1', 'P2', 364, 'SidRelay'], ['P1', 'P3', 178, 'sveahosting'], ['P3', 'P4', 626, 'Logforme3'], ['P2', 'P4', 997, 'mentoreth']]
+2023-02-19 21:18:35,072 - INFO - [Thread-191] - organizeGraph(graph_arg): [['P1', 'P2', 364, 'SidRelay'], ['P1', 'P3', 178, 'sveahosting'], ['P3', 'P4', 626, 'Logforme3'], ['P2', 'P4', 997, 'mentoreth']]
+2023-02-19 21:18:35,353 - INFO - [RECEIVER] - Received LSA from P3 with SN: 7 and FLAG: 1
+2023-02-19 21:18:35,354 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:18:35,354 - INFO - [RECEIVER] - LSA SN is 7 greater than 6
+2023-02-19 21:18:35,354 - INFO - [RECEIVER] - Sending update to P1
+2023-02-19 21:18:36,363 - INFO - [RECEIVER] - Sending update to P4
+2023-02-19 21:18:37,366 - INFO - [RECEIVER] - Received LSA from P3 with SN: 7 and FLAG: 1
+2023-02-19 21:18:37,366 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:18:40,095 - INFO - [RECEIVER] - Received LSA from P1 with SN: 8 and FLAG: 1
+2023-02-19 21:18:40,095 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:18:40,095 - INFO - [RECEIVER] - LSA SN is 8 greater than 7
+2023-02-19 21:18:40,096 - INFO - [RECEIVER] - Sending update to P4
+2023-02-19 21:18:41,101 - INFO - [RECEIVER] - Received LSA from P4 with SN: 6 and FLAG: 1
+2023-02-19 21:18:41,101 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:18:41,101 - INFO - [RECEIVER] - LSA SN is 6 greater than 5
+2023-02-19 21:18:41,101 - INFO - [RECEIVER] - Sending update to P1
+2023-02-19 21:18:42,106 - INFO - [RECEIVER] - Received LSA from P4 with SN: 6 and FLAG: 1
+2023-02-19 21:18:42,106 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:18:42,107 - INFO - [RECEIVER] - Received LSA from P1 with SN: 8 and FLAG: 1
+2023-02-19 21:18:42,107 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:18:45,355 - INFO - [Thread-203] - organizeGraph(graph_arg): [['P1', 'P2', 364, 'SidRelay'], ['P1', 'P3', 268, 'sveahosting'], ['P3', 'P4', 626, 'Logforme3'], ['P2', 'P4', 997, 'mentoreth']]
+2023-02-19 21:18:50,097 - INFO - [Thread-207] - organizeGraph(graph_arg): [['P1', 'P2', 364, 'SidRelay'], ['P1', 'P3', 268, 'sveahosting'], ['P3', 'P4', 626, 'Logforme3'], ['P2', 'P4', 997, 'mentoreth']]
+2023-02-19 21:18:51,080 - INFO - [Thread-187] - Running Dijkstra: ({'P1': {'P2': 242, 'P3': 178}, 'P2': {'P4': 997, 'P1': 242}, 'P3': {'P4': 626, 'P1': 178}, 'P4': {'P2': 997, 'P3': 626}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:18:51,102 - INFO - [Thread-209] - organizeGraph(graph_arg): [['P1', 'P2', 364, 'SidRelay'], ['P1', 'P3', 268, 'sveahosting'], ['P3', 'P4', 626, 'Logforme3'], ['P2', 'P4', 997, 'mentoreth']]
+2023-02-19 21:18:55,104 - INFO - [RECEIVER] - Received LSA from P1 with SN: 8 and FLAG: 0
+2023-02-19 21:18:56,109 - INFO - [RECEIVER] - Received LSA from P4 with SN: 7 and FLAG: 1
+2023-02-19 21:18:56,109 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:18:56,109 - INFO - [RECEIVER] - LSA SN is 7 greater than 6
+2023-02-19 21:18:56,110 - INFO - [RECEIVER] - Sending update to P1
+2023-02-19 21:18:57,113 - INFO - [RECEIVER] - Received LSA from P4 with SN: 7 and FLAG: 1
+2023-02-19 21:18:57,113 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:19:00,339 - INFO - [Thread-197] - Running Dijkstra: ({'P1': {'P2': 364, 'P3': 178}, 'P2': {'P4': 997, 'P1': 364}, 'P3': {'P4': 626, 'P1': 178}, 'P4': {'P2': 997, 'P3': 626}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:19:05,077 - INFO - [Thread-201] - Running Dijkstra: ({'P1': {'P2': 364, 'P3': 178}, 'P2': {'P4': 997, 'P1': 364}, 'P3': {'P4': 626, 'P1': 178}, 'P4': {'P2': 997, 'P3': 626}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:19:06,110 - INFO - [Thread-225] - organizeGraph(graph_arg): [['P1', 'P2', 364, 'SidRelay'], ['P1', 'P3', 268, 'sveahosting'], ['P3', 'P4', 626, 'Logforme3'], ['P2', 'P4', 751, 'mentoreth']]
+2023-02-19 21:19:10,127 - INFO - [RECEIVER] - Received LSA from P1 with SN: 8 and FLAG: 0
+2023-02-19 21:19:11,185 - INFO - [RECEIVER] - Received LSA from P4 with SN: 7 and FLAG: 0
+2023-02-19 21:19:15,360 - INFO - [Thread-214] - Running Dijkstra: ({'P1': {'P2': 364, 'P3': 268}, 'P2': {'P4': 997, 'P1': 364}, 'P3': {'P4': 626, 'P1': 268}, 'P4': {'P2': 997, 'P3': 626}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:19:20,348 - INFO - [Thread-218] - Running Dijkstra: ({'P1': {'P2': 364, 'P3': 268}, 'P2': {'P4': 997, 'P1': 364}, 'P3': {'P4': 626, 'P1': 268}, 'P4': {'P2': 997, 'P3': 626}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:19:20,415 - INFO - [RECEIVER] - Received LSA from P3 with SN: 8 and FLAG: 1
+2023-02-19 21:19:20,419 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:19:20,419 - INFO - [RECEIVER] - LSA SN is 8 greater than 7
+2023-02-19 21:19:20,420 - INFO - [RECEIVER] - Sending update to P1
+2023-02-19 21:19:21,105 - INFO - [Thread-220] - Running Dijkstra: ({'P1': {'P2': 364, 'P3': 268}, 'P2': {'P4': 997, 'P1': 364}, 'P3': {'P4': 626, 'P1': 268}, 'P4': {'P2': 997, 'P3': 626}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:19:21,424 - INFO - [RECEIVER] - Sending update to P4
+2023-02-19 21:19:22,432 - INFO - [RECEIVER] - Received LSA from P3 with SN: 8 and FLAG: 1
+2023-02-19 21:19:22,432 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:19:25,154 - INFO - [RECEIVER] - Received LSA from P1 with SN: 10 and FLAG: 1
+2023-02-19 21:19:25,154 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:19:25,154 - INFO - [RECEIVER] - LSA SN is 10 greater than 8
+2023-02-19 21:19:25,158 - INFO - [RECEIVER] - Sending update to P4
+2023-02-19 21:19:26,210 - INFO - [RECEIVER] - Received LSA from P4 with SN: 7 and FLAG: 0
+2023-02-19 21:19:26,324 - INFO - [RECEIVER] - Received LSA from P1 with SN: 10 and FLAG: 1
+2023-02-19 21:19:26,324 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:19:30,423 - INFO - [Thread-246] - organizeGraph(graph_arg): [['P1', 'P2', 301, 'SidRelay'], ['P1', 'P3', 176, 'sveahosting'], ['P3', 'P4', 942, 'Logforme3'], ['P2', 'P4', 751, 'mentoreth']]
+2023-02-19 21:19:35,165 - INFO - [Thread-251] - organizeGraph(graph_arg): [['P1', 'P2', 301, 'SidRelay'], ['P1', 'P3', 176, 'sveahosting'], ['P3', 'P4', 942, 'Logforme3'], ['P2', 'P4', 751, 'mentoreth']]
+2023-02-19 21:19:35,464 - INFO - [RECEIVER] - Received LSA from P3 with SN: 9 and FLAG: 1
+2023-02-19 21:19:35,464 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:19:35,464 - INFO - [RECEIVER] - LSA SN is 9 greater than 8
+2023-02-19 21:19:35,467 - INFO - [RECEIVER] - Sending update to P1
+2023-02-19 21:19:36,116 - INFO - [Thread-234] - Running Dijkstra: ({'P1': {'P2': 364, 'P3': 268}, 'P2': {'P4': 751, 'P1': 364}, 'P3': {'P4': 626, 'P1': 268}, 'P4': {'P2': 751, 'P3': 626}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:19:36,482 - INFO - [RECEIVER] - Sending update to P4
+2023-02-19 21:19:37,492 - INFO - [RECEIVER] - Received LSA from P3 with SN: 9 and FLAG: 1
+2023-02-19 21:19:37,493 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:19:40,360 - INFO - [RECEIVER] - Received LSA from P1 with SN: 10 and FLAG: 0
+2023-02-19 21:19:41,212 - INFO - [RECEIVER] - Received LSA from P4 with SN: 8 and FLAG: 1
+2023-02-19 21:19:41,212 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:19:41,213 - INFO - [RECEIVER] - LSA SN is 8 greater than 7
+2023-02-19 21:19:41,216 - INFO - [RECEIVER] - Sending update to P1
+2023-02-19 21:19:42,228 - INFO - [RECEIVER] - Received LSA from P4 with SN: 8 and FLAG: 1
+2023-02-19 21:19:42,229 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:19:46,429 - INFO - [Thread-263] - organizeGraph(graph_arg): [['P1', 'P2', 301, 'SidRelay'], ['P1', 'P3', 176, 'sveahosting'], ['P3', 'P4', 942, 'Logforme3'], ['P2', 'P4', 751, 'mentoreth']]
+2023-02-19 21:19:51,217 - INFO - [Thread-268] - organizeGraph(graph_arg): [['P1', 'P2', 301, 'SidRelay'], ['P1', 'P3', 176, 'sveahosting'], ['P3', 'P4', 942, 'Logforme3'], ['P2', 'P4', 751, 'mentoreth']]
+2023-02-19 21:19:55,381 - INFO - [RECEIVER] - Received LSA from P1 with SN: 10 and FLAG: 0
+2023-02-19 21:19:56,241 - INFO - [RECEIVER] - Received LSA from P4 with SN: 9 and FLAG: 1
+2023-02-19 21:19:56,241 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:19:56,241 - INFO - [RECEIVER] - LSA SN is 9 greater than 8
+2023-02-19 21:19:56,247 - INFO - [RECEIVER] - Sending update to P1
+2023-02-19 21:19:57,252 - INFO - [RECEIVER] - Received LSA from P4 with SN: 9 and FLAG: 1
+2023-02-19 21:19:57,252 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:20:00,426 - INFO - [Thread-257] - Running Dijkstra: ({'P1': {'P2': 301, 'P3': 176}, 'P2': {'P4': 751, 'P1': 301}, 'P3': {'P4': 942, 'P1': 176}, 'P4': {'P2': 751, 'P3': 942}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:20:05,172 - INFO - [Thread-261] - Running Dijkstra: ({'P1': {'P2': 301, 'P3': 176}, 'P2': {'P4': 751, 'P1': 301}, 'P3': {'P4': 942, 'P1': 176}, 'P4': {'P2': 751, 'P3': 942}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:20:05,469 - INFO - [RECEIVER] - Received LSA from P3 with SN: 10 and FLAG: 1
+2023-02-19 21:20:05,469 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:20:05,470 - INFO - [RECEIVER] - LSA SN is 10 greater than 9
+2023-02-19 21:20:05,471 - INFO - [RECEIVER] - Sending update to P1
+2023-02-19 21:20:06,247 - INFO - [Thread-283] - organizeGraph(graph_arg): [['P1', 'P2', 301, 'SidRelay'], ['P1', 'P3', 176, 'sveahosting'], ['P3', 'P4', 846, 'Logforme3'], ['P2', 'P4', 717, 'mentoreth']]
+2023-02-19 21:20:06,472 - INFO - [RECEIVER] - Sending update to P4
+2023-02-19 21:20:07,473 - INFO - [RECEIVER] - Received LSA from P3 with SN: 10 and FLAG: 1
+2023-02-19 21:20:07,473 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:20:10,394 - INFO - [RECEIVER] - Received LSA from P1 with SN: 12 and FLAG: 1
+2023-02-19 21:20:10,394 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:20:10,395 - INFO - [RECEIVER] - LSA SN is 12 greater than 10
+2023-02-19 21:20:10,395 - INFO - [RECEIVER] - Sending update to P4
+2023-02-19 21:20:11,495 - INFO - [RECEIVER] - Received LSA from P4 with SN: 9 and FLAG: 0
+2023-02-19 21:20:11,618 - INFO - [RECEIVER] - Received LSA from P1 with SN: 12 and FLAG: 1
+2023-02-19 21:20:11,618 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:20:15,480 - INFO - [Thread-291] - organizeGraph(graph_arg): [['P1', 'P2', 400, 'SidRelay'], ['P1', 'P3', 424, 'sveahosting'], ['P3', 'P4', 846, 'Logforme3'], ['P2', 'P4', 717, 'mentoreth']]
+2023-02-19 21:20:16,441 - INFO - [Thread-273] - Running Dijkstra: ({'P1': {'P2': 301, 'P3': 176}, 'P2': {'P4': 751, 'P1': 301}, 'P3': {'P4': 942, 'P1': 176}, 'P4': {'P2': 751, 'P3': 942}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:20:20,428 - INFO - [Thread-297] - organizeGraph(graph_arg): [['P1', 'P2', 400, 'SidRelay'], ['P1', 'P3', 424, 'sveahosting'], ['P3', 'P4', 846, 'Logforme3'], ['P2', 'P4', 717, 'mentoreth']]
+2023-02-19 21:20:20,542 - INFO - [RECEIVER] - Received LSA from P3 with SN: 11 and FLAG: 1
+2023-02-19 21:20:20,542 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:20:20,542 - INFO - [RECEIVER] - LSA SN is 11 greater than 10
+2023-02-19 21:20:20,544 - INFO - [RECEIVER] - Sending update to P1
+2023-02-19 21:20:21,218 - INFO - [Thread-278] - Running Dijkstra: ({'P1': {'P2': 301, 'P3': 176}, 'P2': {'P4': 751, 'P1': 301}, 'P3': {'P4': 942, 'P1': 176}, 'P4': {'P2': 751, 'P3': 942}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:20:21,556 - INFO - [RECEIVER] - Sending update to P4
+2023-02-19 21:20:22,604 - INFO - [RECEIVER] - Received LSA from P3 with SN: 11 and FLAG: 1
+2023-02-19 21:20:22,604 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:20:25,411 - INFO - [RECEIVER] - Received LSA from P1 with SN: 12 and FLAG: 0
+2023-02-19 21:20:26,243 - INFO - [RECEIVER] - Received LSA from P4 with SN: 9 and FLAG: 0
+2023-02-19 21:20:30,543 - INFO - [Thread-308] - organizeGraph(graph_arg): [['P1', 'P2', 400, 'SidRelay'], ['P1', 'P3', 424, 'sveahosting'], ['P3', 'P4', 846, 'Logforme3'], ['P2', 'P4', 717, 'mentoreth']]
+2023-02-19 21:20:36,250 - INFO - [Thread-292] - Running Dijkstra: ({'P1': {'P2': 301, 'P3': 176}, 'P2': {'P4': 717, 'P1': 301}, 'P3': {'P4': 846, 'P1': 176}, 'P4': {'P2': 717, 'P3': 846}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:20:40,470 - INFO - [RECEIVER] - Received LSA from P1 with SN: 12 and FLAG: 0
+2023-02-19 21:20:41,315 - INFO - [RECEIVER] - Received LSA from P4 with SN: 11 and FLAG: 1
+2023-02-19 21:20:41,316 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:20:41,316 - INFO - [RECEIVER] - LSA SN is 11 greater than 9
+2023-02-19 21:20:41,436 - INFO - [RECEIVER] - Sending update to P1
+2023-02-19 21:20:42,439 - INFO - [RECEIVER] - Received LSA from P4 with SN: 11 and FLAG: 1
+2023-02-19 21:20:42,439 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:20:45,483 - INFO - [Thread-302] - Running Dijkstra: ({'P1': {'P2': 400, 'P3': 424}, 'P2': {'P4': 717, 'P1': 400}, 'P3': {'P4': 846, 'P1': 424}, 'P4': {'P2': 717, 'P3': 846}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:20:50,434 - INFO - [Thread-307] - Running Dijkstra: ({'P1': {'P2': 400, 'P3': 424}, 'P2': {'P4': 717, 'P1': 400}, 'P3': {'P4': 846, 'P1': 424}, 'P4': {'P2': 717, 'P3': 846}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:20:51,436 - INFO - [Thread-327] - organizeGraph(graph_arg): [['P1', 'P2', 400, 'SidRelay'], ['P1', 'P3', 424, 'sveahosting'], ['P3', 'P4', 846, 'Logforme3'], ['P2', 'P4', 612, 'mentoreth']]
+2023-02-19 21:20:55,478 - INFO - [RECEIVER] - Received LSA from P1 with SN: 13 and FLAG: 1
+2023-02-19 21:20:55,478 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:20:55,478 - INFO - [RECEIVER] - LSA SN is 13 greater than 12
+2023-02-19 21:20:55,482 - INFO - [RECEIVER] - Sending update to P4
+2023-02-19 21:20:56,730 - INFO - [RECEIVER] - Received LSA from P4 with SN: 11 and FLAG: 0
+2023-02-19 21:20:56,883 - INFO - [RECEIVER] - Received LSA from P1 with SN: 13 and FLAG: 1
+2023-02-19 21:20:56,883 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:21:00,544 - INFO - [Thread-317] - Running Dijkstra: ({'P1': {'P2': 400, 'P3': 424}, 'P2': {'P4': 717, 'P1': 400}, 'P3': {'P4': 846, 'P1': 424}, 'P4': {'P2': 717, 'P3': 846}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:21:05,932 - INFO - [Thread-340] - organizeGraph(graph_arg): [['P1', 'P2', 530, 'SidRelay'], ['P1', 'P3', 424, 'sveahosting'], ['P3', 'P4', 846, 'Logforme3'], ['P2', 'P4', 612, 'mentoreth']]
+2023-02-19 21:21:06,093 - INFO - [RECEIVER] - Received LSA from P3 with SN: 13 and FLAG: 1
+2023-02-19 21:21:06,093 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:21:06,093 - INFO - [RECEIVER] - LSA SN is 13 greater than 11
+2023-02-19 21:21:06,097 - INFO - [RECEIVER] - Sending update to P1
+2023-02-19 21:21:07,467 - INFO - [RECEIVER] - Sending update to P4
+2023-02-19 21:21:08,695 - INFO - [RECEIVER] - Received LSA from P3 with SN: 13 and FLAG: 1
+2023-02-19 21:21:08,695 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:21:10,509 - INFO - [RECEIVER] - Received LSA from P1 with SN: 14 and FLAG: 1
+2023-02-19 21:21:10,509 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:21:10,509 - INFO - [RECEIVER] - LSA SN is 14 greater than 13
+2023-02-19 21:21:10,510 - INFO - [RECEIVER] - Sending update to P4
+2023-02-19 21:21:11,621 - INFO - [RECEIVER] - Received LSA from P4 with SN: 11 and FLAG: 0
+2023-02-19 21:21:11,750 - INFO - [RECEIVER] - Received LSA from P1 with SN: 14 and FLAG: 1
+2023-02-19 21:21:11,750 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:21:16,436 - INFO - [Thread-351] - organizeGraph(graph_arg): [['P1', 'P2', 530, 'SidRelay'], ['P1', 'P3', 298, 'sveahosting'], ['P3', 'P4', 1136, 'Logforme3'], ['P2', 'P4', 612, 'mentoreth']]
+2023-02-19 21:21:20,578 - INFO - [Thread-355] - organizeGraph(graph_arg): [['P1', 'P2', 530, 'SidRelay'], ['P1', 'P3', 298, 'sveahosting'], ['P3', 'P4', 1136, 'Logforme3'], ['P2', 'P4', 612, 'mentoreth']]
+2023-02-19 21:21:21,441 - INFO - [Thread-336] - Running Dijkstra: ({'P1': {'P2': 400, 'P3': 424}, 'P2': {'P4': 612, 'P1': 400}, 'P3': {'P4': 846, 'P1': 424}, 'P4': {'P2': 612, 'P3': 846}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:21:25,522 - INFO - [RECEIVER] - Received LSA from P1 with SN: 14 and FLAG: 0
+2023-02-19 21:21:26,504 - INFO - [RECEIVER] - Received LSA from P4 with SN: 12 and FLAG: 1
+2023-02-19 21:21:26,504 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:21:26,504 - INFO - [RECEIVER] - LSA SN is 12 greater than 11
+2023-02-19 21:21:26,518 - INFO - [RECEIVER] - Sending update to P1
+2023-02-19 21:21:27,592 - INFO - [RECEIVER] - Received LSA from P4 with SN: 12 and FLAG: 1
+2023-02-19 21:21:27,592 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:21:36,012 - INFO - [Thread-349] - Running Dijkstra: ({'P1': {'P2': 530, 'P3': 424}, 'P2': {'P4': 612, 'P1': 530}, 'P3': {'P4': 846, 'P1': 424}, 'P4': {'P2': 612, 'P3': 846}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:21:36,840 - INFO - [Thread-371] - organizeGraph(graph_arg): [['P1', 'P2', 530, 'SidRelay'], ['P1', 'P3', 298, 'sveahosting'], ['P3', 'P4', 1136, 'Logforme3'], ['P2', 'P4', 600, 'mentoreth']]
+2023-02-19 21:21:40,644 - INFO - [RECEIVER] - Received LSA from P1 with SN: 14 and FLAG: 0
+2023-02-19 21:21:41,526 - INFO - [RECEIVER] - Received LSA from P4 with SN: 12 and FLAG: 0
+2023-02-19 21:21:46,567 - INFO - [Thread-361] - Running Dijkstra: ({'P1': {'P2': 530, 'P3': 298}, 'P2': {'P4': 612, 'P1': 530}, 'P3': {'P4': 1136, 'P1': 298}, 'P4': {'P2': 612, 'P3': 1136}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:21:50,580 - INFO - [Thread-365] - Running Dijkstra: ({'P1': {'P2': 530, 'P3': 298}, 'P2': {'P4': 612, 'P1': 530}, 'P3': {'P4': 1136, 'P1': 298}, 'P4': {'P2': 612, 'P3': 1136}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:21:55,662 - INFO - [RECEIVER] - Received LSA from P1 with SN: 16 and FLAG: 1
+2023-02-19 21:21:55,662 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:21:55,662 - INFO - [RECEIVER] - LSA SN is 16 greater than 14
+2023-02-19 21:21:55,663 - INFO - [RECEIVER] - Sending update to P4
+2023-02-19 21:21:56,792 - INFO - [RECEIVER] - Received LSA from P4 with SN: 13 and FLAG: 1
+2023-02-19 21:21:56,806 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:21:56,812 - INFO - [RECEIVER] - LSA SN is 13 greater than 12
+2023-02-19 21:21:56,816 - INFO - [RECEIVER] - Sending update to P1
+2023-02-19 21:21:57,823 - INFO - [RECEIVER] - Received LSA from P4 with SN: 13 and FLAG: 1
+2023-02-19 21:21:57,823 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:21:57,823 - INFO - [RECEIVER] - Received LSA from P1 with SN: 16 and FLAG: 1
+2023-02-19 21:21:57,823 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:22:05,749 - INFO - [Thread-395] - organizeGraph(graph_arg): [['P1', 'P2', 744, 'SidRelay'], ['P1', 'P3', 467, 'sveahosting'], ['P3', 'P4', 1136, 'Logforme3'], ['P2', 'P4', 600, 'mentoreth']]
+2023-02-19 21:22:06,190 - INFO - [RECEIVER] - Received LSA from P3 with SN: 14 and FLAG: 1
+2023-02-19 21:22:06,190 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:22:06,190 - INFO - [RECEIVER] - LSA SN is 14 greater than 13
+2023-02-19 21:22:06,289 - INFO - [RECEIVER] - Sending update to P1
+2023-02-19 21:22:06,827 - INFO - [Thread-397] - organizeGraph(graph_arg): [['P1', 'P2', 744, 'SidRelay'], ['P1', 'P3', 467, 'sveahosting'], ['P3', 'P4', 1136, 'Logforme3'], ['P2', 'P4', 600, 'mentoreth']]
+2023-02-19 21:22:06,853 - INFO - [Thread-376] - Running Dijkstra: ({'P1': {'P2': 530, 'P3': 298}, 'P2': {'P4': 600, 'P1': 530}, 'P3': {'P4': 1136, 'P1': 298}, 'P4': {'P2': 600, 'P3': 1136}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:22:07,301 - INFO - [RECEIVER] - Sending update to P4
+2023-02-19 21:22:08,305 - INFO - [RECEIVER] - Received LSA from P3 with SN: 14 and FLAG: 1
+2023-02-19 21:22:08,305 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:22:10,683 - INFO - [RECEIVER] - Received LSA from P1 with SN: 16 and FLAG: 0
+2023-02-19 21:22:11,853 - INFO - [RECEIVER] - Received LSA from P4 with SN: 13 and FLAG: 0
+2023-02-19 21:22:16,289 - INFO - [Thread-406] - organizeGraph(graph_arg): [['P1', 'P2', 744, 'SidRelay'], ['P1', 'P3', 467, 'sveahosting'], ['P3', 'P4', 1136, 'Logforme3'], ['P2', 'P4', 600, 'mentoreth']]
+2023-02-19 21:22:25,724 - INFO - [RECEIVER] - Received LSA from P1 with SN: 16 and FLAG: 0
+2023-02-19 21:22:26,866 - INFO - [RECEIVER] - Received LSA from P4 with SN: 13 and FLAG: 0
+2023-02-19 21:22:35,772 - INFO - [Thread-405] - Running Dijkstra: ({'P1': {'P2': 744, 'P3': 467}, 'P2': {'P4': 600, 'P1': 744}, 'P3': {'P4': 1136, 'P1': 467}, 'P4': {'P2': 600, 'P3': 1136}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:22:36,837 - INFO - [Thread-407] - Running Dijkstra: ({'P1': {'P2': 744, 'P3': 467}, 'P2': {'P4': 600, 'P1': 744}, 'P3': {'P4': 1136, 'P1': 467}, 'P4': {'P2': 600, 'P3': 1136}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:22:40,757 - INFO - [RECEIVER] - Received LSA from P1 with SN: 17 and FLAG: 1
+2023-02-19 21:22:40,757 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:22:40,757 - INFO - [RECEIVER] - LSA SN is 17 greater than 16
+2023-02-19 21:22:40,757 - INFO - [RECEIVER] - Sending update to P4
+2023-02-19 21:22:41,894 - INFO - [RECEIVER] - Received LSA from P4 with SN: 14 and FLAG: 1
+2023-02-19 21:22:41,894 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:22:41,894 - INFO - [RECEIVER] - LSA SN is 14 greater than 13
+2023-02-19 21:22:41,894 - INFO - [RECEIVER] - Sending update to P1
+2023-02-19 21:22:42,988 - INFO - [RECEIVER] - Received LSA from P4 with SN: 14 and FLAG: 1
+2023-02-19 21:22:42,988 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:22:42,988 - INFO - [RECEIVER] - Received LSA from P1 with SN: 17 and FLAG: 1
+2023-02-19 21:22:42,988 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:22:46,404 - INFO - [Thread-416] - Running Dijkstra: ({'P1': {'P2': 744, 'P3': 467}, 'P2': {'P4': 600, 'P1': 744}, 'P3': {'P4': 1136, 'P1': 467}, 'P4': {'P2': 600, 'P3': 1136}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:22:50,758 - INFO - [Thread-435] - organizeGraph(graph_arg): [['P1', 'P2', 904, 'SidRelay'], ['P1', 'P3', 467, 'sveahosting'], ['P3', 'P4', 1136, 'Logforme3'], ['P2', 'P4', 249, 'mentoreth']]
+2023-02-19 21:22:51,438 - INFO - [RECEIVER] - Received LSA from P3 with SN: 16 and FLAG: 1
+2023-02-19 21:22:51,439 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:22:51,439 - INFO - [RECEIVER] - LSA SN is 16 greater than 14
+2023-02-19 21:22:51,442 - INFO - [RECEIVER] - Sending update to P1
+2023-02-19 21:22:51,895 - INFO - [Thread-437] - organizeGraph(graph_arg): [['P1', 'P2', 904, 'SidRelay'], ['P1', 'P3', 467, 'sveahosting'], ['P3', 'P4', 2524, 'Logforme3'], ['P2', 'P4', 249, 'mentoreth']]
+2023-02-19 21:22:52,469 - INFO - [RECEIVER] - Sending update to P4
+2023-02-19 21:22:53,472 - INFO - [RECEIVER] - Received LSA from P3 with SN: 16 and FLAG: 1
+2023-02-19 21:22:53,472 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:22:55,778 - INFO - [RECEIVER] - Received LSA from P1 with SN: 18 and FLAG: 1
+2023-02-19 21:22:55,778 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:22:55,778 - INFO - [RECEIVER] - LSA SN is 18 greater than 17
+2023-02-19 21:22:55,779 - INFO - [RECEIVER] - Sending update to P4
+2023-02-19 21:22:56,899 - INFO - [RECEIVER] - Received LSA from P4 with SN: 14 and FLAG: 0
+2023-02-19 21:22:57,003 - INFO - [RECEIVER] - Received LSA from P1 with SN: 18 and FLAG: 1
+2023-02-19 21:22:57,003 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:23:01,722 - INFO - [Thread-446] - organizeGraph(graph_arg): [['P1', 'P2', 904, 'SidRelay'], ['P1', 'P3', 546, 'sveahosting'], ['P3', 'P4', 2524, 'Logforme3'], ['P2', 'P4', 249, 'mentoreth']]
+2023-02-19 21:23:05,779 - INFO - [Thread-451] - organizeGraph(graph_arg): [['P1', 'P2', 904, 'SidRelay'], ['P1', 'P3', 546, 'sveahosting'], ['P3', 'P4', 2524, 'Logforme3'], ['P2', 'P4', 249, 'mentoreth']]
+2023-02-19 21:23:10,791 - INFO - [RECEIVER] - Received LSA from P1 with SN: 18 and FLAG: 0
+2023-02-19 21:23:11,919 - INFO - [RECEIVER] - Received LSA from P4 with SN: 15 and FLAG: 1
+2023-02-19 21:23:11,919 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:23:11,920 - INFO - [RECEIVER] - LSA SN is 15 greater than 14
+2023-02-19 21:23:11,921 - INFO - [RECEIVER] - Sending update to P1
+2023-02-19 21:23:12,924 - INFO - [RECEIVER] - Received LSA from P4 with SN: 15 and FLAG: 1
+2023-02-19 21:23:12,924 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:23:20,761 - INFO - [Thread-445] - Running Dijkstra: ({'P1': {'P2': 904, 'P3': 467}, 'P2': {'P4': 249, 'P1': 904}, 'P3': {'P4': 1136, 'P1': 467}, 'P4': {'P2': 249, 'P3': 1136}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:23:21,896 - INFO - [Thread-447] - Running Dijkstra: ({'P1': {'P2': 904, 'P3': 467}, 'P2': {'P4': 249, 'P1': 904}, 'P3': {'P4': 2524, 'P1': 467}, 'P4': {'P2': 249, 'P3': 2524}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:23:21,921 - INFO - [Thread-467] - organizeGraph(graph_arg): [['P1', 'P2', 904, 'SidRelay'], ['P1', 'P3', 546, 'sveahosting'], ['P3', 'P4', 2524, 'Logforme3'], ['P2', 'P4', 249, 'mentoreth']]
+2023-02-19 21:23:25,818 - INFO - [RECEIVER] - Received LSA from P1 with SN: 19 and FLAG: 1
+2023-02-19 21:23:25,818 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:23:25,818 - INFO - [RECEIVER] - LSA SN is 19 greater than 18
+2023-02-19 21:23:25,819 - INFO - [RECEIVER] - Sending update to P4
+2023-02-19 21:23:26,961 - INFO - [RECEIVER] - Received LSA from P4 with SN: 16 and FLAG: 1
+2023-02-19 21:23:26,961 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:23:26,961 - INFO - [RECEIVER] - LSA SN is 16 greater than 15
+2023-02-19 21:23:26,962 - INFO - [RECEIVER] - Sending update to P1
+2023-02-19 21:23:28,188 - INFO - [RECEIVER] - Received LSA from P1 with SN: 19 and FLAG: 1
+2023-02-19 21:23:28,188 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:23:28,188 - INFO - [RECEIVER] - Received LSA from P4 with SN: 16 and FLAG: 1
+2023-02-19 21:23:28,188 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:23:31,750 - INFO - [Thread-457] - Running Dijkstra: ({'P1': {'P2': 904, 'P3': 546}, 'P2': {'P4': 249, 'P1': 904}, 'P3': {'P4': 2524, 'P1': 546}, 'P4': {'P2': 249, 'P3': 2524}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:23:35,790 - INFO - [Thread-461] - Running Dijkstra: ({'P1': {'P2': 904, 'P3': 546}, 'P2': {'P4': 249, 'P1': 904}, 'P3': {'P4': 2524, 'P1': 546}, 'P4': {'P2': 249, 'P3': 2524}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:23:35,819 - INFO - [Thread-480] - organizeGraph(graph_arg): [['P1', 'P2', 467, 'SidRelay'], ['P1', 'P3', 546, 'sveahosting'], ['P3', 'P4', 2524, 'Logforme3'], ['P2', 'P4', 367, 'mentoreth']]
+2023-02-19 21:23:36,635 - INFO - [RECEIVER] - Received LSA from P3 with SN: 17 and FLAG: 1
+2023-02-19 21:23:36,635 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:23:36,635 - INFO - [RECEIVER] - LSA SN is 17 greater than 16
+2023-02-19 21:23:36,638 - INFO - [RECEIVER] - Sending update to P1
+2023-02-19 21:23:36,962 - INFO - [Thread-482] - organizeGraph(graph_arg): [['P1', 'P2', 467, 'SidRelay'], ['P1', 'P3', 546, 'sveahosting'], ['P3', 'P4', 2524, 'Logforme3'], ['P2', 'P4', 367, 'mentoreth']]
+2023-02-19 21:23:37,640 - INFO - [RECEIVER] - Sending update to P4
+2023-02-19 21:23:38,641 - INFO - [RECEIVER] - Received LSA from P3 with SN: 17 and FLAG: 1
+2023-02-19 21:23:38,641 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:23:40,839 - INFO - [RECEIVER] - Received LSA from P1 with SN: 20 and FLAG: 1
+2023-02-19 21:23:40,840 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:23:40,840 - INFO - [RECEIVER] - LSA SN is 20 greater than 19
+2023-02-19 21:23:40,841 - INFO - [RECEIVER] - Sending update to P4
+2023-02-19 21:23:41,963 - INFO - [RECEIVER] - Received LSA from P4 with SN: 16 and FLAG: 0
+2023-02-19 21:23:42,068 - INFO - [RECEIVER] - Received LSA from P1 with SN: 20 and FLAG: 1
+2023-02-19 21:23:42,068 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:23:46,638 - INFO - [Thread-492] - organizeGraph(graph_arg): [['P1', 'P2', 467, 'SidRelay'], ['P1', 'P3', 342, 'sveahosting'], ['P3', 'P4', 2524, 'Logforme3'], ['P2', 'P4', 367, 'mentoreth']]
+2023-02-19 21:23:50,841 - INFO - [Thread-497] - organizeGraph(graph_arg): [['P1', 'P2', 467, 'SidRelay'], ['P1', 'P3', 342, 'sveahosting'], ['P3', 'P4', 2524, 'Logforme3'], ['P2', 'P4', 367, 'mentoreth']]
+2023-02-19 21:23:51,923 - INFO - [Thread-476] - Running Dijkstra: ({'P1': {'P2': 904, 'P3': 546}, 'P2': {'P4': 249, 'P1': 904}, 'P3': {'P4': 2524, 'P1': 546}, 'P4': {'P2': 249, 'P3': 2524}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:23:55,850 - INFO - [RECEIVER] - Received LSA from P1 with SN: 20 and FLAG: 0
+2023-02-19 21:23:56,974 - INFO - [RECEIVER] - Received LSA from P4 with SN: 17 and FLAG: 1
+2023-02-19 21:23:56,974 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:23:56,974 - INFO - [RECEIVER] - LSA SN is 17 greater than 16
+2023-02-19 21:23:56,975 - INFO - [RECEIVER] - Sending update to P1
+2023-02-19 21:23:57,977 - INFO - [RECEIVER] - Received LSA from P4 with SN: 17 and FLAG: 1
+2023-02-19 21:23:57,977 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:24:05,899 - INFO - [Thread-490] - Running Dijkstra: ({'P1': {'P2': 467, 'P3': 546}, 'P2': {'P4': 367, 'P1': 467}, 'P3': {'P4': 2524, 'P1': 546}, 'P4': {'P2': 367, 'P3': 2524}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:24:06,668 - INFO - [RECEIVER] - Received LSA from P3 with SN: 18 and FLAG: 1
+2023-02-19 21:24:06,669 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:24:06,669 - INFO - [RECEIVER] - LSA SN is 18 greater than 17
+2023-02-19 21:24:06,669 - INFO - [RECEIVER] - Sending update to P1
+2023-02-19 21:24:06,964 - INFO - [Thread-493] - Running Dijkstra: ({'P1': {'P2': 467, 'P3': 546}, 'P2': {'P4': 367, 'P1': 467}, 'P3': {'P4': 2524, 'P1': 546}, 'P4': {'P2': 367, 'P3': 2524}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:24:06,976 - INFO - [Thread-513] - organizeGraph(graph_arg): [['P1', 'P2', 467, 'SidRelay'], ['P1', 'P3', 342, 'sveahosting'], ['P3', 'P4', 1855, 'Logforme3'], ['P2', 'P4', 367, 'mentoreth']]
+2023-02-19 21:24:07,671 - INFO - [RECEIVER] - Sending update to P4
+2023-02-19 21:24:08,673 - INFO - [RECEIVER] - Received LSA from P3 with SN: 18 and FLAG: 1
+2023-02-19 21:24:08,673 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:24:10,871 - INFO - [RECEIVER] - Received LSA from P1 with SN: 20 and FLAG: 0
+2023-02-19 21:24:11,991 - INFO - [RECEIVER] - Received LSA from P4 with SN: 18 and FLAG: 1
+2023-02-19 21:24:11,991 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:24:11,991 - INFO - [RECEIVER] - LSA SN is 18 greater than 17
+2023-02-19 21:24:11,992 - INFO - [RECEIVER] - Sending update to P1
+2023-02-19 21:24:13,007 - INFO - [RECEIVER] - Received LSA from P4 with SN: 18 and FLAG: 1
+2023-02-19 21:24:13,007 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:24:16,640 - INFO - [Thread-503] - Running Dijkstra: ({'P1': {'P2': 467, 'P3': 342}, 'P2': {'P4': 367, 'P1': 467}, 'P3': {'P4': 2524, 'P1': 342}, 'P4': {'P2': 367, 'P3': 2524}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:24:16,670 - INFO - [Thread-522] - organizeGraph(graph_arg): [['P1', 'P2', 467, 'SidRelay'], ['P1', 'P3', 342, 'sveahosting'], ['P3', 'P4', 1855, 'Logforme3'], ['P2', 'P4', 326, 'mentoreth']]
+2023-02-19 21:24:20,853 - INFO - [Thread-507] - Running Dijkstra: ({'P1': {'P2': 467, 'P3': 342}, 'P2': {'P4': 367, 'P1': 467}, 'P3': {'P4': 2524, 'P1': 342}, 'P4': {'P2': 367, 'P3': 2524}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:24:21,992 - INFO - [Thread-528] - organizeGraph(graph_arg): [['P1', 'P2', 467, 'SidRelay'], ['P1', 'P3', 342, 'sveahosting'], ['P3', 'P4', 1855, 'Logforme3'], ['P2', 'P4', 326, 'mentoreth']]
+2023-02-19 21:24:25,908 - INFO - [RECEIVER] - Received LSA from P1 with SN: 22 and FLAG: 1
+2023-02-19 21:24:25,908 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:24:25,908 - INFO - [RECEIVER] - LSA SN is 22 greater than 20
+2023-02-19 21:24:25,911 - INFO - [RECEIVER] - Sending update to P4
+2023-02-19 21:24:27,013 - INFO - [RECEIVER] - Received LSA from P4 with SN: 18 and FLAG: 0
+2023-02-19 21:24:27,119 - INFO - [RECEIVER] - Received LSA from P1 with SN: 22 and FLAG: 1
+2023-02-19 21:24:27,119 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:24:35,911 - INFO - [Thread-542] - organizeGraph(graph_arg): [['P1', 'P2', 1004, 'SidRelay'], ['P1', 'P3', 550, 'sveahosting'], ['P3', 'P4', 1855, 'Logforme3'], ['P2', 'P4', 326, 'mentoreth']]
+2023-02-19 21:24:36,711 - INFO - [RECEIVER] - Received LSA from P3 with SN: 19 and FLAG: 1
+2023-02-19 21:24:36,711 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:24:36,711 - INFO - [RECEIVER] - LSA SN is 19 greater than 18
+2023-02-19 21:24:36,712 - INFO - [RECEIVER] - Sending update to P1
+2023-02-19 21:24:36,989 - INFO - [Thread-523] - Running Dijkstra: ({'P1': {'P2': 467, 'P3': 342}, 'P2': {'P4': 367, 'P1': 467}, 'P3': {'P4': 1855, 'P1': 342}, 'P4': {'P2': 367, 'P3': 1855}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:24:37,714 - INFO - [RECEIVER] - Sending update to P4
+2023-02-19 21:24:38,716 - INFO - [RECEIVER] - Received LSA from P3 with SN: 19 and FLAG: 1
+2023-02-19 21:24:38,716 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:24:40,909 - INFO - [RECEIVER] - Received LSA from P1 with SN: 22 and FLAG: 0
+2023-02-19 21:24:42,053 - INFO - [RECEIVER] - Received LSA from P4 with SN: 18 and FLAG: 0
+2023-02-19 21:24:46,677 - INFO - [Thread-533] - Running Dijkstra: ({'P1': {'P2': 467, 'P3': 342}, 'P2': {'P4': 326, 'P1': 467}, 'P3': {'P4': 1855, 'P1': 342}, 'P4': {'P2': 326, 'P3': 1855}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:24:46,713 - INFO - [Thread-553] - organizeGraph(graph_arg): [['P1', 'P2', 1004, 'SidRelay'], ['P1', 'P3', 550, 'sveahosting'], ['P3', 'P4', 1855, 'Logforme3'], ['P2', 'P4', 326, 'mentoreth']]
+2023-02-19 21:24:51,993 - INFO - [Thread-538] - Running Dijkstra: ({'P1': {'P2': 467, 'P3': 342}, 'P2': {'P4': 326, 'P1': 467}, 'P3': {'P4': 1855, 'P1': 342}, 'P4': {'P2': 326, 'P3': 1855}}, ['P1', 'P2', 'P3', 'P4'], {'P1': {'P2': 'SidRelay', 'P3': 'sveahosting'}, 'P2': {'P4': 'mentoreth', 'P1': 'SidRelay'}, 'P3': {'P4': 'Logforme3', 'P1': 'sveahosting'}, 'P4': {'P2': 'mentoreth', 'P3': 'Logforme3'}})
+2023-02-19 21:24:56,084 - INFO - [RECEIVER] - Received LSA from P1 with SN: 22 and FLAG: 0
+2023-02-19 21:24:57,031 - INFO - [RECEIVER] - Received LSA from P4 with SN: 19 and FLAG: 1
+2023-02-19 21:24:57,031 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:24:57,031 - INFO - [RECEIVER] - LSA SN is 19 greater than 18
+2023-02-19 21:24:57,034 - INFO - [RECEIVER] - Sending update to P1
+2023-02-19 21:24:58,046 - INFO - [RECEIVER] - Received LSA from P4 with SN: 19 and FLAG: 1
+2023-02-19 21:24:58,046 - INFO - [RECEIVER] - Flag is set
+2023-02-19 21:25:02,377 - INFO - [RecvLoop_80.66.1] - On destroy: circuit #80000001
+2023-02-19 21:25:02,377 - INFO - [RecvLoop_80.66.1] - Destroy circuit #80000001
+2023-02-19 21:25:02,377 - INFO - [RecvLoop_80.66.1] - Stream #2: closing (state = Connected)...

@@ -40,6 +40,7 @@ class RendezvousEstablish(Thread):
         self.condition = condition
 
         self.setName(f"Establish-{self.rendp_nick}")
+        logger.info(f"Init RendezvousEstablish {self.rendp_nick}")
 
     # 
     # Setup a rendezvous point and wait
@@ -316,13 +317,13 @@ def rcv_data(rcv_sock, rcv_cn, extend_node):
 
     cellrelaydata = b.get_decrypted()
     if isinstance(cellrelaydata, CellRelayEnd):
-        print("Got relayend, exiting")
+        logger.error("Got relayend, exiting")
         exit()
     elif isinstance(cellrelaydata, CellDestroy):
-        print("Got destroy, exiting")
+        logger.error("Got destroy, exiting")
         exit()
     elif isinstance(cellrelaydata, CellRelaySendMe):
-        print("Got SENDME")
+        logger.warning("Got SENDME")
         return 404
     else:
         #print("Got " + str(type(cellrelaydata)))

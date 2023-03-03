@@ -1,0 +1,83 @@
+++ dirname ./startserver.sh
++ BASEDIR=.
++ SCRIPTPATH=./../../rtun-routing
++ export PYTHONPATH=./../../torpy-rtun-fork/
++ PYTHONPATH=./../../torpy-rtun-fork/
++ python3 ./../../rtun-routing/rtun.py -v INFO -g BM10 -f rendezvous.txt -t peer1peer2 -n default -i 3 -d 2
+Exception in thread Thread-436:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 662, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P2'
+Exception in thread Thread-443:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 662, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P2'
+Exception in thread Thread-458:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 662, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P2'
+Exception in thread Thread-460:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 662, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P2'
+Exception in thread Thread-474:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 662, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P2'
+Exception in thread Thread-482:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 662, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P2'
+Exception in thread Thread-489:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 662, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P2'
+Exception in thread Thread-502:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 662, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P2'
+Exception ignored in: <module 'threading' from '/usr/lib/python3.9/threading.py'>
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 1428, in _shutdown
+    lock.acquire()
+KeyboardInterrupt: 

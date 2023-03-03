@@ -1,0 +1,11 @@
+++ dirname ./startserver.sh
++ BASEDIR=.
++ SCRIPTPATH=./../../rtun-routing
++ export PYTHONPATH=./../../torpy-rtun-fork/
++ PYTHONPATH=./../../torpy-rtun-fork/
++ python3 ./../../rtun-routing/rtun.py -v ERROR -g TheGreatKing -f rendezvous.txt -t peer1peer2 -n default -i 2 -d 1
+Exception ignored in: <module 'threading' from '/usr/lib/python3.9/threading.py'>
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 1428, in _shutdown
+    lock.acquire()
+KeyboardInterrupt: 
