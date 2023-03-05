@@ -6,6 +6,7 @@ import select
 import pickle
 
 from time import sleep
+import threading
 from threading import Event, Thread
 from selectors import EVENT_READ, DefaultSelector
 
@@ -27,6 +28,8 @@ logger = logging.getLogger(__name__)
 
 from messages import HelloMessage
 
+threads = {}
+
 # Class to establish a Rendezvous Point
 class RendezvousEstablish(Thread):
     def __init__(self, guard_nick, rendp_nick, rendezvous_cookie, receive_queue, condition=None):
@@ -38,14 +41,20 @@ class RendezvousEstablish(Thread):
         self.rendezvous_cookie = rendezvous_cookie
         self.receive_queue = receive_queue
         self.condition = condition
-
-        self.setName(f"Establish-{self.rendp_nick}")
-        logger.info(f"Init RendezvousEstablish {self.rendp_nick}")
+        self.id = None
+        self.name = f"Establish-{self.rendp_nick}"
+        self.start_time = None
 
     # 
     # Setup a rendezvous point and wait
     #
     def run(self):
+        # Add self to thread info
+        tid = threading.get_ident()
+        self.id = tid
+        thread = threading.current_thread()
+        threads[tid] = thread
+
         logger.info(f"Establishing RP to {self.rendp_nick}")
         consensus = TorConsensus()
         guard_router = TorGuard(consensus.get_router_using_nick(self.guard_nick))
@@ -72,6 +81,8 @@ class RendezvousEstablish(Thread):
         # Here someone has connected - we notify a waiting thread
         if self.condition:
             self.condition.release()
+
+        self.start_time = time.time()
 
         logger.debug("Derive shared secret with peer")
         extend_node = CircuitNode(rendp_router, key_agreement_cls=FastKeyAgreement)
@@ -159,6 +170,8 @@ class RendezvousEstablish(Thread):
         # Establish a rendezvous point
         circuit._rendezvous_establish(rendezvous_cookie)
 
+    def get_cpu_time(self):
+        return time.thread_time()
 
 # Client side class connecting to a rendezvous point
 class RendezvousConnect(Thread):
@@ -171,8 +184,9 @@ class RendezvousConnect(Thread):
         self.cookie = cookie
         self.my_id = my_id
         self.receive_queue = receive_queue
-
-        self.setName(f"Connect-{self.rendp_nick}")
+        self.id = None
+        self.start_time = None
+        self.name(f"Connect-{self.rendp_nick}")
 
     def run(self):
 
@@ -235,14 +249,22 @@ class RendezvousConnect(Thread):
         logger.info(f"Sending HELLO to peer: {hello_data}")
         snd_data(hello_data, circuit_id, extend_node, rcv_cn, rcv_sock, stream_id)
 
+        self.start_time = time.time()
+
         while True:
             try:
                 r, w, _ = select.select([rcv_sock.ssl_socket], [], [])
                 if rcv_sock.ssl_socket in r:
                     buf = rcv_data(rcv_sock, rcv_cn, extend_node)
 
-                    if buf == 404:
+                    if buf == 404: # SENDME
                         continue
+                    if buf == 501: # RELAY_END
+                        logger.error("Got RELAY_END")
+                        sys.exit()
+                    if buf == 503: # DESTROY
+                        logger.error("Got DESTROY")
+                        sys.exit()
                     if len(buf) == 0:
                         break
                     
@@ -307,6 +329,8 @@ class RendezvousConnect(Thread):
 
         return tor_cell_socket, circuit_node, circuit_id
 
+    def get_cpu_time(self):
+        return time.thread_time()
 #
 # Receive data on socket created for rendezvous point
 #    
@@ -318,10 +342,10 @@ def rcv_data(rcv_sock, rcv_cn, extend_node):
     cellrelaydata = b.get_decrypted()
     if isinstance(cellrelaydata, CellRelayEnd):
         logger.error("Got relayend, exiting")
-        exit()
+        return 501
     elif isinstance(cellrelaydata, CellDestroy):
         logger.error("Got destroy, exiting")
-        exit()
+        return 503
     elif isinstance(cellrelaydata, CellRelaySendMe):
         logger.warning("Got SENDME")
         return 404

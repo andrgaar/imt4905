@@ -102,7 +102,7 @@ if args.file:
 
     rcv_queue, conn_queue = lsr.setup_router(my_id, my_router_port)
     
-    lsr.threads = []
+    #lsr.threads = []
 
     for rp in file_rendps:
         a, b, c, d, e = rp.split()
@@ -119,8 +119,7 @@ if args.file:
             #lsr.threads.append(Thread(name='Thread-' + relay_nick, 
             #                            target=main.setup_rendezvous2, 
             #                            args=(guard_nick, relay_nick, cookie, port_num, peer_id, peer_router_addr)))
-            lsr.threads.append( RendezvousEstablish(guard_nick, relay_nick, cookie, rcv_queue) )
-
+            RendezvousEstablish(guard_nick, relay_nick, cookie, rcv_queue).start() 
 
 
         elif connection == "CONNECT": 
@@ -129,21 +128,12 @@ if args.file:
             #lsr.threads.append(Thread(name='Thread-' + relay_nick, 
             #                            target=server.list_rend_server, 
             #                            args=(cookie, relay_nick, my_id, peer_id, peer_router_addr)))
-            lsr.threads.append( RendezvousConnect(relay_nick, cookie, my_id, rcv_queue) )
+            RendezvousConnect(relay_nick, cookie, my_id, rcv_queue).start()
         else:
             logger.info(f"Unknown connection option: {connection}")
 
-    if not lsr.threads:
-        logger.info("No threads to start")
-        sys.exit()
-            
     # Display program statistics
-    #lsr.threads.append(Thread(name='Thread-Stats', target=lsr.print_stats))
-
-
-    for thread in lsr.threads:
-        logger.info("Starting thread " + str(thread.name))
-        thread.start()
+    Thread(name='Thread-Stats', target=lsr.print_stats).start()
 
     if my_id == "P1":
         # Start a tester thread
@@ -152,9 +142,9 @@ if args.file:
         tester_thread.start()
 
     # Start ConnectionThread
-    #logger.info("Starting connection thread")
-    #conn_thread = ConnectionThread("CONNECTION", conn_queue)
-    #conn_thread.start()
+    logger.info("Starting connection thread")
+    conn_thread = ConnectionThread("CONNECTION", conn_queue)
+    conn_thread.start()
 
     try:
         # Create RP loop - creates new rendezvous points for peers to connect
@@ -169,19 +159,12 @@ if args.file:
             # Process the JOIN
             if conn_cmd == "JOIN":
                 logger.info(f"Got JOIN to relay {conn_nick}")
-                join_thread = RendezvousConnect(conn_nick, conn_cookie, my_id, rcv_queue)
-                lsr.threads.append(join_thread)
-                join_thread.start()
+                RendezvousConnect(conn_nick, conn_cookie, my_id, rcv_queue).start()
 
             elif conn_cmd == "ESTABLISH":
                 logger.info(f"Got ESTABLISH to relay {conn_nick}:{conn_cookie} via {guard_nick}")
-                establish_thread = RendezvousEstablish(guard_nick, conn_nick, conn_cookie, rcv_queue) 
-                lsr.threads.append(establish_thread)
-                establish_thread.start()
+                RendezvousEstablish(guard_nick, conn_nick, conn_cookie, rcv_queue).start() 
              
-        # Call join on each tread (so that they wait)
-        for thread in lsr.threads:
-            thread.join()
     
     except KeyboardInterrupt:
         print("Caught keyboard interrupt, exiting...")

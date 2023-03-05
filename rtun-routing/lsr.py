@@ -20,7 +20,7 @@ from torpy.stream import TorStream
 
 #import server
 import messages
-import rendezvous
+import rendezvous as rnd
 
 import logging
 logger = logging.getLogger(__name__)
@@ -32,7 +32,7 @@ NODE_FAILURE_INTERVAL = 5
 TIMEOUT = 15
 LATENCY_SAMPLES = 10
 PERIODIC_CONN_CHECK = 60
-MIN_NEIGHBOUR_CONNECTIONS = 2
+MIN_NEIGHBOUR_CONNECTIONS = 3
 
 # Log metrics to file
 graph_metrics_file = "router.log"
@@ -802,6 +802,12 @@ class ConnectionThread(Thread):
 
             logger.info("Calculating neighbouring connections")
 
+            for tid, thread in rnd.threads.items():
+                t_id = thread.id
+                t_name = thread.name
+                t_time = thread.get_cpu_time()
+                logger.info(f"Checking {t_id} {t_name} has run {t_time}")
+
             neighbours = set()
             for n in global_router['Neighbours Data']:
                 neighbours.add(n['NID'])
@@ -893,12 +899,6 @@ def next_hop(dst_peer):
     logger.debug(f"Found next_hop: {current_peer}")
     return current_peer
 
-# Return the ReceiveThread thread
-def get_receiver_thread():
-
-    for t in threads:
-        if t.name == "RECEIVER":
-            return t
 
 # Get current time in ms
 def current_milli_time():
@@ -984,9 +984,9 @@ def setup_router(router_id, router_port):
     sender_thread.start()
     heartbeat_thread.start()
                 
-    threads.append(receiver_thread)
-    threads.append(sender_thread)
-    threads.append(heartbeat_thread)
+    #threads.append(receiver_thread)
+    #threads.append(sender_thread)
+    #threads.append(heartbeat_thread)
 
     return rcv_queue, conn_queue
 
@@ -1013,8 +1013,8 @@ def init_router(router_id, router_port):
     global_router['FLAG'] = 0
     global_router['RP'] = set()
 
-    # Create a list to hold each thread
-    threads = []
+    # Create a dict to hold each thread info
+    threads = {}
 
     # Create a lock to be used by all threads
     threadLock = Lock()
@@ -1166,7 +1166,7 @@ def send_to_stream(router_id, message):
         stream_data['Stream'].send(message)
     else:
         # else create the cells
-        rendezvous.snd_data(message, 
+        rnd.snd_data(message, 
                         stream_data['Circuit ID'], 
                         stream_data['Extend Node'], 
                         stream_data['Receive Node'], 
@@ -1176,83 +1176,4 @@ def send_to_stream(router_id, message):
     #log_metrics("DATA SENT", "Payload: {0} bytes".format(sys.getsizeof(message)))
 
 
-if __name__ == "__main__":
-
-    # Dictionary to hold data of current router
-    global_router = {}
-
-    # Open file for reading
-    with open(sys.argv[1]) as f:
-        data = f.read().split('\n')
-
-    # Split the data on " "
-    ID = data[0].split(" ")
-
-    # Parse data related to the current router
-    global_router['RID'] = ID[0]
-    global_router['Port'] = ID[1]
-    global_router['Neighbours'] = int(data[1])
-    global_router['Neighbours Data'] = []
-    global_router['SN'] = 0
-    global_router['FLAG'] = 0
-
-    # Temporary graph list to hold state of current network topology
-    temp_graph = []
-
-    # Grab data about all the neighbours of this router
-    for line in range(2 , len(data) - 1):
-
-        # Dict to hold data regarding each of this router's neighbours
-        router_dict = {}
-
-        neighbour = data[line].split(" ")
-
-        router_dict['NID']  = neighbour[0]
-        router_dict['Cost'] = int(neighbour[1])
-        router_dict['Port'] = neighbour[2]
-
-        # Append the dict to current routers dict of neighbours data
-        global_router['Neighbours Data'].append(router_dict)
-
-        # Package this routers data in a useful format and append to temporary graph list
-        if(global_router['RID'] < router_dict['NID']):
-             graph_data = [global_router['RID'], router_dict['NID'], router_dict['Cost'], router_dict['Port']]
-        else:
-             graph_data = [router_dict['NID'], global_router['RID'], router_dict['Cost'], router_dict['Port']]
-        temp_graph.append(graph_data)
-
-    # Copy over the data in temporary graph to global graph object (used elsewhere)
-    graph = temp_graph[:]
-
-    # Create a list to hold each thread
-    threads = []
-
-    # Create a lock to be used by all threads
-    threadLock = Lock()
-
-    # Create heart beat message to transmit
-    HB_message = [{'RID' : global_router['RID']}]
-
-    sender_thread = SendThread("SENDER", global_router, threadLock)
-    receiver_thread = ReceiveThread("RECEIVER", global_router, threadLock)
-    heartbeat_thread = HeartBeatThread("HEART BEAT", HB_message, global_router['Neighbours Data'], threadLock)
-
-    # Start each thread
-    sender_thread.start()
-    receiver_thread.start()
-    heartbeat_thread.start()
-
-    # Append each thread to list of threads
-    threads.append(sender_thread)
-    threads.append(receiver_thread)
-    threads.append(heartbeat_thread)
-
-    # Call join on each tread (so that they wait)
-    try:
-        for thread in threads:
-            thread.join()
-    except KeyboardInterrupt:
-        print(graph)
-
-    logger.debug("Exiting Main Thread")
     
