@@ -1,0 +1,380 @@
+++ dirname ./startserver.sh
++ BASEDIR=.
++ SCRIPTPATH=./../../rtun-routing
++ export PYTHONPATH=./../../torpy-rtun-fork/
++ PYTHONPATH=./../../torpy-rtun-fork/
++ python3 ./../../rtun-routing/rtun.py -v ERROR -g staysafeandgoodluck -f rendezvous.txt -t peer1peer2 -n default -i 3 -d 2
+Exception in thread Thread-52:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P2'
+Exception in thread Thread-58:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P2'
+Exception in thread Thread-1224:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P4'
+Exception in thread Thread-1225:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P4'
+Exception in thread Thread-1230:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P4'
+Exception in thread Thread-1231:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P4'
+Exception in thread Thread-1248:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P4'
+Exception in thread Thread-1261:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P4'
+Exception in thread Thread-1262:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P4'
+Exception in thread Thread-1266:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P4'
+Exception in thread Thread-1283:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P4'
+Exception in thread Thread-1292:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P4'
+Exception in thread Thread-1296:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P4'
+Exception in thread Thread-1307:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P4'
+Exception in thread Thread-1324:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P4'
+Exception in thread Thread-1337:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P4'
+Exception in thread Thread-1338:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P4'
+Exception in thread Thread-1342:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P4'
+Exception in thread Thread-1359:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P4'
+Exception in thread Thread-1371:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P4'
+Exception in thread Thread-1376:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P4'
+Exception in thread Thread-1384:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P4'
+Exception in thread Thread-1388:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P4'
+Exception in thread Thread-1406:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P4'
+Exception in thread Thread-1411:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P4'
+Exception in thread Thread-1419:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P4'
+Exception in thread Thread-1420:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P4'
+Exception in thread Thread-1440:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P4'
+Exception in thread Thread-1453:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P4'
+Exception in thread Thread-1454:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P4'
+Exception in thread Thread-1459:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P4'
+Exception in thread Thread-1466:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P4'
+Exception in thread Thread-1477:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P4'
+Exception in thread Thread-1493:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P4'
+Exception in thread Thread-1500:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P4'
+Exception in thread Thread-1501:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P4'
+Exception in thread Thread-1528:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+Exception in thread Thread-1536:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+Exception in thread Thread-1522:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+Exception in thread Thread-1535:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+Exception in thread Establish-SidRelay:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/vboxuser/Git/imt4905/rtun-routing/rendezvous.py", line 132, in run
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P4'
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    data = stream.recv(1024)
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/stream.py", line 374, in recv
+    self.function(*self.args, **self.kwargs)
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P4'
+    raise Exception('recv timeout')
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 679, in runDijkstra
+    rp_node = rp_paths[prev_node][next_node]
+Exception: recv timeout
+KeyError: 'P4'
+    rp_node = rp_paths[prev_node][next_node]
+KeyError: 'P4'
+Exception ignored in: <module 'threading' from '/usr/lib/python3.9/threading.py'>
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 1428, in _shutdown
+    lock.acquire()
+KeyboardInterrupt: 
