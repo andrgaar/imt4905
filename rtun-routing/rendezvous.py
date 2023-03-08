@@ -15,7 +15,7 @@ from torpy.crypto_state import CryptoState
 from torpy.keyagreement import NtorKeyAgreement, FastKeyAgreement
 from torpy.guard import TorGuard
 from torpy.stream import TorStream
-from torpy.circuit import CircuitNode, CircuitsList
+from torpy.circuit import CircuitNode, CircuitsList, CircuitReason
 from torpy.cli.socks import SocksServer
 from torpy.cells import CellRelayEstablishRendezvous, CellRelayRendezvousEstablished, CellCreate2, CellCreated2, CellRelaySendMe, \
     CellRelay, CellCreateFast, CellCreatedFast, CellRelayRendezvous1, CellRelayBegin, CellRelayData, CellRelayRendezvous2, CellRelayEnd, CellRelayConnected, CellNetInfo, CellDestroy
@@ -44,6 +44,7 @@ class RendezvousEstablish(Thread):
         self.id = None
         self.name = f"Establish-{self.rendp_nick}"
         self.start_time = None
+        self.ALIVE = True
 
     # 
     # Setup a rendezvous point and wait
@@ -139,7 +140,7 @@ class RendezvousEstablish(Thread):
                     logger.info(f"Sending HELLO to peer: {hello_data}")
                     stream.send(hello_data)
 
-                    while True:
+                    while self.ALIVE:
                         data = stream.recv(1024)
                         logger.debug("Received data on stream: " + str(data))
                         # Put the received data into the ReceiverThread input queue with circuit data
@@ -155,7 +156,9 @@ class RendezvousEstablish(Thread):
 
                                                 }]
                                             )
-
+                    
+                    logger.info(f"Closing connection {self.name}")  
+                    return
 
     def build_circuit(self, guard_router, extend_routers): # returns Circuit
         # Build a circuit OP->Guard->RendPoint
@@ -170,8 +173,12 @@ class RendezvousEstablish(Thread):
         # Establish a rendezvous point
         circuit._rendezvous_establish(rendezvous_cookie)
 
-    def get_cpu_time(self):
-        return time.thread_time()
+    def get_start_time(self):
+        return self.start_time
+
+    def close_connection(self):
+        self.ALIVE = False
+
 
 # Client side class connecting to a rendezvous point
 class RendezvousConnect(Thread):
@@ -186,7 +193,8 @@ class RendezvousConnect(Thread):
         self.receive_queue = receive_queue
         self.id = None
         self.start_time = None
-        self.name(f"Connect-{self.rendp_nick}")
+        self.name = f"Connect-{self.rendp_nick}"
+        self.ALIVE = True
 
     def run(self):
 
@@ -251,7 +259,7 @@ class RendezvousConnect(Thread):
 
         self.start_time = time.time()
 
-        while True:
+        while self.ALIVE:
             try:
                 r, w, _ = select.select([rcv_sock.ssl_socket], [], [])
                 if rcv_sock.ssl_socket in r:
@@ -284,6 +292,12 @@ class RendezvousConnect(Thread):
             except Exception as e:
                 logger.error("Error in receive on socket: " + str(e))
                 continue
+        
+        inner_cell = CellDestroy(CircuitReason.FINISHED, circuit_id)
+        relay_cell = CellRelay(inner_cell, stream_id=0, circuit_id=circuit_id)
+        rcv_cn.encrypt_forward(relay_cell)
+        rcv_sock.send_cell(relay_cell)
+
     #
     # Connect to a rendezvous point with one-hop to rendezvous
     #
@@ -329,8 +343,11 @@ class RendezvousConnect(Thread):
 
         return tor_cell_socket, circuit_node, circuit_id
 
-    def get_cpu_time(self):
-        return time.thread_time()
+    def get_start_time(self):
+        return self.start_time
+    
+    def close_connection(self):
+        self.ALIVE = False
 #
 # Receive data on socket created for rendezvous point
 #    

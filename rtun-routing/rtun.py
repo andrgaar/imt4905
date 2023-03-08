@@ -142,9 +142,9 @@ if args.file:
         tester_thread.start()
 
     # Start ConnectionThread
-    logger.info("Starting connection thread")
-    conn_thread = ConnectionThread("CONNECTION", conn_queue)
-    conn_thread.start()
+    #logger.info("Starting connection thread")
+    #conn_thread = ConnectionThread("CONNECTION", conn_queue)
+    #conn_thread.start()
 
     try:
         # Create RP loop - creates new rendezvous points for peers to connect

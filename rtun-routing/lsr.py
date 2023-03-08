@@ -9,6 +9,8 @@ import json
 import jsonpickle
 import pandas as pd
 import hashlib
+import random
+import networkx as nx
 
 from datetime import datetime, timedelta
 from threading import Thread, Lock, Timer
@@ -26,7 +28,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 UPDATE_INTERVAL = 15
-ROUTE_UPDATE_INTERVAL = 30
+ROUTE_UPDATE_INTERVAL = 15
 PERIODIC_HEART_BEAT = 5
 NODE_FAILURE_INTERVAL = 5
 TIMEOUT = 15
@@ -38,8 +40,10 @@ MIN_NEIGHBOUR_CONNECTIONS = 3
 graph_metrics_file = "router.log"
 
 # Global graph object to represent network topology
+G = None
 graph = {}
 global_least_cost_path = {}
+shortest_paths = None
 global_router = {}
 circuit_info = {}
 neighbour_stats = {}
@@ -166,11 +170,6 @@ class ReceiveThread(Thread):
 
             RID = local_copy_LSA['RID']
 
-            # If LSA is from ourselves we drop it
-            #if RID == global_router['RID']:
-            #    logger.info("Received LSA from ourselves - dropping")
-            #    return
-
             logger.debug("Received LSA from {0} with SN: {1} and FLAG: {2}".format(RID, local_copy_LSA['SN'], local_copy_LSA['FLAG']))
 
             # Might get a LSA from non-neighbour
@@ -211,7 +210,7 @@ class ReceiveThread(Thread):
             
             # (ALL UPDATED LSA HAVE A UNIQUE 'FLAG' WITH VALUE 1 TO IDENTIFY THEM)
             
-            if flag == 1:
+            elif flag == 1:
                 # If the LSA received has a SN number that is greater than the existing record of
                 # SN for that router, we can confirm that the LSA received is a fresh LSA
                 logger.debug("Flag is set")
@@ -222,14 +221,13 @@ class ReceiveThread(Thread):
                     # If the new LSA has any router listed as inactive (i.e dead) we remove these explicitly from
                     # the topology so that they are excluded from future shortest path calculations
                     if 'DEAD' in local_copy_LSA and len(local_copy_LSA['DEAD']) > 0:
-                        logger.debug("LSA contains dead routes")
                         log_metrics("DEAD ROUTES RECEIVED", local_copy_LSA['DEAD'])
                         self.updateLSADB(local_copy_LSA['DEAD'])
                         self.updateGraphOnly(graph, local_copy_LSA['DEAD'])
                 
                     # After getting a fresh LSA, we wait for sometime (so that the global graph can update) and then
                     # recompute shortest paths using Dijkstra algorithm
-                    Timer(10, self.updateGraphAfterFailure, [
+                    Timer(2, self.updateGraphAfterFailure, [
                             graph,
                             self.inactive_list,
                             self.LSA_DB,
@@ -347,7 +345,7 @@ class ReceiveThread(Thread):
                 # Update size of inactive list
                 self.inactive_list_size = len(self.inactive_list)
 
-                Timer(10, self.updateGraphAfterFailure, [
+                Timer(1, self.updateGraphAfterFailure, [
                         graph,
                         self.inactive_list,
                         self.LSA_DB,
@@ -506,11 +504,6 @@ class ReceiveThread(Thread):
     # Dijkstra function to compute shortest path
     def updateGraph(self, graph_arg, lsa_data, flag):
 
-        logger.debug("Updating graph:")
-        logger.debug(graph_arg)
-        logger.debug("With LSA data:")
-        logger.debug(lsa_data)
-
         if flag == 1:
 
             graph.clear()
@@ -540,16 +533,35 @@ class ReceiveThread(Thread):
         # Get adjacency list and list of graph nodes
         adjacency_list , graph_nodes, rp_nodes = self.organizeGraph(graph_arg)
 
-        # Display the graph
-        #if global_router['RID'] == "P1":
-        #    from graphplot import display_graph
-        #    display_graph(adjacency_list)
-
         # Log the updated graph to a metrics file
         log_metrics("TOPOLOGY UPDATE", json.dumps(adjacency_list))
+        
+        # Run Dijkstra's algorithm 
+        Timer(1, self.shortest_paths, [adjacency_list, graph_nodes, rp_nodes]).start()
+        #Timer(ROUTE_UPDATE_INTERVAL, self.runDijkstra, [adjacency_list, graph_nodes, rp_nodes]).start()
 
-        # Run Dijkstra's algorithm periodically
-        Timer(ROUTE_UPDATE_INTERVAL, self.runDijkstra, [adjacency_list, graph_nodes, rp_nodes]).start()
+
+    # Use adjancency list to compute shortest path to all non-neighbors
+    def shortest_paths(self, adjacency_list, graph_nodes, rp_nodes):
+        
+        global G
+        global shortest_paths
+
+        for k, d in adjacency_list.items():
+                for ik in d:
+                    d[ik] = {'weight': d[ik]}
+            
+        G = nx.Graph(adjacency_list)
+        #for k in nx.neighbors(G, global_router['RID']):
+        #    logger.info(f"Neighbor: {k}")
+        #for k in nx.non_neighbors(G, global_router['RID']):
+        #    logger.info(f"Not neighbor: {k}")
+
+        shortest_paths = nx.shortest_path(G, global_router['RID'], weight='weight')
+        log_metrics("SHORTEST PATH", json.dumps(shortest_paths))
+
+        
+        
 
     # Uses the global graph to construct a adjacency list
     # (represented using python 'dict') which in turn is
@@ -800,20 +812,13 @@ class ConnectionThread(Thread):
         while True:
             time.sleep(PERIODIC_CONN_CHECK)
 
-            logger.info("Calculating neighbouring connections")
-
-            for tid, thread in rnd.threads.items():
-                t_id = thread.id
-                t_name = thread.name
-                t_time = thread.get_cpu_time()
-                logger.info(f"Checking {t_id} {t_name} has run {t_time}")
-
             neighbours = set()
             for n in global_router['Neighbours Data']:
                 neighbours.add(n['NID'])
 
-            if len(neighbours) >= MIN_NEIGHBOUR_CONNECTIONS:
-                logger.info("No new connections needed")
+            if len(neighbours) > 1 and len(neighbours) >= MIN_NEIGHBOUR_CONNECTIONS:
+                t = random.choice(list(rnd.threads.values()))
+                res = ()
                 continue
             
             logger.info("Neighbour connections ({0}) less than MIN_NEIGHBOUR_CONNECTIONS ({1})".format(len(neighbours), MIN_NEIGHBOUR_CONNECTIONS))
@@ -939,11 +944,14 @@ def print_stats():
     
         print()
         print("-------------------------------------------------------------------------")
+        print("Shortest paths:")
         print()
-        if display_paths:
-            print(display_paths)
-
-        print()
+        #if display_paths:
+        #    print(display_paths)
+        if shortest_paths:
+            for k, v in shortest_paths.items():
+                cost = nx.path_weight(G, v, 'weight')
+                print(k, ": ", v, " total cost ", cost)
         print("-------------------------------------------------------------------------")
         print(" %-25s %-15s" % ('Circuit neighbour', 'Circuit ID'))
         print()
