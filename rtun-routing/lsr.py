@@ -44,6 +44,7 @@ G = None
 graph = {}
 global_least_cost_path = {}
 shortest_paths = None
+path_cost = {}
 global_router = {}
 circuit_info = {}
 neighbour_stats = {}
@@ -546,6 +547,7 @@ class ReceiveThread(Thread):
         
         global G
         global shortest_paths
+        global path_cost
 
         for k, d in adjacency_list.items():
                 for ik in d:
@@ -558,6 +560,10 @@ class ReceiveThread(Thread):
         #    logger.info(f"Not neighbor: {k}")
 
         shortest_paths = nx.shortest_path(G, global_router['RID'], weight='weight')
+        for k, v in shortest_paths.items():
+            cost = nx.path_weight(G, v, 'weight')
+            path_cost[k] = cost
+
         log_metrics("SHORTEST PATH", json.dumps(shortest_paths))
 
         
@@ -809,40 +815,41 @@ class ConnectionThread(Thread):
     def connections(self):
         from itertools import cycle
         
+        RID = global_router['RID']
+
         while True:
             time.sleep(PERIODIC_CONN_CHECK)
+            logger.info("Checking for new connections")
 
             neighbours = set()
             for n in global_router['Neighbours Data']:
                 neighbours.add(n['NID'])
 
             if len(neighbours) > 1 and len(neighbours) >= MIN_NEIGHBOUR_CONNECTIONS:
-                t = random.choice(list(rnd.threads.values()))
-                res = ()
                 continue
             
             logger.info("Neighbour connections ({0}) less than MIN_NEIGHBOUR_CONNECTIONS ({1})".format(len(neighbours), MIN_NEIGHBOUR_CONNECTIONS))
     
-            # Select a new neighbour 
+            # find all peers in network 
             peers = set()
             for e in graph:
                 peers.add(e[0])
                 peers.add(e[1])
-            
-            peers_sorted = list(peers)
-            peers_sorted.sort()
+            # remove myself from peers
+            peers.remove(RID)
+            # remove neighbours from peers
+            candidates = list(peers - neighbours)
+            logger.info(f"Candidate peers: {candidates}")
+
+            # find a candidate peer to join with highest latency
             join_peer = None
-            pool = cycle(peers_sorted)
-            for peer in pool:
-                if peer == global_router['RID']:
+            peers_sorted = sorted(path_cost.items(), key=lambda x:x[1], reverse=True)
+            logger.info(f"Highest cost peers: {peers_sorted}")
+            for p in peers_sorted:
+                if p[0] in candidates:
+                    join_peer = p[0]
                     break
-            for peer in pool:
-                if peer in neighbours:
-                    continue
-                else:
-                    join_peer = peer
-                    break
-            
+                       
             if not join_peer:
                 logger.info("No join peers found")
                 continue
@@ -854,7 +861,7 @@ class ConnectionThread(Thread):
 
             # Send JOIN to peer                
             logger.info(f"Sending JOIN to {join_peer}")
-            message = [{'Message' : 'JOIN', 'Destination' : join_peer, 'Source' : global_router['RID'], 'Relay' : rp_relay, 'Cookie' : cookie}]
+            message = [{'Message' : 'JOIN', 'Destination' : join_peer, 'Source' : RID, 'Relay' : rp_relay, 'Cookie' : cookie}]
             route_message(message)
 
 
@@ -885,24 +892,19 @@ def route_message(msg_data):
     return dst_relay
 # Return the next hop in least cost path
 def next_hop(dst_peer):
-    global global_least_cost_path
     logger.debug(f"next_hop: {global_least_cost_path}")
     
     this_peer = global_router['RID']
     
     # Work our way back the least path route to find
     # the next hop
-    if not dst_peer in global_least_cost_path:
+    if not shortest_paths or not dst_peer in shortest_paths:
         return None
 
-    next_peer = global_least_cost_path[dst_peer][0]
-    current_peer = dst_peer
-    while next_peer != this_peer:
-        current_peer = next_peer
-        next_peer = global_least_cost_path[current_peer][0]
+    next_peer = shortest_paths[dst_peer][1]
     
-    logger.debug(f"Found next_hop: {current_peer}")
-    return current_peer
+    logger.debug(f"Found next_hop: {next_peer}")
+    return next_peer
 
 
 # Get current time in ms
@@ -950,8 +952,7 @@ def print_stats():
         #    print(display_paths)
         if shortest_paths:
             for k, v in shortest_paths.items():
-                cost = nx.path_weight(G, v, 'weight')
-                print(k, ": ", v, " total cost ", cost)
+                print(k, ": ", v, " total cost ", path_cost[k])
         print("-------------------------------------------------------------------------")
         print(" %-25s %-15s" % ('Circuit neighbour', 'Circuit ID'))
         print()
@@ -1027,7 +1028,8 @@ def init_router(router_id, router_port):
     # Create a lock to be used by all threads
     threadLock = Lock()
 
-    logger.info(f"Initialized router {router_id} at port {router_port}")
+    pid = os.getpid()
+    logger.info(f"Initialized router {router_id} at port {router_port} PID {pid}")
 
 def add_neighbour(r_id, r_hostname, rendpoint, r_cost, circuit, circuit_id, stream, stream_id, receive_node=None, extend_node=None, receive_socket=None):
 
