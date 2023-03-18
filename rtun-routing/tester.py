@@ -34,12 +34,15 @@ class RtunTest(Thread):
                 peers.add(e[1])
 
             for peer in peers:
-                if peer == my_id or peer != "P4":
+                if peer == my_id:
                     continue
                 ms = lsr.current_milli_time()
                 message = [{'Message' : 'LOOKUP', 'Destination' : peer, 'Source' : my_id, "ID": ms, 'Path' : [my_id]}]
-                relay_hop = lsr.route_message(message)
-                lsr.log_metrics("LOOKUP SENT", json.dumps( {'Peer':peer, 'ID': ms, 'Relay':relay_hop} )) 
+                try:
+                    relay_hop = lsr.route_message(message)
+                    lsr.log_metrics("LOOKUP SENT", json.dumps( {'Peer':peer, 'ID': ms, 'Relay':relay_hop} )) 
+                except Exception as e:
+                    logger.error(e)
             
-            time.sleep(random.randint(5,8))
+            time.sleep(random.randint(5,10))
 

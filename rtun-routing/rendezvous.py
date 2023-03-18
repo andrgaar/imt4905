@@ -4,7 +4,8 @@ import time
 import socket
 import select
 import pickle
-
+import random
+from queue import Queue, Empty
 from time import sleep
 import threading
 from threading import Event, Thread
@@ -28,6 +29,9 @@ logger = logging.getLogger(__name__)
 
 from messages import HelloMessage
 
+MIN_CONNECTION_TTL = 60
+MAX_CONNECTION_TTL = 120
+
 threads = {}
 
 # Class to establish a Rendezvous Point
@@ -40,6 +44,7 @@ class RendezvousEstablish(Thread):
         self.rendp_nick = rendp_nick
         self.rendezvous_cookie = rendezvous_cookie
         self.receive_queue = receive_queue
+        self.conn_queue = Queue()
         self.condition = condition
         self.id = None
         self.name = f"Establish-{self.rendp_nick}"
@@ -141,9 +146,28 @@ class RendezvousEstablish(Thread):
                     stream.send(hello_data)
 
                     while self.ALIVE:
-                        data = stream.recv(1024)
-                        logger.debug("Received data on stream: " + str(data))
-                        # Put the received data into the ReceiverThread input queue with circuit data
+                        cq = None
+                        try:
+                            cq = self.conn_queue.get_nowait()
+                        except Empty:
+                            pass
+                        if cq:
+                            # drop this connection
+                            logger.info(f"Received CLOSE - closing connection thread ID {self.id}")
+                            data = pickle.dumps([{'Message' : 'CLOSE', 'Thread ID' : self.id}])
+                            self.ALIVE = False
+                            return
+                        else:
+                            try:
+                                data = stream.recv(1024)
+                            except Exception as e:
+                                logger.error(e)
+                                logger.info(f"Closing connection {self.name}")  
+                                # clean up
+                                threads.pop(self.id, 'No thread key found')
+                                return
+                        
+                        # put the received data into the ReceiverThread input queue with circuit data
                         self.receive_queue.put_nowait( [{'data' : data, 
                                                 'circuit' : circuit, 
                                                 'circuit_id' : circuit.id, 
@@ -152,8 +176,8 @@ class RendezvousEstablish(Thread):
                                                 'receive_node' : None,
                                                 'extend_node' : None,
                                                 'receive_socket' : None,
-                                                'rendpoint' : self.rendp_nick
-
+                                                'rendpoint' : self.rendp_nick,
+                                                'thread_id' : self.id
                                                 }]
                                             )
                     
@@ -176,7 +200,7 @@ class RendezvousEstablish(Thread):
     def get_start_time(self):
         return self.start_time
 
-    def close_connection(self):
+    def close(self):
         self.ALIVE = False
 
 
@@ -188,7 +212,7 @@ class RendezvousConnect(Thread):
         Thread.__init__(self)
         # store the values
         self.rendp_nick = rendp_nick
-        self.cookie = cookie
+        self.rendezvous_cookie = cookie
         self.my_id = my_id
         self.receive_queue = receive_queue
         self.id = None
@@ -197,12 +221,17 @@ class RendezvousConnect(Thread):
         self.ALIVE = True
 
     def run(self):
+        # Add self to thread info
+        tid = threading.get_ident()
+        self.id = tid
+        thread = threading.current_thread()
+        threads[tid] = thread
 
         # Try to connect to rendezvous point - restart on failure
         while True:
             try:
                 logger.info("Calling connect_to_rendezvous_point")
-                rcv_sock, rcv_cn, circuit_id = self.connect_to_rendezvous_point(self.rendp_nick, self.cookie)
+                rcv_sock, rcv_cn, circuit_id = self.connect_to_rendezvous_point(self.rendp_nick, self.rendezvous_cookie)
 
                 logger.debug("Derive shared secret")
                 extend_node = CircuitNode("a")
@@ -267,9 +296,10 @@ class RendezvousConnect(Thread):
 
                     if buf == 404: # SENDME
                         continue
-                    if buf == 501: # RELAY_END
-                        logger.error("Got RELAY_END")
-                        sys.exit()
+                    if buf == "RELAY_END" or buf == "DESTROY": # RELAY_END, DESTROY
+                        logger.error(f"Got {buf}")
+                        break
+
                     if buf == 503: # DESTROY
                         logger.error("Got DESTROY")
                         sys.exit()
@@ -285,7 +315,8 @@ class RendezvousConnect(Thread):
                                                 'receive_node' : rcv_cn,
                                                 'extend_node' : extend_node,
                                                 'receive_socket' : rcv_sock,
-                                                'rendpoint' : self.rendp_nick
+                                                'rendpoint' : self.rendp_nick,
+                                                'thread_id' : self.id
                                                 }]
                                         )                
 
@@ -297,6 +328,10 @@ class RendezvousConnect(Thread):
         relay_cell = CellRelay(inner_cell, stream_id=0, circuit_id=circuit_id)
         rcv_cn.encrypt_forward(relay_cell)
         rcv_sock.send_cell(relay_cell)
+
+        # clean up
+        threads.pop(self.id, 'No thread key found')
+        return
 
     #
     # Connect to a rendezvous point with one-hop to rendezvous
@@ -346,23 +381,23 @@ class RendezvousConnect(Thread):
     def get_start_time(self):
         return self.start_time
     
-    def close_connection(self):
+    def close(self):
         self.ALIVE = False
 #
 # Receive data on socket created for rendezvous point
 #    
 def rcv_data(rcv_sock, rcv_cn, extend_node):
     b = rcv_sock.recv_cell()
+    logger.debug("rcv cell: " + str(type(b)))
+    if isinstance(b, CellDestroy):
+        return "DESTROY"
+    
     rcv_cn.decrypt_backward(b)
     extend_node.decrypt_backward(b)
 
     cellrelaydata = b.get_decrypted()
     if isinstance(cellrelaydata, CellRelayEnd):
-        logger.error("Got relayend, exiting")
-        return 501
-    elif isinstance(cellrelaydata, CellDestroy):
-        logger.error("Got destroy, exiting")
-        return 503
+        return "RELAY_END"
     elif isinstance(cellrelaydata, CellRelaySendMe):
         logger.warning("Got SENDME")
         return 404

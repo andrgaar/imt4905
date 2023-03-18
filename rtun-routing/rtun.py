@@ -135,7 +135,7 @@ if args.file:
     # Display program statistics
     Thread(name='Thread-Stats', target=lsr.print_stats).start()
 
-    if my_id == "P1":
+    if my_id:
         # Start a tester thread
         logger.info("Starting testing thread")
         tester_thread = RtunTest()
@@ -143,7 +143,7 @@ if args.file:
 
     # Start ConnectionThread
     logger.info("Starting connection thread")
-    conn_thread = ConnectionThread("CONNECTION", conn_queue)
+    conn_thread = ConnectionThread("CONNECTION", conn_queue, rcv_queue)
     conn_thread.start()
 
     try:
@@ -158,7 +158,7 @@ if args.file:
 
             # Process the JOIN
             if conn_cmd == "JOIN":
-                logger.info(f"Got JOIN to relay {conn_nick}")
+                logger.info(f"Got JOIN to relay {conn_nick}, waiting 10 sec to connect")
                 RendezvousConnect(conn_nick, conn_cookie, my_id, rcv_queue).start()
 
             elif conn_cmd == "ESTABLISH":

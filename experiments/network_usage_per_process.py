@@ -5,6 +5,7 @@ import os
 from threading import Thread
 import pandas as pd
 import time
+import json
 
 # Log file handle
 fh = None
@@ -109,7 +110,7 @@ def print_pid2traffic():
 
         # log to file
         with open("network_usage.log", "a") as f:
-            s = "{0};{1};{2};{3};{4};{5}\n".format(time.time(), pid, name, cmdline, process["Upload Speed"], process["Download Speed"])
+            s = "{0};{1};{2};{3};{4};{5}\n".format(time.time(), pid, name, json.dumps(cmdline), process["Upload Speed"], process["Download Speed"])
             f.write(s)
 
     # construct our Pandas DataFrame
@@ -152,7 +153,7 @@ def print_stats():
 if __name__ == "__main__":
 
     with open("network_usage.log", "w") as f:
-        f.write("Time;PID;Name;Cmd;Upload;Download")
+        f.write("Time;PID;Name;Cmd;Upload;Download\n")
 
     # start the printing thread
     printing_thread = Thread(target=print_stats)
