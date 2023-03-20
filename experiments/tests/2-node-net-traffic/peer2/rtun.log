@@ -1,0 +1,106 @@
+2023-03-19 17:28:52,949 - INFO - [MainThread] - Initialized router P2 at port 5002 PID 27549
+2023-03-19 17:28:52,951 - INFO - [MainThread] - Adding a connection to taipe
+2023-03-19 17:28:52,951 - INFO - [Connect-taipe] - Calling connect_to_rendezvous_point
+2023-03-19 17:28:52,952 - INFO - [Connect-taipe] - Connect to rendezvous point taipe
+2023-03-19 17:28:52,954 - INFO - [MainThread] - Starting connection thread
+2023-03-19 17:28:52,957 - INFO - [Connect-taipe] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-19 17:28:53,239 - INFO - [Connect-taipe] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-19 17:28:53,359 - INFO - [Connect-taipe] - Connected to rendezvous point taipe
+2023-03-19 17:28:53,359 - INFO - [Connect-taipe] - Waiting for peer to open stream
+2023-03-19 17:28:53,417 - INFO - [Connect-taipe] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-03-19 17:28:53,417 - INFO - [Connect-taipe] - Stream opened successfully
+2023-03-19 17:28:53,418 - INFO - [Connect-taipe] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P2\x94ua.'
+2023-03-19 17:28:53,614 - INFO - [RECEIVER] - Added neighbour P1
+2023-03-19 17:30:38,595 - WARNING - [Connect-taipe] - Got SENDME
+2023-03-19 17:32:28,248 - WARNING - [Connect-taipe] - Got SENDME
+2023-03-19 17:32:28,305 - WARNING - [Connect-taipe] - Got SENDME
+2023-03-19 17:34:13,855 - WARNING - [Connect-taipe] - Got SENDME
+2023-03-19 17:34:58,942 - INFO - [RECEIVER] - Added relay Unnamed from P1 to JOIN queue
+2023-03-19 17:34:58,942 - INFO - [MainThread] - ['JOIN', 'Unnamed', b'4b7140c29ed0e0fc6160']
+2023-03-19 17:34:58,943 - INFO - [MainThread] - Got JOIN to relay Unnamed, waiting 10 sec to connect
+2023-03-19 17:34:58,943 - INFO - [Connect-Unnamed] - Calling connect_to_rendezvous_point
+2023-03-19 17:34:58,943 - INFO - [Connect-Unnamed] - Connect to rendezvous point Unnamed
+2023-03-19 17:34:58,950 - INFO - [Connect-Unnamed] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-19 17:34:59,224 - INFO - [Connect-Unnamed] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-19 17:35:00,208 - INFO - [Connect-Unnamed] - Connected to rendezvous point Unnamed
+2023-03-19 17:35:00,208 - INFO - [Connect-Unnamed] - Waiting for peer to open stream
+2023-03-19 17:35:00,617 - INFO - [Connect-Unnamed] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-03-19 17:35:00,618 - INFO - [Connect-Unnamed] - Stream opened successfully
+2023-03-19 17:35:00,618 - INFO - [Connect-Unnamed] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P2\x94ua.'
+2023-03-19 17:35:01,285 - INFO - [RECEIVER] - Added neighbour P1
+2023-03-19 17:35:58,964 - ERROR - [Connect-taipe] - Got DESTROY
+2023-03-19 17:36:44,587 - WARNING - [Connect-Unnamed] - Got SENDME
+2023-03-19 17:38:33,941 - WARNING - [Connect-Unnamed] - Got SENDME
+2023-03-19 17:38:34,115 - WARNING - [Connect-Unnamed] - Got SENDME
+2023-03-19 17:40:19,887 - WARNING - [Connect-Unnamed] - Got SENDME
+2023-03-19 17:41:09,750 - INFO - [RECEIVER] - Added relay madonafromberlin from P1 to JOIN queue
+2023-03-19 17:41:09,750 - INFO - [MainThread] - ['JOIN', 'madonafromberlin', b'86f8a9423198498cab95']
+2023-03-19 17:41:09,750 - INFO - [MainThread] - Got JOIN to relay madonafromberlin, waiting 10 sec to connect
+2023-03-19 17:41:09,751 - INFO - [Connect-madonafromberlin] - Calling connect_to_rendezvous_point
+2023-03-19 17:41:09,751 - INFO - [Connect-madonafromberlin] - Connect to rendezvous point madonafromberlin
+2023-03-19 17:41:09,756 - INFO - [Connect-madonafromberlin] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-19 17:41:10,161 - INFO - [Connect-madonafromberlin] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-19 17:41:10,471 - INFO - [Connect-madonafromberlin] - Connected to rendezvous point madonafromberlin
+2023-03-19 17:41:10,471 - INFO - [Connect-madonafromberlin] - Waiting for peer to open stream
+2023-03-19 17:41:10,595 - INFO - [Connect-madonafromberlin] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-03-19 17:41:10,595 - INFO - [Connect-madonafromberlin] - Stream opened successfully
+2023-03-19 17:41:10,595 - INFO - [Connect-madonafromberlin] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P2\x94ua.'
+2023-03-19 17:41:10,799 - INFO - [RECEIVER] - Added neighbour P1
+2023-03-19 17:42:09,959 - ERROR - [Connect-Unnamed] - Got RELAY_END
+2023-03-19 17:42:54,723 - WARNING - [Connect-madonafromberlin] - Got SENDME
+2023-03-19 17:44:44,078 - WARNING - [Connect-madonafromberlin] - Got SENDME
+2023-03-19 17:44:44,136 - WARNING - [Connect-madonafromberlin] - Got SENDME
+2023-03-19 17:46:30,048 - WARNING - [Connect-madonafromberlin] - Got SENDME
+2023-03-19 17:47:20,180 - INFO - [RECEIVER] - Added relay hastyice from P1 to JOIN queue
+2023-03-19 17:47:20,180 - INFO - [MainThread] - ['JOIN', 'hastyice', b'6c3a1c716ef6a2d36080']
+2023-03-19 17:47:20,180 - INFO - [MainThread] - Got JOIN to relay hastyice, waiting 10 sec to connect
+2023-03-19 17:47:20,180 - INFO - [Connect-hastyice] - Calling connect_to_rendezvous_point
+2023-03-19 17:47:20,181 - INFO - [Connect-hastyice] - Connect to rendezvous point hastyice
+2023-03-19 17:47:20,190 - INFO - [Connect-hastyice] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-19 17:47:20,705 - INFO - [Connect-hastyice] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-19 17:47:20,942 - INFO - [Connect-hastyice] - Connected to rendezvous point hastyice
+2023-03-19 17:47:20,942 - INFO - [Connect-hastyice] - Waiting for peer to open stream
+2023-03-19 17:47:21,061 - INFO - [Connect-hastyice] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-03-19 17:47:21,062 - INFO - [Connect-hastyice] - Stream opened successfully
+2023-03-19 17:47:21,062 - INFO - [Connect-hastyice] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P2\x94ua.'
+2023-03-19 17:47:21,268 - INFO - [RECEIVER] - Added neighbour P1
+2023-03-19 17:48:20,139 - ERROR - [Connect-madonafromberlin] - Got DESTROY
+2023-03-19 17:49:05,279 - WARNING - [Connect-hastyice] - Got SENDME
+2023-03-19 17:50:54,241 - WARNING - [Connect-hastyice] - Got SENDME
+2023-03-19 17:50:54,288 - WARNING - [Connect-hastyice] - Got SENDME
+2023-03-19 17:52:39,567 - WARNING - [Connect-hastyice] - Got SENDME
+2023-03-19 17:53:37,276 - INFO - [RECEIVER] - Added relay artikel10ber08 from P1 to JOIN queue
+2023-03-19 17:53:37,276 - INFO - [MainThread] - ['JOIN', 'artikel10ber08', b'891aea77d70e12e98bb5']
+2023-03-19 17:53:37,276 - INFO - [MainThread] - Got JOIN to relay artikel10ber08, waiting 10 sec to connect
+2023-03-19 17:53:37,276 - INFO - [Connect-artikel10ber08] - Calling connect_to_rendezvous_point
+2023-03-19 17:53:37,276 - INFO - [Connect-artikel10ber08] - Connect to rendezvous point artikel10ber08
+2023-03-19 17:53:37,283 - INFO - [Connect-artikel10ber08] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-19 17:53:37,929 - INFO - [Connect-artikel10ber08] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-19 17:53:44,092 - INFO - [Connect-artikel10ber08] - Connected to rendezvous point artikel10ber08
+2023-03-19 17:53:44,093 - INFO - [Connect-artikel10ber08] - Waiting for peer to open stream
+2023-03-19 17:53:45,419 - INFO - [Connect-artikel10ber08] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-03-19 17:53:45,420 - INFO - [Connect-artikel10ber08] - Stream opened successfully
+2023-03-19 17:53:45,420 - INFO - [Connect-artikel10ber08] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P2\x94ua.'
+2023-03-19 17:53:50,387 - INFO - [RECEIVER] - Added neighbour P1
+2023-03-19 17:54:49,636 - ERROR - [Connect-hastyice] - Got RELAY_END
+2023-03-19 17:55:35,901 - WARNING - [Connect-artikel10ber08] - Got SENDME
+2023-03-19 17:57:25,549 - WARNING - [Connect-artikel10ber08] - Got SENDME
+2023-03-19 17:57:26,368 - WARNING - [Connect-artikel10ber08] - Got SENDME
+2023-03-19 17:59:17,863 - WARNING - [Connect-artikel10ber08] - Got SENDME
+2023-03-19 17:59:43,878 - INFO - [RECEIVER] - Added relay madblock from P1 to JOIN queue
+2023-03-19 17:59:43,878 - INFO - [MainThread] - ['JOIN', 'madblock', b'70a49fc7a789f9a37c30']
+2023-03-19 17:59:43,878 - INFO - [MainThread] - Got JOIN to relay madblock, waiting 10 sec to connect
+2023-03-19 17:59:43,879 - INFO - [Connect-madblock] - Calling connect_to_rendezvous_point
+2023-03-19 17:59:43,879 - INFO - [Connect-madblock] - Connect to rendezvous point madblock
+2023-03-19 17:59:43,897 - INFO - [Connect-madblock] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-19 17:59:44,489 - INFO - [Connect-madblock] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-19 17:59:44,719 - INFO - [Connect-madblock] - Connected to rendezvous point madblock
+2023-03-19 17:59:44,720 - INFO - [Connect-madblock] - Waiting for peer to open stream
+2023-03-19 17:59:44,840 - INFO - [Connect-madblock] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-03-19 17:59:44,840 - INFO - [Connect-madblock] - Stream opened successfully
+2023-03-19 17:59:44,840 - INFO - [Connect-madblock] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P2\x94ua.'
+2023-03-19 17:59:45,045 - INFO - [RECEIVER] - Added neighbour P1
+2023-03-19 18:00:50,551 - ERROR - [Connect-artikel10ber08] - Got RELAY_END
+2023-03-19 18:01:30,177 - WARNING - [Connect-madblock] - Got SENDME
+2023-03-19 18:03:16,747 - WARNING - [Connect-madblock] - Got SENDME
+2023-03-19 18:03:16,810 - WARNING - [Connect-madblock] - Got SENDME

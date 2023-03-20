@@ -40,7 +40,8 @@ class RtunTest(Thread):
                 message = [{'Message' : 'LOOKUP', 'Destination' : peer, 'Source' : my_id, "ID": ms, 'Path' : [my_id]}]
                 try:
                     relay_hop = lsr.route_message(message)
-                    lsr.log_metrics("LOOKUP SENT", json.dumps( {'Peer':peer, 'ID': ms, 'Relay':relay_hop} )) 
+                    #lsr.log_metrics("LOOKUP SENT", json.dumps( {'Peer':peer, 'ID': ms, 'Relay':relay_hop} )) 
+                    lsr.log_queue.put_nowait( message )
                 except Exception as e:
                     logger.error(e)
             

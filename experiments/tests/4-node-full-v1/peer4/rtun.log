@@ -1,0 +1,389 @@
+2023-03-20 20:59:56,375 - INFO - [MainThread] - Initialized router P4 at port 5004 PID 2486
+2023-03-20 20:59:56,379 - INFO - [MainThread] - Adding a connection to LupusreginaBeta
+2023-03-20 20:59:56,379 - INFO - [Connect-LupusreginaBeta] - Calling connect_to_rendezvous_point
+2023-03-20 20:59:56,380 - INFO - [Connect-LupusreginaBeta] - Connect to rendezvous point LupusreginaBeta
+2023-03-20 20:59:56,382 - INFO - [MainThread] - Adding listener for Vulnerar
+2023-03-20 20:59:56,383 - INFO - [Establish-Vulnerar] - Establishing RP to Vulnerar
+2023-03-20 20:59:56,389 - INFO - [MainThread] - Starting testing thread
+2023-03-20 20:59:56,396 - INFO - [Establish-Vulnerar] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-20 20:59:56,412 - INFO - [TESTER] - Started tester
+2023-03-20 20:59:56,449 - INFO - [Connect-LupusreginaBeta] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-20 20:59:56,473 - INFO - [MainThread] - Starting connection thread
+2023-03-20 20:59:56,487 - INFO - [MainThread] - Starting log thread
+2023-03-20 20:59:57,017 - INFO - [Establish-Vulnerar] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-20 20:59:57,019 - INFO - [Establish-Vulnerar] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10)... (None)
+2023-03-20 20:59:57,066 - INFO - [Connect-LupusreginaBeta] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-20 20:59:57,101 - INFO - [Establish-Vulnerar] - Creating new circuit #80000001 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10) router...
+2023-03-20 20:59:57,116 - INFO - [Establish-Vulnerar] - Building -1 hops circuit...
+2023-03-20 20:59:57,116 - INFO - [Establish-Vulnerar] - Extending the circuit #80000001 with 157.90.179.103:8001 (Vulnerar; Tor 0.4.7.13)...
+2023-03-20 20:59:57,116 - INFO - [Establish-Vulnerar] - Getting descriptor for 157.90.179.103:8001 (Vulnerar; Tor 0.4.7.13)...
+2023-03-20 20:59:57,120 - INFO - [Establish-Vulnerar] - Connecting to guard node 46.4.115.73:443 (marina; Tor 0.4.7.13)... (Internal dir client)
+2023-03-20 20:59:57,176 - INFO - [Connect-LupusreginaBeta] - Connected to rendezvous point LupusreginaBeta
+2023-03-20 20:59:57,176 - INFO - [Connect-LupusreginaBeta] - Waiting for peer to open stream
+2023-03-20 20:59:57,225 - INFO - [Connect-LupusreginaBeta] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-03-20 20:59:57,230 - INFO - [Connect-LupusreginaBeta] - Stream opened successfully
+2023-03-20 20:59:57,230 - INFO - [Connect-LupusreginaBeta] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P4\x94ua.'
+2023-03-20 20:59:57,284 - INFO - [Establish-Vulnerar] - Creating new circuit #80000002 with 46.4.115.73:443 (marina; Tor 0.4.7.13) router...
+2023-03-20 20:59:57,328 - INFO - [Establish-Vulnerar] - Building 0 hops circuit...
+2023-03-20 20:59:57,329 - INFO - [Establish-Vulnerar] - Stream #1: creating attached to #80000002 circuit...
+2023-03-20 20:59:57,329 - INFO - [Establish-Vulnerar] - Stream #1: connecting to hsdir
+2023-03-20 20:59:57,371 - INFO - [RecvLoop_46.4.11] - Stream #1: connected (remote ip '')
+2023-03-20 20:59:57,431 - INFO - [RECEIVER] - Added neighbour P2
+2023-03-20 20:59:57,576 - INFO - [RecvLoop_46.4.11] - Stream #1: remote disconnected (reason = DONE)
+2023-03-20 20:59:57,576 - INFO - [Establish-Vulnerar] - Stream #1: closing (state = Disconnected)...
+2023-03-20 20:59:57,576 - INFO - [Establish-Vulnerar] - Got descriptor
+2023-03-20 20:59:57,630 - INFO - [Establish-Vulnerar] - <class 'torpy.circuit.TorCircuit'>
+2023-03-20 20:59:57,702 - INFO - [Establish-Vulnerar] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-20 20:59:57,702 - INFO - [Establish-Vulnerar] - Waiting for connections at relay Vulnerar for cookie b'eb688e4f52df90278060' ...
+2023-03-20 20:59:59,340 - INFO - [Establish-Vulnerar] - Got REND2 message from Vulnerar
+2023-03-20 20:59:59,340 - INFO - [Establish-Vulnerar] - Entered circuit context with id 0x80000001
+2023-03-20 20:59:59,340 - INFO - [Establish-Vulnerar] - Stream #2: creating attached to #80000001 circuit...
+2023-03-20 20:59:59,340 - INFO - [Establish-Vulnerar] - Stream #2: connecting to ('127.0.0.1', 5000)
+2023-03-20 20:59:59,443 - INFO - [RecvLoop_185.181] - Stream #2: connected (remote ip '127.0.0.1')
+2023-03-20 20:59:59,541 - INFO - [Establish-Vulnerar] - Sending HELLO to peer
+2023-03-20 20:59:59,541 - INFO - [Establish-Vulnerar] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P4\x94ua.'
+2023-03-20 20:59:59,542 - INFO - [RECEIVER] - Added neighbour P3
+2023-03-20 21:00:06,381 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:00:16,392 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:00:26,404 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:00:36,412 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:00:46,424 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:00:56,427 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:00:56,491 - INFO - [CONNECTION] - Age of oldest thread is 57 seconds (MAX 300)
+2023-03-20 21:01:02,278 - INFO - [RecvLoop_46.4.11] - On destroy: circuit #80000002
+2023-03-20 21:01:02,278 - INFO - [RecvLoop_46.4.11] - Destroy circuit #80000002
+2023-03-20 21:01:02,508 - WARNING - [Connect-LupusreginaBeta] - Got SENDME
+2023-03-20 21:01:06,439 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:01:16,451 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:01:26,463 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:01:36,473 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:01:46,486 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:01:56,494 - INFO - [CONNECTION] - Age of oldest thread is 117 seconds (MAX 300)
+2023-03-20 21:01:56,497 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:02:04,595 - WARNING - [Connect-LupusreginaBeta] - Got SENDME
+2023-03-20 21:02:05,325 - WARNING - [Connect-LupusreginaBeta] - Got SENDME
+2023-03-20 21:02:06,498 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:02:16,509 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:02:26,520 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:02:36,531 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:02:46,543 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:02:56,550 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:02:56,558 - INFO - [CONNECTION] - Age of oldest thread is 177 seconds (MAX 300)
+2023-03-20 21:03:00,439 - WARNING - [Connect-LupusreginaBeta] - Got SENDME
+2023-03-20 21:03:06,562 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:03:16,571 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:03:26,582 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:03:36,592 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:03:46,603 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:03:56,616 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:03:56,620 - INFO - [CONNECTION] - Age of oldest thread is 237 seconds (MAX 300)
+2023-03-20 21:04:00,519 - WARNING - [Connect-LupusreginaBeta] - Got SENDME
+2023-03-20 21:04:00,573 - WARNING - [Connect-LupusreginaBeta] - Got SENDME
+2023-03-20 21:04:06,627 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:04:16,637 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:04:26,650 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:04:36,658 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:04:46,667 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:04:56,668 - INFO - [CONNECTION] - Age of oldest thread is 297 seconds (MAX 300)
+2023-03-20 21:04:56,681 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:04:56,735 - WARNING - [Connect-LupusreginaBeta] - Got SENDME
+2023-03-20 21:05:06,692 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:05:16,703 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:05:26,711 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:05:36,720 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:05:46,786 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:05:50,720 - INFO - [RECEIVER] - Added relay Hydra59 from P2 to JOIN queue
+2023-03-20 21:05:50,721 - INFO - [MainThread] - ['JOIN', 'Hydra59', b'4644cb16c1648eee4fb7']
+2023-03-20 21:05:50,721 - INFO - [MainThread] - Got JOIN to relay Hydra59, waiting 10 sec to connect
+2023-03-20 21:05:50,722 - INFO - [Connect-Hydra59] - Calling connect_to_rendezvous_point
+2023-03-20 21:05:50,723 - INFO - [Connect-Hydra59] - Connect to rendezvous point Hydra59
+2023-03-20 21:05:50,742 - INFO - [Connect-Hydra59] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-20 21:05:50,970 - INFO - [Connect-Hydra59] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-20 21:05:51,091 - INFO - [Connect-Hydra59] - Connected to rendezvous point Hydra59
+2023-03-20 21:05:51,091 - INFO - [Connect-Hydra59] - Waiting for peer to open stream
+2023-03-20 21:05:51,169 - INFO - [Connect-Hydra59] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-03-20 21:05:51,169 - INFO - [Connect-Hydra59] - Stream opened successfully
+2023-03-20 21:05:51,169 - INFO - [Connect-Hydra59] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P4\x94ua.'
+2023-03-20 21:05:51,463 - INFO - [RECEIVER] - Added neighbour P2
+2023-03-20 21:05:56,798 - INFO - [CONNECTION] - Age of oldest thread is 357 seconds (MAX 300)
+2023-03-20 21:05:56,804 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:05:56,852 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-20 21:05:57,103 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-20 21:05:57,110 - INFO - [MainThread] - ['ESTABLISH', '2fjsaf2ja4da', b'4644cb16c1648eee4fb7']
+2023-03-20 21:05:57,110 - INFO - [MainThread] - Got ESTABLISH to relay 2fjsaf2ja4da:b'4644cb16c1648eee4fb7' via staysafeandgoodluck
+2023-03-20 21:05:57,110 - INFO - [Establish-2fjsaf2ja4da] - Establishing RP to 2fjsaf2ja4da
+2023-03-20 21:05:57,128 - INFO - [Establish-2fjsaf2ja4da] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-20 21:05:57,400 - INFO - [Establish-2fjsaf2ja4da] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-20 21:05:57,402 - INFO - [Establish-2fjsaf2ja4da] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10)... (None)
+2023-03-20 21:05:57,457 - INFO - [Establish-2fjsaf2ja4da] - Creating new circuit #80000003 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10) router...
+2023-03-20 21:05:57,471 - INFO - [Establish-2fjsaf2ja4da] - Building -1 hops circuit...
+2023-03-20 21:05:57,471 - INFO - [Establish-2fjsaf2ja4da] - Extending the circuit #80000003 with 192.145.46.247:9001 (2fjsaf2ja4da; Tor 0.4.5.10)...
+2023-03-20 21:05:57,471 - INFO - [Establish-2fjsaf2ja4da] - Getting descriptor for 192.145.46.247:9001 (2fjsaf2ja4da; Tor 0.4.5.10)...
+2023-03-20 21:05:57,475 - INFO - [Establish-2fjsaf2ja4da] - Connecting to guard node 194.182.179.34:443 (Slavyanka; Tor 0.4.7.13)... (Internal dir client)
+2023-03-20 21:05:57,762 - INFO - [Establish-2fjsaf2ja4da] - Creating new circuit #80000004 with 194.182.179.34:443 (Slavyanka; Tor 0.4.7.13) router...
+2023-03-20 21:05:57,836 - INFO - [Establish-2fjsaf2ja4da] - Building 0 hops circuit...
+2023-03-20 21:05:57,836 - INFO - [Establish-2fjsaf2ja4da] - Stream #3: creating attached to #80000004 circuit...
+2023-03-20 21:05:57,836 - INFO - [Establish-2fjsaf2ja4da] - Stream #3: connecting to hsdir
+2023-03-20 21:05:57,908 - INFO - [RecvLoop_194.182] - Stream #3: connected (remote ip '')
+2023-03-20 21:05:58,228 - INFO - [RecvLoop_194.182] - Stream #3: remote disconnected (reason = DONE)
+2023-03-20 21:05:58,229 - INFO - [Establish-2fjsaf2ja4da] - Stream #3: closing (state = Disconnected)...
+2023-03-20 21:05:58,229 - INFO - [Establish-2fjsaf2ja4da] - Got descriptor
+2023-03-20 21:05:58,292 - INFO - [Establish-2fjsaf2ja4da] - <class 'torpy.circuit.TorCircuit'>
+2023-03-20 21:05:58,389 - INFO - [Establish-2fjsaf2ja4da] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-20 21:05:58,389 - INFO - [Establish-2fjsaf2ja4da] - Waiting for connections at relay 2fjsaf2ja4da for cookie b'4644cb16c1648eee4fb7' ...
+2023-03-20 21:06:06,830 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:06:07,154 - INFO - [CONNECTION] - Sending JOIN to P3 for relay 2fjsaf2ja4da with cookie b'4644cb16c1648eee4fb7'
+2023-03-20 21:06:15,844 - WARNING - [Connect-Hydra59] - Got SENDME
+2023-03-20 21:06:16,840 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:06:26,853 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:06:36,870 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:06:46,876 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:06:51,079 - ERROR - [Connect-LupusreginaBeta] - Got DESTROY
+2023-03-20 21:06:56,890 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:06:59,287 - INFO - [RecvLoop_194.182] - On destroy: circuit #80000004
+2023-03-20 21:06:59,287 - INFO - [RecvLoop_194.182] - Destroy circuit #80000004
+2023-03-20 21:07:05,953 - WARNING - [Connect-Hydra59] - Got SENDME
+2023-03-20 21:07:06,899 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:07:07,216 - INFO - [CONNECTION] - Age of oldest thread is 428 seconds (MAX 300)
+2023-03-20 21:07:07,229 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-20 21:07:07,455 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-20 21:07:07,461 - INFO - [MainThread] - ['ESTABLISH', 'C00010FFD00D', b'74fccc8ddc32bbf923cc']
+2023-03-20 21:07:07,462 - INFO - [MainThread] - Got ESTABLISH to relay C00010FFD00D:b'74fccc8ddc32bbf923cc' via staysafeandgoodluck
+2023-03-20 21:07:07,506 - INFO - [Establish-C00010FFD00D] - Establishing RP to C00010FFD00D
+2023-03-20 21:07:07,517 - INFO - [Establish-C00010FFD00D] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-20 21:07:07,605 - WARNING - [Connect-Hydra59] - Got SENDME
+2023-03-20 21:07:07,740 - INFO - [Establish-C00010FFD00D] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-20 21:07:07,741 - INFO - [Establish-C00010FFD00D] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10)... (None)
+2023-03-20 21:07:07,839 - INFO - [Establish-C00010FFD00D] - Creating new circuit #80000005 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10) router...
+2023-03-20 21:07:07,877 - INFO - [Establish-C00010FFD00D] - Building -1 hops circuit...
+2023-03-20 21:07:07,877 - INFO - [Establish-C00010FFD00D] - Extending the circuit #80000005 with 178.254.38.159:9001 (C00010FFD00D; Tor 0.4.7.13)...
+2023-03-20 21:07:07,877 - INFO - [Establish-C00010FFD00D] - Getting descriptor for 178.254.38.159:9001 (C00010FFD00D; Tor 0.4.7.13)...
+2023-03-20 21:07:07,881 - INFO - [Establish-C00010FFD00D] - Connecting to guard node 46.41.148.75:9991 (testtesttest; Tor 0.4.7.11)... (Internal dir client)
+2023-03-20 21:07:08,185 - INFO - [Establish-C00010FFD00D] - Creating new circuit #80000006 with 46.41.148.75:9991 (testtesttest; Tor 0.4.7.11) router...
+2023-03-20 21:07:08,267 - INFO - [Establish-C00010FFD00D] - Building 0 hops circuit...
+2023-03-20 21:07:08,267 - INFO - [Establish-C00010FFD00D] - Stream #4: creating attached to #80000006 circuit...
+2023-03-20 21:07:08,267 - INFO - [Establish-C00010FFD00D] - Stream #4: connecting to hsdir
+2023-03-20 21:07:08,343 - INFO - [RecvLoop_46.41.1] - Stream #4: connected (remote ip '')
+2023-03-20 21:07:08,609 - INFO - [RecvLoop_46.41.1] - Stream #4: remote disconnected (reason = DONE)
+2023-03-20 21:07:08,610 - INFO - [Establish-C00010FFD00D] - Stream #4: closing (state = Disconnected)...
+2023-03-20 21:07:08,610 - INFO - [Establish-C00010FFD00D] - Got descriptor
+2023-03-20 21:07:08,664 - INFO - [Establish-C00010FFD00D] - <class 'torpy.circuit.TorCircuit'>
+2023-03-20 21:07:08,706 - INFO - [Establish-C00010FFD00D] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-20 21:07:08,706 - INFO - [Establish-C00010FFD00D] - Waiting for connections at relay C00010FFD00D for cookie b'74fccc8ddc32bbf923cc' ...
+2023-03-20 21:07:16,911 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:07:17,471 - INFO - [CONNECTION] - Sending JOIN to P3 for relay C00010FFD00D with cookie b'74fccc8ddc32bbf923cc'
+2023-03-20 21:07:17,981 - INFO - [Establish-C00010FFD00D] - Got REND2 message from C00010FFD00D
+2023-03-20 21:07:17,981 - INFO - [Establish-C00010FFD00D] - Entered circuit context with id 0x80000005
+2023-03-20 21:07:17,981 - INFO - [Establish-C00010FFD00D] - Stream #5: creating attached to #80000005 circuit...
+2023-03-20 21:07:17,981 - INFO - [Establish-C00010FFD00D] - Stream #5: connecting to ('127.0.0.1', 5000)
+2023-03-20 21:07:18,073 - INFO - [RecvLoop_185.181] - Stream #5: connected (remote ip '127.0.0.1')
+2023-03-20 21:07:18,183 - INFO - [Establish-C00010FFD00D] - Sending HELLO to peer
+2023-03-20 21:07:18,183 - INFO - [Establish-C00010FFD00D] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P4\x94ua.'
+2023-03-20 21:07:18,185 - INFO - [RECEIVER] - Added neighbour P3
+2023-03-20 21:07:26,922 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:07:36,935 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:07:47,025 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:07:57,075 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:08:07,089 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:08:09,215 - INFO - [RecvLoop_46.41.1] - On destroy: circuit #80000006
+2023-03-20 21:08:09,220 - INFO - [RecvLoop_46.41.1] - Destroy circuit #80000006
+2023-03-20 21:08:13,315 - WARNING - [Connect-Hydra59] - Got SENDME
+2023-03-20 21:08:17,526 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:08:17,534 - INFO - [CONNECTION] - Age of oldest thread is 60 seconds (MAX 300)
+2023-03-20 21:08:18,247 - ERROR - [Establish-Vulnerar] - recv timeout
+2023-03-20 21:08:18,247 - INFO - [Establish-Vulnerar] - Closing connection Establish-Vulnerar
+2023-03-20 21:08:18,247 - INFO - [Establish-Vulnerar] - Stream #2: closing (state = Connected)...
+2023-03-20 21:08:18,248 - INFO - [Establish-Vulnerar] - Destroy circuit #80000001
+2023-03-20 21:08:18,249 - INFO - [Establish-Vulnerar] - Closing guard connections (None)...
+2023-03-20 21:08:27,545 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:08:37,559 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:08:47,564 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:08:57,575 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:09:07,578 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:09:11,519 - WARNING - [Connect-Hydra59] - Got SENDME
+2023-03-20 21:09:11,868 - WARNING - [Connect-Hydra59] - Got SENDME
+2023-03-20 21:09:17,586 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:09:17,600 - INFO - [CONNECTION] - Age of oldest thread is 120 seconds (MAX 300)
+2023-03-20 21:09:27,592 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:09:37,626 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:09:47,658 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:09:57,689 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:10:07,699 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:10:11,053 - WARNING - [Connect-Hydra59] - Got SENDME
+2023-03-20 21:10:17,660 - INFO - [CONNECTION] - Age of oldest thread is 180 seconds (MAX 300)
+2023-03-20 21:10:17,710 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:10:27,721 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:10:37,732 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:10:47,742 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:10:57,751 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:10:57,767 - WARNING - [RecvLoop_185.181] - CellPadding has some unnecessary data: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+2023-03-20 21:10:57,768 - ERROR - [RecvLoop_185.181] - CellPadding() was received but no handlers for it
+2023-03-20 21:11:03,576 - WARNING - [Connect-Hydra59] - Got SENDME
+2023-03-20 21:11:03,651 - WARNING - [Connect-Hydra59] - Got SENDME
+2023-03-20 21:11:07,763 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:11:17,718 - INFO - [CONNECTION] - Age of oldest thread is 240 seconds (MAX 300)
+2023-03-20 21:11:17,770 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:11:27,783 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:11:37,790 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:11:47,798 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:11:57,806 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:12:02,464 - INFO - [RECEIVER] - Added relay ATLANTIS from P2 to JOIN queue
+2023-03-20 21:12:02,464 - INFO - [MainThread] - ['JOIN', 'ATLANTIS', b'3b10c6db896c5dcd09e3']
+2023-03-20 21:12:02,465 - INFO - [MainThread] - Got JOIN to relay ATLANTIS, waiting 10 sec to connect
+2023-03-20 21:12:02,465 - INFO - [Connect-ATLANTIS] - Calling connect_to_rendezvous_point
+2023-03-20 21:12:02,468 - INFO - [Connect-ATLANTIS] - Connect to rendezvous point ATLANTIS
+2023-03-20 21:12:02,507 - INFO - [Connect-ATLANTIS] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-20 21:12:03,549 - INFO - [Connect-ATLANTIS] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-20 21:12:03,716 - WARNING - [Connect-Hydra59] - Got SENDME
+2023-03-20 21:12:03,893 - INFO - [Connect-ATLANTIS] - Connected to rendezvous point ATLANTIS
+2023-03-20 21:12:03,894 - INFO - [Connect-ATLANTIS] - Waiting for peer to open stream
+2023-03-20 21:12:04,031 - INFO - [Connect-ATLANTIS] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-03-20 21:12:04,032 - INFO - [Connect-ATLANTIS] - Stream opened successfully
+2023-03-20 21:12:04,032 - INFO - [Connect-ATLANTIS] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P4\x94ua.'
+2023-03-20 21:12:04,557 - INFO - [RECEIVER] - Added neighbour P2
+2023-03-20 21:12:07,814 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:12:17,778 - INFO - [CONNECTION] - Age of oldest thread is 300 seconds (MAX 300)
+2023-03-20 21:12:17,823 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:12:27,830 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:12:37,838 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:12:47,847 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:12:57,859 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:13:03,723 - ERROR - [Connect-Hydra59] - Got RELAY_END
+2023-03-20 21:13:07,866 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:13:10,712 - INFO - [RECEIVER] - Added relay quartz from P1 to JOIN queue
+2023-03-20 21:13:10,717 - INFO - [MainThread] - ['JOIN', 'quartz', b'cc3776b2c13997646bc7']
+2023-03-20 21:13:10,717 - INFO - [MainThread] - Got JOIN to relay quartz, waiting 10 sec to connect
+2023-03-20 21:13:10,719 - INFO - [Connect-quartz] - Calling connect_to_rendezvous_point
+2023-03-20 21:13:10,719 - INFO - [Connect-quartz] - Connect to rendezvous point quartz
+2023-03-20 21:13:10,793 - INFO - [Connect-quartz] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-20 21:13:12,160 - INFO - [Connect-quartz] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-20 21:13:12,370 - INFO - [Connect-quartz] - Connected to rendezvous point quartz
+2023-03-20 21:13:12,375 - INFO - [Connect-quartz] - Waiting for peer to open stream
+2023-03-20 21:13:12,457 - INFO - [Connect-quartz] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-03-20 21:13:12,461 - INFO - [Connect-quartz] - Stream opened successfully
+2023-03-20 21:13:12,461 - INFO - [Connect-quartz] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P4\x94ua.'
+2023-03-20 21:13:12,665 - INFO - [RECEIVER] - Added neighbour P1
+2023-03-20 21:13:17,840 - INFO - [CONNECTION] - Age of oldest thread is 360 seconds (MAX 300)
+2023-03-20 21:13:17,848 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-20 21:13:17,871 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:13:18,839 - WARNING - [Connect-ATLANTIS] - Got SENDME
+2023-03-20 21:13:18,952 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-20 21:13:18,990 - INFO - [MainThread] - ['ESTABLISH', 'artikel10buc26', b'cc3776b2c13997646bc7']
+2023-03-20 21:13:18,991 - INFO - [MainThread] - Got ESTABLISH to relay artikel10buc26:b'cc3776b2c13997646bc7' via staysafeandgoodluck
+2023-03-20 21:13:18,993 - INFO - [Establish-artikel10buc26] - Establishing RP to artikel10buc26
+2023-03-20 21:13:19,051 - INFO - [Establish-artikel10buc26] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-20 21:13:20,247 - INFO - [Establish-artikel10buc26] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-20 21:13:20,251 - INFO - [Establish-artikel10buc26] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10)... (None)
+2023-03-20 21:13:20,325 - INFO - [Establish-artikel10buc26] - Creating new circuit #80000007 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10) router...
+2023-03-20 21:13:20,352 - INFO - [Establish-artikel10buc26] - Building -1 hops circuit...
+2023-03-20 21:13:20,352 - INFO - [Establish-artikel10buc26] - Extending the circuit #80000007 with 185.100.85.22:9002 (artikel10buc26; Tor 0.4.7.13)...
+2023-03-20 21:13:20,355 - INFO - [Establish-artikel10buc26] - Getting descriptor for 185.100.85.22:9002 (artikel10buc26; Tor 0.4.7.13)...
+2023-03-20 21:13:20,363 - INFO - [Establish-artikel10buc26] - Connecting to guard node 188.68.56.27:9100 (Quetzalcoatl; Tor 0.4.7.13)... (Internal dir client)
+2023-03-20 21:13:20,555 - INFO - [Establish-artikel10buc26] - Creating new circuit #80000008 with 188.68.56.27:9100 (Quetzalcoatl; Tor 0.4.7.13) router...
+2023-03-20 21:13:20,652 - INFO - [Establish-artikel10buc26] - Building 0 hops circuit...
+2023-03-20 21:13:20,652 - INFO - [Establish-artikel10buc26] - Stream #6: creating attached to #80000008 circuit...
+2023-03-20 21:13:20,652 - INFO - [Establish-artikel10buc26] - Stream #6: connecting to hsdir
+2023-03-20 21:13:20,691 - INFO - [RecvLoop_188.68.] - Stream #6: connected (remote ip '')
+2023-03-20 21:13:20,938 - INFO - [RecvLoop_188.68.] - Stream #6: remote disconnected (reason = DONE)
+2023-03-20 21:13:20,941 - INFO - [Establish-artikel10buc26] - Stream #6: closing (state = Disconnected)...
+2023-03-20 21:13:20,941 - INFO - [Establish-artikel10buc26] - Got descriptor
+2023-03-20 21:13:21,296 - INFO - [Establish-artikel10buc26] - <class 'torpy.circuit.TorCircuit'>
+2023-03-20 21:13:21,361 - INFO - [Establish-artikel10buc26] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-20 21:13:21,361 - INFO - [Establish-artikel10buc26] - Waiting for connections at relay artikel10buc26 for cookie b'cc3776b2c13997646bc7' ...
+2023-03-20 21:13:27,878 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:13:29,001 - INFO - [CONNECTION] - Sending JOIN to P3 for relay artikel10buc26 with cookie b'cc3776b2c13997646bc7'
+2023-03-20 21:13:30,550 - INFO - [Establish-artikel10buc26] - Got REND2 message from artikel10buc26
+2023-03-20 21:13:30,554 - INFO - [Establish-artikel10buc26] - Entered circuit context with id 0x80000007
+2023-03-20 21:13:30,554 - INFO - [Establish-artikel10buc26] - Stream #7: creating attached to #80000007 circuit...
+2023-03-20 21:13:30,555 - INFO - [Establish-artikel10buc26] - Stream #7: connecting to ('127.0.0.1', 5000)
+2023-03-20 21:13:30,711 - INFO - [RecvLoop_185.181] - Stream #7: connected (remote ip '127.0.0.1')
+2023-03-20 21:13:30,756 - INFO - [Establish-artikel10buc26] - Sending HELLO to peer
+2023-03-20 21:13:30,756 - INFO - [Establish-artikel10buc26] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P4\x94ua.'
+2023-03-20 21:13:30,795 - INFO - [RECEIVER] - Added neighbour P3
+2023-03-20 21:13:37,888 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:13:47,898 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:13:57,911 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:14:07,918 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:14:17,928 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:14:18,946 - WARNING - [Connect-quartz] - Got SENDME
+2023-03-20 21:14:23,511 - INFO - [RecvLoop_188.68.] - On destroy: circuit #80000008
+2023-03-20 21:14:23,511 - INFO - [RecvLoop_188.68.] - Destroy circuit #80000008
+2023-03-20 21:14:24,549 - WARNING - [Connect-ATLANTIS] - Got SENDME
+2023-03-20 21:14:24,608 - WARNING - [Connect-ATLANTIS] - Got SENDME
+2023-03-20 21:14:27,939 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:14:29,058 - INFO - [CONNECTION] - Age of oldest thread is 59 seconds (MAX 300)
+2023-03-20 21:14:29,688 - ERROR - [Establish-C00010FFD00D] - recv timeout
+2023-03-20 21:14:29,689 - INFO - [Establish-C00010FFD00D] - Closing connection Establish-C00010FFD00D
+2023-03-20 21:14:29,689 - INFO - [Establish-C00010FFD00D] - Stream #5: closing (state = Connected)...
+2023-03-20 21:14:29,691 - INFO - [Establish-C00010FFD00D] - Destroy circuit #80000005
+2023-03-20 21:14:29,693 - INFO - [Establish-C00010FFD00D] - Closing guard connections (None)...
+2023-03-20 21:14:37,949 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:14:47,959 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:14:57,967 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:15:07,980 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:15:17,991 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:15:28,005 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:15:29,118 - INFO - [CONNECTION] - Age of oldest thread is 119 seconds (MAX 300)
+2023-03-20 21:15:34,131 - ERROR - [Connect-quartz] - Got RELAY_END
+2023-03-20 21:15:38,020 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:15:39,193 - WARNING - [Connect-ATLANTIS] - Got SENDME
+2023-03-20 21:15:48,036 - INFO - [Thread-4] - Checking for dead routes
+2023-03-20 21:15:48,036 - INFO - [Thread-4] - Adding P1 to list of inactive
+2023-03-20 21:15:48,036 - INFO - [Thread-4] - Removing P1 from neighbours
+2023-03-20 21:15:57,361 - WARNING - [RecvLoop_185.181] - CellPadding has some unnecessary data: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+2023-03-20 21:15:57,361 - ERROR - [RecvLoop_185.181] - CellPadding() was received but no handlers for it
+2023-03-20 21:16:29,178 - INFO - [CONNECTION] - Age of oldest thread is 179 seconds (MAX 300)
+2023-03-20 21:16:46,837 - WARNING - [Connect-ATLANTIS] - Got SENDME
+2023-03-20 21:16:46,894 - WARNING - [Connect-ATLANTIS] - Got SENDME
+2023-03-20 21:17:29,242 - INFO - [CONNECTION] - Age of oldest thread is 239 seconds (MAX 300)
+2023-03-20 21:18:07,691 - WARNING - [Connect-ATLANTIS] - Got SENDME
+2023-03-20 21:18:13,858 - INFO - [RECEIVER] - Added relay shalazarthewizard from P2 to JOIN queue
+2023-03-20 21:18:13,861 - INFO - [MainThread] - ['JOIN', 'shalazarthewizard', b'762b07df02ed81432033']
+2023-03-20 21:18:13,861 - INFO - [MainThread] - Got JOIN to relay shalazarthewizard, waiting 10 sec to connect
+2023-03-20 21:18:13,867 - INFO - [Connect-shalazarthewizard] - Calling connect_to_rendezvous_point
+2023-03-20 21:18:13,867 - INFO - [Connect-shalazarthewizard] - Connect to rendezvous point shalazarthewizard
+2023-03-20 21:18:13,901 - INFO - [Connect-shalazarthewizard] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-20 21:18:15,023 - INFO - [Connect-shalazarthewizard] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-20 21:18:15,907 - INFO - [Connect-shalazarthewizard] - Connected to rendezvous point shalazarthewizard
+2023-03-20 21:18:15,915 - INFO - [Connect-shalazarthewizard] - Waiting for peer to open stream
+2023-03-20 21:18:16,251 - INFO - [Connect-shalazarthewizard] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-03-20 21:18:16,258 - INFO - [Connect-shalazarthewizard] - Stream opened successfully
+2023-03-20 21:18:16,260 - INFO - [Connect-shalazarthewizard] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P4\x94ua.'
+2023-03-20 21:18:16,659 - INFO - [RECEIVER] - Added neighbour P2
+2023-03-20 21:18:29,307 - INFO - [CONNECTION] - Age of oldest thread is 299 seconds (MAX 300)
+2023-03-20 21:19:16,004 - ERROR - [Connect-ATLANTIS] - Got DESTROY
+2023-03-20 21:19:28,257 - WARNING - [Connect-shalazarthewizard] - Got SENDME
+2023-03-20 21:19:29,368 - INFO - [CONNECTION] - Age of oldest thread is 359 seconds (MAX 300)
+2023-03-20 21:19:29,382 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-20 21:19:30,325 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-20 21:19:30,343 - INFO - [MainThread] - ['ESTABLISH', 'NTH19R2', b'a926c56cc1fc5e05f021']
+2023-03-20 21:19:30,343 - INFO - [MainThread] - Got ESTABLISH to relay NTH19R2:b'a926c56cc1fc5e05f021' via staysafeandgoodluck
+2023-03-20 21:19:30,344 - INFO - [Establish-NTH19R2] - Establishing RP to NTH19R2
+2023-03-20 21:19:30,369 - INFO - [Establish-NTH19R2] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-20 21:19:31,478 - INFO - [Establish-NTH19R2] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-20 21:19:31,483 - INFO - [Establish-NTH19R2] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10)... (None)
+2023-03-20 21:19:31,559 - INFO - [Establish-NTH19R2] - Creating new circuit #80000009 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10) router...
+2023-03-20 21:19:31,586 - INFO - [Establish-NTH19R2] - Building -1 hops circuit...
+2023-03-20 21:19:31,587 - INFO - [Establish-NTH19R2] - Extending the circuit #80000009 with 192.42.116.216:9001 (NTH19R2; Tor 0.4.7.13)...
+2023-03-20 21:19:31,591 - INFO - [Establish-NTH19R2] - Getting descriptor for 192.42.116.216:9001 (NTH19R2; Tor 0.4.7.13)...
+2023-03-20 21:19:31,607 - INFO - [Establish-NTH19R2] - Connecting to guard node 171.25.193.77:80 (DFRI16; Tor 0.4.7.13)... (Internal dir client)
+2023-03-20 21:19:31,711 - INFO - [Establish-NTH19R2] - Creating new circuit #8000000a with 171.25.193.77:80 (DFRI16; Tor 0.4.7.13) router...
+2023-03-20 21:19:31,746 - INFO - [Establish-NTH19R2] - Building 0 hops circuit...
+2023-03-20 21:19:31,747 - INFO - [Establish-NTH19R2] - Stream #8: creating attached to #8000000a circuit...
+2023-03-20 21:19:31,747 - INFO - [Establish-NTH19R2] - Stream #8: connecting to hsdir
+2023-03-20 21:19:31,770 - INFO - [RecvLoop_171.25.] - Stream #8: connected (remote ip '')
+2023-03-20 21:19:32,019 - INFO - [RecvLoop_171.25.] - Stream #8: remote disconnected (reason = DONE)
+2023-03-20 21:19:32,020 - INFO - [Establish-NTH19R2] - Stream #8: closing (state = Disconnected)...
+2023-03-20 21:19:32,020 - INFO - [Establish-NTH19R2] - Got descriptor
+2023-03-20 21:19:32,159 - INFO - [Establish-NTH19R2] - <class 'torpy.circuit.TorCircuit'>
+2023-03-20 21:19:32,201 - INFO - [Establish-NTH19R2] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-20 21:19:32,201 - INFO - [Establish-NTH19R2] - Waiting for connections at relay NTH19R2 for cookie b'a926c56cc1fc5e05f021' ...
+2023-03-20 21:19:40,352 - INFO - [CONNECTION] - Sending JOIN to P3 for relay NTH19R2 with cookie b'a926c56cc1fc5e05f021'
+2023-03-20 21:19:42,149 - INFO - [Establish-NTH19R2] - Got REND2 message from NTH19R2
+2023-03-20 21:19:42,154 - INFO - [Establish-NTH19R2] - Entered circuit context with id 0x80000009
+2023-03-20 21:19:42,155 - INFO - [Establish-NTH19R2] - Stream #9: creating attached to #80000009 circuit...
+2023-03-20 21:19:42,155 - INFO - [Establish-NTH19R2] - Stream #9: connecting to ('127.0.0.1', 5000)
+2023-03-20 21:19:42,237 - INFO - [RecvLoop_185.181] - Stream #9: connected (remote ip '127.0.0.1')
+2023-03-20 21:19:42,360 - INFO - [Establish-NTH19R2] - Sending HELLO to peer
+2023-03-20 21:19:42,360 - INFO - [Establish-NTH19R2] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P4\x94ua.'
+2023-03-20 21:19:43,049 - INFO - [RECEIVER] - Added neighbour P3

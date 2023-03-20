@@ -34,12 +34,12 @@ logger = logging.getLogger(__name__)
 UPDATE_INTERVAL = 15
 ROUTE_UPDATE_INTERVAL = 15
 PERIODIC_HEART_BEAT = 5
-NODE_FAILURE_INTERVAL = 5
+NODE_FAILURE_INTERVAL = 10
 TIMEOUT = 15
 LATENCY_SAMPLES = 10
 PERIODIC_CONN_CHECK = 60
-MIN_NEIGHBOUR_CONNECTIONS = 1
-MAX_CONNECTION_TIME = 600
+MIN_NEIGHBOUR_CONNECTIONS = 2
+MAX_CONNECTION_TIME = 300
 
 # Log metrics to file
 graph_metrics_file = "router.log"
@@ -59,6 +59,7 @@ threadLock = None
 threads = None
 HB_time = 0 #  the last HB to be sent
 join_queue = [] # relays to join
+log_queue = None # log data
 receiver_thread = None
 '''
 LSA structure:
@@ -118,6 +119,8 @@ class ReceiveThread(Thread):
 
     def run(self):
         try:
+            Timer(NODE_FAILURE_INTERVAL, self.checkForNodeFailure).start()
+
             while True:
                 queue_data = self.queue.get()
                 self.serverSide(queue_data)
@@ -138,7 +141,11 @@ class ReceiveThread(Thread):
     def serverSide(self, queue_data):
 
         # Load received data to format
-        local_copy_LSA = pickle.loads(queue_data[0]['data'])
+        try:
+            local_copy_LSA = pickle.loads(queue_data[0]['data'])
+        except Exception as e:
+            logger.error(e)
+
         circuit = queue_data[0]['circuit']
         circuit_id = queue_data[0]['circuit_id']
         stream = queue_data[0]['stream']
@@ -148,9 +155,9 @@ class ReceiveThread(Thread):
         receive_socket = queue_data[0]['receive_socket']
         rendpoint = queue_data[0]['rendpoint']
         thread_id = queue_data[0]['thread_id']
-        
 
-        logger.debug("Received local_copy_LSA: " +str(local_copy_LSA))
+        if log_queue:
+            log_queue.put_nowait( local_copy_LSA )
 
         # Handle case if message received is a heartbeat message or other
         if isinstance(local_copy_LSA , list):
@@ -181,7 +188,6 @@ class ReceiveThread(Thread):
             
         # Handle case if the message received is an LSA
         else:
-            logger.debug("Received LSA: " + str(local_copy_LSA))
 
             RID = local_copy_LSA['RID']
 
@@ -333,15 +339,10 @@ class ReceiveThread(Thread):
             else:
                 logger.debug("HBref does not match last sent, skipping")
 
-
         # Periodically check for any dead neighbours and update
         # inactive list of routers
-        Timer(NODE_FAILURE_INTERVAL, self.checkForNodeFailure).start()
+        #Timer(NODE_FAILURE_INTERVAL, self.checkForNodeFailure).start()
 
-        # If the list of inactive routers is ever updated, we must transmit
-        # a new LSA to notify other routers of the update to the topology
-        if len(self.inactive_list) > self.inactive_list_size:
-            self.remove_inactive()
 
     # Removes a dead route
     def remove_inactive(self):
@@ -423,7 +424,8 @@ class ReceiveThread(Thread):
 
         # This is for us
         if destination == global_router['RID']:
-            log_metrics("LOOKUP RECEIVED", json.dumps(msg_data))
+            #log_metrics("LOOKUP RECEIVED", json.dumps(msg_data))
+            pass
         else:
             route_message(msg_data)
 
@@ -458,15 +460,24 @@ class ReceiveThread(Thread):
     # Used to check for any failed nodes in the topology
     def checkForNodeFailure(self):
 
-        current_time = datetime.now()
-        td = timedelta(seconds=TIMEOUT)
+        while True:
+            logger.info("Checking for dead routes")
+            current_time = datetime.now()
+            td = timedelta(seconds=TIMEOUT)
 
-        for node in self.HB_set:
-            difference = current_time - self.HB_set[node]
-            if difference > td:
-                if node not in self.inactive_list:
-                    self.inactive_list.add(node)
-                    logger.info("Adding " + node + " to list of inactive")
+            for node in self.HB_set:
+                difference = current_time - self.HB_set[node]
+                if difference > td:
+                    if node not in self.inactive_list:
+                        self.inactive_list.add(node)
+                        logger.info("Adding " + node + " to list of inactive")
+            
+            # If the list of inactive routers is ever updated, we must transmit
+            # a new LSA to notify other routers of the update to the topology
+            if len(self.inactive_list) > self.inactive_list_size:
+                self.remove_inactive()
+
+            time.sleep(NODE_FAILURE_INTERVAL)
 
     # Helper function to update this router's list
     # of active neighbours after a router fails
@@ -847,6 +858,26 @@ class HeartBeatThread(Thread):
     def __del__(self):
         pass
 
+class LogThread(Thread):
+    
+    def __init__(self, name, logfile, queue):
+        Thread.__init__(self)
+        self.name = name
+        self.logfile = logfile
+        self.queue = queue
+
+    def run(self):
+
+        with open(self.logfile, "ab") as f:
+            while True:
+                d = self.queue.get()
+                pd = [current_milli_time(), global_router['RID'], d]
+                try:
+                    pickle.dump(pd, f)
+                except Exception as e:
+                    logger.error(e)
+
+
 # ConnectionThread periodically checks if neighbouring connections 
 # satisfy criteria
 class ConnectionThread(Thread):
@@ -942,12 +973,12 @@ class ConnectionThread(Thread):
 
             # Tell main thread to establish RP
             rp_relay, cookie = get_rendezvous_relay()
-            self.conn_queue.put_nowait(["ESTABLISH", rp_relay, cookie])
+            self.conn_queue.put_nowait(["ESTABLISH", rp_relay.nickname, cookie])
             time.sleep(10)
 
             # Send JOIN to peer                
-            logger.info(f"Sending JOIN to {join_peer}")
-            message = [{'Message' : 'JOIN', 'Destination' : join_peer, 'Source' : RID, 'Relay' : rp_relay, 'Cookie' : cookie}]
+            logger.info(f"Sending JOIN to {join_peer} at relay {rp_relay.nickname}")
+            message = [{'Message' : 'JOIN', 'Destination' : join_peer, 'Source' : RID, 'Relay' : rp_relay.nickname, 'Cookie' : cookie}]
             route_message(message)
 
 
@@ -965,12 +996,12 @@ def remove_circuit(inactive_list):
             continue
         ci = circuit_info[p]
         tid = ci['Thread ID']
-        # find the connection thread to close
-        th = rnd.threads[tid]
-        th.close()
-        # remove the thread 
         del circuit_info[p]
-        del rnd.threads[tid]
+        # find the connection thread to close
+        if tid in rnd.threads:
+            th = rnd.threads[tid]
+            th.close()
+            del rnd.threads[tid]
 
 # Routes it along the least cost path
 def route_message(msg_data):
@@ -1304,8 +1335,8 @@ def send_to_stream(router_id, message):
                         stream_data['Receive Node'], 
                         stream_data['Receive Socket'],
                         stream_data['Stream ID'])
-    except KeyError:
-        pass
+    except Exception as e:
+        logger.error(e)
 
     #log_metrics("DATA SENT", "Payload: {0} bytes".format(sys.getsizeof(message)))
 

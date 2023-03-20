@@ -7,10 +7,11 @@ from time import sleep
 from threading import Thread
 import traceback
 import logging
+from queue import Queue
 
 import server
 import lsr
-from lsr import ConnectionThread
+from lsr import ConnectionThread, LogThread
 from rendezvous import RendezvousEstablish, RendezvousConnect
 from tester import RtunTest
 
@@ -145,6 +146,12 @@ if args.file:
     logger.info("Starting connection thread")
     conn_thread = ConnectionThread("CONNECTION", conn_queue, rcv_queue)
     conn_thread.start()
+
+    # Start ConnectionThread
+    logger.info("Starting log thread")
+    lsr.log_queue = Queue()
+    log_thread = LogThread("LOG", 'receive.log', lsr.log_queue)
+    log_thread.start()
 
     try:
         # Create RP loop - creates new rendezvous points for peers to connect

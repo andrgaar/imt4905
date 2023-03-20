@@ -2,16 +2,15 @@
   \begin{tikzpicture}
       \draw
         (0.0:10) node (P1){P1}
-        (1.571:10) node (P2){P2}
-        (3.142:10) node (P3){P3}
-        (4.712:10) node (P5){P5};
+        (2.094:10) node (P3){P3}
+        (4.189:10) node (P4){P4};
       \begin{scope}[->]
-        \draw (P1) to (P2);
-        \draw (P2) to (P5);
-        \draw (P2) to (P1);
-        \draw (P3) to (P5);
-        \draw (P5) to (P2);
-        \draw (P5) to (P3);
+        \draw (P1) to (P3);
+        \draw (P1) to (P4);
+        \draw (P3) to (P4);
+        \draw (P3) to (P1);
+        \draw (P4) to (P1);
+        \draw (P4) to (P3);
       \end{scope}
     \end{tikzpicture}
 \end{figure}

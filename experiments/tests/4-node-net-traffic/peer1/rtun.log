@@ -1,0 +1,236 @@
+2023-03-19 18:18:26,187 - INFO - [MainThread] - Initialized router P1 at port 5001 PID 37292
+2023-03-19 18:18:26,188 - INFO - [MainThread] - Adding listener for taipe
+2023-03-19 18:18:26,189 - INFO - [Establish-taipe] - Establishing RP to taipe
+2023-03-19 18:18:26,191 - INFO - [MainThread] - Adding a connection to RMK
+2023-03-19 18:18:26,192 - INFO - [Connect-RMK] - Calling connect_to_rendezvous_point
+2023-03-19 18:18:26,192 - INFO - [Connect-RMK] - Connect to rendezvous point RMK
+2023-03-19 18:18:26,194 - INFO - [MainThread] - Starting connection thread
+2023-03-19 18:18:26,195 - INFO - [Establish-taipe] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-19 18:18:26,214 - INFO - [Connect-RMK] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-19 18:18:26,823 - INFO - [Connect-RMK] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-19 18:18:26,835 - INFO - [Establish-taipe] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-19 18:18:26,837 - INFO - [Establish-taipe] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10)... (None)
+2023-03-19 18:18:26,891 - INFO - [Establish-taipe] - Creating new circuit #80000001 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10) router...
+2023-03-19 18:18:26,905 - INFO - [Establish-taipe] - Building -1 hops circuit...
+2023-03-19 18:18:26,905 - INFO - [Establish-taipe] - Extending the circuit #80000001 with 185.217.0.96:443 (taipe; Tor 0.4.7.13)...
+2023-03-19 18:18:26,905 - INFO - [Establish-taipe] - Getting descriptor for 185.217.0.96:443 (taipe; Tor 0.4.7.13)...
+2023-03-19 18:18:26,909 - INFO - [Establish-taipe] - Connecting to guard node 85.195.214.252:9842 (myNiceRelay654398; Tor 0.4.7.13)... (Internal dir client)
+2023-03-19 18:18:27,067 - INFO - [Connect-RMK] - Connected to rendezvous point RMK
+2023-03-19 18:18:27,069 - INFO - [Connect-RMK] - Waiting for peer to open stream
+2023-03-19 18:18:27,110 - INFO - [Connect-RMK] - Received cell: <class 'torpy.cells.CellDestroy'>
+2023-03-19 18:18:27,114 - WARNING - [Connect-RMK] - Could not connect to rendezvous point RMK: Receive CellDestroy from RP, retrying in 5 seconds...
+2023-03-19 18:18:32,118 - INFO - [Connect-RMK] - Calling connect_to_rendezvous_point
+2023-03-19 18:18:32,118 - INFO - [Connect-RMK] - Connect to rendezvous point RMK
+2023-03-19 18:18:32,123 - INFO - [Connect-RMK] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-19 18:18:32,456 - INFO - [Connect-RMK] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-19 18:18:32,697 - INFO - [Connect-RMK] - Connected to rendezvous point RMK
+2023-03-19 18:18:32,697 - INFO - [Connect-RMK] - Waiting for peer to open stream
+2023-03-19 18:18:32,794 - INFO - [Connect-RMK] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-03-19 18:18:32,795 - INFO - [Connect-RMK] - Stream opened successfully
+2023-03-19 18:18:32,795 - INFO - [Connect-RMK] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P1\x94ua.'
+2023-03-19 18:18:32,996 - INFO - [RECEIVER] - Added neighbour P3
+2023-03-19 18:18:41,989 - ERROR - [Establish-taipe] - _ssl.c:1106: The handshake operation timed out
+2023-03-19 18:18:41,989 - ERROR - [Establish-taipe] - [ignored]
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cell_socket.py", line 63, in connect
+    self._socket.connect((self._router.ip, self._router.or_port))
+  File "/usr/lib/python3.9/ssl.py", line 1342, in connect
+    self._real_connect(addr, False)
+  File "/usr/lib/python3.9/ssl.py", line 1333, in _real_connect
+    self.do_handshake()
+  File "/usr/lib/python3.9/ssl.py", line 1309, in do_handshake
+    self._sslobj.do_handshake()
+socket.timeout: _ssl.c:1106: The handshake operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/utils.py", line 79, in newfn
+    return func(*args, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/consesus.py", line 183, in newfn
+    return func(*args, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/consesus.py", line 431, in get_descriptor
+    with self._get_dir_client() as dir_client:
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/consesus.py", line 380, in _get_dir_client
+    self._dir_guard, self._dir_circuit = self._create_dir_circuit(purpose='Internal dir client')
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/consesus.py", line 370, in _create_dir_circuit
+    guard = TorGuard(router, purpose=purpose)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 66, in __init__
+    self.__tor_socket.connect()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cell_socket.py", line 69, in connect
+    raise TorSocketConnectError(e)
+torpy.cell_socket.TorSocketConnectError: _ssl.c:1106: The handshake operation timed out
+2023-03-19 18:18:41,996 - WARNING - [Establish-taipe] - Retry with another router...
+2023-03-19 18:18:41,996 - INFO - [Establish-taipe] - Wait 1 sec before next retry
+2023-03-19 18:18:43,011 - INFO - [Establish-taipe] - Connecting to guard node 89.58.45.45:443 (yrl4tjdevde; Tor 0.4.7.13)... (Internal dir client)
+2023-03-19 18:18:43,188 - INFO - [Establish-taipe] - Creating new circuit #80000002 with 89.58.45.45:443 (yrl4tjdevde; Tor 0.4.7.13) router...
+2023-03-19 18:18:43,222 - INFO - [Establish-taipe] - Building 0 hops circuit...
+2023-03-19 18:18:43,222 - INFO - [Establish-taipe] - Stream #1: creating attached to #80000002 circuit...
+2023-03-19 18:18:43,222 - INFO - [Establish-taipe] - Stream #1: connecting to hsdir
+2023-03-19 18:18:43,266 - INFO - [RecvLoop_89.58.4] - Stream #1: connected (remote ip '')
+2023-03-19 18:18:43,487 - INFO - [RecvLoop_89.58.4] - Stream #1: remote disconnected (reason = DONE)
+2023-03-19 18:18:43,487 - INFO - [Establish-taipe] - Stream #1: closing (state = Disconnected)...
+2023-03-19 18:18:43,487 - INFO - [Establish-taipe] - Got descriptor
+2023-03-19 18:18:43,510 - INFO - [Establish-taipe] - <class 'torpy.circuit.TorCircuit'>
+2023-03-19 18:18:43,532 - INFO - [Establish-taipe] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-19 18:18:43,533 - INFO - [Establish-taipe] - Waiting for connections at relay taipe for cookie b'eb688e4f52df90278060' ...
+2023-03-19 18:18:45,593 - INFO - [Establish-taipe] - Got REND2 message from taipe
+2023-03-19 18:18:45,593 - INFO - [Establish-taipe] - Entered circuit context with id 0x80000001
+2023-03-19 18:18:45,593 - INFO - [Establish-taipe] - Stream #2: creating attached to #80000001 circuit...
+2023-03-19 18:18:45,596 - INFO - [Establish-taipe] - Stream #2: connecting to ('127.0.0.1', 5000)
+2023-03-19 18:18:45,655 - INFO - [RecvLoop_185.181] - Stream #2: connected (remote ip '127.0.0.1')
+2023-03-19 18:18:45,797 - INFO - [Establish-taipe] - Sending HELLO to peer
+2023-03-19 18:18:45,797 - INFO - [Establish-taipe] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P1\x94ua.'
+2023-03-19 18:18:45,799 - INFO - [RECEIVER] - Added neighbour P2
+2023-03-19 18:19:26,247 - INFO - [CONNECTION] - Age of oldest thread is 41 seconds (MAX 300)
+2023-03-19 18:19:47,350 - INFO - [RecvLoop_89.58.4] - On destroy: circuit #80000002
+2023-03-19 18:19:47,351 - INFO - [RecvLoop_89.58.4] - Destroy circuit #80000002
+2023-03-19 18:20:06,357 - WARNING - [Connect-RMK] - Got SENDME
+2023-03-19 18:20:26,251 - INFO - [CONNECTION] - Age of oldest thread is 101 seconds (MAX 300)
+2023-03-19 18:21:26,312 - INFO - [CONNECTION] - Age of oldest thread is 161 seconds (MAX 300)
+2023-03-19 18:21:36,463 - WARNING - [Connect-RMK] - Got SENDME
+2023-03-19 18:21:36,507 - WARNING - [Connect-RMK] - Got SENDME
+2023-03-19 18:22:26,370 - INFO - [CONNECTION] - Age of oldest thread is 221 seconds (MAX 300)
+2023-03-19 18:23:11,579 - WARNING - [Connect-RMK] - Got SENDME
+2023-03-19 18:23:26,437 - INFO - [CONNECTION] - Age of oldest thread is 281 seconds (MAX 300)
+2023-03-19 18:23:36,574 - INFO - [Thread-286] - Adding P3 to list of inactive
+2023-03-19 18:23:36,575 - INFO - [RECEIVER] - Removing P3 from neighbours
+2023-03-19 18:24:11,585 - ERROR - [Connect-RMK] - Got DESTROY
+2023-03-19 18:24:26,497 - INFO - [CONNECTION] - Neighbour connections (1) less than MIN_NEIGHBOUR_CONNECTIONS (2)
+2023-03-19 18:24:26,498 - INFO - [CONNECTION] - Candidate peers: ['P4']
+2023-03-19 18:24:26,498 - INFO - [CONNECTION] - Highest cost peers: [('P3', 730), ('P4', 398), ('P2', 153), ('P1', 0)]
+2023-03-19 18:24:26,532 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-19 18:24:26,901 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-19 18:24:26,908 - INFO - [MainThread] - ['ESTABLISH', 'fortherepublic', b'5b6771da057cb23b5e12']
+2023-03-19 18:24:26,908 - INFO - [MainThread] - Got ESTABLISH to relay fortherepublic:b'5b6771da057cb23b5e12' via staysafeandgoodluck
+2023-03-19 18:24:26,908 - INFO - [Establish-fortherepublic] - Establishing RP to fortherepublic
+2023-03-19 18:24:26,910 - INFO - [Establish-fortherepublic] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-19 18:24:27,186 - INFO - [Establish-fortherepublic] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-19 18:24:27,188 - INFO - [Establish-fortherepublic] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10)... (None)
+2023-03-19 18:24:27,269 - INFO - [Establish-fortherepublic] - Creating new circuit #80000003 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10) router...
+2023-03-19 18:24:27,286 - INFO - [Establish-fortherepublic] - Building -1 hops circuit...
+2023-03-19 18:24:27,286 - INFO - [Establish-fortherepublic] - Extending the circuit #80000003 with 148.251.191.28:9001 (fortherepublic; Tor 0.4.7.13)...
+2023-03-19 18:24:27,286 - INFO - [Establish-fortherepublic] - Getting descriptor for 148.251.191.28:9001 (fortherepublic; Tor 0.4.7.13)...
+2023-03-19 18:24:27,290 - INFO - [Establish-fortherepublic] - Connecting to guard node 209.44.114.178:37201 (Pasquino3; Tor 0.4.5.16)... (Internal dir client)
+2023-03-19 18:24:27,797 - INFO - [Establish-fortherepublic] - Creating new circuit #80000004 with 209.44.114.178:37201 (Pasquino3; Tor 0.4.5.16) router...
+2023-03-19 18:24:27,924 - INFO - [Establish-fortherepublic] - Building 0 hops circuit...
+2023-03-19 18:24:27,924 - INFO - [Establish-fortherepublic] - Stream #3: creating attached to #80000004 circuit...
+2023-03-19 18:24:27,924 - INFO - [Establish-fortherepublic] - Stream #3: connecting to hsdir
+2023-03-19 18:24:28,045 - INFO - [RecvLoop_209.44.] - Stream #3: connected (remote ip '')
+2023-03-19 18:24:28,365 - INFO - [RecvLoop_209.44.] - Stream #3: remote disconnected (reason = DONE)
+2023-03-19 18:24:28,365 - INFO - [Establish-fortherepublic] - Stream #3: closing (state = Disconnected)...
+2023-03-19 18:24:28,365 - INFO - [Establish-fortherepublic] - Got descriptor
+2023-03-19 18:24:28,421 - INFO - [Establish-fortherepublic] - <class 'torpy.circuit.TorCircuit'>
+2023-03-19 18:24:28,474 - INFO - [Establish-fortherepublic] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-19 18:24:28,474 - INFO - [Establish-fortherepublic] - Waiting for connections at relay fortherepublic for cookie b'5b6771da057cb23b5e12' ...
+2023-03-19 18:24:36,921 - INFO - [CONNECTION] - Sending JOIN to P4 at relay fortherepublic
+2023-03-19 18:24:37,615 - INFO - [Establish-fortherepublic] - Got REND2 message from fortherepublic
+2023-03-19 18:24:37,616 - INFO - [Establish-fortherepublic] - Entered circuit context with id 0x80000003
+2023-03-19 18:24:37,616 - INFO - [Establish-fortherepublic] - Stream #4: creating attached to #80000003 circuit...
+2023-03-19 18:24:37,622 - INFO - [Establish-fortherepublic] - Stream #4: connecting to ('127.0.0.1', 5000)
+2023-03-19 18:24:37,725 - INFO - [RecvLoop_185.181] - Stream #4: connected (remote ip '127.0.0.1')
+2023-03-19 18:24:37,827 - INFO - [Establish-fortherepublic] - Sending HELLO to peer
+2023-03-19 18:24:37,828 - INFO - [Establish-fortherepublic] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P1\x94ua.'
+2023-03-19 18:24:37,830 - INFO - [RECEIVER] - Added neighbour P4
+2023-03-19 18:25:36,319 - INFO - [RecvLoop_209.44.] - On destroy: circuit #80000004
+2023-03-19 18:25:36,319 - INFO - [RecvLoop_209.44.] - Destroy circuit #80000004
+2023-03-19 18:25:36,986 - INFO - [CONNECTION] - Age of oldest thread is 59 seconds (MAX 300)
+2023-03-19 18:26:37,052 - INFO - [CONNECTION] - Age of oldest thread is 119 seconds (MAX 300)
+2023-03-19 18:27:37,118 - INFO - [CONNECTION] - Age of oldest thread is 180 seconds (MAX 300)
+2023-03-19 18:28:37,192 - INFO - [CONNECTION] - Age of oldest thread is 240 seconds (MAX 300)
+2023-03-19 18:29:37,257 - INFO - [CONNECTION] - Age of oldest thread is 300 seconds (MAX 300)
+2023-03-19 18:30:37,316 - INFO - [CONNECTION] - Age of oldest thread is 360 seconds (MAX 300)
+2023-03-19 18:30:37,350 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-19 18:30:37,991 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-19 18:30:37,998 - INFO - [MainThread] - ['ESTABLISH', 'pissnissemoldova', b'f9ed30880f13ae68dbf5']
+2023-03-19 18:30:37,998 - INFO - [MainThread] - Got ESTABLISH to relay pissnissemoldova:b'f9ed30880f13ae68dbf5' via staysafeandgoodluck
+2023-03-19 18:30:38,011 - INFO - [Establish-pissnissemoldova] - Establishing RP to pissnissemoldova
+2023-03-19 18:30:38,018 - INFO - [Establish-pissnissemoldova] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-19 18:30:38,653 - INFO - [Establish-pissnissemoldova] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-19 18:30:38,658 - INFO - [Establish-pissnissemoldova] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10)... (None)
+2023-03-19 18:30:38,763 - INFO - [Establish-pissnissemoldova] - Creating new circuit #80000005 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10) router...
+2023-03-19 18:30:38,780 - INFO - [Establish-pissnissemoldova] - Building -1 hops circuit...
+2023-03-19 18:30:38,780 - INFO - [Establish-pissnissemoldova] - Extending the circuit #80000005 with 91.208.162.197:8081 (pissnissemoldova; Tor 0.4.7.13)...
+2023-03-19 18:30:38,780 - INFO - [Establish-pissnissemoldova] - Getting descriptor for 91.208.162.197:8081 (pissnissemoldova; Tor 0.4.7.13)...
+2023-03-19 18:30:38,802 - INFO - [Establish-pissnissemoldova] - Connecting to guard node 51.79.65.244:443 (okok2302; Tor 0.4.7.13)... (Internal dir client)
+2023-03-19 18:30:39,293 - INFO - [Establish-pissnissemoldova] - Creating new circuit #80000006 with 51.79.65.244:443 (okok2302; Tor 0.4.7.13) router...
+2023-03-19 18:30:39,426 - INFO - [Establish-pissnissemoldova] - Building 0 hops circuit...
+2023-03-19 18:30:39,426 - INFO - [Establish-pissnissemoldova] - Stream #5: creating attached to #80000006 circuit...
+2023-03-19 18:30:39,427 - INFO - [Establish-pissnissemoldova] - Stream #5: connecting to hsdir
+2023-03-19 18:30:39,541 - INFO - [RecvLoop_51.79.6] - Stream #5: connected (remote ip '')
+2023-03-19 18:30:39,861 - INFO - [RecvLoop_51.79.6] - Stream #5: remote disconnected (reason = DONE)
+2023-03-19 18:30:39,861 - INFO - [Establish-pissnissemoldova] - Stream #5: closing (state = Disconnected)...
+2023-03-19 18:30:39,862 - INFO - [Establish-pissnissemoldova] - Got descriptor
+2023-03-19 18:30:40,341 - INFO - [Establish-pissnissemoldova] - <class 'torpy.circuit.TorCircuit'>
+2023-03-19 18:30:40,424 - INFO - [Establish-pissnissemoldova] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-19 18:30:40,424 - INFO - [Establish-pissnissemoldova] - Waiting for connections at relay pissnissemoldova for cookie b'f9ed30880f13ae68dbf5' ...
+2023-03-19 18:30:48,009 - INFO - [CONNECTION] - Sending JOIN to P4 for relay pissnissemoldova with cookie b'f9ed30880f13ae68dbf5'
+2023-03-19 18:30:50,879 - INFO - [Establish-pissnissemoldova] - Got REND2 message from pissnissemoldova
+2023-03-19 18:30:50,884 - INFO - [Establish-pissnissemoldova] - Entered circuit context with id 0x80000005
+2023-03-19 18:30:50,884 - INFO - [Establish-pissnissemoldova] - Stream #6: creating attached to #80000005 circuit...
+2023-03-19 18:30:50,884 - INFO - [Establish-pissnissemoldova] - Stream #6: connecting to ('127.0.0.1', 5000)
+2023-03-19 18:30:51,032 - INFO - [RecvLoop_185.181] - Stream #6: connected (remote ip '127.0.0.1')
+2023-03-19 18:30:51,089 - INFO - [Establish-pissnissemoldova] - Sending HELLO to peer
+2023-03-19 18:30:51,089 - INFO - [Establish-pissnissemoldova] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P1\x94ua.'
+2023-03-19 18:30:51,397 - INFO - [RECEIVER] - Added neighbour P4
+2023-03-19 18:31:46,531 - INFO - [RecvLoop_51.79.6] - On destroy: circuit #80000006
+2023-03-19 18:31:46,534 - INFO - [RecvLoop_51.79.6] - Destroy circuit #80000006
+2023-03-19 18:31:48,078 - INFO - [CONNECTION] - Age of oldest thread is 57 seconds (MAX 300)
+2023-03-19 18:31:50,731 - ERROR - [Establish-fortherepublic] - recv timeout
+2023-03-19 18:31:50,731 - INFO - [Establish-fortherepublic] - Closing connection Establish-fortherepublic
+2023-03-19 18:31:50,731 - INFO - [Establish-fortherepublic] - Stream #4: closing (state = Connected)...
+2023-03-19 18:31:50,732 - INFO - [Establish-fortherepublic] - Destroy circuit #80000003
+2023-03-19 18:31:50,733 - INFO - [Establish-fortherepublic] - Closing guard connections (None)...
+2023-03-19 18:32:48,143 - INFO - [CONNECTION] - Age of oldest thread is 117 seconds (MAX 300)
+2023-03-19 18:33:48,207 - INFO - [CONNECTION] - Age of oldest thread is 177 seconds (MAX 300)
+2023-03-19 18:34:48,266 - INFO - [CONNECTION] - Age of oldest thread is 237 seconds (MAX 300)
+2023-03-19 18:35:48,326 - INFO - [CONNECTION] - Age of oldest thread is 297 seconds (MAX 300)
+2023-03-19 18:36:48,394 - INFO - [CONNECTION] - Age of oldest thread is 358 seconds (MAX 300)
+2023-03-19 18:36:48,434 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-19 18:36:49,805 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-19 18:36:49,835 - INFO - [MainThread] - ['ESTABLISH', 'shalazarthewizard', b'6b3669c79aa3c8a6d9c1']
+2023-03-19 18:36:49,835 - INFO - [MainThread] - Got ESTABLISH to relay shalazarthewizard:b'6b3669c79aa3c8a6d9c1' via staysafeandgoodluck
+2023-03-19 18:36:49,864 - INFO - [Establish-shalazarthewizard] - Establishing RP to shalazarthewizard
+2023-03-19 18:36:49,952 - INFO - [Establish-shalazarthewizard] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-19 18:36:51,125 - INFO - [Establish-shalazarthewizard] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-19 18:36:51,129 - INFO - [Establish-shalazarthewizard] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10)... (None)
+2023-03-19 18:36:51,219 - INFO - [Establish-shalazarthewizard] - Creating new circuit #80000007 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10) router...
+2023-03-19 18:36:51,238 - INFO - [Establish-shalazarthewizard] - Building -1 hops circuit...
+2023-03-19 18:36:51,238 - INFO - [Establish-shalazarthewizard] - Extending the circuit #80000007 with 23.239.22.248:9001 (shalazarthewizard; Tor 0.4.5.10)...
+2023-03-19 18:36:51,238 - INFO - [Establish-shalazarthewizard] - Getting descriptor for 23.239.22.248:9001 (shalazarthewizard; Tor 0.4.5.10)...
+2023-03-19 18:36:51,243 - INFO - [Establish-shalazarthewizard] - Connecting to guard node 162.251.116.26:443 (naruto; Tor 0.4.7.10)... (Internal dir client)
+2023-03-19 18:36:51,676 - INFO - [Establish-shalazarthewizard] - Creating new circuit #80000008 with 162.251.116.26:443 (naruto; Tor 0.4.7.10) router...
+2023-03-19 18:36:51,797 - INFO - [Establish-shalazarthewizard] - Building 0 hops circuit...
+2023-03-19 18:36:51,798 - INFO - [Establish-shalazarthewizard] - Stream #7: creating attached to #80000008 circuit...
+2023-03-19 18:36:51,799 - INFO - [Establish-shalazarthewizard] - Stream #7: connecting to hsdir
+2023-03-19 18:36:51,905 - INFO - [RecvLoop_162.251] - Stream #7: connected (remote ip '')
+2023-03-19 18:36:52,140 - INFO - [RecvLoop_162.251] - Stream #7: remote disconnected (reason = DONE)
+2023-03-19 18:36:52,141 - INFO - [Establish-shalazarthewizard] - Stream #7: closing (state = Disconnected)...
+2023-03-19 18:36:52,141 - INFO - [Establish-shalazarthewizard] - Got descriptor
+2023-03-19 18:36:52,352 - INFO - [Establish-shalazarthewizard] - <class 'torpy.circuit.TorCircuit'>
+2023-03-19 18:36:52,529 - INFO - [Establish-shalazarthewizard] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-19 18:36:52,530 - INFO - [Establish-shalazarthewizard] - Waiting for connections at relay shalazarthewizard for cookie b'6b3669c79aa3c8a6d9c1' ...
+2023-03-19 18:36:59,843 - INFO - [CONNECTION] - Sending JOIN to P4 for relay shalazarthewizard with cookie b'6b3669c79aa3c8a6d9c1'
+2023-03-19 18:37:02,635 - INFO - [Establish-shalazarthewizard] - Got REND2 message from shalazarthewizard
+2023-03-19 18:37:02,636 - INFO - [Establish-shalazarthewizard] - Entered circuit context with id 0x80000007
+2023-03-19 18:37:02,636 - INFO - [Establish-shalazarthewizard] - Stream #8: creating attached to #80000007 circuit...
+2023-03-19 18:37:02,636 - INFO - [Establish-shalazarthewizard] - Stream #8: connecting to ('127.0.0.1', 5000)
+2023-03-19 18:37:02,980 - INFO - [RecvLoop_185.181] - Stream #8: connected (remote ip '127.0.0.1')
+2023-03-19 18:37:03,038 - INFO - [Establish-shalazarthewizard] - Sending HELLO to peer
+2023-03-19 18:37:03,038 - INFO - [Establish-shalazarthewizard] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P1\x94ua.'
+2023-03-19 18:37:03,195 - INFO - [RECEIVER] - Added neighbour P4
+2023-03-19 18:37:56,508 - INFO - [RecvLoop_162.251] - On destroy: circuit #80000008
+2023-03-19 18:37:56,509 - INFO - [RecvLoop_162.251] - Destroy circuit #80000008
+2023-03-19 18:37:59,902 - INFO - [CONNECTION] - Age of oldest thread is 57 seconds (MAX 300)
+2023-03-19 18:38:03,955 - ERROR - [Establish-pissnissemoldova] - recv timeout
+2023-03-19 18:38:03,955 - INFO - [Establish-pissnissemoldova] - Closing connection Establish-pissnissemoldova
+2023-03-19 18:38:03,956 - INFO - [Establish-pissnissemoldova] - Stream #6: closing (state = Connected)...
+2023-03-19 18:38:03,961 - INFO - [Establish-pissnissemoldova] - Destroy circuit #80000005
+2023-03-19 18:38:03,964 - INFO - [Establish-pissnissemoldova] - Closing guard connections (None)...
+2023-03-19 18:38:59,964 - INFO - [CONNECTION] - Age of oldest thread is 117 seconds (MAX 300)
+2023-03-19 18:39:30,463 - INFO - [RecvLoop_185.181] - On destroy: circuit #80000007
+2023-03-19 18:39:30,464 - INFO - [RecvLoop_185.181] - Destroy circuit #80000007
+2023-03-19 18:39:30,464 - INFO - [RecvLoop_185.181] - Stream #8: closing (state = Connected)...
+2023-03-19 18:39:33,636 - INFO - [RecvLoop_185.181] - On destroy: circuit #80000001
+2023-03-19 18:39:33,637 - INFO - [RecvLoop_185.181] - Destroy circuit #80000001
+2023-03-19 18:39:33,637 - INFO - [RecvLoop_185.181] - Stream #2: closing (state = Connected)...
