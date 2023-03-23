@@ -1,0 +1,45 @@
+++ dirname ./startserver.sh
++ BASEDIR=.
++ SCRIPTPATH=./../../rtun-routing
++ export PYTHONPATH=./../../torpy-rtun-fork/
++ PYTHONPATH=./../../torpy-rtun-fork/
++ python3 ./../../rtun-routing/rtun.py -v INFO -g staysafeandgoodluck -f rendezvous.txt -t peer1peer2 -n default -i 4 -d 5
+Exception in thread Establish-fingerwigmumra:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/vboxuser/Git/imt4905/rtun-routing/rendezvous.py", line 84, in run
+    rendezvous2_cell = w.get(timeout=600)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 126, in run
+    self.serverSide(queue_data)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 266, in serverSide
+    send_to_stream(router['NID'], pickle.dumps(self.LSA_DB[local_copy_LSA['RID']]))
+KeyError: 'P3'
+Exception in thread Thread-437:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 608, in shortest_paths
+    shortest_paths = nx.shortest_path(G, global_router['RID'], weight='weight')
+  File "/usr/local/lib/python3.9/dist-packages/networkx/classes/backends.py", line 145, in wrapper
+    return func(*args, **kwds)
+  File "/usr/local/lib/python3.9/dist-packages/networkx/algorithms/shortest_paths/generic.py", line 161, in shortest_path
+    paths = nx.single_source_dijkstra_path(G, source, weight=weight)
+  File "/usr/local/lib/python3.9/dist-packages/networkx/algorithms/shortest_paths/weighted.py", line 302, in single_source_dijkstra_path
+    return multi_source_dijkstra_path(G, {source}, cutoff=cutoff, weight=weight)
+  File "/usr/local/lib/python3.9/dist-packages/networkx/algorithms/shortest_paths/weighted.py", line 546, in multi_source_dijkstra_path
+    length, path = multi_source_dijkstra(G, sources, cutoff=cutoff, weight=weight)
+  File "/usr/local/lib/python3.9/dist-packages/networkx/algorithms/shortest_paths/weighted.py", line 734, in multi_source_dijkstra
+    raise nx.NodeNotFound(f"Node {s} not found in graph")
+networkx.exception.NodeNotFound: Node P4 not found in graph
+Exception ignored in: <module 'threading' from '/usr/lib/python3.9/threading.py'>
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 1428, in _shutdown
+    lock.acquire()
+KeyboardInterrupt: 

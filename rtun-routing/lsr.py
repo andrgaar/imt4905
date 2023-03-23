@@ -145,6 +145,7 @@ class ReceiveThread(Thread):
             local_copy_LSA = pickle.loads(queue_data[0]['data'])
         except Exception as e:
             logger.error(e)
+            return
 
         circuit = queue_data[0]['circuit']
         circuit_id = queue_data[0]['circuit_id']
@@ -461,7 +462,6 @@ class ReceiveThread(Thread):
     def checkForNodeFailure(self):
 
         while True:
-            logger.info("Checking for dead routes")
             current_time = datetime.now()
             td = timedelta(seconds=TIMEOUT)
 

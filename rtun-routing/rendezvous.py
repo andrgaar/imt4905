@@ -414,12 +414,13 @@ def snd_data(rsp, circuit_id, extend_node, rcv_cn, rcv_sock, stream_id=0):
     logger.debug(f"Sending cell: {rsp} to {circuit_id}")
     inner_cell = CellRelayData(rsp, circuit_id)
     relay_cell = CellRelay(inner_cell, stream_id=stream_id, circuit_id=circuit_id, padding=None)
-
-    extend_node.encrypt_forward(relay_cell)
-    rcv_cn.encrypt_forward(relay_cell)
-    rcv_sock.send_cell(relay_cell)
-    logger.debug("Sent cell:" + str(inner_cell))
-
+    
+    try:
+        extend_node.encrypt_forward(relay_cell)
+        rcv_cn.encrypt_forward(relay_cell)
+        rcv_sock.send_cell(relay_cell)
+    except Exception as e:
+        logger.error(f"snd_data: {e}")
 
 
 

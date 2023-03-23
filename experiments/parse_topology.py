@@ -8,19 +8,39 @@ import sys
 import json
 from datetime import datetime
 
-prev_timestamp = None
 epoch_time = datetime(1970, 1, 1)
 
-topology = {}
+graphs = {}
+last_time = {} # last time peer seen
 
 fname = sys.argv[1]
 
 def main():
 
+    prev_timestamp = None
+
     with open(fname, "r") as f:
+        x = list()
+        y = list()
+
         for line in f:
             timestamp, peer, data = line.strip().split(';')
-     
+            
+            if not prev_timestamp:
+                prev_timestamp = timestamp
+
+            dt_event = datetime.fromtimestamp(float(timestamp))
+            dt_prev = datetime.fromtimestamp(float(prev_timestamp))
+            last_time[peer] = dt_event
+            # remove peers not seen in last minute
+            remove = set()
+            for k, v in last_time.items():
+                if (dt_event - v).total_seconds() > 60:
+                    remove.add(k)
+            for k in remove:
+                del last_time[k]
+                graphs.pop(k)
+
             graph = json.loads(data)
             adjacency_list , graph_nodes, rp_nodes = organizeGraph(graph)
 
@@ -28,12 +48,48 @@ def main():
                 for ik in d:
                     d[ik] = {'weight': d[ik]}
             
-            G = nx.DiGraph(adjacency_list)
-            print(G)
+            G = nx.Graph(adjacency_list)
+            hits, total, equal_sets = convergence(G, peer)
+           
+            pct = 100
+            if total > 0:
+                pct = round(hits / total * 100) 
+            print(timestamp, peer, pct, hits, total, ":")
 
-            if nx.number_of_edges(G) > 0 and nx.average_clustering(G) > 0:
-                draw_graph(G)
+            for p, g in graphs.items():
+                print(p, ":", nx.edges(g))
             
+            x.append( (dt_event - dt_prev).total_seconds() )
+            y.append(pct)
+
+            #if nx.number_of_edges(G) > 0 and nx.average_clustering(G) > 0:
+            #    draw_graph(G)
+        plt.plot(x,y)
+        plt.show()
+
+def convergence(G, peer):
+
+    graphs[peer] = G
+    g = list()
+    unique_edges = set()
+    equal = 0
+
+    for v in graphs.values():
+        for e in nx.edges(v):
+            unique_edges.add(e)
+    print("Edges: ", unique_edges)
+    num_edges = len(unique_edges)
+    if num_edges == 0:
+        return 1, 1, None
+
+    for g in graphs.values():
+        n = nx.number_of_edges(g)
+        print(n, num_edges)
+        equal += (n / num_edges)
+
+    return equal, len(graphs), None
+
+
 def draw_graph(G):
     # Topology graph
     elarge = [(u, v) for (u, v, d) in G.edges(data=True) if d["weight"] > 1]
