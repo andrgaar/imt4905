@@ -1,0 +1,235 @@
+2023-03-25 13:49:51,555 - INFO - [MainThread] - Initialized router P8 at port 5008 PID 23719
+2023-03-25 13:49:51,558 - INFO - [MainThread] - Adding a connection to LupusreginaBeta
+2023-03-25 13:49:51,558 - INFO - [Connect-LupusreginaBeta] - Calling connect_to_rendezvous_point
+2023-03-25 13:49:51,559 - INFO - [Connect-LupusreginaBeta] - Connect to rendezvous point LupusreginaBeta
+2023-03-25 13:49:51,561 - INFO - [MainThread] - Adding listener for Vulnerar
+2023-03-25 13:49:51,562 - INFO - [Establish-Vulnerar] - Establishing RP to Vulnerar
+2023-03-25 13:49:51,567 - INFO - [Connect-LupusreginaBeta] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-25 13:49:51,572 - INFO - [MainThread] - Starting testing thread
+2023-03-25 13:49:51,573 - INFO - [TESTER] - Started tester
+2023-03-25 13:49:51,585 - INFO - [Establish-Vulnerar] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-25 13:49:51,588 - INFO - [MainThread] - Starting connection thread
+2023-03-25 13:49:51,757 - INFO - [MainThread] - Starting log thread
+2023-03-25 13:49:52,167 - INFO - [Connect-LupusreginaBeta] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-25 13:49:52,200 - INFO - [Establish-Vulnerar] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-25 13:49:52,201 - INFO - [Establish-Vulnerar] - Connecting to guard node 97.113.253.84:110 (NeelTorRelay2; Tor 0.4.7.13)... (None)
+2023-03-25 13:49:52,291 - INFO - [Connect-LupusreginaBeta] - Connected to rendezvous point LupusreginaBeta
+2023-03-25 13:49:52,291 - INFO - [Connect-LupusreginaBeta] - Waiting for peer to open stream
+2023-03-25 13:49:52,681 - INFO - [Connect-LupusreginaBeta] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-03-25 13:49:52,681 - INFO - [Connect-LupusreginaBeta] - Stream opened successfully
+2023-03-25 13:49:52,682 - INFO - [Connect-LupusreginaBeta] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P8\x94ua.'
+2023-03-25 13:49:52,957 - INFO - [Establish-Vulnerar] - Creating new circuit #80000001 with 97.113.253.84:110 (NeelTorRelay2; Tor 0.4.7.13) router...
+2023-03-25 13:49:53,080 - INFO - [RECEIVER] - Added neighbour P6
+2023-03-25 13:49:53,144 - INFO - [Establish-Vulnerar] - Building -1 hops circuit...
+2023-03-25 13:49:53,145 - INFO - [Establish-Vulnerar] - Extending the circuit #80000001 with 157.90.179.103:8001 (Vulnerar; Tor 0.4.7.13)...
+2023-03-25 13:49:53,145 - INFO - [Establish-Vulnerar] - Getting descriptor for 157.90.179.103:8001 (Vulnerar; Tor 0.4.7.13)...
+2023-03-25 13:49:53,151 - INFO - [Establish-Vulnerar] - Connecting to guard node 45.134.225.92:9100 (prsv; Tor 0.4.7.13)... (Internal dir client)
+2023-03-25 13:49:53,316 - INFO - [Establish-Vulnerar] - Creating new circuit #80000002 with 45.134.225.92:9100 (prsv; Tor 0.4.7.13) router...
+2023-03-25 13:49:53,356 - INFO - [Establish-Vulnerar] - Building 0 hops circuit...
+2023-03-25 13:49:53,357 - INFO - [Establish-Vulnerar] - Stream #1: creating attached to #80000002 circuit...
+2023-03-25 13:49:53,357 - INFO - [Establish-Vulnerar] - Stream #1: connecting to hsdir
+2023-03-25 13:49:53,396 - INFO - [RecvLoop_45.134.] - Stream #1: connected (remote ip '')
+2023-03-25 13:49:53,641 - INFO - [RecvLoop_45.134.] - Stream #1: remote disconnected (reason = DONE)
+2023-03-25 13:49:53,642 - INFO - [Establish-Vulnerar] - Stream #1: closing (state = Disconnected)...
+2023-03-25 13:49:53,642 - INFO - [Establish-Vulnerar] - Got descriptor
+2023-03-25 13:49:54,001 - INFO - [Establish-Vulnerar] - <class 'torpy.circuit.TorCircuit'>
+2023-03-25 13:49:54,374 - INFO - [Establish-Vulnerar] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-25 13:49:54,374 - INFO - [Establish-Vulnerar] - Waiting for connections at relay Vulnerar for cookie b'eb688e4f52df90278061' ...
+2023-03-25 13:49:59,826 - INFO - [Establish-Vulnerar] - Got REND2 message from Vulnerar
+2023-03-25 13:49:59,826 - INFO - [Establish-Vulnerar] - Entered circuit context with id 0x80000001
+2023-03-25 13:49:59,826 - INFO - [Establish-Vulnerar] - Stream #2: creating attached to #80000001 circuit...
+2023-03-25 13:49:59,826 - INFO - [Establish-Vulnerar] - Stream #2: connecting to ('127.0.0.1', 5000)
+2023-03-25 13:50:00,471 - INFO - [RecvLoop_97.113.] - Stream #2: connected (remote ip '127.0.0.1')
+2023-03-25 13:50:00,648 - INFO - [Establish-Vulnerar] - Sending HELLO to peer
+2023-03-25 13:50:00,648 - INFO - [Establish-Vulnerar] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P8\x94ua.'
+2023-03-25 13:50:00,675 - INFO - [RECEIVER] - Added neighbour P7
+2023-03-25 13:50:28,261 - WARNING - [Connect-LupusreginaBeta] - Got SENDME
+2023-03-25 13:51:00,731 - INFO - [RecvLoop_45.134.] - On destroy: circuit #80000002
+2023-03-25 13:51:00,731 - INFO - [RecvLoop_45.134.] - Destroy circuit #80000002
+2023-03-25 13:51:18,123 - WARNING - [Connect-LupusreginaBeta] - Got SENDME
+2023-03-25 13:51:18,299 - WARNING - [Connect-LupusreginaBeta] - Got SENDME
+2023-03-25 13:51:48,203 - WARNING - [Connect-LupusreginaBeta] - Got SENDME
+2023-03-25 13:52:22,311 - WARNING - [Connect-LupusreginaBeta] - Got SENDME
+2023-03-25 13:52:22,487 - WARNING - [Connect-LupusreginaBeta] - Got SENDME
+2023-03-25 13:52:54,329 - WARNING - [Connect-LupusreginaBeta] - Got SENDME
+2023-03-25 13:53:27,469 - WARNING - [Connect-LupusreginaBeta] - Got SENDME
+2023-03-25 13:53:28,293 - WARNING - [Connect-LupusreginaBeta] - Got SENDME
+2023-03-25 13:54:02,338 - WARNING - [Connect-LupusreginaBeta] - Got SENDME
+2023-03-25 13:54:38,704 - WARNING - [Connect-LupusreginaBeta] - Got SENDME
+2023-03-25 13:54:38,877 - WARNING - [Connect-LupusreginaBeta] - Got SENDME
+2023-03-25 13:55:14,492 - WARNING - [Connect-LupusreginaBeta] - Got SENDME
+2023-03-25 13:55:49,254 - WARNING - [Connect-LupusreginaBeta] - Got SENDME
+2023-03-25 13:55:50,944 - WARNING - [Connect-LupusreginaBeta] - Got SENDME
+2023-03-25 13:55:52,103 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-25 13:55:52,397 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-25 13:55:52,406 - INFO - [MainThread] - ['ESTABLISH', 'wolf', b'7a30ac6789cd9ce14f9c']
+2023-03-25 13:55:52,407 - INFO - [MainThread] - Got ESTABLISH to relay wolf:b'7a30ac6789cd9ce14f9c' via NeelTorRelay2
+2023-03-25 13:55:52,408 - INFO - [Establish-wolf] - Establishing RP to wolf
+2023-03-25 13:55:52,457 - INFO - [Establish-wolf] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-25 13:55:52,817 - INFO - [Establish-wolf] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-25 13:55:52,832 - INFO - [Establish-wolf] - Connecting to guard node 97.113.253.84:110 (NeelTorRelay2; Tor 0.4.7.13)... (None)
+2023-03-25 13:55:53,592 - INFO - [Establish-wolf] - Creating new circuit #80000003 with 97.113.253.84:110 (NeelTorRelay2; Tor 0.4.7.13) router...
+2023-03-25 13:55:53,784 - INFO - [Establish-wolf] - Building -1 hops circuit...
+2023-03-25 13:55:53,784 - INFO - [Establish-wolf] - Extending the circuit #80000003 with 109.70.100.78:443 (wolf; Tor 0.4.8.0-alpha-dev)...
+2023-03-25 13:55:53,784 - INFO - [Establish-wolf] - Getting descriptor for 109.70.100.78:443 (wolf; Tor 0.4.8.0-alpha-dev)...
+2023-03-25 13:55:53,794 - INFO - [Establish-wolf] - Connecting to guard node 65.21.251.26:443 (ccrelaycc; Tor 0.4.7.10)... (Internal dir client)
+2023-03-25 13:55:53,908 - INFO - [Establish-wolf] - Creating new circuit #80000004 with 65.21.251.26:443 (ccrelaycc; Tor 0.4.7.10) router...
+2023-03-25 13:55:53,940 - INFO - [Establish-wolf] - Building 0 hops circuit...
+2023-03-25 13:55:53,940 - INFO - [Establish-wolf] - Stream #3: creating attached to #80000004 circuit...
+2023-03-25 13:55:53,940 - INFO - [Establish-wolf] - Stream #3: connecting to hsdir
+2023-03-25 13:55:53,968 - INFO - [RecvLoop_65.21.2] - Stream #3: connected (remote ip '')
+2023-03-25 13:55:54,196 - INFO - [RecvLoop_65.21.2] - Stream #3: remote disconnected (reason = DONE)
+2023-03-25 13:55:54,199 - INFO - [Establish-wolf] - Stream #3: closing (state = Disconnected)...
+2023-03-25 13:55:54,199 - INFO - [Establish-wolf] - Got descriptor
+2023-03-25 13:55:54,558 - INFO - [Establish-wolf] - <class 'torpy.circuit.TorCircuit'>
+2023-03-25 13:55:54,919 - INFO - [Establish-wolf] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-25 13:55:54,919 - INFO - [Establish-wolf] - Waiting for connections at relay wolf for cookie b'7a30ac6789cd9ce14f9c' ...
+2023-03-25 13:55:55,867 - INFO - [RECEIVER] - Added relay Hydra58 from P6 to JOIN queue
+2023-03-25 13:55:55,872 - INFO - [MainThread] - ['JOIN', 'Hydra58', b'7a30ac6789cd9ce14f9c']
+2023-03-25 13:55:55,872 - INFO - [MainThread] - Got JOIN to relay Hydra58, waiting 10 sec to connect
+2023-03-25 13:55:55,872 - INFO - [Connect-Hydra58] - Calling connect_to_rendezvous_point
+2023-03-25 13:55:55,872 - INFO - [Connect-Hydra58] - Connect to rendezvous point Hydra58
+2023-03-25 13:55:55,932 - INFO - [Connect-Hydra58] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-25 13:55:56,298 - INFO - [Connect-Hydra58] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-25 13:55:56,482 - INFO - [Connect-Hydra58] - Connected to rendezvous point Hydra58
+2023-03-25 13:55:56,483 - INFO - [Connect-Hydra58] - Waiting for peer to open stream
+2023-03-25 13:55:56,879 - INFO - [Connect-Hydra58] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-03-25 13:55:56,881 - INFO - [Connect-Hydra58] - Stream opened successfully
+2023-03-25 13:55:56,882 - INFO - [Connect-Hydra58] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P8\x94ua.'
+2023-03-25 13:56:01,097 - INFO - [RECEIVER] - Added neighbour P6
+2023-03-25 13:56:02,551 - INFO - [CONNECTION] - Sending JOIN to P7 for relay wolf with cookie b'7a30ac6789cd9ce14f9c'
+2023-03-25 13:56:29,656 - WARNING - [Connect-Hydra58] - Got SENDME
+2023-03-25 13:56:43,446 - INFO - [Thread-4] - Adding P7 to list of inactive
+2023-03-25 13:56:43,446 - INFO - [Thread-4] - Removing P7 from neighbours
+2023-03-25 13:56:59,963 - INFO - [RecvLoop_65.21.2] - On destroy: circuit #80000004
+2023-03-25 13:56:59,963 - INFO - [RecvLoop_65.21.2] - Destroy circuit #80000004
+2023-03-25 13:57:00,888 - ERROR - [Connect-LupusreginaBeta] - Got RELAY_END
+2023-03-25 13:57:01,203 - WARNING - [Connect-Hydra58] - Got SENDME
+2023-03-25 13:57:01,416 - WARNING - [Connect-Hydra58] - Got SENDME
+2023-03-25 13:57:02,610 - INFO - [CONNECTION] - Neighbour connections (1) less than MIN_NEIGHBOUR_CONNECTIONS (2)
+2023-03-25 13:57:02,610 - INFO - [CONNECTION] - Candidate peers: ['P2', 'P3', 'P1', 'P5', 'P4']
+2023-03-25 13:57:02,610 - INFO - [CONNECTION] - Highest cost peers: [('P2', 7053), ('P1', 6351), ('P3', 4924), ('P4', 3470), ('P5', 1832), ('P7', 1373), ('P6', 100), ('P8', 0)]
+2023-03-25 13:57:02,640 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-25 13:57:02,937 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-25 13:57:02,950 - INFO - [MainThread] - ['ESTABLISH', 'ForPrivacyNET', b'92b9cbf9dc80ed67acf6']
+2023-03-25 13:57:02,950 - INFO - [MainThread] - Got ESTABLISH to relay ForPrivacyNET:b'92b9cbf9dc80ed67acf6' via NeelTorRelay2
+2023-03-25 13:57:02,951 - INFO - [Establish-ForPrivacyNET] - Establishing RP to ForPrivacyNET
+2023-03-25 13:57:02,999 - INFO - [Establish-ForPrivacyNET] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-25 13:57:03,382 - INFO - [Establish-ForPrivacyNET] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-25 13:57:03,383 - INFO - [Establish-ForPrivacyNET] - Connecting to guard node 97.113.253.84:110 (NeelTorRelay2; Tor 0.4.7.13)... (None)
+2023-03-25 13:57:04,263 - INFO - [Establish-ForPrivacyNET] - Creating new circuit #80000005 with 97.113.253.84:110 (NeelTorRelay2; Tor 0.4.7.13) router...
+2023-03-25 13:57:04,465 - INFO - [Establish-ForPrivacyNET] - Building -1 hops circuit...
+2023-03-25 13:57:04,466 - INFO - [Establish-ForPrivacyNET] - Extending the circuit #80000005 with 185.220.101.33:10133 (ForPrivacyNET; Tor 0.4.7.13)...
+2023-03-25 13:57:04,466 - INFO - [Establish-ForPrivacyNET] - Getting descriptor for 185.220.101.33:10133 (ForPrivacyNET; Tor 0.4.7.13)...
+2023-03-25 13:57:04,474 - INFO - [Establish-ForPrivacyNET] - Connecting to guard node 95.141.83.146:444 (Unnamed; Tor 0.4.7.13)... (Internal dir client)
+2023-03-25 13:57:04,560 - INFO - [Establish-ForPrivacyNET] - Creating new circuit #80000006 with 95.141.83.146:444 (Unnamed; Tor 0.4.7.13) router...
+2023-03-25 13:57:04,581 - INFO - [Establish-ForPrivacyNET] - Building 0 hops circuit...
+2023-03-25 13:57:04,581 - INFO - [Establish-ForPrivacyNET] - Stream #4: creating attached to #80000006 circuit...
+2023-03-25 13:57:04,581 - INFO - [Establish-ForPrivacyNET] - Stream #4: connecting to hsdir
+2023-03-25 13:57:04,604 - INFO - [RecvLoop_95.141.] - Stream #4: connected (remote ip '')
+2023-03-25 13:57:04,833 - INFO - [RecvLoop_95.141.] - Stream #4: remote disconnected (reason = DONE)
+2023-03-25 13:57:04,834 - INFO - [Establish-ForPrivacyNET] - Stream #4: closing (state = Disconnected)...
+2023-03-25 13:57:04,834 - INFO - [Establish-ForPrivacyNET] - Got descriptor
+2023-03-25 13:57:05,206 - INFO - [Establish-ForPrivacyNET] - <class 'torpy.circuit.TorCircuit'>
+2023-03-25 13:57:05,564 - INFO - [Establish-ForPrivacyNET] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-25 13:57:05,570 - INFO - [Establish-ForPrivacyNET] - Waiting for connections at relay ForPrivacyNET for cookie b'92b9cbf9dc80ed67acf6' ...
+2023-03-25 13:57:13,021 - INFO - [CONNECTION] - Sending JOIN to P2 at relay ForPrivacyNET
+2023-03-25 13:57:24,799 - ERROR - [Establish-Vulnerar] - recv timeout
+2023-03-25 13:57:24,799 - INFO - [Establish-Vulnerar] - Closing connection Establish-Vulnerar
+2023-03-25 13:57:24,799 - INFO - [Establish-Vulnerar] - Stream #2: closing (state = Connected)...
+2023-03-25 13:57:24,800 - INFO - [Establish-Vulnerar] - Destroy circuit #80000001
+2023-03-25 13:57:24,800 - INFO - [Establish-Vulnerar] - Closing guard connections (None)...
+2023-03-25 13:57:37,259 - WARNING - [Connect-Hydra58] - Got SENDME
+2023-03-25 13:58:05,305 - INFO - [RecvLoop_95.141.] - On destroy: circuit #80000006
+2023-03-25 13:58:05,305 - INFO - [RecvLoop_95.141.] - Destroy circuit #80000006
+2023-03-25 13:58:13,093 - INFO - [CONNECTION] - Neighbour connections (1) less than MIN_NEIGHBOUR_CONNECTIONS (2)
+2023-03-25 13:58:13,094 - INFO - [CONNECTION] - Candidate peers: ['P2', 'P3', 'P1', 'P5', 'P4']
+2023-03-25 13:58:13,094 - INFO - [CONNECTION] - Highest cost peers: [('P2', 6411), ('P1', 6311), ('P3', 5285), ('P4', 4142), ('P5', 2958), ('P7', 1373), ('P6', 1226), ('P8', 0)]
+2023-03-25 13:58:13,124 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-25 13:58:13,439 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-25 13:58:13,452 - INFO - [MainThread] - ['ESTABLISH', 'RunningOnFumes4', b'38f2e45ed1e749a83cec']
+2023-03-25 13:58:13,452 - INFO - [MainThread] - Got ESTABLISH to relay RunningOnFumes4:b'38f2e45ed1e749a83cec' via NeelTorRelay2
+2023-03-25 13:58:13,454 - INFO - [Establish-RunningOnFumes4] - Establishing RP to RunningOnFumes4
+2023-03-25 13:58:13,459 - INFO - [Establish-RunningOnFumes4] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-25 13:58:13,871 - INFO - [Establish-RunningOnFumes4] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-25 13:58:13,873 - INFO - [Establish-RunningOnFumes4] - Connecting to guard node 97.113.253.84:110 (NeelTorRelay2; Tor 0.4.7.13)... (None)
+2023-03-25 13:58:14,687 - INFO - [Establish-RunningOnFumes4] - Creating new circuit #80000007 with 97.113.253.84:110 (NeelTorRelay2; Tor 0.4.7.13) router...
+2023-03-25 13:58:14,878 - INFO - [Establish-RunningOnFumes4] - Building -1 hops circuit...
+2023-03-25 13:58:14,878 - INFO - [Establish-RunningOnFumes4] - Extending the circuit #80000007 with 185.82.219.109:443 (RunningOnFumes4; Tor 0.4.7.13)...
+2023-03-25 13:58:14,880 - INFO - [Establish-RunningOnFumes4] - Getting descriptor for 185.82.219.109:443 (RunningOnFumes4; Tor 0.4.7.13)...
+2023-03-25 13:58:14,887 - INFO - [Establish-RunningOnFumes4] - Connecting to guard node 185.232.68.39:21 (netzhub; Tor 0.4.7.13)... (Internal dir client)
+2023-03-25 13:58:15,032 - INFO - [Establish-RunningOnFumes4] - Creating new circuit #80000008 with 185.232.68.39:21 (netzhub; Tor 0.4.7.13) router...
+2023-03-25 13:58:15,069 - INFO - [Establish-RunningOnFumes4] - Building 0 hops circuit...
+2023-03-25 13:58:15,069 - INFO - [Establish-RunningOnFumes4] - Stream #5: creating attached to #80000008 circuit...
+2023-03-25 13:58:15,070 - INFO - [Establish-RunningOnFumes4] - Stream #5: connecting to hsdir
+2023-03-25 13:58:15,106 - INFO - [RecvLoop_185.232] - Stream #5: connected (remote ip '')
+2023-03-25 13:58:15,378 - INFO - [RecvLoop_185.232] - Stream #5: remote disconnected (reason = DONE)
+2023-03-25 13:58:15,378 - INFO - [Establish-RunningOnFumes4] - Stream #5: closing (state = Disconnected)...
+2023-03-25 13:58:15,379 - INFO - [Establish-RunningOnFumes4] - Got descriptor
+2023-03-25 13:58:15,751 - INFO - [Establish-RunningOnFumes4] - <class 'torpy.circuit.TorCircuit'>
+2023-03-25 13:58:16,123 - INFO - [Establish-RunningOnFumes4] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-25 13:58:16,126 - INFO - [Establish-RunningOnFumes4] - Waiting for connections at relay RunningOnFumes4 for cookie b'38f2e45ed1e749a83cec' ...
+2023-03-25 13:58:20,799 - WARNING - [Connect-Hydra58] - Got SENDME
+2023-03-25 13:58:23,389 - WARNING - [Connect-Hydra58] - Got SENDME
+2023-03-25 13:58:23,462 - INFO - [CONNECTION] - Sending JOIN to P2 at relay RunningOnFumes4
+2023-03-25 13:59:23,488 - INFO - [CONNECTION] - Neighbour connections (1) less than MIN_NEIGHBOUR_CONNECTIONS (2)
+2023-03-25 13:59:23,489 - INFO - [CONNECTION] - Candidate peers: ['P2', 'P3', 'P1', 'P5', 'P4']
+2023-03-25 13:59:23,489 - INFO - [CONNECTION] - Highest cost peers: [('P2', 6411), ('P1', 6311), ('P3', 5285), ('P4', 4142), ('P5', 2958), ('P7', 1373), ('P6', 423), ('P8', 0)]
+2023-03-25 13:59:23,496 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-25 13:59:23,699 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-25 13:59:23,706 - INFO - [MainThread] - ['ESTABLISH', 'CalyxInstitute15', b'be24df23432943a68488']
+2023-03-25 13:59:23,707 - INFO - [MainThread] - Got ESTABLISH to relay CalyxInstitute15:b'be24df23432943a68488' via NeelTorRelay2
+2023-03-25 13:59:23,707 - INFO - [Establish-CalyxInstitute15] - Establishing RP to CalyxInstitute15
+2023-03-25 13:59:23,713 - INFO - [Establish-CalyxInstitute15] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-25 13:59:23,980 - INFO - [Establish-CalyxInstitute15] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-25 13:59:23,989 - INFO - [Establish-CalyxInstitute15] - Connecting to guard node 97.113.253.84:110 (NeelTorRelay2; Tor 0.4.7.13)... (None)
+2023-03-25 13:59:24,754 - INFO - [Establish-CalyxInstitute15] - Creating new circuit #80000009 with 97.113.253.84:110 (NeelTorRelay2; Tor 0.4.7.13) router...
+2023-03-25 13:59:24,957 - INFO - [Establish-CalyxInstitute15] - Building -1 hops circuit...
+2023-03-25 13:59:24,957 - INFO - [Establish-CalyxInstitute15] - Extending the circuit #80000009 with 162.247.74.202:443 (CalyxInstitute15; Tor 0.4.7.13)...
+2023-03-25 13:59:24,957 - INFO - [Establish-CalyxInstitute15] - Getting descriptor for 162.247.74.202:443 (CalyxInstitute15; Tor 0.4.7.13)...
+2023-03-25 13:59:24,971 - INFO - [Establish-CalyxInstitute15] - Connecting to guard node 185.243.218.153:8443 (bauruine; Tor 0.4.7.13)... (Internal dir client)
+2023-03-25 13:59:25,058 - INFO - [Establish-CalyxInstitute15] - Creating new circuit #8000000a with 185.243.218.153:8443 (bauruine; Tor 0.4.7.13) router...
+2023-03-25 13:59:25,079 - INFO - [Establish-CalyxInstitute15] - Building 0 hops circuit...
+2023-03-25 13:59:25,079 - INFO - [Establish-CalyxInstitute15] - Stream #6: creating attached to #8000000a circuit...
+2023-03-25 13:59:25,079 - INFO - [Establish-CalyxInstitute15] - Stream #6: connecting to hsdir
+2023-03-25 13:59:25,094 - INFO - [RecvLoop_185.243] - Stream #6: connected (remote ip '')
+2023-03-25 13:59:25,251 - INFO - [RecvLoop_185.232] - On destroy: circuit #80000008
+2023-03-25 13:59:25,251 - INFO - [RecvLoop_185.232] - Destroy circuit #80000008
+2023-03-25 13:59:25,312 - INFO - [RecvLoop_185.243] - Stream #6: remote disconnected (reason = DONE)
+2023-03-25 13:59:25,313 - INFO - [Establish-CalyxInstitute15] - Stream #6: closing (state = Disconnected)...
+2023-03-25 13:59:25,313 - INFO - [Establish-CalyxInstitute15] - Got descriptor
+2023-03-25 13:59:25,585 - INFO - [Establish-CalyxInstitute15] - <class 'torpy.circuit.TorCircuit'>
+2023-03-25 13:59:25,855 - INFO - [Establish-CalyxInstitute15] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-25 13:59:25,855 - INFO - [Establish-CalyxInstitute15] - Waiting for connections at relay CalyxInstitute15 for cookie b'be24df23432943a68488' ...
+2023-03-25 13:59:33,720 - INFO - [CONNECTION] - Sending JOIN to P2 at relay CalyxInstitute15
+2023-03-25 13:59:47,571 - WARNING - [Connect-Hydra58] - Got SENDME
+2023-03-25 14:00:31,921 - INFO - [RecvLoop_185.243] - On destroy: circuit #8000000a
+2023-03-25 14:00:31,921 - INFO - [RecvLoop_185.243] - Destroy circuit #8000000a
+2023-03-25 14:00:33,778 - INFO - [CONNECTION] - Neighbour connections (1) less than MIN_NEIGHBOUR_CONNECTIONS (2)
+2023-03-25 14:00:33,778 - INFO - [CONNECTION] - Candidate peers: ['P2', 'P3', 'P1', 'P5', 'P4']
+2023-03-25 14:00:33,778 - INFO - [CONNECTION] - Highest cost peers: [('P2', 6411), ('P1', 6311), ('P3', 5285), ('P4', 4142), ('P5', 2958), ('P7', 1373), ('P6', 519), ('P8', 0)]
+2023-03-25 14:00:33,800 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-25 14:00:34,372 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-25 14:00:34,385 - INFO - [MainThread] - ['ESTABLISH', 'Transyl', b'9594358c978921ecc76d']
+2023-03-25 14:00:34,389 - INFO - [MainThread] - Got ESTABLISH to relay Transyl:b'9594358c978921ecc76d' via NeelTorRelay2
+2023-03-25 14:00:34,412 - INFO - [Establish-Transyl] - Establishing RP to Transyl
+2023-03-25 14:00:34,417 - INFO - [Establish-Transyl] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-25 14:00:34,815 - INFO - [Establish-Transyl] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-25 14:00:34,819 - INFO - [Establish-Transyl] - Connecting to guard node 97.113.253.84:110 (NeelTorRelay2; Tor 0.4.7.13)... (None)
+2023-03-25 14:00:35,658 - INFO - [Establish-Transyl] - Creating new circuit #8000000b with 97.113.253.84:110 (NeelTorRelay2; Tor 0.4.7.13) router...
+2023-03-25 14:00:35,864 - INFO - [Establish-Transyl] - Building -1 hops circuit...
+2023-03-25 14:00:35,864 - INFO - [Establish-Transyl] - Extending the circuit #8000000b with 185.246.188.60:9001 (Transyl; Tor 0.4.7.7)...
+2023-03-25 14:00:35,864 - INFO - [Establish-Transyl] - Getting descriptor for 185.246.188.60:9001 (Transyl; Tor 0.4.7.7)...
+2023-03-25 14:00:35,871 - INFO - [Establish-Transyl] - Connecting to guard node 82.223.70.114:9666 (eclipse06; Tor 0.4.7.13)... (Internal dir client)
+2023-03-25 14:00:36,190 - INFO - [Establish-Transyl] - Creating new circuit #8000000c with 82.223.70.114:9666 (eclipse06; Tor 0.4.7.13) router...
+2023-03-25 14:00:36,280 - INFO - [Establish-Transyl] - Building 0 hops circuit...
+2023-03-25 14:00:36,280 - INFO - [Establish-Transyl] - Stream #7: creating attached to #8000000c circuit...
+2023-03-25 14:00:36,280 - INFO - [Establish-Transyl] - Stream #7: connecting to hsdir
+2023-03-25 14:00:36,360 - INFO - [RecvLoop_82.223.] - Stream #7: connected (remote ip '')
+2023-03-25 14:00:36,662 - INFO - [RecvLoop_82.223.] - Stream #7: remote disconnected (reason = DONE)
+2023-03-25 14:00:36,663 - INFO - [Establish-Transyl] - Stream #7: closing (state = Disconnected)...
+2023-03-25 14:00:36,663 - INFO - [Establish-Transyl] - Got descriptor
+2023-03-25 14:00:37,006 - INFO - [Establish-Transyl] - <class 'torpy.circuit.TorCircuit'>
+2023-03-25 14:00:37,365 - INFO - [Establish-Transyl] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-25 14:00:37,367 - INFO - [Establish-Transyl] - Waiting for connections at relay Transyl for cookie b'9594358c978921ecc76d' ...
+2023-03-25 14:00:44,459 - INFO - [CONNECTION] - Sending JOIN to P2 at relay Transyl
