@@ -1,0 +1,1103 @@
+2023-03-21 22:11:33,679 - INFO - [MainThread] - Initialized router P4 at port 5004 PID 12149
+2023-03-21 22:11:33,680 - INFO - [MainThread] - Adding a connection to LupusreginaBeta
+2023-03-21 22:11:33,681 - INFO - [Connect-LupusreginaBeta] - Calling connect_to_rendezvous_point
+2023-03-21 22:11:33,681 - INFO - [Connect-LupusreginaBeta] - Connect to rendezvous point LupusreginaBeta
+2023-03-21 22:11:33,683 - INFO - [MainThread] - Adding listener for Vulnerar
+2023-03-21 22:11:33,684 - INFO - [Establish-Vulnerar] - Establishing RP to Vulnerar
+2023-03-21 22:11:33,686 - INFO - [MainThread] - Starting testing thread
+2023-03-21 22:11:33,686 - INFO - [TESTER] - Started tester
+2023-03-21 22:11:33,688 - INFO - [Connect-LupusreginaBeta] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-21 22:11:33,700 - INFO - [MainThread] - Starting connection thread
+2023-03-21 22:11:33,715 - INFO - [Establish-Vulnerar] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-21 22:11:33,720 - INFO - [MainThread] - Starting log thread
+2023-03-21 22:11:34,132 - INFO - [Connect-LupusreginaBeta] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-21 22:11:34,152 - INFO - [Establish-Vulnerar] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-21 22:11:34,154 - INFO - [Establish-Vulnerar] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10)... (None)
+2023-03-21 22:11:34,199 - INFO - [Establish-Vulnerar] - Creating new circuit #80000001 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10) router...
+2023-03-21 22:11:34,212 - INFO - [Establish-Vulnerar] - Building -1 hops circuit...
+2023-03-21 22:11:34,212 - INFO - [Establish-Vulnerar] - Extending the circuit #80000001 with 157.90.179.103:8001 (Vulnerar; Tor 0.4.7.13)...
+2023-03-21 22:11:34,213 - INFO - [Establish-Vulnerar] - Getting descriptor for 157.90.179.103:8001 (Vulnerar; Tor 0.4.7.13)...
+2023-03-21 22:11:34,217 - INFO - [Establish-Vulnerar] - Connecting to guard node 23.82.136.232:443 (bkjk; Tor 0.4.7.8)... (Internal dir client)
+2023-03-21 22:11:34,261 - INFO - [Connect-LupusreginaBeta] - Connected to rendezvous point LupusreginaBeta
+2023-03-21 22:11:34,261 - INFO - [Connect-LupusreginaBeta] - Waiting for peer to open stream
+2023-03-21 22:11:34,311 - INFO - [Connect-LupusreginaBeta] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-03-21 22:11:34,314 - INFO - [Connect-LupusreginaBeta] - Stream opened successfully
+2023-03-21 22:11:34,314 - INFO - [Connect-LupusreginaBeta] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P4\x94ua.'
+2023-03-21 22:11:34,513 - INFO - [RECEIVER] - Added neighbour P2
+2023-03-21 22:11:34,776 - INFO - [Establish-Vulnerar] - Creating new circuit #80000002 with 23.82.136.232:443 (bkjk; Tor 0.4.7.8) router...
+2023-03-21 22:11:34,919 - INFO - [Establish-Vulnerar] - Building 0 hops circuit...
+2023-03-21 22:11:34,919 - INFO - [Establish-Vulnerar] - Stream #1: creating attached to #80000002 circuit...
+2023-03-21 22:11:34,919 - INFO - [Establish-Vulnerar] - Stream #1: connecting to hsdir
+2023-03-21 22:11:35,060 - INFO - [RecvLoop_23.82.1] - Stream #1: connected (remote ip '')
+2023-03-21 22:11:35,266 - INFO - [RecvLoop_23.82.1] - Stream #1: remote disconnected (reason = DONE)
+2023-03-21 22:11:35,266 - INFO - [Establish-Vulnerar] - Stream #1: closing (state = Disconnected)...
+2023-03-21 22:11:35,266 - INFO - [Establish-Vulnerar] - Got descriptor
+2023-03-21 22:11:35,315 - INFO - [Establish-Vulnerar] - <class 'torpy.circuit.TorCircuit'>
+2023-03-21 22:11:35,363 - INFO - [Establish-Vulnerar] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-21 22:11:35,363 - INFO - [Establish-Vulnerar] - Waiting for connections at relay Vulnerar for cookie b'eb688e4f52df90278060' ...
+2023-03-21 22:11:35,838 - INFO - [Establish-Vulnerar] - Got REND2 message from Vulnerar
+2023-03-21 22:11:35,838 - INFO - [Establish-Vulnerar] - Entered circuit context with id 0x80000001
+2023-03-21 22:11:35,838 - INFO - [Establish-Vulnerar] - Stream #2: creating attached to #80000001 circuit...
+2023-03-21 22:11:35,839 - INFO - [Establish-Vulnerar] - Stream #2: connecting to ('127.0.0.1', 5000)
+2023-03-21 22:11:35,949 - INFO - [RecvLoop_185.181] - Stream #2: connected (remote ip '127.0.0.1')
+2023-03-21 22:11:36,040 - INFO - [Establish-Vulnerar] - Sending HELLO to peer
+2023-03-21 22:11:36,040 - INFO - [Establish-Vulnerar] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P4\x94ua.'
+2023-03-21 22:11:36,042 - INFO - [RECEIVER] - Added neighbour P3
+2023-03-21 22:12:33,740 - INFO - [CONNECTION] - Age of oldest thread is 58 seconds (MAX 300)
+2023-03-21 22:12:36,063 - INFO - [RecvLoop_23.82.1] - On destroy: circuit #80000002
+2023-03-21 22:12:36,063 - INFO - [RecvLoop_23.82.1] - Destroy circuit #80000002
+2023-03-21 22:12:38,819 - WARNING - [Connect-LupusreginaBeta] - Got SENDME
+2023-03-21 22:13:33,801 - INFO - [CONNECTION] - Age of oldest thread is 118 seconds (MAX 300)
+2023-03-21 22:13:39,893 - WARNING - [Connect-LupusreginaBeta] - Got SENDME
+2023-03-21 22:13:39,911 - WARNING - [Connect-LupusreginaBeta] - Got SENDME
+2023-03-21 22:14:33,863 - INFO - [CONNECTION] - Age of oldest thread is 178 seconds (MAX 300)
+2023-03-21 22:14:37,503 - WARNING - [Connect-LupusreginaBeta] - Got SENDME
+2023-03-21 22:15:33,915 - INFO - [CONNECTION] - Age of oldest thread is 238 seconds (MAX 300)
+2023-03-21 22:15:35,051 - WARNING - [Connect-LupusreginaBeta] - Got SENDME
+2023-03-21 22:15:35,069 - WARNING - [Connect-LupusreginaBeta] - Got SENDME
+2023-03-21 22:16:33,975 - INFO - [CONNECTION] - Age of oldest thread is 298 seconds (MAX 300)
+2023-03-21 22:16:34,090 - WARNING - [Connect-LupusreginaBeta] - Got SENDME
+2023-03-21 22:17:34,036 - INFO - [CONNECTION] - Age of oldest thread is 358 seconds (MAX 300)
+2023-03-21 22:17:34,041 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-21 22:17:34,261 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-21 22:17:34,275 - INFO - [MainThread] - ['ESTABLISH', 'applepie', b'1821beb06ae01e804392']
+2023-03-21 22:17:34,276 - INFO - [MainThread] - Got ESTABLISH to relay applepie:b'1821beb06ae01e804392' via staysafeandgoodluck
+2023-03-21 22:17:34,276 - INFO - [Establish-applepie] - Establishing RP to applepie
+2023-03-21 22:17:34,289 - INFO - [Establish-applepie] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-21 22:17:34,498 - INFO - [Establish-applepie] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-21 22:17:34,499 - INFO - [Establish-applepie] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10)... (None)
+2023-03-21 22:17:34,552 - INFO - [Establish-applepie] - Creating new circuit #80000003 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10) router...
+2023-03-21 22:17:34,576 - INFO - [Establish-applepie] - Building -1 hops circuit...
+2023-03-21 22:17:34,577 - INFO - [Establish-applepie] - Extending the circuit #80000003 with 193.142.147.230:443 (applepie; Tor 0.4.7.11)...
+2023-03-21 22:17:34,577 - INFO - [Establish-applepie] - Getting descriptor for 193.142.147.230:443 (applepie; Tor 0.4.7.11)...
+2023-03-21 22:17:34,581 - INFO - [Establish-applepie] - Connecting to guard node 171.25.193.77:80 (DFRI16; Tor 0.4.7.13)... (Internal dir client)
+2023-03-21 22:17:34,680 - INFO - [Establish-applepie] - Creating new circuit #80000004 with 171.25.193.77:80 (DFRI16; Tor 0.4.7.13) router...
+2023-03-21 22:17:34,703 - INFO - [Establish-applepie] - Building 0 hops circuit...
+2023-03-21 22:17:34,703 - INFO - [Establish-applepie] - Stream #3: creating attached to #80000004 circuit...
+2023-03-21 22:17:34,704 - INFO - [Establish-applepie] - Stream #3: connecting to hsdir
+2023-03-21 22:17:34,735 - INFO - [RecvLoop_171.25.] - Stream #3: connected (remote ip '')
+2023-03-21 22:17:34,975 - INFO - [RecvLoop_171.25.] - Stream #3: remote disconnected (reason = DONE)
+2023-03-21 22:17:34,977 - INFO - [Establish-applepie] - Stream #3: closing (state = Disconnected)...
+2023-03-21 22:17:34,977 - INFO - [Establish-applepie] - Got descriptor
+2023-03-21 22:17:35,042 - INFO - [Establish-applepie] - <class 'torpy.circuit.TorCircuit'>
+2023-03-21 22:17:35,102 - INFO - [Establish-applepie] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-21 22:17:35,103 - INFO - [Establish-applepie] - Waiting for connections at relay applepie for cookie b'1821beb06ae01e804392' ...
+2023-03-21 22:17:37,979 - INFO - [RECEIVER] - Added relay artikel10ber41 from P2 to JOIN queue
+2023-03-21 22:17:37,980 - INFO - [MainThread] - ['JOIN', 'artikel10ber41', b'156763a06e4fbd296f0e']
+2023-03-21 22:17:37,980 - INFO - [MainThread] - Got JOIN to relay artikel10ber41, waiting 10 sec to connect
+2023-03-21 22:17:37,981 - INFO - [Connect-artikel10ber41] - Calling connect_to_rendezvous_point
+2023-03-21 22:17:37,981 - INFO - [Connect-artikel10ber41] - Connect to rendezvous point artikel10ber41
+2023-03-21 22:17:37,988 - INFO - [Connect-artikel10ber41] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-21 22:17:38,216 - INFO - [Connect-artikel10ber41] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-21 22:17:38,503 - INFO - [Connect-artikel10ber41] - Connected to rendezvous point artikel10ber41
+2023-03-21 22:17:38,503 - INFO - [Connect-artikel10ber41] - Waiting for peer to open stream
+2023-03-21 22:17:38,603 - INFO - [Connect-artikel10ber41] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-03-21 22:17:38,604 - INFO - [Connect-artikel10ber41] - Stream opened successfully
+2023-03-21 22:17:38,604 - INFO - [Connect-artikel10ber41] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P4\x94ua.'
+2023-03-21 22:17:38,819 - INFO - [RECEIVER] - Added neighbour P2
+2023-03-21 22:17:44,297 - INFO - [CONNECTION] - Sending JOIN to P3 for relay applepie with cookie b'1821beb06ae01e804392'
+2023-03-21 22:17:45,239 - INFO - [Establish-applepie] - Got REND2 message from applepie
+2023-03-21 22:17:45,239 - INFO - [Establish-applepie] - Entered circuit context with id 0x80000003
+2023-03-21 22:17:45,239 - INFO - [Establish-applepie] - Stream #4: creating attached to #80000003 circuit...
+2023-03-21 22:17:45,240 - INFO - [Establish-applepie] - Stream #4: connecting to ('127.0.0.1', 5000)
+2023-03-21 22:17:45,343 - INFO - [RecvLoop_185.181] - Stream #4: connected (remote ip '127.0.0.1')
+2023-03-21 22:17:45,440 - INFO - [Establish-applepie] - Sending HELLO to peer
+2023-03-21 22:17:45,441 - INFO - [Establish-applepie] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P4\x94ua.'
+2023-03-21 22:17:46,107 - INFO - [RECEIVER] - Added neighbour P3
+2023-03-21 22:18:34,321 - ERROR - [Connect-LupusreginaBeta] - Got DESTROY
+2023-03-21 22:18:41,683 - INFO - [RecvLoop_171.25.] - On destroy: circuit #80000004
+2023-03-21 22:18:41,683 - INFO - [RecvLoop_171.25.] - Destroy circuit #80000004
+2023-03-21 22:18:43,148 - WARNING - [Connect-artikel10ber41] - Got SENDME
+2023-03-21 22:18:44,426 - INFO - [CONNECTION] - Age of oldest thread is 59 seconds (MAX 300)
+2023-03-21 22:18:45,439 - ERROR - [Establish-Vulnerar] - recv timeout
+2023-03-21 22:18:45,439 - INFO - [Establish-Vulnerar] - Closing connection Establish-Vulnerar
+2023-03-21 22:18:45,439 - INFO - [Establish-Vulnerar] - Stream #2: closing (state = Connected)...
+2023-03-21 22:18:45,440 - INFO - [Establish-Vulnerar] - Destroy circuit #80000001
+2023-03-21 22:18:45,440 - INFO - [Establish-Vulnerar] - Closing guard connections (None)...
+2023-03-21 22:19:44,487 - INFO - [CONNECTION] - Age of oldest thread is 119 seconds (MAX 300)
+2023-03-21 22:19:49,606 - WARNING - [Connect-artikel10ber41] - Got SENDME
+2023-03-21 22:19:49,653 - WARNING - [Connect-artikel10ber41] - Got SENDME
+2023-03-21 22:20:44,547 - INFO - [CONNECTION] - Age of oldest thread is 179 seconds (MAX 300)
+2023-03-21 22:20:54,672 - WARNING - [Connect-artikel10ber41] - Got SENDME
+2023-03-21 22:21:44,606 - INFO - [CONNECTION] - Age of oldest thread is 239 seconds (MAX 300)
+2023-03-21 22:21:59,731 - WARNING - [Connect-artikel10ber41] - Got SENDME
+2023-03-21 22:21:59,777 - WARNING - [Connect-artikel10ber41] - Got SENDME
+2023-03-21 22:22:44,666 - INFO - [CONNECTION] - Age of oldest thread is 299 seconds (MAX 300)
+2023-03-21 22:22:57,277 - WARNING - [Connect-artikel10ber41] - Got SENDME
+2023-03-21 22:23:44,727 - INFO - [CONNECTION] - Age of oldest thread is 359 seconds (MAX 300)
+2023-03-21 22:23:44,734 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-21 22:23:45,467 - ERROR - [RecvLoop_185.181] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-21 22:23:45,540 - ERROR - [RecvLoop_185.181] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-21 22:23:45,643 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-21 22:23:45,657 - INFO - [MainThread] - ['ESTABLISH', 'animator', b'33694d0e9cf5853671a3']
+2023-03-21 22:23:45,657 - INFO - [MainThread] - Got ESTABLISH to relay animator:b'33694d0e9cf5853671a3' via staysafeandgoodluck
+2023-03-21 22:23:45,661 - INFO - [Establish-animator] - Establishing RP to animator
+2023-03-21 22:23:45,675 - INFO - [Establish-animator] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-21 22:23:46,180 - ERROR - [RecvLoop_185.181] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-21 22:23:46,443 - INFO - [Establish-animator] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-21 22:23:46,446 - INFO - [Establish-animator] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10)... (None)
+2023-03-21 22:23:46,509 - INFO - [Establish-animator] - Creating new circuit #80000005 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10) router...
+2023-03-21 22:23:46,523 - INFO - [Establish-animator] - Building -1 hops circuit...
+2023-03-21 22:23:46,523 - INFO - [Establish-animator] - Extending the circuit #80000005 with 178.254.18.25:443 (animator; Tor 0.4.7.7)...
+2023-03-21 22:23:46,524 - INFO - [Establish-animator] - Getting descriptor for 178.254.18.25:443 (animator; Tor 0.4.7.7)...
+2023-03-21 22:23:46,531 - INFO - [Establish-animator] - Connecting to guard node 81.169.129.169:9001 (Wackelkontakt; Tor 0.4.7.13)... (Internal dir client)
+2023-03-21 22:23:46,749 - INFO - [Establish-animator] - Creating new circuit #80000006 with 81.169.129.169:9001 (Wackelkontakt; Tor 0.4.7.13) router...
+2023-03-21 22:23:46,804 - INFO - [Establish-animator] - Building 0 hops circuit...
+2023-03-21 22:23:46,804 - INFO - [Establish-animator] - Stream #5: creating attached to #80000006 circuit...
+2023-03-21 22:23:46,804 - INFO - [Establish-animator] - Stream #5: connecting to hsdir
+2023-03-21 22:23:46,864 - INFO - [RecvLoop_81.169.] - Stream #5: connected (remote ip '')
+2023-03-21 22:23:47,072 - INFO - [RecvLoop_81.169.] - Stream #5: remote disconnected (reason = DONE)
+2023-03-21 22:23:47,073 - INFO - [Establish-animator] - Stream #5: closing (state = Disconnected)...
+2023-03-21 22:23:47,073 - INFO - [Establish-animator] - Got descriptor
+2023-03-21 22:23:47,231 - INFO - [Establish-animator] - <class 'torpy.circuit.TorCircuit'>
+2023-03-21 22:23:47,271 - INFO - [Establish-animator] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-21 22:23:47,272 - INFO - [Establish-animator] - Waiting for connections at relay animator for cookie b'33694d0e9cf5853671a3' ...
+2023-03-21 22:23:48,096 - ERROR - [RecvLoop_185.181] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-21 22:23:50,047 - INFO - [RECEIVER] - Added relay Assange021usX from P2 to JOIN queue
+2023-03-21 22:23:50,047 - INFO - [MainThread] - ['JOIN', 'Assange021usX', b'33694d0e9cf5853671a3']
+2023-03-21 22:23:50,050 - INFO - [MainThread] - Got JOIN to relay Assange021usX, waiting 10 sec to connect
+2023-03-21 22:23:50,053 - INFO - [Connect-Assange021usX] - Calling connect_to_rendezvous_point
+2023-03-21 22:23:50,055 - INFO - [Connect-Assange021usX] - Connect to rendezvous point Assange021usX
+2023-03-21 22:23:50,080 - INFO - [Connect-Assange021usX] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-21 22:23:50,888 - ERROR - [RecvLoop_185.181] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-21 22:23:51,201 - ERROR - [RecvLoop_185.181] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-21 22:23:51,538 - INFO - [Connect-Assange021usX] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-21 22:23:52,419 - INFO - [Connect-Assange021usX] - Connected to rendezvous point Assange021usX
+2023-03-21 22:23:52,419 - INFO - [Connect-Assange021usX] - Waiting for peer to open stream
+2023-03-21 22:23:52,792 - INFO - [Connect-Assange021usX] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-03-21 22:23:52,794 - INFO - [Connect-Assange021usX] - Stream opened successfully
+2023-03-21 22:23:52,794 - INFO - [Connect-Assange021usX] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P4\x94ua.'
+2023-03-21 22:23:53,093 - ERROR - [RecvLoop_185.181] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-21 22:23:53,170 - ERROR - [RecvLoop_185.181] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-21 22:23:53,173 - ERROR - [RecvLoop_185.181] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-21 22:23:53,204 - INFO - [RECEIVER] - Added neighbour P2
+2023-03-21 22:23:54,927 - ERROR - [RecvLoop_185.181] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-21 22:23:55,003 - ERROR - [RecvLoop_185.181] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-21 22:23:55,668 - INFO - [CONNECTION] - Sending JOIN to P3 for relay animator with cookie b'33694d0e9cf5853671a3'
+2023-03-21 22:23:56,192 - ERROR - [RecvLoop_185.181] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-21 22:23:57,600 - INFO - [Establish-animator] - Got REND2 message from animator
+2023-03-21 22:23:57,603 - INFO - [Establish-animator] - Entered circuit context with id 0x80000005
+2023-03-21 22:23:57,603 - INFO - [Establish-animator] - Stream #6: creating attached to #80000005 circuit...
+2023-03-21 22:23:57,603 - INFO - [Establish-animator] - Stream #6: connecting to ('127.0.0.1', 5000)
+2023-03-21 22:23:57,679 - INFO - [RecvLoop_185.181] - Stream #6: connected (remote ip '127.0.0.1')
+2023-03-21 22:23:57,806 - INFO - [Establish-animator] - Sending HELLO to peer
+2023-03-21 22:23:57,806 - INFO - [Establish-animator] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P4\x94ua.'
+2023-03-21 22:23:57,808 - INFO - [RECEIVER] - Added neighbour P3
+2023-03-21 22:24:44,454 - ERROR - [Establish-applepie] - recv timeout
+2023-03-21 22:24:44,454 - INFO - [Establish-applepie] - Closing connection Establish-applepie
+2023-03-21 22:24:44,454 - INFO - [Establish-applepie] - Stream #4: closing (state = Connected)...
+2023-03-21 22:24:44,455 - INFO - [Establish-applepie] - Destroy circuit #80000003
+2023-03-21 22:24:44,455 - INFO - [Establish-applepie] - Closing guard connections (None)...
+2023-03-21 22:24:47,022 - INFO - [RecvLoop_81.169.] - On destroy: circuit #80000006
+2023-03-21 22:24:47,023 - INFO - [RecvLoop_81.169.] - Destroy circuit #80000006
+2023-03-21 22:24:49,940 - ERROR - [Connect-artikel10ber41] - Got DESTROY
+2023-03-21 22:24:55,501 - WARNING - [Connect-Assange021usX] - Got SENDME
+2023-03-21 22:24:55,727 - INFO - [CONNECTION] - Age of oldest thread is 58 seconds (MAX 300)
+2023-03-21 22:25:50,293 - WARNING - [Connect-Assange021usX] - Got SENDME
+2023-03-21 22:25:51,312 - WARNING - [Connect-Assange021usX] - Got SENDME
+2023-03-21 22:25:55,786 - INFO - [CONNECTION] - Age of oldest thread is 118 seconds (MAX 300)
+2023-03-21 22:26:55,454 - WARNING - [Connect-Assange021usX] - Got SENDME
+2023-03-21 22:26:55,849 - INFO - [CONNECTION] - Age of oldest thread is 178 seconds (MAX 300)
+2023-03-21 22:27:49,686 - WARNING - [Connect-Assange021usX] - Got SENDME
+2023-03-21 22:27:50,643 - WARNING - [Connect-Assange021usX] - Got SENDME
+2023-03-21 22:27:55,910 - INFO - [CONNECTION] - Age of oldest thread is 238 seconds (MAX 300)
+2023-03-21 22:28:54,117 - WARNING - [Connect-Assange021usX] - Got SENDME
+2023-03-21 22:28:55,971 - INFO - [CONNECTION] - Age of oldest thread is 298 seconds (MAX 300)
+2023-03-21 22:29:46,789 - ERROR - [RecvLoop_185.181] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-21 22:29:46,852 - ERROR - [RecvLoop_185.181] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-21 22:29:46,856 - ERROR - [RecvLoop_185.181] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-21 22:29:51,289 - ERROR - [RecvLoop_185.181] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-21 22:29:51,349 - ERROR - [RecvLoop_185.181] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-21 22:29:51,796 - ERROR - [RecvLoop_185.181] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-21 22:29:53,278 - WARNING - [Connect-Assange021usX] - Got SENDME
+2023-03-21 22:29:53,451 - WARNING - [Connect-Assange021usX] - Got SENDME
+2023-03-21 22:29:55,386 - ERROR - [RecvLoop_185.181] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-21 22:29:55,799 - ERROR - [RecvLoop_185.181] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-21 22:29:55,864 - ERROR - [RecvLoop_185.181] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-21 22:29:56,032 - INFO - [CONNECTION] - Age of oldest thread is 358 seconds (MAX 300)
+2023-03-21 22:29:56,041 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-21 22:29:56,392 - ERROR - [RecvLoop_185.181] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-21 22:29:56,844 - ERROR - [RecvLoop_185.181] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-21 22:29:57,788 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-21 22:29:57,810 - INFO - [MainThread] - ['ESTABLISH', 'fingerwigmumra', b'997aa974e2c711363af5']
+2023-03-21 22:29:57,810 - INFO - [MainThread] - Got ESTABLISH to relay fingerwigmumra:b'997aa974e2c711363af5' via staysafeandgoodluck
+2023-03-21 22:29:57,811 - INFO - [Establish-fingerwigmumra] - Establishing RP to fingerwigmumra
+2023-03-21 22:29:57,828 - INFO - [Establish-fingerwigmumra] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-21 22:29:58,829 - ERROR - [RecvLoop_185.181] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-21 22:29:59,122 - INFO - [Establish-fingerwigmumra] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-21 22:29:59,127 - INFO - [Establish-fingerwigmumra] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10)... (None)
+2023-03-21 22:29:59,205 - INFO - [Establish-fingerwigmumra] - Creating new circuit #80000007 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10) router...
+2023-03-21 22:29:59,232 - INFO - [Establish-fingerwigmumra] - Building -1 hops circuit...
+2023-03-21 22:29:59,232 - INFO - [Establish-fingerwigmumra] - Extending the circuit #80000007 with 69.164.210.140:143 (fingerwigmumra; Tor 0.4.7.11)...
+2023-03-21 22:29:59,235 - INFO - [Establish-fingerwigmumra] - Getting descriptor for 69.164.210.140:143 (fingerwigmumra; Tor 0.4.7.11)...
+2023-03-21 22:29:59,244 - INFO - [Establish-fingerwigmumra] - Connecting to guard node 45.134.225.98:9100 (prsv; Tor 0.4.7.13)... (Internal dir client)
+2023-03-21 22:29:59,436 - INFO - [Establish-fingerwigmumra] - Creating new circuit #80000008 with 45.134.225.98:9100 (prsv; Tor 0.4.7.13) router...
+2023-03-21 22:29:59,486 - INFO - [Establish-fingerwigmumra] - Building 0 hops circuit...
+2023-03-21 22:29:59,486 - INFO - [Establish-fingerwigmumra] - Stream #7: creating attached to #80000008 circuit...
+2023-03-21 22:29:59,486 - INFO - [Establish-fingerwigmumra] - Stream #7: connecting to hsdir
+2023-03-21 22:29:59,529 - INFO - [RecvLoop_45.134.] - Stream #7: connected (remote ip '')
+2023-03-21 22:29:59,745 - INFO - [RecvLoop_45.134.] - Stream #7: remote disconnected (reason = DONE)
+2023-03-21 22:29:59,746 - INFO - [Establish-fingerwigmumra] - Stream #7: closing (state = Disconnected)...
+2023-03-21 22:29:59,746 - INFO - [Establish-fingerwigmumra] - Got descriptor
+2023-03-21 22:30:00,004 - ERROR - [RecvLoop_185.181] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-21 22:30:00,437 - INFO - [Establish-fingerwigmumra] - <class 'torpy.circuit.TorCircuit'>
+2023-03-21 22:30:00,563 - INFO - [Establish-fingerwigmumra] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-21 22:30:00,563 - INFO - [Establish-fingerwigmumra] - Waiting for connections at relay fingerwigmumra for cookie b'997aa974e2c711363af5' ...
+2023-03-21 22:30:00,930 - ERROR - [RecvLoop_185.181] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-21 22:30:01,008 - ERROR - [RecvLoop_185.181] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-21 22:30:01,828 - INFO - [RECEIVER] - Added relay Superluminal3 from P2 to JOIN queue
+2023-03-21 22:30:01,828 - INFO - [MainThread] - ['JOIN', 'Superluminal3', b'997aa974e2c711363af5']
+2023-03-21 22:30:01,829 - INFO - [MainThread] - Got JOIN to relay Superluminal3, waiting 10 sec to connect
+2023-03-21 22:30:01,832 - INFO - [Connect-Superluminal3] - Calling connect_to_rendezvous_point
+2023-03-21 22:30:01,832 - INFO - [Connect-Superluminal3] - Connect to rendezvous point Superluminal3
+2023-03-21 22:30:01,844 - ERROR - [RecvLoop_185.181] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-21 22:30:01,891 - INFO - [Connect-Superluminal3] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-21 22:30:03,272 - INFO - [Connect-Superluminal3] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-21 22:30:04,296 - INFO - [Connect-Superluminal3] - Connected to rendezvous point Superluminal3
+2023-03-21 22:30:04,303 - INFO - [Connect-Superluminal3] - Waiting for peer to open stream
+2023-03-21 22:30:04,697 - INFO - [Connect-Superluminal3] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-03-21 22:30:04,700 - INFO - [Connect-Superluminal3] - Stream opened successfully
+2023-03-21 22:30:04,701 - INFO - [Connect-Superluminal3] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P4\x94ua.'
+2023-03-21 22:30:04,817 - ERROR - [RecvLoop_185.181] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-21 22:30:04,883 - ERROR - [RecvLoop_185.181] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-21 22:30:04,902 - INFO - [Thread-4] - Adding P3 to list of inactive
+2023-03-21 22:30:04,902 - INFO - [Thread-4] - Removing P3 from neighbours
+2023-03-21 22:30:05,104 - INFO - [RECEIVER] - Added neighbour P2
+2023-03-21 22:30:06,852 - ERROR - [RecvLoop_185.181] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-21 22:30:07,821 - INFO - [CONNECTION] - Sending JOIN to P3 for relay fingerwigmumra with cookie b'997aa974e2c711363af5'
+2023-03-21 22:30:07,821 - ERROR - [CONNECTION] - 'P3'
+2023-03-21 22:30:10,404 - ERROR - [RecvLoop_185.181] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-21 22:30:11,863 - ERROR - [RecvLoop_185.181] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-21 22:30:15,063 - ERROR - [RecvLoop_185.181] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-21 22:30:15,955 - ERROR - [RecvLoop_185.181] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-21 22:30:16,869 - ERROR - [RecvLoop_185.181] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-21 22:30:45,982 - ERROR - [Establish-animator] - recv timeout
+2023-03-21 22:30:45,982 - INFO - [Establish-animator] - Closing connection Establish-animator
+2023-03-21 22:30:45,982 - INFO - [Establish-animator] - Stream #6: closing (state = Connected)...
+2023-03-21 22:30:45,983 - INFO - [Establish-animator] - Destroy circuit #80000005
+2023-03-21 22:30:45,987 - INFO - [Establish-animator] - Closing guard connections (None)...
+2023-03-21 22:31:01,000 - INFO - [RecvLoop_45.134.] - On destroy: circuit #80000008
+2023-03-21 22:31:01,000 - INFO - [RecvLoop_45.134.] - Destroy circuit #80000008
+2023-03-21 22:31:01,061 - WARNING - [Connect-Superluminal3] - Got SENDME
+2023-03-21 22:31:05,282 - ERROR - [Connect-Assange021usX] - Got RELAY_END
+2023-03-21 22:31:07,879 - INFO - [CONNECTION] - Neighbour connections (1) less than MIN_NEIGHBOUR_CONNECTIONS (2)
+2023-03-21 22:31:07,879 - INFO - [CONNECTION] - Candidate peers: ['P1']
+2023-03-21 22:31:07,879 - INFO - [CONNECTION] - Highest cost peers: [('P1', 919), ('P3', 186), ('P2', 100), ('P4', 0)]
+2023-03-21 22:31:07,905 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-21 22:31:09,576 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-21 22:31:09,607 - INFO - [MainThread] - ['ESTABLISH', 'animator', b'1eb017fd36cbbacbf472']
+2023-03-21 22:31:09,607 - INFO - [MainThread] - Got ESTABLISH to relay animator:b'1eb017fd36cbbacbf472' via staysafeandgoodluck
+2023-03-21 22:31:09,621 - INFO - [Establish-animator] - Establishing RP to animator
+2023-03-21 22:31:09,674 - INFO - [Establish-animator] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-21 22:31:10,859 - INFO - [Establish-animator] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-21 22:31:10,864 - INFO - [Establish-animator] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10)... (None)
+2023-03-21 22:31:10,928 - INFO - [Establish-animator] - Creating new circuit #80000009 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10) router...
+2023-03-21 22:31:10,952 - INFO - [Establish-animator] - Building -1 hops circuit...
+2023-03-21 22:31:10,952 - INFO - [Establish-animator] - Extending the circuit #80000009 with 178.254.18.25:443 (animator; Tor 0.4.7.7)...
+2023-03-21 22:31:10,954 - INFO - [Establish-animator] - Getting descriptor for 178.254.18.25:443 (animator; Tor 0.4.7.7)...
+2023-03-21 22:31:10,963 - INFO - [Establish-animator] - Connecting to guard node 89.147.109.130:443 (STOR003; Tor 0.4.7.13)... (Internal dir client)
+2023-03-21 22:31:11,262 - INFO - [Establish-animator] - Creating new circuit #8000000a with 89.147.109.130:443 (STOR003; Tor 0.4.7.13) router...
+2023-03-21 22:31:11,338 - INFO - [Establish-animator] - Building 0 hops circuit...
+2023-03-21 22:31:11,338 - INFO - [Establish-animator] - Stream #8: creating attached to #8000000a circuit...
+2023-03-21 22:31:11,339 - INFO - [Establish-animator] - Stream #8: connecting to hsdir
+2023-03-21 22:31:11,414 - INFO - [RecvLoop_89.147.] - Stream #8: connected (remote ip '')
+2023-03-21 22:31:11,618 - INFO - [RecvLoop_89.147.] - Stream #8: remote disconnected (reason = DONE)
+2023-03-21 22:31:11,620 - INFO - [Establish-animator] - Stream #8: closing (state = Disconnected)...
+2023-03-21 22:31:11,620 - INFO - [Establish-animator] - Got descriptor
+2023-03-21 22:31:11,673 - INFO - [Establish-animator] - <class 'torpy.circuit.TorCircuit'>
+2023-03-21 22:31:11,717 - INFO - [Establish-animator] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-21 22:31:11,718 - INFO - [Establish-animator] - Waiting for connections at relay animator for cookie b'1eb017fd36cbbacbf472' ...
+2023-03-21 22:31:19,616 - INFO - [CONNECTION] - Sending JOIN to P1 at relay animator
+2023-03-21 22:31:21,417 - INFO - [Establish-animator] - Got REND2 message from animator
+2023-03-21 22:31:21,418 - INFO - [Establish-animator] - Entered circuit context with id 0x80000009
+2023-03-21 22:31:21,419 - INFO - [Establish-animator] - Stream #9: creating attached to #80000009 circuit...
+2023-03-21 22:31:21,419 - INFO - [Establish-animator] - Stream #9: connecting to ('127.0.0.1', 5000)
+2023-03-21 22:31:21,496 - INFO - [RecvLoop_185.181] - Stream #9: connected (remote ip '127.0.0.1')
+2023-03-21 22:31:21,619 - INFO - [Establish-animator] - Sending HELLO to peer
+2023-03-21 22:31:21,620 - INFO - [Establish-animator] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P4\x94ua.'
+2023-03-21 22:31:21,624 - INFO - [RECEIVER] - Added neighbour P1
+2023-03-21 22:32:05,760 - WARNING - [Connect-Superluminal3] - Got SENDME
+2023-03-21 22:32:07,691 - WARNING - [Connect-Superluminal3] - Got SENDME
+2023-03-21 22:32:19,677 - INFO - [CONNECTION] - Age of oldest thread is 58 seconds (MAX 300)
+2023-03-21 22:32:21,441 - INFO - [RecvLoop_89.147.] - On destroy: circuit #8000000a
+2023-03-21 22:32:21,442 - INFO - [RecvLoop_89.147.] - Destroy circuit #8000000a
+2023-03-21 22:33:19,738 - INFO - [CONNECTION] - Age of oldest thread is 118 seconds (MAX 300)
+2023-03-21 22:33:20,458 - WARNING - [Connect-Superluminal3] - Got SENDME
+2023-03-21 22:34:19,750 - INFO - [CONNECTION] - Age of oldest thread is 178 seconds (MAX 300)
+2023-03-21 22:34:31,364 - WARNING - [Connect-Superluminal3] - Got SENDME
+2023-03-21 22:34:31,565 - WARNING - [Connect-Superluminal3] - Got SENDME
+2023-03-21 22:35:00,353 - WARNING - [RecvLoop_185.181] - CellPadding has some unnecessary data: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+2023-03-21 22:35:00,353 - ERROR - [RecvLoop_185.181] - CellPadding() was received but no handlers for it
+2023-03-21 22:35:19,815 - INFO - [CONNECTION] - Age of oldest thread is 238 seconds (MAX 300)
+2023-03-21 22:35:46,552 - WARNING - [Connect-Superluminal3] - Got SENDME
+2023-03-21 22:36:14,107 - INFO - [RECEIVER] - Added relay artikel10ber28 from P2 to JOIN queue
+2023-03-21 22:36:14,109 - INFO - [MainThread] - ['JOIN', 'artikel10ber28', b'79c1d4d032334d53f6bf']
+2023-03-21 22:36:14,109 - INFO - [MainThread] - Got JOIN to relay artikel10ber28, waiting 10 sec to connect
+2023-03-21 22:36:14,119 - INFO - [Connect-artikel10ber28] - Calling connect_to_rendezvous_point
+2023-03-21 22:36:14,120 - INFO - [Connect-artikel10ber28] - Connect to rendezvous point artikel10ber28
+2023-03-21 22:36:14,206 - INFO - [Connect-artikel10ber28] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-21 22:36:16,382 - INFO - [Connect-artikel10ber28] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-21 22:36:16,699 - INFO - [Connect-artikel10ber28] - Connected to rendezvous point artikel10ber28
+2023-03-21 22:36:16,700 - INFO - [Connect-artikel10ber28] - Waiting for peer to open stream
+2023-03-21 22:36:16,824 - INFO - [Connect-artikel10ber28] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-03-21 22:36:16,828 - INFO - [Connect-artikel10ber28] - Stream opened successfully
+2023-03-21 22:36:16,828 - INFO - [Connect-artikel10ber28] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P4\x94ua.'
+2023-03-21 22:36:17,033 - INFO - [RECEIVER] - Added neighbour P2
+2023-03-21 22:36:19,877 - INFO - [CONNECTION] - Age of oldest thread is 298 seconds (MAX 300)
+2023-03-21 22:37:16,537 - WARNING - [Connect-artikel10ber28] - Got SENDME
+2023-03-21 22:37:16,632 - ERROR - [Connect-Superluminal3] - Got RELAY_END
+2023-03-21 22:37:19,937 - INFO - [CONNECTION] - Age of oldest thread is 359 seconds (MAX 300)
+2023-03-21 22:37:19,942 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-21 22:37:21,354 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-21 22:37:21,409 - INFO - [MainThread] - ['ESTABLISH', 'prsv', b'becb996f62c276ad65a8']
+2023-03-21 22:37:21,409 - INFO - [MainThread] - Got ESTABLISH to relay prsv:b'becb996f62c276ad65a8' via staysafeandgoodluck
+2023-03-21 22:37:21,417 - INFO - [Establish-prsv] - Establishing RP to prsv
+2023-03-21 22:37:21,518 - INFO - [Establish-prsv] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-21 22:37:23,514 - INFO - [Establish-prsv] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-21 22:37:23,533 - INFO - [Establish-prsv] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10)... (None)
+2023-03-21 22:37:23,628 - INFO - [Establish-prsv] - Creating new circuit #8000000b with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10) router...
+2023-03-21 22:37:23,663 - INFO - [Establish-prsv] - Building -1 hops circuit...
+2023-03-21 22:37:23,663 - INFO - [Establish-prsv] - Extending the circuit #8000000b with 95.214.25.105:9000 (prsv; Tor 0.4.7.13)...
+2023-03-21 22:37:23,672 - INFO - [Establish-prsv] - Getting descriptor for 95.214.25.105:9000 (prsv; Tor 0.4.7.13)...
+2023-03-21 22:37:23,684 - INFO - [Establish-prsv] - Connecting to guard node 185.129.61.1:443 (dotsrcExit1; Tor 0.4.7.13)... (Internal dir client)
+2023-03-21 22:37:23,804 - INFO - [Establish-prsv] - Creating new circuit #8000000c with 185.129.61.1:443 (dotsrcExit1; Tor 0.4.7.13) router...
+2023-03-21 22:37:23,872 - INFO - [Establish-prsv] - Building 0 hops circuit...
+2023-03-21 22:37:23,875 - INFO - [Establish-prsv] - Stream #10: creating attached to #8000000c circuit...
+2023-03-21 22:37:23,879 - INFO - [Establish-prsv] - Stream #10: connecting to hsdir
+2023-03-21 22:37:23,914 - INFO - [RecvLoop_185.129] - Stream #10: connected (remote ip '')
+2023-03-21 22:37:24,185 - INFO - [RecvLoop_185.129] - Stream #10: remote disconnected (reason = DONE)
+2023-03-21 22:37:24,186 - INFO - [Establish-prsv] - Stream #10: closing (state = Disconnected)...
+2023-03-21 22:37:24,186 - INFO - [Establish-prsv] - Got descriptor
+2023-03-21 22:37:24,508 - INFO - [Establish-prsv] - <class 'torpy.circuit.TorCircuit'>
+2023-03-21 22:37:24,578 - INFO - [Establish-prsv] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-21 22:37:24,583 - INFO - [Establish-prsv] - Waiting for connections at relay prsv for cookie b'becb996f62c276ad65a8' ...
+2023-03-21 22:37:31,417 - INFO - [CONNECTION] - Sending JOIN to P1 for relay prsv with cookie b'becb996f62c276ad65a8'
+2023-03-21 22:37:33,999 - INFO - [Establish-prsv] - Got REND2 message from prsv
+2023-03-21 22:37:34,007 - INFO - [Establish-prsv] - Entered circuit context with id 0x8000000b
+2023-03-21 22:37:34,007 - INFO - [Establish-prsv] - Stream #11: creating attached to #8000000b circuit...
+2023-03-21 22:37:34,007 - INFO - [Establish-prsv] - Stream #11: connecting to ('127.0.0.1', 5000)
+2023-03-21 22:37:34,114 - INFO - [RecvLoop_185.181] - Stream #11: connected (remote ip '127.0.0.1')
+2023-03-21 22:37:34,213 - INFO - [Establish-prsv] - Sending HELLO to peer
+2023-03-21 22:37:34,213 - INFO - [Establish-prsv] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P4\x94ua.'
+2023-03-21 22:37:34,748 - INFO - [RECEIVER] - Added neighbour P1
+2023-03-21 22:38:22,011 - WARNING - [Connect-artikel10ber28] - Got SENDME
+2023-03-21 22:38:22,068 - WARNING - [Connect-artikel10ber28] - Got SENDME
+2023-03-21 22:38:28,859 - INFO - [RecvLoop_185.129] - On destroy: circuit #8000000c
+2023-03-21 22:38:28,859 - INFO - [RecvLoop_185.129] - Destroy circuit #8000000c
+2023-03-21 22:38:31,478 - INFO - [CONNECTION] - Age of oldest thread is 57 seconds (MAX 300)
+2023-03-21 22:38:33,872 - ERROR - [Establish-animator] - recv timeout
+2023-03-21 22:38:33,872 - INFO - [Establish-animator] - Closing connection Establish-animator
+2023-03-21 22:38:33,873 - INFO - [Establish-animator] - Stream #9: closing (state = Connected)...
+2023-03-21 22:38:33,875 - INFO - [Establish-animator] - Destroy circuit #80000009
+2023-03-21 22:38:33,876 - INFO - [Establish-animator] - Closing guard connections (None)...
+2023-03-21 22:39:31,321 - WARNING - [Connect-artikel10ber28] - Got SENDME
+2023-03-21 22:39:31,544 - INFO - [CONNECTION] - Age of oldest thread is 118 seconds (MAX 300)
+2023-03-21 22:39:59,940 - WARNING - [RecvLoop_185.181] - CellPadding has some unnecessary data: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+2023-03-21 22:39:59,943 - ERROR - [RecvLoop_185.181] - CellPadding() was received but no handlers for it
+2023-03-21 22:40:31,618 - INFO - [CONNECTION] - Age of oldest thread is 178 seconds (MAX 300)
+2023-03-21 22:40:47,323 - WARNING - [Connect-artikel10ber28] - Got SENDME
+2023-03-21 22:40:47,989 - WARNING - [Connect-artikel10ber28] - Got SENDME
+2023-03-21 22:41:31,681 - INFO - [CONNECTION] - Age of oldest thread is 238 seconds (MAX 300)
+2023-03-21 22:42:01,856 - WARNING - [Connect-artikel10ber28] - Got SENDME
+2023-03-21 22:42:25,791 - INFO - [RECEIVER] - Added relay relayon0150 from P2 to JOIN queue
+2023-03-21 22:42:25,792 - INFO - [MainThread] - ['JOIN', 'relayon0150', b'306d9a89cd6f3fc90f74']
+2023-03-21 22:42:25,792 - INFO - [MainThread] - Got JOIN to relay relayon0150, waiting 10 sec to connect
+2023-03-21 22:42:25,816 - INFO - [Connect-relayon0150] - Calling connect_to_rendezvous_point
+2023-03-21 22:42:25,817 - INFO - [Connect-relayon0150] - Connect to rendezvous point relayon0150
+2023-03-21 22:42:25,976 - INFO - [Connect-relayon0150] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-21 22:42:27,757 - INFO - [Connect-relayon0150] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-21 22:42:28,135 - INFO - [Connect-relayon0150] - Connected to rendezvous point relayon0150
+2023-03-21 22:42:28,135 - INFO - [Connect-relayon0150] - Waiting for peer to open stream
+2023-03-21 22:42:28,236 - INFO - [Connect-relayon0150] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-03-21 22:42:28,240 - INFO - [Connect-relayon0150] - Stream opened successfully
+2023-03-21 22:42:28,240 - INFO - [Connect-relayon0150] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P4\x94ua.'
+2023-03-21 22:42:28,439 - INFO - [RECEIVER] - Added neighbour P2
+2023-03-21 22:42:31,740 - INFO - [CONNECTION] - Age of oldest thread is 298 seconds (MAX 300)
+2023-03-21 22:43:27,734 - ERROR - [Connect-artikel10ber28] - Got DESTROY
+2023-03-21 22:43:31,799 - INFO - [CONNECTION] - Age of oldest thread is 358 seconds (MAX 300)
+2023-03-21 22:43:31,806 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-21 22:43:32,914 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-21 22:43:32,946 - INFO - [MainThread] - ['ESTABLISH', 'bauruine', b'116d24781c7067644c95']
+2023-03-21 22:43:32,946 - INFO - [MainThread] - Got ESTABLISH to relay bauruine:b'116d24781c7067644c95' via staysafeandgoodluck
+2023-03-21 22:43:32,947 - INFO - [Establish-bauruine] - Establishing RP to bauruine
+2023-03-21 22:43:33,058 - INFO - [Establish-bauruine] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-21 22:43:34,742 - INFO - [Establish-bauruine] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-21 22:43:34,747 - INFO - [Establish-bauruine] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10)... (None)
+2023-03-21 22:43:34,814 - INFO - [Establish-bauruine] - Creating new circuit #8000000d with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10) router...
+2023-03-21 22:43:34,844 - INFO - [Establish-bauruine] - Building -1 hops circuit...
+2023-03-21 22:43:34,844 - INFO - [Establish-bauruine] - Extending the circuit #8000000d with 45.134.225.36:443 (bauruine; Tor 0.4.7.13)...
+2023-03-21 22:43:34,852 - INFO - [Establish-bauruine] - Getting descriptor for 45.134.225.36:443 (bauruine; Tor 0.4.7.13)...
+2023-03-21 22:43:34,856 - INFO - [Establish-bauruine] - Connecting to guard node 176.114.248.225:443 (maja0027; Tor 0.4.7.13)... (Internal dir client)
+2023-03-21 22:43:35,040 - INFO - [Establish-bauruine] - Creating new circuit #8000000e with 176.114.248.225:443 (maja0027; Tor 0.4.7.13) router...
+2023-03-21 22:43:35,100 - INFO - [Establish-bauruine] - Building 0 hops circuit...
+2023-03-21 22:43:35,100 - INFO - [Establish-bauruine] - Stream #12: creating attached to #8000000e circuit...
+2023-03-21 22:43:35,100 - INFO - [Establish-bauruine] - Stream #12: connecting to hsdir
+2023-03-21 22:43:35,142 - INFO - [RecvLoop_176.114] - Stream #12: connected (remote ip '')
+2023-03-21 22:43:35,463 - INFO - [RecvLoop_176.114] - Stream #12: remote disconnected (reason = DONE)
+2023-03-21 22:43:35,466 - INFO - [Establish-bauruine] - Stream #12: closing (state = Disconnected)...
+2023-03-21 22:43:35,466 - INFO - [Establish-bauruine] - Got descriptor
+2023-03-21 22:43:35,731 - INFO - [Establish-bauruine] - <class 'torpy.circuit.TorCircuit'>
+2023-03-21 22:43:35,802 - INFO - [Establish-bauruine] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-21 22:43:35,803 - INFO - [Establish-bauruine] - Waiting for connections at relay bauruine for cookie b'116d24781c7067644c95' ...
+2023-03-21 22:43:42,505 - WARNING - [Connect-relayon0150] - Got SENDME
+2023-03-21 22:43:42,950 - INFO - [CONNECTION] - Sending JOIN to P1 for relay bauruine with cookie b'116d24781c7067644c95'
+2023-03-21 22:43:45,080 - INFO - [Establish-bauruine] - Got REND2 message from bauruine
+2023-03-21 22:43:45,085 - INFO - [Establish-bauruine] - Entered circuit context with id 0x8000000d
+2023-03-21 22:43:45,085 - INFO - [Establish-bauruine] - Stream #13: creating attached to #8000000d circuit...
+2023-03-21 22:43:45,092 - INFO - [Establish-bauruine] - Stream #13: connecting to ('127.0.0.1', 5000)
+2023-03-21 22:43:45,197 - INFO - [RecvLoop_185.181] - Stream #13: connected (remote ip '127.0.0.1')
+2023-03-21 22:43:45,294 - INFO - [Establish-bauruine] - Sending HELLO to peer
+2023-03-21 22:43:45,295 - INFO - [Establish-bauruine] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P4\x94ua.'
+2023-03-21 22:43:46,237 - INFO - [RECEIVER] - Added neighbour P1
+2023-03-21 22:44:41,996 - INFO - [RecvLoop_176.114] - On destroy: circuit #8000000e
+2023-03-21 22:44:41,997 - INFO - [RecvLoop_176.114] - Destroy circuit #8000000e
+2023-03-21 22:44:43,018 - INFO - [CONNECTION] - Age of oldest thread is 58 seconds (MAX 300)
+2023-03-21 22:44:46,485 - ERROR - [Establish-prsv] - recv timeout
+2023-03-21 22:44:46,486 - INFO - [Establish-prsv] - Closing connection Establish-prsv
+2023-03-21 22:44:46,486 - INFO - [Establish-prsv] - Stream #11: closing (state = Connected)...
+2023-03-21 22:44:46,493 - INFO - [Establish-prsv] - Destroy circuit #8000000b
+2023-03-21 22:44:46,495 - INFO - [Establish-prsv] - Closing guard connections (None)...
+2023-03-21 22:44:56,829 - WARNING - [Connect-relayon0150] - Got SENDME
+2023-03-21 22:44:56,884 - WARNING - [Connect-relayon0150] - Got SENDME
+2023-03-21 22:44:59,531 - WARNING - [RecvLoop_185.181] - CellPadding has some unnecessary data: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+2023-03-21 22:44:59,531 - ERROR - [RecvLoop_185.181] - CellPadding() was received but no handlers for it
+2023-03-21 22:45:03,454 - ERROR - [RECEIVER] - Error in ReceiveThread: 'P3'
+2023-03-21 22:45:16,942 - INFO - [Thread-4] - Adding P2 to list of inactive
+2023-03-21 22:45:16,942 - INFO - [Thread-4] - Adding P1 to list of inactive
+2023-03-21 22:45:16,942 - INFO - [Thread-4] - Removing P2 from neighbours
+2023-03-21 22:45:16,942 - ERROR - [Thread-4] - 'P1'
+2023-03-21 22:45:17,970 - ERROR - [HEART BEAT] - 'P1'
+2023-03-21 22:45:18,062 - INFO - [Establish-bauruine] - Closing connection Establish-bauruine
+2023-03-21 22:45:18,062 - INFO - [Establish-bauruine] - Stream #13: closing (state = Connected)...
+2023-03-21 22:45:18,066 - INFO - [Establish-bauruine] - Destroy circuit #8000000d
+2023-03-21 22:45:18,070 - INFO - [Establish-bauruine] - Closing guard connections (None)...
+2023-03-21 22:45:21,623 - ERROR - [SENDER] - 'P1'
+2023-03-21 22:45:22,976 - ERROR - [HEART BEAT] - 'P1'
+2023-03-21 22:45:27,981 - ERROR - [HEART BEAT] - 'P1'
+2023-03-21 22:45:32,986 - ERROR - [HEART BEAT] - 'P1'
+2023-03-21 22:45:36,639 - ERROR - [SENDER] - 'P1'
+2023-03-21 22:45:37,995 - ERROR - [HEART BEAT] - 'P1'
+2023-03-21 22:45:43,003 - ERROR - [HEART BEAT] - 'P1'
+2023-03-21 22:45:43,080 - INFO - [CONNECTION] - Neighbour connections (1) less than MIN_NEIGHBOUR_CONNECTIONS (2)
+2023-03-21 22:45:43,080 - INFO - [CONNECTION] - Candidate peers: []
+2023-03-21 22:45:43,080 - INFO - [CONNECTION] - Highest cost peers: [('P2', 716), ('P1', 448), ('P3', 186), ('P4', 0)]
+2023-03-21 22:45:43,080 - INFO - [CONNECTION] - No join peers found
+2023-03-21 22:45:48,015 - ERROR - [HEART BEAT] - 'P1'
+2023-03-21 22:45:51,658 - ERROR - [SENDER] - 'P1'
+2023-03-21 22:45:53,021 - ERROR - [HEART BEAT] - 'P1'
+2023-03-21 22:45:58,027 - ERROR - [HEART BEAT] - 'P1'
+2023-03-21 22:46:03,041 - ERROR - [HEART BEAT] - 'P1'
+2023-03-21 22:46:06,671 - ERROR - [SENDER] - 'P1'
+2023-03-21 22:46:08,050 - ERROR - [HEART BEAT] - 'P1'
+2023-03-21 22:46:13,057 - ERROR - [HEART BEAT] - 'P1'
+2023-03-21 22:46:18,058 - ERROR - [HEART BEAT] - 'P1'
+2023-03-21 22:46:21,687 - ERROR - [SENDER] - 'P1'
+2023-03-21 22:46:23,062 - ERROR - [HEART BEAT] - 'P1'
+2023-03-21 22:46:28,074 - ERROR - [HEART BEAT] - 'P1'
+2023-03-21 22:46:33,078 - ERROR - [HEART BEAT] - 'P1'
+2023-03-21 22:46:36,709 - ERROR - [SENDER] - 'P1'
+2023-03-21 22:46:38,085 - ERROR - [HEART BEAT] - 'P1'
+2023-03-21 22:46:43,086 - ERROR - [HEART BEAT] - 'P1'
+2023-03-21 22:46:43,146 - INFO - [CONNECTION] - Neighbour connections (1) less than MIN_NEIGHBOUR_CONNECTIONS (2)
+2023-03-21 22:46:43,149 - INFO - [CONNECTION] - Candidate peers: []
+2023-03-21 22:46:43,149 - INFO - [CONNECTION] - Highest cost peers: [('P2', 716), ('P1', 448), ('P3', 186), ('P4', 0)]
+2023-03-21 22:46:43,150 - INFO - [CONNECTION] - No join peers found
+2023-03-21 22:46:48,092 - ERROR - [HEART BEAT] - 'P1'
+2023-03-21 22:46:51,741 - ERROR - [SENDER] - 'P1'
+2023-03-21 22:46:53,109 - ERROR - [HEART BEAT] - 'P1'
+2023-03-21 22:46:58,116 - ERROR - [HEART BEAT] - 'P1'
+2023-03-21 22:47:03,126 - ERROR - [HEART BEAT] - 'P1'
+2023-03-21 22:47:06,751 - ERROR - [SENDER] - 'P1'
+2023-03-21 22:47:08,131 - ERROR - [HEART BEAT] - 'P1'
+2023-03-21 22:47:13,144 - ERROR - [HEART BEAT] - 'P1'
+2023-03-21 22:47:18,153 - ERROR - [HEART BEAT] - 'P1'
+2023-03-21 22:47:21,767 - ERROR - [SENDER] - 'P1'
+2023-03-21 22:47:23,161 - ERROR - [HEART BEAT] - 'P1'
+2023-03-21 22:47:28,167 - ERROR - [HEART BEAT] - 'P1'
+2023-03-21 22:47:33,173 - ERROR - [HEART BEAT] - 'P1'
+2023-03-21 22:47:36,779 - ERROR - [SENDER] - 'P1'
+2023-03-21 22:47:38,179 - ERROR - [HEART BEAT] - 'P1'
+2023-03-21 22:47:43,191 - ERROR - [HEART BEAT] - 'P1'
+2023-03-21 22:47:43,222 - INFO - [CONNECTION] - Neighbour connections (1) less than MIN_NEIGHBOUR_CONNECTIONS (2)
+2023-03-21 22:47:43,223 - INFO - [CONNECTION] - Candidate peers: []
+2023-03-21 22:47:43,223 - INFO - [CONNECTION] - Highest cost peers: [('P2', 716), ('P1', 448), ('P3', 186), ('P4', 0)]
+2023-03-21 22:47:43,223 - INFO - [CONNECTION] - No join peers found
+2023-03-21 22:47:48,199 - ERROR - [HEART BEAT] - 'P1'
+2023-03-21 22:47:51,797 - ERROR - [SENDER] - 'P1'
+2023-03-21 22:47:53,203 - ERROR - [HEART BEAT] - 'P1'

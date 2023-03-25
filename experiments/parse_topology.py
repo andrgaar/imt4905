@@ -3,7 +3,8 @@
 import matplotlib.pyplot as plt
 import networkx as nx
 import numpy as np
-import pandas as p
+import pandas as pd
+import seaborn as sns
 import sys
 import json
 from datetime import datetime
@@ -14,9 +15,12 @@ graphs = {}
 last_time = {} # last time peer seen
 
 fname = sys.argv[1]
+csvfile = f"{fname}.csv"
 
 def main():
 
+    fout = open(csvfile, "w")
+    fout.write("Timestamp;Offset;Convergence\n")
     prev_timestamp = None
 
     with open(fname, "r") as f:
@@ -31,6 +35,8 @@ def main():
 
             dt_event = datetime.fromtimestamp(float(timestamp))
             dt_prev = datetime.fromtimestamp(float(prev_timestamp))
+            dt_offset = (dt_event - dt_prev).total_seconds()
+
             last_time[peer] = dt_event
             # remove peers not seen in last minute
             remove = set()
@@ -54,18 +60,33 @@ def main():
             pct = 100
             if total > 0:
                 pct = round(hits / total * 100) 
-            print(timestamp, peer, pct, hits, total, ":")
+            #print(timestamp, peer, pct, hits, total, ":")
 
-            for p, g in graphs.items():
-                print(p, ":", nx.edges(g))
+            #for p, g in graphs.items():
+            #    print(p, ":", nx.edges(g))
             
-            x.append( (dt_event - dt_prev).total_seconds() )
-            y.append(pct)
-
+            # output 
+            fout.write("{0};{1};{2}\n".format(dt_event, dt_offset, pct))
             #if nx.number_of_edges(G) > 0 and nx.average_clustering(G) > 0:
             #    draw_graph(G)
-        plt.plot(x,y)
-        plt.show()
+        fout.close()
+
+    # plot data
+    csv = pd.read_csv(csvfile, sep=";")
+    print(csv)
+
+    csv.plot(x = "Offset", y = "Convergence", kind="line", color = 'k', figsize=(10, 5), title="Convergence",
+            xlabel = "Time (s)", ylabel = "Percent")
+    plt.show()
+
+    sns.relplot(
+        data=csv, kind="line",
+        x="Offset", y="Convergence", 
+        #col="align", hue="choice", size="coherence", style="choice",
+        facet_kws=dict(sharex=False),
+    )
+    plt.show()
+    
 
 def convergence(G, peer):
 
@@ -77,14 +98,14 @@ def convergence(G, peer):
     for v in graphs.values():
         for e in nx.edges(v):
             unique_edges.add(e)
-    print("Edges: ", unique_edges)
+    #print("Edges: ", unique_edges)
     num_edges = len(unique_edges)
     if num_edges == 0:
         return 1, 1, None
 
     for g in graphs.values():
         n = nx.number_of_edges(g)
-        print(n, num_edges)
+        #print(n, num_edges)
         equal += (n / num_edges)
 
     return equal, len(graphs), None
