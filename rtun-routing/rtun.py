@@ -170,7 +170,7 @@ if args.file:
 
             elif conn_cmd == "ESTABLISH":
                 logger.info(f"Got ESTABLISH to relay {conn_nick}:{conn_cookie} via {guard_nick}")
-                RendezvousEstablish(guard_nick, conn_nick, conn_cookie, rcv_queue).start() 
+                RendezvousEstablish(guard_nick, conn_nick, conn_cookie, rcv_queue, timeout=60).start() 
              
     
     except KeyboardInterrupt:

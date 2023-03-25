@@ -36,7 +36,7 @@ threads = {}
 
 # Class to establish a Rendezvous Point
 class RendezvousEstablish(Thread):
-    def __init__(self, guard_nick, rendp_nick, rendezvous_cookie, receive_queue, condition=None):
+    def __init__(self, guard_nick, rendp_nick, rendezvous_cookie, receive_queue, condition=None, timeout=300):
         # execute the base constructor
         Thread.__init__(self)
         # store the values
@@ -50,6 +50,7 @@ class RendezvousEstablish(Thread):
         self.name = f"Establish-{self.rendp_nick}"
         self.start_time = None
         self.ALIVE = True
+        self.timeout = timeout
 
     # 
     # Setup a rendezvous point and wait
@@ -81,7 +82,7 @@ class RendezvousEstablish(Thread):
     
         logger.info("Waiting for connections at relay {0} for cookie {1} ...".format(self.rendp_nick, self.rendezvous_cookie))
         with circuit.create_waiter(CellRelayRendezvous2) as w:
-            rendezvous2_cell = w.get(timeout=600)
+            rendezvous2_cell = w.get(timeout=self.timeout)
             logger.info(f"Got REND2 message from {self.rendp_nick}")
           
         # Here someone has connected - we notify a waiting thread
@@ -219,6 +220,7 @@ class RendezvousConnect(Thread):
         self.start_time = None
         self.name = f"Connect-{self.rendp_nick}"
         self.ALIVE = True
+        self.attempts = 12 # num of attempts to connect to RP
 
     def run(self):
         # Add self to thread info
@@ -257,7 +259,14 @@ class RendezvousConnect(Thread):
                 raise KeyboardInterrupt
 
             except Exception as e:
-                logger.warn(f"Could not connect to rendezvous point {self.rendp_nick}: {e}, retrying in 5 seconds...")
+                if self.attempts == 0:
+                    logger.warn(f"Could not connect to rendezvous point {self.rendp_nick}: {e}, exiting...")
+                    # clean up
+                    threads.pop(self.id, 'No thread key found')
+                    return
+
+                self.attempts -= 1
+                logger.warn(f"Could not connect to rendezvous point {self.rendp_nick}: {e}, {self.attempts} attempts left...")
                 time.sleep(5)
                 continue
             break # break and continue

@@ -421,7 +421,15 @@ class ReceiveThread(Thread):
         source = msg_data[0]['Source']
         destination = msg_data[0]['Destination']
         ident = msg_data[0]['ID']
-        msg_data[0]['Path'].append(global_router['RID'])
+
+        if global_router['RID'] in msg_data[0]['Path']:
+            msg_data[0]['Path'].append(global_router['RID'])
+            path = '-'.join(msg_data[0]['Path'])
+            # it's a routing loop
+            logger.warn(f"Routing loop: {path}")
+            return
+        else:
+            msg_data[0]['Path'].append(global_router['RID'])
 
         # This is for us
         if destination == global_router['RID']:
@@ -916,7 +924,7 @@ class ConnectionThread(Thread):
                     continue
 
                 oldest_age = round(time.time() - oldest)
-                logger.info(f"Age of oldest thread is {oldest_age} seconds (MAX {MAX_CONNECTION_TIME})")
+                logger.debug(f"Age of oldest thread is {oldest_age} seconds (MAX {MAX_CONNECTION_TIME})")
                 if oldest_age > MAX_CONNECTION_TIME:
                     # find the peer id
                     join_peer = None
