@@ -30,7 +30,7 @@ def main():
         while True:
             try:
                 data = pickle.load(f)
-                #print(data)
+                print(data)
             except EOFError:
                 break
             s = parse(data)
@@ -48,22 +48,22 @@ def plot(csvfile):
     csv = csv.loc[csv['Received'] != "LOOKUP"]
     csv['Timestamp'] = pd.to_datetime(csv['Timestamp']) 
 
-    df = csv[['Timestamp', 'Peer', 'Received']]
-    df.set_index('Timestamp', inplace=True)
+    #df = csv[['Timestamp', 'Peer', 'Received']]
+    #df.set_index('Timestamp', inplace=True)
 
     print(csv)
     
-    grp = df.groupby([pd.Grouper(freq = '1min'),'Peer', 'Received'])['Peer', 'Received'].count()
-    print(grp)
-    print(grp.dtypes)
-    sns.lineplot(data=grp, x="Timestamp", y="Received",  
-                hue="Received", hue_order=["LSA", "HB", "LOOKUP", "HELLO", "JOIN"],
-            )
-    #sns.histplot(data=df, x="Offset",
+    #grp = df.groupby([pd.Grouper(freq = '1min'),'Peer', 'Received'])['Peer', 'Received'].count()
+    #print(grp)
+    #print(grp.dtypes)
+    #sns.lineplot(data=grp, x="Timestamp", y="Received",  
     #            hue="Received", hue_order=["LSA", "HB", "LOOKUP", "HELLO", "JOIN"],
-    #            binwidth=60, stat="count", kde=False, 
-    #            #col="Peer"
     #        )
+    sns.histplot(data=csv, x="Offset",
+                hue="Received", hue_order=["LSA", "HB", "LOOKUP", "HELLO", "JOIN"],
+                binwidth=30, stat="count", kde=False, 
+                #col="Peer"
+            )
 
     #csv.plot(x = "Offset", y = "Received", kind="line", color = 'k', figsize=(10, 5), title="Messages received",
     #        xlabel = "Time (s)", ylabel = "#")

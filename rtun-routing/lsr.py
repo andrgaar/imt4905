@@ -38,7 +38,7 @@ NODE_FAILURE_INTERVAL = 10
 TIMEOUT = 15
 LATENCY_SAMPLES = 10
 PERIODIC_CONN_CHECK = 60
-MIN_NEIGHBOUR_CONNECTIONS = 2
+MIN_NEIGHBOUR_CONNECTIONS = 4
 MAX_CONNECTION_TIME = 300
 
 # Log metrics to file
@@ -173,7 +173,7 @@ class ReceiveThread(Thread):
                 self.handle_JOIN(local_copy_LSA)
             elif message == 'LOOKUP':
                 self.handle_LOOKUP(local_copy_LSA)
-            elif message == 'REJOIN':
+            elif message == 'REMOVE':
                 self.remove_neighbour([local_copy_LSA[0]['Destination']])
             elif message == 'CLOSE':
                 thread_id = local_copy_LSA[0]['Thread ID']
@@ -347,7 +347,7 @@ class ReceiveThread(Thread):
 
     # Removes a dead route
     def remove_inactive(self):
-        #log_metrics("DEAD ROUTES DETECTED", json.dumps(jsonpickle.encode(self.inactive_list)))
+        logger.info("DEAD ROUTES DETECTED: {0}", format( ','.join(self.inactive_list)))
 
         # Update this router's list of neighbours using inactive list
         self.updateNeighboursList()
@@ -450,12 +450,14 @@ class ReceiveThread(Thread):
     # Helper function to update the global graph when a router
     # in the topology fails
     def updateGraphOnly(self, graph_arg, dead_list):
-
-        for node in graph_arg:
-            if node[0] in dead_list:
-                graph_arg.remove(node)
-            if node[1] in dead_list:
-                graph_arg.remove(node)
+        try:
+            for node in graph_arg:
+                if node[0] in dead_list:
+                    graph_arg.remove(node)
+                if node[1] in dead_list:
+                    graph_arg.remove(node)
+        except Exception as e:
+            logger.warn(f"updateGraphOnly: {e}") 
 
     # Update this router's local link-state database
     # after a router fails
@@ -612,8 +614,12 @@ class ReceiveThread(Thread):
         #    logger.info(f"Neighbor: {k}")
         #for k in nx.non_neighbors(G, global_router['RID']):
         #    logger.info(f"Not neighbor: {k}")
+        try:
+            shortest_paths = nx.shortest_path(G, global_router['RID'], weight='weight')
+        except networkx.exception.NodeNotFound as e:
+            logger.error(f"networkx.exception.NodeNotFound: {e}")
+            sys.exit() # 
 
-        shortest_paths = nx.shortest_path(G, global_router['RID'], weight='weight')
         for k, v in shortest_paths.items():
             cost = nx.path_weight(G, v, 'weight')
             path_cost[k] = cost
@@ -840,11 +846,12 @@ class SendThread(Thread):
 
 class HeartBeatThread(Thread):
 
-    def __init__(self, name, HB_message, thread_lock):
+    def __init__(self, name, HB_message, thread_lock, rcv_queue):
         Thread.__init__(self)
         self.name = name
         self.HB_message = HB_message
         self.thread_lock = thread_lock
+        self.rcv_queue = rcv_queue
 
     def run(self):
         self.broadcastHB()
@@ -858,8 +865,13 @@ class HeartBeatThread(Thread):
 
             for neighbour in global_router['Neighbours Data']:
                 message = pickle.dumps(HB_message)
-                send_to_stream( neighbour['NID'], message)
-                neighbour_stats[neighbour['NID']]['HB sent'] += 1 
+                try:
+                    send_to_stream( neighbour['NID'], message)
+                    neighbour_stats[neighbour['NID']]['HB sent'] += 1 
+                except KeyError as e:
+                    message = [{'Message' : 'REMOVE', 'NID' : neighbour['NID']}]
+                    self.rcv_queue.put_nowait(message)
+
             
             time.sleep(PERIODIC_HEART_BEAT)
 
@@ -904,6 +916,7 @@ class ConnectionThread(Thread):
 
         while True:
             time.sleep(PERIODIC_CONN_CHECK)
+
             # check if we have enough connections
             #len_n = len(global_router['Neighbours Data'])
             if global_router['Neighbours'] >= MIN_NEIGHBOUR_CONNECTIONS:
@@ -951,7 +964,11 @@ class ConnectionThread(Thread):
             neighbours = set()
             for n in global_router['Neighbours Data']:
                 neighbours.add(n['NID'])
-            
+           
+            if len(neighbours) == 0:
+                logger.info("Neighbour connections are 0, exiting...")
+                sys.exit()
+
             logger.info("Neighbour connections ({0}) less than MIN_NEIGHBOUR_CONNECTIONS ({1})".format(len(neighbours), MIN_NEIGHBOUR_CONNECTIONS))
     
             # find all peers in network 
@@ -1142,7 +1159,7 @@ def setup_router(router_id, router_port):
     sender_thread = SendThread("SENDER", threadLock)
 
     HB_message = [{'RID' : global_router['RID']}]
-    heartbeat_thread = HeartBeatThread("HEART BEAT", HB_message, threadLock)
+    heartbeat_thread = HeartBeatThread("HEART BEAT", HB_message, threadLock, rcv_queue)
                 
     receiver_thread.start()
     sender_thread.start()
@@ -1343,8 +1360,10 @@ def send_to_stream(router_id, message):
                         stream_data['Receive Node'], 
                         stream_data['Receive Socket'],
                         stream_data['Stream ID'])
+    except KeyError as e:
+        logger.error(f"send_to_stream: Key not found: {e}")
     except Exception as e:
-        logger.error(e)
+        logger.error("send_to_stream: {0} {1}".format(type(e).__name__, e))
 
     #log_metrics("DATA SENT", "Payload: {0} bytes".format(sys.getsizeof(message)))
 

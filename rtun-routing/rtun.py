@@ -156,6 +156,11 @@ if args.file:
     try:
         # Create RP loop - creates new rendezvous points for peers to connect
         while True:
+            # check if receiver thread is alive
+            if not lsr.receiver_thread.is_alive():
+                logger.error("Receiver thread has died, exiting")
+                sys.exit()
+
             conn = conn_queue.get()
 
             logger.info(conn)
