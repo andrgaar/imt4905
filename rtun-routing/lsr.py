@@ -347,7 +347,7 @@ class ReceiveThread(Thread):
 
     # Removes a dead route
     def remove_inactive(self):
-        logger.info("DEAD ROUTES DETECTED: {0}", format( ','.join(self.inactive_list)))
+        logger.info("DEAD ROUTES DETECTED: {0}".format( ','.join(self.inactive_list)))
 
         # Update this router's list of neighbours using inactive list
         self.updateNeighboursList()
@@ -426,7 +426,7 @@ class ReceiveThread(Thread):
             msg_data[0]['Path'].append(global_router['RID'])
             path = '-'.join(msg_data[0]['Path'])
             # it's a routing loop
-            logger.warn(f"Routing loop: {path}")
+            logger.warn(f"Routing loop from {source} to {destination}: {path}")
             return
         else:
             msg_data[0]['Path'].append(global_router['RID'])
