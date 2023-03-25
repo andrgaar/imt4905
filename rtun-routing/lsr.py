@@ -176,6 +176,7 @@ class ReceiveThread(Thread):
             elif message == 'REMOVE':
                 self.remove_neighbour([local_copy_LSA[0]['Destination']])
             elif message == 'CLOSE':
+                logger.info(f"Got CLOSE: {local_copy_LSA[0]}")
                 thread_id = local_copy_LSA[0]['Thread ID']
                 ci = circuit_info
                 for c in ci.values():
@@ -262,10 +263,13 @@ class ReceiveThread(Thread):
             # Forward the LSA to our neighbours if it hasn't already
             if RID != global_router['RID'] and self.LSA_SN_forwarded[RID] < local_copy_LSA['SN']:
                 for router in neighbour_routers:
-                    if router['NID'] != local_copy_LSA['RID']:
-                        send_to_stream(router['NID'], pickle.dumps(self.LSA_DB[local_copy_LSA['RID']]))
-                        neighbour_stats[router['NID']]['LSA sent'] += 1
-                        time.sleep(1)
+                    if router['NID'] != local_copy_LSA['RID'] and local_copy_LSA['RID'] in self.LSA_DB:
+                        try:
+                            send_to_stream(router['NID'], pickle.dumps(self.LSA_DB[local_copy_LSA['RID']]))
+                            neighbour_stats[router['NID']]['LSA sent'] += 1
+                            time.sleep(1)
+                        except KeyError as e:
+                            logger.warn("{0} already removed from router".format(router['NID']))
                 # Update the forwarded SN for this peer
                 self.LSA_SN_forwarded.update({local_copy_LSA['RID']: local_copy_LSA['SN']})
 
@@ -298,7 +302,7 @@ class ReceiveThread(Thread):
 
         # Return if RID unknown
         if RID not in neighbour_stats:
-            logger.debug(f"Key {RID} not in neighbour_stats")
+            logger.warn(f"Key {RID} not in neighbour_stats")
             return
 
         neighbour_stats[RID]['HB received'] += 1 
@@ -450,11 +454,12 @@ class ReceiveThread(Thread):
     # Helper function to update the global graph when a router
     # in the topology fails
     def updateGraphOnly(self, graph_arg, dead_list):
+        logger.info(f"updateGraphOnly: {graph_arg} , {dead_list}")
         try:
             for node in graph_arg:
                 if node[0] in dead_list:
                     graph_arg.remove(node)
-                if node[1] in dead_list:
+                elif node[1] in dead_list:
                     graph_arg.remove(node)
         except Exception as e:
             logger.warn(f"updateGraphOnly: {e}") 
@@ -462,9 +467,9 @@ class ReceiveThread(Thread):
     # Update this router's local link-state database
     # after a router fails
     def updateLSADB(self, lsa_db):
-
         for node in lsa_db:
             if node in self.LSA_DB:
+                logger.info(f"updateLSADB: removing {lsa_db}")
                 del self.LSA_DB[node]
 
     # Period function that runs in the HeartBeat Thread
@@ -542,9 +547,17 @@ class ReceiveThread(Thread):
 
         for node in args[0]:
             if node[0] in args[1]:
-                args[0].remove(node)
+                try:
+                    args[0].remove(node)
+                except ValueError as e:
+                    logger.warn(f"updateGraphAfterFailure: {e}")
+
             if node[1] in args[1]:
-                args[0].remove(node)
+                try:
+                    args[0].remove(node)
+                except ValueError as e:
+                    logger.warn(f"updateGraphAfterFailure: {e}")
+
 
         for node in args[2]:
             for router in args[2][node]['Neighbours Data']:
@@ -616,9 +629,8 @@ class ReceiveThread(Thread):
         #    logger.info(f"Not neighbor: {k}")
         try:
             shortest_paths = nx.shortest_path(G, global_router['RID'], weight='weight')
-        except networkx.exception.NodeNotFound as e:
+        except Exception as e:
             logger.error(f"networkx.exception.NodeNotFound: {e}")
-            sys.exit() # 
 
         for k, v in shortest_paths.items():
             cost = nx.path_weight(G, v, 'weight')
@@ -776,6 +788,7 @@ class ReceiveThread(Thread):
 
     # Function to remove a neighbour from router
     def remove_neighbour(self, remove_list):
+        logger.info(f"remove_neighbour: {remove_list}")
         for node in global_router['Neighbours Data']:
             if node['NID'] in remove_list:
                 global_router['Neighbours Data'].remove(node)

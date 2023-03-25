@@ -31,6 +31,7 @@ from messages import HelloMessage
 
 MIN_CONNECTION_TTL = 60
 MAX_CONNECTION_TTL = 120
+GLOBAL_CIRCUIT_ID = 0x81000002
 
 threads = {}
 
@@ -347,14 +348,16 @@ class RendezvousConnect(Thread):
     #
     def connect_to_rendezvous_point(self, nick, cookie, circuit_id=0x80000002):
         logger.info("Connect to rendezvous point " + nick)
-
+        global GLOBAL_CIRCUIT_ID
+        
         consensus = TorConsensus()
         router = consensus.get_router_using_nick(nick)
 
         tor_cell_socket = TorCellSocket(router)
         tor_cell_socket.connect()
 
-        #circuit_id = 0x80000002
+        circuit_id = GLOBAL_CIRCUIT_ID
+        GLOBAL_CIRCUIT_ID += 1
 
         logger.debug("Key agreement")
         if False:
