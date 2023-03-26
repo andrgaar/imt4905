@@ -174,16 +174,18 @@ class ReceiveThread(Thread):
             elif message == 'LOOKUP':
                 self.handle_LOOKUP(local_copy_LSA)
             elif message == 'REMOVE':
-                self.remove_neighbour([local_copy_LSA[0]['Destination']])
+                pass
+                #self.remove_neighbour([local_copy_LSA[0]['Destination']])
             elif message == 'CLOSE':
-                logger.info(f"Got CLOSE: {local_copy_LSA[0]}")
-                thread_id = local_copy_LSA[0]['Thread ID']
-                ci = circuit_info
-                for c in ci.values():
-                    if c['Thread ID'] == thread_id:
-                        self.inactive_list.add(c['NID'])
-                        self.remove_inactive()
-                        break
+                pass
+                #logger.info(f"Got CLOSE: {local_copy_LSA[0]}")
+                #thread_id = local_copy_LSA[0]['Thread ID']
+                #ci = circuit_info
+                #for c in ci.values():
+                #    if c['Thread ID'] == thread_id:
+                #        self.inactive_list.add(c['NID'])
+                #        self.remove_inactive()
+                #        break
 
             else:
                 logger.info(f"Unknown message: {message}")
@@ -265,7 +267,7 @@ class ReceiveThread(Thread):
                 for router in neighbour_routers:
                     if router['NID'] != local_copy_LSA['RID'] and local_copy_LSA['RID'] in self.LSA_DB:
                         try:
-                            send_to_stream(router['NID'], pickle.dumps(self.LSA_DB[local_copy_LSA['RID']]))
+                            send_to_stream(router['NID'], pickle.dumps(local_copy_LSA))
                             neighbour_stats[router['NID']]['LSA sent'] += 1
                             time.sleep(1)
                         except KeyError as e:
@@ -350,37 +352,48 @@ class ReceiveThread(Thread):
 
 
     # Removes a dead route
-    def remove_inactive(self):
-        logger.info("DEAD ROUTES DETECTED: {0}".format( ','.join(self.inactive_list)))
+    def remove_inactive(self, inactive_list):
+        logger.info("DEAD ROUTES DETECTED: {0}".format( ','.join(inactive_list)))
 
         # Update this router's list of neighbours using inactive list
-        self.updateNeighboursList()
+        self.updateNeighboursList(inactive_list)
 
         # Remove circuit connection
-        remove_circuit(self.inactive_list)
+        remove_circuit(inactive_list)
 
         # Update the LSA_DB and graph
-        self.updateLSADB(self.inactive_list)
-        self.updateGraphOnly(graph, self.inactive_list)
+        self.updateLSADB(inactive_list)
+        self.updateGraphOnly(graph, inactive_list)
             
         # If new routers have been declared dead, we need to transmit
         # a fresh LSA with updated neighbour information
-        self.transmitNewLSA()
+        self.transmitNewLSA(inactive_list)
 
         # Clear the set so that the fresh set
         # will only track active neighbours
-        self.HB_set.clear()
+        for k in inactive_list:
+            self.packets.discard(k)
+            self.forward_set.discard(k)
+            self.HB_set.pop(k, "Key Not Present!")
+            self.LSA_SN.pop(k, "Key Not Present!")
+            self.LSA_SN_forwarded.pop(k, "Key Not Present!")
+            self.LSA_DB.pop(k, "Key Not Present!")
 
-        # Update size of inactive list
-        self.inactive_list_size = len(self.inactive_list)
-
-        Timer(1, self.updateGraphAfterFailure, [
+        self.updateGraphAfterFailure(
                 graph,
                 self.inactive_list,
                 self.LSA_DB,
                 1,
-                self.thread_lock]
-            ).start()
+                self.thread_lock
+                )
+        
+        # Update size of inactive list
+        self.inactive_list = set() # empty the list
+        self.inactive_list_size = len(self.inactive_list)
+        
+        logger.info(f"GRAPH: {graph}") 
+        logger.info(f"ROUTER: {global_router}") 
+        logger.info(f"LSA_DB: {self.LSA_DB}") 
 
     # Handles a JOIN message 
     def handle_JOIN(self, msg_data):
@@ -455,51 +468,47 @@ class ReceiveThread(Thread):
     # in the topology fails
     def updateGraphOnly(self, graph_arg, dead_list):
         logger.info(f"updateGraphOnly: {graph_arg} , {dead_list}")
-        try:
-            for node in graph_arg:
-                if node[0] in dead_list:
-                    graph_arg.remove(node)
-                elif node[1] in dead_list:
-                    graph_arg.remove(node)
-        except Exception as e:
-            logger.warn(f"updateGraphOnly: {e}") 
+        for node in graph_arg:
+            if node[0] in dead_list:
+                graph_arg.remove(node)
+            elif node[1] in dead_list:
+                graph_arg.remove(node)
 
     # Update this router's local link-state database
     # after a router fails
     def updateLSADB(self, lsa_db):
         for node in lsa_db:
             if node in self.LSA_DB:
-                logger.info(f"updateLSADB: removing {lsa_db}")
                 del self.LSA_DB[node]
 
     # Period function that runs in the HeartBeat Thread
     # Used to check for any failed nodes in the topology
     def checkForNodeFailure(self):
-
         while True:
+            inactive_list = set()
             current_time = datetime.now()
             td = timedelta(seconds=TIMEOUT)
 
             for node in self.HB_set:
                 difference = current_time - self.HB_set[node]
                 if difference > td:
-                    if node not in self.inactive_list:
-                        self.inactive_list.add(node)
+                    if node not in inactive_list:
+                        inactive_list.add(node)
                         logger.info("Adding " + node + " to list of inactive")
             
             # If the list of inactive routers is ever updated, we must transmit
             # a new LSA to notify other routers of the update to the topology
-            if len(self.inactive_list) > self.inactive_list_size:
-                self.remove_inactive()
+            if len(inactive_list) > 0:
+                self.remove_inactive(inactive_list)
 
             time.sleep(NODE_FAILURE_INTERVAL)
 
     # Helper function to update this router's list
     # of active neighbours after a router fails
-    def updateNeighboursList(self):
+    def updateNeighboursList(self, inactive_list):
 
         for node in global_router['Neighbours Data']:
-            if node['NID'] in self.inactive_list:
+            if node['NID'] in inactive_list:
                 global_router['Neighbours Data'].remove(node)
                 logger.info("Removing " + node['NID'] + " from neighbours")
 
@@ -508,7 +517,7 @@ class ReceiveThread(Thread):
 
     # Triggered by all active neighbouring routers
     # when a neighbour to them fails
-    def transmitNewLSA(self):
+    def transmitNewLSA(self, inactive_list):
 
         server_name = 'localhost'
         updated_global_router = {}
@@ -525,7 +534,7 @@ class ReceiveThread(Thread):
         updated_global_router['SN'] = global_router['SN']
 
         updated_global_router['FLAG'] = 1
-        updated_global_router['DEAD'] = self.inactive_list
+        updated_global_router['DEAD'] = inactive_list
 
         new_data = pickle.dumps(updated_global_router)
 
@@ -547,17 +556,9 @@ class ReceiveThread(Thread):
 
         for node in args[0]:
             if node[0] in args[1]:
-                try:
-                    args[0].remove(node)
-                except ValueError as e:
-                    logger.warn(f"updateGraphAfterFailure: {e}")
-
-            if node[1] in args[1]:
-                try:
-                    args[0].remove(node)
-                except ValueError as e:
-                    logger.warn(f"updateGraphAfterFailure: {e}")
-
+                args[0].remove(node)
+            elif node[1] in args[1]:
+                args[0].remove(node)
 
         for node in args[2]:
             for router in args[2][node]['Neighbours Data']:
@@ -788,6 +789,7 @@ class ReceiveThread(Thread):
 
     # Function to remove a neighbour from router
     def remove_neighbour(self, remove_list):
+        return #XXX
         logger.info(f"remove_neighbour: {remove_list}")
         for node in global_router['Neighbours Data']:
             if node['NID'] in remove_list:
@@ -882,8 +884,7 @@ class HeartBeatThread(Thread):
                     send_to_stream( neighbour['NID'], message)
                     neighbour_stats[neighbour['NID']]['HB sent'] += 1 
                 except KeyError as e:
-                    message = [{'Message' : 'REMOVE', 'NID' : neighbour['NID']}]
-                    self.rcv_queue.put_nowait(message)
+                    logger.warn(f"Send HB: {e} not found")
 
             
             time.sleep(PERIODIC_HEART_BEAT)
@@ -1035,11 +1036,13 @@ def remove_circuit(inactive_list):
         ci = circuit_info[p]
         tid = ci['Thread ID']
         del circuit_info[p]
-        # find the connection thread to close
-        if tid in rnd.threads:
-            th = rnd.threads[tid]
-            th.close()
-            del rnd.threads[tid]
+        logger.info(f"Removed circuit for {p}") 
+        # find the connection thread to close 
+        # XXX let it time out
+        #if tid in rnd.threads:
+        #    th = rnd.threads[tid]
+        #    th.close()
+        #    del rnd.threads[tid]
 
 # Routes it along the least cost path
 def route_message(msg_data):

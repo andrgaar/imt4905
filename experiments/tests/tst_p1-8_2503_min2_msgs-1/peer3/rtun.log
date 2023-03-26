@@ -1,0 +1,144 @@
+2023-03-25 13:48:15,195 - INFO - [MainThread] - Initialized router P3 at port 5003 PID 10181
+2023-03-25 13:48:15,197 - INFO - [MainThread] - Adding a connection to Vulnerar
+2023-03-25 13:48:15,198 - INFO - [Connect-Vulnerar] - Calling connect_to_rendezvous_point
+2023-03-25 13:48:15,198 - INFO - [Connect-Vulnerar] - Connect to rendezvous point Vulnerar
+2023-03-25 13:48:15,200 - INFO - [MainThread] - Adding listener for RMK
+2023-03-25 13:48:15,200 - INFO - [Establish-RMK] - Establishing RP to RMK
+2023-03-25 13:48:15,203 - INFO - [MainThread] - Starting testing thread
+2023-03-25 13:48:15,204 - INFO - [TESTER] - Started tester
+2023-03-25 13:48:15,204 - INFO - [MainThread] - Starting connection thread
+2023-03-25 13:48:15,204 - INFO - [MainThread] - Starting log thread
+2023-03-25 13:48:15,207 - INFO - [Connect-Vulnerar] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-25 13:48:15,226 - INFO - [Establish-RMK] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-25 13:48:15,693 - INFO - [Connect-Vulnerar] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-25 13:48:15,705 - INFO - [Establish-RMK] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-25 13:48:15,707 - INFO - [Establish-RMK] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10)... (None)
+2023-03-25 13:48:15,768 - INFO - [Establish-RMK] - Creating new circuit #80000001 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10) router...
+2023-03-25 13:48:15,784 - INFO - [Establish-RMK] - Building -1 hops circuit...
+2023-03-25 13:48:15,785 - INFO - [Establish-RMK] - Extending the circuit #80000001 with 46.4.101.213:9000 (RMK; Tor 0.4.8.0-alpha-dev)...
+2023-03-25 13:48:15,785 - INFO - [Establish-RMK] - Getting descriptor for 46.4.101.213:9000 (RMK; Tor 0.4.8.0-alpha-dev)...
+2023-03-25 13:48:15,791 - INFO - [Establish-RMK] - Connecting to guard node 178.211.147.21:6105 (GTAOnline2; Tor 0.4.7.13)... (Internal dir client)
+2023-03-25 13:48:15,963 - INFO - [Establish-RMK] - Creating new circuit #80000002 with 178.211.147.21:6105 (GTAOnline2; Tor 0.4.7.13) router...
+2023-03-25 13:48:15,980 - INFO - [Connect-Vulnerar] - Connected to rendezvous point Vulnerar
+2023-03-25 13:48:15,981 - INFO - [Connect-Vulnerar] - Waiting for peer to open stream
+2023-03-25 13:48:16,009 - INFO - [Establish-RMK] - Building 0 hops circuit...
+2023-03-25 13:48:16,010 - INFO - [Establish-RMK] - Stream #1: creating attached to #80000002 circuit...
+2023-03-25 13:48:16,010 - INFO - [Establish-RMK] - Stream #1: connecting to hsdir
+2023-03-25 13:48:16,032 - INFO - [Connect-Vulnerar] - Received cell: <class 'torpy.cells.CellDestroy'>
+2023-03-25 13:48:16,032 - WARNING - [Connect-Vulnerar] - Could not connect to rendezvous point Vulnerar: Receive CellDestroy from RP, 11 attempts left...
+2023-03-25 13:48:16,052 - INFO - [RecvLoop_178.211] - Stream #1: connected (remote ip '')
+2023-03-25 13:48:16,293 - INFO - [RecvLoop_178.211] - Stream #1: remote disconnected (reason = DONE)
+2023-03-25 13:48:16,294 - INFO - [Establish-RMK] - Stream #1: closing (state = Disconnected)...
+2023-03-25 13:48:16,294 - INFO - [Establish-RMK] - Got descriptor
+2023-03-25 13:48:16,350 - INFO - [Establish-RMK] - <class 'torpy.circuit.TorCircuit'>
+2023-03-25 13:48:16,402 - INFO - [Establish-RMK] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-25 13:48:16,402 - INFO - [Establish-RMK] - Waiting for connections at relay RMK for cookie b'eb688e4f52df90278060' ...
+2023-03-25 13:48:21,038 - INFO - [Connect-Vulnerar] - Calling connect_to_rendezvous_point
+2023-03-25 13:48:21,038 - INFO - [Connect-Vulnerar] - Connect to rendezvous point Vulnerar
+2023-03-25 13:48:21,046 - INFO - [Connect-Vulnerar] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-25 13:48:21,237 - INFO - [Connect-Vulnerar] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-25 13:48:21,508 - INFO - [Connect-Vulnerar] - Connected to rendezvous point Vulnerar
+2023-03-25 13:48:21,508 - INFO - [Connect-Vulnerar] - Waiting for peer to open stream
+2023-03-25 13:48:21,559 - INFO - [Connect-Vulnerar] - Received cell: <class 'torpy.cells.CellDestroy'>
+2023-03-25 13:48:21,559 - WARNING - [Connect-Vulnerar] - Could not connect to rendezvous point Vulnerar: Receive CellDestroy from RP, 10 attempts left...
+2023-03-25 13:48:21,821 - INFO - [Establish-RMK] - Got REND2 message from RMK
+2023-03-25 13:48:21,821 - INFO - [Establish-RMK] - Entered circuit context with id 0x80000001
+2023-03-25 13:48:21,821 - INFO - [Establish-RMK] - Stream #2: creating attached to #80000001 circuit...
+2023-03-25 13:48:21,821 - INFO - [Establish-RMK] - Stream #2: connecting to ('127.0.0.1', 5000)
+2023-03-25 13:48:21,923 - INFO - [RecvLoop_185.181] - Stream #2: connected (remote ip '127.0.0.1')
+2023-03-25 13:48:22,023 - INFO - [Establish-RMK] - Sending HELLO to peer
+2023-03-25 13:48:22,023 - INFO - [Establish-RMK] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P3\x94ua.'
+2023-03-25 13:48:22,024 - INFO - [RECEIVER] - Added neighbour P1
+2023-03-25 13:48:26,568 - INFO - [Connect-Vulnerar] - Calling connect_to_rendezvous_point
+2023-03-25 13:48:26,568 - INFO - [Connect-Vulnerar] - Connect to rendezvous point Vulnerar
+2023-03-25 13:48:26,575 - INFO - [Connect-Vulnerar] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-25 13:48:26,764 - INFO - [Connect-Vulnerar] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-25 13:48:27,034 - INFO - [Connect-Vulnerar] - Connected to rendezvous point Vulnerar
+2023-03-25 13:48:27,035 - INFO - [Connect-Vulnerar] - Waiting for peer to open stream
+2023-03-25 13:48:27,142 - INFO - [Connect-Vulnerar] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-03-25 13:48:27,143 - INFO - [Connect-Vulnerar] - Stream opened successfully
+2023-03-25 13:48:27,144 - INFO - [Connect-Vulnerar] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P3\x94ua.'
+2023-03-25 13:48:27,341 - INFO - [RECEIVER] - Added neighbour P4
+2023-03-25 13:49:16,443 - INFO - [RecvLoop_178.211] - On destroy: circuit #80000002
+2023-03-25 13:49:16,443 - INFO - [RecvLoop_178.211] - Destroy circuit #80000002
+2023-03-25 13:49:29,629 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-03-25 13:50:10,454 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-03-25 13:50:12,414 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-03-25 13:50:45,444 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-03-25 13:51:20,543 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-03-25 13:51:20,594 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-03-25 13:52:00,605 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-03-25 13:52:40,760 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-03-25 13:52:42,469 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-03-25 13:53:14,989 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-03-25 13:53:51,336 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-03-25 13:53:51,385 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-03-25 13:54:15,544 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-25 13:54:16,131 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-25 13:54:16,141 - INFO - [MainThread] - ['ESTABLISH', 'EO', b'efd6a88be487391d1a34']
+2023-03-25 13:54:16,141 - INFO - [MainThread] - Got ESTABLISH to relay EO:b'efd6a88be487391d1a34' via staysafeandgoodluck
+2023-03-25 13:54:16,154 - INFO - [Establish-EO] - Establishing RP to EO
+2023-03-25 13:54:16,160 - INFO - [Establish-EO] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-25 13:54:16,619 - INFO - [Establish-EO] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-25 13:54:16,621 - INFO - [Establish-EO] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10)... (None)
+2023-03-25 13:54:16,685 - INFO - [Establish-EO] - Creating new circuit #80000003 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10) router...
+2023-03-25 13:54:16,701 - INFO - [Establish-EO] - Building -1 hops circuit...
+2023-03-25 13:54:16,701 - INFO - [Establish-EO] - Extending the circuit #80000003 with 23.129.64.213:443 (EO; Tor 0.4.7.13)...
+2023-03-25 13:54:16,704 - INFO - [Establish-EO] - Getting descriptor for 23.129.64.213:443 (EO; Tor 0.4.7.13)...
+2023-03-25 13:54:16,711 - INFO - [Establish-EO] - Connecting to guard node 178.254.44.54:3621 (1blu3DEicebeer10b; Tor 0.4.7.13)... (Internal dir client)
+2023-03-25 13:54:16,895 - INFO - [Establish-EO] - Creating new circuit #80000004 with 178.254.44.54:3621 (1blu3DEicebeer10b; Tor 0.4.7.13) router...
+2023-03-25 13:54:16,930 - INFO - [Establish-EO] - Building 0 hops circuit...
+2023-03-25 13:54:16,930 - INFO - [Establish-EO] - Stream #3: creating attached to #80000004 circuit...
+2023-03-25 13:54:16,931 - INFO - [Establish-EO] - Stream #3: connecting to hsdir
+2023-03-25 13:54:16,964 - INFO - [RecvLoop_178.254] - Stream #3: connected (remote ip '')
+2023-03-25 13:54:17,197 - INFO - [RecvLoop_178.254] - Stream #3: remote disconnected (reason = DONE)
+2023-03-25 13:54:17,197 - INFO - [Establish-EO] - Stream #3: closing (state = Disconnected)...
+2023-03-25 13:54:17,197 - INFO - [Establish-EO] - Got descriptor
+2023-03-25 13:54:18,099 - INFO - [Establish-EO] - <class 'torpy.circuit.TorCircuit'>
+2023-03-25 13:54:18,262 - INFO - [Establish-EO] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-25 13:54:18,263 - INFO - [Establish-EO] - Waiting for connections at relay EO for cookie b'efd6a88be487391d1a34' ...
+2023-03-25 13:54:26,150 - INFO - [CONNECTION] - Sending JOIN to P1 for relay EO with cookie b'efd6a88be487391d1a34'
+2023-03-25 13:54:27,198 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-03-25 13:54:27,669 - INFO - [Establish-EO] - Got REND2 message from EO
+2023-03-25 13:54:27,669 - INFO - [Establish-EO] - Entered circuit context with id 0x80000003
+2023-03-25 13:54:27,670 - INFO - [Establish-EO] - Stream #4: creating attached to #80000003 circuit...
+2023-03-25 13:54:27,670 - INFO - [Establish-EO] - Stream #4: connecting to ('127.0.0.1', 5000)
+2023-03-25 13:54:28,001 - INFO - [RecvLoop_185.181] - Stream #4: connected (remote ip '127.0.0.1')
+2023-03-25 13:54:28,071 - INFO - [Establish-EO] - Sending HELLO to peer
+2023-03-25 13:54:28,071 - INFO - [Establish-EO] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P3\x94ua.'
+2023-03-25 13:54:28,071 - INFO - [RECEIVER] - Added neighbour P1
+2023-03-25 13:55:00,459 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-03-25 13:55:00,508 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-03-25 13:55:23,068 - INFO - [RecvLoop_178.254] - On destroy: circuit #80000004
+2023-03-25 13:55:23,068 - INFO - [RecvLoop_178.254] - Destroy circuit #80000004
+2023-03-25 13:55:26,346 - ERROR - [Establish-RMK] - recv timeout
+2023-03-25 13:55:26,346 - INFO - [Establish-RMK] - Closing connection Establish-RMK
+2023-03-25 13:55:26,346 - INFO - [Establish-RMK] - Stream #2: closing (state = Connected)...
+2023-03-25 13:55:26,347 - INFO - [Establish-RMK] - Destroy circuit #80000001
+2023-03-25 13:55:26,348 - INFO - [Establish-RMK] - Closing guard connections (None)...
+2023-03-25 13:55:28,510 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-03-25 13:55:56,135 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-03-25 13:55:56,184 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-03-25 13:56:24,921 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-03-25 13:57:00,495 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-03-25 13:57:00,542 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-03-25 13:57:43,606 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-03-25 14:21:31,800 - ERROR - [Establish-EO] - recv timeout
+2023-03-25 14:21:31,811 - INFO - [Establish-EO] - Closing connection Establish-EO
+2023-03-25 14:21:31,813 - INFO - [Establish-EO] - Stream #4: closing (state = Connected)...
+2023-03-25 14:21:31,823 - INFO - [Establish-EO] - Destroy circuit #80000003
+2023-03-25 14:21:31,837 - INFO - [Establish-EO] - Closing guard connections (None)...
+2023-03-25 14:21:33,327 - WARNING - [Connect-Vulnerar] - CellPadding has some unnecessary data: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+2023-03-25 14:21:33,329 - ERROR - [Connect-Vulnerar] - Error in receive on socket: 'CellPadding' object has no attribute 'get_encrypted'
+2023-03-25 14:21:33,329 - WARNING - [Connect-Vulnerar] - CellPadding has some unnecessary data: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+2023-03-25 14:21:33,329 - ERROR - [Connect-Vulnerar] - Error in receive on socket: 'CellPadding' object has no attribute 'get_encrypted'
+2023-03-25 14:21:33,330 - WARNING - [Connect-Vulnerar] - CellPadding has some unnecessary data: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+2023-03-25 14:21:33,330 - ERROR - [Connect-Vulnerar] - Error in receive on socket: 'CellPadding' object has no attribute 'get_encrypted'
+2023-03-25 14:21:33,330 - WARNING - [Connect-Vulnerar] - CellPadding has some unnecessary data: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+2023-03-25 14:21:33,330 - ERROR - [Connect-Vulnerar] - Error in receive on socket: 'CellPadding' object has no attribute 'get_encrypted'
+2023-03-25 14:21:33,859 - ERROR - [Connect-Vulnerar] - Got RELAY_END
+2023-03-25 14:21:37,143 - WARNING - [HEART BEAT] - socket already closed
+2023-03-25 14:21:37,807 - WARNING - [TESTER] - socket already closed
+2023-03-25 14:21:37,808 - WARNING - [TESTER] - socket already closed
+2023-03-25 14:21:41,204 - INFO - [Thread-4] - Adding P1 to list of inactive
+2023-03-25 14:21:41,204 - INFO - [Thread-4] - Removing P1 from neighbours

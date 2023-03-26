@@ -1,0 +1,183 @@
+2023-03-26 17:20:09,226 - INFO - [MainThread] - Initialized router P3 at port 5003 PID 80673
+2023-03-26 17:20:09,228 - INFO - [MainThread] - Adding a connection to Vulnerar
+2023-03-26 17:20:09,228 - INFO - [Connect-Vulnerar] - Calling connect_to_rendezvous_point
+2023-03-26 17:20:09,228 - INFO - [Connect-Vulnerar] - Connect to rendezvous point Vulnerar
+2023-03-26 17:20:09,231 - INFO - [MainThread] - Adding listener for RMK
+2023-03-26 17:20:09,231 - INFO - [Establish-RMK] - Establishing RP to RMK
+2023-03-26 17:20:09,235 - INFO - [Connect-Vulnerar] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 17:20:09,243 - INFO - [Establish-RMK] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 17:20:09,256 - INFO - [MainThread] - Starting testing thread
+2023-03-26 17:20:09,281 - INFO - [TESTER] - Started tester
+2023-03-26 17:20:09,344 - INFO - [MainThread] - Starting connection thread
+2023-03-26 17:20:09,385 - INFO - [MainThread] - Starting log thread
+2023-03-26 17:20:09,717 - INFO - [Establish-RMK] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 17:20:09,719 - INFO - [Establish-RMK] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10)... (None)
+2023-03-26 17:20:09,743 - INFO - [Connect-Vulnerar] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 17:20:09,790 - INFO - [Establish-RMK] - Creating new circuit #80000001 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10) router...
+2023-03-26 17:20:09,804 - INFO - [Establish-RMK] - Building -1 hops circuit...
+2023-03-26 17:20:09,804 - INFO - [Establish-RMK] - Extending the circuit #80000001 with 46.4.101.213:9000 (RMK; Tor 0.4.8.0-alpha-dev)...
+2023-03-26 17:20:09,804 - INFO - [Establish-RMK] - Getting descriptor for 46.4.101.213:9000 (RMK; Tor 0.4.8.0-alpha-dev)...
+2023-03-26 17:20:09,808 - INFO - [Establish-RMK] - Connecting to guard node 176.123.7.79:443 (hosaka; Tor 0.4.7.11)... (Internal dir client)
+2023-03-26 17:20:10,012 - INFO - [Connect-Vulnerar] - Connected to rendezvous point Vulnerar
+2023-03-26 17:20:10,012 - INFO - [Connect-Vulnerar] - Waiting for peer to open stream
+2023-03-26 17:20:10,089 - INFO - [Connect-Vulnerar] - Received cell: <class 'torpy.cells.CellDestroy'>
+2023-03-26 17:20:10,089 - WARNING - [Connect-Vulnerar] - Could not connect to rendezvous point Vulnerar: Receive CellDestroy from RP, 11 attempts left...
+2023-03-26 17:20:10,108 - INFO - [Establish-RMK] - Creating new circuit #80000002 with 176.123.7.79:443 (hosaka; Tor 0.4.7.11) router...
+2023-03-26 17:20:10,208 - INFO - [Establish-RMK] - Building 0 hops circuit...
+2023-03-26 17:20:10,208 - INFO - [Establish-RMK] - Stream #1: creating attached to #80000002 circuit...
+2023-03-26 17:20:10,208 - INFO - [Establish-RMK] - Stream #1: connecting to hsdir
+2023-03-26 17:20:10,296 - INFO - [RecvLoop_176.123] - Stream #1: connected (remote ip '')
+2023-03-26 17:20:10,552 - INFO - [RecvLoop_176.123] - Stream #1: remote disconnected (reason = DONE)
+2023-03-26 17:20:10,552 - INFO - [Establish-RMK] - Stream #1: closing (state = Disconnected)...
+2023-03-26 17:20:10,552 - INFO - [Establish-RMK] - Got descriptor
+2023-03-26 17:20:10,611 - INFO - [Establish-RMK] - <class 'torpy.circuit.TorCircuit'>
+2023-03-26 17:20:10,665 - INFO - [Establish-RMK] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-26 17:20:10,666 - INFO - [Establish-RMK] - Waiting for connections at relay RMK for cookie b'eb688e4f52df90278060' ...
+2023-03-26 17:20:12,069 - INFO - [Establish-RMK] - Got REND2 message from RMK
+2023-03-26 17:20:12,071 - INFO - [Establish-RMK] - Entered circuit context with id 0x80000001
+2023-03-26 17:20:12,071 - INFO - [Establish-RMK] - Stream #2: creating attached to #80000001 circuit...
+2023-03-26 17:20:12,071 - INFO - [Establish-RMK] - Stream #2: connecting to ('127.0.0.1', 5000)
+2023-03-26 17:20:12,249 - INFO - [RecvLoop_185.181] - Stream #2: connected (remote ip '127.0.0.1')
+2023-03-26 17:20:12,273 - INFO - [Establish-RMK] - Sending HELLO to peer
+2023-03-26 17:20:12,273 - INFO - [Establish-RMK] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P3\x94ua.'
+2023-03-26 17:20:12,275 - INFO - [RECEIVER] - Added neighbour P1
+2023-03-26 17:20:15,094 - INFO - [Connect-Vulnerar] - Calling connect_to_rendezvous_point
+2023-03-26 17:20:15,095 - INFO - [Connect-Vulnerar] - Connect to rendezvous point Vulnerar
+2023-03-26 17:20:15,099 - INFO - [Connect-Vulnerar] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 17:20:15,310 - INFO - [Connect-Vulnerar] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 17:20:15,596 - INFO - [Connect-Vulnerar] - Connected to rendezvous point Vulnerar
+2023-03-26 17:20:15,597 - INFO - [Connect-Vulnerar] - Waiting for peer to open stream
+2023-03-26 17:20:15,701 - INFO - [Connect-Vulnerar] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-03-26 17:20:15,701 - INFO - [Connect-Vulnerar] - Stream opened successfully
+2023-03-26 17:20:15,701 - INFO - [Connect-Vulnerar] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P3\x94ua.'
+2023-03-26 17:20:15,902 - INFO - [RECEIVER] - Added neighbour P4
+2023-03-26 17:21:14,084 - INFO - [RecvLoop_176.123] - On destroy: circuit #80000002
+2023-03-26 17:21:14,084 - INFO - [RecvLoop_176.123] - Destroy circuit #80000002
+2023-03-26 17:21:24,377 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-03-26 17:22:17,606 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-03-26 17:22:17,706 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-03-26 17:23:11,640 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-03-26 17:24:05,735 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-03-26 17:24:05,785 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-03-26 17:25:01,851 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-03-26 17:25:59,865 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-03-26 17:25:59,917 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-03-26 17:26:09,651 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 17:26:10,184 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 17:26:10,194 - INFO - [MainThread] - ['ESTABLISH', 'JAJTorBits2', b'705d02fdf61dd860dcae']
+2023-03-26 17:26:10,195 - INFO - [MainThread] - Got ESTABLISH to relay JAJTorBits2:b'705d02fdf61dd860dcae' via staysafeandgoodluck
+2023-03-26 17:26:10,195 - INFO - [Establish-JAJTorBits2] - Establishing RP to JAJTorBits2
+2023-03-26 17:26:10,202 - INFO - [Establish-JAJTorBits2] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 17:26:10,732 - INFO - [Establish-JAJTorBits2] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 17:26:10,735 - INFO - [Establish-JAJTorBits2] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10)... (None)
+2023-03-26 17:26:10,793 - INFO - [Establish-JAJTorBits2] - Creating new circuit #80000003 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10) router...
+2023-03-26 17:26:10,812 - INFO - [Establish-JAJTorBits2] - Building -1 hops circuit...
+2023-03-26 17:26:10,813 - INFO - [Establish-JAJTorBits2] - Extending the circuit #80000003 with 73.117.132.138:1543 (JAJTorBits2; Tor 0.4.7.13)...
+2023-03-26 17:26:10,814 - INFO - [Establish-JAJTorBits2] - Getting descriptor for 73.117.132.138:1543 (JAJTorBits2; Tor 0.4.7.13)...
+2023-03-26 17:26:10,821 - INFO - [Establish-JAJTorBits2] - Connecting to guard node 107.189.12.101:9001 (devvulLU; Tor 0.4.7.13)... (Internal dir client)
+2023-03-26 17:26:11,025 - INFO - [Establish-JAJTorBits2] - Creating new circuit #80000004 with 107.189.12.101:9001 (devvulLU; Tor 0.4.7.13) router...
+2023-03-26 17:26:11,082 - INFO - [Establish-JAJTorBits2] - Building 0 hops circuit...
+2023-03-26 17:26:11,083 - INFO - [Establish-JAJTorBits2] - Stream #3: creating attached to #80000004 circuit...
+2023-03-26 17:26:11,083 - INFO - [Establish-JAJTorBits2] - Stream #3: connecting to hsdir
+2023-03-26 17:26:11,132 - INFO - [RecvLoop_107.189] - Stream #3: connected (remote ip '')
+2023-03-26 17:26:11,341 - INFO - [RecvLoop_107.189] - Stream #3: remote disconnected (reason = DONE)
+2023-03-26 17:26:11,341 - INFO - [Establish-JAJTorBits2] - Stream #3: closing (state = Disconnected)...
+2023-03-26 17:26:11,342 - INFO - [Establish-JAJTorBits2] - Got descriptor
+2023-03-26 17:26:11,506 - INFO - [Establish-JAJTorBits2] - <class 'torpy.circuit.TorCircuit'>
+2023-03-26 17:26:11,660 - INFO - [Establish-JAJTorBits2] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-26 17:26:11,660 - INFO - [Establish-JAJTorBits2] - Waiting for connections at relay JAJTorBits2 for cookie b'705d02fdf61dd860dcae' ...
+2023-03-26 17:26:20,201 - INFO - [CONNECTION] - Sending JOIN to P1 for relay JAJTorBits2 with cookie b'705d02fdf61dd860dcae'
+2023-03-26 17:26:21,504 - INFO - [Establish-JAJTorBits2] - Got REND2 message from JAJTorBits2
+2023-03-26 17:26:21,505 - INFO - [Establish-JAJTorBits2] - Entered circuit context with id 0x80000003
+2023-03-26 17:26:21,505 - INFO - [Establish-JAJTorBits2] - Stream #4: creating attached to #80000003 circuit...
+2023-03-26 17:26:21,505 - INFO - [Establish-JAJTorBits2] - Stream #4: connecting to ('127.0.0.1', 5000)
+2023-03-26 17:26:21,800 - INFO - [RecvLoop_185.181] - Stream #4: connected (remote ip '127.0.0.1')
+2023-03-26 17:26:21,907 - INFO - [Establish-JAJTorBits2] - Sending HELLO to peer
+2023-03-26 17:26:21,908 - INFO - [Establish-JAJTorBits2] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P3\x94ua.'
+2023-03-26 17:26:22,414 - INFO - [RECEIVER] - Added neighbour P1
+2023-03-26 17:26:24,762 - INFO - [RECEIVER] - Added relay NTH27R3 from P4 to JOIN queue
+2023-03-26 17:26:24,762 - INFO - [MainThread] - ['JOIN', 'NTH27R3', b'705d02fdf61dd860dcae']
+2023-03-26 17:26:24,762 - INFO - [MainThread] - Got JOIN to relay NTH27R3, waiting 10 sec to connect
+2023-03-26 17:26:24,763 - INFO - [Connect-NTH27R3] - Calling connect_to_rendezvous_point
+2023-03-26 17:26:24,765 - INFO - [Connect-NTH27R3] - Connect to rendezvous point NTH27R3
+2023-03-26 17:26:24,778 - INFO - [Connect-NTH27R3] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 17:26:25,210 - INFO - [Connect-NTH27R3] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 17:26:25,389 - INFO - [Connect-NTH27R3] - Connected to rendezvous point NTH27R3
+2023-03-26 17:26:25,390 - INFO - [Connect-NTH27R3] - Waiting for peer to open stream
+2023-03-26 17:26:25,462 - INFO - [Connect-NTH27R3] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-03-26 17:26:25,462 - INFO - [Connect-NTH27R3] - Stream opened successfully
+2023-03-26 17:26:25,463 - INFO - [Connect-NTH27R3] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P3\x94ua.'
+2023-03-26 17:26:25,664 - INFO - [RECEIVER] - Added neighbour P4
+2023-03-26 17:27:20,243 - INFO - [RecvLoop_107.189] - On destroy: circuit #80000004
+2023-03-26 17:27:20,243 - INFO - [RecvLoop_107.189] - Destroy circuit #80000004
+2023-03-26 17:27:20,917 - ERROR - [Establish-RMK] - recv timeout
+2023-03-26 17:27:20,917 - INFO - [Establish-RMK] - Closing connection Establish-RMK
+2023-03-26 17:27:20,917 - INFO - [Establish-RMK] - Stream #2: closing (state = Connected)...
+2023-03-26 17:27:20,918 - INFO - [Establish-RMK] - Destroy circuit #80000001
+2023-03-26 17:27:20,918 - INFO - [Establish-RMK] - Closing guard connections (None)...
+2023-03-26 17:27:24,996 - ERROR - [Connect-Vulnerar] - Got DESTROY
+2023-03-26 17:27:39,810 - WARNING - [Connect-NTH27R3] - Got SENDME
+2023-03-26 17:28:44,927 - WARNING - [Connect-NTH27R3] - Got SENDME
+2023-03-26 17:28:45,098 - WARNING - [Connect-NTH27R3] - Got SENDME
+2023-03-26 17:29:33,936 - ERROR - [Connect-NTH27R3] - Got DESTROY
+2023-03-26 17:29:49,752 - INFO - [Thread-4] - Adding P4 to list of inactive
+2023-03-26 17:29:49,754 - INFO - [Thread-4] - DEAD ROUTES DETECTED: P4
+2023-03-26 17:29:49,754 - INFO - [Thread-4] - Removing P4 from neighbours
+2023-03-26 17:29:49,754 - INFO - [Thread-4] - Removed circuit for P4
+2023-03-26 17:29:49,755 - INFO - [Thread-4] - updateGraphOnly: [['P1', 'P2', 387, 'nirukoru'], ['P1', 'P3', 827, 'JAJTorBits2'], ['P2', 'P4', 743, 'gesdm'], ['P3', 'P4', 370, 'NTH27R3']] , {'P4'}
+2023-03-26 17:29:50,758 - INFO - [Thread-4] - GRAPH: [['P1', 'P2', 387, 'nirukoru'], ['P1', 'P3', 827, 'JAJTorBits2'], ['P2', 'P4', 743, 'gesdm']]
+2023-03-26 17:29:50,758 - INFO - [Thread-4] - ROUTER: {'RID': 'P3', 'Port': 5003, 'Neighbours': 1, 'Neighbours Data': [{'NID': 'P1', 'Cost': 587, 'Hostname': '127.0.0.1', 'RP': 'JAJTorBits2', 'FLAG': 0}], 'SN': 25, 'FLAG': 1, 'RP': set()}
+2023-03-26 17:29:50,758 - INFO - [Thread-4] - LSA_DB: {'P1': {'RID': 'P1', 'Port': 5001, 'Neighbours': 2, 'Neighbours Data': [{'NID': 'P2', 'Cost': 387, 'Hostname': '127.0.0.1', 'RP': 'nirukoru', 'FLAG': 0}, {'NID': 'P3', 'Cost': 827, 'Hostname': '127.0.0.1', 'RP': 'JAJTorBits2', 'FLAG': 0}], 'SN': 24, 'FLAG': 1, 'RP': set()}, 'P2': {'RID': 'P2', 'Port': 5002, 'Neighbours': 2, 'Neighbours Data': [{'NID': 'P1', 'Cost': 556, 'Hostname': '127.0.0.1', 'RP': 'nirukoru', 'FLAG': 0}, {'NID': 'P4', 'Cost': 743, 'Hostname': '127.0.0.1', 'RP': 'gesdm', 'FLAG': 0}], 'SN': 24, 'FLAG': 1, 'RP': set()}}
+2023-03-26 17:29:55,763 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P2', 387, 'nirukoru'], ['P1', 'P3', 827, 'JAJTorBits2'], ['P2', 'P4', 743, 'gesdm']] , {'P4'}
+2023-03-26 17:30:20,422 - INFO - [CONNECTION] - Neighbour connections (1) less than MIN_NEIGHBOUR_CONNECTIONS (2)
+2023-03-26 17:30:20,423 - INFO - [CONNECTION] - Candidate peers: ['P2']
+2023-03-26 17:30:20,423 - INFO - [CONNECTION] - Highest cost peers: [('P4', 1957), ('P2', 889), ('P1', 502), ('P3', 0)]
+2023-03-26 17:30:20,429 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 17:30:20,663 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 17:30:20,674 - INFO - [MainThread] - ['ESTABLISH', 'JAJTorBits2', b'02bc46b2aac72548dde0']
+2023-03-26 17:30:20,675 - INFO - [MainThread] - Got ESTABLISH to relay JAJTorBits2:b'02bc46b2aac72548dde0' via staysafeandgoodluck
+2023-03-26 17:30:20,675 - INFO - [Establish-JAJTorBits2] - Establishing RP to JAJTorBits2
+2023-03-26 17:30:20,679 - INFO - [Establish-JAJTorBits2] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 17:30:20,885 - INFO - [Establish-JAJTorBits2] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 17:30:20,889 - INFO - [Establish-JAJTorBits2] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10)... (None)
+2023-03-26 17:30:20,953 - INFO - [Establish-JAJTorBits2] - Creating new circuit #80000005 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10) router...
+2023-03-26 17:30:20,973 - INFO - [Establish-JAJTorBits2] - Building -1 hops circuit...
+2023-03-26 17:30:20,974 - INFO - [Establish-JAJTorBits2] - Extending the circuit #80000005 with 73.117.132.138:1543 (JAJTorBits2; Tor 0.4.7.13)...
+2023-03-26 17:30:20,977 - INFO - [Establish-JAJTorBits2] - Getting descriptor for 73.117.132.138:1543 (JAJTorBits2; Tor 0.4.7.13)...
+2023-03-26 17:30:20,985 - INFO - [Establish-JAJTorBits2] - Connecting to guard node 185.220.101.76:9000 (CCCStuttgartBer; Tor 0.4.7.13)... (Internal dir client)
+2023-03-26 17:30:21,219 - INFO - [Establish-JAJTorBits2] - Creating new circuit #80000006 with 185.220.101.76:9000 (CCCStuttgartBer; Tor 0.4.7.13) router...
+2023-03-26 17:30:21,289 - INFO - [Establish-JAJTorBits2] - Building 0 hops circuit...
+2023-03-26 17:30:21,291 - INFO - [Establish-JAJTorBits2] - Stream #5: creating attached to #80000006 circuit...
+2023-03-26 17:30:21,291 - INFO - [Establish-JAJTorBits2] - Stream #5: connecting to hsdir
+2023-03-26 17:30:21,351 - INFO - [RecvLoop_185.220] - Stream #5: connected (remote ip '')
+2023-03-26 17:30:21,563 - INFO - [RecvLoop_185.220] - Stream #5: remote disconnected (reason = DONE)
+2023-03-26 17:30:21,564 - INFO - [Establish-JAJTorBits2] - Stream #5: closing (state = Disconnected)...
+2023-03-26 17:30:21,564 - INFO - [Establish-JAJTorBits2] - Got descriptor
+2023-03-26 17:30:21,726 - INFO - [Establish-JAJTorBits2] - <class 'torpy.circuit.TorCircuit'>
+2023-03-26 17:30:21,924 - INFO - [Establish-JAJTorBits2] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-26 17:30:21,924 - INFO - [Establish-JAJTorBits2] - Waiting for connections at relay JAJTorBits2 for cookie b'02bc46b2aac72548dde0' ...
+2023-03-26 17:30:26,505 - INFO - [RECEIVER] - Added relay smurfix from P2 to JOIN queue
+2023-03-26 17:30:26,505 - INFO - [MainThread] - ['JOIN', 'smurfix', b'02bc46b2aac72548dde0']
+2023-03-26 17:30:26,506 - INFO - [MainThread] - Got JOIN to relay smurfix, waiting 10 sec to connect
+2023-03-26 17:30:26,506 - INFO - [Connect-smurfix] - Calling connect_to_rendezvous_point
+2023-03-26 17:30:26,507 - INFO - [Connect-smurfix] - Connect to rendezvous point smurfix
+2023-03-26 17:30:26,521 - INFO - [Connect-smurfix] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 17:30:26,851 - INFO - [Connect-smurfix] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 17:30:27,138 - INFO - [Connect-smurfix] - Connected to rendezvous point smurfix
+2023-03-26 17:30:27,139 - INFO - [Connect-smurfix] - Waiting for peer to open stream
+2023-03-26 17:30:27,228 - INFO - [Connect-smurfix] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-03-26 17:30:27,231 - INFO - [Connect-smurfix] - Stream opened successfully
+2023-03-26 17:30:27,232 - INFO - [Connect-smurfix] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P3\x94ua.'
+2023-03-26 17:30:27,438 - INFO - [RECEIVER] - Added neighbour P2
+2023-03-26 17:30:30,693 - INFO - [CONNECTION] - Sending JOIN to P2 at relay JAJTorBits2
+2023-03-26 17:30:32,038 - INFO - [Establish-JAJTorBits2] - Got REND2 message from JAJTorBits2
+2023-03-26 17:30:32,042 - INFO - [Establish-JAJTorBits2] - Entered circuit context with id 0x80000005
+2023-03-26 17:30:32,042 - INFO - [Establish-JAJTorBits2] - Stream #6: creating attached to #80000005 circuit...
+2023-03-26 17:30:32,043 - INFO - [Establish-JAJTorBits2] - Stream #6: connecting to ('127.0.0.1', 5000)
+2023-03-26 17:30:32,333 - INFO - [RecvLoop_185.181] - Stream #6: connected (remote ip '127.0.0.1')
+2023-03-26 17:30:32,446 - INFO - [Establish-JAJTorBits2] - Sending HELLO to peer
+2023-03-26 17:30:32,447 - INFO - [Establish-JAJTorBits2] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P3\x94ua.'
+2023-03-26 17:30:32,448 - INFO - [RECEIVER] - Added neighbour P2
+2023-03-26 17:31:22,761 - INFO - [RecvLoop_185.220] - On destroy: circuit #80000006
+2023-03-26 17:31:22,762 - INFO - [RecvLoop_185.220] - Destroy circuit #80000006
+2023-03-26 17:31:31,194 - ERROR - [Connect-smurfix] - Got RELAY_END

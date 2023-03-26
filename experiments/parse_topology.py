@@ -75,16 +75,16 @@ def main():
     csv = pd.read_csv(csvfile, sep=";")
     print(csv)
 
-    csv.plot(x = "Offset", y = "Convergence", kind="line", color = 'k', figsize=(10, 5), title="Convergence",
-            xlabel = "Time (s)", ylabel = "Percent")
+    csv.plot(x = "Offset", y = "Convergence", kind="line", color = 'k', figsize=(10, 5), legend=False, #title="Convergence",
+            xlabel = "Time (s)", ylabel = "Convergence (%)")
     plt.show()
 
-    sns.relplot(
-        data=csv, kind="line",
-        x="Offset", y="Convergence", 
-        #col="align", hue="choice", size="coherence", style="choice",
-        facet_kws=dict(sharex=False),
-    )
+    #sns.relplot(
+    #    data=csv, kind="line",
+    #    x="Offset", y="Convergence", 
+    #    #col="align", hue="choice", size="coherence", style="choice",
+    #    facet_kws=dict(sharex=False),
+    #)
     plt.show()
     
 

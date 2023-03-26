@@ -49,21 +49,25 @@ def plot(csvfile):
     csv['Timestamp'] = pd.to_datetime(csv['Timestamp']) 
 
     #df = csv[['Timestamp', 'Peer', 'Received']]
-    #df.set_index('Timestamp', inplace=True)
+    csv.set_index('Timestamp', inplace=True)
 
     print(csv)
+    print(csv.describe())
     
-    #grp = df.groupby([pd.Grouper(freq = '1min'),'Peer', 'Received'])['Peer', 'Received'].count()
-    #print(grp)
-    #print(grp.dtypes)
-    #sns.lineplot(data=grp, x="Timestamp", y="Received",  
-    #            hue="Received", hue_order=["LSA", "HB", "LOOKUP", "HELLO", "JOIN"],
-    #        )
-    sns.histplot(data=csv, x="Offset",
-                hue="Received", hue_order=["LSA", "HB", "LOOKUP", "HELLO", "JOIN"],
-                binwidth=30, stat="count", kde=False, 
+    grp = csv.groupby([pd.cut(csv.Offset, 60), 'Received']).count()
+    #grp = csv.groupby(['Offset', 'Received'])['Offset', 'Received'].count()
+    print(grp)
+    
+    #pd.pivot_table(csv,index = 'Offset', columns = 'Received',aggfunc ='count').plot.bar()
+
+    #sns.catplot(data=grp,kind='count',x='Offset',hue='Received')
+
+    #sns.histplot(data=grp, x="Offset",
+    #            hue="Received", 
+                #hue_order=["LSA", "HB", "LOOKUP", "HELLO", "JOIN"],
+    #            binwidth=10, stat="count", kde=False, 
                 #col="Peer"
-            )
+    #        )
 
     #csv.plot(x = "Offset", y = "Received", kind="line", color = 'k', figsize=(10, 5), title="Messages received",
     #        xlabel = "Time (s)", ylabel = "#")
