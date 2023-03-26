@@ -1,0 +1,1262 @@
+2023-03-26 18:36:49,795 - INFO - [MainThread] - Initialized router P6 at port 5006 PID 31133
+2023-03-26 18:36:49,798 - INFO - [MainThread] - Adding a connection to taipe
+2023-03-26 18:36:49,799 - INFO - [Connect-taipe] - Calling connect_to_rendezvous_point
+2023-03-26 18:36:49,799 - INFO - [Connect-taipe] - Connect to rendezvous point taipe
+2023-03-26 18:36:49,799 - INFO - [MainThread] - Adding listener for LupusreginaBeta
+2023-03-26 18:36:49,803 - INFO - [Establish-LupusreginaBeta] - Establishing RP to LupusreginaBeta
+2023-03-26 18:36:49,808 - INFO - [Connect-taipe] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 18:36:49,820 - INFO - [Establish-LupusreginaBeta] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 18:36:49,851 - INFO - [MainThread] - Starting testing thread
+2023-03-26 18:36:50,053 - INFO - [TESTER] - Started tester
+2023-03-26 18:36:50,127 - INFO - [MainThread] - Starting connection thread
+2023-03-26 18:36:50,142 - INFO - [MainThread] - Starting log thread
+2023-03-26 18:36:50,144 - INFO - [Connect-taipe] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 18:36:50,392 - INFO - [Connect-taipe] - Connected to rendezvous point taipe
+2023-03-26 18:36:50,398 - INFO - [Connect-taipe] - Waiting for peer to open stream
+2023-03-26 18:36:50,429 - INFO - [Establish-LupusreginaBeta] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 18:36:50,431 - INFO - [Establish-LupusreginaBeta] - Connecting to guard node 97.113.253.84:110 (NeelTorRelay2; Tor 0.4.7.13)... (None)
+2023-03-26 18:36:50,431 - INFO - [Connect-taipe] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-03-26 18:36:50,433 - INFO - [Connect-taipe] - Stream opened successfully
+2023-03-26 18:36:50,433 - INFO - [Connect-taipe] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P6\x94ua.'
+2023-03-26 18:36:50,631 - INFO - [RECEIVER] - Added neighbour P5
+2023-03-26 18:36:51,198 - INFO - [Establish-LupusreginaBeta] - Creating new circuit #80000001 with 97.113.253.84:110 (NeelTorRelay2; Tor 0.4.7.13) router...
+2023-03-26 18:36:51,388 - INFO - [Establish-LupusreginaBeta] - Building -1 hops circuit...
+2023-03-26 18:36:51,388 - INFO - [Establish-LupusreginaBeta] - Extending the circuit #80000001 with 213.113.2.72:6881 (LupusreginaBeta; Tor 0.4.7.13)...
+2023-03-26 18:36:51,388 - INFO - [Establish-LupusreginaBeta] - Getting descriptor for 213.113.2.72:6881 (LupusreginaBeta; Tor 0.4.7.13)...
+2023-03-26 18:36:51,392 - INFO - [Establish-LupusreginaBeta] - Connecting to guard node 185.51.10.106:9669 (qoqo; Tor 0.4.7.13)... (Internal dir client)
+2023-03-26 18:36:51,595 - INFO - [Establish-LupusreginaBeta] - Creating new circuit #80000002 with 185.51.10.106:9669 (qoqo; Tor 0.4.7.13) router...
+2023-03-26 18:36:51,646 - INFO - [Establish-LupusreginaBeta] - Building 0 hops circuit...
+2023-03-26 18:36:51,646 - INFO - [Establish-LupusreginaBeta] - Stream #1: creating attached to #80000002 circuit...
+2023-03-26 18:36:51,646 - INFO - [Establish-LupusreginaBeta] - Stream #1: connecting to hsdir
+2023-03-26 18:36:51,694 - INFO - [RecvLoop_185.51.] - Stream #1: connected (remote ip '')
+2023-03-26 18:36:51,946 - INFO - [RecvLoop_185.51.] - Stream #1: remote disconnected (reason = DONE)
+2023-03-26 18:36:51,946 - INFO - [Establish-LupusreginaBeta] - Stream #1: closing (state = Disconnected)...
+2023-03-26 18:36:51,947 - INFO - [Establish-LupusreginaBeta] - Got descriptor
+2023-03-26 18:36:52,314 - INFO - [Establish-LupusreginaBeta] - <class 'torpy.circuit.TorCircuit'>
+2023-03-26 18:36:52,682 - INFO - [Establish-LupusreginaBeta] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-26 18:36:52,682 - INFO - [Establish-LupusreginaBeta] - Waiting for connections at relay LupusreginaBeta for cookie b'eb688e4f52df90278061' ...
+2023-03-26 18:36:59,870 - INFO - [Establish-LupusreginaBeta] - Got REND2 message from LupusreginaBeta
+2023-03-26 18:36:59,870 - INFO - [Establish-LupusreginaBeta] - Entered circuit context with id 0x80000001
+2023-03-26 18:36:59,870 - INFO - [Establish-LupusreginaBeta] - Stream #2: creating attached to #80000001 circuit...
+2023-03-26 18:36:59,871 - INFO - [Establish-LupusreginaBeta] - Stream #2: connecting to ('127.0.0.1', 5000)
+2023-03-26 18:37:00,259 - INFO - [RecvLoop_97.113.] - Stream #2: connected (remote ip '127.0.0.1')
+2023-03-26 18:37:00,271 - INFO - [Establish-LupusreginaBeta] - Sending HELLO to peer
+2023-03-26 18:37:00,272 - INFO - [Establish-LupusreginaBeta] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P6\x94ua.'
+2023-03-26 18:37:00,274 - INFO - [RECEIVER] - Added neighbour P8
+2023-03-26 18:37:14,254 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:15,226 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:16,876 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:17,302 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:17,303 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:17,304 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:19,262 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:20,395 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:20,498 - INFO - [RECEIVER] - Added relay voltorb from P1 to JOIN queue
+2023-03-26 18:37:20,498 - INFO - [MainThread] - ['JOIN', 'voltorb', b'aa89841b4eb786ba7c59']
+2023-03-26 18:37:20,499 - INFO - [MainThread] - Got JOIN to relay voltorb, waiting 10 sec to connect
+2023-03-26 18:37:20,499 - INFO - [Connect-voltorb] - Calling connect_to_rendezvous_point
+2023-03-26 18:37:20,499 - INFO - [Connect-voltorb] - Connect to rendezvous point voltorb
+2023-03-26 18:37:20,503 - INFO - [Connect-voltorb] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 18:37:20,701 - INFO - [Connect-voltorb] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 18:37:22,153 - INFO - [Connect-voltorb] - Connected to rendezvous point voltorb
+2023-03-26 18:37:22,154 - INFO - [Connect-voltorb] - Waiting for peer to open stream
+2023-03-26 18:37:22,302 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:22,529 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:22,529 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:22,530 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:22,530 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:22,783 - INFO - [Connect-voltorb] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-03-26 18:37:22,783 - INFO - [Connect-voltorb] - Stream opened successfully
+2023-03-26 18:37:22,784 - INFO - [Connect-voltorb] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P6\x94ua.'
+2023-03-26 18:37:23,079 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:23,845 - INFO - [RECEIVER] - Added neighbour P1
+2023-03-26 18:37:24,265 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:25,402 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:27,948 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:29,276 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:29,503 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:29,843 - INFO - [Thread-4] - Adding P8 to list of inactive
+2023-03-26 18:37:29,843 - INFO - [Thread-4] - DEAD ROUTES DETECTED: P8
+2023-03-26 18:37:29,844 - INFO - [Thread-4] - Removing P8 from neighbours
+2023-03-26 18:37:29,844 - INFO - [Thread-4] - Removed circuit for P8
+2023-03-26 18:37:29,844 - INFO - [Thread-4] - updateGraphOnly: [['P5', 'P6', 100, 'taipe'], ['P6', 'P8', 100, 'LupusreginaBeta'], ['P1', 'P6', 100, 'voltorb'], ['P4', 'P5', 100, 'Cornball'], ['P5', 'P7', 100, 'RMK'], ['P7', 'P8', 100, 'Vulnerar'], ['P1', 'P3', 814, 'RMK'], ['P3', 'P4', 472, 'Vulnerar'], ['P1', 'P2', 544, '4mnesia']] , {'P8'}
+2023-03-26 18:37:30,206 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:30,314 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:30,547 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:30,548 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:30,848 - INFO - [Thread-4] - GRAPH: [['P4', 'P5', 100, 'Cornball'], ['P5', 'P6', 100, 'taipe'], ['P5', 'P7', 100, 'RMK'], ['P7', 'P8', 100, 'Vulnerar'], ['P1', 'P3', 814, 'RMK'], ['P3', 'P4', 472, 'Vulnerar'], ['P3', 'P8', 100, 'Titan01'], ['P1', 'P2', 544, '4mnesia']]
+2023-03-26 18:37:30,848 - INFO - [Thread-4] - ROUTER: {'RID': 'P6', 'Port': 5006, 'Neighbours': 2, 'Neighbours Data': [{'NID': 'P5', 'Cost': 100, 'Hostname': '127.0.0.1', 'RP': 'taipe', 'FLAG': 0}, {'NID': 'P1', 'Cost': 100, 'Hostname': '127.0.0.1', 'RP': 'voltorb', 'FLAG': 0}], 'SN': 4, 'FLAG': 1, 'RP': set()}
+2023-03-26 18:37:30,848 - INFO - [Thread-4] - LSA_DB: {'P5': {'RID': 'P5', 'Port': 5005, 'Neighbours': 3, 'Neighbours Data': [{'NID': 'P4', 'Cost': 100, 'Hostname': '127.0.0.1', 'RP': 'Cornball', 'FLAG': 0}, {'NID': 'P6', 'Cost': 100, 'Hostname': '127.0.0.1', 'RP': 'taipe', 'FLAG': 0}, {'NID': 'P7', 'Cost': 100, 'Hostname': '127.0.0.1', 'RP': 'RMK', 'FLAG': 0}], 'SN': 3, 'FLAG': 1, 'RP': set()}, 'P7': {'RID': 'P7', 'Port': 5007, 'Neighbours': 2, 'Neighbours Data': [{'NID': 'P5', 'Cost': 100, 'Hostname': '127.0.0.1', 'RP': 'RMK', 'FLAG': 0}, {'NID': 'P8', 'Cost': 100, 'Hostname': '127.0.0.1', 'RP': 'Vulnerar', 'FLAG': 0}], 'SN': 2, 'FLAG': 1, 'RP': set()}, 'P3': {'RID': 'P3', 'Port': 5003, 'Neighbours': 3, 'Neighbours Data': [{'NID': 'P1', 'Cost': 814, 'Hostname': '127.0.0.1', 'RP': 'RMK', 'FLAG': 0}, {'NID': 'P4', 'Cost': 472, 'Hostname': '127.0.0.1', 'RP': 'Vulnerar', 'FLAG': 0}, {'NID': 'P8', 'Cost': 100, 'Hostname': '127.0.0.1', 'RP': 'Titan01', 'FLAG': 0}], 'SN': 5, 'FLAG': 1, 'RP': set()}, 'P4': {'RID': 'P4', 'Port': 5004, 'Neighbours': 2, 'Neighbours Data': [{'NID': 'P3', 'Cost': 761, 'Hostname': '127.0.0.1', 'RP': 'Vulnerar', 'FLAG': 0}, {'NID': 'P5', 'Cost': 100, 'Hostname': '127.0.0.1', 'RP': 'Cornball', 'FLAG': 0}], 'SN': 3, 'FLAG': 1, 'RP': set()}, 'P2': {'RID': 'P2', 'Port': 5002, 'Neighbours': 1, 'Neighbours Data': [{'NID': 'P1', 'Cost': 544, 'Hostname': '127.0.0.1', 'RP': '4mnesia', 'FLAG': 0}], 'SN': 2, 'FLAG': 1, 'RP': set()}}
+2023-03-26 18:37:30,957 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:33,971 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:33,972 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:33,972 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:34,276 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:34,701 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:34,784 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:35,160 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:35,173 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:35,318 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:35,550 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:35,551 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:35,648 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:35,649 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:36,180 - ERROR - [TESTER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:36,180 - ERROR - [TESTER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:36,180 - ERROR - [TESTER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:36,180 - ERROR - [TESTER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:38,785 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:39,013 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:39,285 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:39,720 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:39,732 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:39,732 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:39,924 - WARNING - [Connect-taipe] - Got SENDME
+2023-03-26 18:37:40,338 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:40,564 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:40,565 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:40,566 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:40,566 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:41,164 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:41,187 - ERROR - [TESTER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:41,188 - ERROR - [TESTER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:41,188 - ERROR - [TESTER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:41,520 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:41,520 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:41,806 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:43,813 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:43,813 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:43,814 - WARNING - [RECEIVER] - Routing loop from P6 to P4: P6-P5-P6
+2023-03-26 18:37:43,814 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:43,815 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:43,816 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:43,816 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:43,817 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:43,833 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:44,291 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:44,518 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:45,734 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:45,792 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:45,823 - ERROR - [RecvLoop_97.113.] - Some handle errors
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
+    self._handler_mgr.handle(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
+    handler(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
+    return func(*args_new, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
+    circuit.handle_relay(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
+    circuit_node, inner_cell = self._decrypt(cell)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
+    return from_node, relay_cell.get_decrypted()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
+    assert self._checked
+AssertionError
+2023-03-26 18:37:46,753 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:47,059 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:47,150 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:47,150 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:47,196 - ERROR - [TESTER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:47,197 - ERROR - [TESTER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:47,197 - ERROR - [TESTER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:48,178 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:49,224 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:49,273 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:50,197 - INFO - [CONNECTION] - Neighbour connections (2) less than MIN_NEIGHBOUR_CONNECTIONS (4)
+2023-03-26 18:37:50,197 - INFO - [CONNECTION] - Candidate peers: ['P4', 'P3', 'P7', 'P8', 'P2']
+2023-03-26 18:37:50,197 - INFO - [CONNECTION] - Highest cost peers: [('P4', 200), ('P7', 200), ('P3', 200), ('P2', 200), ('P5', 100), ('P8', 100), ('P1', 100), ('P6', 0)]
+2023-03-26 18:37:50,202 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 18:37:50,407 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 18:37:50,413 - INFO - [MainThread] - ['ESTABLISH', 'hohoho', b'8d39f4e4dec3a7dd2faa']
+2023-03-26 18:37:50,413 - INFO - [MainThread] - Got ESTABLISH to relay hohoho:b'8d39f4e4dec3a7dd2faa' via NeelTorRelay2
+2023-03-26 18:37:50,414 - INFO - [Establish-hohoho] - Establishing RP to hohoho
+2023-03-26 18:37:50,421 - INFO - [Establish-hohoho] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 18:37:50,554 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:50,554 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:50,554 - INFO - [RECEIVER] - updateGraphOnly: [['P4', 'P5', 100, 'Cornball'], ['P5', 'P6', 100, 'taipe'], ['P5', 'P7', 100, 'RMK'], ['P7', 'P8', 100, 'Vulnerar'], ['P1', 'P3', 814, 'RMK'], ['P3', 'P4', 472, 'Vulnerar'], ['P3', 'P8', 100, 'Titan01'], ['P1', 'P4', 100, 'SnoflakeSteam2664'], ['P1', 'P2', 544, '4mnesia'], ['P2', 'P8', 100, 'CCCStuttgartBer'], ['P6', 'P8', 100, 'LupusreginaBeta'], ['P1', 'P6', 100, 'voltorb']] , {'P6'}
+2023-03-26 18:37:50,717 - INFO - [Establish-hohoho] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 18:37:50,718 - INFO - [Establish-hohoho] - Connecting to guard node 97.113.253.84:110 (NeelTorRelay2; Tor 0.4.7.13)... (None)
+2023-03-26 18:37:51,483 - INFO - [Establish-hohoho] - Creating new circuit #80000003 with 97.113.253.84:110 (NeelTorRelay2; Tor 0.4.7.13) router...
+2023-03-26 18:37:51,642 - INFO - [RecvLoop_185.51.] - On destroy: circuit #80000002
+2023-03-26 18:37:51,642 - INFO - [RecvLoop_185.51.] - Destroy circuit #80000002
+2023-03-26 18:37:51,675 - INFO - [Establish-hohoho] - Building -1 hops circuit...
+2023-03-26 18:37:51,675 - INFO - [Establish-hohoho] - Extending the circuit #80000003 with 146.59.233.33:9001 (hohoho; Tor 0.4.7.13)...
+2023-03-26 18:37:51,675 - INFO - [Establish-hohoho] - Getting descriptor for 146.59.233.33:9001 (hohoho; Tor 0.4.7.13)...
+2023-03-26 18:37:51,680 - INFO - [Establish-hohoho] - Connecting to guard node 193.108.118.218:80 (Ichotolot65; Tor 0.4.7.12)... (Internal dir client)
+2023-03-26 18:37:51,842 - INFO - [Establish-hohoho] - Creating new circuit #80000004 with 193.108.118.218:80 (Ichotolot65; Tor 0.4.7.12) router...
+2023-03-26 18:37:51,891 - INFO - [Establish-hohoho] - Building 0 hops circuit...
+2023-03-26 18:37:51,891 - INFO - [Establish-hohoho] - Stream #3: creating attached to #80000004 circuit...
+2023-03-26 18:37:51,891 - INFO - [Establish-hohoho] - Stream #3: connecting to hsdir
+2023-03-26 18:37:51,935 - INFO - [RecvLoop_193.108] - Stream #3: connected (remote ip '')
+2023-03-26 18:37:52,142 - INFO - [RecvLoop_193.108] - Stream #3: remote disconnected (reason = DONE)
+2023-03-26 18:37:52,143 - INFO - [Establish-hohoho] - Stream #3: closing (state = Disconnected)...
+2023-03-26 18:37:52,143 - INFO - [Establish-hohoho] - Got descriptor
+2023-03-26 18:37:52,504 - INFO - [Establish-hohoho] - <class 'torpy.circuit.TorCircuit'>
+2023-03-26 18:37:52,588 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:52,589 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P8'
+2023-03-26 18:37:52,903 - INFO - [Establish-hohoho] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-26 18:37:52,903 - INFO - [Establish-hohoho] - Waiting for connections at relay hohoho for cookie b'8d39f4e4dec3a7dd2faa' ...
+2023-03-26 18:38:00,421 - INFO - [CONNECTION] - Sending JOIN to P4 at relay hohoho
+2023-03-26 18:38:01,892 - INFO - [Establish-hohoho] - Got REND2 message from hohoho
+2023-03-26 18:38:01,893 - INFO - [Establish-hohoho] - Entered circuit context with id 0x80000003
+2023-03-26 18:38:01,893 - INFO - [Establish-hohoho] - Stream #4: creating attached to #80000003 circuit...
+2023-03-26 18:38:01,893 - INFO - [Establish-hohoho] - Stream #4: connecting to ('127.0.0.1', 5000)
+2023-03-26 18:38:02,343 - INFO - [RecvLoop_97.113.] - Stream #4: connected (remote ip '127.0.0.1')
+2023-03-26 18:38:02,496 - INFO - [Establish-hohoho] - Sending HELLO to peer
+2023-03-26 18:38:02,496 - INFO - [Establish-hohoho] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P6\x94ua.'
+2023-03-26 18:38:02,497 - INFO - [RECEIVER] - Added neighbour P4
+2023-03-26 18:38:08,268 - WARNING - [Connect-taipe] - Got SENDME
+2023-03-26 18:38:08,322 - WARNING - [Connect-taipe] - Got SENDME
+2023-03-26 18:38:10,481 - WARNING - [Connect-voltorb] - Got SENDME
+2023-03-26 18:38:14,485 - ERROR - [Establish-LupusreginaBeta] - recv timeout
+2023-03-26 18:38:14,486 - INFO - [Establish-LupusreginaBeta] - Closing connection Establish-LupusreginaBeta
+2023-03-26 18:38:14,486 - INFO - [Establish-LupusreginaBeta] - Stream #2: closing (state = Connected)...
+2023-03-26 18:38:14,488 - INFO - [Establish-LupusreginaBeta] - Destroy circuit #80000001
+2023-03-26 18:38:14,488 - INFO - [Establish-LupusreginaBeta] - Closing guard connections (None)...
+2023-03-26 18:38:51,312 - WARNING - [Connect-taipe] - Got SENDME
+2023-03-26 18:38:51,845 - WARNING - [Connect-voltorb] - Got SENDME
+2023-03-26 18:38:52,176 - WARNING - [Connect-voltorb] - Got SENDME
+2023-03-26 18:38:58,804 - INFO - [RecvLoop_193.108] - On destroy: circuit #80000004
+2023-03-26 18:38:58,804 - INFO - [RecvLoop_193.108] - Destroy circuit #80000004
+2023-03-26 18:39:00,424 - INFO - [CONNECTION] - Neighbour connections (3) less than MIN_NEIGHBOUR_CONNECTIONS (4)
+2023-03-26 18:39:00,424 - INFO - [CONNECTION] - Candidate peers: ['P2', 'P3', 'P8', 'P7']
+2023-03-26 18:39:00,424 - INFO - [CONNECTION] - Highest cost peers: [('P2', 1962), ('P3', 1357), ('P5', 1217), ('P8', 200), ('P7', 200), ('P4', 100), ('P1', 100), ('P6', 0)]
+2023-03-26 18:39:00,439 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 18:39:00,664 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 18:39:00,670 - INFO - [MainThread] - ['ESTABLISH', 'Paphos', b'246a98a46c8e8fd2b9c0']
+2023-03-26 18:39:00,670 - INFO - [MainThread] - Got ESTABLISH to relay Paphos:b'246a98a46c8e8fd2b9c0' via NeelTorRelay2
+2023-03-26 18:39:00,671 - INFO - [Establish-Paphos] - Establishing RP to Paphos
+2023-03-26 18:39:00,674 - INFO - [Establish-Paphos] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 18:39:00,871 - INFO - [Establish-Paphos] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 18:39:00,872 - INFO - [Establish-Paphos] - Connecting to guard node 97.113.253.84:110 (NeelTorRelay2; Tor 0.4.7.13)... (None)
+2023-03-26 18:39:01,640 - INFO - [Establish-Paphos] - Creating new circuit #80000005 with 97.113.253.84:110 (NeelTorRelay2; Tor 0.4.7.13) router...
+2023-03-26 18:39:01,829 - INFO - [Establish-Paphos] - Building -1 hops circuit...
+2023-03-26 18:39:01,830 - INFO - [Establish-Paphos] - Extending the circuit #80000005 with 62.210.205.228:443 (Paphos; Tor 0.4.7.13)...
+2023-03-26 18:39:01,830 - INFO - [Establish-Paphos] - Getting descriptor for 62.210.205.228:443 (Paphos; Tor 0.4.7.13)...
+2023-03-26 18:39:01,834 - INFO - [Establish-Paphos] - Connecting to guard node 178.211.147.22:6839 (GTAOnline3; Tor 0.4.7.13)... (Internal dir client)
+2023-03-26 18:39:02,032 - INFO - [Establish-Paphos] - Creating new circuit #80000006 with 178.211.147.22:6839 (GTAOnline3; Tor 0.4.7.13) router...
+2023-03-26 18:39:02,077 - INFO - [Establish-Paphos] - Building 0 hops circuit...
+2023-03-26 18:39:02,078 - INFO - [Establish-Paphos] - Stream #5: creating attached to #80000006 circuit...
+2023-03-26 18:39:02,078 - INFO - [Establish-Paphos] - Stream #5: connecting to hsdir
+2023-03-26 18:39:02,129 - INFO - [RecvLoop_178.211] - Stream #5: connected (remote ip '')
+2023-03-26 18:39:02,365 - INFO - [RecvLoop_178.211] - Stream #5: remote disconnected (reason = DONE)
+2023-03-26 18:39:02,365 - INFO - [Establish-Paphos] - Stream #5: closing (state = Disconnected)...
+2023-03-26 18:39:02,365 - INFO - [Establish-Paphos] - Got descriptor
+2023-03-26 18:39:02,710 - INFO - [Establish-Paphos] - <class 'torpy.circuit.TorCircuit'>
+2023-03-26 18:39:03,055 - INFO - [Establish-Paphos] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-26 18:39:03,055 - INFO - [Establish-Paphos] - Waiting for connections at relay Paphos for cookie b'246a98a46c8e8fd2b9c0' ...
+2023-03-26 18:39:10,680 - INFO - [CONNECTION] - Sending JOIN to P2 at relay Paphos
+2023-03-26 18:39:11,730 - INFO - [Establish-Paphos] - Got REND2 message from Paphos
+2023-03-26 18:39:11,731 - INFO - [Establish-Paphos] - Entered circuit context with id 0x80000005
+2023-03-26 18:39:11,731 - INFO - [Establish-Paphos] - Stream #6: creating attached to #80000005 circuit...
+2023-03-26 18:39:11,731 - INFO - [Establish-Paphos] - Stream #6: connecting to ('127.0.0.1', 5000)
+2023-03-26 18:39:12,232 - INFO - [RecvLoop_97.113.] - Stream #6: connected (remote ip '127.0.0.1')
+2023-03-26 18:39:12,389 - INFO - [Establish-Paphos] - Sending HELLO to peer
+2023-03-26 18:39:12,389 - INFO - [Establish-Paphos] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P6\x94ua.'
+2023-03-26 18:39:13,951 - INFO - [RECEIVER] - Added neighbour P2
+2023-03-26 18:39:24,413 - WARNING - [Connect-voltorb] - Got SENDME
+2023-03-26 18:39:35,374 - WARNING - [RECEIVER] - Routing loop from P6 to P2: P6-P1-P6
+2023-03-26 18:39:35,374 - WARNING - [RECEIVER] - Routing loop from P5 to P2: P5-P6-P4-P6
+2023-03-26 18:39:42,414 - WARNING - [RECEIVER] - Routing loop from P6 to P5: P6-P4-P6
+2023-03-26 18:39:45,805 - INFO - [RECEIVER] - updateGraphOnly: [['P4', 'P5', 1121, 'Cornball'], ['P5', 'P6', 1896, 'taipe'], ['P5', 'P7', 2152, 'RMK'], ['P2', 'P5', 100, 'yyzz1'], ['P7', 'P8', 1960, 'Vulnerar'], ['P1', 'P7', 100, 'NTH26R4'], ['P4', 'P7', 100, 'SparadiseSpa'], ['P1', 'P3', 1650, 'RMK'], ['P3', 'P4', 1257, 'Vulnerar'], ['P3', 'P8', 1236, 'Titan01'], ['P1', 'P4', 100, 'SnoflakeSteam2664'], ['P4', 'P6', 100, 'hohoho'], ['P1', 'P2', 1862, '4mnesia'], ['P2', 'P8', 1931, 'CCCStuttgartBer'], ['P2', 'P6', 100, 'Paphos'], ['P1', 'P8', 100, 'Quetzalcoatl'], ['P1', 'P6', 2699, 'voltorb']] , {'P8'}
+2023-03-26 18:39:49,848 - WARNING - [RECEIVER] - Routing loop from P6 to P8: P6-P2-P6
+2023-03-26 18:39:54,771 - WARNING - [RECEIVER] - Routing loop from P6 to P8: P6-P2-P6
+2023-03-26 18:39:58,355 - WARNING - [Connect-taipe] - Got SENDME
+2023-03-26 18:39:58,415 - WARNING - [Connect-taipe] - Got SENDME
+2023-03-26 18:40:08,404 - INFO - [RecvLoop_178.211] - On destroy: circuit #80000006
+2023-03-26 18:40:08,404 - INFO - [RecvLoop_178.211] - Destroy circuit #80000006
+2023-03-26 18:40:15,388 - INFO - [RECEIVER] - updateGraphOnly: [['P4', 'P5', 2339, 'Cornball'], ['P5', 'P6', 1896, 'taipe'], ['P5', 'P7', 2152, 'RMK'], ['P2', 'P5', 100, 'yyzz1'], ['P1', 'P5', 100, 'torarch'], ['P7', 'P8', 1960, 'Vulnerar'], ['P1', 'P7', 100, 'NTH26R4'], ['P4', 'P7', 100, 'SparadiseSpa'], ['P1', 'P3', 1650, 'RMK'], ['P3', 'P4', 2724, 'Vulnerar'], ['P3', 'P8', 1906, 'Titan01'], ['P2', 'P3', 100, 'daNickname'], ['P1', 'P4', 100, 'SnoflakeSteam2664'], ['P4', 'P6', 2725, 'hohoho'], ['P1', 'P2', 1862, '4mnesia'], ['P2', 'P8', 1931, 'CCCStuttgartBer'], ['P2', 'P6', 100, 'Paphos'], ['P1', 'P6', 2699, 'voltorb']] , {'P1'}
+2023-03-26 18:40:37,329 - INFO - [RECEIVER] - updateGraphOnly: [['P4', 'P5', 2339, 'Cornball'], ['P5', 'P6', 1896, 'taipe'], ['P5', 'P7', 2152, 'RMK'], ['P2', 'P5', 100, 'yyzz1'], ['P1', 'P5', 100, 'torarch'], ['P3', 'P5', 100, 'dukdukduke'], ['P7', 'P8', 1960, 'Vulnerar'], ['P1', 'P7', 100, 'NTH26R4'], ['P4', 'P7', 100, 'SparadiseSpa'], ['P1', 'P3', 1650, 'RMK'], ['P3', 'P4', 2724, 'Vulnerar'], ['P3', 'P8', 1906, 'Titan01'], ['P2', 'P3', 100, 'daNickname'], ['P1', 'P4', 100, 'SnoflakeSteam2664'], ['P4', 'P6', 2725, 'hohoho'], ['P4', 'P8', 100, 'flodder'], ['P1', 'P2', 1862, '4mnesia'], ['P2', 'P8', 1931, 'CCCStuttgartBer'], ['P2', 'P6', 100, 'Paphos']] , {'P8'}
+2023-03-26 18:40:40,754 - WARNING - [Connect-voltorb] - Got SENDME
+2023-03-26 18:40:41,080 - WARNING - [Connect-voltorb] - Got SENDME
+2023-03-26 18:40:47,807 - INFO - [RECEIVER] - updateGraphOnly: [['P4', 'P5', 2339, 'Cornball'], ['P5', 'P6', 1896, 'taipe'], ['P5', 'P7', 2152, 'RMK'], ['P2', 'P5', 100, 'yyzz1'], ['P1', 'P5', 100, 'torarch'], ['P3', 'P5', 100, 'dukdukduke'], ['P7', 'P8', 1960, 'Vulnerar'], ['P1', 'P7', 100, 'NTH26R4'], ['P4', 'P7', 100, 'SparadiseSpa'], ['P1', 'P3', 1650, 'RMK'], ['P3', 'P4', 2724, 'Vulnerar'], ['P3', 'P8', 1906, 'Titan01'], ['P2', 'P3', 100, 'daNickname'], ['P1', 'P4', 100, 'SnoflakeSteam2664'], ['P4', 'P6', 2725, 'hohoho'], ['P4', 'P8', 100, 'flodder'], ['P1', 'P2', 1862, '4mnesia'], ['P2', 'P8', 1931, 'CCCStuttgartBer'], ['P2', 'P6', 100, 'Paphos'], ['P1', 'P6', 2699, 'voltorb']] , {'P4'}
+2023-03-26 18:41:08,578 - INFO - [RECEIVER] - updateGraphOnly: [['P4', 'P5', 2339, 'Cornball'], ['P5', 'P6', 1896, 'taipe'], ['P5', 'P7', 2152, 'RMK'], ['P2', 'P5', 100, 'yyzz1'], ['P1', 'P5', 100, 'torarch'], ['P3', 'P5', 100, 'dukdukduke'], ['P7', 'P8', 1960, 'Vulnerar'], ['P1', 'P7', 100, 'NTH26R4'], ['P4', 'P7', 100, 'SparadiseSpa'], ['P1', 'P3', 1650, 'RMK'], ['P3', 'P4', 2724, 'Vulnerar'], ['P3', 'P8', 1906, 'Titan01'], ['P2', 'P3', 100, 'daNickname'], ['P1', 'P2', 1862, '4mnesia'], ['P2', 'P8', 1931, 'CCCStuttgartBer'], ['P2', 'P6', 100, 'Paphos'], ['P1', 'P6', 2699, 'voltorb'], ['P4', 'P8', 100, 'flodder'], ['P1', 'P4', 100, 'SnoflakeSteam2664'], ['P4', 'P6', 2725, 'hohoho']] , {'P1'}
+2023-03-26 18:41:15,197 - WARNING - [Connect-taipe] - Got SENDME
+2023-03-26 18:41:31,271 - INFO - [RECEIVER] - updateGraphOnly: [['P4', 'P5', 2339, 'Cornball'], ['P5', 'P6', 1896, 'taipe'], ['P5', 'P7', 2709, 'RMK'], ['P2', 'P5', 100, 'yyzz1'], ['P1', 'P5', 100, 'torarch'], ['P3', 'P5', 100, 'dukdukduke'], ['P7', 'P8', 1457, 'Vulnerar'], ['P1', 'P7', 100, 'NTH26R4'], ['P4', 'P7', 2408, 'SparadiseSpa'], ['P1', 'P3', 1650, 'RMK'], ['P3', 'P4', 2724, 'Vulnerar'], ['P3', 'P8', 1300, 'Titan01'], ['P2', 'P3', 100, 'daNickname'], ['P1', 'P2', 1862, '4mnesia'], ['P2', 'P8', 1931, 'CCCStuttgartBer'], ['P2', 'P6', 100, 'Paphos'], ['P4', 'P8', 100, 'flodder'], ['P4', 'P6', 2725, 'hohoho']] , {'P4'}
+2023-03-26 18:42:01,449 - WARNING - [Connect-voltorb] - Got SENDME
+2023-03-26 18:42:10,347 - WARNING - [Connect-taipe] - Got SENDME
+2023-03-26 18:42:10,423 - WARNING - [Connect-taipe] - Got SENDME
+2023-03-26 18:42:21,610 - INFO - [RECEIVER] - Added relay rome2 from P3 to JOIN queue
+2023-03-26 18:42:21,611 - INFO - [MainThread] - ['JOIN', 'rome2', b'76b606b0966ed55f8bdb']
+2023-03-26 18:42:21,611 - INFO - [MainThread] - Got JOIN to relay rome2, waiting 10 sec to connect
+2023-03-26 18:42:21,618 - INFO - [Connect-rome2] - Calling connect_to_rendezvous_point
+2023-03-26 18:42:21,618 - INFO - [Connect-rome2] - Connect to rendezvous point rome2
+2023-03-26 18:42:21,633 - INFO - [Connect-rome2] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 18:42:21,913 - INFO - [Connect-rome2] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 18:42:22,987 - INFO - [Connect-rome2] - Connected to rendezvous point rome2
+2023-03-26 18:42:22,989 - INFO - [Connect-rome2] - Waiting for peer to open stream
+2023-03-26 18:42:23,445 - INFO - [Connect-rome2] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-03-26 18:42:23,450 - INFO - [Connect-rome2] - Stream opened successfully
+2023-03-26 18:42:23,450 - INFO - [Connect-rome2] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P6\x94ua.'
+2023-03-26 18:42:24,066 - INFO - [RECEIVER] - Added neighbour P3
+2023-03-26 18:43:01,266 - WARNING - [Connect-rome2] - Got SENDME
+2023-03-26 18:43:20,959 - WARNING - [Connect-voltorb] - Got SENDME
+2023-03-26 18:43:21,291 - WARNING - [Connect-voltorb] - Got SENDME
+2023-03-26 18:43:29,805 - WARNING - [Connect-taipe] - Got SENDME
+2023-03-26 18:43:30,074 - INFO - [RECEIVER] - updateGraphOnly: [['P4', 'P5', 2339, 'Cornball'], ['P5', 'P6', 2646, 'taipe'], ['P5', 'P7', 2709, 'RMK'], ['P2', 'P5', 100, 'yyzz1'], ['P1', 'P5', 100, 'torarch'], ['P3', 'P5', 100, 'dukdukduke'], ['P7', 'P8', 2373, 'Vulnerar'], ['P1', 'P7', 1796, 'NTH26R4'], ['P4', 'P7', 2408, 'SparadiseSpa'], ['P2', 'P7', 100, 'Blissey'], ['P1', 'P3', 1477, 'RMK'], ['P3', 'P4', 2280, 'Vulnerar'], ['P3', 'P8', 1213, 'Titan01'], ['P2', 'P3', 100, 'daNickname'], ['P3', 'P6', 100, 'rome2'], ['P1', 'P2', 1862, '4mnesia'], ['P2', 'P8', 1791, 'CCCStuttgartBer'], ['P2', 'P6', 2552, 'Paphos'], ['P2', 'P4', 100, 'DomisTorDE'], ['P4', 'P8', 2033, 'flodder'], ['P1', 'P8', 100, 'RDCRT'], ['P1', 'P6', 2592, 'voltorb'], ['P1', 'P4', 100, 'plan9kaos'], ['P4', 'P6', 1840, 'hohoho']] , {'P7'}
+2023-03-26 18:43:33,251 - WARNING - [Connect-rome2] - Got SENDME
+2023-03-26 18:43:34,485 - WARNING - [Connect-rome2] - Got SENDME
+2023-03-26 18:44:05,901 - WARNING - [Connect-rome2] - Got SENDME
+2023-03-26 18:44:06,663 - INFO - [RECEIVER] - updateGraphOnly: [['P4', 'P5', 2339, 'Cornball'], ['P5', 'P6', 2646, 'taipe'], ['P5', 'P7', 2709, 'RMK'], ['P2', 'P5', 100, 'yyzz1'], ['P1', 'P5', 100, 'torarch'], ['P3', 'P5', 100, 'dukdukduke'], ['P1', 'P3', 1477, 'RMK'], ['P3', 'P4', 1945, 'Vulnerar'], ['P3', 'P8', 1213, 'Titan01'], ['P2', 'P3', 2090, 'daNickname'], ['P3', 'P6', 100, 'rome2'], ['P3', 'P7', 100, 'Digitalcourage4ipba'], ['P1', 'P2', 1939, '4mnesia'], ['P2', 'P8', 1791, 'CCCStuttgartBer'], ['P2', 'P6', 2552, 'Paphos'], ['P2', 'P4', 100, 'DomisTorDE'], ['P7', 'P8', 2415, 'Vulnerar'], ['P4', 'P8', 2033, 'flodder'], ['P1', 'P8', 100, 'RDCRT'], ['P1', 'P6', 2592, 'voltorb'], ['P1', 'P7', 1994, 'NTH26R4'], ['P1', 'P4', 100, 'plan9kaos'], ['P4', 'P6', 1840, 'hohoho'], ['P4', 'P7', 1989, 'SparadiseSpa'], ['P2', 'P7', 100, 'Blissey']] , {'P5'}
+2023-03-26 18:44:10,758 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P3', 1477, 'RMK'], ['P3', 'P4', 1945, 'Vulnerar'], ['P3', 'P8', 1213, 'Titan01'], ['P2', 'P3', 2090, 'daNickname'], ['P3', 'P6', 100, 'rome2'], ['P3', 'P7', 100, 'Digitalcourage4ipba'], ['P1', 'P2', 1939, '4mnesia'], ['P2', 'P8', 1791, 'CCCStuttgartBer'], ['P2', 'P5', 100, 'yyzz1'], ['P2', 'P6', 2552, 'Paphos'], ['P2', 'P4', 100, 'DomisTorDE'], ['P7', 'P8', 2415, 'Vulnerar'], ['P4', 'P8', 2033, 'flodder'], ['P1', 'P8', 100, 'RDCRT'], ['P1', 'P6', 2592, 'voltorb'], ['P1', 'P7', 1994, 'NTH26R4'], ['P1', 'P5', 100, 'torarch'], ['P1', 'P4', 100, 'plan9kaos'], ['P4', 'P5', 2203, 'Cornball'], ['P4', 'P6', 1840, 'hohoho'], ['P4', 'P7', 1989, 'SparadiseSpa'], ['P5', 'P7', 1884, 'RMK'], ['P2', 'P7', 100, 'Blissey']] , {'P2'}
+2023-03-26 18:44:15,870 - WARNING - [RECEIVER] - Routing loop from P6 to P4: P6-P3-P6
+2023-03-26 18:44:15,871 - WARNING - [RECEIVER] - Routing loop from P6 to P8: P6-P3-P6
+2023-03-26 18:44:15,872 - WARNING - [RECEIVER] - Routing loop from P6 to P5: P6-P3-P6
+2023-03-26 18:44:16,041 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P3', 1477, 'RMK'], ['P3', 'P4', 1945, 'Vulnerar'], ['P3', 'P8', 1213, 'Titan01'], ['P2', 'P3', 2090, 'daNickname'], ['P3', 'P6', 100, 'rome2'], ['P3', 'P7', 100, 'Digitalcourage4ipba'], ['P7', 'P8', 2415, 'Vulnerar'], ['P2', 'P8', 2614, 'CCCStuttgartBer'], ['P4', 'P8', 2033, 'flodder'], ['P1', 'P8', 100, 'RDCRT'], ['P1', 'P2', 2643, '4mnesia'], ['P1', 'P6', 2592, 'voltorb'], ['P1', 'P7', 1994, 'NTH26R4'], ['P1', 'P5', 100, 'torarch'], ['P1', 'P4', 100, 'plan9kaos'], ['P4', 'P5', 2203, 'Cornball'], ['P4', 'P6', 1840, 'hohoho'], ['P4', 'P7', 1989, 'SparadiseSpa'], ['P2', 'P4', 100, 'DomisTorDE'], ['P5', 'P7', 1884, 'RMK']] , {'P1', 'P7', 'P8', 'P5', 'P2'}
+2023-03-26 18:44:20,086 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P3', 1477, 'RMK'], ['P3', 'P4', 1945, 'Vulnerar'], ['P3', 'P8', 1213, 'Titan01'], ['P2', 'P3', 2090, 'daNickname'], ['P3', 'P6', 100, 'rome2'], ['P3', 'P7', 100, 'Digitalcourage4ipba'], ['P4', 'P6', 1840, 'hohoho'], ['P4', 'P8', 1919, 'flodder'], ['P1', 'P4', 100, 'plan9kaos']] , {'P2', 'P4', 'P5', 'P7'}
+2023-03-26 18:44:24,176 - WARNING - [RECEIVER] - Routing loop from P6 to P4: P6-P3-P6
+2023-03-26 18:44:24,176 - WARNING - [RECEIVER] - Routing loop from P6 to P1: P6-P3-P6
+2023-03-26 18:44:24,176 - WARNING - [RECEIVER] - Routing loop from P6 to P8: P6-P3-P6
+2023-03-26 18:44:24,176 - WARNING - [RECEIVER] - Routing loop from P6 to P5: P6-P3-P6
+2023-03-26 18:44:24,177 - WARNING - [RECEIVER] - Routing loop from P6 to P2: P6-P3-P6
+2023-03-26 18:44:24,274 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P3', 1477, 'RMK'], ['P3', 'P4', 1945, 'Vulnerar'], ['P3', 'P8', 1213, 'Titan01'], ['P2', 'P3', 2090, 'daNickname'], ['P3', 'P6', 100, 'rome2'], ['P3', 'P7', 100, 'Digitalcourage4ipba'], ['P1', 'P6', 2592, 'voltorb'], ['P1', 'P5', 100, 'torarch'], ['P1', 'P8', 100, 'RDCRT']] , {'P3', 'P4', 'P8'}
+2023-03-26 18:44:27,594 - WARNING - [Connect-rome2] - Got SENDME
+2023-03-26 18:44:28,278 - WARNING - [Connect-rome2] - Got SENDME
+2023-03-26 18:44:28,326 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P3', 2635, 'RMK'], ['P1', 'P6', 2592, 'voltorb'], ['P1', 'P5', 100, 'torarch'], ['P1', 'P8', 100, 'RDCRT'], ['P1', 'P2', 1939, '4mnesia'], ['P2', 'P5', 100, 'yyzz1'], ['P2', 'P6', 2552, 'Paphos'], ['P2', 'P4', 100, 'DomisTorDE']] , {'P8'}
+2023-03-26 18:44:33,404 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P3', 2635, 'RMK'], ['P1', 'P6', 2592, 'voltorb'], ['P1', 'P5', 100, 'torarch'], ['P1', 'P8', 100, 'RDCRT'], ['P1', 'P2', 1939, '4mnesia'], ['P2', 'P5', 100, 'yyzz1'], ['P2', 'P6', 2552, 'Paphos'], ['P2', 'P4', 100, 'DomisTorDE'], ['P5', 'P7', 1884, 'RMK'], ['P1', 'P7', 1796, 'NTH26R4'], ['P4', 'P7', 2408, 'SparadiseSpa'], ['P3', 'P7', 100, 'Digitalcourage4ipba']] , {'P3'}
+2023-03-26 18:44:36,879 - WARNING - [Connect-voltorb] - Got SENDME
+2023-03-26 18:44:37,662 - WARNING - [RECEIVER] - Routing loop from P6 to P4: P6-P3-P6
+2023-03-26 18:44:37,662 - WARNING - [RECEIVER] - Routing loop from P6 to P1: P6-P3-P6
+2023-03-26 18:44:37,662 - WARNING - [RECEIVER] - Routing loop from P6 to P8: P6-P3-P6
+2023-03-26 18:44:37,668 - WARNING - [RECEIVER] - Routing loop from P6 to P2: P6-P3-P6
+2023-03-26 18:44:37,668 - WARNING - [RECEIVER] - Routing loop from P6 to P4: P6-P3-P6
+2023-03-26 18:44:37,668 - WARNING - [RECEIVER] - Routing loop from P6 to P1: P6-P3-P6
+2023-03-26 18:44:37,706 - WARNING - [RECEIVER] - Routing loop from P6 to P2: P6-P3-P6
+2023-03-26 18:44:38,008 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P3', 2635, 'RMK'], ['P1', 'P6', 2592, 'voltorb'], ['P1', 'P5', 100, 'torarch'], ['P1', 'P8', 100, 'RDCRT'], ['P1', 'P2', 1939, '4mnesia'], ['P2', 'P5', 100, 'yyzz1'], ['P2', 'P6', 2552, 'Paphos'], ['P2', 'P4', 100, 'DomisTorDE'], ['P5', 'P7', 1884, 'RMK'], ['P1', 'P7', 1796, 'NTH26R4'], ['P4', 'P7', 2408, 'SparadiseSpa'], ['P3', 'P7', 100, 'Digitalcourage4ipba'], ['P4', 'P5', 2339, 'Cornball'], ['P5', 'P6', 2646, 'taipe']] , {'P5'}
+2023-03-26 18:44:41,102 - WARNING - [Connect-taipe] - Got SENDME
+2023-03-26 18:44:41,173 - WARNING - [Connect-taipe] - Got SENDME
+2023-03-26 18:44:42,077 - WARNING - [RECEIVER] - Routing loop from P6 to P4: P6-P3-P6
+2023-03-26 18:44:42,077 - WARNING - [RECEIVER] - Routing loop from P6 to P1: P6-P3-P6
+2023-03-26 18:44:42,077 - WARNING - [RECEIVER] - Routing loop from P6 to P8: P6-P3-P6
+2023-03-26 18:44:42,077 - WARNING - [RECEIVER] - Routing loop from P6 to P2: P6-P3-P6
+2023-03-26 18:44:42,079 - WARNING - [RECEIVER] - Routing loop from P6 to P4: P6-P3-P6
+2023-03-26 18:44:42,079 - WARNING - [RECEIVER] - Routing loop from P6 to P2: P6-P3-P6
+2023-03-26 18:44:42,117 - WARNING - [RECEIVER] - Routing loop from P6 to P4: P6-P3-P6
+2023-03-26 18:44:42,138 - WARNING - [RECEIVER] - Routing loop from P6 to P8: P6-P3-P6
+2023-03-26 18:44:42,138 - WARNING - [RECEIVER] - Routing loop from P6 to P5: P6-P3-P6
+2023-03-26 18:44:42,139 - WARNING - [RECEIVER] - Routing loop from P6 to P2: P6-P3-P6
+2023-03-26 18:44:42,258 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P3', 2635, 'RMK'], ['P1', 'P6', 2592, 'voltorb'], ['P1', 'P5', 100, 'torarch'], ['P1', 'P8', 100, 'RDCRT'], ['P1', 'P2', 1939, '4mnesia'], ['P2', 'P6', 2552, 'Paphos'], ['P2', 'P4', 100, 'DomisTorDE'], ['P5', 'P7', 1884, 'RMK'], ['P1', 'P7', 1796, 'NTH26R4'], ['P4', 'P7', 2408, 'SparadiseSpa'], ['P3', 'P7', 100, 'Digitalcourage4ipba']] , {'P4', 'P7'}
+2023-03-26 18:44:47,455 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P3', 2635, 'RMK'], ['P1', 'P6', 2592, 'voltorb'], ['P1', 'P5', 100, 'torarch'], ['P1', 'P8', 100, 'RDCRT'], ['P1', 'P2', 1939, '4mnesia'], ['P2', 'P6', 2552, 'Paphos'], ['P2', 'P4', 100, 'DomisTorDE'], ['P3', 'P8', 1819, 'Titan01'], ['P2', 'P8', 2614, 'CCCStuttgartBer']] , {'P3'}
+2023-03-26 18:44:51,625 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P3', 2635, 'RMK'], ['P1', 'P6', 2592, 'voltorb'], ['P1', 'P5', 100, 'torarch'], ['P1', 'P8', 100, 'RDCRT'], ['P1', 'P2', 1939, '4mnesia'], ['P2', 'P6', 2552, 'Paphos'], ['P2', 'P4', 100, 'DomisTorDE'], ['P3', 'P8', 1819, 'Titan01'], ['P2', 'P8', 2614, 'CCCStuttgartBer'], ['P4', 'P6', 1840, 'hohoho'], ['P4', 'P8', 1919, 'flodder'], ['P1', 'P4', 100, 'plan9kaos']] , {'P7'}
+2023-03-26 18:44:55,672 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P3', 2635, 'RMK'], ['P1', 'P6', 2592, 'voltorb'], ['P1', 'P5', 100, 'torarch'], ['P1', 'P8', 100, 'RDCRT'], ['P1', 'P2', 1939, '4mnesia'], ['P2', 'P6', 2552, 'Paphos'], ['P2', 'P4', 100, 'DomisTorDE'], ['P3', 'P8', 1819, 'Titan01'], ['P2', 'P8', 2614, 'CCCStuttgartBer'], ['P4', 'P6', 1840, 'hohoho'], ['P4', 'P8', 1919, 'flodder'], ['P1', 'P4', 100, 'plan9kaos'], ['P3', 'P4', 1945, 'Vulnerar'], ['P2', 'P3', 2090, 'daNickname'], ['P3', 'P6', 100, 'rome2']] , {'P4', 'P1'}
+2023-03-26 18:45:01,119 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P2', 1939, '4mnesia'], ['P2', 'P6', 2552, 'Paphos'], ['P2', 'P4', 100, 'DomisTorDE'], ['P3', 'P8', 1819, 'Titan01'], ['P2', 'P8', 2614, 'CCCStuttgartBer'], ['P1', 'P8', 100, 'RDCRT'], ['P1', 'P3', 1477, 'RMK'], ['P3', 'P4', 1945, 'Vulnerar'], ['P2', 'P3', 2090, 'daNickname'], ['P3', 'P6', 100, 'rome2'], ['P5', 'P7', 1884, 'RMK'], ['P4', 'P7', 2408, 'SparadiseSpa'], ['P3', 'P7', 100, 'Digitalcourage4ipba']] , {'P4', 'P1'}
+2023-03-26 18:45:04,441 - WARNING - [Connect-rome2] - Got SENDME
+2023-03-26 18:45:05,389 - INFO - [RECEIVER] - updateGraphOnly: [['P2', 'P6', 2552, 'Paphos'], ['P3', 'P8', 1819, 'Titan01'], ['P2', 'P8', 2614, 'CCCStuttgartBer'], ['P1', 'P8', 100, 'RDCRT'], ['P1', 'P3', 1477, 'RMK'], ['P3', 'P4', 1945, 'Vulnerar'], ['P2', 'P3', 2090, 'daNickname'], ['P3', 'P6', 100, 'rome2'], ['P5', 'P7', 1884, 'RMK'], ['P4', 'P7', 2408, 'SparadiseSpa'], ['P3', 'P7', 100, 'Digitalcourage4ipba']] , {'P4', 'P1'}
+2023-03-26 18:45:09,873 - INFO - [RECEIVER] - updateGraphOnly: [['P2', 'P6', 2552, 'Paphos'], ['P3', 'P8', 1819, 'Titan01'], ['P2', 'P8', 2614, 'CCCStuttgartBer'], ['P1', 'P8', 100, 'RDCRT'], ['P1', 'P3', 1477, 'RMK'], ['P3', 'P4', 1945, 'Vulnerar'], ['P2', 'P3', 2090, 'daNickname'], ['P3', 'P6', 100, 'rome2'], ['P5', 'P7', 1884, 'RMK'], ['P4', 'P7', 2408, 'SparadiseSpa'], ['P3', 'P7', 100, 'Digitalcourage4ipba'], ['P5', 'P6', 2646, 'taipe'], ['P2', 'P5', 100, 'yyzz1']] , {'P2'}
+2023-03-26 18:45:11,089 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 18:45:11,635 - WARNING - [Connect-voltorb] - Got SENDME
+2023-03-26 18:45:11,933 - WARNING - [Connect-voltorb] - Got SENDME
+2023-03-26 18:45:12,287 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 18:45:12,323 - INFO - [MainThread] - ['ESTABLISH', 'ForPrivacyNET', b'7c0c1eeb420ea57f66df']
+2023-03-26 18:45:12,323 - INFO - [MainThread] - Got ESTABLISH to relay ForPrivacyNET:b'7c0c1eeb420ea57f66df' via NeelTorRelay2
+2023-03-26 18:45:12,331 - INFO - [Establish-ForPrivacyNET] - Establishing RP to ForPrivacyNET
+2023-03-26 18:45:12,338 - INFO - [Establish-ForPrivacyNET] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 18:45:13,541 - INFO - [Establish-ForPrivacyNET] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 18:45:13,542 - INFO - [Establish-ForPrivacyNET] - Connecting to guard node 97.113.253.84:110 (NeelTorRelay2; Tor 0.4.7.13)... (None)
+2023-03-26 18:45:14,429 - INFO - [Establish-ForPrivacyNET] - Creating new circuit #80000007 with 97.113.253.84:110 (NeelTorRelay2; Tor 0.4.7.13) router...
+2023-03-26 18:45:14,648 - INFO - [Establish-ForPrivacyNET] - Building -1 hops circuit...
+2023-03-26 18:45:14,648 - INFO - [Establish-ForPrivacyNET] - Extending the circuit #80000007 with 185.220.101.33:10133 (ForPrivacyNET; Tor 0.4.7.13)...
+2023-03-26 18:45:14,649 - INFO - [Establish-ForPrivacyNET] - Getting descriptor for 185.220.101.33:10133 (ForPrivacyNET; Tor 0.4.7.13)...
+2023-03-26 18:45:14,736 - INFO - [Establish-ForPrivacyNET] - Connecting to guard node 95.217.112.218:80 (arbitraryTessa5; Tor 0.4.7.13)... (Internal dir client)
+2023-03-26 18:45:15,057 - INFO - [Establish-ForPrivacyNET] - Creating new circuit #80000008 with 95.217.112.218:80 (arbitraryTessa5; Tor 0.4.7.13) router...
+2023-03-26 18:45:15,083 - INFO - [RECEIVER] - updateGraphOnly: [['P3', 'P8', 1819, 'Titan01'], ['P1', 'P8', 100, 'RDCRT'], ['P1', 'P3', 1477, 'RMK'], ['P3', 'P4', 1945, 'Vulnerar'], ['P2', 'P3', 2090, 'daNickname'], ['P3', 'P6', 100, 'rome2'], ['P5', 'P7', 1884, 'RMK'], ['P4', 'P7', 2408, 'SparadiseSpa'], ['P3', 'P7', 100, 'Digitalcourage4ipba'], ['P5', 'P6', 2646, 'taipe'], ['P2', 'P5', 100, 'yyzz1']] , {'P2'}
+2023-03-26 18:45:15,167 - INFO - [Establish-ForPrivacyNET] - Building 0 hops circuit...
+2023-03-26 18:45:15,168 - INFO - [Establish-ForPrivacyNET] - Stream #7: creating attached to #80000008 circuit...
+2023-03-26 18:45:15,169 - INFO - [Establish-ForPrivacyNET] - Stream #7: connecting to hsdir
+2023-03-26 18:45:15,286 - INFO - [RecvLoop_95.217.] - Stream #7: connected (remote ip '')
+2023-03-26 18:45:15,817 - INFO - [RecvLoop_95.217.] - Stream #7: remote disconnected (reason = DONE)
+2023-03-26 18:45:15,818 - INFO - [Establish-ForPrivacyNET] - Stream #7: closing (state = Disconnected)...
+2023-03-26 18:45:15,818 - INFO - [Establish-ForPrivacyNET] - Got descriptor
+2023-03-26 18:45:16,189 - INFO - [Establish-ForPrivacyNET] - <class 'torpy.circuit.TorCircuit'>
+2023-03-26 18:45:16,553 - INFO - [Establish-ForPrivacyNET] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-26 18:45:16,553 - INFO - [Establish-ForPrivacyNET] - Waiting for connections at relay ForPrivacyNET for cookie b'7c0c1eeb420ea57f66df' ...
+2023-03-26 18:45:19,410 - INFO - [RECEIVER] - updateGraphOnly: [['P3', 'P8', 1819, 'Titan01'], ['P1', 'P8', 100, 'RDCRT'], ['P1', 'P3', 1477, 'RMK'], ['P3', 'P4', 1945, 'Vulnerar'], ['P3', 'P6', 100, 'rome2'], ['P5', 'P7', 1884, 'RMK'], ['P4', 'P7', 2408, 'SparadiseSpa'], ['P3', 'P7', 100, 'Digitalcourage4ipba'], ['P5', 'P6', 2646, 'taipe'], ['P2', 'P5', 100, 'yyzz1']] , {'P4'}
+2023-03-26 18:45:22,322 - INFO - [CONNECTION] - Sending JOIN to P2 for relay ForPrivacyNET with cookie b'7c0c1eeb420ea57f66df'
+2023-03-26 18:45:23,526 - INFO - [RECEIVER] - updateGraphOnly: [['P3', 'P8', 1819, 'Titan01'], ['P1', 'P8', 100, 'RDCRT'], ['P1', 'P3', 1477, 'RMK'], ['P3', 'P4', 1945, 'Vulnerar'], ['P3', 'P6', 100, 'rome2'], ['P5', 'P7', 1884, 'RMK'], ['P4', 'P7', 2408, 'SparadiseSpa'], ['P3', 'P7', 100, 'Digitalcourage4ipba'], ['P5', 'P6', 2646, 'taipe'], ['P2', 'P5', 100, 'yyzz1'], ['P1', 'P6', 2592, 'voltorb'], ['P1', 'P5', 100, 'torarch']] , {'P1'}
+2023-03-26 18:45:27,592 - INFO - [RECEIVER] - updateGraphOnly: [['P3', 'P8', 1819, 'Titan01'], ['P1', 'P8', 100, 'RDCRT'], ['P1', 'P3', 1477, 'RMK'], ['P3', 'P4', 1945, 'Vulnerar'], ['P3', 'P6', 100, 'rome2'], ['P5', 'P7', 1884, 'RMK'], ['P4', 'P7', 2408, 'SparadiseSpa'], ['P3', 'P7', 100, 'Digitalcourage4ipba'], ['P5', 'P6', 2646, 'taipe'], ['P2', 'P5', 100, 'yyzz1'], ['P4', 'P6', 1840, 'hohoho'], ['P4', 'P8', 1919, 'flodder']] , {'P8'}
+2023-03-26 18:45:33,030 - WARNING - [RECEIVER] - Routing loop from P6 to P8: P6-P3-P6
+2023-03-26 18:45:33,033 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P3', 1477, 'RMK'], ['P3', 'P4', 1945, 'Vulnerar'], ['P3', 'P8', 1213, 'Titan01'], ['P3', 'P6', 100, 'rome2'], ['P5', 'P7', 1884, 'RMK'], ['P4', 'P7', 2408, 'SparadiseSpa'], ['P3', 'P7', 100, 'Digitalcourage4ipba'], ['P5', 'P6', 2646, 'taipe'], ['P2', 'P5', 100, 'yyzz1'], ['P4', 'P6', 1840, 'hohoho'], ['P4', 'P8', 1919, 'flodder']] , {'P2'}
+2023-03-26 18:45:33,191 - WARNING - [Connect-rome2] - Got SENDME
+2023-03-26 18:45:33,307 - WARNING - [Connect-rome2] - Got SENDME
+2023-03-26 18:45:37,124 - WARNING - [RECEIVER] - Routing loop from P6 to P1: P6-P4-P6
+2023-03-26 18:45:37,124 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P3', 1477, 'RMK'], ['P3', 'P4', 1945, 'Vulnerar'], ['P3', 'P8', 1213, 'Titan01'], ['P3', 'P6', 100, 'rome2'], ['P5', 'P7', 1884, 'RMK'], ['P4', 'P7', 2408, 'SparadiseSpa'], ['P3', 'P7', 100, 'Digitalcourage4ipba'], ['P5', 'P6', 2646, 'taipe'], ['P4', 'P6', 1840, 'hohoho'], ['P4', 'P8', 1919, 'flodder']] , {'P4'}
+2023-03-26 18:45:41,390 - WARNING - [RECEIVER] - Routing loop from P2 to P5: P2-P6-P3-P6
+2023-03-26 18:45:41,398 - WARNING - [RECEIVER] - Routing loop from P4 to P5: P4-P6-P3-P6
+2023-03-26 18:45:45,750 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P3', 1477, 'RMK'], ['P3', 'P8', 2108, 'Titan01'], ['P3', 'P6', 100, 'rome2'], ['P3', 'P5', 100, 'EpicTor4'], ['P5', 'P7', 1884, 'RMK'], ['P4', 'P7', 2408, 'SparadiseSpa'], ['P3', 'P7', 100, 'Digitalcourage4ipba'], ['P5', 'P6', 2646, 'taipe']] , {'P7'}
+2023-03-26 18:45:49,986 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P3', 1477, 'RMK'], ['P3', 'P8', 2108, 'Titan01'], ['P3', 'P6', 100, 'rome2'], ['P3', 'P5', 100, 'EpicTor4'], ['P5', 'P6', 2646, 'taipe'], ['P5', 'P7', 2709, 'RMK'], ['P1', 'P6', 2592, 'voltorb'], ['P1', 'P5', 100, 'torarch'], ['P1', 'P8', 100, 'RDCRT']] , {'P3', 'P8'}
+2023-03-26 18:45:54,233 - WARNING - [RECEIVER] - Routing loop from P6 to P4: P6-P3-P6
+2023-03-26 18:45:54,233 - WARNING - [RECEIVER] - Routing loop from P6 to P8: P6-P3-P6
+2023-03-26 18:45:54,233 - WARNING - [RECEIVER] - Routing loop from P6 to P5: P6-P3-P6
+2023-03-26 18:45:54,233 - WARNING - [RECEIVER] - Routing loop from P6 to P2: P6-P3-P6
+2023-03-26 18:45:54,235 - INFO - [RECEIVER] - updateGraphOnly: [['P5', 'P6', 2646, 'taipe'], ['P5', 'P7', 2709, 'RMK'], ['P3', 'P5', 100, 'EpicTor4'], ['P1', 'P3', 2635, 'RMK'], ['P1', 'P6', 2592, 'voltorb'], ['P1', 'P5', 100, 'torarch'], ['P1', 'P8', 100, 'RDCRT'], ['P2', 'P6', 2552, 'Paphos']] , {'P3'}
+2023-03-26 18:45:59,433 - WARNING - [RECEIVER] - Routing loop from P6 to P1: P6-P3-P6
+2023-03-26 18:45:59,684 - WARNING - [Connect-taipe] - Got SENDME
+2023-03-26 18:45:59,778 - WARNING - [RECEIVER] - Routing loop from P6 to P4: P6-P3-P6
+2023-03-26 18:45:59,778 - WARNING - [RECEIVER] - Routing loop from P6 to P2: P6-P3-P6
+2023-03-26 18:45:59,794 - INFO - [RECEIVER] - updateGraphOnly: [['P5', 'P6', 2646, 'taipe'], ['P5', 'P7', 2709, 'RMK'], ['P3', 'P5', 100, 'EpicTor4'], ['P1', 'P3', 2635, 'RMK'], ['P1', 'P6', 2592, 'voltorb'], ['P1', 'P5', 100, 'torarch'], ['P1', 'P8', 100, 'RDCRT'], ['P2', 'P6', 2552, 'Paphos'], ['P4', 'P7', 2408, 'SparadiseSpa']] , {'P3', 'P5'}
+2023-03-26 18:46:04,010 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P3', 2635, 'RMK'], ['P1', 'P6', 2592, 'voltorb'], ['P1', 'P5', 100, 'torarch'], ['P1', 'P8', 100, 'RDCRT'], ['P2', 'P6', 2552, 'Paphos'], ['P5', 'P7', 1884, 'RMK'], ['P4', 'P7', 2408, 'SparadiseSpa'], ['P4', 'P6', 1840, 'hohoho']] , {'P5'}
+2023-03-26 18:46:09,370 - WARNING - [Connect-voltorb] - Got SENDME
+2023-03-26 18:46:12,754 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P3', 2635, 'RMK'], ['P1', 'P6', 2592, 'voltorb'], ['P1', 'P5', 100, 'torarch'], ['P1', 'P8', 100, 'RDCRT'], ['P2', 'P6', 2552, 'Paphos'], ['P5', 'P7', 1884, 'RMK'], ['P4', 'P7', 2408, 'SparadiseSpa'], ['P4', 'P6', 1840, 'hohoho'], ['P5', 'P6', 2646, 'taipe'], ['P3', 'P5', 100, 'EpicTor4']] , {'P5', 'P2'}
+2023-03-26 18:46:17,210 - WARNING - [RECEIVER] - Routing loop from P6 to P2: P6-P3-P6
+2023-03-26 18:46:17,515 - WARNING - [RECEIVER] - Routing loop from P3 to P8: P3-P6-P1-P6
+2023-03-26 18:46:17,518 - WARNING - [RECEIVER] - Routing loop from P3 to P8: P3-P5-P6-P1-P6
+2023-03-26 18:46:18,848 - INFO - [RecvLoop_95.217.] - On destroy: circuit #80000008
+2023-03-26 18:46:18,848 - INFO - [RecvLoop_95.217.] - Destroy circuit #80000008
+2023-03-26 18:46:22,513 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 18:46:22,947 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 18:46:23,029 - WARNING - [RECEIVER] - Routing loop from P7 to P8: P7-P5-P6-P1-P6
+2023-03-26 18:46:23,072 - WARNING - [RECEIVER] - Routing loop from P6 to P3: P6-P5-P6
+2023-03-26 18:46:23,111 - INFO - [MainThread] - ['ESTABLISH', 'D3S4RS1', b'87bc1a233d00bcdf6122']
+2023-03-26 18:46:23,112 - INFO - [MainThread] - Got ESTABLISH to relay D3S4RS1:b'87bc1a233d00bcdf6122' via NeelTorRelay2
+2023-03-26 18:46:23,113 - INFO - [Establish-D3S4RS1] - Establishing RP to D3S4RS1
+2023-03-26 18:46:23,144 - INFO - [Establish-D3S4RS1] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 18:46:24,616 - INFO - [Establish-D3S4RS1] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 18:46:24,618 - INFO - [Establish-D3S4RS1] - Connecting to guard node 97.113.253.84:110 (NeelTorRelay2; Tor 0.4.7.13)... (None)
+2023-03-26 18:46:25,541 - INFO - [Establish-D3S4RS1] - Creating new circuit #80000009 with 97.113.253.84:110 (NeelTorRelay2; Tor 0.4.7.13) router...
+2023-03-26 18:46:25,907 - INFO - [Establish-D3S4RS1] - Building -1 hops circuit...
+2023-03-26 18:46:25,911 - INFO - [Establish-D3S4RS1] - Extending the circuit #80000009 with 78.47.43.253:6080 (D3S4RS1; Tor 0.4.7.13)...
+2023-03-26 18:46:25,911 - INFO - [Establish-D3S4RS1] - Getting descriptor for 78.47.43.253:6080 (D3S4RS1; Tor 0.4.7.13)...
+2023-03-26 18:46:25,933 - INFO - [Establish-D3S4RS1] - Connecting to guard node 188.40.220.196:8000 (IOT; Tor 0.4.7.7)... (Internal dir client)
+2023-03-26 18:46:26,317 - INFO - [Establish-D3S4RS1] - Creating new circuit #8000000a with 188.40.220.196:8000 (IOT; Tor 0.4.7.7) router...
+2023-03-26 18:46:26,369 - INFO - [Establish-D3S4RS1] - Building 0 hops circuit...
+2023-03-26 18:46:26,369 - INFO - [Establish-D3S4RS1] - Stream #8: creating attached to #8000000a circuit...
+2023-03-26 18:46:26,369 - INFO - [Establish-D3S4RS1] - Stream #8: connecting to hsdir
+2023-03-26 18:46:26,430 - INFO - [RecvLoop_188.40.] - Stream #8: connected (remote ip '')
+2023-03-26 18:46:26,687 - INFO - [RecvLoop_188.40.] - Stream #8: remote disconnected (reason = DONE)
+2023-03-26 18:46:26,688 - INFO - [Establish-D3S4RS1] - Stream #8: closing (state = Disconnected)...
+2023-03-26 18:46:26,688 - INFO - [Establish-D3S4RS1] - Got descriptor
+2023-03-26 18:46:27,091 - INFO - [Establish-D3S4RS1] - <class 'torpy.circuit.TorCircuit'>
+2023-03-26 18:46:27,427 - WARNING - [RECEIVER] - Routing loop from P6 to P8: P6-P1-P6
+2023-03-26 18:46:27,487 - INFO - [Establish-D3S4RS1] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-26 18:46:27,503 - INFO - [Establish-D3S4RS1] - Waiting for connections at relay D3S4RS1 for cookie b'87bc1a233d00bcdf6122' ...
+2023-03-26 18:46:27,511 - WARNING - [RECEIVER] - Routing loop from P4 to P3: P4-P6-P5-P6
+2023-03-26 18:46:27,541 - WARNING - [RECEIVER] - Routing loop from P4 to P8: P4-P6-P1-P6
+2023-03-26 18:46:27,610 - WARNING - [RECEIVER] - Routing loop from P7 to P3: P7-P5-P6-P1-P6
+2023-03-26 18:46:31,761 - WARNING - [RECEIVER] - Routing loop from P6 to P3: P6-P1-P6
+2023-03-26 18:46:31,762 - WARNING - [RECEIVER] - Routing loop from P6 to P5: P6-P1-P6
+2023-03-26 18:46:31,762 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P3', 1846, 'RMK'], ['P1', 'P6', 2592, 'voltorb'], ['P1', 'P8', 100, 'RDCRT'], ['P5', 'P7', 1607, 'RMK'], ['P4', 'P7', 2408, 'SparadiseSpa'], ['P4', 'P6', 1840, 'hohoho'], ['P3', 'P8', 2108, 'Titan01'], ['P3', 'P6', 100, 'rome2'], ['P3', 'P5', 100, 'EpicTor4']] , {'P6', 'P8'}
+2023-03-26 18:46:33,137 - INFO - [CONNECTION] - Sending JOIN to P2 for relay D3S4RS1 with cookie b'87bc1a233d00bcdf6122'
+2023-03-26 18:46:35,896 - ERROR - [Connect-rome2] - Got RELAY_END
+2023-03-26 18:46:35,937 - WARNING - [RECEIVER] - Routing loop from P4 to P5: P4-P6-P1-P6
+2023-03-26 18:46:36,071 - WARNING - [RECEIVER] - Routing loop from P2 to P3: P2-P6-P5-P6
+2023-03-26 18:46:36,090 - WARNING - [RECEIVER] - Routing loop from P2 to P5: P2-P6-P4-P6
+2023-03-26 18:46:36,103 - WARNING - [RECEIVER] - Routing loop from P3 to P5: P3-P6-P4-P6
+2023-03-26 18:46:36,104 - WARNING - [RECEIVER] - Routing loop from P1 to P5: P1-P6-P4-P6
+2023-03-26 18:46:36,179 - WARNING - [RECEIVER] - Routing loop from P2 to P5: P2-P6-P4-P6
+2023-03-26 18:46:36,179 - WARNING - [RECEIVER] - Routing loop from P1 to P5: P1-P6-P4-P6
+2023-03-26 18:46:36,179 - WARNING - [RECEIVER] - Routing loop from P6 to P5: P6-P4-P6
+2023-03-26 18:46:40,288 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P3', 1846, 'RMK'], ['P1', 'P6', 2592, 'voltorb'], ['P1', 'P8', 100, 'RDCRT'], ['P5', 'P7', 1607, 'RMK'], ['P4', 'P7', 2408, 'SparadiseSpa'], ['P4', 'P6', 1840, 'hohoho'], ['P3', 'P6', 100, 'rome2'], ['P3', 'P5', 100, 'EpicTor4'], ['P2', 'P6', 2552, 'Paphos'], ['P2', 'P7', 100, 'TestMyTor752']] , {'P3'}
+2023-03-26 18:46:45,633 - WARNING - [Connect-taipe] - Got SENDME
+2023-03-26 18:46:45,688 - WARNING - [Connect-taipe] - Got SENDME
+2023-03-26 18:46:51,773 - INFO - [Thread-4] - Adding P4 to list of inactive
+2023-03-26 18:46:51,773 - INFO - [Thread-4] - Adding P3 to list of inactive
+2023-03-26 18:46:51,773 - INFO - [Thread-4] - DEAD ROUTES DETECTED: P3,P4
+2023-03-26 18:46:51,774 - INFO - [Thread-4] - Removing P4 from neighbours
+2023-03-26 18:46:51,774 - INFO - [Thread-4] - Removing P3 from neighbours
+2023-03-26 18:46:51,774 - INFO - [Thread-4] - Removed circuit for P3
+2023-03-26 18:46:51,774 - INFO - [Thread-4] - Removed circuit for P4
+2023-03-26 18:46:51,774 - INFO - [Thread-4] - updateGraphOnly: [['P1', 'P3', 1846, 'RMK'], ['P1', 'P6', 2592, 'voltorb'], ['P1', 'P8', 100, 'RDCRT'], ['P5', 'P7', 1607, 'RMK'], ['P4', 'P7', 2408, 'SparadiseSpa'], ['P2', 'P7', 100, 'TestMyTor752'], ['P4', 'P6', 1840, 'hohoho'], ['P2', 'P6', 2552, 'Paphos']] , {'P3', 'P4'}
+2023-03-26 18:46:52,874 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P4'
+2023-03-26 18:46:52,909 - INFO - [Thread-4] - GRAPH: [['P1', 'P3', 1846, 'RMK'], ['P1', 'P6', 2592, 'voltorb'], ['P1', 'P8', 100, 'RDCRT'], ['P5', 'P7', 1607, 'RMK'], ['P4', 'P7', 2408, 'SparadiseSpa'], ['P2', 'P7', 100, 'TestMyTor752'], ['P2', 'P6', 2552, 'Paphos'], ['P5', 'P6', 2646, 'taipe'], ['P3', 'P5', 100, 'EpicTor4']]
+2023-03-26 18:46:52,909 - INFO - [Thread-4] - ROUTER: {'RID': 'P6', 'Port': 5006, 'Neighbours': 4, 'Neighbours Data': [{'NID': 'P5', 'Cost': 1326, 'Hostname': '127.0.0.1', 'RP': 'taipe', 'FLAG': 0}, {'NID': 'P1', 'Cost': 2104, 'Hostname': '127.0.0.1', 'RP': 'voltorb', 'FLAG': 0}, {'NID': 'P2', 'Cost': 2025, 'Hostname': '127.0.0.1', 'RP': 'Paphos', 'FLAG': 0}], 'SN': 15, 'FLAG': 0, 'RP': set()}
+2023-03-26 18:46:52,909 - INFO - [Thread-4] - LSA_DB: {'P1': {'RID': 'P1', 'Port': 5001, 'Neighbours': 1, 'Neighbours Data': [{'NID': 'P3', 'Cost': 1846, 'Hostname': '127.0.0.1', 'RP': 'RMK', 'FLAG': 0}, {'NID': 'P6', 'Cost': 2592, 'Hostname': '127.0.0.1', 'RP': 'voltorb', 'FLAG': 0}, {'NID': 'P8', 'Cost': 100, 'Hostname': '127.0.0.1', 'RP': 'RDCRT', 'FLAG': 0}], 'SN': 29, 'FLAG': 1, 'RP': set()}, 'P7': {'RID': 'P7', 'Port': 5007, 'Neighbours': 2, 'Neighbours Data': [{'NID': 'P5', 'Cost': 1607, 'Hostname': '127.0.0.1', 'RP': 'RMK', 'FLAG': 0}, {'NID': 'P4', 'Cost': 2408, 'Hostname': '127.0.0.1', 'RP': 'SparadiseSpa', 'FLAG': 0}, {'NID': 'P2', 'Cost': 100, 'Hostname': '127.0.0.1', 'RP': 'TestMyTor752', 'FLAG': 0}], 'SN': 22, 'FLAG': 1, 'RP': set()}, 'P2': {'RID': 'P2', 'Port': 5002, 'Neighbours': 2, 'Neighbours Data': [{'NID': 'P6', 'Cost': 2552, 'Hostname': '127.0.0.1', 'RP': 'Paphos', 'FLAG': 0}, {'NID': 'P7', 'Cost': 100, 'Hostname': '127.0.0.1', 'RP': 'TestMyTor752', 'FLAG': 0}], 'SN': 21, 'FLAG': 1, 'RP': set()}, 'P8': {'RID': 'P8', 'Port': 5008, 'Neighbours': 2, 'Neighbours Data': [{'NID': 'P1', 'Cost': 1594, 'Hostname': '127.0.0.1', 'RP': 'RDCRT', 'FLAG': 0}], 'SN': 27, 'FLAG': 1, 'DEAD': {'P3'}}, 'P5': {'RID': 'P5', 'Port': 5005, 'Neighbours': 4, 'Neighbours Data': [{'NID': 'P6', 'Cost': 2646, 'Hostname': '127.0.0.1', 'RP': 'taipe', 'FLAG': 0}, {'NID': 'P7', 'Cost': 2062, 'Hostname': '127.0.0.1', 'RP': 'RMK', 'FLAG': 0}, {'NID': 'P3', 'Cost': 100, 'Hostname': '127.0.0.1', 'RP': 'EpicTor4', 'FLAG': 0}], 'SN': 20, 'FLAG': 1, 'RP': set()}}
+2023-03-26 18:46:56,018 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P4'
+2023-03-26 18:46:59,159 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P4'
+2023-03-26 18:46:59,166 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P4'
+2023-03-26 18:47:00,634 - ERROR - [TESTER] - send_to_stream: Key not found: 'P4'
+2023-03-26 18:47:00,635 - ERROR - [TESTER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:00,636 - ERROR - [TESTER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:00,669 - ERROR - [TESTER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:00,669 - ERROR - [TESTER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:00,669 - ERROR - [TESTER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:00,669 - ERROR - [TESTER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:02,414 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P4'
+2023-03-26 18:47:02,544 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P4'
+2023-03-26 18:47:02,558 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:02,558 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:04,636 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:04,637 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P4'
+2023-03-26 18:47:04,639 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:04,639 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:04,652 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P4'
+2023-03-26 18:47:05,033 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:05,293 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:08,462 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:08,513 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:08,666 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:08,706 - ERROR - [TESTER] - send_to_stream: Key not found: 'P4'
+2023-03-26 18:47:08,707 - ERROR - [TESTER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:08,719 - ERROR - [TESTER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:08,719 - ERROR - [TESTER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:08,720 - ERROR - [TESTER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:08,839 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:12,897 - ERROR - [Connect-voltorb] - Got RELAY_END
+2023-03-26 18:47:12,933 - INFO - [Thread-4] - Adding P1 to list of inactive
+2023-03-26 18:47:12,933 - INFO - [Thread-4] - DEAD ROUTES DETECTED: P1
+2023-03-26 18:47:12,933 - INFO - [Thread-4] - Removing P1 from neighbours
+2023-03-26 18:47:12,933 - INFO - [Thread-4] - Removed circuit for P1
+2023-03-26 18:47:12,933 - INFO - [Thread-4] - updateGraphOnly: [['P1', 'P3', 1846, 'RMK'], ['P1', 'P6', 2592, 'voltorb'], ['P1', 'P8', 100, 'RDCRT'], ['P5', 'P7', 1607, 'RMK'], ['P4', 'P7', 2408, 'SparadiseSpa'], ['P2', 'P7', 100, 'TestMyTor752'], ['P2', 'P6', 2552, 'Paphos'], ['P5', 'P6', 2646, 'taipe'], ['P3', 'P5', 1516, 'EpicTor4'], ['P4', 'P6', 1840, 'hohoho'], ['P3', 'P6', 100, 'rome2']] , {'P1'}
+2023-03-26 18:47:13,991 - INFO - [Thread-4] - GRAPH: [['P5', 'P7', 2024, 'RMK'], ['P4', 'P7', 2408, 'SparadiseSpa'], ['P2', 'P7', 1677, 'TestMyTor752'], ['P2', 'P6', 2552, 'Paphos'], ['P1', 'P8', 1594, 'RDCRT'], ['P5', 'P6', 2646, 'taipe'], ['P3', 'P5', 1516, 'EpicTor4'], ['P4', 'P6', 1840, 'hohoho'], ['P3', 'P6', 100, 'rome2']]
+2023-03-26 18:47:13,992 - INFO - [Thread-4] - ROUTER: {'RID': 'P6', 'Port': 5006, 'Neighbours': 3, 'Neighbours Data': [{'NID': 'P5', 'Cost': 1326, 'Hostname': '127.0.0.1', 'RP': 'taipe', 'FLAG': 0}, {'NID': 'P2', 'Cost': 2025, 'Hostname': '127.0.0.1', 'RP': 'Paphos', 'FLAG': 0}], 'SN': 16, 'FLAG': 0, 'RP': set()}
+2023-03-26 18:47:13,992 - INFO - [Thread-4] - LSA_DB: {'P7': {'RID': 'P7', 'Port': 5007, 'Neighbours': 2, 'Neighbours Data': [{'NID': 'P5', 'Cost': 2024, 'Hostname': '127.0.0.1', 'RP': 'RMK', 'FLAG': 0}, {'NID': 'P4', 'Cost': 2408, 'Hostname': '127.0.0.1', 'RP': 'SparadiseSpa', 'FLAG': 0}, {'NID': 'P2', 'Cost': 1677, 'Hostname': '127.0.0.1', 'RP': 'TestMyTor752', 'FLAG': 0}], 'SN': 24, 'FLAG': 1, 'RP': set()}, 'P2': {'RID': 'P2', 'Port': 5002, 'Neighbours': 2, 'Neighbours Data': [{'NID': 'P6', 'Cost': 2552, 'Hostname': '127.0.0.1', 'RP': 'Paphos', 'FLAG': 0}, {'NID': 'P7', 'Cost': 2274, 'Hostname': '127.0.0.1', 'RP': 'TestMyTor752', 'FLAG': 0}], 'SN': 22, 'FLAG': 1, 'RP': set()}, 'P8': {'RID': 'P8', 'Port': 5008, 'Neighbours': 2, 'Neighbours Data': [{'NID': 'P1', 'Cost': 1594, 'Hostname': '127.0.0.1', 'RP': 'RDCRT', 'FLAG': 0}], 'SN': 27, 'FLAG': 1, 'DEAD': {'P3'}}, 'P5': {'RID': 'P5', 'Port': 5005, 'Neighbours': 4, 'Neighbours Data': [{'NID': 'P6', 'Cost': 2646, 'Hostname': '127.0.0.1', 'RP': 'taipe', 'FLAG': 0}, {'NID': 'P7', 'Cost': 2062, 'Hostname': '127.0.0.1', 'RP': 'RMK', 'FLAG': 0}, {'NID': 'P3', 'Cost': 1516, 'Hostname': '127.0.0.1', 'RP': 'EpicTor4', 'FLAG': 0}], 'SN': 21, 'FLAG': 1, 'RP': set()}, 'P4': {'RID': 'P4', 'Port': 5004, 'Neighbours': 2, 'Neighbours Data': [{'NID': 'P6', 'Cost': 1840, 'Hostname': '127.0.0.1', 'RP': 'hohoho', 'FLAG': 0}], 'SN': 27, 'FLAG': 0, 'RP': set()}, 'P3': {'RID': 'P3', 'Port': 5003, 'Neighbours': 2, 'Neighbours Data': [{'NID': 'P6', 'Cost': 100, 'Hostname': '127.0.0.1', 'RP': 'rome2', 'FLAG': 0}, {'NID': 'P5', 'Cost': 1337, 'Hostname': '127.0.0.1', 'RP': 'EpicTor4', 'FLAG': 0}], 'SN': 30, 'FLAG': 1, 'RP': set()}}
+2023-03-26 18:47:14,727 - ERROR - [TESTER] - send_to_stream: Key not found: 'P4'
+2023-03-26 18:47:14,727 - ERROR - [TESTER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:14,761 - ERROR - [TESTER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:14,761 - ERROR - [TESTER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:14,761 - ERROR - [TESTER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:24,003 - INFO - [Thread-4] - Adding P4 to list of inactive
+2023-03-26 18:47:24,003 - INFO - [Thread-4] - DEAD ROUTES DETECTED: P4
+2023-03-26 18:47:24,003 - INFO - [Thread-4] - updateGraphOnly: [['P5', 'P7', 2024, 'RMK'], ['P4', 'P7', 2408, 'SparadiseSpa'], ['P2', 'P7', 1677, 'TestMyTor752'], ['P2', 'P6', 2552, 'Paphos'], ['P1', 'P8', 1594, 'RDCRT'], ['P5', 'P6', 2646, 'taipe'], ['P3', 'P5', 1516, 'EpicTor4'], ['P4', 'P6', 1840, 'hohoho'], ['P3', 'P6', 100, 'rome2']] , {'P4'}
+2023-03-26 18:47:24,780 - ERROR - [TESTER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:24,780 - ERROR - [TESTER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:24,781 - ERROR - [TESTER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:25,074 - INFO - [Thread-4] - GRAPH: [['P5', 'P7', 2024, 'RMK'], ['P4', 'P7', 2408, 'SparadiseSpa'], ['P2', 'P7', 1677, 'TestMyTor752'], ['P2', 'P6', 2552, 'Paphos'], ['P1', 'P8', 1594, 'RDCRT'], ['P5', 'P6', 2646, 'taipe'], ['P3', 'P5', 1516, 'EpicTor4'], ['P3', 'P6', 100, 'rome2']]
+2023-03-26 18:47:25,078 - INFO - [Thread-4] - ROUTER: {'RID': 'P6', 'Port': 5006, 'Neighbours': 2, 'Neighbours Data': [{'NID': 'P5', 'Cost': 2074, 'Hostname': '127.0.0.1', 'RP': 'taipe', 'FLAG': 0}, {'NID': 'P2', 'Cost': 2025, 'Hostname': '127.0.0.1', 'RP': 'Paphos', 'FLAG': 0}], 'SN': 18, 'FLAG': 0, 'RP': set()}
+2023-03-26 18:47:25,078 - INFO - [Thread-4] - LSA_DB: {'P7': {'RID': 'P7', 'Port': 5007, 'Neighbours': 2, 'Neighbours Data': [{'NID': 'P5', 'Cost': 2024, 'Hostname': '127.0.0.1', 'RP': 'RMK', 'FLAG': 0}, {'NID': 'P4', 'Cost': 2408, 'Hostname': '127.0.0.1', 'RP': 'SparadiseSpa', 'FLAG': 0}, {'NID': 'P2', 'Cost': 1677, 'Hostname': '127.0.0.1', 'RP': 'TestMyTor752', 'FLAG': 0}], 'SN': 24, 'FLAG': 1, 'RP': set()}, 'P2': {'RID': 'P2', 'Port': 5002, 'Neighbours': 2, 'Neighbours Data': [{'NID': 'P6', 'Cost': 2552, 'Hostname': '127.0.0.1', 'RP': 'Paphos', 'FLAG': 0}, {'NID': 'P7', 'Cost': 2274, 'Hostname': '127.0.0.1', 'RP': 'TestMyTor752', 'FLAG': 0}], 'SN': 22, 'FLAG': 1, 'RP': set()}, 'P8': {'RID': 'P8', 'Port': 5008, 'Neighbours': 2, 'Neighbours Data': [{'NID': 'P1', 'Cost': 1594, 'Hostname': '127.0.0.1', 'RP': 'RDCRT', 'FLAG': 0}], 'SN': 27, 'FLAG': 1, 'DEAD': {'P3'}}, 'P5': {'RID': 'P5', 'Port': 5005, 'Neighbours': 4, 'Neighbours Data': [{'NID': 'P6', 'Cost': 2646, 'Hostname': '127.0.0.1', 'RP': 'taipe', 'FLAG': 0}, {'NID': 'P7', 'Cost': 2062, 'Hostname': '127.0.0.1', 'RP': 'RMK', 'FLAG': 0}, {'NID': 'P3', 'Cost': 1516, 'Hostname': '127.0.0.1', 'RP': 'EpicTor4', 'FLAG': 0}], 'SN': 21, 'FLAG': 1, 'RP': set()}, 'P3': {'RID': 'P3', 'Port': 5003, 'Neighbours': 2, 'Neighbours Data': [{'NID': 'P6', 'Cost': 100, 'Hostname': '127.0.0.1', 'RP': 'rome2', 'FLAG': 0}, {'NID': 'P5', 'Cost': 1337, 'Hostname': '127.0.0.1', 'RP': 'EpicTor4', 'FLAG': 0}], 'SN': 30, 'FLAG': 1, 'RP': set()}}
+2023-03-26 18:47:32,230 - INFO - [RecvLoop_188.40.] - On destroy: circuit #8000000a
+2023-03-26 18:47:32,232 - INFO - [RecvLoop_188.40.] - Destroy circuit #8000000a
+2023-03-26 18:47:32,808 - ERROR - [TESTER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:32,808 - ERROR - [TESTER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:32,808 - ERROR - [TESTER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:32,808 - ERROR - [TESTER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:33,210 - INFO - [CONNECTION] - Neighbour connections (2) less than MIN_NEIGHBOUR_CONNECTIONS (4)
+2023-03-26 18:47:33,211 - INFO - [CONNECTION] - Candidate peers: ['P4', 'P3', 'P7', 'P8', 'P1']
+2023-03-26 18:47:33,211 - INFO - [CONNECTION] - Highest cost peers: [('P4', 6048), ('P7', 3640), ('P2', 2552), ('P8', 2046), ('P1', 1946), ('P5', 1616), ('P3', 100), ('P6', 0)]
+2023-03-26 18:47:33,217 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 18:47:34,058 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 18:47:34,093 - INFO - [MainThread] - ['ESTABLISH', 'oldePika', b'a17a992aec032d9ebde1']
+2023-03-26 18:47:34,093 - INFO - [MainThread] - Got ESTABLISH to relay oldePika:b'a17a992aec032d9ebde1' via NeelTorRelay2
+2023-03-26 18:47:34,094 - INFO - [Establish-oldePika] - Establishing RP to oldePika
+2023-03-26 18:47:34,102 - INFO - [Establish-oldePika] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 18:47:34,485 - INFO - [Establish-oldePika] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 18:47:34,531 - INFO - [Establish-oldePika] - Connecting to guard node 97.113.253.84:110 (NeelTorRelay2; Tor 0.4.7.13)... (None)
+2023-03-26 18:47:35,412 - INFO - [Establish-oldePika] - Creating new circuit #8000000b with 97.113.253.84:110 (NeelTorRelay2; Tor 0.4.7.13) router...
+2023-03-26 18:47:35,615 - INFO - [Establish-oldePika] - Building -1 hops circuit...
+2023-03-26 18:47:35,615 - INFO - [Establish-oldePika] - Extending the circuit #8000000b with 51.15.135.54:9001 (oldePika; Tor 0.4.7.13)...
+2023-03-26 18:47:35,616 - INFO - [Establish-oldePika] - Getting descriptor for 51.15.135.54:9001 (oldePika; Tor 0.4.7.13)...
+2023-03-26 18:47:35,752 - INFO - [Establish-oldePika] - Connecting to guard node 133.167.74.94:443 (Pikachu; Tor 0.4.7.13)... (Internal dir client)
+2023-03-26 18:47:37,088 - INFO - [Establish-oldePika] - Creating new circuit #8000000c with 133.167.74.94:443 (Pikachu; Tor 0.4.7.13) router...
+2023-03-26 18:47:37,431 - INFO - [Establish-oldePika] - Building 0 hops circuit...
+2023-03-26 18:47:37,431 - INFO - [Establish-oldePika] - Stream #9: creating attached to #8000000c circuit...
+2023-03-26 18:47:37,431 - INFO - [Establish-oldePika] - Stream #9: connecting to hsdir
+2023-03-26 18:47:37,725 - INFO - [RecvLoop_133.167] - Stream #9: connected (remote ip '')
+2023-03-26 18:47:37,781 - INFO - [RECEIVER] - Added relay vovis from P5 to JOIN queue
+2023-03-26 18:47:37,813 - INFO - [MainThread] - ['JOIN', 'vovis', b'73e7981ed28ca89c2b6a']
+2023-03-26 18:47:37,813 - INFO - [MainThread] - Got JOIN to relay vovis, waiting 10 sec to connect
+2023-03-26 18:47:37,814 - INFO - [Connect-vovis] - Calling connect_to_rendezvous_point
+2023-03-26 18:47:37,814 - INFO - [Connect-vovis] - Connect to rendezvous point vovis
+2023-03-26 18:47:37,867 - INFO - [Connect-vovis] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 18:47:38,555 - INFO - [RecvLoop_133.167] - Stream #9: remote disconnected (reason = DONE)
+2023-03-26 18:47:38,555 - INFO - [Establish-oldePika] - Stream #9: closing (state = Disconnected)...
+2023-03-26 18:47:38,557 - INFO - [Establish-oldePika] - Got descriptor
+2023-03-26 18:47:38,849 - INFO - [Connect-vovis] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 18:47:39,024 - INFO - [Establish-oldePika] - <class 'torpy.circuit.TorCircuit'>
+2023-03-26 18:47:39,404 - INFO - [Establish-oldePika] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-26 18:47:39,407 - INFO - [Establish-oldePika] - Waiting for connections at relay oldePika for cookie b'a17a992aec032d9ebde1' ...
+2023-03-26 18:47:40,702 - INFO - [Connect-vovis] - Connected to rendezvous point vovis
+2023-03-26 18:47:40,706 - INFO - [Connect-vovis] - Waiting for peer to open stream
+2023-03-26 18:47:41,365 - INFO - [Connect-vovis] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-03-26 18:47:41,366 - INFO - [Connect-vovis] - Stream opened successfully
+2023-03-26 18:47:41,378 - INFO - [Connect-vovis] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P6\x94ua.'
+2023-03-26 18:47:41,883 - ERROR - [TESTER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:41,883 - ERROR - [TESTER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:41,884 - ERROR - [TESTER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:41,884 - ERROR - [TESTER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:42,151 - INFO - [RECEIVER] - Added neighbour P5
+2023-03-26 18:47:44,107 - INFO - [CONNECTION] - Sending JOIN to P4 at relay oldePika
+2023-03-26 18:47:44,107 - ERROR - [CONNECTION] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:47,914 - ERROR - [TESTER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:48,151 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:55,298 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:47:55,943 - ERROR - [TESTER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:48:01,086 - ERROR - [TESTER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:48:02,215 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:48:02,583 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:48:03,633 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:48:04,296 - ERROR - [Establish-hohoho] - recv timeout
+2023-03-26 18:48:04,297 - INFO - [Establish-hohoho] - Closing connection Establish-hohoho
+2023-03-26 18:48:04,297 - INFO - [Establish-hohoho] - Stream #4: closing (state = Connected)...
+2023-03-26 18:48:04,301 - INFO - [Establish-hohoho] - Destroy circuit #80000003
+2023-03-26 18:48:04,305 - INFO - [Establish-hohoho] - Closing guard connections (None)...
+2023-03-26 18:48:07,202 - ERROR - [TESTER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:48:10,010 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:48:11,206 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:48:11,249 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:48:14,237 - ERROR - [TESTER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:48:15,498 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:48:17,850 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P3'
+2023-03-26 18:48:18,221 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P3'
