@@ -1,0 +1,539 @@
+2023-03-26 08:59:18,925 - INFO - [MainThread] - Initialized router P2 at port 5002 PID 16138
+2023-03-26 08:59:18,928 - INFO - [MainThread] - Adding a connection to 4mnesia
+2023-03-26 08:59:18,929 - INFO - [Connect-4mnesia] - Calling connect_to_rendezvous_point
+2023-03-26 08:59:18,929 - INFO - [Connect-4mnesia] - Connect to rendezvous point 4mnesia
+2023-03-26 08:59:18,931 - INFO - [MainThread] - Adding listener for LupusreginaBeta
+2023-03-26 08:59:18,932 - INFO - [Establish-LupusreginaBeta] - Establishing RP to LupusreginaBeta
+2023-03-26 08:59:18,935 - INFO - [MainThread] - Starting testing thread
+2023-03-26 08:59:18,941 - INFO - [TESTER] - Started tester
+2023-03-26 08:59:18,947 - INFO - [Connect-4mnesia] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 08:59:18,977 - INFO - [MainThread] - Starting connection thread
+2023-03-26 08:59:18,992 - INFO - [MainThread] - Starting log thread
+2023-03-26 08:59:19,013 - INFO - [Establish-LupusreginaBeta] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 08:59:19,342 - INFO - [Establish-LupusreginaBeta] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 08:59:19,352 - INFO - [Establish-LupusreginaBeta] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10)... (None)
+2023-03-26 08:59:19,461 - INFO - [Establish-LupusreginaBeta] - Creating new circuit #80000001 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10) router...
+2023-03-26 08:59:19,485 - INFO - [Connect-4mnesia] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 08:59:19,488 - INFO - [Establish-LupusreginaBeta] - Building -1 hops circuit...
+2023-03-26 08:59:19,488 - INFO - [Establish-LupusreginaBeta] - Extending the circuit #80000001 with 213.113.2.72:6881 (LupusreginaBeta; Tor 0.4.7.13)...
+2023-03-26 08:59:19,489 - INFO - [Establish-LupusreginaBeta] - Getting descriptor for 213.113.2.72:6881 (LupusreginaBeta; Tor 0.4.7.13)...
+2023-03-26 08:59:19,492 - INFO - [Establish-LupusreginaBeta] - Connecting to guard node 217.182.196.68:443 (TOR2DFNrelB; Tor 0.4.7.13)... (Internal dir client)
+2023-03-26 08:59:19,705 - INFO - [Establish-LupusreginaBeta] - Creating new circuit #80000002 with 217.182.196.68:443 (TOR2DFNrelB; Tor 0.4.7.13) router...
+2023-03-26 08:59:19,777 - INFO - [Connect-4mnesia] - Connected to rendezvous point 4mnesia
+2023-03-26 08:59:19,777 - INFO - [Connect-4mnesia] - Waiting for peer to open stream
+2023-03-26 08:59:19,948 - INFO - [Connect-4mnesia] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-03-26 08:59:19,949 - INFO - [Connect-4mnesia] - Stream opened successfully
+2023-03-26 08:59:19,949 - INFO - [Connect-4mnesia] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P2\x94ua.'
+2023-03-26 08:59:20,079 - INFO - [Establish-LupusreginaBeta] - Building 0 hops circuit...
+2023-03-26 08:59:20,080 - INFO - [Establish-LupusreginaBeta] - Stream #1: creating attached to #80000002 circuit...
+2023-03-26 08:59:20,080 - INFO - [Establish-LupusreginaBeta] - Stream #1: connecting to hsdir
+2023-03-26 08:59:20,161 - INFO - [RECEIVER] - Added neighbour P1
+2023-03-26 08:59:21,207 - INFO - [RecvLoop_217.182] - Stream #1: connected (remote ip '')
+2023-03-26 08:59:21,423 - INFO - [RecvLoop_217.182] - Stream #1: remote disconnected (reason = DONE)
+2023-03-26 08:59:21,423 - INFO - [Establish-LupusreginaBeta] - Stream #1: closing (state = Disconnected)...
+2023-03-26 08:59:21,423 - INFO - [Establish-LupusreginaBeta] - Got descriptor
+2023-03-26 08:59:21,451 - INFO - [Establish-LupusreginaBeta] - <class 'torpy.circuit.TorCircuit'>
+2023-03-26 08:59:21,477 - INFO - [Establish-LupusreginaBeta] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-26 08:59:21,477 - INFO - [Establish-LupusreginaBeta] - Waiting for connections at relay LupusreginaBeta for cookie b'eb688e4f52df90278060' ...
+2023-03-26 08:59:24,843 - INFO - [Establish-LupusreginaBeta] - Got REND2 message from LupusreginaBeta
+2023-03-26 08:59:24,843 - INFO - [Establish-LupusreginaBeta] - Entered circuit context with id 0x80000001
+2023-03-26 08:59:24,843 - INFO - [Establish-LupusreginaBeta] - Stream #2: creating attached to #80000001 circuit...
+2023-03-26 08:59:24,843 - INFO - [Establish-LupusreginaBeta] - Stream #2: connecting to ('127.0.0.1', 5000)
+2023-03-26 08:59:24,902 - INFO - [RecvLoop_185.181] - Stream #2: connected (remote ip '127.0.0.1')
+2023-03-26 08:59:25,045 - INFO - [Establish-LupusreginaBeta] - Sending HELLO to peer
+2023-03-26 08:59:25,045 - INFO - [Establish-LupusreginaBeta] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P2\x94ua.'
+2023-03-26 08:59:25,049 - INFO - [RECEIVER] - Added neighbour P4
+2023-03-26 09:00:10,188 - WARNING - [Connect-4mnesia] - Got SENDME
+2023-03-26 09:00:19,040 - INFO - [CONNECTION] - Neighbour connections (2) less than MIN_NEIGHBOUR_CONNECTIONS (8)
+2023-03-26 09:00:19,040 - INFO - [CONNECTION] - Candidate peers: ['P5', 'P8', 'P7', 'P3', 'P6']
+2023-03-26 09:00:19,040 - INFO - [CONNECTION] - Highest cost peers: [('P8', 400), ('P6', 300), ('P7', 300), ('P3', 200), ('P5', 200), ('P1', 100), ('P4', 100), ('P2', 0)]
+2023-03-26 09:00:19,044 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 09:00:19,233 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 09:00:19,243 - INFO - [MainThread] - ['ESTABLISH', 'Planetclaire61', b'894269aca75c31563290']
+2023-03-26 09:00:19,243 - INFO - [MainThread] - Got ESTABLISH to relay Planetclaire61:b'894269aca75c31563290' via staysafeandgoodluck
+2023-03-26 09:00:19,243 - INFO - [Establish-Planetclaire61] - Establishing RP to Planetclaire61
+2023-03-26 09:00:19,247 - INFO - [Establish-Planetclaire61] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 09:00:19,451 - INFO - [Establish-Planetclaire61] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 09:00:19,453 - INFO - [Establish-Planetclaire61] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10)... (None)
+2023-03-26 09:00:19,509 - INFO - [Establish-Planetclaire61] - Creating new circuit #80000003 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10) router...
+2023-03-26 09:00:19,520 - INFO - [Establish-Planetclaire61] - Building -1 hops circuit...
+2023-03-26 09:00:19,520 - INFO - [Establish-Planetclaire61] - Extending the circuit #80000003 with 91.143.81.212:80 (Planetclaire61; Tor 0.4.7.12)...
+2023-03-26 09:00:19,520 - INFO - [Establish-Planetclaire61] - Getting descriptor for 91.143.81.212:80 (Planetclaire61; Tor 0.4.7.12)...
+2023-03-26 09:00:19,524 - INFO - [Establish-Planetclaire61] - Connecting to guard node 158.58.173.209:443 (bauruine; Tor 0.4.7.13)... (Internal dir client)
+2023-03-26 09:00:19,740 - INFO - [Establish-Planetclaire61] - Creating new circuit #80000004 with 158.58.173.209:443 (bauruine; Tor 0.4.7.13) router...
+2023-03-26 09:00:19,802 - INFO - [Establish-Planetclaire61] - Building 0 hops circuit...
+2023-03-26 09:00:19,802 - INFO - [Establish-Planetclaire61] - Stream #3: creating attached to #80000004 circuit...
+2023-03-26 09:00:19,802 - INFO - [Establish-Planetclaire61] - Stream #3: connecting to hsdir
+2023-03-26 09:00:19,860 - INFO - [RecvLoop_158.58.] - Stream #3: connected (remote ip '')
+2023-03-26 09:00:20,076 - INFO - [RecvLoop_158.58.] - Stream #3: remote disconnected (reason = DONE)
+2023-03-26 09:00:20,078 - INFO - [Establish-Planetclaire61] - Stream #3: closing (state = Disconnected)...
+2023-03-26 09:00:20,078 - INFO - [Establish-Planetclaire61] - Got descriptor
+2023-03-26 09:00:20,126 - INFO - [Establish-Planetclaire61] - <class 'torpy.circuit.TorCircuit'>
+2023-03-26 09:00:20,170 - INFO - [Establish-Planetclaire61] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-26 09:00:20,170 - INFO - [Establish-Planetclaire61] - Waiting for connections at relay Planetclaire61 for cookie b'894269aca75c31563290' ...
+2023-03-26 09:00:23,254 - INFO - [RecvLoop_217.182] - On destroy: circuit #80000002
+2023-03-26 09:00:23,254 - INFO - [RecvLoop_217.182] - Destroy circuit #80000002
+2023-03-26 09:00:29,250 - INFO - [CONNECTION] - Sending JOIN to P8 at relay Planetclaire61
+2023-03-26 09:00:34,760 - WARNING - [RECEIVER] - Routing loop from P2 to P4: P2-P1-P2
+2023-03-26 09:00:43,549 - INFO - [RECEIVER] - Added relay bauruine from P5 to JOIN queue
+2023-03-26 09:00:43,549 - INFO - [MainThread] - ['JOIN', 'bauruine', b'894269aca75c31563290']
+2023-03-26 09:00:43,549 - INFO - [MainThread] - Got JOIN to relay bauruine, waiting 10 sec to connect
+2023-03-26 09:00:43,557 - INFO - [Connect-bauruine] - Calling connect_to_rendezvous_point
+2023-03-26 09:00:43,557 - INFO - [Connect-bauruine] - Connect to rendezvous point bauruine
+2023-03-26 09:00:43,572 - INFO - [Connect-bauruine] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 09:00:43,628 - INFO - [RECEIVER] - Added relay AlexandruIoanCuza2 from P6 to JOIN queue
+2023-03-26 09:00:43,628 - INFO - [MainThread] - ['JOIN', 'AlexandruIoanCuza2', b'894269aca75c31563290']
+2023-03-26 09:00:43,628 - INFO - [MainThread] - Got JOIN to relay AlexandruIoanCuza2, waiting 10 sec to connect
+2023-03-26 09:00:43,641 - INFO - [Connect-AlexandruIoanCuza2] - Calling connect_to_rendezvous_point
+2023-03-26 09:00:43,641 - INFO - [Connect-AlexandruIoanCuza2] - Connect to rendezvous point AlexandruIoanCuza2
+2023-03-26 09:00:43,651 - INFO - [Connect-AlexandruIoanCuza2] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 09:00:44,050 - INFO - [Connect-bauruine] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 09:00:44,096 - INFO - [Connect-AlexandruIoanCuza2] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 09:00:44,232 - WARNING - [Connect-4mnesia] - Got SENDME
+2023-03-26 09:00:44,260 - INFO - [Connect-bauruine] - Connected to rendezvous point bauruine
+2023-03-26 09:00:44,261 - INFO - [Connect-bauruine] - Waiting for peer to open stream
+2023-03-26 09:00:44,301 - INFO - [Connect-AlexandruIoanCuza2] - Connected to rendezvous point AlexandruIoanCuza2
+2023-03-26 09:00:44,301 - INFO - [Connect-AlexandruIoanCuza2] - Waiting for peer to open stream
+2023-03-26 09:00:44,312 - WARNING - [Connect-4mnesia] - Got SENDME
+2023-03-26 09:00:44,355 - INFO - [Connect-bauruine] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-03-26 09:00:44,356 - INFO - [Connect-bauruine] - Stream opened successfully
+2023-03-26 09:00:44,356 - INFO - [Connect-bauruine] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P2\x94ua.'
+2023-03-26 09:00:44,681 - INFO - [Connect-AlexandruIoanCuza2] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-03-26 09:00:44,682 - INFO - [Connect-AlexandruIoanCuza2] - Stream opened successfully
+2023-03-26 09:00:44,682 - INFO - [Connect-AlexandruIoanCuza2] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P2\x94ua.'
+2023-03-26 09:00:46,495 - INFO - [RECEIVER] - Added neighbour P5
+2023-03-26 09:00:46,496 - INFO - [RECEIVER] - Added neighbour P6
+2023-03-26 09:01:04,328 - WARNING - [RECEIVER] - Routing loop from P2 to P6: P2-P4-P5-P2
+2023-03-26 09:01:10,353 - WARNING - [RECEIVER] - Routing loop from P1 to P5: P1-P2-P4-P2
+2023-03-26 09:01:14,378 - WARNING - [RECEIVER] - Routing loop from P1 to P6: P1-P2-P5-P2
+2023-03-26 09:01:19,519 - INFO - [RECEIVER] - updateLSADB: removing {'P8'}
+2023-03-26 09:01:19,519 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P2', 768, '4mnesia'], ['P1', 'P3', 456, 'RMK'], ['P1', 'P4', 100, 'jdvnsjfnHBDkScf'], ['P1', 'P7', 100, 'DTFNODE75'], ['P3', 'P4', 498, 'Vulnerar'], ['P3', 'P8', 100, 'gGDHjdcC6zAlM8k08lX'], ['P2', 'P4', 813, 'LupusreginaBeta'], ['P4', 'P5', 684, 'Cornball'], ['P5', 'P6', 897, 'taipe'], ['P5', 'P7', 1204, 'RMK'], ['P2', 'P5', 100, 'bauruine'], ['P6', 'P8', 908, 'LupusreginaBeta'], ['P2', 'P6', 100, 'AlexandruIoanCuza2'], ['P7', 'P8', 1444, 'Vulnerar']] , {'P8'}
+2023-03-26 09:01:21,614 - WARNING - [Connect-bauruine] - Got SENDME
+2023-03-26 09:01:22,301 - INFO - [RecvLoop_158.58.] - On destroy: circuit #80000004
+2023-03-26 09:01:22,301 - INFO - [RecvLoop_158.58.] - Destroy circuit #80000004
+2023-03-26 09:01:24,359 - WARNING - [Connect-4mnesia] - Got SENDME
+2023-03-26 09:01:25,317 - WARNING - [Connect-AlexandruIoanCuza2] - Got SENDME
+2023-03-26 09:01:29,270 - INFO - [CONNECTION] - Neighbour connections (4) less than MIN_NEIGHBOUR_CONNECTIONS (8)
+2023-03-26 09:01:29,271 - INFO - [CONNECTION] - Candidate peers: ['P8', 'P7', 'P3']
+2023-03-26 09:01:29,271 - INFO - [CONNECTION] - Highest cost peers: [('P8', 1324), ('P3', 1224), ('P7', 868), ('P4', 784), ('P1', 768), ('P5', 100), ('P6', 100), ('P2', 0)]
+2023-03-26 09:01:29,275 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 09:01:29,474 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 09:01:29,481 - INFO - [MainThread] - ['ESTABLISH', 'FreedomOfThought', b'fe1e1bbcc86d2ce997ca']
+2023-03-26 09:01:29,482 - INFO - [MainThread] - Got ESTABLISH to relay FreedomOfThought:b'fe1e1bbcc86d2ce997ca' via staysafeandgoodluck
+2023-03-26 09:01:29,482 - INFO - [Establish-FreedomOfThought] - Establishing RP to FreedomOfThought
+2023-03-26 09:01:29,486 - INFO - [Establish-FreedomOfThought] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 09:01:29,734 - INFO - [Establish-FreedomOfThought] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 09:01:29,735 - INFO - [Establish-FreedomOfThought] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10)... (None)
+2023-03-26 09:01:29,941 - INFO - [Establish-FreedomOfThought] - Creating new circuit #80000005 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10) router...
+2023-03-26 09:01:29,956 - INFO - [Establish-FreedomOfThought] - Building -1 hops circuit...
+2023-03-26 09:01:29,956 - INFO - [Establish-FreedomOfThought] - Extending the circuit #80000005 with 85.214.236.165:443 (FreedomOfThought; Tor 0.4.7.13)...
+2023-03-26 09:01:29,956 - INFO - [Establish-FreedomOfThought] - Getting descriptor for 85.214.236.165:443 (FreedomOfThought; Tor 0.4.7.13)...
+2023-03-26 09:01:29,960 - INFO - [Establish-FreedomOfThought] - Connecting to guard node 104.244.72.132:9100 (Quetzalcoatl; Tor 0.4.7.13)... (Internal dir client)
+2023-03-26 09:01:30,136 - INFO - [Establish-FreedomOfThought] - Creating new circuit #80000006 with 104.244.72.132:9100 (Quetzalcoatl; Tor 0.4.7.13) router...
+2023-03-26 09:01:30,184 - INFO - [Establish-FreedomOfThought] - Building 0 hops circuit...
+2023-03-26 09:01:30,184 - INFO - [Establish-FreedomOfThought] - Stream #4: creating attached to #80000006 circuit...
+2023-03-26 09:01:30,184 - INFO - [Establish-FreedomOfThought] - Stream #4: connecting to hsdir
+2023-03-26 09:01:30,238 - INFO - [RecvLoop_104.244] - Stream #4: connected (remote ip '')
+2023-03-26 09:01:30,432 - INFO - [RecvLoop_104.244] - Stream #4: remote disconnected (reason = DONE)
+2023-03-26 09:01:30,432 - INFO - [Establish-FreedomOfThought] - Stream #4: closing (state = Disconnected)...
+2023-03-26 09:01:30,432 - INFO - [Establish-FreedomOfThought] - Got descriptor
+2023-03-26 09:01:32,090 - INFO - [Establish-FreedomOfThought] - <class 'torpy.circuit.TorCircuit'>
+2023-03-26 09:01:32,192 - INFO - [Establish-FreedomOfThought] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-26 09:01:32,192 - INFO - [Establish-FreedomOfThought] - Waiting for connections at relay FreedomOfThought for cookie b'fe1e1bbcc86d2ce997ca' ...
+2023-03-26 09:01:39,493 - INFO - [CONNECTION] - Sending JOIN to P8 at relay FreedomOfThought
+2023-03-26 09:01:45,146 - INFO - [RECEIVER] - updateLSADB: removing {'P6'}
+2023-03-26 09:01:45,146 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P2', 768, '4mnesia'], ['P1', 'P3', 456, 'RMK'], ['P1', 'P4', 100, 'jdvnsjfnHBDkScf'], ['P1', 'P7', 100, 'DTFNODE75'], ['P3', 'P4', 1969, 'Vulnerar'], ['P3', 'P8', 100, 'gGDHjdcC6zAlM8k08lX'], ['P2', 'P4', 813, 'LupusreginaBeta'], ['P4', 'P5', 684, 'Cornball'], ['P5', 'P6', 897, 'taipe'], ['P5', 'P7', 1204, 'RMK'], ['P2', 'P5', 100, 'bauruine'], ['P2', 'P6', 100, 'AlexandruIoanCuza2'], ['P7', 'P8', 1444, 'Vulnerar'], ['P6', 'P8', 1060, 'LupusreginaBeta']] , {'P6'}
+2023-03-26 09:01:55,259 - WARNING - [Connect-bauruine] - Got SENDME
+2023-03-26 09:01:55,330 - WARNING - [Connect-bauruine] - Got SENDME
+2023-03-26 09:01:55,383 - WARNING - [Connect-4mnesia] - Got SENDME
+2023-03-26 09:01:55,463 - WARNING - [Connect-4mnesia] - Got SENDME
+2023-03-26 09:02:12,667 - WARNING - [Connect-AlexandruIoanCuza2] - Got SENDME
+2023-03-26 09:02:12,819 - WARNING - [Connect-AlexandruIoanCuza2] - Got SENDME
+2023-03-26 09:02:19,304 - WARNING - [RECEIVER] - Routing loop from P2 to P4: P2-P5-P2
+2023-03-26 09:02:23,473 - WARNING - [Connect-bauruine] - Got SENDME
+2023-03-26 09:02:29,884 - WARNING - [Connect-AlexandruIoanCuza2] - Got SENDME
+2023-03-26 09:02:39,497 - INFO - [CONNECTION] - Neighbour connections (4) less than MIN_NEIGHBOUR_CONNECTIONS (8)
+2023-03-26 09:02:39,498 - INFO - [CONNECTION] - Candidate peers: ['P8', 'P7', 'P3']
+2023-03-26 09:02:39,498 - INFO - [CONNECTION] - Highest cost peers: [('P3', 500), ('P7', 400), ('P1', 300), ('P4', 200), ('P8', 200), ('P5', 100), ('P6', 100), ('P2', 0)]
+2023-03-26 09:02:39,503 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 09:02:39,800 - INFO - [RecvLoop_104.244] - On destroy: circuit #80000006
+2023-03-26 09:02:39,800 - INFO - [RecvLoop_104.244] - Destroy circuit #80000006
+2023-03-26 09:02:39,803 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 09:02:39,810 - INFO - [MainThread] - ['ESTABLISH', 'Planetclaire61', b'167145b6af4f691af9f5']
+2023-03-26 09:02:39,810 - INFO - [MainThread] - Got ESTABLISH to relay Planetclaire61:b'167145b6af4f691af9f5' via staysafeandgoodluck
+2023-03-26 09:02:39,810 - INFO - [Establish-Planetclaire61] - Establishing RP to Planetclaire61
+2023-03-26 09:02:39,815 - INFO - [Establish-Planetclaire61] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 09:02:40,032 - INFO - [Establish-Planetclaire61] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 09:02:40,034 - INFO - [Establish-Planetclaire61] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10)... (None)
+2023-03-26 09:02:40,090 - INFO - [Establish-Planetclaire61] - Creating new circuit #80000007 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10) router...
+2023-03-26 09:02:40,103 - INFO - [Establish-Planetclaire61] - Building -1 hops circuit...
+2023-03-26 09:02:40,104 - INFO - [Establish-Planetclaire61] - Extending the circuit #80000007 with 91.143.81.212:80 (Planetclaire61; Tor 0.4.7.12)...
+2023-03-26 09:02:40,104 - INFO - [Establish-Planetclaire61] - Getting descriptor for 91.143.81.212:80 (Planetclaire61; Tor 0.4.7.12)...
+2023-03-26 09:02:40,109 - INFO - [Establish-Planetclaire61] - Connecting to guard node 66.146.193.33:9001 (LunaTor; Tor 0.4.7.13)... (Internal dir client)
+2023-03-26 09:02:40,588 - INFO - [Establish-Planetclaire61] - Creating new circuit #80000008 with 66.146.193.33:9001 (LunaTor; Tor 0.4.7.13) router...
+2023-03-26 09:02:40,712 - INFO - [Establish-Planetclaire61] - Building 0 hops circuit...
+2023-03-26 09:02:40,712 - INFO - [Establish-Planetclaire61] - Stream #5: creating attached to #80000008 circuit...
+2023-03-26 09:02:40,712 - INFO - [Establish-Planetclaire61] - Stream #5: connecting to hsdir
+2023-03-26 09:02:40,830 - INFO - [RecvLoop_66.146.] - Stream #5: connected (remote ip '')
+2023-03-26 09:02:41,161 - INFO - [RecvLoop_66.146.] - Stream #5: remote disconnected (reason = DONE)
+2023-03-26 09:02:41,165 - INFO - [Establish-Planetclaire61] - Stream #5: closing (state = Disconnected)...
+2023-03-26 09:02:41,165 - INFO - [Establish-Planetclaire61] - Got descriptor
+2023-03-26 09:02:41,213 - INFO - [Establish-Planetclaire61] - <class 'torpy.circuit.TorCircuit'>
+2023-03-26 09:02:41,259 - INFO - [Establish-Planetclaire61] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-26 09:02:41,259 - INFO - [Establish-Planetclaire61] - Waiting for connections at relay Planetclaire61 for cookie b'167145b6af4f691af9f5' ...
+2023-03-26 09:02:49,821 - INFO - [CONNECTION] - Sending JOIN to P3 at relay Planetclaire61
+2023-03-26 09:02:52,476 - WARNING - [Connect-bauruine] - Got SENDME
+2023-03-26 09:02:52,549 - WARNING - [Connect-bauruine] - Got SENDME
+2023-03-26 09:02:54,366 - WARNING - [Connect-4mnesia] - Got SENDME
+2023-03-26 09:03:19,774 - WARNING - [Connect-AlexandruIoanCuza2] - Got SENDME
+2023-03-26 09:03:19,923 - WARNING - [Connect-AlexandruIoanCuza2] - Got SENDME
+2023-03-26 09:03:24,438 - WARNING - [Connect-bauruine] - Got SENDME
+2023-03-26 09:03:47,560 - INFO - [RecvLoop_66.146.] - On destroy: circuit #80000008
+2023-03-26 09:03:47,560 - INFO - [RecvLoop_66.146.] - Destroy circuit #80000008
+2023-03-26 09:03:49,884 - INFO - [CONNECTION] - Neighbour connections (4) less than MIN_NEIGHBOUR_CONNECTIONS (8)
+2023-03-26 09:03:49,885 - INFO - [CONNECTION] - Candidate peers: ['P8', 'P7', 'P3']
+2023-03-26 09:03:49,885 - INFO - [CONNECTION] - Highest cost peers: [('P6', 400), ('P1', 300), ('P4', 300), ('P7', 300), ('P3', 200), ('P8', 200), ('P5', 100), ('P2', 0)]
+2023-03-26 09:03:49,891 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 09:03:50,100 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 09:03:50,113 - INFO - [MainThread] - ['ESTABLISH', 'ledevin', b'714e1f9b1809d0daf19a']
+2023-03-26 09:03:50,113 - INFO - [MainThread] - Got ESTABLISH to relay ledevin:b'714e1f9b1809d0daf19a' via staysafeandgoodluck
+2023-03-26 09:03:50,113 - INFO - [Establish-ledevin] - Establishing RP to ledevin
+2023-03-26 09:03:50,119 - INFO - [Establish-ledevin] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 09:03:50,559 - INFO - [Establish-ledevin] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 09:03:50,561 - INFO - [Establish-ledevin] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10)... (None)
+2023-03-26 09:03:50,617 - INFO - [Establish-ledevin] - Creating new circuit #80000009 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10) router...
+2023-03-26 09:03:50,635 - INFO - [Establish-ledevin] - Building -1 hops circuit...
+2023-03-26 09:03:50,635 - INFO - [Establish-ledevin] - Extending the circuit #80000009 with 50.7.115.67:9001 (ledevin; Tor 0.4.7.13)...
+2023-03-26 09:03:50,636 - INFO - [Establish-ledevin] - Getting descriptor for 50.7.115.67:9001 (ledevin; Tor 0.4.7.13)...
+2023-03-26 09:03:50,640 - INFO - [Establish-ledevin] - Connecting to guard node 116.12.180.234:9443 (maplefire; Tor 0.4.7.13)... (Internal dir client)
+2023-03-26 09:03:51,537 - INFO - [Establish-ledevin] - Creating new circuit #8000000a with 116.12.180.234:9443 (maplefire; Tor 0.4.7.13) router...
+2023-03-26 09:03:51,741 - INFO - [Establish-ledevin] - Building 0 hops circuit...
+2023-03-26 09:03:51,741 - INFO - [Establish-ledevin] - Stream #6: creating attached to #8000000a circuit...
+2023-03-26 09:03:51,741 - INFO - [Establish-ledevin] - Stream #6: connecting to hsdir
+2023-03-26 09:03:51,963 - INFO - [RecvLoop_116.12.] - Stream #6: connected (remote ip '')
+2023-03-26 09:03:52,406 - INFO - [RecvLoop_116.12.] - Stream #6: remote disconnected (reason = DONE)
+2023-03-26 09:03:52,412 - INFO - [Establish-ledevin] - Stream #6: closing (state = Disconnected)...
+2023-03-26 09:03:52,412 - INFO - [Establish-ledevin] - Got descriptor
+2023-03-26 09:03:52,780 - INFO - [Establish-ledevin] - <class 'torpy.circuit.TorCircuit'>
+2023-03-26 09:03:52,862 - INFO - [Establish-ledevin] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-26 09:03:52,862 - INFO - [Establish-ledevin] - Waiting for connections at relay ledevin for cookie b'714e1f9b1809d0daf19a' ...
+2023-03-26 09:03:54,005 - WARNING - [Connect-bauruine] - Got SENDME
+2023-03-26 09:03:54,932 - WARNING - [Connect-bauruine] - Got SENDME
+2023-03-26 09:04:00,123 - INFO - [CONNECTION] - Sending JOIN to P7 at relay ledevin
+2023-03-26 09:04:04,435 - INFO - [RECEIVER] - updateLSADB: removing {'P3'}
+2023-03-26 09:04:04,435 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P2', 1175, '4mnesia'], ['P1', 'P3', 1418, 'RMK'], ['P1', 'P4', 100, 'jdvnsjfnHBDkScf'], ['P1', 'P7', 2290, 'DTFNODE75'], ['P1', 'P8', 100, 'TestMyTor721'], ['P3', 'P4', 1969, 'Vulnerar'], ['P3', 'P8', 745, 'gGDHjdcC6zAlM8k08lX'], ['P3', 'P7', 1984, 'honestmistake'], ['P3', 'P5', 100, 'orangeneis'], ['P2', 'P4', 922, 'LupusreginaBeta'], ['P4', 'P5', 783, 'Cornball'], ['P4', 'P6', 100, 'Meganero'], ['P4', 'P7', 100, 'schmortor'], ['P4', 'P8', 100, 'tirz'], ['P5', 'P6', 2387, 'taipe'], ['P5', 'P7', 1904, 'RMK'], ['P2', 'P5', 100, 'bauruine'], ['P5', 'P8', 100, 'DoubleX'], ['P7', 'P8', 2680, 'Vulnerar'], ['P6', 'P7', 100, 'bornhack2'], ['P2', 'P6', 2078, 'AlexandruIoanCuza2']] , {'P3'}
+2023-03-26 09:04:12,255 - WARNING - [Connect-4mnesia] - Got SENDME
+2023-03-26 09:04:12,337 - WARNING - [Connect-4mnesia] - Got SENDME
+2023-03-26 09:04:13,003 - INFO - [Establish-ledevin] - Got REND2 message from ledevin
+2023-03-26 09:04:13,004 - INFO - [Establish-ledevin] - Entered circuit context with id 0x80000009
+2023-03-26 09:04:13,004 - INFO - [Establish-ledevin] - Stream #7: creating attached to #80000009 circuit...
+2023-03-26 09:04:13,004 - INFO - [Establish-ledevin] - Stream #7: connecting to ('127.0.0.1', 5000)
+2023-03-26 09:04:13,113 - INFO - [RecvLoop_185.181] - Stream #7: connected (remote ip '127.0.0.1')
+2023-03-26 09:04:13,212 - INFO - [Establish-ledevin] - Sending HELLO to peer
+2023-03-26 09:04:13,213 - INFO - [Establish-ledevin] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P2\x94ua.'
+2023-03-26 09:04:13,226 - INFO - [RECEIVER] - Added neighbour P7
+2023-03-26 09:04:14,952 - INFO - [RECEIVER] - Added relay pIetr0d1C4rB04711 from P7 to JOIN queue
+2023-03-26 09:04:14,953 - INFO - [MainThread] - ['JOIN', 'pIetr0d1C4rB04711', b'714e1f9b1809d0daf19a']
+2023-03-26 09:04:14,953 - INFO - [MainThread] - Got JOIN to relay pIetr0d1C4rB04711, waiting 10 sec to connect
+2023-03-26 09:04:14,957 - INFO - [Connect-pIetr0d1C4rB04711] - Calling connect_to_rendezvous_point
+2023-03-26 09:04:14,957 - INFO - [Connect-pIetr0d1C4rB04711] - Connect to rendezvous point pIetr0d1C4rB04711
+2023-03-26 09:04:14,970 - INFO - [Connect-pIetr0d1C4rB04711] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 09:04:15,325 - INFO - [Connect-pIetr0d1C4rB04711] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 09:04:15,527 - INFO - [Connect-pIetr0d1C4rB04711] - Connected to rendezvous point pIetr0d1C4rB04711
+2023-03-26 09:04:15,527 - INFO - [Connect-pIetr0d1C4rB04711] - Waiting for peer to open stream
+2023-03-26 09:04:16,584 - INFO - [Connect-pIetr0d1C4rB04711] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-03-26 09:04:16,584 - INFO - [Connect-pIetr0d1C4rB04711] - Stream opened successfully
+2023-03-26 09:04:16,584 - INFO - [Connect-pIetr0d1C4rB04711] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P2\x94ua.'
+2023-03-26 09:04:25,640 - INFO - [RECEIVER] - Added neighbour P7
+2023-03-26 09:04:31,560 - WARNING - [Connect-bauruine] - Got SENDME
+2023-03-26 09:04:35,351 - INFO - [RECEIVER] - updateLSADB: removing {'P4'}
+2023-03-26 09:04:35,351 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P2', 1175, '4mnesia'], ['P1', 'P3', 2716, 'RMK'], ['P1', 'P4', 100, 'jdvnsjfnHBDkScf'], ['P1', 'P7', 2290, 'DTFNODE75'], ['P1', 'P8', 100, 'TestMyTor721'], ['P1', 'P5', 100, 'artikel10buc07'], ['P2', 'P4', 922, 'LupusreginaBeta'], ['P4', 'P5', 783, 'Cornball'], ['P4', 'P6', 100, 'Meganero'], ['P4', 'P7', 100, 'schmortor'], ['P4', 'P8', 100, 'tirz'], ['P5', 'P6', 2387, 'taipe'], ['P5', 'P7', 1904, 'RMK'], ['P2', 'P5', 100, 'bauruine'], ['P5', 'P8', 100, 'DoubleX'], ['P3', 'P5', 100, 'orangeneis'], ['P7', 'P8', 2680, 'Vulnerar'], ['P3', 'P7', 2514, 'honestmistake'], ['P6', 'P7', 100, 'bornhack2'], ['P2', 'P7', 100, 'ledevin'], ['P3', 'P8', 1640, 'gGDHjdcC6zAlM8k08lX'], ['P2', 'P6', 2078, 'AlexandruIoanCuza2']] , {'P4'}
+2023-03-26 09:04:35,425 - ERROR - [Connect-pIetr0d1C4rB04711] - Got DESTROY
+2023-03-26 09:04:37,505 - ERROR - [Connect-bauruine] - Got RELAY_END
+2023-03-26 09:04:40,437 - WARNING - [Connect-AlexandruIoanCuza2] - Got SENDME
+2023-03-26 09:04:41,461 - INFO - [RECEIVER] - Added relay IceMateria from P8 to JOIN queue
+2023-03-26 09:04:41,488 - INFO - [MainThread] - ['JOIN', 'IceMateria', b'714e1f9b1809d0daf19a']
+2023-03-26 09:04:41,488 - INFO - [MainThread] - Got JOIN to relay IceMateria, waiting 10 sec to connect
+2023-03-26 09:04:41,632 - INFO - [Connect-IceMateria] - Calling connect_to_rendezvous_point
+2023-03-26 09:04:41,632 - INFO - [Connect-IceMateria] - Connect to rendezvous point IceMateria
+2023-03-26 09:04:42,548 - INFO - [Connect-IceMateria] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 09:04:44,331 - INFO - [Connect-IceMateria] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 09:04:46,529 - INFO - [Connect-IceMateria] - Connected to rendezvous point IceMateria
+2023-03-26 09:04:46,529 - INFO - [Connect-IceMateria] - Waiting for peer to open stream
+2023-03-26 09:04:47,000 - INFO - [Connect-IceMateria] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-03-26 09:04:47,001 - INFO - [Connect-IceMateria] - Stream opened successfully
+2023-03-26 09:04:47,001 - INFO - [Connect-IceMateria] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P2\x94ua.'
+2023-03-26 09:04:50,352 - INFO - [Thread-4] - Adding P7 to list of inactive
+2023-03-26 09:04:50,352 - INFO - [Thread-4] - DEAD ROUTES DETECTED: P7
+2023-03-26 09:04:50,352 - INFO - [Thread-4] - Removing P7 from neighbours
+2023-03-26 09:04:50,352 - INFO - [Thread-4] - updateLSADB: removing {'P7'}
+2023-03-26 09:04:50,353 - INFO - [Thread-4] - updateGraphOnly: [['P1', 'P2', 1175, '4mnesia'], ['P1', 'P3', 2716, 'RMK'], ['P1', 'P4', 100, 'jdvnsjfnHBDkScf'], ['P1', 'P7', 2290, 'DTFNODE75'], ['P1', 'P8', 100, 'TestMyTor721'], ['P1', 'P5', 100, 'artikel10buc07'], ['P4', 'P5', 1920, 'Cornball'], ['P5', 'P6', 2387, 'taipe'], ['P5', 'P7', 1904, 'RMK'], ['P2', 'P5', 100, 'bauruine'], ['P5', 'P8', 100, 'DoubleX'], ['P3', 'P5', 100, 'orangeneis'], ['P7', 'P8', 2680, 'Vulnerar'], ['P3', 'P7', 2514, 'honestmistake'], ['P4', 'P7', 100, 'schmortor'], ['P6', 'P7', 100, 'bornhack2'], ['P2', 'P7', 100, 'pIetr0d1C4rB04711'], ['P3', 'P8', 1640, 'gGDHjdcC6zAlM8k08lX'], ['P4', 'P8', 100, 'tirz'], ['P2', 'P6', 2078, 'AlexandruIoanCuza2'], ['P4', 'P6', 100, 'Meganero']] , {'P7'}
+2023-03-26 09:04:51,419 - INFO - [RECEIVER] - updateLSADB: removing {'P8'}
+2023-03-26 09:04:51,419 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P2', 1175, '4mnesia'], ['P1', 'P3', 2716, 'RMK'], ['P1', 'P4', 100, 'jdvnsjfnHBDkScf'], ['P1', 'P8', 100, 'TestMyTor721'], ['P1', 'P5', 100, 'artikel10buc07'], ['P4', 'P5', 1920, 'Cornball'], ['P5', 'P6', 2387, 'taipe'], ['P2', 'P5', 100, 'bauruine'], ['P5', 'P8', 100, 'DoubleX'], ['P3', 'P5', 100, 'orangeneis'], ['P3', 'P7', 2514, 'honestmistake'], ['P6', 'P7', 100, 'bornhack2'], ['P3', 'P8', 1640, 'gGDHjdcC6zAlM8k08lX'], ['P4', 'P8', 100, 'tirz'], ['P2', 'P6', 2078, 'AlexandruIoanCuza2'], ['P4', 'P6', 100, 'Meganero']] , {'P8'}
+2023-03-26 09:04:52,396 - INFO - [RecvLoop_116.12.] - On destroy: circuit #8000000a
+2023-03-26 09:04:52,407 - INFO - [RecvLoop_116.12.] - Destroy circuit #8000000a
+2023-03-26 09:04:54,565 - INFO - [RECEIVER] - updateLSADB: removing {'P2', 'P3'}
+2023-03-26 09:04:54,565 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P2', 1175, '4mnesia'], ['P1', 'P3', 2716, 'RMK'], ['P1', 'P4', 100, 'jdvnsjfnHBDkScf'], ['P1', 'P5', 100, 'artikel10buc07'], ['P4', 'P5', 1920, 'Cornball'], ['P5', 'P6', 2387, 'taipe'], ['P2', 'P5', 100, 'bauruine'], ['P5', 'P8', 100, 'DoubleX'], ['P3', 'P5', 100, 'orangeneis'], ['P2', 'P6', 2078, 'AlexandruIoanCuza2'], ['P4', 'P6', 100, 'Meganero'], ['P3', 'P8', 745, 'gGDHjdcC6zAlM8k08lX']] , {'P2', 'P3'}
+2023-03-26 09:04:58,393 - INFO - [RECEIVER] - Added neighbour P8
+2023-03-26 09:04:58,429 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P2', 1338, '4mnesia'], ['P2', 'P4', 885, 'LupusreginaBeta'], ['P2', 'P5', 1861, 'bauruine'], ['P2', 'P6', 2262, 'AlexandruIoanCuza2'], ['P2', 'P8', 100, 'IceMateria']] , {'P8', 'P7'}
+2023-03-26 09:05:00,366 - INFO - [CONNECTION] - Neighbour connections (5) less than MIN_NEIGHBOUR_CONNECTIONS (8)
+2023-03-26 09:05:00,367 - INFO - [CONNECTION] - Candidate peers: []
+2023-03-26 09:05:00,367 - INFO - [CONNECTION] - Highest cost peers: [('P6', 400), ('P4', 300), ('P1', 200), ('P3', 200), ('P8', 200), ('P5', 100), ('P7', 100), ('P2', 0)]
+2023-03-26 09:05:00,368 - INFO - [CONNECTION] - No join peers found
+2023-03-26 09:05:03,408 - INFO - [RECEIVER] - updateLSADB: removing {'P4', 'P2', 'P3', 'P6'}
+2023-03-26 09:05:03,408 - INFO - [RECEIVER] - updateLSADB: removing {'P4', 'P2', 'P3', 'P6'}
+2023-03-26 09:05:03,408 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P2', 1175, '4mnesia'], ['P1', 'P3', 2716, 'RMK'], ['P1', 'P4', 100, 'jdvnsjfnHBDkScf'], ['P1', 'P5', 100, 'artikel10buc07'], ['P4', 'P5', 1920, 'Cornball'], ['P5', 'P6', 2387, 'taipe'], ['P2', 'P5', 100, 'bauruine'], ['P5', 'P8', 100, 'DoubleX'], ['P3', 'P5', 100, 'orangeneis'], ['P2', 'P6', 2078, 'AlexandruIoanCuza2'], ['P4', 'P6', 100, 'Meganero']] , {'P4', 'P2', 'P3', 'P6'}
+2023-03-26 09:05:10,397 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P2', 1175, '4mnesia'], ['P1', 'P3', 2716, 'RMK'], ['P1', 'P4', 100, 'jdvnsjfnHBDkScf'], ['P1', 'P5', 100, 'artikel10buc07'], ['P4', 'P5', 1920, 'Cornball'], ['P5', 'P6', 2387, 'taipe'], ['P2', 'P5', 100, 'bauruine'], ['P5', 'P8', 100, 'DoubleX'], ['P3', 'P5', 100, 'orangeneis']] , {'P4', 'P2', 'P8', 'P3', 'P6'}
+2023-03-26 09:05:15,453 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P2', 1175, '4mnesia'], ['P1', 'P3', 2716, 'RMK'], ['P1', 'P4', 100, 'jdvnsjfnHBDkScf'], ['P1', 'P5', 100, 'artikel10buc07'], ['P5', 'P6', 2387, 'taipe'], ['P5', 'P8', 100, 'DoubleX']] , {'P7', 'P2', 'P3'}
+2023-03-26 09:05:16,745 - ERROR - [Establish-ledevin] - recv timeout
+2023-03-26 09:05:16,745 - INFO - [Establish-ledevin] - Closing connection Establish-ledevin
+2023-03-26 09:05:16,745 - INFO - [Establish-ledevin] - Stream #7: closing (state = Connected)...
+2023-03-26 09:05:16,747 - INFO - [Establish-ledevin] - Destroy circuit #80000009
+2023-03-26 09:05:16,747 - INFO - [Establish-ledevin] - Closing guard connections (None)...
+2023-03-26 09:05:20,244 - WARNING - [RecvLoop_185.181] - CellPadding has some unnecessary data: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+2023-03-26 09:05:20,244 - ERROR - [RecvLoop_185.181] - CellPadding() was received but no handlers for it
+2023-03-26 09:05:20,617 - WARNING - [Connect-4mnesia] - Got SENDME
+2023-03-26 09:05:27,525 - INFO - [RECEIVER] - updateLSADB: removing {'P4', 'P7'}
+2023-03-26 09:05:27,529 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P2', 1175, '4mnesia'], ['P1', 'P3', 2716, 'RMK'], ['P1', 'P4', 100, 'jdvnsjfnHBDkScf'], ['P1', 'P5', 100, 'artikel10buc07'], ['P5', 'P6', 2387, 'taipe'], ['P5', 'P8', 100, 'DoubleX'], ['P4', 'P5', 783, 'Cornball'], ['P4', 'P6', 100, 'Meganero'], ['P4', 'P8', 100, 'tirz'], ['P2', 'P6', 1528, 'AlexandruIoanCuza2']] , {'P4', 'P7'}
+2023-03-26 09:05:34,392 - INFO - [RECEIVER] - updateLSADB: removing {'P1', 'P6', 'P5'}
+2023-03-26 09:05:34,392 - INFO - [RECEIVER] - updateLSADB: removing {'P1', 'P6', 'P5'}
+2023-03-26 09:05:34,392 - INFO - [RECEIVER] - updateLSADB: removing {'P1', 'P6', 'P5'}
+2023-03-26 09:05:34,392 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P2', 1175, '4mnesia'], ['P1', 'P3', 2716, 'RMK'], ['P1', 'P4', 100, 'jdvnsjfnHBDkScf'], ['P1', 'P5', 100, 'artikel10buc07'], ['P5', 'P6', 2387, 'taipe'], ['P5', 'P8', 100, 'DoubleX'], ['P2', 'P6', 1528, 'AlexandruIoanCuza2'], ['P4', 'P6', 100, 'Meganero'], ['P3', 'P8', 745, 'gGDHjdcC6zAlM8k08lX'], ['P3', 'P5', 100, 'orangeneis']] , {'P1', 'P6', 'P5'}
+2023-03-26 09:05:35,428 - ERROR - [Establish-LupusreginaBeta] - recv timeout
+2023-03-26 09:05:35,429 - INFO - [Establish-LupusreginaBeta] - Closing connection Establish-LupusreginaBeta
+2023-03-26 09:05:35,429 - INFO - [Establish-LupusreginaBeta] - Stream #2: closing (state = Connected)...
+2023-03-26 09:05:35,429 - INFO - [Establish-LupusreginaBeta] - Destroy circuit #80000001
+2023-03-26 09:05:35,429 - INFO - [Establish-LupusreginaBeta] - Closing guard connections (None)...
+2023-03-26 09:05:35,472 - WARNING - [RECEIVER] - socket already closed
+2023-03-26 09:05:37,688 - ERROR - [Thread-162] - networkx.exception.NodeNotFound: Node P2 not found in graph
+2023-03-26 09:05:40,673 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:05:42,472 - INFO - [Thread-4] - Adding P8 to list of inactive
+2023-03-26 09:05:42,472 - INFO - [Thread-4] - DEAD ROUTES DETECTED: P8,P7
+2023-03-26 09:05:42,472 - INFO - [Thread-4] - Removing P8 from neighbours
+2023-03-26 09:05:42,472 - INFO - [Thread-4] - updateLSADB: removing {'P8', 'P7'}
+2023-03-26 09:05:42,472 - INFO - [Thread-4] - updateGraphOnly: [['P1', 'P3', 1795, 'RMK'], ['P3', 'P8', 745, 'gGDHjdcC6zAlM8k08lX'], ['P3', 'P5', 100, 'orangeneis'], ['P5', 'P8', 100, 'DoubleX'], ['P4', 'P8', 100, 'tirz']] , {'P8', 'P7'}
+2023-03-26 09:05:42,477 - WARNING - [Thread-4] - socket already closed
+2023-03-26 09:05:45,686 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:05:47,393 - ERROR - [Thread-164] - networkx.exception.NodeNotFound: Node P2 not found in graph
+2023-03-26 09:05:50,450 - WARNING - [SENDER] - socket already closed
+2023-03-26 09:05:50,712 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:05:55,787 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:05:55,951 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P3', 1795, 'RMK'], ['P3', 'P5', 100, 'orangeneis']] , {'P8', 'P4', 'P7'}
+2023-03-26 09:05:56,219 - WARNING - [Connect-4mnesia] - Got SENDME
+2023-03-26 09:05:56,297 - WARNING - [Connect-4mnesia] - Got SENDME
+2023-03-26 09:05:58,411 - WARNING - [RECEIVER] - socket already closed
+2023-03-26 09:06:00,433 - INFO - [CONNECTION] - Neighbour connections (4) less than MIN_NEIGHBOUR_CONNECTIONS (8)
+2023-03-26 09:06:00,436 - INFO - [CONNECTION] - Candidate peers: ['P3']
+2023-03-26 09:06:00,436 - INFO - [CONNECTION] - Highest cost peers: [('P3', 1375), ('P6', 1375), ('P8', 1375), ('P4', 1275), ('P5', 1275), ('P1', 1175), ('P7', 100), ('P2', 0)]
+2023-03-26 09:06:00,546 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 09:06:00,952 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:06:01,516 - INFO - [RECEIVER] - updateLSADB: removing {'P4', 'P2', 'P3', 'P6', 'P1'}
+2023-03-26 09:06:01,517 - INFO - [RECEIVER] - updateLSADB: removing {'P4', 'P2', 'P3', 'P6', 'P1'}
+2023-03-26 09:06:01,521 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P3', 1795, 'RMK'], ['P3', 'P5', 100, 'orangeneis'], ['P5', 'P6', 2221, 'taipe'], ['P2', 'P6', 1528, 'AlexandruIoanCuza2']] , {'P4', 'P2', 'P3', 'P6', 'P1'}
+2023-03-26 09:06:01,544 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 09:06:03,736 - INFO - [MainThread] - ['ESTABLISH', 'TheBestRelayNick3', b'47965108f4d98e15a7c5']
+2023-03-26 09:06:03,736 - INFO - [MainThread] - Got ESTABLISH to relay TheBestRelayNick3:b'47965108f4d98e15a7c5' via staysafeandgoodluck
+2023-03-26 09:06:03,827 - INFO - [Establish-TheBestRelayNick3] - Establishing RP to TheBestRelayNick3
+2023-03-26 09:06:04,045 - INFO - [Establish-TheBestRelayNick3] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 09:06:04,138 - WARNING - [Connect-AlexandruIoanCuza2] - Got SENDME
+2023-03-26 09:06:04,139 - WARNING - [Connect-AlexandruIoanCuza2] - Got SENDME
+2023-03-26 09:06:05,713 - WARNING - [SENDER] - socket already closed
+2023-03-26 09:06:05,803 - INFO - [Establish-TheBestRelayNick3] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 09:06:05,808 - INFO - [Establish-TheBestRelayNick3] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10)... (None)
+2023-03-26 09:06:06,362 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:06:06,400 - WARNING - [RECEIVER] - Routing loop from P2 to P3: P2-P6-P2
+2023-03-26 09:06:06,487 - ERROR - [Thread-169] - networkx.exception.NodeNotFound: Node P2 not found in graph
+2023-03-26 09:06:06,652 - INFO - [Establish-TheBestRelayNick3] - Creating new circuit #8000000b with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10) router...
+2023-03-26 09:06:06,698 - INFO - [RECEIVER] - updateGraphOnly: [] , {'P7', 'P2', 'P3', 'P6'}
+2023-03-26 09:06:06,723 - INFO - [Establish-TheBestRelayNick3] - Building -1 hops circuit...
+2023-03-26 09:06:06,724 - INFO - [Establish-TheBestRelayNick3] - Extending the circuit #8000000b with 76.70.92.124:9001 (TheBestRelayNick3; Tor 0.4.7.13)...
+2023-03-26 09:06:06,724 - INFO - [Establish-TheBestRelayNick3] - Getting descriptor for 76.70.92.124:9001 (TheBestRelayNick3; Tor 0.4.7.13)...
+2023-03-26 09:06:07,447 - INFO - [Establish-TheBestRelayNick3] - Connecting to guard node 109.98.208.54:443 (lastCowboy; Tor 0.4.7.11)... (Internal dir client)
+2023-03-26 09:06:09,420 - INFO - [Establish-TheBestRelayNick3] - Creating new circuit #8000000c with 109.98.208.54:443 (lastCowboy; Tor 0.4.7.11) router...
+2023-03-26 09:06:09,596 - INFO - [Establish-TheBestRelayNick3] - Building 0 hops circuit...
+2023-03-26 09:06:09,626 - INFO - [Establish-TheBestRelayNick3] - Stream #8: creating attached to #8000000c circuit...
+2023-03-26 09:06:09,627 - INFO - [Establish-TheBestRelayNick3] - Stream #8: connecting to hsdir
+2023-03-26 09:06:09,750 - INFO - [RecvLoop_109.98.] - Stream #8: connected (remote ip '')
+2023-03-26 09:06:11,393 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:06:11,409 - ERROR - [Thread-171] - networkx.exception.NodeNotFound: Node P2 not found in graph
+2023-03-26 09:06:12,659 - INFO - [RecvLoop_109.98.] - Stream #8: remote disconnected (reason = DONE)
+2023-03-26 09:06:12,659 - INFO - [Establish-TheBestRelayNick3] - Stream #8: closing (state = Disconnected)...
+2023-03-26 09:06:12,659 - INFO - [Establish-TheBestRelayNick3] - Got descriptor
+2023-03-26 09:06:14,446 - INFO - [CONNECTION] - Sending JOIN to P3 at relay TheBestRelayNick3
+2023-03-26 09:06:15,452 - WARNING - [RECEIVER] - Routing loop from P2 to P1: P2-P6-P2
+2023-03-26 09:06:15,457 - INFO - [Establish-TheBestRelayNick3] - <class 'torpy.circuit.TorCircuit'>
+2023-03-26 09:06:15,636 - INFO - [RECEIVER] - updateGraphOnly: [['P4', 'P5', 783, 'Cornball'], ['P1', 'P4', 532, 'jdvnsjfnHBDkScf']] , {'P8', 'P7'}
+2023-03-26 09:06:15,636 - INFO - [Establish-TheBestRelayNick3] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-26 09:06:15,638 - INFO - [Establish-TheBestRelayNick3] - Waiting for connections at relay TheBestRelayNick3 for cookie b'47965108f4d98e15a7c5' ...
+2023-03-26 09:06:15,675 - WARNING - [RECEIVER] - socket already closed
+2023-03-26 09:06:17,417 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:06:21,378 - WARNING - [SENDER] - socket already closed
+2023-03-26 09:06:23,482 - WARNING - [RECEIVER] - socket already closed
+2023-03-26 09:06:23,522 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:06:29,413 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:06:30,767 - INFO - [RECEIVER] - updateLSADB: removing {'P4', 'P1', 'P6', 'P5'}
+2023-03-26 09:06:30,767 - INFO - [RECEIVER] - updateLSADB: removing {'P4', 'P1', 'P6', 'P5'}
+2023-03-26 09:06:30,767 - INFO - [RECEIVER] - updateGraphOnly: [['P4', 'P5', 783, 'Cornball'], ['P1', 'P4', 532, 'jdvnsjfnHBDkScf'], ['P1', 'P2', 1175, '4mnesia'], ['P1', 'P3', 2716, 'RMK'], ['P1', 'P5', 100, 'artikel10buc07'], ['P3', 'P5', 100, 'orangeneis']] , {'P4', 'P1', 'P6', 'P5'}
+2023-03-26 09:06:32,245 - WARNING - [RecvLoop_185.181] - CellPadding has some unnecessary data: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+2023-03-26 09:06:32,245 - ERROR - [RecvLoop_185.181] - CellPadding() was received but no handlers for it
+2023-03-26 09:06:32,256 - WARNING - [RECEIVER] - socket already closed
+2023-03-26 09:06:34,440 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:06:35,463 - ERROR - [Thread-177] - networkx.exception.NodeNotFound: Node P2 not found in graph
+2023-03-26 09:06:36,408 - WARNING - [SENDER] - socket already closed
+2023-03-26 09:06:37,481 - WARNING - [RECEIVER] - socket already closed
+2023-03-26 09:06:40,704 - WARNING - [RECEIVER] - socket already closed
+2023-03-26 09:06:40,707 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:06:40,762 - ERROR - [Thread-179] - networkx.exception.NodeNotFound: Node P2 not found in graph
+2023-03-26 09:06:42,525 - ERROR - [Thread-181] - networkx.exception.NodeNotFound: Node P2 not found in graph
+2023-03-26 09:06:42,542 - INFO - [RECEIVER] - updateLSADB: removing {'P4', 'P2', 'P8', 'P3', 'P6', 'P1'}
+2023-03-26 09:06:42,543 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P3', 1795, 'RMK'], ['P3', 'P5', 100, 'orangeneis']] , {'P4', 'P2', 'P8', 'P3', 'P6', 'P1'}
+2023-03-26 09:06:43,677 - WARNING - [RECEIVER] - socket already closed
+2023-03-26 09:06:46,372 - INFO - [RECEIVER] - updateGraphOnly: [] , {'P2', 'P8', 'P7', 'P3', 'P6'}
+2023-03-26 09:06:46,372 - ERROR - [Thread-183] - networkx.exception.NodeNotFound: Node P2 not found in graph
+2023-03-26 09:06:46,380 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:06:50,416 - ERROR - [Thread-185] - networkx.exception.NodeNotFound: Node P2 not found in graph
+2023-03-26 09:06:51,574 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:06:51,605 - WARNING - [SENDER] - socket already closed
+2023-03-26 09:06:54,377 - WARNING - [RECEIVER] - socket already closed
+2023-03-26 09:06:55,577 - ERROR - [Thread-187] - networkx.exception.NodeNotFound: Node P2 not found in graph
+2023-03-26 09:06:57,517 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:07:02,573 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:07:07,430 - WARNING - [SENDER] - socket already closed
+2023-03-26 09:07:07,724 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:07:12,707 - INFO - [RecvLoop_109.98.] - On destroy: circuit #8000000c
+2023-03-26 09:07:12,720 - INFO - [RecvLoop_109.98.] - Destroy circuit #8000000c
+2023-03-26 09:07:12,921 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:07:15,451 - INFO - [CONNECTION] - Neighbour connections (4) less than MIN_NEIGHBOUR_CONNECTIONS (8)
+2023-03-26 09:07:15,455 - INFO - [CONNECTION] - Candidate peers: ['P8']
+2023-03-26 09:07:15,455 - INFO - [CONNECTION] - Highest cost peers: [('P4', 1707), ('P6', 1528), ('P3', 1375), ('P8', 1375), ('P5', 1275), ('P1', 1175), ('P7', 100), ('P2', 0)]
+2023-03-26 09:07:16,110 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 09:07:16,635 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 09:07:17,440 - INFO - [MainThread] - ['ESTABLISH', 'onionDAOrel0aded1', b'966b3cd57f1ffc365ccd']
+2023-03-26 09:07:17,442 - INFO - [MainThread] - Got ESTABLISH to relay onionDAOrel0aded1:b'966b3cd57f1ffc365ccd' via staysafeandgoodluck
+2023-03-26 09:07:17,552 - INFO - [Establish-onionDAOrel0aded1] - Establishing RP to onionDAOrel0aded1
+2023-03-26 09:07:17,558 - INFO - [Establish-onionDAOrel0aded1] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 09:07:17,829 - INFO - [Establish-onionDAOrel0aded1] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 09:07:17,832 - INFO - [Establish-onionDAOrel0aded1] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10)... (None)
+2023-03-26 09:07:18,000 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:07:18,385 - INFO - [Establish-onionDAOrel0aded1] - Creating new circuit #8000000d with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10) router...
+2023-03-26 09:07:18,472 - INFO - [Establish-onionDAOrel0aded1] - Building -1 hops circuit...
+2023-03-26 09:07:18,473 - INFO - [Establish-onionDAOrel0aded1] - Extending the circuit #8000000d with 5.2.79.190:9001 (onionDAOrel0aded1; Tor 0.4.7.13)...
+2023-03-26 09:07:18,473 - INFO - [Establish-onionDAOrel0aded1] - Getting descriptor for 5.2.79.190:9001 (onionDAOrel0aded1; Tor 0.4.7.13)...
+2023-03-26 09:07:18,733 - INFO - [Establish-onionDAOrel0aded1] - Connecting to guard node 85.195.208.8:9001 (interfesse1; Tor 0.4.7.13)... (Internal dir client)
+2023-03-26 09:07:20,506 - INFO - [Establish-onionDAOrel0aded1] - Creating new circuit #8000000e with 85.195.208.8:9001 (interfesse1; Tor 0.4.7.13) router...
+2023-03-26 09:07:20,697 - INFO - [Establish-onionDAOrel0aded1] - Building 0 hops circuit...
+2023-03-26 09:07:20,698 - INFO - [Establish-onionDAOrel0aded1] - Stream #9: creating attached to #8000000e circuit...
+2023-03-26 09:07:20,698 - INFO - [Establish-onionDAOrel0aded1] - Stream #9: connecting to hsdir
+2023-03-26 09:07:20,795 - INFO - [RecvLoop_85.195.] - Stream #9: connected (remote ip '')
+2023-03-26 09:07:21,207 - INFO - [RecvLoop_85.195.] - Stream #9: remote disconnected (reason = DONE)
+2023-03-26 09:07:21,208 - INFO - [Establish-onionDAOrel0aded1] - Stream #9: closing (state = Disconnected)...
+2023-03-26 09:07:21,208 - INFO - [Establish-onionDAOrel0aded1] - Got descriptor
+2023-03-26 09:07:21,294 - INFO - [Establish-onionDAOrel0aded1] - <class 'torpy.circuit.TorCircuit'>
+2023-03-26 09:07:21,348 - INFO - [Establish-onionDAOrel0aded1] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-26 09:07:21,348 - INFO - [Establish-onionDAOrel0aded1] - Waiting for connections at relay onionDAOrel0aded1 for cookie b'966b3cd57f1ffc365ccd' ...
+2023-03-26 09:07:22,453 - WARNING - [RECEIVER] - socket already closed
+2023-03-26 09:07:22,539 - ERROR - [Connect-4mnesia] - Got RELAY_END
+2023-03-26 09:07:22,683 - WARNING - [SENDER] - socket already closed
+2023-03-26 09:07:23,085 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:07:23,297 - WARNING - [Connect-AlexandruIoanCuza2] - Got SENDME
+2023-03-26 09:07:28,450 - INFO - [Thread-4] - Adding P1 to list of inactive
+2023-03-26 09:07:28,450 - INFO - [Thread-4] - DEAD ROUTES DETECTED: P8,P7,P1
+2023-03-26 09:07:28,450 - INFO - [Thread-4] - Removing P1 from neighbours
+2023-03-26 09:07:28,450 - INFO - [Thread-4] - updateGraphOnly: [['P4', 'P5', 783, 'Cornball'], ['P1', 'P4', 532, 'jdvnsjfnHBDkScf'], ['P5', 'P6', 2387, 'taipe'], ['P1', 'P5', 100, 'artikel10buc07'], ['P2', 'P6', 2497, 'AlexandruIoanCuza2']] , {'P8', 'P7', 'P1'}
+2023-03-26 09:07:28,450 - WARNING - [Thread-4] - socket already closed
+2023-03-26 09:07:28,452 - INFO - [CONNECTION] - Sending JOIN to P8 at relay onionDAOrel0aded1
+2023-03-26 09:07:28,517 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:07:33,639 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:07:38,413 - WARNING - [SENDER] - socket already closed
+2023-03-26 09:07:38,647 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:07:41,349 - WARNING - [RecvLoop_185.181] - CellPadding has some unnecessary data: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+2023-03-26 09:07:41,368 - ERROR - [RecvLoop_185.181] - CellPadding() was received but no handlers for it
+2023-03-26 09:07:44,440 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:07:49,495 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:07:53,448 - WARNING - [SENDER] - socket already closed
+2023-03-26 09:07:54,609 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:07:59,717 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:08:01,634 - INFO - [Thread-4] - Adding P6 to list of inactive
+2023-03-26 09:08:01,634 - INFO - [Thread-4] - DEAD ROUTES DETECTED: P8,P7,P6,P1
+2023-03-26 09:08:01,634 - INFO - [Thread-4] - Removing P6 from neighbours
+2023-03-26 09:08:01,634 - INFO - [Thread-4] - updateLSADB: removing {'P8', 'P7', 'P6', 'P1'}
+2023-03-26 09:08:01,634 - INFO - [Thread-4] - updateGraphOnly: [['P4', 'P5', 783, 'Cornball'], ['P5', 'P6', 2387, 'taipe'], ['P2', 'P6', 2497, 'AlexandruIoanCuza2']] , {'P8', 'P7', 'P6', 'P1'}
+2023-03-26 09:08:01,635 - WARNING - [Thread-4] - socket already closed
+2023-03-26 09:08:03,450 - ERROR - [TESTER] - send_to_stream: Key not found: 'P6'
+2023-03-26 09:08:03,450 - ERROR - [TESTER] - send_to_stream: Key not found: 'P6'
+2023-03-26 09:08:03,450 - ERROR - [TESTER] - send_to_stream: Key not found: 'P6'
+2023-03-26 09:08:05,407 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:08:06,420 - ERROR - [Thread-194] - networkx.exception.NodeNotFound: Node P2 not found in graph
+2023-03-26 09:08:09,925 - WARNING - [SENDER] - socket already closed
+2023-03-26 09:08:11,436 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:08:11,500 - ERROR - [TESTER] - send_to_stream: Key not found: 'P6'
+2023-03-26 09:08:11,503 - ERROR - [TESTER] - send_to_stream: Key not found: 'P6'
+2023-03-26 09:08:16,583 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:08:20,405 - ERROR - [TESTER] - send_to_stream: Key not found: 'P6'
+2023-03-26 09:08:20,408 - ERROR - [TESTER] - send_to_stream: Key not found: 'P6'
+2023-03-26 09:08:21,593 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:08:24,949 - WARNING - [SENDER] - socket already closed
+2023-03-26 09:08:25,656 - INFO - [RecvLoop_85.195.] - On destroy: circuit #8000000e
+2023-03-26 09:08:26,447 - INFO - [RecvLoop_85.195.] - Destroy circuit #8000000e
+2023-03-26 09:08:26,031 - ERROR - [TESTER] - send_to_stream: Key not found: 'P6'
+2023-03-26 09:08:26,447 - ERROR - [TESTER] - send_to_stream: Key not found: 'P6'
+2023-03-26 09:08:26,598 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:08:28,535 - INFO - [CONNECTION] - Neighbour connections (2) less than MIN_NEIGHBOUR_CONNECTIONS (8)
+2023-03-26 09:08:28,536 - INFO - [CONNECTION] - Candidate peers: []
+2023-03-26 09:08:28,536 - INFO - [CONNECTION] - Highest cost peers: [('P4', 5667), ('P1', 4984), ('P5', 4884), ('P6', 2497), ('P3', 1375), ('P8', 1375), ('P7', 100), ('P2', 0)]
+2023-03-26 09:08:28,536 - INFO - [CONNECTION] - No join peers found
+2023-03-26 09:08:30,437 - ERROR - [Connect-AlexandruIoanCuza2] - Got RELAY_END
+2023-03-26 09:08:31,616 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:08:33,457 - ERROR - [TESTER] - send_to_stream: Key not found: 'P6'
+2023-03-26 09:08:33,457 - ERROR - [TESTER] - send_to_stream: Key not found: 'P6'
+2023-03-26 09:08:36,659 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:08:40,480 - WARNING - [SENDER] - socket already closed
+2023-03-26 09:08:40,593 - ERROR - [SENDER] - snd_data: [Errno 32] Broken pipe
+2023-03-26 09:08:41,768 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:08:41,783 - ERROR - [HEART BEAT] - snd_data: [Errno 32] Broken pipe
+2023-03-26 09:08:41,780 - ERROR - [TESTER] - send_to_stream: Key not found: 'P6'
+2023-03-26 09:08:41,783 - ERROR - [TESTER] - send_to_stream: Key not found: 'P6'
+2023-03-26 09:08:47,558 - ERROR - [TESTER] - send_to_stream: Key not found: 'P6'
+2023-03-26 09:08:47,558 - ERROR - [TESTER] - send_to_stream: Key not found: 'P6'
+2023-03-26 09:08:47,559 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:08:47,559 - ERROR - [HEART BEAT] - snd_data: [Errno 32] Broken pipe
+2023-03-26 09:08:52,616 - ERROR - [TESTER] - send_to_stream: Key not found: 'P6'
+2023-03-26 09:08:52,617 - ERROR - [TESTER] - send_to_stream: Key not found: 'P6'
+2023-03-26 09:08:52,621 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:08:52,621 - ERROR - [HEART BEAT] - snd_data: [Errno 32] Broken pipe
+2023-03-26 09:08:56,280 - WARNING - [SENDER] - socket already closed
+2023-03-26 09:08:56,280 - ERROR - [SENDER] - snd_data: [Errno 32] Broken pipe
+2023-03-26 09:08:58,413 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:08:58,413 - ERROR - [HEART BEAT] - snd_data: [Errno 32] Broken pipe
+2023-03-26 09:09:02,642 - ERROR - [TESTER] - send_to_stream: Key not found: 'P6'
+2023-03-26 09:09:02,642 - ERROR - [TESTER] - send_to_stream: Key not found: 'P6'
+2023-03-26 09:09:03,499 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:09:03,499 - ERROR - [HEART BEAT] - snd_data: [Errno 32] Broken pipe
+2023-03-26 09:09:08,505 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:09:08,505 - ERROR - [HEART BEAT] - snd_data: [Errno 32] Broken pipe
+2023-03-26 09:09:08,678 - ERROR - [TESTER] - send_to_stream: Key not found: 'P6'
+2023-03-26 09:09:08,678 - ERROR - [TESTER] - send_to_stream: Key not found: 'P6'
+2023-03-26 09:09:11,449 - WARNING - [SENDER] - socket already closed
+2023-03-26 09:09:11,535 - ERROR - [SENDER] - snd_data: [Errno 32] Broken pipe
+2023-03-26 09:09:13,531 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:09:13,532 - ERROR - [HEART BEAT] - snd_data: [Errno 32] Broken pipe
+2023-03-26 09:09:16,773 - ERROR - [TESTER] - send_to_stream: Key not found: 'P6'
+2023-03-26 09:09:16,773 - ERROR - [TESTER] - send_to_stream: Key not found: 'P6'
+2023-03-26 09:09:18,558 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:09:18,559 - ERROR - [HEART BEAT] - snd_data: [Errno 32] Broken pipe
+2023-03-26 09:09:23,588 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:09:23,753 - ERROR - [HEART BEAT] - snd_data: [Errno 32] Broken pipe
+2023-03-26 09:09:25,848 - ERROR - [TESTER] - send_to_stream: Key not found: 'P6'
+2023-03-26 09:09:25,852 - ERROR - [TESTER] - send_to_stream: Key not found: 'P6'
+2023-03-26 09:09:26,612 - WARNING - [SENDER] - socket already closed
+2023-03-26 09:09:26,613 - ERROR - [SENDER] - snd_data: [Errno 32] Broken pipe
+2023-03-26 09:09:28,911 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:09:28,911 - ERROR - [HEART BEAT] - snd_data: [Errno 32] Broken pipe
+2023-03-26 09:09:29,157 - INFO - [CONNECTION] - Neighbour connections (2) less than MIN_NEIGHBOUR_CONNECTIONS (8)
+2023-03-26 09:09:29,157 - INFO - [CONNECTION] - Candidate peers: []
+2023-03-26 09:09:29,157 - INFO - [CONNECTION] - Highest cost peers: [('P4', 5667), ('P1', 4984), ('P5', 4884), ('P6', 2497), ('P3', 1375), ('P8', 1375), ('P7', 100), ('P2', 0)]
+2023-03-26 09:09:29,157 - INFO - [CONNECTION] - No join peers found
+2023-03-26 09:09:33,960 - ERROR - [TESTER] - send_to_stream: Key not found: 'P6'
+2023-03-26 09:09:33,961 - ERROR - [TESTER] - send_to_stream: Key not found: 'P6'
+2023-03-26 09:09:33,992 - WARNING - [HEART BEAT] - socket already closed
+2023-03-26 09:09:34,109 - ERROR - [HEART BEAT] - snd_data: [Errno 32] Broken pipe

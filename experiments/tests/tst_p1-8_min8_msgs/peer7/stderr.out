@@ -1,0 +1,132 @@
+++ dirname ./startserver.sh
++ BASEDIR=.
++ SCRIPTPATH=./../../rtun-routing
++ export PYTHONPATH=./../../torpy-rtun-fork/
++ PYTHONPATH=./../../torpy-rtun-fork/
++ python3 ./../../rtun-routing/rtun.py -v INFO -g NeelTorRelay2 -f rendezvous.txt -t peer1peer2 -n default -i 7 -d 2
+Exception in thread Thread-146:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 636, in shortest_paths
+    cost = nx.path_weight(G, v, 'weight')
+  File "/usr/local/lib/python3.9/dist-packages/networkx/classes/function.py", line 1291, in path_weight
+    raise nx.NetworkXNoPath("path does not exist")
+networkx.exception.NetworkXNoPath: path does not exist
+Exception in thread Thread-148:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 636, in shortest_paths
+    cost = nx.path_weight(G, v, 'weight')
+  File "/usr/local/lib/python3.9/dist-packages/networkx/classes/function.py", line 1291, in path_weight
+    raise nx.NetworkXNoPath("path does not exist")
+networkx.exception.NetworkXNoPath: path does not exist
+Exception in thread Thread-150:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 636, in shortest_paths
+    cost = nx.path_weight(G, v, 'weight')
+  File "/usr/local/lib/python3.9/dist-packages/networkx/classes/function.py", line 1291, in path_weight
+    raise nx.NetworkXNoPath("path does not exist")
+networkx.exception.NetworkXNoPath: path does not exist
+Exception in thread Thread-152:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 636, in shortest_paths
+    cost = nx.path_weight(G, v, 'weight')
+  File "/usr/local/lib/python3.9/dist-packages/networkx/classes/function.py", line 1291, in path_weight
+    raise nx.NetworkXNoPath("path does not exist")
+networkx.exception.NetworkXNoPath: path does not exist
+Exception in thread Thread-154:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 636, in shortest_paths
+    cost = nx.path_weight(G, v, 'weight')
+  File "/usr/local/lib/python3.9/dist-packages/networkx/classes/function.py", line 1291, in path_weight
+    raise nx.NetworkXNoPath("path does not exist")
+networkx.exception.NetworkXNoPath: path does not exist
+Exception in thread Thread-156:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 636, in shortest_paths
+    cost = nx.path_weight(G, v, 'weight')
+  File "/usr/local/lib/python3.9/dist-packages/networkx/classes/function.py", line 1291, in path_weight
+    raise nx.NetworkXNoPath("path does not exist")
+networkx.exception.NetworkXNoPath: path does not exist
+Exception in thread Thread-158:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 636, in shortest_paths
+    cost = nx.path_weight(G, v, 'weight')
+  File "/usr/local/lib/python3.9/dist-packages/networkx/classes/function.py", line 1291, in path_weight
+    raise nx.NetworkXNoPath("path does not exist")
+networkx.exception.NetworkXNoPath: path does not exist
+Exception in thread Thread-160:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 636, in shortest_paths
+    cost = nx.path_weight(G, v, 'weight')
+  File "/usr/local/lib/python3.9/dist-packages/networkx/classes/function.py", line 1291, in path_weight
+    raise nx.NetworkXNoPath("path does not exist")
+networkx.exception.NetworkXNoPath: path does not exist
+Exception in thread Thread-162:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 636, in shortest_paths
+    cost = nx.path_weight(G, v, 'weight')
+  File "/usr/local/lib/python3.9/dist-packages/networkx/classes/function.py", line 1291, in path_weight
+    raise nx.NetworkXNoPath("path does not exist")
+networkx.exception.NetworkXNoPath: path does not exist
+Exception in thread Thread-164:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 636, in shortest_paths
+    cost = nx.path_weight(G, v, 'weight')
+  File "/usr/local/lib/python3.9/dist-packages/networkx/classes/function.py", line 1291, in path_weight
+    raise nx.NetworkXNoPath("path does not exist")
+networkx.exception.NetworkXNoPath: path does not exist
+Exception in thread Thread-166:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 636, in shortest_paths
+    cost = nx.path_weight(G, v, 'weight')
+  File "/usr/local/lib/python3.9/dist-packages/networkx/classes/function.py", line 1291, in path_weight
+    raise nx.NetworkXNoPath("path does not exist")
+networkx.exception.NetworkXNoPath: path does not exist
+Exception ignored in: <module 'threading' from '/usr/lib/python3.9/threading.py'>
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 1428, in _shutdown
+    lock.acquire()
+KeyboardInterrupt: 
