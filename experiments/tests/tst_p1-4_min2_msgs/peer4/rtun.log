@@ -1,0 +1,223 @@
+2023-03-26 09:11:46,453 - INFO - [MainThread] - Initialized router P4 at port 5004 PID 20947
+2023-03-26 09:11:46,457 - INFO - [MainThread] - Adding a connection to LupusreginaBeta
+2023-03-26 09:11:46,459 - INFO - [Connect-LupusreginaBeta] - Calling connect_to_rendezvous_point
+2023-03-26 09:11:46,459 - INFO - [Connect-LupusreginaBeta] - Connect to rendezvous point LupusreginaBeta
+2023-03-26 09:11:46,461 - INFO - [MainThread] - Adding listener for Vulnerar
+2023-03-26 09:11:46,461 - INFO - [Establish-Vulnerar] - Establishing RP to Vulnerar
+2023-03-26 09:11:46,464 - INFO - [MainThread] - Adding listener for Cornball
+2023-03-26 09:11:46,467 - INFO - [Establish-Vulnerar] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 09:11:46,467 - INFO - [Establish-Cornball] - Establishing RP to Cornball
+2023-03-26 09:11:46,476 - INFO - [MainThread] - Starting testing thread
+2023-03-26 09:11:46,493 - INFO - [Connect-LupusreginaBeta] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 09:11:46,495 - INFO - [Establish-Cornball] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 09:11:46,503 - INFO - [TESTER] - Started tester
+2023-03-26 09:11:46,515 - INFO - [MainThread] - Starting connection thread
+2023-03-26 09:11:46,794 - INFO - [Establish-Cornball] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 09:11:46,796 - INFO - [Establish-Cornball] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10)... (None)
+2023-03-26 09:11:46,861 - INFO - [MainThread] - Starting log thread
+2023-03-26 09:11:47,007 - INFO - [Establish-Cornball] - Creating new circuit #80000001 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10) router...
+2023-03-26 09:11:47,052 - INFO - [Establish-Cornball] - Building -1 hops circuit...
+2023-03-26 09:11:47,053 - INFO - [Establish-Cornball] - Extending the circuit #80000001 with 198.244.212.57:443 (Cornball; Tor 0.4.7.10)...
+2023-03-26 09:11:47,059 - INFO - [Establish-Cornball] - Getting descriptor for 198.244.212.57:443 (Cornball; Tor 0.4.7.10)...
+2023-03-26 09:11:47,063 - INFO - [Establish-Cornball] - Connecting to guard node 198.98.58.160:443 (myBigBadRelay; Tor 0.4.7.8)... (Internal dir client)
+2023-03-26 09:11:47,136 - INFO - [Establish-Vulnerar] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 09:11:47,137 - INFO - [Establish-Vulnerar] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10)... (None)
+2023-03-26 09:11:47,163 - INFO - [Connect-LupusreginaBeta] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 09:11:47,200 - INFO - [Establish-Vulnerar] - Creating new circuit #80000002 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10) router...
+2023-03-26 09:11:47,215 - INFO - [Establish-Vulnerar] - Building -1 hops circuit...
+2023-03-26 09:11:47,215 - INFO - [Establish-Vulnerar] - Extending the circuit #80000002 with 157.90.179.103:8001 (Vulnerar; Tor 0.4.7.13)...
+2023-03-26 09:11:47,263 - INFO - [Connect-LupusreginaBeta] - Connected to rendezvous point LupusreginaBeta
+2023-03-26 09:11:47,263 - INFO - [Connect-LupusreginaBeta] - Waiting for peer to open stream
+2023-03-26 09:11:47,308 - INFO - [Connect-LupusreginaBeta] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-03-26 09:11:47,309 - INFO - [Connect-LupusreginaBeta] - Stream opened successfully
+2023-03-26 09:11:47,309 - INFO - [Connect-LupusreginaBeta] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P4\x94ua.'
+2023-03-26 09:11:47,517 - INFO - [RECEIVER] - Added neighbour P2
+2023-03-26 09:11:47,551 - INFO - [Establish-Cornball] - Creating new circuit #80000003 with 198.98.58.160:443 (myBigBadRelay; Tor 0.4.7.8) router...
+2023-03-26 09:11:47,665 - INFO - [Establish-Cornball] - Building 0 hops circuit...
+2023-03-26 09:11:47,665 - INFO - [Establish-Cornball] - Stream #1: creating attached to #80000003 circuit...
+2023-03-26 09:11:47,665 - INFO - [Establish-Cornball] - Stream #1: connecting to hsdir
+2023-03-26 09:11:47,783 - INFO - [RecvLoop_198.98.] - Stream #1: connected (remote ip '')
+2023-03-26 09:11:48,113 - INFO - [RecvLoop_198.98.] - Stream #1: remote disconnected (reason = DONE)
+2023-03-26 09:11:48,113 - INFO - [Establish-Cornball] - Stream #1: closing (state = Disconnected)...
+2023-03-26 09:11:48,113 - INFO - [Establish-Cornball] - Got descriptor
+2023-03-26 09:11:48,114 - INFO - [Establish-Vulnerar] - Getting descriptor for 157.90.179.103:8001 (Vulnerar; Tor 0.4.7.13)...
+2023-03-26 09:11:48,118 - INFO - [Establish-Vulnerar] - Connecting to guard node 144.172.118.67:9100 (Quetzalcoatl; Tor 0.4.7.13)... (Internal dir client)
+2023-03-26 09:11:48,163 - INFO - [Establish-Cornball] - <class 'torpy.circuit.TorCircuit'>
+2023-03-26 09:11:48,209 - INFO - [Establish-Cornball] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-26 09:11:48,209 - INFO - [Establish-Cornball] - Waiting for connections at relay Cornball for cookie b'eb688e4f52df90278060' ...
+2023-03-26 09:11:48,806 - INFO - [Establish-Vulnerar] - Creating new circuit #80000004 with 144.172.118.67:9100 (Quetzalcoatl; Tor 0.4.7.13) router...
+2023-03-26 09:11:49,017 - INFO - [Establish-Vulnerar] - Building 0 hops circuit...
+2023-03-26 09:11:49,017 - INFO - [Establish-Vulnerar] - Stream #2: creating attached to #80000004 circuit...
+2023-03-26 09:11:49,017 - INFO - [Establish-Vulnerar] - Stream #2: connecting to hsdir
+2023-03-26 09:11:49,321 - INFO - [RecvLoop_144.172] - Stream #2: connected (remote ip '')
+2023-03-26 09:11:49,801 - INFO - [RecvLoop_144.172] - Stream #2: remote disconnected (reason = DONE)
+2023-03-26 09:11:49,801 - INFO - [Establish-Vulnerar] - Stream #2: closing (state = Disconnected)...
+2023-03-26 09:11:49,801 - INFO - [Establish-Vulnerar] - Got descriptor
+2023-03-26 09:11:49,852 - INFO - [Establish-Vulnerar] - <class 'torpy.circuit.TorCircuit'>
+2023-03-26 09:11:49,903 - INFO - [Establish-Vulnerar] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-26 09:11:49,904 - INFO - [Establish-Vulnerar] - Waiting for connections at relay Vulnerar for cookie b'eb688e4f52df90278060' ...
+2023-03-26 09:11:54,216 - INFO - [Establish-Vulnerar] - Got REND2 message from Vulnerar
+2023-03-26 09:11:54,217 - INFO - [Establish-Vulnerar] - Entered circuit context with id 0x80000002
+2023-03-26 09:11:54,217 - INFO - [Establish-Vulnerar] - Stream #3: creating attached to #80000002 circuit...
+2023-03-26 09:11:54,217 - INFO - [Establish-Vulnerar] - Stream #3: connecting to ('127.0.0.1', 5000)
+2023-03-26 09:11:54,337 - INFO - [RecvLoop_185.181] - Stream #3: connected (remote ip '127.0.0.1')
+2023-03-26 09:11:54,418 - INFO - [Establish-Vulnerar] - Sending HELLO to peer
+2023-03-26 09:11:54,418 - INFO - [Establish-Vulnerar] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P4\x94ua.'
+2023-03-26 09:11:54,420 - INFO - [RECEIVER] - Added neighbour P3
+2023-03-26 09:12:40,035 - WARNING - [RECEIVER] - Routing loop from P4 to P1: P4-P2-P4
+2023-03-26 09:12:50,556 - INFO - [RecvLoop_198.98.] - On destroy: circuit #80000003
+2023-03-26 09:12:50,556 - INFO - [RecvLoop_198.98.] - Destroy circuit #80000003
+2023-03-26 09:12:51,625 - WARNING - [Connect-LupusreginaBeta] - Got SENDME
+2023-03-26 09:12:58,126 - INFO - [RecvLoop_144.172] - On destroy: circuit #80000004
+2023-03-26 09:12:58,126 - INFO - [RecvLoop_144.172] - Destroy circuit #80000004
+2023-03-26 09:13:46,631 - WARNING - [Connect-LupusreginaBeta] - Got SENDME
+2023-03-26 09:13:47,629 - WARNING - [Connect-LupusreginaBeta] - Got SENDME
+2023-03-26 09:14:46,704 - WARNING - [Connect-LupusreginaBeta] - Got SENDME
+2023-03-26 09:15:40,257 - WARNING - [Connect-LupusreginaBeta] - Got SENDME
+2023-03-26 09:15:40,277 - WARNING - [Connect-LupusreginaBeta] - Got SENDME
+2023-03-26 09:16:46,799 - WARNING - [Connect-LupusreginaBeta] - Got SENDME
+2023-03-26 09:16:48,651 - WARNING - [RecvLoop_185.181] - CellPadding has some unnecessary data: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+2023-03-26 09:16:48,651 - ERROR - [RecvLoop_185.181] - CellPadding() was received but no handlers for it
+2023-03-26 09:17:40,959 - WARNING - [Connect-LupusreginaBeta] - Got SENDME
+2023-03-26 09:17:41,011 - WARNING - [Connect-LupusreginaBeta] - Got SENDME
+2023-03-26 09:17:47,167 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 09:17:47,422 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 09:17:47,433 - INFO - [MainThread] - ['ESTABLISH', 'crimsonshape4735', b'0524604f5faac5685729']
+2023-03-26 09:17:47,436 - INFO - [MainThread] - Got ESTABLISH to relay crimsonshape4735:b'0524604f5faac5685729' via staysafeandgoodluck
+2023-03-26 09:17:47,436 - INFO - [Establish-crimsonshape4735] - Establishing RP to crimsonshape4735
+2023-03-26 09:17:47,449 - INFO - [Establish-crimsonshape4735] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 09:17:47,803 - INFO - [Establish-crimsonshape4735] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 09:17:47,806 - INFO - [Establish-crimsonshape4735] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10)... (None)
+2023-03-26 09:17:47,878 - INFO - [Establish-crimsonshape4735] - Creating new circuit #80000005 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10) router...
+2023-03-26 09:17:47,907 - INFO - [Establish-crimsonshape4735] - Building -1 hops circuit...
+2023-03-26 09:17:47,908 - INFO - [Establish-crimsonshape4735] - Extending the circuit #80000005 with 69.164.206.5:9100 (crimsonshape4735; Tor 0.4.7.13)...
+2023-03-26 09:17:47,912 - INFO - [Establish-crimsonshape4735] - Getting descriptor for 69.164.206.5:9100 (crimsonshape4735; Tor 0.4.7.13)...
+2023-03-26 09:17:47,921 - INFO - [Establish-crimsonshape4735] - Connecting to guard node 78.47.134.196:9001 (Desperado; Tor 0.4.5.7)... (Internal dir client)
+2023-03-26 09:17:48,136 - INFO - [Establish-crimsonshape4735] - Creating new circuit #80000006 with 78.47.134.196:9001 (Desperado; Tor 0.4.5.7) router...
+2023-03-26 09:17:48,188 - INFO - [Establish-crimsonshape4735] - Building 0 hops circuit...
+2023-03-26 09:17:48,188 - INFO - [Establish-crimsonshape4735] - Stream #4: creating attached to #80000006 circuit...
+2023-03-26 09:17:48,188 - INFO - [Establish-crimsonshape4735] - Stream #4: connecting to hsdir
+2023-03-26 09:17:48,238 - INFO - [RecvLoop_78.47.1] - Stream #4: connected (remote ip '')
+2023-03-26 09:17:48,457 - INFO - [RecvLoop_78.47.1] - Stream #4: remote disconnected (reason = DONE)
+2023-03-26 09:17:48,458 - INFO - [Establish-crimsonshape4735] - Stream #4: closing (state = Disconnected)...
+2023-03-26 09:17:48,458 - INFO - [Establish-crimsonshape4735] - Got descriptor
+2023-03-26 09:17:48,622 - INFO - [Establish-crimsonshape4735] - <class 'torpy.circuit.TorCircuit'>
+2023-03-26 09:17:48,781 - INFO - [Establish-crimsonshape4735] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-26 09:17:48,781 - INFO - [Establish-crimsonshape4735] - Waiting for connections at relay crimsonshape4735 for cookie b'0524604f5faac5685729' ...
+2023-03-26 09:17:50,765 - INFO - [RECEIVER] - Added relay vhult2 from P2 to JOIN queue
+2023-03-26 09:17:50,765 - INFO - [MainThread] - ['JOIN', 'vhult2', b'0524604f5faac5685729']
+2023-03-26 09:17:50,870 - INFO - [MainThread] - Got JOIN to relay vhult2, waiting 10 sec to connect
+2023-03-26 09:17:50,893 - INFO - [Connect-vhult2] - Calling connect_to_rendezvous_point
+2023-03-26 09:17:50,898 - INFO - [Connect-vhult2] - Connect to rendezvous point vhult2
+2023-03-26 09:17:50,946 - INFO - [Connect-vhult2] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 09:17:51,138 - INFO - [Connect-vhult2] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 09:17:51,349 - INFO - [Connect-vhult2] - Connected to rendezvous point vhult2
+2023-03-26 09:17:51,352 - INFO - [Connect-vhult2] - Waiting for peer to open stream
+2023-03-26 09:17:51,449 - INFO - [Connect-vhult2] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-03-26 09:17:51,452 - INFO - [Connect-vhult2] - Stream opened successfully
+2023-03-26 09:17:51,453 - INFO - [Connect-vhult2] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P4\x94ua.'
+2023-03-26 09:17:51,650 - INFO - [RECEIVER] - Added neighbour P2
+2023-03-26 09:17:57,443 - INFO - [CONNECTION] - Sending JOIN to P3 for relay crimsonshape4735 with cookie b'0524604f5faac5685729'
+2023-03-26 09:17:58,591 - INFO - [Establish-crimsonshape4735] - Got REND2 message from crimsonshape4735
+2023-03-26 09:17:58,592 - INFO - [Establish-crimsonshape4735] - Entered circuit context with id 0x80000005
+2023-03-26 09:17:58,592 - INFO - [Establish-crimsonshape4735] - Stream #5: creating attached to #80000005 circuit...
+2023-03-26 09:17:58,592 - INFO - [Establish-crimsonshape4735] - Stream #5: connecting to ('127.0.0.1', 5000)
+2023-03-26 09:17:58,881 - INFO - [RecvLoop_185.181] - Stream #5: connected (remote ip '127.0.0.1')
+2023-03-26 09:17:58,997 - INFO - [Establish-crimsonshape4735] - Sending HELLO to peer
+2023-03-26 09:17:58,998 - INFO - [Establish-crimsonshape4735] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P4\x94ua.'
+2023-03-26 09:17:58,999 - INFO - [RECEIVER] - Added neighbour P3
+2023-03-26 09:18:31,284 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P2', 100, 'TOR2DFNrelA'], ['P1', 'P3', 100, 'Kimchi'], ['P2', 'P4', 100, 'vhult2'], ['P3', 'P4', 100, 'crimsonshape4735']] , {'P4'}
+2023-03-26 09:18:46,955 - INFO - [Thread-4] - Adding P2 to list of inactive
+2023-03-26 09:18:46,955 - INFO - [Thread-4] - DEAD ROUTES DETECTED: P2
+2023-03-26 09:18:46,955 - INFO - [Thread-4] - Removing P2 from neighbours
+2023-03-26 09:18:46,955 - INFO - [Thread-4] - updateLSADB: removing {'P2'}
+2023-03-26 09:18:46,955 - INFO - [Thread-4] - updateGraphOnly: [['P1', 'P2', 100, 'TOR2DFNrelA'], ['P1', 'P3', 100, 'Kimchi'], ['P3', 'P4', 100, 'crimsonshape4735']] , {'P2'}
+2023-03-26 09:18:50,988 - ERROR - [Connect-LupusreginaBeta] - Got RELAY_END
+2023-03-26 09:18:57,506 - INFO - [CONNECTION] - Neighbour connections (1) less than MIN_NEIGHBOUR_CONNECTIONS (2)
+2023-03-26 09:18:57,507 - INFO - [CONNECTION] - Candidate peers: ['P1']
+2023-03-26 09:18:57,507 - INFO - [CONNECTION] - Highest cost peers: [('P1', 586), ('P2', 300), ('P3', 100), ('P4', 0)]
+2023-03-26 09:18:57,515 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 09:18:57,642 - INFO - [RecvLoop_78.47.1] - On destroy: circuit #80000006
+2023-03-26 09:18:57,642 - INFO - [RecvLoop_78.47.1] - Destroy circuit #80000006
+2023-03-26 09:18:57,797 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 09:18:57,805 - INFO - [MainThread] - ['ESTABLISH', 'OnMyMomma', b'94ff6a7c1a718340e463']
+2023-03-26 09:18:57,805 - INFO - [MainThread] - Got ESTABLISH to relay OnMyMomma:b'94ff6a7c1a718340e463' via staysafeandgoodluck
+2023-03-26 09:18:57,806 - INFO - [Establish-OnMyMomma] - Establishing RP to OnMyMomma
+2023-03-26 09:18:57,812 - INFO - [Establish-OnMyMomma] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 09:18:58,016 - INFO - [Establish-OnMyMomma] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 09:18:58,069 - INFO - [Establish-OnMyMomma] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10)... (None)
+2023-03-26 09:18:58,087 - ERROR - [Establish-Vulnerar] - recv timeout
+2023-03-26 09:18:58,087 - INFO - [Establish-Vulnerar] - Closing connection Establish-Vulnerar
+2023-03-26 09:18:58,087 - INFO - [Establish-Vulnerar] - Stream #3: closing (state = Connected)...
+2023-03-26 09:18:58,145 - INFO - [Establish-Vulnerar] - Destroy circuit #80000002
+2023-03-26 09:18:58,153 - INFO - [Establish-Vulnerar] - Closing guard connections (None)...
+2023-03-26 09:18:58,221 - INFO - [Establish-OnMyMomma] - Creating new circuit #80000007 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10) router...
+2023-03-26 09:18:58,237 - INFO - [Establish-OnMyMomma] - Building -1 hops circuit...
+2023-03-26 09:18:58,238 - INFO - [Establish-OnMyMomma] - Extending the circuit #80000007 with 45.139.122.241:9001 (OnMyMomma; Tor 0.4.7.7)...
+2023-03-26 09:18:58,238 - INFO - [Establish-OnMyMomma] - Getting descriptor for 45.139.122.241:9001 (OnMyMomma; Tor 0.4.7.7)...
+2023-03-26 09:18:58,243 - INFO - [Establish-OnMyMomma] - Connecting to guard node 212.41.17.53:9001 (ilosas; Tor 0.4.7.13)... (Internal dir client)
+2023-03-26 09:18:58,455 - INFO - [Establish-OnMyMomma] - Creating new circuit #80000008 with 212.41.17.53:9001 (ilosas; Tor 0.4.7.13) router...
+2023-03-26 09:18:58,505 - INFO - [Establish-OnMyMomma] - Building 0 hops circuit...
+2023-03-26 09:18:58,505 - INFO - [Establish-OnMyMomma] - Stream #6: creating attached to #80000008 circuit...
+2023-03-26 09:18:58,505 - INFO - [Establish-OnMyMomma] - Stream #6: connecting to hsdir
+2023-03-26 09:18:58,560 - INFO - [RecvLoop_212.41.] - Stream #6: connected (remote ip '')
+2023-03-26 09:18:58,845 - INFO - [RecvLoop_212.41.] - Stream #6: remote disconnected (reason = DONE)
+2023-03-26 09:18:58,847 - INFO - [Establish-OnMyMomma] - Stream #6: closing (state = Disconnected)...
+2023-03-26 09:18:58,847 - INFO - [Establish-OnMyMomma] - Got descriptor
+2023-03-26 09:18:59,073 - INFO - [Establish-OnMyMomma] - <class 'torpy.circuit.TorCircuit'>
+2023-03-26 09:18:59,134 - INFO - [Establish-OnMyMomma] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-26 09:18:59,134 - INFO - [Establish-OnMyMomma] - Waiting for connections at relay OnMyMomma for cookie b'94ff6a7c1a718340e463' ...
+2023-03-26 09:19:07,814 - INFO - [CONNECTION] - Sending JOIN to P1 at relay OnMyMomma
+2023-03-26 09:19:08,613 - INFO - [Establish-OnMyMomma] - Got REND2 message from OnMyMomma
+2023-03-26 09:19:08,614 - INFO - [Establish-OnMyMomma] - Entered circuit context with id 0x80000007
+2023-03-26 09:19:08,614 - INFO - [Establish-OnMyMomma] - Stream #7: creating attached to #80000007 circuit...
+2023-03-26 09:19:08,614 - INFO - [Establish-OnMyMomma] - Stream #7: connecting to ('127.0.0.1', 5000)
+2023-03-26 09:19:08,692 - INFO - [RecvLoop_185.181] - Stream #7: connected (remote ip '127.0.0.1')
+2023-03-26 09:19:08,815 - INFO - [Establish-OnMyMomma] - Sending HELLO to peer
+2023-03-26 09:19:08,815 - INFO - [Establish-OnMyMomma] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P4\x94ua.'
+2023-03-26 09:19:08,817 - INFO - [RECEIVER] - Added neighbour P1
+2023-03-26 09:19:13,003 - ERROR - [Connect-vhult2] - Got RELAY_END
+2023-03-26 09:20:00,940 - INFO - [RecvLoop_212.41.] - On destroy: circuit #80000008
+2023-03-26 09:20:00,940 - INFO - [RecvLoop_212.41.] - Destroy circuit #80000008
+2023-03-26 09:21:49,002 - WARNING - [RecvLoop_185.181] - CellPadding has some unnecessary data: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+2023-03-26 09:21:49,003 - ERROR - [RecvLoop_185.181] - CellPadding() was received but no handlers for it
+2023-03-26 09:24:29,573 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P3', 100, 'kaenguru'], ['P1', 'P4', 878, 'OnMyMomma'], ['P3', 'P4', 796, 'crimsonshape4735']] , {'P2'}
+2023-03-26 09:24:43,551 - INFO - [RECEIVER] - updateLSADB: removing {'P1', 'P4'}
+2023-03-26 09:24:43,551 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P3', 100, 'kaenguru'], ['P1', 'P4', 878, 'OnMyMomma'], ['P3', 'P4', 796, 'crimsonshape4735']] , {'P1', 'P4'}
+2023-03-26 09:25:08,209 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 09:25:08,724 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 09:25:08,802 - INFO - [MainThread] - ['ESTABLISH', 'Kperry', b'24b208df5afdc2eda736']
+2023-03-26 09:25:08,802 - INFO - [MainThread] - Got ESTABLISH to relay Kperry:b'24b208df5afdc2eda736' via staysafeandgoodluck
+2023-03-26 09:25:08,805 - INFO - [Establish-Kperry] - Establishing RP to Kperry
+2023-03-26 09:25:08,837 - INFO - [Establish-Kperry] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-03-26 09:25:09,074 - INFO - [Establish-Kperry] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-03-26 09:25:09,099 - INFO - [Establish-Kperry] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10)... (None)
+2023-03-26 09:25:09,308 - INFO - [Establish-Kperry] - Creating new circuit #80000009 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10) router...
+2023-03-26 09:25:09,330 - INFO - [Establish-Kperry] - Building -1 hops circuit...
+2023-03-26 09:25:09,331 - INFO - [Establish-Kperry] - Extending the circuit #80000009 with 193.105.134.186:9001 (Kperry; Tor 0.4.7.13)...
+2023-03-26 09:25:09,331 - INFO - [Establish-Kperry] - Getting descriptor for 193.105.134.186:9001 (Kperry; Tor 0.4.7.13)...
+2023-03-26 09:25:09,336 - INFO - [Establish-Kperry] - Connecting to guard node 45.86.86.158:443 (zensursula; Tor 0.4.7.13)... (Internal dir client)
+2023-03-26 09:25:09,738 - INFO - [Establish-Kperry] - Creating new circuit #8000000a with 45.86.86.158:443 (zensursula; Tor 0.4.7.13) router...
+2023-03-26 09:25:09,860 - INFO - [Establish-Kperry] - Building 0 hops circuit...
+2023-03-26 09:25:09,860 - INFO - [Establish-Kperry] - Stream #8: creating attached to #8000000a circuit...
+2023-03-26 09:25:09,860 - INFO - [Establish-Kperry] - Stream #8: connecting to hsdir
+2023-03-26 09:25:09,977 - INFO - [RecvLoop_45.86.8] - Stream #8: connected (remote ip '')
+2023-03-26 09:25:10,277 - INFO - [RecvLoop_45.86.8] - Stream #8: remote disconnected (reason = DONE)
+2023-03-26 09:25:10,278 - INFO - [Establish-Kperry] - Stream #8: closing (state = Disconnected)...
+2023-03-26 09:25:10,278 - INFO - [Establish-Kperry] - Got descriptor
+2023-03-26 09:25:10,324 - INFO - [Establish-Kperry] - <class 'torpy.circuit.TorCircuit'>
+2023-03-26 09:25:10,419 - INFO - [Establish-Kperry] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-03-26 09:25:10,419 - INFO - [Establish-Kperry] - Waiting for connections at relay Kperry for cookie b'24b208df5afdc2eda736' ...
+2023-03-26 09:25:10,425 - WARNING - [RECEIVER] - Routing loop from P4 to P1: P4-P3-P4
+2023-03-26 09:25:18,951 - INFO - [CONNECTION] - Sending JOIN to P1 for relay Kperry with cookie b'24b208df5afdc2eda736'
+2023-03-26 09:25:20,352 - INFO - [Establish-Kperry] - Got REND2 message from Kperry
+2023-03-26 09:25:20,359 - INFO - [Establish-Kperry] - Entered circuit context with id 0x80000009
+2023-03-26 09:25:20,359 - INFO - [Establish-Kperry] - Stream #9: creating attached to #80000009 circuit...
+2023-03-26 09:25:20,359 - INFO - [Establish-Kperry] - Stream #9: connecting to ('127.0.0.1', 5000)
+2023-03-26 09:25:20,513 - INFO - [RecvLoop_185.181] - Stream #9: connected (remote ip '127.0.0.1')
+2023-03-26 09:25:20,592 - INFO - [Establish-Kperry] - Sending HELLO to peer
+2023-03-26 09:25:20,592 - INFO - [Establish-Kperry] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P4\x94ua.'
+2023-03-26 09:25:20,593 - INFO - [RECEIVER] - Added neighbour P1
+2023-03-26 09:25:36,024 - INFO - [RecvLoop_185.181] - On destroy: circuit #80000005
+2023-03-26 09:25:36,038 - INFO - [RecvLoop_185.181] - Destroy circuit #80000005
+2023-03-26 09:25:36,039 - INFO - [RecvLoop_185.181] - Stream #5: closing (state = Connected)...
