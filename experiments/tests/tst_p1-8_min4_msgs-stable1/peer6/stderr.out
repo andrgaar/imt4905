@@ -1,0 +1,92 @@
+++ dirname ./startserver.sh
++ BASEDIR=.
++ SCRIPTPATH=./../../rtun-routing
++ export PYTHONPATH=./../../torpy-rtun-fork/
++ PYTHONPATH=./../../torpy-rtun-fork/
++ python3 ./../../rtun-routing/rtun.py -v INFO -g NeelTorRelay2 -f rendezvous.txt -t peer1peer2 -n default -i 6 -d 2
+Exception in thread Establish-Ranlvor:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/vboxuser/Git/imt4905/rtun-routing/rendezvous.py", line 86, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Establish-Lily:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/vboxuser/Git/imt4905/rtun-routing/rendezvous.py", line 86, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Establish-cloudless01:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/vboxuser/Git/imt4905/rtun-routing/rendezvous.py", line 86, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Establish-MoldEraTor:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/vboxuser/Git/imt4905/rtun-routing/rendezvous.py", line 86, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Establish-msbobo4:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/vboxuser/Git/imt4905/rtun-routing/rendezvous.py", line 86, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Establish-namie:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/vboxuser/Git/imt4905/rtun-routing/rendezvous.py", line 86, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Thread-434:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 637, in shortest_paths
+    cost = nx.path_weight(G, v, 'weight')
+  File "/usr/local/lib/python3.9/dist-packages/networkx/classes/function.py", line 1291, in path_weight
+    raise nx.NetworkXNoPath("path does not exist")
+networkx.exception.NetworkXNoPath: path does not exist
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/peers/peer6/./../../rtun-routing/rtun.py", line 164, in <module>
+    conn = conn_queue.get()
+  File "/usr/lib/python3.9/queue.py", line 171, in get
+    self.not_empty.wait()
+  File "/usr/lib/python3.9/threading.py", line 312, in wait
+    waiter.acquire()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/peers/peer6/./../../rtun-routing/rtun.py", line 185, in <module>
+    lsr.log_metrics("PEER EXITED", "")
+  File "/home/vboxuser/Git/imt4905/rtun-routing/lsr.py", line 1157, in log_metrics
+KeyboardInterrupt
+Exception ignored in: <module 'threading' from '/usr/lib/python3.9/threading.py'>
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 1428, in _shutdown
+    lock.acquire()
+KeyboardInterrupt: 
