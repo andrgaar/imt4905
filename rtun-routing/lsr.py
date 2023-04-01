@@ -36,9 +36,9 @@ ROUTE_UPDATE_INTERVAL = 15
 PERIODIC_HEART_BEAT = 5
 NODE_FAILURE_INTERVAL = 10
 TIMEOUT = 15
-LATENCY_SAMPLES = 10
+LATENCY_SAMPLES = 30
 PERIODIC_CONN_CHECK = 60
-MIN_NEIGHBOUR_CONNECTIONS = 4
+MIN_NEIGHBOUR_CONNECTIONS = 2
 MAX_CONNECTION_TIME = 300
 
 # Log metrics to file
@@ -1048,20 +1048,27 @@ def remove_circuit(inactive_list):
 def route_message(msg_data):
     logger.debug(f"route_message: {msg_data}")
 
+    logger.info(f"Routing message: {msg_data[0]}")
+    dst_relay = None
     destination = msg_data[0]['Destination']
     source = msg_data[0]['Source']
+    try:
+        dst_relay = msg_data[0]['Route'].pop(0)
+    except Exception:
+        pass
 
     # If it's for us
     if destination == global_router['RID']:
         return destination
 
     # Find the neighbour with the least cost path to destination
-    dst_relay = next_hop(destination)
+    if not dst_relay:
+        dst_relay = next_hop(destination)
     if dst_relay:
         # Send the message
         send_to_stream(dst_relay, pickle.dumps(msg_data))
-        
     else:
+        logger.warn(f"Could not find path to {destination} from {source}")
         return 0
 
     return dst_relay

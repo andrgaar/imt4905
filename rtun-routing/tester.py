@@ -37,7 +37,13 @@ class RtunTest(Thread):
                 if peer == my_id:
                     continue
                 ms = lsr.current_milli_time()
-                message = [{'Message' : 'LOOKUP', 'Destination' : peer, 'Source' : my_id, "ID": ms, 'Path' : [my_id]}]
+                route = None
+                try:
+                    route = lsr.shortest_paths[peer].copy()
+                    route.pop(0)
+                except Exception:
+                    pass
+                message = [{'Message' : 'LOOKUP', 'Destination' : peer, 'Source' : my_id, "ID": ms, 'Route': route, 'Path' : [my_id]}]
                 try:
                     relay_hop = lsr.route_message(message)
                     #lsr.log_metrics("LOOKUP SENT", json.dumps( {'Peer':peer, 'ID': ms, 'Relay':relay_hop} )) 

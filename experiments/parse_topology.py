@@ -19,6 +19,9 @@ csvfile = f"{fname}.csv"
 
 def main():
 
+    # Compute all shortest paths between nodes and compare
+    # how much they overlap with peers
+
     fout = open(csvfile, "w")
     fout.write("Timestamp;Offset;Convergence\n")
     prev_timestamp = None
@@ -35,7 +38,7 @@ def main():
 
             dt_event = datetime.fromtimestamp(float(timestamp))
             dt_prev = datetime.fromtimestamp(float(prev_timestamp))
-            dt_offset = (dt_event - dt_prev).total_seconds()
+            dt_offset = round((dt_event - dt_prev).total_seconds())
 
             last_time[peer] = dt_event
             # remove peers not seen in last minute
@@ -55,25 +58,16 @@ def main():
                     d[ik] = {'weight': d[ik]}
             
             G = nx.Graph(adjacency_list)
-            hits, total, equal_sets = convergence(G, peer)
+            equal_pct = convergence(G, peer)
            
-            pct = 100
-            if total > 0:
-                pct = round(hits / total * 100) 
-            #print(timestamp, peer, pct, hits, total, ":")
-
-            #for p, g in graphs.items():
-            #    print(p, ":", nx.edges(g))
-            
             # output 
-            fout.write("{0};{1};{2}\n".format(dt_event, dt_offset, pct))
-            #if nx.number_of_edges(G) > 0 and nx.average_clustering(G) > 0:
-            #    draw_graph(G)
+            fout.write("{0};{1};{2}\n".format(dt_event, dt_offset, equal_pct))
+
         fout.close()
 
     # plot data
     csv = pd.read_csv(csvfile, sep=";")
-    print(csv)
+    #print(csv)
 
     csv.plot(x = "Offset", y = "Convergence", kind="line", color = 'k', figsize=(10, 5), legend=False, #title="Convergence",
             xlabel = "Time (s)", ylabel = "Convergence (%)")
@@ -85,30 +79,47 @@ def main():
     #    #col="align", hue="choice", size="coherence", style="choice",
     #    facet_kws=dict(sharex=False),
     #)
-    plt.show()
+    #plt.show()
     
 
 def convergence(G, peer):
 
-    graphs[peer] = G
-    g = list()
+    graphs[peer] = dict(nx.all_pairs_dijkstra_path(G, weight='weight'))
     unique_edges = set()
-    equal = 0
+    node_equal = list()
 
-    for v in graphs.values():
-        for e in nx.edges(v):
-            unique_edges.add(e)
+    paths = dict(nx.all_pairs_dijkstra_path(G, weight='weight'))
+    #print("All Dijkstra", peer, paths)
+
+    for g in graphs.values():
+        #print(g)
+        for node in g.values():
+            #print(node)
+            for path in node.values():
+                #print(path)
+                unique_edges.add('-'.join(path))
     #print("Edges: ", unique_edges)
     num_edges = len(unique_edges)
     if num_edges == 0:
-        return 1, 1, None
+        return 100
 
+    total_equal = 0
     for g in graphs.values():
-        n = nx.number_of_edges(g)
-        #print(n, num_edges)
-        equal += (n / num_edges)
+        num_node_edges = 0
+        node_edges = set()
+        for node in g.values():
+            for path in node.values():
+                node_edges.add('-'.join(path))
+        num_node_edges = len(node_edges)
+        #print(num_node_edges, num_edges)
 
-    return equal, len(graphs), None
+        node_equal.append(num_node_edges / num_edges)
+    
+    total_equal = np.prod(node_equal)
+    total_equal = round(total_equal * 100)
+    #print(total_equal)
+
+    return total_equal
 
 
 def draw_graph(G):
