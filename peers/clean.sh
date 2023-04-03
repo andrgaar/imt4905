@@ -13,4 +13,5 @@ rm -f peer*/router.log
 rm -f peer*/topology.log
 rm -f peer*/receive.log
 rm -f peer*/messages.log
+rm -f peer*/routed.log
 rm -f peer*/stderr.out

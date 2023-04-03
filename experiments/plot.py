@@ -15,24 +15,25 @@ import re
 
 
 arg1 = sys.argv[1]
+arg2 = sys.argv[2]
 data = 1
 prev_timestamp = None
 
-FREQ= '5s'
+FREQ= '15s'
 
 def main():
 
     #receivelog(arg1)
     f, (ax1, ax2) = plt.subplots(2, 1, sharex=True, layout='constrained')
 
-    d1 = plot_convergence(ax1, arg1 + '/combined-topology.log.csv')
-    d2 = plot_lookups(ax2, arg1 + '/combined-lookups.log.csv')
+    d1 = plot_convergence(ax1, arg1 + '/combined-topology.log.csv', '4 nodes, s=10')
+    d2 = plot_convergence(ax2, arg2 + '/combined-topology.log.csv', '4 nodes, s=30')
     #d3 = plot_failedpaths(ax3, arg1 + '/combined-lookups.log.csv')
     #d4 = plot_lsa(ax3, arg1 + '/combined-lsa.log.csv')
     
     #result = pd.merge_ordered(d1, d2, on="Offset", fill_method="ffill")
     #print(result)
-
+    plt.tight_layout()
     plt.show()
 
     #sns.lmplot(x="Convergence", y="Loss", data=result)
@@ -65,17 +66,18 @@ def plot_lookups(ax, csvfile):
     csv = csv[['Offset', 'Result']]
     csv.set_index('Offset', inplace=True)
 
-    csv = csv.groupby([pd.Grouper(freq = FREQ), 'Result'])['Result'].size().unstack()
-    csv.reindex()
+    csv = csv.groupby([pd.Grouper(freq = FREQ), 'Result'])['Result'].size().unstack().reset_index()
+    #csv = csv.reindex()
     csv['Loss'] = 100 * csv['Failed'] / ( csv['Failed'] + csv['Success'] )
-    csv.set_index('Offset', inplace=True)
     csv = csv[['Offset', 'Loss']]
     csv['Offset'] = csv['Offset'].dt.total_seconds()
+    csv['Loss'] = csv['Loss'].fillna(0)
+    #csv.set_index('Offset', inplace=True)
 
     print(csv)
 
     csv.plot(ax=ax, x='Offset', y='Loss', kind='line', colormap="tab20", legend=True,
-          xlabel = "Time (s)", ylabel = "# messages")
+          xlabel = "Time (s)", ylabel = "Loss (%)")
 
     return csv
 
@@ -93,7 +95,7 @@ def plot_failedpaths(ax, csvfile):
 
     return csv
 
-def plot_convergence(ax, csvfile):
+def plot_convergence(ax, csvfile, title):
     csv = pd.read_csv(csvfile, sep=";")
     
     csv['Timestamp'] = pd.to_datetime(csv['Timestamp'])
@@ -107,14 +109,17 @@ def plot_convergence(ax, csvfile):
     csv = csv[['Offset', 'Convergence']]
     csv['Offset'] = csv['Offset'].dt.total_seconds()
     #csv = csv.groupby('Offset')['Convergence'].mean()
+    filter = csv["Offset"]<900
+    csv.where(filter, inplace = True)
     print(csv)
     
     #sns.lineplot(data=csv, x='Offset', y='Convergence', color='k', drawstyle='steps-pre')
-    csv.plot(ax=ax, x='Offset', y='Convergence', kind="line", color = 'k', figsize=(10, 5), legend=False, #title="Convergence",
+    csv.plot(ax=ax, x='Offset', y='Convergence', kind="line", color = 'k', figsize=(10, 5), legend=False, title=title,
             xlabel = "Time (s)", ylabel = "Convergence (%)")
     #ax.grid(True)
     #ax.xaxis.set_major_locator(md.MinuteLocator(interval=5))  
     #ax.xaxis.set_major_formatter(md.DateFormatter('%H:%M'))  
+    print(csv.describe())
 
     return csv
 

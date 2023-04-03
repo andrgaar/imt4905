@@ -24,7 +24,7 @@ def main():
         return
 
     outf = open(csvfile, "w")
-    outf.write("Timestamp;Offset;Peer;Received;Source;Payload\n")
+    outf.write("Timestamp;Peer;Received;Source;Payload\n")
 
     with open(fname, "rb") as f:
         while True:
@@ -39,40 +39,19 @@ def main():
 
     outf.close()
 
-    #plot(csvfile)
 
-def plot(csvfile):
-
-    # plot data
-    csv = pd.read_csv(csvfile, sep=";")
-    csv = csv.loc[csv['Received'] != "LOOKUP"]
-    csv['Timestamp'] = pd.to_datetime(csv['Timestamp']) 
-    csv = csv[['Offset', 'Peer', 'Received']]
-    #csv['Offset'] = pd.to_timedelta(csv['Offset'], 'sec').dt.total_seconds().round(0)
-    csv['Offset'] = pd.to_timedelta(csv['Offset'], 'sec')
-    csv.set_index('Offset', inplace=True)
-
-    csv = csv.groupby([pd.Grouper(freq = '1min'), 'Peer']).size()
-
-    #csv = csv.groupby(['Offset', 'Received']).size().unstack()
-    #sns.lineplot(data=csv)
-    print(csv)
-    
-    plt.show()
-
-            
 def parse(data):
     
     retval = ""
     global prev_timestamp
     
     timestamp = data[0] / 1000.0
-    if not prev_timestamp:
-        prev_timestamp = timestamp
+    #if not prev_timestamp:
+    #    prev_timestamp = timestamp
 
     dt_event = datetime.fromtimestamp(timestamp)
-    dt_prev = datetime.fromtimestamp(prev_timestamp)
-    dt_offset = round((dt_event - dt_prev).total_seconds())
+    #dt_prev = datetime.fromtimestamp(prev_timestamp)
+    #dt_offset = round((dt_event - dt_prev).total_seconds())
 
     source = ""
     payload = ""
@@ -90,7 +69,7 @@ def parse(data):
             d['Cookie'] =  d['Cookie'].decode("utf-8") 
         payload = json.dumps(d)
 
-        retval = ';'.join([str(dt_event), str(dt_offset), data[1], d['Message'], source, payload])
+        retval = ';'.join([str(dt_event), data[1], d['Message'], source, payload])
 
     elif type(data[2]) is dict: # LSA
         lsa = data[2]
@@ -99,7 +78,7 @@ def parse(data):
         if 'DEAD' in lsa:
             lsa['DEAD'] = list(lsa['DEAD'])
         payload = json.dumps(lsa)
-        retval = ';'.join([str(dt_event), str(dt_offset), data[1], "LSA", lsa['RID'], payload])
+        retval = ';'.join([str(dt_event), data[1], "LSA", lsa['RID'], payload])
         
     return retval
 

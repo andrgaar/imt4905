@@ -1,0 +1,226 @@
+2023-04-03 12:33:10,520 - INFO - [MainThread] - Initialized router P3 at port 5003 PID 134762
+2023-04-03 12:33:10,522 - INFO - [MainThread] - Adding a connection to Vulnerar
+2023-04-03 12:33:10,522 - INFO - [Connect-Vulnerar] - Calling connect_to_rendezvous_point
+2023-04-03 12:33:10,522 - INFO - [Connect-Vulnerar] - Connect to rendezvous point Vulnerar
+2023-04-03 12:33:10,524 - INFO - [MainThread] - Adding listener for RMK
+2023-04-03 12:33:10,525 - INFO - [Establish-RMK] - Establishing RP to RMK
+2023-04-03 12:33:10,528 - INFO - [MainThread] - Starting testing thread
+2023-04-03 12:33:10,528 - INFO - [TESTER] - Started tester
+2023-04-03 12:33:10,528 - INFO - [MainThread] - Starting connection thread
+2023-04-03 12:33:10,530 - INFO - [MainThread] - Starting log thread
+2023-04-03 12:33:10,534 - INFO - [Connect-Vulnerar] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-03 12:33:10,555 - INFO - [Establish-RMK] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-03 12:33:10,826 - INFO - [Connect-Vulnerar] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-03 12:33:11,027 - INFO - [Establish-RMK] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-03 12:33:11,029 - INFO - [Establish-RMK] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10)... (None)
+2023-04-03 12:33:11,085 - INFO - [Establish-RMK] - Creating new circuit #80000001 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10) router...
+2023-04-03 12:33:11,099 - INFO - [Establish-RMK] - Building -1 hops circuit...
+2023-04-03 12:33:11,099 - INFO - [Establish-RMK] - Extending the circuit #80000001 with 46.4.101.213:9000 (RMK; Tor 0.4.8.0-alpha-dev)...
+2023-04-03 12:33:11,099 - INFO - [Establish-RMK] - Getting descriptor for 46.4.101.213:9000 (RMK; Tor 0.4.8.0-alpha-dev)...
+2023-04-03 12:33:11,104 - INFO - [Establish-RMK] - Connecting to guard node 45.154.28.70:9001 (ATP; Tor 0.4.7.10)... (Internal dir client)
+2023-04-03 12:33:11,142 - INFO - [Connect-Vulnerar] - Connected to rendezvous point Vulnerar
+2023-04-03 12:33:11,142 - INFO - [Connect-Vulnerar] - Waiting for peer to open stream
+2023-04-03 12:33:11,176 - INFO - [Establish-RMK] - Creating new circuit #80000002 with 45.154.28.70:9001 (ATP; Tor 0.4.7.10) router...
+2023-04-03 12:33:11,194 - INFO - [Connect-Vulnerar] - Received cell: <class 'torpy.cells.CellDestroy'>
+2023-04-03 12:33:11,194 - WARNING - [Connect-Vulnerar] - Could not connect to rendezvous point Vulnerar: Receive CellDestroy from RP, 11 attempts left...
+2023-04-03 12:33:11,196 - INFO - [Establish-RMK] - Building 0 hops circuit...
+2023-04-03 12:33:11,196 - INFO - [Establish-RMK] - Stream #1: creating attached to #80000002 circuit...
+2023-04-03 12:33:11,196 - INFO - [Establish-RMK] - Stream #1: connecting to hsdir
+2023-04-03 12:33:11,217 - INFO - [RecvLoop_45.154.] - Stream #1: connected (remote ip '')
+2023-04-03 12:33:11,434 - INFO - [RecvLoop_45.154.] - Stream #1: remote disconnected (reason = DONE)
+2023-04-03 12:33:11,435 - INFO - [Establish-RMK] - Stream #1: closing (state = Disconnected)...
+2023-04-03 12:33:11,435 - INFO - [Establish-RMK] - Got descriptor
+2023-04-03 12:33:11,489 - INFO - [Establish-RMK] - <class 'torpy.circuit.TorCircuit'>
+2023-04-03 12:33:11,538 - INFO - [Establish-RMK] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-04-03 12:33:11,538 - INFO - [Establish-RMK] - Waiting for connections at relay RMK for cookie b'eb688e4f52df90278060' ...
+2023-04-03 12:33:13,335 - INFO - [Establish-RMK] - Got REND2 message from RMK
+2023-04-03 12:33:13,335 - INFO - [Establish-RMK] - Entered circuit context with id 0x80000001
+2023-04-03 12:33:13,336 - INFO - [Establish-RMK] - Stream #2: creating attached to #80000001 circuit...
+2023-04-03 12:33:13,336 - INFO - [Establish-RMK] - Stream #2: connecting to ('127.0.0.1', 5000)
+2023-04-03 12:33:13,430 - INFO - [RecvLoop_185.181] - Stream #2: connected (remote ip '127.0.0.1')
+2023-04-03 12:33:13,537 - INFO - [Establish-RMK] - Sending HELLO to peer
+2023-04-03 12:33:13,538 - INFO - [Establish-RMK] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P3\x94ua.'
+2023-04-03 12:33:13,539 - INFO - [RECEIVER] - Added neighbour P1
+2023-04-03 12:33:15,729 - WARNING - [RECEIVER] - Routing loop from P3 to P2: P3-P1-P3
+2023-04-03 12:33:15,826 - WARNING - [RECEIVER] - Routing loop from P3 to P2: P3-P1-P3-P1-P3
+2023-04-03 12:33:15,826 - WARNING - [RECEIVER] - TTL reached from path to P2 from P3
+2023-04-03 12:33:16,195 - INFO - [Connect-Vulnerar] - Calling connect_to_rendezvous_point
+2023-04-03 12:33:16,195 - INFO - [Connect-Vulnerar] - Connect to rendezvous point Vulnerar
+2023-04-03 12:33:16,200 - INFO - [Connect-Vulnerar] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-03 12:33:16,443 - INFO - [Connect-Vulnerar] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-03 12:33:16,707 - INFO - [Connect-Vulnerar] - Connected to rendezvous point Vulnerar
+2023-04-03 12:33:16,708 - INFO - [Connect-Vulnerar] - Waiting for peer to open stream
+2023-04-03 12:33:16,812 - INFO - [Connect-Vulnerar] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-04-03 12:33:16,812 - INFO - [Connect-Vulnerar] - Stream opened successfully
+2023-04-03 12:33:16,812 - INFO - [Connect-Vulnerar] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P3\x94ua.'
+2023-04-03 12:33:17,016 - INFO - [RECEIVER] - Added neighbour P4
+2023-04-03 12:34:16,912 - INFO - [RecvLoop_45.154.] - On destroy: circuit #80000002
+2023-04-03 12:34:16,912 - INFO - [RecvLoop_45.154.] - Destroy circuit #80000002
+2023-04-03 12:34:26,764 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-04-03 12:35:40,795 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-04-03 12:35:40,843 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-04-03 12:36:55,873 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-04-03 12:38:20,146 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-04-03 12:38:20,196 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-04-03 12:39:11,039 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-03 12:39:11,743 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-03 12:39:11,758 - INFO - [MainThread] - ['ESTABLISH', 'zighimilan', b'a874f061265d40eee86e']
+2023-04-03 12:39:11,758 - INFO - [MainThread] - Got ESTABLISH to relay zighimilan:b'a874f061265d40eee86e' via staysafeandgoodluck
+2023-04-03 12:39:11,764 - INFO - [Establish-zighimilan] - Establishing RP to zighimilan
+2023-04-03 12:39:11,775 - INFO - [Establish-zighimilan] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-03 12:39:12,506 - INFO - [Establish-zighimilan] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-03 12:39:12,509 - INFO - [Establish-zighimilan] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10)... (None)
+2023-04-03 12:39:12,573 - INFO - [Establish-zighimilan] - Creating new circuit #80000003 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10) router...
+2023-04-03 12:39:12,588 - INFO - [Establish-zighimilan] - Building -1 hops circuit...
+2023-04-03 12:39:12,588 - INFO - [Establish-zighimilan] - Extending the circuit #80000003 with 93.55.235.232:443 (zighimilan; Tor 0.4.7.10)...
+2023-04-03 12:39:12,588 - INFO - [Establish-zighimilan] - Getting descriptor for 93.55.235.232:443 (zighimilan; Tor 0.4.7.10)...
+2023-04-03 12:39:12,596 - INFO - [Establish-zighimilan] - Connecting to guard node 149.56.45.200:9001 (PyotrTorpotkinOne; Tor 0.4.7.7)... (Internal dir client)
+2023-04-03 12:39:13,135 - INFO - [Establish-zighimilan] - Creating new circuit #80000004 with 149.56.45.200:9001 (PyotrTorpotkinOne; Tor 0.4.7.7) router...
+2023-04-03 12:39:13,332 - INFO - [Establish-zighimilan] - Building 0 hops circuit...
+2023-04-03 12:39:13,332 - INFO - [Establish-zighimilan] - Stream #3: creating attached to #80000004 circuit...
+2023-04-03 12:39:13,332 - INFO - [Establish-zighimilan] - Stream #3: connecting to hsdir
+2023-04-03 12:39:13,511 - INFO - [RecvLoop_149.56.] - Stream #3: connected (remote ip '')
+2023-04-03 12:39:13,808 - INFO - [RecvLoop_149.56.] - Stream #3: remote disconnected (reason = DONE)
+2023-04-03 12:39:13,808 - INFO - [Establish-zighimilan] - Stream #3: closing (state = Disconnected)...
+2023-04-03 12:39:13,808 - INFO - [Establish-zighimilan] - Got descriptor
+2023-04-03 12:39:13,897 - INFO - [Establish-zighimilan] - <class 'torpy.circuit.TorCircuit'>
+2023-04-03 12:39:14,343 - INFO - [Establish-zighimilan] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-04-03 12:39:14,343 - INFO - [Establish-zighimilan] - Waiting for connections at relay zighimilan for cookie b'a874f061265d40eee86e' ...
+2023-04-03 12:39:17,172 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-04-03 12:39:21,767 - INFO - [CONNECTION] - Sending JOIN to P1 for relay zighimilan with cookie b'a874f061265d40eee86e'
+2023-04-03 12:39:22,970 - INFO - [Establish-zighimilan] - Got REND2 message from zighimilan
+2023-04-03 12:39:22,971 - INFO - [Establish-zighimilan] - Entered circuit context with id 0x80000003
+2023-04-03 12:39:22,971 - INFO - [Establish-zighimilan] - Stream #4: creating attached to #80000003 circuit...
+2023-04-03 12:39:22,971 - INFO - [Establish-zighimilan] - Stream #4: connecting to ('127.0.0.1', 5000)
+2023-04-03 12:39:23,092 - INFO - [RecvLoop_185.181] - Stream #4: connected (remote ip '127.0.0.1')
+2023-04-03 12:39:23,173 - INFO - [Establish-zighimilan] - Sending HELLO to peer
+2023-04-03 12:39:23,173 - INFO - [Establish-zighimilan] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P3\x94ua.'
+2023-04-03 12:39:23,174 - INFO - [RECEIVER] - Added neighbour P1
+2023-04-03 12:40:00,864 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P2', 100, 'Andromeda'], ['P1', 'P3', 100, 'zighimilan'], ['P2', 'P4', 100, 'AkisTorNode'], ['P3', 'P4', 324, 'Vulnerar']] , {'P2'}
+2023-04-03 12:40:15,419 - INFO - [RecvLoop_149.56.] - On destroy: circuit #80000004
+2023-04-03 12:40:15,420 - INFO - [RecvLoop_149.56.] - Destroy circuit #80000004
+2023-04-03 12:40:16,135 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P3', 100, 'zighimilan'], ['P2', 'P4', 100, 'AkisTorNode'], ['P3', 'P4', 324, 'Vulnerar']] , {'P1'}
+2023-04-03 12:40:20,305 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-04-03 12:40:21,193 - ERROR - [Establish-RMK] - recv timeout
+2023-04-03 12:40:21,193 - INFO - [Establish-RMK] - Closing connection Establish-RMK
+2023-04-03 12:40:21,193 - INFO - [Establish-RMK] - Stream #2: closing (state = Connected)...
+2023-04-03 12:40:21,194 - INFO - [Establish-RMK] - Destroy circuit #80000001
+2023-04-03 12:40:21,194 - INFO - [Establish-RMK] - Closing guard connections (None)...
+2023-04-03 12:40:21,201 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-04-03 12:40:27,283 - INFO - [RECEIVER] - Added relay frigus from P2 to JOIN queue
+2023-04-03 12:40:27,284 - INFO - [MainThread] - ['JOIN', 'frigus', b'b1faa1f2e4682fb2ec0d']
+2023-04-03 12:40:27,284 - INFO - [MainThread] - Got JOIN to relay frigus, waiting 10 sec to connect
+2023-04-03 12:40:27,295 - INFO - [Connect-frigus] - Calling connect_to_rendezvous_point
+2023-04-03 12:40:27,295 - INFO - [Connect-frigus] - Connect to rendezvous point frigus
+2023-04-03 12:40:27,333 - INFO - [Connect-frigus] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-03 12:40:27,917 - INFO - [Connect-frigus] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-03 12:40:28,126 - INFO - [Connect-frigus] - Connected to rendezvous point frigus
+2023-04-03 12:40:28,127 - INFO - [Connect-frigus] - Waiting for peer to open stream
+2023-04-03 12:40:28,217 - INFO - [Connect-frigus] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-04-03 12:40:28,218 - INFO - [Connect-frigus] - Stream opened successfully
+2023-04-03 12:40:28,218 - INFO - [Connect-frigus] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P3\x94ua.'
+2023-04-03 12:40:28,417 - INFO - [RECEIVER] - Added neighbour P2
+2023-04-03 12:41:26,255 - WARNING - [Connect-frigus] - Got SENDME
+2023-04-03 12:41:32,708 - WARNING - [Connect-Vulnerar] - Got SENDME
+2023-04-03 12:41:49,289 - INFO - [RECEIVER] - Added relay hagardunor from P4 to JOIN queue
+2023-04-03 12:41:49,290 - INFO - [MainThread] - ['JOIN', 'hagardunor', b'a4537edfc98c965f9630']
+2023-04-03 12:41:49,291 - INFO - [MainThread] - Got JOIN to relay hagardunor, waiting 10 sec to connect
+2023-04-03 12:41:49,303 - INFO - [Connect-hagardunor] - Calling connect_to_rendezvous_point
+2023-04-03 12:41:49,303 - INFO - [Connect-hagardunor] - Connect to rendezvous point hagardunor
+2023-04-03 12:41:49,314 - INFO - [Connect-hagardunor] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-03 12:41:49,969 - INFO - [Connect-hagardunor] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-03 12:41:50,220 - INFO - [Connect-hagardunor] - Connected to rendezvous point hagardunor
+2023-04-03 12:41:50,221 - INFO - [Connect-hagardunor] - Waiting for peer to open stream
+2023-04-03 12:41:50,325 - INFO - [Connect-hagardunor] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-04-03 12:41:50,325 - INFO - [Connect-hagardunor] - Stream opened successfully
+2023-04-03 12:41:50,325 - INFO - [Connect-hagardunor] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P3\x94ua.'
+2023-04-03 12:41:52,241 - INFO - [RECEIVER] - Added neighbour P4
+2023-04-03 12:42:41,345 - WARNING - [Connect-frigus] - Got SENDME
+2023-04-03 12:42:41,382 - WARNING - [Connect-frigus] - Got SENDME
+2023-04-03 12:42:51,369 - WARNING - [Connect-hagardunor] - Got SENDME
+2023-04-03 12:42:52,353 - ERROR - [Connect-Vulnerar] - Got RELAY_END
+2023-04-03 12:43:56,435 - WARNING - [Connect-frigus] - Got SENDME
+2023-04-03 12:44:01,458 - WARNING - [Connect-hagardunor] - Got SENDME
+2023-04-03 12:44:01,501 - WARNING - [Connect-hagardunor] - Got SENDME
+2023-04-03 12:45:03,697 - WARNING - [Connect-frigus] - Got SENDME
+2023-04-03 12:45:05,462 - WARNING - [Connect-frigus] - Got SENDME
+2023-04-03 12:45:17,695 - WARNING - [Connect-hagardunor] - Got SENDME
+2023-04-03 12:45:22,172 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-03 12:45:23,270 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-03 12:45:23,293 - INFO - [MainThread] - ['ESTABLISH', 'coffswifi4', b'59a6df6842b7efa9d030']
+2023-04-03 12:45:23,293 - INFO - [MainThread] - Got ESTABLISH to relay coffswifi4:b'59a6df6842b7efa9d030' via staysafeandgoodluck
+2023-04-03 12:45:23,294 - INFO - [Establish-coffswifi4] - Establishing RP to coffswifi4
+2023-04-03 12:45:23,343 - INFO - [Establish-coffswifi4] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-03 12:45:24,319 - INFO - [Establish-coffswifi4] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-03 12:45:24,324 - INFO - [Establish-coffswifi4] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10)... (None)
+2023-04-03 12:45:24,393 - INFO - [Establish-coffswifi4] - Creating new circuit #80000005 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.10) router...
+2023-04-03 12:45:24,410 - INFO - [Establish-coffswifi4] - Building -1 hops circuit...
+2023-04-03 12:45:24,410 - INFO - [Establish-coffswifi4] - Extending the circuit #80000005 with 82.223.14.245:443 (coffswifi4; Tor 0.4.7.11)...
+2023-04-03 12:45:24,412 - INFO - [Establish-coffswifi4] - Getting descriptor for 82.223.14.245:443 (coffswifi4; Tor 0.4.7.11)...
+2023-04-03 12:45:24,417 - INFO - [Establish-coffswifi4] - Connecting to guard node 193.31.27.127:9001 (luna; Tor 0.4.7.13)... (Internal dir client)
+2023-04-03 12:45:24,619 - INFO - [Establish-coffswifi4] - Creating new circuit #80000006 with 193.31.27.127:9001 (luna; Tor 0.4.7.13) router...
+2023-04-03 12:45:24,679 - INFO - [Establish-coffswifi4] - Building 0 hops circuit...
+2023-04-03 12:45:24,679 - INFO - [Establish-coffswifi4] - Stream #5: creating attached to #80000006 circuit...
+2023-04-03 12:45:24,680 - INFO - [Establish-coffswifi4] - Stream #5: connecting to hsdir
+2023-04-03 12:45:24,770 - INFO - [RecvLoop_193.31.] - Stream #5: connected (remote ip '')
+2023-04-03 12:45:25,032 - INFO - [RecvLoop_193.31.] - Stream #5: remote disconnected (reason = DONE)
+2023-04-03 12:45:25,033 - INFO - [Establish-coffswifi4] - Stream #5: closing (state = Disconnected)...
+2023-04-03 12:45:25,033 - INFO - [Establish-coffswifi4] - Got descriptor
+2023-04-03 12:45:25,474 - INFO - [Establish-coffswifi4] - <class 'torpy.circuit.TorCircuit'>
+2023-04-03 12:45:25,560 - INFO - [Establish-coffswifi4] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-04-03 12:45:25,560 - INFO - [Establish-coffswifi4] - Waiting for connections at relay coffswifi4 for cookie b'59a6df6842b7efa9d030' ...
+2023-04-03 12:45:33,300 - INFO - [CONNECTION] - Sending JOIN to P1 for relay coffswifi4 with cookie b'59a6df6842b7efa9d030'
+2023-04-03 12:45:35,481 - INFO - [Establish-coffswifi4] - Got REND2 message from coffswifi4
+2023-04-03 12:45:35,482 - INFO - [Establish-coffswifi4] - Entered circuit context with id 0x80000005
+2023-04-03 12:45:35,482 - INFO - [Establish-coffswifi4] - Stream #6: creating attached to #80000005 circuit...
+2023-04-03 12:45:35,482 - INFO - [Establish-coffswifi4] - Stream #6: connecting to ('127.0.0.1', 5000)
+2023-04-03 12:45:35,634 - INFO - [RecvLoop_185.181] - Stream #6: connected (remote ip '127.0.0.1')
+2023-04-03 12:45:35,684 - INFO - [Establish-coffswifi4] - Sending HELLO to peer
+2023-04-03 12:45:35,685 - INFO - [Establish-coffswifi4] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P3\x94ua.'
+2023-04-03 12:45:37,535 - INFO - [RECEIVER] - Added neighbour P1
+2023-04-03 12:46:11,740 - WARNING - [Connect-frigus] - Got SENDME
+2023-04-03 12:46:35,172 - INFO - [RecvLoop_193.31.] - On destroy: circuit #80000006
+2023-04-03 12:46:35,173 - INFO - [RecvLoop_193.31.] - Destroy circuit #80000006
+2023-04-03 12:46:37,089 - ERROR - [Establish-zighimilan] - recv timeout
+2023-04-03 12:46:37,089 - INFO - [Establish-zighimilan] - Closing connection Establish-zighimilan
+2023-04-03 12:46:37,090 - INFO - [Establish-zighimilan] - Stream #4: closing (state = Connected)...
+2023-04-03 12:46:37,092 - INFO - [Establish-zighimilan] - Destroy circuit #80000003
+2023-04-03 12:46:37,095 - INFO - [Establish-zighimilan] - Closing guard connections (None)...
+2023-04-03 12:46:38,062 - INFO - [RECEIVER] - Added relay unnamed from P2 to JOIN queue
+2023-04-03 12:46:38,065 - INFO - [MainThread] - ['JOIN', 'unnamed', b'a809f545621550bee5d2']
+2023-04-03 12:46:38,065 - INFO - [MainThread] - Got JOIN to relay unnamed, waiting 10 sec to connect
+2023-04-03 12:46:38,065 - INFO - [Connect-unnamed] - Calling connect_to_rendezvous_point
+2023-04-03 12:46:38,068 - INFO - [Connect-unnamed] - Connect to rendezvous point unnamed
+2023-04-03 12:46:38,121 - INFO - [Connect-unnamed] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-03 12:46:38,871 - INFO - [Connect-unnamed] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-03 12:46:38,993 - WARNING - [Connect-hagardunor] - Got SENDME
+2023-04-03 12:46:39,036 - WARNING - [Connect-hagardunor] - Got SENDME
+2023-04-03 12:46:39,783 - INFO - [Connect-unnamed] - Connected to rendezvous point unnamed
+2023-04-03 12:46:39,783 - INFO - [Connect-unnamed] - Waiting for peer to open stream
+2023-04-03 12:46:40,159 - INFO - [Connect-unnamed] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-04-03 12:46:40,173 - INFO - [Connect-unnamed] - Stream opened successfully
+2023-04-03 12:46:40,173 - INFO - [Connect-unnamed] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P3\x94ua.'
+2023-04-03 12:46:40,567 - INFO - [RECEIVER] - Added neighbour P2
+2023-04-03 12:47:33,286 - WARNING - [Connect-unnamed] - Got SENDME
+2023-04-03 12:47:39,008 - ERROR - [Connect-frigus] - Got RELAY_END
+2023-04-03 12:47:56,772 - WARNING - [Connect-hagardunor] - Got SENDME
+2023-04-03 12:47:59,588 - INFO - [RECEIVER] - Added relay mev3PLicebeer77 from P4 to JOIN queue
+2023-04-03 12:47:59,588 - INFO - [MainThread] - ['JOIN', 'mev3PLicebeer77', b'09952cd418cfccf87145']
+2023-04-03 12:47:59,589 - INFO - [MainThread] - Got JOIN to relay mev3PLicebeer77, waiting 10 sec to connect
+2023-04-03 12:47:59,589 - INFO - [Connect-mev3PLicebeer77] - Calling connect_to_rendezvous_point
+2023-04-03 12:47:59,589 - INFO - [Connect-mev3PLicebeer77] - Connect to rendezvous point mev3PLicebeer77
+2023-04-03 12:47:59,619 - INFO - [Connect-mev3PLicebeer77] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-03 12:48:01,153 - INFO - [Connect-mev3PLicebeer77] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-03 12:48:01,406 - INFO - [Connect-mev3PLicebeer77] - Connected to rendezvous point mev3PLicebeer77
+2023-04-03 12:48:01,408 - INFO - [Connect-mev3PLicebeer77] - Waiting for peer to open stream
+2023-04-03 12:48:01,517 - INFO - [Connect-mev3PLicebeer77] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-04-03 12:48:01,521 - INFO - [Connect-mev3PLicebeer77] - Stream opened successfully
+2023-04-03 12:48:01,522 - INFO - [Connect-mev3PLicebeer77] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P3\x94ua.'
+2023-04-03 12:48:05,066 - INFO - [RECEIVER] - Added neighbour P4
+2023-04-03 12:48:42,136 - WARNING - [Connect-unnamed] - Got SENDME
+2023-04-03 12:48:42,304 - WARNING - [Connect-unnamed] - Got SENDME
+2023-04-03 12:48:56,856 - WARNING - [Connect-mev3PLicebeer77] - Got SENDME
+2023-04-03 12:49:03,168 - ERROR - [Connect-hagardunor] - Got RELAY_END
+2023-04-03 12:49:57,210 - WARNING - [Connect-unnamed] - Got SENDME
+2023-04-03 12:50:10,525 - WARNING - [Connect-mev3PLicebeer77] - Got SENDME
+2023-04-03 12:50:10,566 - WARNING - [Connect-mev3PLicebeer77] - Got SENDME

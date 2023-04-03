@@ -36,7 +36,7 @@ ROUTE_UPDATE_INTERVAL = 15
 PERIODIC_HEART_BEAT = 5
 NODE_FAILURE_INTERVAL = 10
 TIMEOUT = 15
-LATENCY_SAMPLES = 30
+LATENCY_SAMPLES = 10
 PERIODIC_CONN_CHECK = 60
 MIN_NEIGHBOUR_CONNECTIONS = 2
 MAX_CONNECTION_TIME = 300
@@ -444,7 +444,7 @@ class ReceiveThread(Thread):
             path = '-'.join(msg_data[0]['Path'])
             # it's a routing loop
             logger.warn(f"Routing loop from {source} to {destination}: {path}")
-            return
+            #return
         else:
             msg_data[0]['Path'].append(global_router['RID'])
 
@@ -965,13 +965,15 @@ class ConnectionThread(Thread):
                     self.conn_queue.put_nowait(["ESTABLISH", rp_relay.nickname, rp_cookie])
                     time.sleep(10)
                     logger.info(f"Sending JOIN to {join_peer} for relay {rp_relay.nickname} with cookie {rp_cookie}")
-                    message = [{'Message' : 'JOIN', 'Destination' : join_peer, 'Source' : RID, 'Relay' : rp_relay.nickname, 'Cookie' : rp_cookie}]
+                    try:
+                        route = lsr.shortest_paths[join_peer].copy()
+                        route.pop(0)
+                    except Exception:
+                        route = ""
+
+                    message = [{'Message' : 'JOIN', 'Destination' : join_peer, 'Source' : RID, 'TTL': 5, 
+                                'Route': route, 'Relay' : rp_relay.nickname, 'Cookie' : rp_cookie}]
                     route_message(message)
-                    #rejoin = [{'Message' : 'REJOIN', 'Destination' : join_peer}]
-                    #receiver_thread.remove_neighbour([join_peer])
-                    # kill the connection
-                    #logger.info(f"Reached MAX_CONNECTION_TIME - killing thread {kill_tid}")
-                    #threads_tmp[kill_tid].conn_queue.put(object())
 
                 continue
 
@@ -1017,7 +1019,14 @@ class ConnectionThread(Thread):
 
             # Send JOIN to peer                
             logger.info(f"Sending JOIN to {join_peer} at relay {rp_relay.nickname}")
-            message = [{'Message' : 'JOIN', 'Destination' : join_peer, 'Source' : RID, 'Relay' : rp_relay.nickname, 'Cookie' : cookie}]
+            try:
+                route = lsr.shortest_paths[join_peer].copy()
+                route.pop(0)
+            except Exception:
+                route = ""
+
+            message = [{'Message' : 'JOIN', 'Destination' : join_peer, 'Source' : RID, 'TTL': 5, 
+                        'Route': route, 'Relay' : rp_relay.nickname, 'Cookie' : cookie}]
             route_message(message)
 
 
@@ -1048,28 +1057,51 @@ def remove_circuit(inactive_list):
 def route_message(msg_data):
     logger.debug(f"route_message: {msg_data}")
 
-    logger.info(f"Routing message: {msg_data[0]}")
     dst_relay = None
     destination = msg_data[0]['Destination']
     source = msg_data[0]['Source']
-    try:
-        dst_relay = msg_data[0]['Route'].pop(0)
-    except Exception:
-        pass
+    ttl = msg_data[0]['TTL']
 
+    try:
+        msgid = msg_data[0]['ID']
+    except Exception:
+        msgid = 0
+    
     # If it's for us
     if destination == global_router['RID']:
         return destination
 
+    msg_data[0]['TTL'] -= 1 # decrement TTL
+    # check if TTL is reached
+    if msg_data[0]['TTL'] == 0:
+        logger.warn(f"TTL reached from path to {destination} from {source}")
+        return 0
+
+    # try to pop the next hop from the route field
+    try:
+        dst_relay = msg_data[0]['Route'].pop(0)
+        route = "ROUTED"
+    except Exception:
+        route = "RANDOM"
+        pass
+
     # Find the neighbour with the least cost path to destination
-    if not dst_relay:
-        dst_relay = next_hop(destination)
+    #if not dst_relay:
+    #    dst_relay = next_hop(destination)
     if dst_relay:
-        # Send the message
+        # send the message to next hop
         send_to_stream(dst_relay, pickle.dumps(msg_data))
     else:
-        logger.warn(f"Could not find path to {destination} from {source}")
-        return 0
+        # try a random neighbour
+        neighbours = global_router['Neighbours Data']
+        dst_relay = neighbours[random.randint(0, len(neighbours) - 1)]['NID']
+        send_to_stream(dst_relay, pickle.dumps(msg_data))
+ 
+    with open('routed.log', 'a') as f:
+        now = datetime.now()
+        rid = global_router['RID']
+        msg = json.dumps({'Destination': destination, 'Source': source, 'ID': msgid, 'Route': route, 'Next_hop': dst_relay})
+        f.write(f"{now};{rid};{msg};\n")  
 
     return dst_relay
 # Return the next hop in least cost path
@@ -1077,7 +1109,12 @@ def next_hop(dst_peer):
     logger.debug(f"next_hop: {global_least_cost_path}")
     
     this_peer = global_router['RID']
-    
+
+    # check if destination is a neighbour 
+    for n in global_router['Neighbours Data']:    
+        if dst_peer == n['NID']:
+            return dst_peer
+
     # Work our way back the least path route to find
     # the next hop
     if not shortest_paths or not dst_peer in shortest_paths:
@@ -1366,6 +1403,7 @@ def get_random_string(length):
     result_str = ''.join(random.choice(letters) for i in range(length))
     return result_str
 
+
 def send_to_stream(router_id, message):
     logger.debug(f"send_to_stream: {router_id} , {message}")
 
@@ -1386,7 +1424,7 @@ def send_to_stream(router_id, message):
     except KeyError as e:
         logger.error(f"send_to_stream: Key not found: {e}")
     except Exception as e:
-        logger.error("send_to_stream: {0} {1}".format(type(e).__name__, e))
+        logger.error("send_to_stream: {0} {1} {2}".format(type(e).__name__, e, message))
 
     #log_metrics("DATA SENT", "Payload: {0} bytes".format(sys.getsizeof(message)))
 
