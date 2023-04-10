@@ -38,8 +38,8 @@ NODE_FAILURE_INTERVAL = 10
 TIMEOUT = 15
 LATENCY_SAMPLES = 30
 PERIODIC_CONN_CHECK = 60
-MIN_NEIGHBOUR_CONNECTIONS = 7
-MAX_CONNECTION_TIME = 300
+MIN_NEIGHBOUR_CONNECTIONS = 2
+MAX_CONNECTION_TIME = 600
 
 # Log metrics to file
 graph_metrics_file = "router.log"
@@ -920,7 +920,7 @@ class ConnectionThread(Thread):
         self.name = name
         self.conn_queue = conn_queue
         self.rcv_queue = rcv_queue
-        self.max_latency = 500
+        self.max_latency = 1000
         self.min_alive = 60
 
     def run(self):
