@@ -1,0 +1,201 @@
+2023-04-06 21:47:12,325 - INFO - [MainThread] - Initialized router P1 at port 5001 PID 6411
+2023-04-06 21:47:12,327 - INFO - [MainThread] - Adding listener for sklep
+2023-04-06 21:47:12,327 - INFO - [Establish-sklep] - Establishing RP to sklep
+2023-04-06 21:47:12,329 - INFO - [MainThread] - Adding a connection to RMK
+2023-04-06 21:47:12,330 - INFO - [Connect-RMK] - Calling connect_to_rendezvous_point
+2023-04-06 21:47:12,330 - INFO - [Connect-RMK] - Connect to rendezvous point RMK
+2023-04-06 21:47:12,332 - INFO - [MainThread] - Starting testing thread
+2023-04-06 21:47:12,333 - INFO - [TESTER] - Started tester
+2023-04-06 21:47:12,333 - INFO - [MainThread] - Starting connection thread
+2023-04-06 21:47:12,334 - INFO - [MainThread] - Starting log thread
+2023-04-06 21:47:12,363 - INFO - [Connect-RMK] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-06 21:47:12,372 - INFO - [Establish-sklep] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-06 21:47:12,905 - INFO - [Connect-RMK] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-06 21:47:12,907 - INFO - [Connect-RMK] - Downloading new consensus...
+2023-04-06 21:47:12,907 - INFO - [Connect-RMK] - Connecting to guard node 193.234.15.60:443... (Internal dir client)
+2023-04-06 21:47:12,907 - INFO - [Establish-sklep] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-06 21:47:12,908 - INFO - [Establish-sklep] - Downloading new consensus...
+2023-04-06 21:47:12,908 - INFO - [Establish-sklep] - Connecting to guard node 78.47.18.110:80... (Internal dir client)
+2023-04-06 21:47:13,145 - INFO - [Establish-sklep] - Creating new circuit #80000001 with 78.47.18.110:80 router...
+2023-04-06 21:47:13,201 - INFO - [Establish-sklep] - Building 0 hops circuit...
+2023-04-06 21:47:13,202 - INFO - [Establish-sklep] - Stream #1: creating attached to #80000001 circuit...
+2023-04-06 21:47:13,202 - INFO - [Establish-sklep] - Stream #1: connecting to hsdir
+2023-04-06 21:47:13,254 - INFO - [RecvLoop_78.47.1] - Stream #1: connected (remote ip '')
+2023-04-06 21:47:13,955 - INFO - [RecvLoop_78.47.1] - Stream #1: remote disconnected (reason = DONE)
+2023-04-06 21:47:13,963 - INFO - [Establish-sklep] - Stream #1: closing (state = Disconnected)...
+2023-04-06 21:47:14,176 - WARNING - [Establish-sklep] - Unknown voter present
+2023-04-06 21:47:14,185 - INFO - [Establish-sklep] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13)... (None)
+2023-04-06 21:47:14,249 - INFO - [Establish-sklep] - Creating new circuit #80000002 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13) router...
+2023-04-06 21:47:14,264 - INFO - [Establish-sklep] - Building -1 hops circuit...
+2023-04-06 21:47:14,264 - INFO - [Establish-sklep] - Extending the circuit #80000002 with 95.216.22.24:9090 (sklep; Tor 0.4.7.10)...
+2023-04-06 21:47:14,266 - INFO - [Establish-sklep] - Getting descriptor for 95.216.22.24:9090 (sklep; Tor 0.4.7.10)...
+2023-04-06 21:47:14,266 - INFO - [Establish-sklep] - Stream #2: creating attached to #80000001 circuit...
+2023-04-06 21:47:14,267 - INFO - [Establish-sklep] - Stream #2: connecting to hsdir
+2023-04-06 21:47:14,320 - INFO - [RecvLoop_78.47.1] - Stream #2: connected (remote ip '')
+2023-04-06 21:47:14,525 - INFO - [RecvLoop_78.47.1] - Stream #2: remote disconnected (reason = DONE)
+2023-04-06 21:47:14,525 - INFO - [Establish-sklep] - Stream #2: closing (state = Disconnected)...
+2023-04-06 21:47:14,526 - INFO - [Establish-sklep] - Got descriptor
+2023-04-06 21:47:14,556 - INFO - [Establish-sklep] - <class 'torpy.circuit.TorCircuit'>
+2023-04-06 21:47:14,598 - INFO - [Establish-sklep] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-04-06 21:47:14,599 - INFO - [Establish-sklep] - Waiting for connections at relay sklep for cookie b'eb688e4f52df90278060' ...
+2023-04-06 21:47:19,051 - INFO - [Establish-sklep] - Got REND2 message from sklep
+2023-04-06 21:47:19,051 - INFO - [Establish-sklep] - Entered circuit context with id 0x80000002
+2023-04-06 21:47:19,051 - INFO - [Establish-sklep] - Stream #3: creating attached to #80000002 circuit...
+2023-04-06 21:47:19,051 - INFO - [Establish-sklep] - Stream #3: connecting to ('127.0.0.1', 5000)
+2023-04-06 21:47:19,107 - INFO - [RecvLoop_185.181] - Stream #3: connected (remote ip '127.0.0.1')
+2023-04-06 21:47:19,252 - INFO - [Establish-sklep] - Sending HELLO to peer
+2023-04-06 21:47:19,252 - INFO - [Establish-sklep] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P1\x94ua.'
+2023-04-06 21:47:19,253 - INFO - [RECEIVER] - Added neighbour P2
+2023-04-06 21:47:27,931 - ERROR - [Connect-RMK] - timed out
+2023-04-06 21:47:27,931 - ERROR - [Connect-RMK] - [ignored]
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cell_socket.py", line 63, in connect
+    self._socket.connect((self._router.ip, self._router.or_port))
+  File "/usr/lib/python3.9/ssl.py", line 1342, in connect
+    self._real_connect(addr, False)
+  File "/usr/lib/python3.9/ssl.py", line 1329, in _real_connect
+    super().connect(addr)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/utils.py", line 79, in newfn
+    return func(*args, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/consesus.py", line 235, in renew
+    raw_string = self.download_consensus(prev_hash)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/consesus.py", line 183, in newfn
+    return func(*args, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/consesus.py", line 395, in download_consensus
+    with self._get_dir_client() as dir_client:
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/consesus.py", line 380, in _get_dir_client
+    self._dir_guard, self._dir_circuit = self._create_dir_circuit(purpose='Internal dir client')
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/consesus.py", line 370, in _create_dir_circuit
+    guard = TorGuard(router, purpose=purpose)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 66, in __init__
+    self.__tor_socket.connect()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cell_socket.py", line 69, in connect
+    raise TorSocketConnectError(e)
+torpy.cell_socket.TorSocketConnectError: timed out
+2023-04-06 21:47:27,938 - WARNING - [Connect-RMK] - Retry with another router...
+2023-04-06 21:47:27,938 - INFO - [Connect-RMK] - Wait 3 sec before next retry
+2023-04-06 21:47:30,942 - INFO - [Connect-RMK] - Downloading new consensus...
+2023-04-06 21:47:30,942 - INFO - [Connect-RMK] - Connecting to guard node 185.129.62.62:9001... (Internal dir client)
+2023-04-06 21:47:31,037 - INFO - [Connect-RMK] - Creating new circuit #80000003 with 185.129.62.62:9001 router...
+2023-04-06 21:47:31,057 - INFO - [Connect-RMK] - Building 0 hops circuit...
+2023-04-06 21:47:31,057 - INFO - [Connect-RMK] - Stream #4: creating attached to #80000003 circuit...
+2023-04-06 21:47:31,057 - INFO - [Connect-RMK] - Stream #4: connecting to hsdir
+2023-04-06 21:47:31,078 - INFO - [RecvLoop_185.129] - Stream #4: connected (remote ip '')
+2023-04-06 21:47:31,696 - INFO - [RecvLoop_185.129] - Stream #4: remote disconnected (reason = DONE)
+2023-04-06 21:47:31,712 - INFO - [Connect-RMK] - Stream #4: closing (state = Disconnected)...
+2023-04-06 21:47:31,939 - WARNING - [Connect-RMK] - Unknown voter present
+2023-04-06 21:47:32,175 - INFO - [Connect-RMK] - Connected to rendezvous point RMK
+2023-04-06 21:47:32,176 - INFO - [Connect-RMK] - Waiting for peer to open stream
+2023-04-06 21:47:32,275 - INFO - [Connect-RMK] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-04-06 21:47:32,275 - INFO - [Connect-RMK] - Stream opened successfully
+2023-04-06 21:47:32,276 - INFO - [Connect-RMK] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P1\x94ua.'
+2023-04-06 21:47:32,475 - INFO - [RECEIVER] - Added neighbour P3
+2023-04-06 21:47:45,573 - WARNING - [RECEIVER] - Routing loop from P3 to P4: P3-P1-P2-P1
+2023-04-06 21:48:19,430 - INFO - [RecvLoop_78.47.1] - On destroy: circuit #80000001
+2023-04-06 21:48:19,430 - INFO - [RecvLoop_78.47.1] - Destroy circuit #80000001
+2023-04-06 21:48:34,542 - WARNING - [Connect-RMK] - Got SENDME
+2023-04-06 21:48:36,348 - INFO - [RecvLoop_185.129] - On destroy: circuit #80000003
+2023-04-06 21:48:36,348 - INFO - [RecvLoop_185.129] - Destroy circuit #80000003
+2023-04-06 21:49:37,736 - WARNING - [Connect-RMK] - Got SENDME
+2023-04-06 21:49:38,669 - WARNING - [Connect-RMK] - Got SENDME
+2023-04-06 21:50:45,701 - WARNING - [Connect-RMK] - Got SENDME
+2023-04-06 21:51:52,770 - WARNING - [Connect-RMK] - Got SENDME
+2023-04-06 21:51:52,879 - WARNING - [Connect-RMK] - Got SENDME
+2023-04-06 21:52:52,900 - ERROR - [Connect-RMK] - Got DESTROY
+2023-04-06 21:53:12,631 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-06 21:53:12,699 - INFO - [Thread-4] - Adding P3 to list of inactive
+2023-04-06 21:53:12,699 - INFO - [Thread-4] - DEAD ROUTES DETECTED: P3
+2023-04-06 21:53:12,699 - INFO - [Thread-4] - Removing P3 from neighbours
+2023-04-06 21:53:12,712 - INFO - [Thread-4] - Removed circuit for P3
+2023-04-06 21:53:12,713 - INFO - [Thread-4] - updateGraphOnly: [['P1', 'P2', 624, 'sklep'], ['P2', 'P4', 490, 'LupusreginaBeta'], ['P1', 'P3', 302, 'RMK'], ['P3', 'P4', 324, 'Vulnerar']] , {'P3'}
+2023-04-06 21:53:12,899 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-06 21:53:12,911 - INFO - [MainThread] - ['ESTABLISH', 'mypirelay', b'b7c18e17be6be605146a']
+2023-04-06 21:53:12,911 - INFO - [MainThread] - Got ESTABLISH to relay mypirelay:b'b7c18e17be6be605146a' via staysafeandgoodluck
+2023-04-06 21:53:12,913 - INFO - [Establish-mypirelay] - Establishing RP to mypirelay
+2023-04-06 21:53:12,930 - INFO - [Establish-mypirelay] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-06 21:53:13,115 - INFO - [Establish-mypirelay] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-06 21:53:13,118 - INFO - [Establish-mypirelay] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13)... (None)
+2023-04-06 21:53:13,173 - INFO - [Establish-mypirelay] - Creating new circuit #80000004 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13) router...
+2023-04-06 21:53:13,193 - INFO - [Establish-mypirelay] - Building -1 hops circuit...
+2023-04-06 21:53:13,193 - INFO - [Establish-mypirelay] - Extending the circuit #80000004 with 37.133.187.77:9001 (mypirelay; Tor 0.4.7.13)...
+2023-04-06 21:53:13,195 - INFO - [Establish-mypirelay] - Getting descriptor for 37.133.187.77:9001 (mypirelay; Tor 0.4.7.13)...
+2023-04-06 21:53:13,199 - INFO - [Establish-mypirelay] - Connecting to guard node 23.154.177.18:443 (UnredactedBasil; Tor 0.4.7.13)... (Internal dir client)
+2023-04-06 21:53:13,263 - INFO - [Establish-mypirelay] - Creating new circuit #80000005 with 23.154.177.18:443 (UnredactedBasil; Tor 0.4.7.13) router...
+2023-04-06 21:53:13,281 - INFO - [Establish-mypirelay] - Building 0 hops circuit...
+2023-04-06 21:53:13,281 - INFO - [Establish-mypirelay] - Stream #5: creating attached to #80000005 circuit...
+2023-04-06 21:53:13,282 - INFO - [Establish-mypirelay] - Stream #5: connecting to hsdir
+2023-04-06 21:53:13,295 - INFO - [RecvLoop_23.154.] - Stream #5: connected (remote ip '')
+2023-04-06 21:53:13,516 - INFO - [RecvLoop_23.154.] - Stream #5: remote disconnected (reason = DONE)
+2023-04-06 21:53:13,517 - INFO - [Establish-mypirelay] - Stream #5: closing (state = Disconnected)...
+2023-04-06 21:53:13,518 - INFO - [Establish-mypirelay] - Got descriptor
+2023-04-06 21:53:13,726 - INFO - [Thread-4] - GRAPH: [['P1', 'P2', 624, 'sklep'], ['P2', 'P4', 490, 'LupusreginaBeta'], ['P3', 'P4', 909, 'Vulnerar']]
+2023-04-06 21:53:13,726 - INFO - [Thread-4] - ROUTER: {'RID': 'P1', 'Port': 5001, 'Neighbours': 1, 'Neighbours Data': [{'NID': 'P2', 'Cost': 610, 'Hostname': '127.0.0.1', 'RP': 'sklep', 'FLAG': 0}], 'SN': 15, 'FLAG': 0, 'RP': set()}
+2023-04-06 21:53:13,727 - INFO - [Thread-4] - LSA_DB: {'P2': {'RID': 'P2', 'Port': 5002, 'Neighbours': 2, 'Neighbours Data': [{'NID': 'P1', 'Cost': 624, 'Hostname': '127.0.0.1', 'RP': 'sklep', 'FLAG': 0}, {'NID': 'P4', 'Cost': 490, 'Hostname': '127.0.0.1', 'RP': 'LupusreginaBeta', 'FLAG': 0}], 'SN': 14, 'FLAG': 1, 'RP': set()}, 'P4': {'RID': 'P4', 'Port': 5004, 'Neighbours': 2, 'Neighbours Data': [{'NID': 'P2', 'Cost': 886, 'Hostname': '127.0.0.1', 'RP': 'LupusreginaBeta', 'FLAG': 0}, {'NID': 'P3', 'Cost': 909, 'Hostname': '127.0.0.1', 'RP': 'Vulnerar', 'FLAG': 0}], 'SN': 14, 'FLAG': 1, 'RP': set()}}
+2023-04-06 21:53:13,949 - INFO - [Establish-mypirelay] - <class 'torpy.circuit.TorCircuit'>
+2023-04-06 21:53:14,017 - INFO - [Establish-mypirelay] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-04-06 21:53:14,017 - INFO - [Establish-mypirelay] - Waiting for connections at relay mypirelay for cookie b'b7c18e17be6be605146a' ...
+2023-04-06 21:53:22,921 - INFO - [CONNECTION] - Sending JOIN to P2 for relay mypirelay with cookie b'b7c18e17be6be605146a'
+2023-04-06 21:53:24,786 - INFO - [Establish-mypirelay] - Got REND2 message from mypirelay
+2023-04-06 21:53:24,787 - INFO - [Establish-mypirelay] - Entered circuit context with id 0x80000004
+2023-04-06 21:53:24,787 - INFO - [Establish-mypirelay] - Stream #6: creating attached to #80000004 circuit...
+2023-04-06 21:53:24,788 - INFO - [Establish-mypirelay] - Stream #6: connecting to ('127.0.0.1', 5000)
+2023-04-06 21:53:24,917 - INFO - [RecvLoop_185.181] - Stream #6: connected (remote ip '127.0.0.1')
+2023-04-06 21:53:24,989 - INFO - [Establish-mypirelay] - Sending HELLO to peer
+2023-04-06 21:53:24,989 - INFO - [Establish-mypirelay] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P1\x94ua.'
+2023-04-06 21:53:25,011 - INFO - [RECEIVER] - Added neighbour P2
+2023-04-06 21:54:20,013 - INFO - [RecvLoop_23.154.] - On destroy: circuit #80000005
+2023-04-06 21:54:20,014 - INFO - [RecvLoop_23.154.] - Destroy circuit #80000005
+2023-04-06 21:54:22,982 - INFO - [CONNECTION] - Neighbour connections (1) less than MIN_NEIGHBOUR_CONNECTIONS (2)
+2023-04-06 21:54:22,982 - INFO - [CONNECTION] - Candidate peers: ['P4']
+2023-04-06 21:54:22,982 - INFO - [CONNECTION] - Highest cost peers: [('P3', 1453), ('P4', 600), ('P2', 156), ('P1', 0)]
+2023-04-06 21:54:22,991 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-06 21:54:23,216 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-06 21:54:23,223 - INFO - [MainThread] - ['ESTABLISH', 'ElRelayoReturns', b'2acdd56e0556537a7afa']
+2023-04-06 21:54:23,223 - INFO - [MainThread] - Got ESTABLISH to relay ElRelayoReturns:b'2acdd56e0556537a7afa' via staysafeandgoodluck
+2023-04-06 21:54:23,223 - INFO - [Establish-ElRelayoReturns] - Establishing RP to ElRelayoReturns
+2023-04-06 21:54:23,229 - INFO - [Establish-ElRelayoReturns] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-06 21:54:23,461 - INFO - [Establish-ElRelayoReturns] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-06 21:54:23,463 - INFO - [Establish-ElRelayoReturns] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13)... (None)
+2023-04-06 21:54:23,528 - INFO - [Establish-ElRelayoReturns] - Creating new circuit #80000006 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13) router...
+2023-04-06 21:54:23,547 - INFO - [Establish-ElRelayoReturns] - Building -1 hops circuit...
+2023-04-06 21:54:23,547 - INFO - [Establish-ElRelayoReturns] - Extending the circuit #80000006 with 69.164.205.192:9001 (ElRelayoReturns; Tor 0.4.7.13)...
+2023-04-06 21:54:23,548 - INFO - [Establish-ElRelayoReturns] - Getting descriptor for 69.164.205.192:9001 (ElRelayoReturns; Tor 0.4.7.13)...
+2023-04-06 21:54:23,552 - INFO - [Establish-ElRelayoReturns] - Connecting to guard node 185.204.1.83:9001 (smallting22; Tor 0.4.7.13)... (Internal dir client)
+2023-04-06 21:54:23,651 - INFO - [Establish-ElRelayoReturns] - Creating new circuit #80000007 with 185.204.1.83:9001 (smallting22; Tor 0.4.7.13) router...
+2023-04-06 21:54:23,683 - INFO - [Establish-ElRelayoReturns] - Building 0 hops circuit...
+2023-04-06 21:54:23,683 - INFO - [Establish-ElRelayoReturns] - Stream #7: creating attached to #80000007 circuit...
+2023-04-06 21:54:23,683 - INFO - [Establish-ElRelayoReturns] - Stream #7: connecting to hsdir
+2023-04-06 21:54:23,711 - INFO - [RecvLoop_185.204] - Stream #7: connected (remote ip '')
+2023-04-06 21:54:23,918 - INFO - [RecvLoop_185.204] - Stream #7: remote disconnected (reason = DONE)
+2023-04-06 21:54:23,918 - INFO - [Establish-ElRelayoReturns] - Stream #7: closing (state = Disconnected)...
+2023-04-06 21:54:23,919 - INFO - [Establish-ElRelayoReturns] - Got descriptor
+2023-04-06 21:54:24,029 - ERROR - [Establish-sklep] - recv timeout
+2023-04-06 21:54:24,029 - INFO - [Establish-sklep] - Closing connection Establish-sklep
+2023-04-06 21:54:24,029 - INFO - [Establish-sklep] - Stream #3: closing (state = Connected)...
+2023-04-06 21:54:24,030 - INFO - [Establish-sklep] - Destroy circuit #80000002
+2023-04-06 21:54:24,030 - INFO - [Establish-sklep] - Closing guard connections (None)...
+2023-04-06 21:54:24,830 - INFO - [Establish-ElRelayoReturns] - <class 'torpy.circuit.TorCircuit'>
+2023-04-06 21:54:24,984 - INFO - [Establish-ElRelayoReturns] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-04-06 21:54:24,985 - INFO - [Establish-ElRelayoReturns] - Waiting for connections at relay ElRelayoReturns for cookie b'2acdd56e0556537a7afa' ...
+2023-04-06 21:54:33,235 - INFO - [CONNECTION] - Sending JOIN to P4 at relay ElRelayoReturns
+2023-04-06 21:54:34,704 - INFO - [Establish-ElRelayoReturns] - Got REND2 message from ElRelayoReturns
+2023-04-06 21:54:34,707 - INFO - [Establish-ElRelayoReturns] - Entered circuit context with id 0x80000006
+2023-04-06 21:54:34,707 - INFO - [Establish-ElRelayoReturns] - Stream #8: creating attached to #80000006 circuit...
+2023-04-06 21:54:34,708 - INFO - [Establish-ElRelayoReturns] - Stream #8: connecting to ('127.0.0.1', 5000)
+2023-04-06 21:54:35,004 - INFO - [RecvLoop_185.181] - Stream #8: connected (remote ip '127.0.0.1')
+2023-04-06 21:54:35,113 - INFO - [Establish-ElRelayoReturns] - Sending HELLO to peer
+2023-04-06 21:54:35,114 - INFO - [Establish-ElRelayoReturns] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P1\x94ua.'
+2023-04-06 21:54:35,115 - INFO - [RECEIVER] - Added neighbour P4
+2023-04-06 21:55:23,438 - INFO - [RecvLoop_185.204] - On destroy: circuit #80000007
+2023-04-06 21:55:23,439 - INFO - [RecvLoop_185.204] - Destroy circuit #80000007
+2023-04-06 21:56:18,597 - INFO - [RecvLoop_185.181] - On destroy: circuit #80000006
+2023-04-06 21:56:18,597 - INFO - [RecvLoop_185.181] - Destroy circuit #80000006
+2023-04-06 21:56:18,597 - INFO - [RecvLoop_185.181] - Stream #8: closing (state = Connected)...
+2023-04-06 21:56:21,939 - INFO - [RecvLoop_185.181] - On destroy: circuit #80000004
+2023-04-06 21:56:21,940 - INFO - [RecvLoop_185.181] - Destroy circuit #80000004
+2023-04-06 21:56:21,940 - INFO - [RecvLoop_185.181] - Stream #6: closing (state = Connected)...

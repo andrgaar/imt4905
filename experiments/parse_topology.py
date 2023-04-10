@@ -30,6 +30,8 @@ def main():
         x = list()
         y = list()
 
+        print("Timestamp;Peer;Neighbour;Path;Cost")
+
         for line in f:
             timestamp, peer, data = line.strip().split(';')
             
@@ -61,25 +63,23 @@ def main():
             equal_pct = convergence(G, peer)
            
             # output 
-            fout.write("{0};{1};{2}\n".format(dt_event, dt_offset, equal_pct))
+            fout.write("{0};{1};{2};{3}\n".format(dt_event, dt_offset, equal_pct, json.dumps(rp_nodes)))
+            try:
+                #pathlen = nx.shortest_path_length(G, peer, weight='weight')
+                for n in nx.nodes(G):
+                    if n == peer:
+                        continue
+                    paths = nx.all_simple_paths(G, peer, n) 
+                    for p in paths:
+                        a = [str(dt_event), peer, n, '-'.join(p), str(nx.path_weight(G, p, weight='weight'))]
+                        print( ';'.join(a))
+            except Exception as e:
+                #print(e) 
+                pass
+
 
         fout.close()
 
-    # plot data
-    csv = pd.read_csv(csvfile, sep=";")
-    #print(csv)
-
-    csv.plot(x = "Offset", y = "Convergence", kind="line", color = 'k', figsize=(10, 5), legend=False, #title="Convergence",
-            xlabel = "Time (s)", ylabel = "Convergence (%)")
-    plt.show()
-
-    #sns.relplot(
-    #    data=csv, kind="line",
-    #    x="Offset", y="Convergence", 
-    #    #col="align", hue="choice", size="coherence", style="choice",
-    #    facet_kws=dict(sharex=False),
-    #)
-    #plt.show()
     
 
 def convergence(G, peer):

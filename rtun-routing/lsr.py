@@ -920,6 +920,8 @@ class ConnectionThread(Thread):
         self.name = name
         self.conn_queue = conn_queue
         self.rcv_queue = rcv_queue
+        self.max_latency = 300
+        self.min_alive = 60
 
     def run(self):
         self.connections()
@@ -934,36 +936,30 @@ class ConnectionThread(Thread):
             # check if we have enough connections
             #len_n = len(global_router['Neighbours Data'])
             if global_router['Neighbours'] >= MIN_NEIGHBOUR_CONNECTIONS:
-            #    # find oldest connection to kill
-                oldest = 0
-                kill_tid = None
-                threads_tmp = rnd.threads
-                for tid, thd in threads_tmp.items():
-                    # select only establisher thread
-                    if type(thd).__name__ != 'RendezvousEstablish':
+                join_peer = None
+                # find oldest connection to kill
+                neighbours = set()
+                for n in global_router['Neighbours Data']:
+                    neighbours.add(n['NID'])
+                
+                peers_sorted = sorted(path_cost.items(), key=lambda x:x[1], reverse=True)
+                logger.info(f"Highest cost peers: {peers_sorted}")
+                for p in peers_sorted:
+                    logger.info(f"Latency for {p[0]} is {p[1]} - max {self.max_latency}")
+                    if p[1] < self.max_latency:
                         continue
-                    if not thd.start_time:
-                        continue
-                    if thd.start_time > oldest:
-                        kill_tid = tid
-                        oldest = thd.start_time
-                if not kill_tid: # no threads found
-                    continue
-
-                oldest_age = round(time.time() - oldest)
-                logger.debug(f"Age of oldest thread is {oldest_age} seconds (MAX {MAX_CONNECTION_TIME})")
-                if oldest_age > MAX_CONNECTION_TIME:
-                    # find the peer id
-                    join_peer = None
-                    for c in circuit_info.values():
-                        if c['Thread ID'] == kill_tid:
-                            join_peer = c['NID']
-                    if not join_peer:
-                        continue
+                    if p[0] in neighbours:
+                        tid = circuit_info[p[0]]['Thread ID']
+                        if type(rnd.threads[tid]).__name__ == 'RendezvousEstablish':
+                            if rnd.threads[tid].start_time and rnd.threads[tid].start_time > self.min_alive:
+                                join_peer = p[0]
+                                break
+                if join_peer:
+                    logger.info(f"Peer {join_peer} selected for circuit switch")
                     # find a new RP to join
                     rp_relay, rp_cookie = get_rendezvous_relay()
                     self.conn_queue.put_nowait(["ESTABLISH", rp_relay.nickname, rp_cookie])
-                    time.sleep(10)
+                    time.sleep(5)
                     logger.info(f"Sending JOIN to {join_peer} for relay {rp_relay.nickname} with cookie {rp_cookie}")
                     try:
                         route = lsr.shortest_paths[join_peer].copy()
@@ -974,6 +970,50 @@ class ConnectionThread(Thread):
                     message = [{'Message' : 'JOIN', 'Destination' : join_peer, 'Source' : RID, 'TTL': 5, 
                                 'Route': route, 'Relay' : rp_relay.nickname, 'Cookie' : rp_cookie}]
                     route_message(message)
+
+
+                else:
+                    logger.info(f"No join peer selected for circuit switch")
+
+                #oldest = 0
+                #kill_tid = None
+                #threads_tmp = rnd.threads
+                #for tid, thd in threads_tmp.items():
+                    # select only establisher thread
+                #    if type(thd).__name__ != 'RendezvousEstablish':
+                #        continue
+                #    if not thd.start_time:
+                #        continue
+                #    if thd.start_time > oldest:
+                #        kill_tid = tid
+                #        oldest = thd.start_time
+                #if not kill_tid: # no threads found
+                #    continue
+                #oldest_age = round(time.time() - oldest)
+                #logger.debug(f"Age of oldest thread is {oldest_age} seconds (MAX {MAX_CONNECTION_TIME})")
+
+                #if oldest_age > MAX_CONNECTION_TIME:
+                    # find the peer id
+                #    join_peer = None
+                #    for c in circuit_info.values():
+                #        if c['Thread ID'] == kill_tid:
+                #            join_peer = c['NID']
+                #    if not join_peer:
+                #        continue
+                    # find a new RP to join
+                #    rp_relay, rp_cookie = get_rendezvous_relay()
+                #    self.conn_queue.put_nowait(["ESTABLISH", rp_relay.nickname, rp_cookie])
+                #    time.sleep(10)
+                #    logger.info(f"Sending JOIN to {join_peer} for relay {rp_relay.nickname} with cookie {rp_cookie}")
+                #    try:
+                #        route = lsr.shortest_paths[join_peer].copy()
+                #        route.pop(0)
+                #    except Exception:
+                #        route = ""
+
+                 #   message = [{'Message' : 'JOIN', 'Destination' : join_peer, 'Source' : RID, 'TTL': 5, 
+                 #               'Route': route, 'Relay' : rp_relay.nickname, 'Cookie' : rp_cookie}]
+                 #   route_message(message)
 
                 continue
 
