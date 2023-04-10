@@ -4,7 +4,7 @@
 + export PYTHONPATH=./../../torpy-rtun-fork/
 + PYTHONPATH=./../../torpy-rtun-fork/
 + python3 ./../../rtun-routing/rtun.py -v INFO -g NeelTorRelay2 -f rendezvous.txt -t peer1peer2 -n default -i 7 -d 2
-Exception in thread Establish-jhsfirsttorrelay:
+Exception in thread Establish-ENiGMA:
 Traceback (most recent call last):
   File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
     self.run()
@@ -13,6 +13,72 @@ Traceback (most recent call last):
   File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
     raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
 torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Establish-CalyxInstitute16:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/vboxuser/Git/imt4905/rtun-routing/rendezvous.py", line 86, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Establish-JNode01:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/vboxuser/Git/imt4905/rtun-routing/rendezvous.py", line 86, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Establish-Quintex100:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/vboxuser/Git/imt4905/rtun-routing/rendezvous.py", line 86, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Establish-vexfang4:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/vboxuser/Git/imt4905/rtun-routing/rendezvous.py", line 86, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Establish-Minotaur3:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/vboxuser/Git/imt4905/rtun-routing/rendezvous.py", line 86, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Establish-GracchusNovvs:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/vboxuser/Git/imt4905/rtun-routing/rendezvous.py", line 86, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/peers/peer7/./../../rtun-routing/rtun.py", line 164, in <module>
+    conn = conn_queue.get()
+  File "/usr/lib/python3.9/queue.py", line 171, in get
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vboxuser/Git/imt4905/peers/peer7/./../../rtun-routing/rtun.py", line 183, in <module>
+    print("Graph:")
+KeyboardInterrupt
 Exception ignored in: <module 'threading' from '/usr/lib/python3.9/threading.py'>
 Traceback (most recent call last):
   File "/usr/lib/python3.9/threading.py", line 1428, in _shutdown
