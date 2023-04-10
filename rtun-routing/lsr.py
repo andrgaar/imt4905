@@ -36,7 +36,7 @@ ROUTE_UPDATE_INTERVAL = 15
 PERIODIC_HEART_BEAT = 5
 NODE_FAILURE_INTERVAL = 10
 TIMEOUT = 15
-LATENCY_SAMPLES = 10
+LATENCY_SAMPLES = 30
 PERIODIC_CONN_CHECK = 60
 MIN_NEIGHBOUR_CONNECTIONS = 2
 MAX_CONNECTION_TIME = 300
@@ -920,7 +920,7 @@ class ConnectionThread(Thread):
         self.name = name
         self.conn_queue = conn_queue
         self.rcv_queue = rcv_queue
-        self.max_latency = 300
+        self.max_latency = 500
         self.min_alive = 60
 
     def run(self):
