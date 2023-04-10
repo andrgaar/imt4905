@@ -1,550 +1,554 @@
-2023-04-10 12:08:07,657 - INFO - [MainThread] - Initialized router P2 at port 5002 PID 24760
-2023-04-10 12:08:07,659 - INFO - [MainThread] - Adding a connection to sklep
-2023-04-10 12:08:07,659 - INFO - [Connect-sklep] - Calling connect_to_rendezvous_point
-2023-04-10 12:08:07,659 - INFO - [Connect-sklep] - Connect to rendezvous point sklep
-2023-04-10 12:08:07,661 - INFO - [MainThread] - Adding listener for LupusreginaBeta
-2023-04-10 12:08:07,662 - INFO - [Establish-LupusreginaBeta] - Establishing RP to LupusreginaBeta
-2023-04-10 12:08:07,664 - INFO - [MainThread] - Starting testing thread
-2023-04-10 12:08:07,665 - INFO - [TESTER] - Started tester
-2023-04-10 12:08:07,665 - INFO - [MainThread] - Starting connection thread
-2023-04-10 12:08:07,667 - INFO - [Connect-sklep] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
-2023-04-10 12:08:07,875 - INFO - [MainThread] - Starting log thread
-2023-04-10 12:08:07,883 - INFO - [Connect-sklep] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
-2023-04-10 12:08:07,885 - INFO - [Establish-LupusreginaBeta] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
-2023-04-10 12:08:08,171 - INFO - [Establish-LupusreginaBeta] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
-2023-04-10 12:08:08,173 - INFO - [Establish-LupusreginaBeta] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13)... (None)
-2023-04-10 12:08:08,202 - INFO - [Connect-sklep] - Connected to rendezvous point sklep
-2023-04-10 12:08:08,202 - INFO - [Connect-sklep] - Waiting for peer to open stream
-2023-04-10 12:08:08,232 - INFO - [Establish-LupusreginaBeta] - Creating new circuit #80000001 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13) router...
-2023-04-10 12:08:08,250 - INFO - [Establish-LupusreginaBeta] - Building -1 hops circuit...
-2023-04-10 12:08:08,251 - INFO - [Establish-LupusreginaBeta] - Extending the circuit #80000001 with 213.113.2.72:6881 (LupusreginaBeta; Tor 0.4.7.13)...
-2023-04-10 12:08:08,251 - INFO - [Establish-LupusreginaBeta] - Getting descriptor for 213.113.2.72:6881 (LupusreginaBeta; Tor 0.4.7.13)...
-2023-04-10 12:08:08,256 - INFO - [Establish-LupusreginaBeta] - Connecting to guard node 51.38.127.41:9001 (Hydra72a; Tor 0.4.7.13)... (Internal dir client)
-2023-04-10 12:08:08,266 - INFO - [Connect-sklep] - Received cell: <class 'torpy.cells.CellRelay'>
-2023-04-10 12:08:08,267 - INFO - [Connect-sklep] - Stream opened successfully
-2023-04-10 12:08:08,267 - INFO - [Connect-sklep] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P2\x94ua.'
-2023-04-10 12:08:08,471 - INFO - [RECEIVER] - Added neighbour P1
-2023-04-10 12:08:08,585 - INFO - [Establish-LupusreginaBeta] - Creating new circuit #80000002 with 51.38.127.41:9001 (Hydra72a; Tor 0.4.7.13) router...
-2023-04-10 12:08:08,715 - INFO - [Establish-LupusreginaBeta] - Building 0 hops circuit...
-2023-04-10 12:08:08,715 - INFO - [Establish-LupusreginaBeta] - Stream #1: creating attached to #80000002 circuit...
-2023-04-10 12:08:08,715 - INFO - [Establish-LupusreginaBeta] - Stream #1: connecting to hsdir
-2023-04-10 12:08:08,842 - INFO - [RecvLoop_51.38.1] - Stream #1: connected (remote ip '')
-2023-04-10 12:08:09,358 - INFO - [RecvLoop_51.38.1] - Stream #1: remote disconnected (reason = DONE)
-2023-04-10 12:08:09,359 - INFO - [Establish-LupusreginaBeta] - Stream #1: closing (state = Disconnected)...
-2023-04-10 12:08:09,359 - INFO - [Establish-LupusreginaBeta] - Got descriptor
-2023-04-10 12:08:09,392 - INFO - [Establish-LupusreginaBeta] - <class 'torpy.circuit.TorCircuit'>
-2023-04-10 12:08:09,420 - INFO - [Establish-LupusreginaBeta] - Rendezvous established (CellRelayRendezvousEstablished())
-2023-04-10 12:08:09,420 - INFO - [Establish-LupusreginaBeta] - Waiting for connections at relay LupusreginaBeta for cookie b'eb688e4f52df90278060' ...
-2023-04-10 12:08:15,713 - INFO - [Establish-LupusreginaBeta] - Got REND2 message from LupusreginaBeta
-2023-04-10 12:08:15,713 - INFO - [Establish-LupusreginaBeta] - Entered circuit context with id 0x80000001
-2023-04-10 12:08:15,713 - INFO - [Establish-LupusreginaBeta] - Stream #2: creating attached to #80000001 circuit...
-2023-04-10 12:08:15,714 - INFO - [Establish-LupusreginaBeta] - Stream #2: connecting to ('127.0.0.1', 5000)
-2023-04-10 12:08:15,761 - INFO - [RecvLoop_185.181] - Stream #2: connected (remote ip '127.0.0.1')
-2023-04-10 12:08:15,916 - INFO - [Establish-LupusreginaBeta] - Sending HELLO to peer
-2023-04-10 12:08:15,916 - INFO - [Establish-LupusreginaBeta] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P2\x94ua.'
-2023-04-10 12:08:15,917 - INFO - [RECEIVER] - Added neighbour P4
-2023-04-10 12:08:22,175 - WARNING - [RECEIVER] - TTL reached from path to P1 from P3
-2023-04-10 12:08:55,139 - WARNING - [RECEIVER] - Routing loop from P4 to P5: P4-P2-P1-P2
-2023-04-10 12:09:07,870 - INFO - [CONNECTION] - Neighbour connections (2) less than MIN_NEIGHBOUR_CONNECTIONS (4)
-2023-04-10 12:09:07,871 - INFO - [CONNECTION] - Candidate peers: ['P3', 'P5', 'P6']
-2023-04-10 12:09:07,871 - INFO - [CONNECTION] - Highest cost peers: [('P6', 300), ('P3', 200), ('P5', 200), ('P1', 100), ('P4', 100), ('P2', 0)]
-2023-04-10 12:09:07,876 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
-2023-04-10 12:09:08,073 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
-2023-04-10 12:09:08,084 - INFO - [MainThread] - ['ESTABLISH', 'Soiernspitze', b'f30d4a16ddb50aa2eaee']
-2023-04-10 12:09:08,084 - INFO - [MainThread] - Got ESTABLISH to relay Soiernspitze:b'f30d4a16ddb50aa2eaee' via staysafeandgoodluck
-2023-04-10 12:09:08,086 - INFO - [Establish-Soiernspitze] - Establishing RP to Soiernspitze
-2023-04-10 12:09:08,090 - INFO - [Establish-Soiernspitze] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
-2023-04-10 12:09:08,300 - INFO - [Establish-Soiernspitze] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
-2023-04-10 12:09:08,303 - INFO - [Establish-Soiernspitze] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13)... (None)
-2023-04-10 12:09:08,307 - WARNING - [Connect-sklep] - Got SENDME
-2023-04-10 12:09:08,367 - INFO - [Establish-Soiernspitze] - Creating new circuit #80000003 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13) router...
-2023-04-10 12:09:08,382 - INFO - [Establish-Soiernspitze] - Building -1 hops circuit...
-2023-04-10 12:09:08,382 - INFO - [Establish-Soiernspitze] - Extending the circuit #80000003 with 94.140.112.195:443 (Soiernspitze; Tor 0.4.5.10)...
-2023-04-10 12:09:08,382 - INFO - [Establish-Soiernspitze] - Getting descriptor for 94.140.112.195:443 (Soiernspitze; Tor 0.4.5.10)...
-2023-04-10 12:09:08,387 - INFO - [Establish-Soiernspitze] - Connecting to guard node 83.212.100.100:443 (okeanosrelay3; Tor 0.4.7.13)... (Internal dir client)
-2023-04-10 12:09:08,789 - INFO - [Establish-Soiernspitze] - Creating new circuit #80000004 with 83.212.100.100:443 (okeanosrelay3; Tor 0.4.7.13) router...
-2023-04-10 12:09:08,873 - INFO - [Establish-Soiernspitze] - Building 0 hops circuit...
-2023-04-10 12:09:08,873 - INFO - [Establish-Soiernspitze] - Stream #3: creating attached to #80000004 circuit...
-2023-04-10 12:09:08,873 - INFO - [Establish-Soiernspitze] - Stream #3: connecting to hsdir
-2023-04-10 12:09:08,962 - INFO - [RecvLoop_83.212.] - Stream #3: connected (remote ip '')
-2023-04-10 12:09:09,163 - INFO - [RecvLoop_83.212.] - Stream #3: remote disconnected (reason = DONE)
-2023-04-10 12:09:09,163 - INFO - [Establish-Soiernspitze] - Stream #3: closing (state = Disconnected)...
-2023-04-10 12:09:09,163 - INFO - [Establish-Soiernspitze] - Got descriptor
-2023-04-10 12:09:09,223 - INFO - [Establish-Soiernspitze] - <class 'torpy.circuit.TorCircuit'>
-2023-04-10 12:09:09,312 - INFO - [Establish-Soiernspitze] - Rendezvous established (CellRelayRendezvousEstablished())
-2023-04-10 12:09:09,312 - INFO - [Establish-Soiernspitze] - Waiting for connections at relay Soiernspitze for cookie b'f30d4a16ddb50aa2eaee' ...
-2023-04-10 12:09:12,793 - INFO - [RecvLoop_51.38.1] - On destroy: circuit #80000002
-2023-04-10 12:09:12,793 - INFO - [RecvLoop_51.38.1] - Destroy circuit #80000002
-2023-04-10 12:09:18,094 - INFO - [CONNECTION] - Sending JOIN to P6 at relay Soiernspitze
-2023-04-10 12:09:22,612 - INFO - [Establish-Soiernspitze] - Got REND2 message from Soiernspitze
-2023-04-10 12:09:22,613 - INFO - [Establish-Soiernspitze] - Entered circuit context with id 0x80000003
-2023-04-10 12:09:22,613 - INFO - [Establish-Soiernspitze] - Stream #4: creating attached to #80000003 circuit...
-2023-04-10 12:09:22,613 - INFO - [Establish-Soiernspitze] - Stream #4: connecting to ('127.0.0.1', 5000)
-2023-04-10 12:09:22,700 - INFO - [RecvLoop_185.181] - Stream #4: connected (remote ip '127.0.0.1')
-2023-04-10 12:09:22,813 - INFO - [Establish-Soiernspitze] - Sending HELLO to peer
-2023-04-10 12:09:22,814 - INFO - [Establish-Soiernspitze] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P2\x94ua.'
-2023-04-10 12:09:22,814 - INFO - [RECEIVER] - Added neighbour P6
-2023-04-10 12:09:57,341 - WARNING - [Connect-sklep] - Got SENDME
-2023-04-10 12:09:57,392 - WARNING - [Connect-sklep] - Got SENDME
-2023-04-10 12:10:13,400 - INFO - [RecvLoop_83.212.] - On destroy: circuit #80000004
-2023-04-10 12:10:13,400 - INFO - [RecvLoop_83.212.] - Destroy circuit #80000004
-2023-04-10 12:10:18,154 - INFO - [CONNECTION] - Neighbour connections (3) less than MIN_NEIGHBOUR_CONNECTIONS (4)
-2023-04-10 12:10:18,154 - INFO - [CONNECTION] - Candidate peers: ['P8', 'P3', 'P5', 'P7']
-2023-04-10 12:10:18,154 - INFO - [CONNECTION] - Highest cost peers: [('P7', 300), ('P3', 200), ('P5', 200), ('P8', 200), ('P1', 100), ('P4', 100), ('P6', 100), ('P2', 0)]
-2023-04-10 12:10:18,170 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
-2023-04-10 12:10:18,426 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
-2023-04-10 12:10:18,434 - INFO - [MainThread] - ['ESTABLISH', 'poussin', b'275b0365a1b78cdcbd79']
-2023-04-10 12:10:18,434 - INFO - [MainThread] - Got ESTABLISH to relay poussin:b'275b0365a1b78cdcbd79' via staysafeandgoodluck
-2023-04-10 12:10:18,434 - INFO - [Establish-poussin] - Establishing RP to poussin
-2023-04-10 12:10:18,438 - INFO - [Establish-poussin] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
-2023-04-10 12:10:18,636 - INFO - [Establish-poussin] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
-2023-04-10 12:10:18,639 - INFO - [Establish-poussin] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13)... (None)
-2023-04-10 12:10:18,697 - INFO - [Establish-poussin] - Creating new circuit #80000005 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13) router...
-2023-04-10 12:10:18,714 - INFO - [Establish-poussin] - Building -1 hops circuit...
-2023-04-10 12:10:18,714 - INFO - [Establish-poussin] - Extending the circuit #80000005 with 213.169.148.151:443 (poussin; Tor 0.4.7.13)...
-2023-04-10 12:10:18,714 - INFO - [Establish-poussin] - Getting descriptor for 213.169.148.151:443 (poussin; Tor 0.4.7.13)...
-2023-04-10 12:10:18,721 - INFO - [Establish-poussin] - Connecting to guard node 23.154.177.7:443 (UnredactedRadack; Tor 0.4.7.13)... (Internal dir client)
-2023-04-10 12:10:19,010 - INFO - [Establish-poussin] - Creating new circuit #80000006 with 23.154.177.7:443 (UnredactedRadack; Tor 0.4.7.13) router...
-2023-04-10 12:10:19,086 - INFO - [Establish-poussin] - Building 0 hops circuit...
-2023-04-10 12:10:19,086 - INFO - [Establish-poussin] - Stream #5: creating attached to #80000006 circuit...
-2023-04-10 12:10:19,086 - INFO - [Establish-poussin] - Stream #5: connecting to hsdir
-2023-04-10 12:10:19,157 - INFO - [RecvLoop_23.154.] - Stream #5: connected (remote ip '')
-2023-04-10 12:10:19,429 - INFO - [RecvLoop_23.154.] - Stream #5: remote disconnected (reason = DONE)
-2023-04-10 12:10:19,429 - INFO - [Establish-poussin] - Stream #5: closing (state = Disconnected)...
-2023-04-10 12:10:19,429 - INFO - [Establish-poussin] - Got descriptor
-2023-04-10 12:10:19,907 - INFO - [Establish-poussin] - <class 'torpy.circuit.TorCircuit'>
-2023-04-10 12:10:20,004 - INFO - [Establish-poussin] - Rendezvous established (CellRelayRendezvousEstablished())
-2023-04-10 12:10:20,004 - INFO - [Establish-poussin] - Waiting for connections at relay poussin for cookie b'275b0365a1b78cdcbd79' ...
-2023-04-10 12:10:28,444 - INFO - [CONNECTION] - Sending JOIN to P7 at relay poussin
-2023-04-10 12:10:38,935 - WARNING - [Connect-sklep] - Got SENDME
-2023-04-10 12:11:26,892 - WARNING - [Connect-sklep] - Got SENDME
-2023-04-10 12:11:26,913 - WARNING - [Connect-sklep] - Got SENDME
-2023-04-10 12:11:27,739 - INFO - [RecvLoop_23.154.] - On destroy: circuit #80000006
-2023-04-10 12:11:27,739 - INFO - [RecvLoop_23.154.] - Destroy circuit #80000006
-2023-04-10 12:11:28,505 - INFO - [CONNECTION] - Neighbour connections (3) less than MIN_NEIGHBOUR_CONNECTIONS (4)
-2023-04-10 12:11:28,506 - INFO - [CONNECTION] - Candidate peers: ['P8', 'P3', 'P5', 'P7']
-2023-04-10 12:11:28,506 - INFO - [CONNECTION] - Highest cost peers: [('P3', 628), ('P1', 365), ('P4', 300), ('P7', 300), ('P5', 200), ('P8', 200), ('P6', 100), ('P2', 0)]
-2023-04-10 12:11:28,513 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
-2023-04-10 12:11:28,719 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
-2023-04-10 12:11:28,726 - INFO - [MainThread] - ['ESTABLISH', 'TomatoSauce', b'4219eb940b59b5c1de6d']
-2023-04-10 12:11:28,726 - INFO - [MainThread] - Got ESTABLISH to relay TomatoSauce:b'4219eb940b59b5c1de6d' via staysafeandgoodluck
-2023-04-10 12:11:28,726 - INFO - [Establish-TomatoSauce] - Establishing RP to TomatoSauce
-2023-04-10 12:11:28,730 - INFO - [Establish-TomatoSauce] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
-2023-04-10 12:11:29,008 - INFO - [Establish-TomatoSauce] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
-2023-04-10 12:11:29,010 - INFO - [Establish-TomatoSauce] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13)... (None)
-2023-04-10 12:11:29,070 - INFO - [Establish-TomatoSauce] - Creating new circuit #80000007 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13) router...
-2023-04-10 12:11:29,083 - INFO - [Establish-TomatoSauce] - Building -1 hops circuit...
-2023-04-10 12:11:29,083 - INFO - [Establish-TomatoSauce] - Extending the circuit #80000007 with 104.217.251.86:443 (TomatoSauce; Tor 0.4.7.8)...
-2023-04-10 12:11:29,083 - INFO - [Establish-TomatoSauce] - Getting descriptor for 104.217.251.86:443 (TomatoSauce; Tor 0.4.7.8)...
-2023-04-10 12:11:29,088 - INFO - [Establish-TomatoSauce] - Connecting to guard node 199.249.230.165:443 (Quintex76; Tor 0.4.7.13)... (Internal dir client)
-2023-04-10 12:11:29,684 - INFO - [Establish-TomatoSauce] - Creating new circuit #80000008 with 199.249.230.165:443 (Quintex76; Tor 0.4.7.13) router...
-2023-04-10 12:11:29,832 - INFO - [Establish-TomatoSauce] - Building 0 hops circuit...
-2023-04-10 12:11:29,832 - INFO - [Establish-TomatoSauce] - Stream #6: creating attached to #80000008 circuit...
-2023-04-10 12:11:29,832 - INFO - [Establish-TomatoSauce] - Stream #6: connecting to hsdir
-2023-04-10 12:11:29,980 - INFO - [RecvLoop_199.249] - Stream #6: connected (remote ip '')
-2023-04-10 12:11:30,183 - INFO - [RecvLoop_199.249] - Stream #6: remote disconnected (reason = DONE)
-2023-04-10 12:11:30,183 - INFO - [Establish-TomatoSauce] - Stream #6: closing (state = Disconnected)...
-2023-04-10 12:11:30,184 - INFO - [Establish-TomatoSauce] - Got descriptor
-2023-04-10 12:11:30,346 - INFO - [Establish-TomatoSauce] - <class 'torpy.circuit.TorCircuit'>
-2023-04-10 12:11:30,506 - INFO - [Establish-TomatoSauce] - Rendezvous established (CellRelayRendezvousEstablished())
-2023-04-10 12:11:30,507 - INFO - [Establish-TomatoSauce] - Waiting for connections at relay TomatoSauce for cookie b'4219eb940b59b5c1de6d' ...
-2023-04-10 12:11:38,736 - INFO - [CONNECTION] - Sending JOIN to P3 at relay TomatoSauce
-2023-04-10 12:11:41,945 - INFO - [RECEIVER] - Added relay ratap from P3 to JOIN queue
-2023-04-10 12:11:41,946 - INFO - [MainThread] - ['JOIN', 'ratap', b'e8505ac0bf551441cbd8']
-2023-04-10 12:11:41,946 - INFO - [MainThread] - Got JOIN to relay ratap, waiting 10 sec to connect
-2023-04-10 12:11:41,946 - INFO - [Connect-ratap] - Calling connect_to_rendezvous_point
-2023-04-10 12:11:41,946 - INFO - [Connect-ratap] - Connect to rendezvous point ratap
-2023-04-10 12:11:41,952 - INFO - [Connect-ratap] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
-2023-04-10 12:11:42,177 - INFO - [Connect-ratap] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
-2023-04-10 12:11:45,663 - ERROR - [Connect-ratap] - [Errno 113] No route to host
-2023-04-10 12:11:45,663 - WARNING - [Connect-ratap] - Could not connect to rendezvous point ratap: [Errno 113] No route to host, 11 attempts left...
-2023-04-10 12:11:50,668 - INFO - [Connect-ratap] - Calling connect_to_rendezvous_point
-2023-04-10 12:11:50,668 - INFO - [Connect-ratap] - Connect to rendezvous point ratap
-2023-04-10 12:11:50,683 - INFO - [Connect-ratap] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
-2023-04-10 12:11:50,892 - INFO - [Connect-ratap] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
-2023-04-10 12:11:51,804 - INFO - [Connect-ratap] - Connected to rendezvous point ratap
-2023-04-10 12:11:51,804 - INFO - [Connect-ratap] - Waiting for peer to open stream
-2023-04-10 12:11:52,172 - INFO - [Connect-ratap] - Received cell: <class 'torpy.cells.CellRelay'>
-2023-04-10 12:11:52,172 - INFO - [Connect-ratap] - Stream opened successfully
-2023-04-10 12:11:52,172 - INFO - [Connect-ratap] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P2\x94ua.'
-2023-04-10 12:11:55,589 - INFO - [RECEIVER] - Added neighbour P3
-2023-04-10 12:12:08,415 - WARNING - [Connect-sklep] - Got SENDME
-2023-04-10 12:12:33,077 - INFO - [RecvLoop_199.249] - On destroy: circuit #80000008
-2023-04-10 12:12:33,077 - INFO - [RecvLoop_199.249] - Destroy circuit #80000008
-2023-04-10 12:12:35,353 - WARNING - [Connect-ratap] - Got SENDME
-2023-04-10 12:12:38,797 - INFO - [CONNECTION] - Highest cost peers: [('P5', 1669), ('P7', 1506), ('P6', 1021), ('P8', 528), ('P4', 428), ('P1', 365), ('P3', 100), ('P2', 0)]
-2023-04-10 12:12:38,797 - INFO - [CONNECTION] - Latency for P5 is 1669 - max 500
-2023-04-10 12:12:38,797 - INFO - [CONNECTION] - Latency for P7 is 1506 - max 500
-2023-04-10 12:12:38,797 - INFO - [CONNECTION] - Latency for P6 is 1021 - max 500
-2023-04-10 12:12:38,797 - INFO - [CONNECTION] - Peer P6 selected for circuit switch
-2023-04-10 12:12:38,800 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
-2023-04-10 12:12:38,998 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
-2023-04-10 12:12:39,005 - INFO - [MainThread] - ['ESTABLISH', 'bobtail', b'8be263fef0073e8d7ec1']
-2023-04-10 12:12:39,005 - INFO - [MainThread] - Got ESTABLISH to relay bobtail:b'8be263fef0073e8d7ec1' via staysafeandgoodluck
-2023-04-10 12:12:39,006 - INFO - [Establish-bobtail] - Establishing RP to bobtail
-2023-04-10 12:12:39,018 - INFO - [Establish-bobtail] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
-2023-04-10 12:12:39,336 - INFO - [Establish-bobtail] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
-2023-04-10 12:12:39,339 - INFO - [Establish-bobtail] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13)... (None)
-2023-04-10 12:12:39,390 - INFO - [Establish-bobtail] - Creating new circuit #80000009 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13) router...
-2023-04-10 12:12:39,402 - INFO - [Establish-bobtail] - Building -1 hops circuit...
-2023-04-10 12:12:39,402 - INFO - [Establish-bobtail] - Extending the circuit #80000009 with 190.2.133.227:9001 (bobtail; Tor 0.4.7.13)...
-2023-04-10 12:12:39,402 - INFO - [Establish-bobtail] - Getting descriptor for 190.2.133.227:9001 (bobtail; Tor 0.4.7.13)...
-2023-04-10 12:12:39,407 - INFO - [Establish-bobtail] - Connecting to guard node 45.61.185.230:443 (LookMaNoHands2; Tor 0.4.7.13)... (Internal dir client)
-2023-04-10 12:12:39,988 - INFO - [Establish-bobtail] - Creating new circuit #8000000a with 45.61.185.230:443 (LookMaNoHands2; Tor 0.4.7.13) router...
-2023-04-10 12:12:40,138 - INFO - [Establish-bobtail] - Building 0 hops circuit...
-2023-04-10 12:12:40,138 - INFO - [Establish-bobtail] - Stream #7: creating attached to #8000000a circuit...
-2023-04-10 12:12:40,138 - INFO - [Establish-bobtail] - Stream #7: connecting to hsdir
-2023-04-10 12:12:40,282 - INFO - [RecvLoop_45.61.1] - Stream #7: connected (remote ip '')
-2023-04-10 12:12:40,634 - INFO - [RecvLoop_45.61.1] - Stream #7: remote disconnected (reason = DONE)
-2023-04-10 12:12:40,634 - INFO - [Establish-bobtail] - Stream #7: closing (state = Disconnected)...
-2023-04-10 12:12:40,634 - INFO - [Establish-bobtail] - Got descriptor
-2023-04-10 12:12:40,673 - INFO - [Establish-bobtail] - <class 'torpy.circuit.TorCircuit'>
-2023-04-10 12:12:40,707 - INFO - [Establish-bobtail] - Rendezvous established (CellRelayRendezvousEstablished())
-2023-04-10 12:12:40,707 - INFO - [Establish-bobtail] - Waiting for connections at relay bobtail for cookie b'8be263fef0073e8d7ec1' ...
-2023-04-10 12:12:44,013 - INFO - [CONNECTION] - Sending JOIN to P6 for relay bobtail with cookie b'8be263fef0073e8d7ec1'
-2023-04-10 12:12:46,926 - INFO - [Establish-bobtail] - Got REND2 message from bobtail
-2023-04-10 12:12:46,926 - INFO - [Establish-bobtail] - Entered circuit context with id 0x80000009
-2023-04-10 12:12:46,926 - INFO - [Establish-bobtail] - Stream #8: creating attached to #80000009 circuit...
-2023-04-10 12:12:46,926 - INFO - [Establish-bobtail] - Stream #8: connecting to ('127.0.0.1', 5000)
-2023-04-10 12:12:47,002 - INFO - [RecvLoop_185.181] - Stream #8: connected (remote ip '127.0.0.1')
-2023-04-10 12:12:47,127 - INFO - [Establish-bobtail] - Sending HELLO to peer
-2023-04-10 12:12:47,127 - INFO - [Establish-bobtail] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P2\x94ua.'
-2023-04-10 12:12:47,637 - INFO - [RECEIVER] - Added neighbour P6
-2023-04-10 12:12:55,811 - WARNING - [Connect-sklep] - Got SENDME
-2023-04-10 12:12:57,814 - WARNING - [Connect-sklep] - Got SENDME
-2023-04-10 12:13:16,271 - WARNING - [Connect-ratap] - Got SENDME
-2023-04-10 12:13:16,450 - WARNING - [Connect-ratap] - Got SENDME
-2023-04-10 12:13:38,070 - WARNING - [Connect-sklep] - Got SENDME
-2023-04-10 12:13:44,074 - INFO - [CONNECTION] - Highest cost peers: [('P1', 967), ('P4', 428), ('P5', 200), ('P8', 200), ('P7', 200), ('P3', 100), ('P6', 100), ('P2', 0)]
-2023-04-10 12:13:44,074 - INFO - [CONNECTION] - Latency for P1 is 967 - max 500
-2023-04-10 12:13:44,074 - INFO - [CONNECTION] - Latency for P4 is 428 - max 500
-2023-04-10 12:13:44,074 - INFO - [CONNECTION] - Latency for P5 is 200 - max 500
-2023-04-10 12:13:44,074 - INFO - [CONNECTION] - Latency for P8 is 200 - max 500
-2023-04-10 12:13:44,074 - INFO - [CONNECTION] - Latency for P7 is 200 - max 500
-2023-04-10 12:13:44,075 - INFO - [CONNECTION] - Latency for P3 is 100 - max 500
-2023-04-10 12:13:44,075 - INFO - [CONNECTION] - Latency for P6 is 100 - max 500
-2023-04-10 12:13:44,075 - INFO - [CONNECTION] - Latency for P2 is 0 - max 500
-2023-04-10 12:13:44,075 - INFO - [CONNECTION] - No join peer selected for circuit switch
-2023-04-10 12:13:45,386 - INFO - [RecvLoop_45.61.1] - On destroy: circuit #8000000a
-2023-04-10 12:13:45,386 - INFO - [RecvLoop_45.61.1] - Destroy circuit #8000000a
-2023-04-10 12:13:48,882 - WARNING - [Connect-ratap] - Got SENDME
-2023-04-10 12:13:52,687 - ERROR - [Establish-Soiernspitze] - recv timeout
-2023-04-10 12:13:52,687 - INFO - [Establish-Soiernspitze] - Closing connection Establish-Soiernspitze
-2023-04-10 12:13:52,688 - INFO - [Establish-Soiernspitze] - Stream #4: closing (state = Connected)...
-2023-04-10 12:13:52,688 - INFO - [Establish-Soiernspitze] - Destroy circuit #80000003
-2023-04-10 12:13:52,689 - INFO - [Establish-Soiernspitze] - Closing guard connections (None)...
-2023-04-10 12:14:20,653 - WARNING - [Connect-ratap] - Got SENDME
-2023-04-10 12:14:20,830 - WARNING - [Connect-ratap] - Got SENDME
-2023-04-10 12:14:44,135 - INFO - [CONNECTION] - Highest cost peers: [('P1', 967), ('P4', 300), ('P5', 200), ('P8', 200), ('P7', 200), ('P3', 100), ('P6', 100), ('P2', 0)]
-2023-04-10 12:14:44,135 - INFO - [CONNECTION] - Latency for P1 is 967 - max 500
-2023-04-10 12:14:44,135 - INFO - [CONNECTION] - Latency for P4 is 300 - max 500
-2023-04-10 12:14:44,135 - INFO - [CONNECTION] - Latency for P5 is 200 - max 500
-2023-04-10 12:14:44,135 - INFO - [CONNECTION] - Latency for P8 is 200 - max 500
-2023-04-10 12:14:44,135 - INFO - [CONNECTION] - Latency for P7 is 200 - max 500
-2023-04-10 12:14:44,135 - INFO - [CONNECTION] - Latency for P3 is 100 - max 500
-2023-04-10 12:14:44,135 - INFO - [CONNECTION] - Latency for P6 is 100 - max 500
-2023-04-10 12:14:44,135 - INFO - [CONNECTION] - Latency for P2 is 0 - max 500
-2023-04-10 12:14:44,136 - INFO - [CONNECTION] - No join peer selected for circuit switch
-2023-04-10 12:14:51,881 - WARNING - [Connect-sklep] - Got SENDME
-2023-04-10 12:14:51,902 - WARNING - [Connect-sklep] - Got SENDME
-2023-04-10 12:14:52,192 - WARNING - [Connect-ratap] - Got SENDME
-2023-04-10 12:15:19,082 - WARNING - [RecvLoop_185.181] - CellPadding has some unnecessary data: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
-2023-04-10 12:15:19,086 - ERROR - [RecvLoop_185.181] - CellPadding() was received but no handlers for it
-2023-04-10 12:15:27,127 - WARNING - [Connect-ratap] - Got SENDME
-2023-04-10 12:15:28,669 - WARNING - [Connect-ratap] - Got SENDME
-2023-04-10 12:15:43,753 - WARNING - [Connect-sklep] - Got SENDME
-2023-04-10 12:15:44,194 - INFO - [CONNECTION] - Highest cost peers: [('P3', 1845), ('P7', 1648), ('P1', 978), ('P4', 300), ('P5', 200), ('P8', 200), ('P6', 100), ('P2', 0)]
-2023-04-10 12:15:44,194 - INFO - [CONNECTION] - Latency for P3 is 1845 - max 500
-2023-04-10 12:15:44,194 - INFO - [CONNECTION] - Latency for P7 is 1648 - max 500
-2023-04-10 12:15:44,194 - INFO - [CONNECTION] - Latency for P1 is 978 - max 500
-2023-04-10 12:15:44,194 - INFO - [CONNECTION] - Latency for P4 is 300 - max 500
-2023-04-10 12:15:44,194 - INFO - [CONNECTION] - Latency for P5 is 200 - max 500
-2023-04-10 12:15:44,194 - INFO - [CONNECTION] - Latency for P8 is 200 - max 500
-2023-04-10 12:15:44,194 - INFO - [CONNECTION] - Latency for P6 is 100 - max 500
-2023-04-10 12:15:44,195 - INFO - [CONNECTION] - Latency for P2 is 0 - max 500
-2023-04-10 12:15:44,195 - INFO - [CONNECTION] - No join peer selected for circuit switch
-2023-04-10 12:16:17,080 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P2', 1115, 'sklep'], ['P1', 'P3', 1068, 'snowball'], ['P3', 'P4', 1213, 'Vulnerar'], ['P2', 'P3', 1942, 'ratap'], ['P2', 'P4', 1763, 'LupusreginaBeta'], ['P4', 'P5', 1970, 'shhovh'], ['P4', 'P8', 100, 'jstark1809nl001'], ['P5', 'P6', 100, 'TheYOSH'], ['P5', 'P7', 1550, 'RMK'], ['P5', 'P8', 1792, 'frankovich'], ['P6', 'P8', 100, 'deild'], ['P2', 'P6', 1786, 'bobtail'], ['P6', 'P7', 2028, 'bauruine'], ['P7', 'P8', 1448, 'Vulnerar']] , {'P6'}
-2023-04-10 12:16:21,723 - WARNING - [Connect-ratap] - Got SENDME
-2023-04-10 12:16:25,824 - WARNING - [Connect-sklep] - Got SENDME
-2023-04-10 12:16:25,877 - WARNING - [Connect-sklep] - Got SENDME
-2023-04-10 12:16:30,037 - WARNING - [RecvLoop_185.181] - CellPadding has some unnecessary data: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
-2023-04-10 12:16:30,038 - ERROR - [RecvLoop_185.181] - CellPadding() was received but no handlers for it
-2023-04-10 12:16:33,655 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P2', 1115, 'sklep'], ['P1', 'P3', 1068, 'snowball'], ['P3', 'P4', 1213, 'Vulnerar'], ['P2', 'P3', 1942, 'ratap'], ['P2', 'P4', 1763, 'LupusreginaBeta'], ['P4', 'P5', 1970, 'shhovh'], ['P4', 'P8', 100, 'jstark1809nl001'], ['P5', 'P7', 1550, 'RMK'], ['P5', 'P8', 1792, 'frankovich'], ['P7', 'P8', 1448, 'Vulnerar'], ['P6', 'P7', 1695, 'bauruine'], ['P6', 'P8', 100, 'deild']] , {'P5'}
-2023-04-10 12:16:44,520 - INFO - [CONNECTION] - Highest cost peers: [('P7', 3311), ('P5', 3059), ('P3', 1942), ('P8', 1863), ('P6', 1786), ('P4', 1763), ('P1', 1115), ('P2', 0)]
-2023-04-10 12:16:44,522 - INFO - [CONNECTION] - Latency for P7 is 3311 - max 500
-2023-04-10 12:16:44,522 - INFO - [CONNECTION] - Latency for P5 is 3059 - max 500
-2023-04-10 12:16:44,523 - INFO - [CONNECTION] - Latency for P3 is 1942 - max 500
-2023-04-10 12:16:44,523 - INFO - [CONNECTION] - Latency for P8 is 1863 - max 500
-2023-04-10 12:16:44,523 - INFO - [CONNECTION] - Latency for P6 is 1786 - max 500
-2023-04-10 12:16:44,529 - INFO - [CONNECTION] - Peer P6 selected for circuit switch
-2023-04-10 12:16:44,546 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
-2023-04-10 12:16:45,526 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
-2023-04-10 12:16:45,544 - INFO - [MainThread] - ['ESTABLISH', 'Doedelkiste76', b'19417fe28c032a5affd1']
-2023-04-10 12:16:45,544 - INFO - [MainThread] - Got ESTABLISH to relay Doedelkiste76:b'19417fe28c032a5affd1' via staysafeandgoodluck
-2023-04-10 12:16:45,548 - INFO - [Establish-Doedelkiste76] - Establishing RP to Doedelkiste76
-2023-04-10 12:16:45,632 - INFO - [Establish-Doedelkiste76] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
-2023-04-10 12:16:46,908 - INFO - [Establish-Doedelkiste76] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
-2023-04-10 12:16:46,915 - INFO - [Establish-Doedelkiste76] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13)... (None)
-2023-04-10 12:16:47,020 - INFO - [Establish-Doedelkiste76] - Creating new circuit #8000000b with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13) router...
-2023-04-10 12:16:47,056 - INFO - [Establish-Doedelkiste76] - Building -1 hops circuit...
-2023-04-10 12:16:47,056 - INFO - [Establish-Doedelkiste76] - Extending the circuit #8000000b with 193.108.118.218:993 (Doedelkiste76; Tor 0.4.7.13)...
-2023-04-10 12:16:47,057 - INFO - [Establish-Doedelkiste76] - Getting descriptor for 193.108.118.218:993 (Doedelkiste76; Tor 0.4.7.13)...
-2023-04-10 12:16:47,072 - INFO - [Establish-Doedelkiste76] - Connecting to guard node 107.189.13.184:9000 (Quetzalcoatl; Tor 0.4.7.13)... (Internal dir client)
-2023-04-10 12:16:47,247 - INFO - [Establish-Doedelkiste76] - Creating new circuit #8000000c with 107.189.13.184:9000 (Quetzalcoatl; Tor 0.4.7.13) router...
-2023-04-10 12:16:47,293 - INFO - [Establish-Doedelkiste76] - Building 0 hops circuit...
-2023-04-10 12:16:47,293 - INFO - [Establish-Doedelkiste76] - Stream #9: creating attached to #8000000c circuit...
-2023-04-10 12:16:47,293 - INFO - [Establish-Doedelkiste76] - Stream #9: connecting to hsdir
-2023-04-10 12:16:47,341 - INFO - [RecvLoop_107.189] - Stream #9: connected (remote ip '')
-2023-04-10 12:16:47,595 - INFO - [RecvLoop_107.189] - Stream #9: remote disconnected (reason = DONE)
-2023-04-10 12:16:47,596 - INFO - [Establish-Doedelkiste76] - Stream #9: closing (state = Disconnected)...
-2023-04-10 12:16:47,596 - INFO - [Establish-Doedelkiste76] - Got descriptor
-2023-04-10 12:16:47,675 - INFO - [Establish-Doedelkiste76] - <class 'torpy.circuit.TorCircuit'>
-2023-04-10 12:16:47,735 - INFO - [Establish-Doedelkiste76] - Rendezvous established (CellRelayRendezvousEstablished())
-2023-04-10 12:16:47,735 - INFO - [Establish-Doedelkiste76] - Waiting for connections at relay Doedelkiste76 for cookie b'19417fe28c032a5affd1' ...
-2023-04-10 12:16:50,554 - INFO - [CONNECTION] - Sending JOIN to P6 for relay Doedelkiste76 with cookie b'19417fe28c032a5affd1'
-2023-04-10 12:16:52,290 - WARNING - [RECEIVER] - TTL reached from path to P5 from P8
-2023-04-10 12:16:53,094 - INFO - [Establish-Doedelkiste76] - Got REND2 message from Doedelkiste76
-2023-04-10 12:16:53,101 - INFO - [Establish-Doedelkiste76] - Entered circuit context with id 0x8000000b
-2023-04-10 12:16:53,101 - INFO - [Establish-Doedelkiste76] - Stream #10: creating attached to #8000000b circuit...
-2023-04-10 12:16:53,101 - INFO - [Establish-Doedelkiste76] - Stream #10: connecting to ('127.0.0.1', 5000)
-2023-04-10 12:16:53,207 - INFO - [RecvLoop_185.181] - Stream #10: connected (remote ip '127.0.0.1')
-2023-04-10 12:16:53,311 - INFO - [Establish-Doedelkiste76] - Sending HELLO to peer
-2023-04-10 12:16:53,311 - INFO - [Establish-Doedelkiste76] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P2\x94ua.'
-2023-04-10 12:16:53,315 - INFO - [RECEIVER] - Added neighbour P6
-2023-04-10 12:17:03,816 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P2', 1115, 'sklep'], ['P1', 'P3', 1068, 'snowball'], ['P3', 'P4', 1213, 'Vulnerar'], ['P2', 'P3', 1942, 'ratap'], ['P2', 'P4', 1763, 'LupusreginaBeta'], ['P4', 'P5', 100, 'uknc'], ['P4', 'P8', 1952, 'jstark1809nl001'], ['P5', 'P7', 1828, 'RMK'], ['P7', 'P8', 1448, 'Vulnerar'], ['P6', 'P7', 1695, 'bauruine'], ['P6', 'P8', 100, 'deild'], ['P5', 'P8', 1196, 'frankovich'], ['P2', 'P6', 100, 'Doedelkiste76']] , {'P5'}
-2023-04-10 12:17:17,369 - WARNING - [Connect-sklep] - Got SENDME
-2023-04-10 12:17:22,605 - WARNING - [Connect-ratap] - Got SENDME
-2023-04-10 12:17:22,784 - WARNING - [Connect-ratap] - Got SENDME
-2023-04-10 12:17:23,821 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P2', 1115, 'sklep'], ['P1', 'P3', 1068, 'snowball'], ['P3', 'P4', 1213, 'Vulnerar'], ['P2', 'P3', 1942, 'ratap'], ['P2', 'P4', 1763, 'LupusreginaBeta'], ['P4', 'P5', 100, 'uknc'], ['P4', 'P8', 1952, 'jstark1809nl001'], ['P5', 'P7', 1828, 'RMK'], ['P7', 'P8', 1448, 'Vulnerar'], ['P6', 'P7', 1695, 'bauruine'], ['P6', 'P8', 1582, 'deild'], ['P2', 'P6', 100, 'Doedelkiste76'], ['P5', 'P8', 1792, 'frankovich']] , {'P8'}
-2023-04-10 12:17:27,903 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P2', 1115, 'sklep'], ['P1', 'P3', 1068, 'snowball'], ['P3', 'P4', 1213, 'Vulnerar'], ['P2', 'P3', 1942, 'ratap'], ['P2', 'P4', 1763, 'LupusreginaBeta'], ['P4', 'P5', 100, 'uknc'], ['P4', 'P8', 1952, 'jstark1809nl001'], ['P5', 'P7', 1828, 'RMK'], ['P7', 'P8', 1448, 'Vulnerar'], ['P6', 'P7', 1695, 'bauruine'], ['P6', 'P8', 100, 'deild'], ['P2', 'P6', 100, 'Doedelkiste76']] , {'P5'}
-2023-04-10 12:17:47,477 - INFO - [RecvLoop_107.189] - On destroy: circuit #8000000c
-2023-04-10 12:17:47,477 - INFO - [RecvLoop_107.189] - Destroy circuit #8000000c
-2023-04-10 12:17:48,851 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P2', 1115, 'sklep'], ['P1', 'P3', 1068, 'snowball'], ['P3', 'P4', 1213, 'Vulnerar'], ['P2', 'P3', 1942, 'ratap'], ['P2', 'P4', 963, 'LupusreginaBeta'], ['P4', 'P8', 1952, 'jstark1809nl001'], ['P5', 'P7', 1912, 'RMK'], ['P7', 'P8', 1448, 'Vulnerar'], ['P6', 'P7', 1695, 'bauruine'], ['P1', 'P7', 100, 'l25'], ['P3', 'P7', 100, 'punki'], ['P6', 'P8', 1860, 'deild'], ['P2', 'P6', 100, 'Doedelkiste76']] , {'P5'}
-2023-04-10 12:17:50,624 - INFO - [CONNECTION] - Highest cost peers: [('P5', 3127), ('P8', 1960), ('P3', 1315), ('P7', 1215), ('P1', 1115), ('P4', 963), ('P6', 100), ('P2', 0)]
-2023-04-10 12:17:50,624 - INFO - [CONNECTION] - Latency for P5 is 3127 - max 500
-2023-04-10 12:17:50,624 - INFO - [CONNECTION] - Latency for P8 is 1960 - max 500
-2023-04-10 12:17:50,625 - INFO - [CONNECTION] - Latency for P3 is 1315 - max 500
-2023-04-10 12:17:50,625 - INFO - [CONNECTION] - Latency for P7 is 1215 - max 500
-2023-04-10 12:17:50,625 - INFO - [CONNECTION] - Latency for P1 is 1115 - max 500
-2023-04-10 12:17:50,625 - INFO - [CONNECTION] - Latency for P4 is 963 - max 500
-2023-04-10 12:17:50,625 - INFO - [CONNECTION] - Peer P4 selected for circuit switch
-2023-04-10 12:17:50,634 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
-2023-04-10 12:17:52,235 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
-2023-04-10 12:17:52,269 - INFO - [MainThread] - ['ESTABLISH', 'ForPrivacyNET', b'd63d4a28fdb8664e662f']
-2023-04-10 12:17:52,269 - INFO - [MainThread] - Got ESTABLISH to relay ForPrivacyNET:b'd63d4a28fdb8664e662f' via staysafeandgoodluck
-2023-04-10 12:17:52,270 - INFO - [Establish-ForPrivacyNET] - Establishing RP to ForPrivacyNET
-2023-04-10 12:17:52,287 - INFO - [Establish-ForPrivacyNET] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
-2023-04-10 12:17:52,290 - ERROR - [Establish-bobtail] - recv timeout
-2023-04-10 12:17:52,299 - INFO - [Establish-bobtail] - Closing connection Establish-bobtail
-2023-04-10 12:17:52,299 - INFO - [Establish-bobtail] - Stream #8: closing (state = Connected)...
-2023-04-10 12:17:52,310 - INFO - [Establish-bobtail] - Destroy circuit #80000009
-2023-04-10 12:17:52,317 - INFO - [Establish-bobtail] - Closing guard connections (None)...
-2023-04-10 12:17:53,723 - INFO - [Establish-ForPrivacyNET] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
-2023-04-10 12:17:53,740 - INFO - [Establish-ForPrivacyNET] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13)... (None)
-2023-04-10 12:17:53,857 - INFO - [Establish-ForPrivacyNET] - Creating new circuit #8000000d with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13) router...
-2023-04-10 12:17:53,905 - INFO - [Establish-ForPrivacyNET] - Building -1 hops circuit...
-2023-04-10 12:17:53,907 - INFO - [Establish-ForPrivacyNET] - Extending the circuit #8000000d with 185.220.101.33:10133 (ForPrivacyNET; Tor 0.4.7.13)...
-2023-04-10 12:17:53,917 - INFO - [Establish-ForPrivacyNET] - Getting descriptor for 185.220.101.33:10133 (ForPrivacyNET; Tor 0.4.7.13)...
-2023-04-10 12:17:53,942 - INFO - [Establish-ForPrivacyNET] - Connecting to guard node 188.138.33.149:443 (bonjour2; Tor 0.4.7.13)... (Internal dir client)
-2023-04-10 12:17:54,142 - INFO - [Establish-ForPrivacyNET] - Creating new circuit #8000000e with 188.138.33.149:443 (bonjour2; Tor 0.4.7.13) router...
-2023-04-10 12:17:54,198 - INFO - [Establish-ForPrivacyNET] - Building 0 hops circuit...
-2023-04-10 12:17:54,199 - INFO - [Establish-ForPrivacyNET] - Stream #11: creating attached to #8000000e circuit...
-2023-04-10 12:17:54,199 - INFO - [Establish-ForPrivacyNET] - Stream #11: connecting to hsdir
-2023-04-10 12:17:54,258 - INFO - [RecvLoop_188.138] - Stream #11: connected (remote ip '')
-2023-04-10 12:17:54,508 - INFO - [RecvLoop_188.138] - Stream #11: remote disconnected (reason = DONE)
-2023-04-10 12:17:54,510 - INFO - [Establish-ForPrivacyNET] - Stream #11: closing (state = Disconnected)...
-2023-04-10 12:17:54,510 - INFO - [Establish-ForPrivacyNET] - Got descriptor
-2023-04-10 12:17:54,598 - INFO - [Establish-ForPrivacyNET] - <class 'torpy.circuit.TorCircuit'>
-2023-04-10 12:17:54,661 - INFO - [Establish-ForPrivacyNET] - Rendezvous established (CellRelayRendezvousEstablished())
-2023-04-10 12:17:54,661 - INFO - [Establish-ForPrivacyNET] - Waiting for connections at relay ForPrivacyNET for cookie b'd63d4a28fdb8664e662f' ...
-2023-04-10 12:17:57,011 - WARNING - [Connect-sklep] - Got SENDME
-2023-04-10 12:17:57,036 - WARNING - [Connect-sklep] - Got SENDME
-2023-04-10 12:17:57,274 - INFO - [CONNECTION] - Sending JOIN to P4 for relay ForPrivacyNET with cookie b'd63d4a28fdb8664e662f'
-2023-04-10 12:18:03,766 - WARNING - [RECEIVER] - TTL reached from path to P5 from P4
-2023-04-10 12:18:24,347 - WARNING - [Connect-ratap] - Got SENDME
-2023-04-10 12:18:41,015 - WARNING - [Connect-sklep] - Got SENDME
-2023-04-10 12:18:44,639 - INFO - [RECEIVER] - Added relay artikel10buc32 from P3 to JOIN queue
-2023-04-10 12:18:44,643 - INFO - [MainThread] - ['JOIN', 'artikel10buc32', b'8d77142dde8d219b6430']
-2023-04-10 12:18:44,643 - INFO - [MainThread] - Got JOIN to relay artikel10buc32, waiting 10 sec to connect
-2023-04-10 12:18:44,644 - INFO - [Connect-artikel10buc32] - Calling connect_to_rendezvous_point
-2023-04-10 12:18:44,644 - INFO - [Connect-artikel10buc32] - Connect to rendezvous point artikel10buc32
-2023-04-10 12:18:44,672 - INFO - [Connect-artikel10buc32] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
-2023-04-10 12:18:46,724 - INFO - [Connect-artikel10buc32] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
-2023-04-10 12:18:47,122 - INFO - [Connect-artikel10buc32] - Connected to rendezvous point artikel10buc32
-2023-04-10 12:18:47,128 - INFO - [Connect-artikel10buc32] - Waiting for peer to open stream
-2023-04-10 12:18:47,263 - INFO - [Connect-artikel10buc32] - Received cell: <class 'torpy.cells.CellRelay'>
-2023-04-10 12:18:47,274 - INFO - [Connect-artikel10buc32] - Stream opened successfully
-2023-04-10 12:18:47,274 - INFO - [Connect-artikel10buc32] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P2\x94ua.'
-2023-04-10 12:18:47,462 - INFO - [RECEIVER] - Added neighbour P3
-2023-04-10 12:18:55,546 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P2', 1344, 'sklep'], ['P1', 'P3', 1190, 'snowball'], ['P1', 'P7', 100, 'l25'], ['P1', 'P8', 100, 'linuxenbyJP'], ['P3', 'P4', 1213, 'Vulnerar'], ['P2', 'P3', 1292, 'ratap'], ['P3', 'P7', 100, 'punki'], ['P2', 'P4', 963, 'LupusreginaBeta'], ['P4', 'P8', 1952, 'jstark1809nl001'], ['P7', 'P8', 2007, 'Vulnerar'], ['P6', 'P7', 1695, 'bauruine'], ['P6', 'P8', 1860, 'deild'], ['P2', 'P6', 100, 'Doedelkiste76']] , {'P7'}
-2023-04-10 12:18:57,339 - INFO - [CONNECTION] - Highest cost peers: [('P5', 3127), ('P8', 1444), ('P7', 1392), ('P1', 1344), ('P3', 1292), ('P4', 963), ('P6', 100), ('P2', 0)]
-2023-04-10 12:18:57,340 - INFO - [CONNECTION] - Latency for P5 is 3127 - max 500
-2023-04-10 12:18:57,340 - INFO - [CONNECTION] - Latency for P8 is 1444 - max 500
-2023-04-10 12:18:57,341 - INFO - [CONNECTION] - Latency for P7 is 1392 - max 500
-2023-04-10 12:18:57,341 - INFO - [CONNECTION] - Latency for P1 is 1344 - max 500
-2023-04-10 12:18:57,341 - INFO - [CONNECTION] - Latency for P3 is 1292 - max 500
-2023-04-10 12:18:57,341 - INFO - [CONNECTION] - Latency for P4 is 963 - max 500
-2023-04-10 12:18:57,341 - INFO - [CONNECTION] - Peer P4 selected for circuit switch
-2023-04-10 12:18:57,389 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
-2023-04-10 12:18:59,056 - INFO - [RecvLoop_188.138] - On destroy: circuit #8000000e
-2023-04-10 12:18:59,056 - INFO - [RecvLoop_188.138] - Destroy circuit #8000000e
-2023-04-10 12:19:00,752 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
-2023-04-10 12:19:00,792 - INFO - [MainThread] - ['ESTABLISH', 'ZeroCalcare', b'8d77142dde8d219b6430']
-2023-04-10 12:19:00,793 - INFO - [MainThread] - Got ESTABLISH to relay ZeroCalcare:b'8d77142dde8d219b6430' via staysafeandgoodluck
-2023-04-10 12:19:00,793 - INFO - [Establish-ZeroCalcare] - Establishing RP to ZeroCalcare
-2023-04-10 12:19:00,847 - INFO - [Establish-ZeroCalcare] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
-2023-04-10 12:19:02,425 - INFO - [Establish-ZeroCalcare] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
-2023-04-10 12:19:02,435 - INFO - [Establish-ZeroCalcare] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13)... (None)
-2023-04-10 12:19:02,559 - INFO - [Establish-ZeroCalcare] - Creating new circuit #8000000f with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13) router...
-2023-04-10 12:19:02,605 - INFO - [Establish-ZeroCalcare] - Building -1 hops circuit...
-2023-04-10 12:19:02,605 - INFO - [Establish-ZeroCalcare] - Extending the circuit #8000000f with 5.2.70.140:443 (ZeroCalcare; Tor 0.4.7.13)...
-2023-04-10 12:19:02,621 - INFO - [Establish-ZeroCalcare] - Getting descriptor for 5.2.70.140:443 (ZeroCalcare; Tor 0.4.7.13)...
-2023-04-10 12:19:02,649 - INFO - [Establish-ZeroCalcare] - Connecting to guard node 5.9.137.167:9010 (justhelpingout; Tor 0.4.7.10)... (Internal dir client)
-2023-04-10 12:19:02,885 - INFO - [Establish-ZeroCalcare] - Creating new circuit #80000010 with 5.9.137.167:9010 (justhelpingout; Tor 0.4.7.10) router...
-2023-04-10 12:19:02,959 - INFO - [Establish-ZeroCalcare] - Building 0 hops circuit...
-2023-04-10 12:19:02,959 - INFO - [Establish-ZeroCalcare] - Stream #12: creating attached to #80000010 circuit...
-2023-04-10 12:19:02,959 - INFO - [Establish-ZeroCalcare] - Stream #12: connecting to hsdir
-2023-04-10 12:19:03,015 - INFO - [RecvLoop_5.9.137] - Stream #12: connected (remote ip '')
-2023-04-10 12:19:03,270 - INFO - [RecvLoop_5.9.137] - Stream #12: remote disconnected (reason = DONE)
-2023-04-10 12:19:03,271 - INFO - [Establish-ZeroCalcare] - Stream #12: closing (state = Disconnected)...
-2023-04-10 12:19:03,271 - INFO - [Establish-ZeroCalcare] - Got descriptor
-2023-04-10 12:19:03,526 - INFO - [Establish-ZeroCalcare] - <class 'torpy.circuit.TorCircuit'>
-2023-04-10 12:19:03,592 - INFO - [Establish-ZeroCalcare] - Rendezvous established (CellRelayRendezvousEstablished())
-2023-04-10 12:19:03,592 - INFO - [Establish-ZeroCalcare] - Waiting for connections at relay ZeroCalcare for cookie b'8d77142dde8d219b6430' ...
-2023-04-10 12:19:05,794 - INFO - [CONNECTION] - Sending JOIN to P4 for relay ZeroCalcare with cookie b'8d77142dde8d219b6430'
-2023-04-10 12:19:20,220 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P2', 1344, 'sklep'], ['P1', 'P3', 1190, 'snowball'], ['P1', 'P8', 100, 'linuxenbyJP'], ['P3', 'P4', 1127, 'Vulnerar'], ['P2', 'P3', 100, 'artikel10buc32'], ['P3', 'P7', 100, 'punki'], ['P2', 'P4', 963, 'LupusreginaBeta'], ['P4', 'P8', 1952, 'jstark1809nl001'], ['P1', 'P4', 100, 'artikel10ber44'], ['P6', 'P8', 1860, 'deild'], ['P2', 'P6', 100, 'Doedelkiste76'], ['P6', 'P7', 1831, 'bauruine'], ['P7', 'P8', 1319, 'Vulnerar'], ['P1', 'P7', 100, 'l25']] , {'P1'}
-2023-04-10 12:19:27,437 - WARNING - [Connect-artikel10buc32] - Got SENDME
-2023-04-10 12:19:32,153 - WARNING - [Connect-sklep] - Got SENDME
-2023-04-10 12:19:32,176 - WARNING - [Connect-sklep] - Got SENDME
-2023-04-10 12:19:36,617 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P3', 942, 'snowball'], ['P3', 'P4', 1127, 'Vulnerar'], ['P2', 'P3', 100, 'artikel10buc32'], ['P3', 'P7', 100, 'punki'], ['P2', 'P4', 963, 'LupusreginaBeta'], ['P4', 'P8', 1952, 'jstark1809nl001'], ['P1', 'P4', 100, 'artikel10ber44'], ['P6', 'P8', 1860, 'deild'], ['P2', 'P6', 100, 'Doedelkiste76'], ['P6', 'P7', 1831, 'bauruine'], ['P7', 'P8', 1319, 'Vulnerar'], ['P1', 'P8', 100, 'linuxenbyJP'], ['P1', 'P2', 1344, 'sklep']] , {'P8'}
-2023-04-10 12:19:44,672 - ERROR - [Connect-ratap] - Got RELAY_END
-2023-04-10 12:19:56,367 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P3', 942, 'snowball'], ['P3', 'P4', 1127, 'Vulnerar'], ['P2', 'P3', 100, 'artikel10buc32'], ['P3', 'P7', 100, 'punki'], ['P2', 'P4', 963, 'LupusreginaBeta'], ['P4', 'P8', 1952, 'jstark1809nl001'], ['P1', 'P4', 100, 'artikel10ber44'], ['P6', 'P8', 1860, 'deild'], ['P2', 'P6', 100, 'Doedelkiste76'], ['P6', 'P7', 1831, 'bauruine'], ['P7', 'P8', 2007, 'Vulnerar'], ['P1', 'P2', 1344, 'sklep']] , {'P1'}
-2023-04-10 12:19:59,653 - WARNING - [Connect-artikel10buc32] - Got SENDME
-2023-04-10 12:19:59,712 - WARNING - [Connect-artikel10buc32] - Got SENDME
-2023-04-10 12:20:04,932 - INFO - [RecvLoop_5.9.137] - On destroy: circuit #80000010
-2023-04-10 12:20:04,938 - INFO - [RecvLoop_5.9.137] - Destroy circuit #80000010
-2023-04-10 12:20:05,862 - INFO - [CONNECTION] - Highest cost peers: [('P5', 3127), ('P8', 2207), ('P6', 1721), ('P1', 1042), ('P4', 963), ('P7', 200), ('P3', 100), ('P2', 0)]
-2023-04-10 12:20:05,862 - INFO - [CONNECTION] - Latency for P5 is 3127 - max 500
-2023-04-10 12:20:05,862 - INFO - [CONNECTION] - Latency for P8 is 2207 - max 500
-2023-04-10 12:20:05,862 - INFO - [CONNECTION] - Latency for P6 is 1721 - max 500
-2023-04-10 12:20:05,862 - INFO - [CONNECTION] - Peer P6 selected for circuit switch
-2023-04-10 12:20:05,923 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
-2023-04-10 12:20:06,587 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P3', 942, 'snowball'], ['P3', 'P4', 1127, 'Vulnerar'], ['P2', 'P3', 100, 'artikel10buc32'], ['P3', 'P7', 100, 'punki'], ['P2', 'P4', 963, 'LupusreginaBeta'], ['P4', 'P8', 1690, 'jstark1809nl001'], ['P1', 'P4', 100, 'artikel10ber44'], ['P6', 'P8', 1860, 'deild'], ['P2', 'P6', 1721, 'Doedelkiste76'], ['P6', 'P7', 1831, 'bauruine'], ['P7', 'P8', 2007, 'Vulnerar']] , {'P7'}
-2023-04-10 12:20:08,167 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
-2023-04-10 12:20:08,286 - INFO - [MainThread] - ['ESTABLISH', 'kaeferbohne', b'a04a30026d8eb6cd9c01']
-2023-04-10 12:20:08,287 - INFO - [MainThread] - Got ESTABLISH to relay kaeferbohne:b'a04a30026d8eb6cd9c01' via staysafeandgoodluck
-2023-04-10 12:20:08,296 - INFO - [Establish-kaeferbohne] - Establishing RP to kaeferbohne
-2023-04-10 12:20:08,402 - INFO - [Establish-kaeferbohne] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
-2023-04-10 12:20:09,825 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P3', 100, 'relayon0144'], ['P3', 'P4', 1127, 'Vulnerar'], ['P2', 'P3', 100, 'artikel10buc32'], ['P2', 'P4', 963, 'LupusreginaBeta'], ['P4', 'P8', 1690, 'jstark1809nl001'], ['P1', 'P4', 100, 'artikel10ber44'], ['P6', 'P8', 1860, 'deild'], ['P2', 'P6', 1721, 'Doedelkiste76'], ['P6', 'P7', 1831, 'bauruine'], ['P7', 'P8', 1319, 'Vulnerar']] , {'P7'}
-2023-04-10 12:20:10,974 - INFO - [Establish-kaeferbohne] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
-2023-04-10 12:20:10,990 - INFO - [Establish-kaeferbohne] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13)... (None)
-2023-04-10 12:20:11,089 - INFO - [Establish-kaeferbohne] - Creating new circuit #80000011 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13) router...
-2023-04-10 12:20:11,134 - INFO - [Establish-kaeferbohne] - Building -1 hops circuit...
-2023-04-10 12:20:11,134 - INFO - [Establish-kaeferbohne] - Extending the circuit #80000011 with 109.70.100.13:443 (kaeferbohne; Tor 0.4.8.0-alpha-dev)...
-2023-04-10 12:20:11,139 - INFO - [Establish-kaeferbohne] - Getting descriptor for 109.70.100.13:443 (kaeferbohne; Tor 0.4.8.0-alpha-dev)...
-2023-04-10 12:20:11,160 - INFO - [Establish-kaeferbohne] - Connecting to guard node 185.220.101.197:443 (ForPrivacyNET; Tor 0.4.7.13)... (Internal dir client)
-2023-04-10 12:20:11,514 - INFO - [Establish-kaeferbohne] - Creating new circuit #80000012 with 185.220.101.197:443 (ForPrivacyNET; Tor 0.4.7.13) router...
-2023-04-10 12:20:11,606 - INFO - [Establish-kaeferbohne] - Building 0 hops circuit...
-2023-04-10 12:20:11,606 - INFO - [Establish-kaeferbohne] - Stream #13: creating attached to #80000012 circuit...
-2023-04-10 12:20:11,606 - INFO - [Establish-kaeferbohne] - Stream #13: connecting to hsdir
-2023-04-10 12:20:11,663 - INFO - [RecvLoop_185.220] - Stream #13: connected (remote ip '')
-2023-04-10 12:20:11,968 - INFO - [RecvLoop_185.220] - Stream #13: remote disconnected (reason = DONE)
-2023-04-10 12:20:11,972 - INFO - [Establish-kaeferbohne] - Stream #13: closing (state = Disconnected)...
-2023-04-10 12:20:11,972 - INFO - [Establish-kaeferbohne] - Got descriptor
-2023-04-10 12:20:12,275 - INFO - [Establish-kaeferbohne] - <class 'torpy.circuit.TorCircuit'>
-2023-04-10 12:20:12,335 - INFO - [Establish-kaeferbohne] - Rendezvous established (CellRelayRendezvousEstablished())
-2023-04-10 12:20:12,336 - INFO - [Establish-kaeferbohne] - Waiting for connections at relay kaeferbohne for cookie b'a04a30026d8eb6cd9c01' ...
-2023-04-10 12:20:13,293 - INFO - [CONNECTION] - Sending JOIN to P6 for relay kaeferbohne with cookie b'a04a30026d8eb6cd9c01'
-2023-04-10 12:20:15,897 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P3', 100, 'relayon0144'], ['P3', 'P4', 1127, 'Vulnerar'], ['P2', 'P3', 100, 'artikel10buc32'], ['P2', 'P4', 963, 'LupusreginaBeta'], ['P4', 'P8', 1690, 'jstark1809nl001'], ['P1', 'P4', 100, 'artikel10ber44'], ['P6', 'P8', 1860, 'deild'], ['P2', 'P6', 1721, 'Doedelkiste76'], ['P7', 'P8', 1319, 'Vulnerar'], ['P1', 'P2', 1344, 'sklep']] , {'P7'}
-2023-04-10 12:20:17,892 - INFO - [Establish-kaeferbohne] - Got REND2 message from kaeferbohne
-2023-04-10 12:20:17,896 - INFO - [Establish-kaeferbohne] - Entered circuit context with id 0x80000011
-2023-04-10 12:20:17,896 - INFO - [Establish-kaeferbohne] - Stream #14: creating attached to #80000011 circuit...
-2023-04-10 12:20:17,896 - INFO - [Establish-kaeferbohne] - Stream #14: connecting to ('127.0.0.1', 5000)
-2023-04-10 12:20:18,184 - INFO - [RecvLoop_185.181] - Stream #14: connected (remote ip '127.0.0.1')
-2023-04-10 12:20:18,308 - INFO - [Establish-kaeferbohne] - Sending HELLO to peer
-2023-04-10 12:20:18,309 - INFO - [Establish-kaeferbohne] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P2\x94ua.'
-2023-04-10 12:20:18,913 - WARNING - [RecvLoop_185.181] - CellPadding has some unnecessary data: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
-2023-04-10 12:20:18,918 - ERROR - [RecvLoop_185.181] - CellPadding() was received but no handlers for it
-2023-04-10 12:20:20,212 - INFO - [RECEIVER] - Added neighbour P6
-2023-04-10 12:20:24,667 - WARNING - [Connect-sklep] - Got SENDME
-2023-04-10 12:20:27,314 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P2', 916, 'sklep'], ['P2', 'P4', 1191, 'LupusreginaBeta'], ['P2', 'P6', 100, 'kaeferbohne'], ['P2', 'P3', 100, 'artikel10buc32']] , {'P8'}
-2023-04-10 12:20:34,616 - WARNING - [Connect-artikel10buc32] - Got SENDME
-2023-04-10 12:20:40,433 - ERROR - [RecvLoop_185.181] - Some handle errors
-Traceback (most recent call last):
-  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
-    self._handler_mgr.handle(cell)
-  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
-    handler(cell)
-  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
-    return func(*args_new, **kwargs)
-  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
-    circuit.handle_relay(cell)
-  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
-    circuit_node, inner_cell = self._decrypt(cell)
-  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
-    return from_node, relay_cell.get_decrypted()
-  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
-    assert self._checked
-AssertionError
-2023-04-10 12:20:42,611 - WARNING - [RECEIVER] - TTL reached from path to P6 from P8
-2023-04-10 12:20:43,116 - ERROR - [RecvLoop_185.181] - Some handle errors
-Traceback (most recent call last):
-  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 224, in _do_recv
-    self._handler_mgr.handle(cell)
-  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 280, in handle
-    handler(cell)
-  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 43, in wrapped
-    return func(*args_new, **kwargs)
-  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 127, in _on_relay
-    circuit.handle_relay(cell)
-  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 456, in handle_relay
-    circuit_node, inner_cell = self._decrypt(cell)
-  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 522, in _decrypt
-    return from_node, relay_cell.get_decrypted()
-  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/cells.py", line 234, in get_decrypted
-    assert self._checked
-AssertionError
-2023-04-10 12:20:43,672 - INFO - [RecvLoop_185.181] - On destroy: circuit #8000000b
-2023-04-10 12:20:43,672 - INFO - [RecvLoop_185.181] - Destroy circuit #8000000b
-2023-04-10 12:20:43,673 - INFO - [RecvLoop_185.181] - Stream #10: closing (state = Connected)...
-2023-04-10 12:20:43,692 - INFO - [RecvLoop_185.181] - On destroy: circuit #80000011
-2023-04-10 12:20:43,692 - INFO - [RecvLoop_185.181] - Destroy circuit #80000011
-2023-04-10 12:20:43,697 - INFO - [RecvLoop_185.181] - Stream #14: closing (state = Connected)...
-2023-04-10 12:20:58,458 - INFO - [Thread-4] - Adding P6 to list of inactive
-2023-04-10 12:20:58,459 - INFO - [Thread-4] - DEAD ROUTES DETECTED: P6
-2023-04-10 12:20:58,459 - INFO - [Thread-4] - Removing P6 from neighbours
-2023-04-10 12:20:58,459 - INFO - [Thread-4] - Removed circuit for P6
-2023-04-10 12:20:58,459 - INFO - [Thread-4] - updateGraphOnly: [['P1', 'P3', 100, 'relayon0144'], ['P3', 'P4', 1127, 'Vulnerar'], ['P2', 'P3', 100, 'artikel10buc32'], ['P2', 'P4', 1371, 'LupusreginaBeta'], ['P4', 'P8', 1690, 'jstark1809nl001'], ['P1', 'P4', 100, 'artikel10ber44'], ['P2', 'P6', 100, 'kaeferbohne'], ['P1', 'P2', 1344, 'sklep'], ['P6', 'P8', 1582, 'deild']] , {'P6'}
-2023-04-10 12:20:58,637 - ERROR - [TESTER] - send_to_stream: Key not found: 'P6'
-2023-04-10 12:20:59,491 - INFO - [Thread-4] - GRAPH: [['P1', 'P3', 100, 'relayon0144'], ['P3', 'P4', 1127, 'Vulnerar'], ['P2', 'P3', 100, 'artikel10buc32'], ['P2', 'P4', 1371, 'LupusreginaBeta'], ['P4', 'P8', 1690, 'jstark1809nl001'], ['P1', 'P4', 100, 'artikel10ber44'], ['P1', 'P2', 1344, 'sklep'], ['P6', 'P8', 1582, 'deild']]
-2023-04-10 12:20:59,491 - INFO - [Thread-4] - ROUTER: {'RID': 'P2', 'Port': 5002, 'Neighbours': 3, 'Neighbours Data': [{'NID': 'P1', 'Cost': 916, 'Hostname': '127.0.0.1', 'RP': 'sklep', 'FLAG': 0}, {'NID': 'P4', 'Cost': 1191, 'Hostname': '127.0.0.1', 'RP': 'LupusreginaBeta', 'FLAG': 0}, {'NID': 'P3', 'Cost': 100, 'Hostname': '127.0.0.1', 'RP': 'artikel10buc32', 'FLAG': 0}], 'SN': 22, 'FLAG': 0, 'RP': set()}
-2023-04-10 12:20:59,492 - INFO - [Thread-4] - LSA_DB: {'P3': {'RID': 'P3', 'Port': 5003, 'Neighbours': 3, 'Neighbours Data': [{'NID': 'P1', 'Cost': 100, 'Hostname': '127.0.0.1', 'RP': 'relayon0144', 'FLAG': 0}, {'NID': 'P4', 'Cost': 1127, 'Hostname': '127.0.0.1', 'RP': 'Vulnerar', 'FLAG': 0}, {'NID': 'P2', 'Cost': 100, 'Hostname': '127.0.0.1', 'RP': 'artikel10buc32', 'FLAG': 0}], 'SN': 17, 'FLAG': 1, 'DEAD': {'P7'}}, 'P4': {'RID': 'P4', 'Port': 5004, 'Neighbours': 4, 'Neighbours Data': [{'NID': 'P2', 'Cost': 1371, 'Hostname': '127.0.0.1', 'RP': 'LupusreginaBeta', 'FLAG': 0}, {'NID': 'P3', 'Cost': 1367, 'Hostname': '127.0.0.1', 'RP': 'Vulnerar', 'FLAG': 0}, {'NID': 'P8', 'Cost': 1690, 'Hostname': '127.0.0.1', 'RP': 'jstark1809nl001', 'FLAG': 0}, {'NID': 'P1', 'Cost': 100, 'Hostname': '127.0.0.1', 'RP': 'artikel10ber44', 'FLAG': 0}], 'SN': 21, 'FLAG': 1, 'RP': set()}, 'P1': {'RID': 'P1', 'Port': 5001, 'Neighbours': 3, 'Neighbours Data': [{'NID': 'P2', 'Cost': 1344, 'Hostname': '127.0.0.1', 'RP': 'sklep', 'FLAG': 0}, {'NID': 'P3', 'Cost': 100, 'Hostname': '127.0.0.1', 'RP': 'relayon0144', 'FLAG': 0}, {'NID': 'P4', 'Cost': 100, 'Hostname': '127.0.0.1', 'RP': 'artikel10ber44', 'FLAG': 0}], 'SN': 16, 'FLAG': 1, 'RP': set()}, 'P8': {'RID': 'P8', 'Port': 5008, 'Neighbours': 2, 'Neighbours Data': [{'NID': 'P6', 'Cost': 1582, 'Hostname': '127.0.0.1', 'RP': 'deild', 'FLAG': 0}, {'NID': 'P4', 'Cost': 2007, 'Hostname': '127.0.0.1', 'RP': 'jstark1809nl001', 'FLAG': 0}], 'SN': 19, 'FLAG': 1, 'RP': set()}}
-2023-04-10 12:21:06,780 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P3', 100, 'relayon0144'], ['P3', 'P4', 1127, 'Vulnerar'], ['P2', 'P3', 100, 'artikel10buc32'], ['P2', 'P4', 1371, 'LupusreginaBeta'], ['P4', 'P8', 1690, 'jstark1809nl001'], ['P1', 'P4', 100, 'artikel10ber44'], ['P1', 'P2', 1344, 'sklep'], ['P6', 'P8', 1582, 'deild']] , {'P8'}
-2023-04-10 12:21:12,866 - INFO - [RecvLoop_185.220] - On destroy: circuit #80000012
-2023-04-10 12:21:12,873 - INFO - [RecvLoop_185.220] - Destroy circuit #80000012
-2023-04-10 12:21:13,368 - INFO - [CONNECTION] - Neighbour connections (3) less than MIN_NEIGHBOUR_CONNECTIONS (4)
-2023-04-10 12:21:13,369 - INFO - [CONNECTION] - Candidate peers: []
-2023-04-10 12:21:13,370 - INFO - [CONNECTION] - Highest cost peers: [('P6', 3572), ('P7', 3309), ('P5', 3127), ('P8', 1990), ('P4', 300), ('P1', 200), ('P3', 100), ('P2', 0)]
-2023-04-10 12:21:13,370 - INFO - [CONNECTION] - No join peers found
-2023-04-10 12:21:18,589 - WARNING - [Connect-artikel10buc32] - Got SENDME
-2023-04-10 12:21:19,533 - ERROR - [Establish-Doedelkiste76] - recv timeout
-2023-04-10 12:21:19,535 - INFO - [Establish-Doedelkiste76] - Closing connection Establish-Doedelkiste76
-2023-04-10 12:21:19,535 - INFO - [Establish-Doedelkiste76] - Stream #10: closing (state = Closed)...
-2023-04-10 12:21:19,536 - WARNING - [Establish-Doedelkiste76] - Stream #10: closed already
-2023-04-10 12:21:19,536 - INFO - [Establish-Doedelkiste76] - Destroy circuit #8000000b
-2023-04-10 12:21:19,536 - WARNING - [Establish-Doedelkiste76] - #8000000b circuit: has been destroyed already
-2023-04-10 12:21:19,536 - INFO - [Establish-Doedelkiste76] - Closing guard connections (None)...
-2023-04-10 12:21:20,042 - WARNING - [Connect-artikel10buc32] - Got SENDME
-2023-04-10 12:21:30,265 - WARNING - [RecvLoop_185.181] - CellPadding has some unnecessary data: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
-2023-04-10 12:21:30,265 - ERROR - [RecvLoop_185.181] - CellPadding() was received but no handlers for it
-2023-04-10 12:21:39,770 - INFO - [RecvLoop_185.181] - On destroy: circuit #80000001
-2023-04-10 12:21:39,770 - INFO - [RecvLoop_185.181] - Destroy circuit #80000001
-2023-04-10 12:21:39,771 - INFO - [RecvLoop_185.181] - Stream #2: closing (state = Connected)...
-2023-04-10 12:21:40,473 - ERROR - [Establish-kaeferbohne] - recv timeout
-2023-04-10 12:21:40,474 - INFO - [Establish-kaeferbohne] - Closing connection Establish-kaeferbohne
-2023-04-10 12:21:40,474 - INFO - [Establish-kaeferbohne] - Stream #14: closing (state = Closed)...
-2023-04-10 12:21:40,474 - WARNING - [Establish-kaeferbohne] - Stream #14: closed already
-2023-04-10 12:21:40,474 - INFO - [Establish-kaeferbohne] - Destroy circuit #80000011
-2023-04-10 12:21:40,474 - WARNING - [Establish-kaeferbohne] - #80000011 circuit: has been destroyed already
-2023-04-10 12:21:40,475 - INFO - [Establish-kaeferbohne] - Closing guard connections (None)...
-2023-04-10 12:21:45,485 - ERROR - [Connect-artikel10buc32] - Got DESTROY
+2023-04-10 12:28:29,152 - INFO - [MainThread] - Initialized router P2 at port 5002 PID 28167
+2023-04-10 12:28:29,154 - INFO - [MainThread] - Adding a connection to sklep
+2023-04-10 12:28:29,154 - INFO - [Connect-sklep] - Calling connect_to_rendezvous_point
+2023-04-10 12:28:29,155 - INFO - [Connect-sklep] - Connect to rendezvous point sklep
+2023-04-10 12:28:29,157 - INFO - [MainThread] - Adding listener for LupusreginaBeta
+2023-04-10 12:28:29,157 - INFO - [Establish-LupusreginaBeta] - Establishing RP to LupusreginaBeta
+2023-04-10 12:28:29,160 - INFO - [MainThread] - Starting testing thread
+2023-04-10 12:28:29,160 - INFO - [TESTER] - Started tester
+2023-04-10 12:28:29,160 - INFO - [MainThread] - Starting connection thread
+2023-04-10 12:28:29,162 - INFO - [Connect-sklep] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-10 12:28:29,168 - INFO - [MainThread] - Starting log thread
+2023-04-10 12:28:29,176 - INFO - [Establish-LupusreginaBeta] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-10 12:28:29,485 - INFO - [Connect-sklep] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-10 12:28:29,674 - INFO - [Establish-LupusreginaBeta] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-10 12:28:29,677 - INFO - [Establish-LupusreginaBeta] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13)... (None)
+2023-04-10 12:28:29,700 - INFO - [Connect-sklep] - Connected to rendezvous point sklep
+2023-04-10 12:28:29,700 - INFO - [Connect-sklep] - Waiting for peer to open stream
+2023-04-10 12:28:29,744 - INFO - [Establish-LupusreginaBeta] - Creating new circuit #80000001 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13) router...
+2023-04-10 12:28:29,758 - INFO - [Establish-LupusreginaBeta] - Building -1 hops circuit...
+2023-04-10 12:28:29,758 - INFO - [Establish-LupusreginaBeta] - Extending the circuit #80000001 with 213.113.2.72:6881 (LupusreginaBeta; Tor 0.4.7.13)...
+2023-04-10 12:28:29,758 - INFO - [Establish-LupusreginaBeta] - Getting descriptor for 213.113.2.72:6881 (LupusreginaBeta; Tor 0.4.7.13)...
+2023-04-10 12:28:29,776 - INFO - [Connect-sklep] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-04-10 12:28:29,779 - INFO - [Establish-LupusreginaBeta] - Connecting to guard node 83.212.117.37:443 (okeanosrelay2; Tor 0.4.7.13)... (Internal dir client)
+2023-04-10 12:28:29,779 - INFO - [Connect-sklep] - Stream opened successfully
+2023-04-10 12:28:29,779 - INFO - [Connect-sklep] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P2\x94ua.'
+2023-04-10 12:28:29,964 - INFO - [RECEIVER] - Added neighbour P1
+2023-04-10 12:28:30,135 - INFO - [Establish-LupusreginaBeta] - Creating new circuit #80000002 with 83.212.117.37:443 (okeanosrelay2; Tor 0.4.7.13) router...
+2023-04-10 12:28:30,223 - INFO - [Establish-LupusreginaBeta] - Building 0 hops circuit...
+2023-04-10 12:28:30,224 - INFO - [Establish-LupusreginaBeta] - Stream #1: creating attached to #80000002 circuit...
+2023-04-10 12:28:30,224 - INFO - [Establish-LupusreginaBeta] - Stream #1: connecting to hsdir
+2023-04-10 12:28:30,312 - INFO - [RecvLoop_83.212.] - Stream #1: connected (remote ip '')
+2023-04-10 12:28:30,595 - INFO - [RecvLoop_83.212.] - Stream #1: remote disconnected (reason = DONE)
+2023-04-10 12:28:30,596 - INFO - [Establish-LupusreginaBeta] - Stream #1: closing (state = Disconnected)...
+2023-04-10 12:28:30,596 - INFO - [Establish-LupusreginaBeta] - Got descriptor
+2023-04-10 12:28:30,627 - INFO - [Establish-LupusreginaBeta] - <class 'torpy.circuit.TorCircuit'>
+2023-04-10 12:28:30,660 - INFO - [Establish-LupusreginaBeta] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-04-10 12:28:30,661 - INFO - [Establish-LupusreginaBeta] - Waiting for connections at relay LupusreginaBeta for cookie b'eb688e4f52df90278060' ...
+2023-04-10 12:28:36,829 - INFO - [Establish-LupusreginaBeta] - Got REND2 message from LupusreginaBeta
+2023-04-10 12:28:36,829 - INFO - [Establish-LupusreginaBeta] - Entered circuit context with id 0x80000001
+2023-04-10 12:28:36,829 - INFO - [Establish-LupusreginaBeta] - Stream #2: creating attached to #80000001 circuit...
+2023-04-10 12:28:36,829 - INFO - [Establish-LupusreginaBeta] - Stream #2: connecting to ('127.0.0.1', 5000)
+2023-04-10 12:28:36,875 - INFO - [RecvLoop_185.181] - Stream #2: connected (remote ip '127.0.0.1')
+2023-04-10 12:28:37,031 - INFO - [Establish-LupusreginaBeta] - Sending HELLO to peer
+2023-04-10 12:28:37,031 - INFO - [Establish-LupusreginaBeta] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P2\x94ua.'
+2023-04-10 12:28:37,032 - INFO - [RECEIVER] - Added neighbour P4
+2023-04-10 12:28:38,223 - WARNING - [RECEIVER] - Routing loop from P2 to P1: P2-P4-P2
+2023-04-10 12:28:38,274 - WARNING - [RECEIVER] - Routing loop from P2 to P1: P2-P4-P2-P4-P2
+2023-04-10 12:28:38,274 - WARNING - [RECEIVER] - TTL reached from path to P1 from P2
+2023-04-10 12:28:38,356 - WARNING - [RECEIVER] - Routing loop from P2 to P4: P2-P1-P3-P1-P2
+2023-04-10 12:28:38,356 - WARNING - [RECEIVER] - TTL reached from path to P4 from P2
+2023-04-10 12:28:44,060 - WARNING - [RECEIVER] - Routing loop from P1 to P3: P1-P2-P4-P2
+2023-04-10 12:29:29,222 - INFO - [CONNECTION] - Neighbour connections (2) less than MIN_NEIGHBOUR_CONNECTIONS (7)
+2023-04-10 12:29:29,222 - INFO - [CONNECTION] - Candidate peers: ['P3']
+2023-04-10 12:29:29,222 - INFO - [CONNECTION] - Highest cost peers: [('P3', 200), ('P1', 100), ('P4', 100), ('P2', 0)]
+2023-04-10 12:29:29,227 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-10 12:29:29,429 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-10 12:29:29,439 - INFO - [MainThread] - ['ESTABLISH', 'Quetzalcoatl', b'37408fc3a72fd68ed02c']
+2023-04-10 12:29:29,439 - INFO - [MainThread] - Got ESTABLISH to relay Quetzalcoatl:b'37408fc3a72fd68ed02c' via staysafeandgoodluck
+2023-04-10 12:29:29,440 - INFO - [Establish-Quetzalcoatl] - Establishing RP to Quetzalcoatl
+2023-04-10 12:29:29,444 - INFO - [Establish-Quetzalcoatl] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-10 12:29:29,657 - INFO - [Establish-Quetzalcoatl] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-10 12:29:29,659 - INFO - [Establish-Quetzalcoatl] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13)... (None)
+2023-04-10 12:29:29,722 - INFO - [Establish-Quetzalcoatl] - Creating new circuit #80000003 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13) router...
+2023-04-10 12:29:29,736 - INFO - [Establish-Quetzalcoatl] - Building -1 hops circuit...
+2023-04-10 12:29:29,736 - INFO - [Establish-Quetzalcoatl] - Extending the circuit #80000003 with 77.68.3.133:9000 (Quetzalcoatl; Tor 0.4.7.13)...
+2023-04-10 12:29:29,737 - INFO - [Establish-Quetzalcoatl] - Getting descriptor for 77.68.3.133:9000 (Quetzalcoatl; Tor 0.4.7.13)...
+2023-04-10 12:29:29,741 - INFO - [Establish-Quetzalcoatl] - Connecting to guard node 5.45.76.253:443 (HirasawaYui; Tor 0.4.7.13)... (Internal dir client)
+2023-04-10 12:29:29,898 - INFO - [Establish-Quetzalcoatl] - Creating new circuit #80000004 with 5.45.76.253:443 (HirasawaYui; Tor 0.4.7.13) router...
+2023-04-10 12:29:29,938 - INFO - [Establish-Quetzalcoatl] - Building 0 hops circuit...
+2023-04-10 12:29:29,938 - INFO - [Establish-Quetzalcoatl] - Stream #3: creating attached to #80000004 circuit...
+2023-04-10 12:29:29,938 - INFO - [Establish-Quetzalcoatl] - Stream #3: connecting to hsdir
+2023-04-10 12:29:29,978 - INFO - [RecvLoop_5.45.76] - Stream #3: connected (remote ip '')
+2023-04-10 12:29:30,192 - WARNING - [Connect-sklep] - Got SENDME
+2023-04-10 12:29:30,216 - INFO - [RecvLoop_5.45.76] - Stream #3: remote disconnected (reason = DONE)
+2023-04-10 12:29:30,216 - INFO - [Establish-Quetzalcoatl] - Stream #3: closing (state = Disconnected)...
+2023-04-10 12:29:30,216 - INFO - [Establish-Quetzalcoatl] - Got descriptor
+2023-04-10 12:29:30,283 - INFO - [Establish-Quetzalcoatl] - <class 'torpy.circuit.TorCircuit'>
+2023-04-10 12:29:30,347 - INFO - [Establish-Quetzalcoatl] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-04-10 12:29:30,348 - INFO - [Establish-Quetzalcoatl] - Waiting for connections at relay Quetzalcoatl for cookie b'37408fc3a72fd68ed02c' ...
+2023-04-10 12:29:34,321 - WARNING - [RECEIVER] - Routing loop from P4 to P5: P4-P2-P1-P2
+2023-04-10 12:29:39,446 - INFO - [CONNECTION] - Sending JOIN to P3 at relay Quetzalcoatl
+2023-04-10 12:29:40,906 - INFO - [RecvLoop_83.212.] - On destroy: circuit #80000002
+2023-04-10 12:29:40,906 - INFO - [RecvLoop_83.212.] - Destroy circuit #80000002
+2023-04-10 12:29:56,016 - WARNING - [RECEIVER] - Routing loop from P4 to P7: P4-P2-P4-P2
+2023-04-10 12:30:20,280 - WARNING - [Connect-sklep] - Got SENDME
+2023-04-10 12:30:20,303 - WARNING - [Connect-sklep] - Got SENDME
+2023-04-10 12:30:38,238 - INFO - [RecvLoop_5.45.76] - On destroy: circuit #80000004
+2023-04-10 12:30:38,238 - INFO - [RecvLoop_5.45.76] - Destroy circuit #80000004
+2023-04-10 12:30:39,454 - INFO - [CONNECTION] - Neighbour connections (2) less than MIN_NEIGHBOUR_CONNECTIONS (7)
+2023-04-10 12:30:39,455 - INFO - [CONNECTION] - Candidate peers: ['P8', 'P5', 'P3', 'P7', 'P6']
+2023-04-10 12:30:39,455 - INFO - [CONNECTION] - Highest cost peers: [('P8', 400), ('P6', 300), ('P7', 300), ('P3', 200), ('P5', 200), ('P1', 100), ('P4', 100), ('P2', 0)]
+2023-04-10 12:30:39,462 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-10 12:30:39,730 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-10 12:30:39,737 - INFO - [MainThread] - ['ESTABLISH', 'linuxenbyJP', b'c4fcafa1764fa4853062']
+2023-04-10 12:30:39,737 - INFO - [MainThread] - Got ESTABLISH to relay linuxenbyJP:b'c4fcafa1764fa4853062' via staysafeandgoodluck
+2023-04-10 12:30:39,737 - INFO - [Establish-linuxenbyJP] - Establishing RP to linuxenbyJP
+2023-04-10 12:30:39,741 - INFO - [Establish-linuxenbyJP] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-10 12:30:39,939 - INFO - [Establish-linuxenbyJP] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-10 12:30:39,941 - INFO - [Establish-linuxenbyJP] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13)... (None)
+2023-04-10 12:30:40,004 - INFO - [Establish-linuxenbyJP] - Creating new circuit #80000005 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13) router...
+2023-04-10 12:30:40,019 - INFO - [Establish-linuxenbyJP] - Building -1 hops circuit...
+2023-04-10 12:30:40,019 - INFO - [Establish-linuxenbyJP] - Extending the circuit #80000005 with 172.105.219.152:443 (linuxenbyJP; Tor 0.4.7.13)...
+2023-04-10 12:30:40,019 - INFO - [Establish-linuxenbyJP] - Getting descriptor for 172.105.219.152:443 (linuxenbyJP; Tor 0.4.7.13)...
+2023-04-10 12:30:40,024 - INFO - [Establish-linuxenbyJP] - Connecting to guard node 193.142.147.203:9001 (Sticky; Tor 0.4.7.8)... (Internal dir client)
+2023-04-10 12:30:40,171 - INFO - [Establish-linuxenbyJP] - Creating new circuit #80000006 with 193.142.147.203:9001 (Sticky; Tor 0.4.7.8) router...
+2023-04-10 12:30:40,209 - INFO - [Establish-linuxenbyJP] - Building 0 hops circuit...
+2023-04-10 12:30:40,209 - INFO - [Establish-linuxenbyJP] - Stream #4: creating attached to #80000006 circuit...
+2023-04-10 12:30:40,209 - INFO - [Establish-linuxenbyJP] - Stream #4: connecting to hsdir
+2023-04-10 12:30:40,246 - INFO - [RecvLoop_193.142] - Stream #4: connected (remote ip '')
+2023-04-10 12:30:40,486 - INFO - [RecvLoop_193.142] - Stream #4: remote disconnected (reason = DONE)
+2023-04-10 12:30:40,486 - INFO - [Establish-linuxenbyJP] - Stream #4: closing (state = Disconnected)...
+2023-04-10 12:30:40,486 - INFO - [Establish-linuxenbyJP] - Got descriptor
+2023-04-10 12:30:40,783 - INFO - [Establish-linuxenbyJP] - <class 'torpy.circuit.TorCircuit'>
+2023-04-10 12:30:41,103 - INFO - [Establish-linuxenbyJP] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-04-10 12:30:41,104 - INFO - [Establish-linuxenbyJP] - Waiting for connections at relay linuxenbyJP for cookie b'c4fcafa1764fa4853062' ...
+2023-04-10 12:30:49,748 - INFO - [CONNECTION] - Sending JOIN to P8 at relay linuxenbyJP
+2023-04-10 12:31:14,432 - WARNING - [Connect-sklep] - Got SENDME
+2023-04-10 12:31:42,869 - INFO - [RecvLoop_193.142] - On destroy: circuit #80000006
+2023-04-10 12:31:42,869 - INFO - [RecvLoop_193.142] - Destroy circuit #80000006
+2023-04-10 12:31:49,758 - INFO - [CONNECTION] - Neighbour connections (2) less than MIN_NEIGHBOUR_CONNECTIONS (7)
+2023-04-10 12:31:49,758 - INFO - [CONNECTION] - Candidate peers: ['P8', 'P5', 'P3', 'P7', 'P6']
+2023-04-10 12:31:49,758 - INFO - [CONNECTION] - Highest cost peers: [('P6', 1072), ('P7', 1072), ('P5', 972), ('P8', 972), ('P4', 872), ('P3', 622), ('P1', 201), ('P2', 0)]
+2023-04-10 12:31:49,765 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-10 12:31:49,967 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-10 12:31:49,974 - INFO - [MainThread] - ['ESTABLISH', 'Demonsys', b'97a57e7cbc2ece095e2c']
+2023-04-10 12:31:49,974 - INFO - [MainThread] - Got ESTABLISH to relay Demonsys:b'97a57e7cbc2ece095e2c' via staysafeandgoodluck
+2023-04-10 12:31:49,975 - INFO - [Establish-Demonsys] - Establishing RP to Demonsys
+2023-04-10 12:31:49,978 - INFO - [Establish-Demonsys] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-10 12:31:50,174 - INFO - [Establish-Demonsys] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-10 12:31:50,176 - INFO - [Establish-Demonsys] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13)... (None)
+2023-04-10 12:31:50,236 - INFO - [Establish-Demonsys] - Creating new circuit #80000007 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13) router...
+2023-04-10 12:31:50,250 - INFO - [Establish-Demonsys] - Building -1 hops circuit...
+2023-04-10 12:31:50,250 - INFO - [Establish-Demonsys] - Extending the circuit #80000007 with 175.156.70.250:33701 (Demonsys; Tor 0.4.7.11)...
+2023-04-10 12:31:50,250 - INFO - [Establish-Demonsys] - Getting descriptor for 175.156.70.250:33701 (Demonsys; Tor 0.4.7.11)...
+2023-04-10 12:31:50,255 - INFO - [Establish-Demonsys] - Connecting to guard node 23.82.136.232:443 (bkjk; Tor 0.4.7.8)... (Internal dir client)
+2023-04-10 12:31:50,834 - INFO - [Establish-Demonsys] - Creating new circuit #80000008 with 23.82.136.232:443 (bkjk; Tor 0.4.7.8) router...
+2023-04-10 12:31:50,983 - INFO - [Establish-Demonsys] - Building 0 hops circuit...
+2023-04-10 12:31:50,983 - INFO - [Establish-Demonsys] - Stream #5: creating attached to #80000008 circuit...
+2023-04-10 12:31:50,983 - INFO - [Establish-Demonsys] - Stream #5: connecting to hsdir
+2023-04-10 12:31:51,129 - INFO - [RecvLoop_23.82.1] - Stream #5: connected (remote ip '')
+2023-04-10 12:31:51,333 - INFO - [RecvLoop_23.82.1] - Stream #5: remote disconnected (reason = DONE)
+2023-04-10 12:31:51,334 - INFO - [Establish-Demonsys] - Stream #5: closing (state = Disconnected)...
+2023-04-10 12:31:51,334 - INFO - [Establish-Demonsys] - Got descriptor
+2023-04-10 12:31:51,616 - INFO - [Establish-Demonsys] - <class 'torpy.circuit.TorCircuit'>
+2023-04-10 12:31:51,896 - INFO - [Establish-Demonsys] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-04-10 12:31:51,896 - INFO - [Establish-Demonsys] - Waiting for connections at relay Demonsys for cookie b'97a57e7cbc2ece095e2c' ...
+2023-04-10 12:31:59,298 - WARNING - [Connect-sklep] - Got SENDME
+2023-04-10 12:31:59,474 - WARNING - [Connect-sklep] - Got SENDME
+2023-04-10 12:31:59,984 - INFO - [CONNECTION] - Sending JOIN to P6 at relay Demonsys
+2023-04-10 12:32:15,586 - WARNING - [RECEIVER] - TTL reached from path to P1 from P5
+2023-04-10 12:32:33,600 - WARNING - [Connect-sklep] - Got SENDME
+2023-04-10 12:32:55,877 - INFO - [RecvLoop_23.82.1] - On destroy: circuit #80000008
+2023-04-10 12:32:55,877 - INFO - [RecvLoop_23.82.1] - Destroy circuit #80000008
+2023-04-10 12:33:00,041 - INFO - [CONNECTION] - Neighbour connections (2) less than MIN_NEIGHBOUR_CONNECTIONS (7)
+2023-04-10 12:33:00,042 - INFO - [CONNECTION] - Candidate peers: ['P8', 'P5', 'P3', 'P7', 'P6']
+2023-04-10 12:33:00,042 - INFO - [CONNECTION] - Highest cost peers: [('P5', 1072), ('P8', 972), ('P4', 872), ('P7', 822), ('P6', 722), ('P3', 622), ('P1', 201), ('P2', 0)]
+2023-04-10 12:33:00,162 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-10 12:33:00,364 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-10 12:33:00,373 - INFO - [MainThread] - ['ESTABLISH', 'UnredactedCapricorn', b'a933c58cd64187773529']
+2023-04-10 12:33:00,373 - INFO - [MainThread] - Got ESTABLISH to relay UnredactedCapricorn:b'a933c58cd64187773529' via staysafeandgoodluck
+2023-04-10 12:33:00,374 - INFO - [Establish-UnredactedCapricorn] - Establishing RP to UnredactedCapricorn
+2023-04-10 12:33:00,377 - INFO - [Establish-UnredactedCapricorn] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-10 12:33:00,588 - INFO - [Establish-UnredactedCapricorn] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-10 12:33:00,590 - INFO - [Establish-UnredactedCapricorn] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13)... (None)
+2023-04-10 12:33:00,639 - INFO - [Establish-UnredactedCapricorn] - Creating new circuit #80000009 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13) router...
+2023-04-10 12:33:00,653 - INFO - [Establish-UnredactedCapricorn] - Building -1 hops circuit...
+2023-04-10 12:33:00,653 - INFO - [Establish-UnredactedCapricorn] - Extending the circuit #80000009 with 23.154.177.25:443 (UnredactedCapricorn; Tor 0.4.7.13)...
+2023-04-10 12:33:00,653 - INFO - [Establish-UnredactedCapricorn] - Getting descriptor for 23.154.177.25:443 (UnredactedCapricorn; Tor 0.4.7.13)...
+2023-04-10 12:33:00,660 - INFO - [Establish-UnredactedCapricorn] - Connecting to guard node 104.244.73.136:9001 (4715; Tor 0.4.7.13)... (Internal dir client)
+2023-04-10 12:33:00,819 - INFO - [Establish-UnredactedCapricorn] - Creating new circuit #8000000a with 104.244.73.136:9001 (4715; Tor 0.4.7.13) router...
+2023-04-10 12:33:00,862 - INFO - [Establish-UnredactedCapricorn] - Building 0 hops circuit...
+2023-04-10 12:33:00,862 - INFO - [Establish-UnredactedCapricorn] - Stream #6: creating attached to #8000000a circuit...
+2023-04-10 12:33:00,862 - INFO - [Establish-UnredactedCapricorn] - Stream #6: connecting to hsdir
+2023-04-10 12:33:00,901 - INFO - [RecvLoop_104.244] - Stream #6: connected (remote ip '')
+2023-04-10 12:33:01,145 - INFO - [RecvLoop_104.244] - Stream #6: remote disconnected (reason = DONE)
+2023-04-10 12:33:01,146 - INFO - [Establish-UnredactedCapricorn] - Stream #6: closing (state = Disconnected)...
+2023-04-10 12:33:01,146 - INFO - [Establish-UnredactedCapricorn] - Got descriptor
+2023-04-10 12:33:01,512 - INFO - [Establish-UnredactedCapricorn] - <class 'torpy.circuit.TorCircuit'>
+2023-04-10 12:33:01,586 - INFO - [Establish-UnredactedCapricorn] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-04-10 12:33:01,587 - INFO - [Establish-UnredactedCapricorn] - Waiting for connections at relay UnredactedCapricorn for cookie b'a933c58cd64187773529' ...
+2023-04-10 12:33:07,654 - WARNING - [Connect-sklep] - Got SENDME
+2023-04-10 12:33:08,494 - WARNING - [Connect-sklep] - Got SENDME
+2023-04-10 12:33:10,382 - INFO - [CONNECTION] - Sending JOIN to P5 at relay UnredactedCapricorn
+2023-04-10 12:33:39,748 - WARNING - [Connect-sklep] - Got SENDME
+2023-04-10 12:34:03,992 - INFO - [RecvLoop_104.244] - On destroy: circuit #8000000a
+2023-04-10 12:34:03,992 - INFO - [RecvLoop_104.244] - Destroy circuit #8000000a
+2023-04-10 12:34:10,442 - INFO - [CONNECTION] - Neighbour connections (2) less than MIN_NEIGHBOUR_CONNECTIONS (7)
+2023-04-10 12:34:10,442 - INFO - [CONNECTION] - Candidate peers: ['P8', 'P5', 'P3', 'P7', 'P6']
+2023-04-10 12:34:10,442 - INFO - [CONNECTION] - Highest cost peers: [('P7', 1987), ('P5', 1143), ('P8', 1043), ('P4', 943), ('P6', 843), ('P3', 743), ('P1', 295), ('P2', 0)]
+2023-04-10 12:34:10,455 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-10 12:34:10,919 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-10 12:34:10,929 - INFO - [MainThread] - ['ESTABLISH', 'artikel10ber17', b'6b7225182ee8a0e87869']
+2023-04-10 12:34:10,929 - INFO - [MainThread] - Got ESTABLISH to relay artikel10ber17:b'6b7225182ee8a0e87869' via staysafeandgoodluck
+2023-04-10 12:34:10,941 - INFO - [Establish-artikel10ber17] - Establishing RP to artikel10ber17
+2023-04-10 12:34:10,948 - INFO - [Establish-artikel10ber17] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-10 12:34:11,539 - INFO - [Establish-artikel10ber17] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-10 12:34:11,541 - INFO - [Establish-artikel10ber17] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13)... (None)
+2023-04-10 12:34:11,616 - INFO - [Establish-artikel10ber17] - Creating new circuit #8000000b with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13) router...
+2023-04-10 12:34:11,630 - INFO - [Establish-artikel10ber17] - Building -1 hops circuit...
+2023-04-10 12:34:11,630 - INFO - [Establish-artikel10ber17] - Extending the circuit #8000000b with 185.220.101.9:9001 (artikel10ber17; Tor 0.4.7.13)...
+2023-04-10 12:34:11,630 - INFO - [Establish-artikel10ber17] - Getting descriptor for 185.220.101.9:9001 (artikel10ber17; Tor 0.4.7.13)...
+2023-04-10 12:34:11,637 - INFO - [Establish-artikel10ber17] - Connecting to guard node 190.211.254.192:9001 (corruptedrangers; Tor 0.4.7.11)... (Internal dir client)
+2023-04-10 12:34:11,782 - INFO - [RECEIVER] - Added relay Pi from P6 to JOIN queue
+2023-04-10 12:34:11,783 - INFO - [MainThread] - ['JOIN', 'Pi', b'fd50013bb21b513ace75']
+2023-04-10 12:34:11,783 - INFO - [MainThread] - Got JOIN to relay Pi, waiting 10 sec to connect
+2023-04-10 12:34:11,793 - INFO - [Connect-Pi] - Calling connect_to_rendezvous_point
+2023-04-10 12:34:11,794 - INFO - [Connect-Pi] - Connect to rendezvous point Pi
+2023-04-10 12:34:11,799 - INFO - [Connect-Pi] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-10 12:34:11,854 - INFO - [Establish-artikel10ber17] - Creating new circuit #8000000c with 190.211.254.192:9001 (corruptedrangers; Tor 0.4.7.11) router...
+2023-04-10 12:34:11,919 - INFO - [Establish-artikel10ber17] - Building 0 hops circuit...
+2023-04-10 12:34:11,919 - INFO - [Establish-artikel10ber17] - Stream #7: creating attached to #8000000c circuit...
+2023-04-10 12:34:11,919 - INFO - [Establish-artikel10ber17] - Stream #7: connecting to hsdir
+2023-04-10 12:34:12,016 - INFO - [RecvLoop_190.211] - Stream #7: connected (remote ip '')
+2023-04-10 12:34:12,250 - INFO - [RecvLoop_190.211] - Stream #7: remote disconnected (reason = DONE)
+2023-04-10 12:34:12,251 - INFO - [Establish-artikel10ber17] - Stream #7: closing (state = Disconnected)...
+2023-04-10 12:34:12,251 - INFO - [Establish-artikel10ber17] - Got descriptor
+2023-04-10 12:34:12,337 - INFO - [Connect-Pi] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-10 12:34:12,446 - INFO - [Establish-artikel10ber17] - <class 'torpy.circuit.TorCircuit'>
+2023-04-10 12:34:12,487 - INFO - [Establish-artikel10ber17] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-04-10 12:34:12,487 - INFO - [Establish-artikel10ber17] - Waiting for connections at relay artikel10ber17 for cookie b'6b7225182ee8a0e87869' ...
+2023-04-10 12:34:12,745 - INFO - [Connect-Pi] - Connected to rendezvous point Pi
+2023-04-10 12:34:12,746 - INFO - [Connect-Pi] - Waiting for peer to open stream
+2023-04-10 12:34:13,186 - INFO - [Connect-Pi] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-04-10 12:34:13,187 - INFO - [Connect-Pi] - Stream opened successfully
+2023-04-10 12:34:13,187 - INFO - [Connect-Pi] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P2\x94ua.'
+2023-04-10 12:34:13,797 - INFO - [RECEIVER] - Added neighbour P6
+2023-04-10 12:34:17,923 - WARNING - [Connect-sklep] - Got SENDME
+2023-04-10 12:34:18,134 - WARNING - [Connect-sklep] - Got SENDME
+2023-04-10 12:34:20,939 - INFO - [CONNECTION] - Sending JOIN to P7 at relay artikel10ber17
+2023-04-10 12:34:30,817 - WARNING - [RecvLoop_185.181] - CellPadding has some unnecessary data: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+2023-04-10 12:34:30,817 - ERROR - [RecvLoop_185.181] - CellPadding() was received but no handlers for it
+2023-04-10 12:34:39,568 - WARNING - [Connect-Pi] - Got SENDME
+2023-04-10 12:34:54,531 - WARNING - [Connect-sklep] - Got SENDME
+2023-04-10 12:35:04,746 - WARNING - [Connect-Pi] - Got SENDME
+2023-04-10 12:35:05,160 - WARNING - [Connect-Pi] - Got SENDME
+2023-04-10 12:35:20,727 - WARNING - [Connect-Pi] - Got SENDME
+2023-04-10 12:35:21,001 - INFO - [CONNECTION] - Neighbour connections (3) less than MIN_NEIGHBOUR_CONNECTIONS (7)
+2023-04-10 12:35:21,001 - INFO - [CONNECTION] - Candidate peers: ['P7', 'P8', 'P5', 'P3']
+2023-04-10 12:35:21,002 - INFO - [CONNECTION] - Highest cost peers: [('P7', 1591), ('P8', 808), ('P5', 708), ('P1', 295), ('P4', 200), ('P3', 200), ('P6', 100), ('P2', 0)]
+2023-04-10 12:35:21,010 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-10 12:35:21,952 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-10 12:35:21,969 - INFO - [MainThread] - ['ESTABLISH', 'ziggy5pacedust', b'6b1cb9f9b44ec0c5f946']
+2023-04-10 12:35:21,970 - INFO - [MainThread] - Got ESTABLISH to relay ziggy5pacedust:b'6b1cb9f9b44ec0c5f946' via staysafeandgoodluck
+2023-04-10 12:35:21,974 - INFO - [Establish-ziggy5pacedust] - Establishing RP to ziggy5pacedust
+2023-04-10 12:35:21,985 - INFO - [Establish-ziggy5pacedust] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-10 12:35:22,440 - INFO - [RecvLoop_190.211] - On destroy: circuit #8000000c
+2023-04-10 12:35:22,441 - INFO - [RecvLoop_190.211] - Destroy circuit #8000000c
+2023-04-10 12:35:23,537 - INFO - [Establish-ziggy5pacedust] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-10 12:35:23,550 - INFO - [Establish-ziggy5pacedust] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13)... (None)
+2023-04-10 12:35:23,628 - INFO - [Establish-ziggy5pacedust] - Creating new circuit #8000000d with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13) router...
+2023-04-10 12:35:23,651 - INFO - [Establish-ziggy5pacedust] - Building -1 hops circuit...
+2023-04-10 12:35:23,651 - INFO - [Establish-ziggy5pacedust] - Extending the circuit #8000000d with 92.87.6.194:443 (ziggy5pacedust; Tor 0.4.7.13)...
+2023-04-10 12:35:23,654 - INFO - [Establish-ziggy5pacedust] - Getting descriptor for 92.87.6.194:443 (ziggy5pacedust; Tor 0.4.7.13)...
+2023-04-10 12:35:23,690 - INFO - [Establish-ziggy5pacedust] - Connecting to guard node 163.172.151.206:9001 (WinstonSmith; Tor 0.4.7.13)... (Internal dir client)
+2023-04-10 12:35:23,958 - INFO - [Establish-ziggy5pacedust] - Creating new circuit #8000000e with 163.172.151.206:9001 (WinstonSmith; Tor 0.4.7.13) router...
+2023-04-10 12:35:24,006 - INFO - [Establish-ziggy5pacedust] - Building 0 hops circuit...
+2023-04-10 12:35:24,015 - INFO - [Establish-ziggy5pacedust] - Stream #8: creating attached to #8000000e circuit...
+2023-04-10 12:35:24,016 - INFO - [Establish-ziggy5pacedust] - Stream #8: connecting to hsdir
+2023-04-10 12:35:24,061 - INFO - [RecvLoop_163.172] - Stream #8: connected (remote ip '')
+2023-04-10 12:35:24,310 - INFO - [RecvLoop_163.172] - Stream #8: remote disconnected (reason = DONE)
+2023-04-10 12:35:24,311 - INFO - [Establish-ziggy5pacedust] - Stream #8: closing (state = Disconnected)...
+2023-04-10 12:35:24,311 - INFO - [Establish-ziggy5pacedust] - Got descriptor
+2023-04-10 12:35:24,417 - INFO - [Establish-ziggy5pacedust] - <class 'torpy.circuit.TorCircuit'>
+2023-04-10 12:35:24,499 - INFO - [Establish-ziggy5pacedust] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-04-10 12:35:24,500 - INFO - [Establish-ziggy5pacedust] - Waiting for connections at relay ziggy5pacedust for cookie b'6b1cb9f9b44ec0c5f946' ...
+2023-04-10 12:35:28,047 - WARNING - [Connect-sklep] - Got SENDME
+2023-04-10 12:35:28,070 - WARNING - [Connect-sklep] - Got SENDME
+2023-04-10 12:35:31,978 - INFO - [CONNECTION] - Sending JOIN to P7 at relay ziggy5pacedust
+2023-04-10 12:35:33,607 - INFO - [Establish-ziggy5pacedust] - Got REND2 message from ziggy5pacedust
+2023-04-10 12:35:33,608 - INFO - [Establish-ziggy5pacedust] - Entered circuit context with id 0x8000000d
+2023-04-10 12:35:33,608 - INFO - [Establish-ziggy5pacedust] - Stream #9: creating attached to #8000000d circuit...
+2023-04-10 12:35:33,609 - INFO - [Establish-ziggy5pacedust] - Stream #9: connecting to ('127.0.0.1', 5000)
+2023-04-10 12:35:33,867 - INFO - [RecvLoop_185.181] - Stream #9: connected (remote ip '127.0.0.1')
+2023-04-10 12:35:34,013 - INFO - [Establish-ziggy5pacedust] - Sending HELLO to peer
+2023-04-10 12:35:34,013 - INFO - [Establish-ziggy5pacedust] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P2\x94ua.'
+2023-04-10 12:35:36,241 - INFO - [RECEIVER] - Added neighbour P7
+2023-04-10 12:35:40,184 - WARNING - [Connect-Pi] - Got SENDME
+2023-04-10 12:35:40,362 - WARNING - [Connect-Pi] - Got SENDME
+2023-04-10 12:35:41,778 - WARNING - [RecvLoop_185.181] - CellPadding has some unnecessary data: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+2023-04-10 12:35:41,778 - ERROR - [RecvLoop_185.181] - CellPadding() was received but no handlers for it
+2023-04-10 12:36:02,963 - WARNING - [RECEIVER] - TTL reached from path to P4 from P5
+2023-04-10 12:36:02,998 - WARNING - [RECEIVER] - TTL reached from path to P6 from P5
+2023-04-10 12:36:03,494 - WARNING - [RECEIVER] - TTL reached from path to P6 from P5
+2023-04-10 12:36:05,090 - WARNING - [Connect-sklep] - Got SENDME
+2023-04-10 12:36:08,274 - WARNING - [RECEIVER] - TTL reached from path to P4 from P5
+2023-04-10 12:36:08,459 - WARNING - [RECEIVER] - TTL reached from path to P6 from P5
+2023-04-10 12:36:08,677 - WARNING - [Connect-Pi] - Got SENDME
+2023-04-10 12:36:32,037 - INFO - [CONNECTION] - Neighbour connections (4) less than MIN_NEIGHBOUR_CONNECTIONS (7)
+2023-04-10 12:36:32,038 - INFO - [CONNECTION] - Candidate peers: ['P8', 'P5', 'P3']
+2023-04-10 12:36:32,038 - INFO - [CONNECTION] - Highest cost peers: [('P1', 610), ('P5', 400), ('P8', 300), ('P4', 200), ('P3', 200), ('P6', 100), ('P7', 100), ('P2', 0)]
+2023-04-10 12:36:32,062 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-10 12:36:33,496 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-10 12:36:33,528 - INFO - [MainThread] - ['ESTABLISH', 'relayon1173', b'b9d4a25e939275bb2e72']
+2023-04-10 12:36:33,528 - INFO - [MainThread] - Got ESTABLISH to relay relayon1173:b'b9d4a25e939275bb2e72' via staysafeandgoodluck
+2023-04-10 12:36:33,531 - INFO - [Establish-relayon1173] - Establishing RP to relayon1173
+2023-04-10 12:36:33,564 - INFO - [Establish-relayon1173] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-10 12:36:33,933 - INFO - [RecvLoop_163.172] - On destroy: circuit #8000000e
+2023-04-10 12:36:33,933 - INFO - [RecvLoop_163.172] - Destroy circuit #8000000e
+2023-04-10 12:36:34,786 - INFO - [Establish-relayon1173] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-10 12:36:34,801 - INFO - [Establish-relayon1173] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13)... (None)
+2023-04-10 12:36:34,888 - INFO - [Establish-relayon1173] - Creating new circuit #8000000f with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13) router...
+2023-04-10 12:36:34,917 - INFO - [Establish-relayon1173] - Building -1 hops circuit...
+2023-04-10 12:36:34,918 - INFO - [Establish-relayon1173] - Extending the circuit #8000000f with 185.220.101.173:11173 (relayon1173; Tor 0.4.7.13)...
+2023-04-10 12:36:34,921 - INFO - [Establish-relayon1173] - Getting descriptor for 185.220.101.173:11173 (relayon1173; Tor 0.4.7.13)...
+2023-04-10 12:36:34,931 - INFO - [Establish-relayon1173] - Connecting to guard node 150.136.81.70:443 (NeptuneBagel; Tor 0.4.7.13)... (Internal dir client)
+2023-04-10 12:36:35,359 - INFO - [Establish-relayon1173] - Creating new circuit #80000010 with 150.136.81.70:443 (NeptuneBagel; Tor 0.4.7.13) router...
+2023-04-10 12:36:35,475 - INFO - [Establish-relayon1173] - Building 0 hops circuit...
+2023-04-10 12:36:35,476 - INFO - [Establish-relayon1173] - Stream #10: creating attached to #80000010 circuit...
+2023-04-10 12:36:35,476 - INFO - [Establish-relayon1173] - Stream #10: connecting to hsdir
+2023-04-10 12:36:35,581 - INFO - [RecvLoop_150.136] - Stream #10: connected (remote ip '')
+2023-04-10 12:36:35,934 - INFO - [RecvLoop_150.136] - Stream #10: remote disconnected (reason = DONE)
+2023-04-10 12:36:35,935 - INFO - [Establish-relayon1173] - Stream #10: closing (state = Disconnected)...
+2023-04-10 12:36:35,935 - INFO - [Establish-relayon1173] - Got descriptor
+2023-04-10 12:36:36,212 - INFO - [Establish-relayon1173] - <class 'torpy.circuit.TorCircuit'>
+2023-04-10 12:36:36,257 - INFO - [Establish-relayon1173] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-04-10 12:36:36,257 - INFO - [Establish-relayon1173] - Waiting for connections at relay relayon1173 for cookie b'b9d4a25e939275bb2e72' ...
+2023-04-10 12:36:38,705 - WARNING - [Connect-Pi] - Got SENDME
+2023-04-10 12:36:38,778 - WARNING - [Connect-Pi] - Got SENDME
+2023-04-10 12:36:43,538 - INFO - [CONNECTION] - Sending JOIN to P5 at relay relayon1173
+2023-04-10 12:36:50,739 - WARNING - [RecvLoop_185.181] - CellPadding has some unnecessary data: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+2023-04-10 12:36:50,740 - ERROR - [RecvLoop_185.181] - CellPadding() was received but no handlers for it
+2023-04-10 12:36:54,999 - WARNING - [Connect-sklep] - Got SENDME
+2023-04-10 12:36:55,488 - WARNING - [Connect-sklep] - Got SENDME
+2023-04-10 12:36:57,209 - INFO - [RECEIVER] - Added relay Digitalcourage4ip7a from P3 to JOIN queue
+2023-04-10 12:36:57,225 - INFO - [MainThread] - ['JOIN', 'Digitalcourage4ip7a', b'b9d4a25e939275bb2e72']
+2023-04-10 12:36:57,225 - INFO - [MainThread] - Got JOIN to relay Digitalcourage4ip7a, waiting 10 sec to connect
+2023-04-10 12:36:57,255 - INFO - [Connect-Digitalcourage4ip7a] - Calling connect_to_rendezvous_point
+2023-04-10 12:36:57,256 - INFO - [Connect-Digitalcourage4ip7a] - Connect to rendezvous point Digitalcourage4ip7a
+2023-04-10 12:36:57,335 - INFO - [Connect-Digitalcourage4ip7a] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-10 12:36:59,683 - INFO - [Connect-Digitalcourage4ip7a] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-10 12:36:59,926 - INFO - [Connect-Digitalcourage4ip7a] - Connected to rendezvous point Digitalcourage4ip7a
+2023-04-10 12:36:59,927 - INFO - [Connect-Digitalcourage4ip7a] - Waiting for peer to open stream
+2023-04-10 12:37:00,064 - INFO - [Connect-Digitalcourage4ip7a] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-04-10 12:37:00,066 - INFO - [Connect-Digitalcourage4ip7a] - Stream opened successfully
+2023-04-10 12:37:00,066 - INFO - [Connect-Digitalcourage4ip7a] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P2\x94ua.'
+2023-04-10 12:37:00,546 - INFO - [RECEIVER] - Added neighbour P3
+2023-04-10 12:37:06,304 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P2', 387, 'sklep'], ['P2', 'P4', 695, 'LupusreginaBeta'], ['P2', 'P6', 100, 'Pi'], ['P2', 'P7', 100, 'ziggy5pacedust'], ['P2', 'P3', 100, 'Digitalcourage4ip7a']] , {'P3'}
+2023-04-10 12:37:08,879 - ERROR - [Connect-Pi] - Got DESTROY
+2023-04-10 12:37:10,477 - INFO - [RecvLoop_185.181] - On destroy: circuit #8000000d
+2023-04-10 12:37:10,477 - INFO - [RecvLoop_185.181] - Destroy circuit #8000000d
+2023-04-10 12:37:10,478 - INFO - [RecvLoop_185.181] - Stream #9: closing (state = Connected)...
+2023-04-10 12:37:23,260 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P2', 610, 'sklep'], ['P1', 'P3', 1022, 'snowball'], ['P1', 'P5', 100, 'artikel5ev9b'], ['P1', 'P7', 100, 'Quetzalcoatl'], ['P2', 'P4', 1102, 'LupusreginaBeta'], ['P3', 'P4', 1307, 'Vulnerar'], ['P4', 'P5', 1284, 'shhovh'], ['P4', 'P8', 1427, 'NTH41R4'], ['P4', 'P6', 100, 'CCCStuttgartBer'], ['P5', 'P6', 903, 'taipe'], ['P5', 'P7', 1119, 'RMK'], ['P5', 'P8', 606, 'FreeExit'], ['P6', 'P8', 1418, 'LupusreginaBeta'], ['P6', 'P7', 1680, 'arecoque1'], ['P3', 'P6', 1166, 'relayon0187'], ['P2', 'P6', 100, 'Pi'], ['P7', 'P8', 1460, 'Vulnerar'], ['P2', 'P7', 100, 'ziggy5pacedust'], ['P3', 'P8', 100, 'test2relay']] , {'P7', 'P6'}
+2023-04-10 12:37:27,310 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P2', 610, 'sklep'], ['P1', 'P3', 1022, 'snowball'], ['P1', 'P5', 100, 'artikel5ev9b'], ['P1', 'P7', 100, 'Quetzalcoatl'], ['P2', 'P4', 1102, 'LupusreginaBeta'], ['P3', 'P4', 1307, 'Vulnerar'], ['P4', 'P5', 1284, 'shhovh'], ['P4', 'P8', 1427, 'NTH41R4'], ['P4', 'P6', 100, 'CCCStuttgartBer'], ['P5', 'P6', 903, 'taipe'], ['P5', 'P7', 1119, 'RMK'], ['P5', 'P8', 606, 'FreeExit'], ['P6', 'P8', 1392, 'LupusreginaBeta'], ['P7', 'P8', 1368, 'Vulnerar'], ['P3', 'P8', 100, 'test2relay'], ['P3', 'P7', 100, 'RDPdotSH'], ['P2', 'P3', 100, 'Digitalcourage4ip7a']] , {'P5', 'P7'}
+2023-04-10 12:37:29,643 - INFO - [Thread-4] - Adding P6 to list of inactive
+2023-04-10 12:37:29,644 - INFO - [Thread-4] - Adding P7 to list of inactive
+2023-04-10 12:37:29,644 - INFO - [Thread-4] - DEAD ROUTES DETECTED: P7,P6
+2023-04-10 12:37:29,644 - INFO - [Thread-4] - Removing P6 from neighbours
+2023-04-10 12:37:29,645 - INFO - [Thread-4] - Removed circuit for P7
+2023-04-10 12:37:29,645 - INFO - [Thread-4] - Removed circuit for P6
+2023-04-10 12:37:29,652 - INFO - [Thread-4] - updateGraphOnly: [['P1', 'P2', 610, 'sklep'], ['P1', 'P3', 1022, 'snowball'], ['P1', 'P7', 100, 'Quetzalcoatl'], ['P2', 'P4', 1102, 'LupusreginaBeta'], ['P3', 'P4', 1307, 'Vulnerar'], ['P4', 'P5', 1284, 'shhovh'], ['P4', 'P8', 1427, 'NTH41R4'], ['P4', 'P6', 100, 'CCCStuttgartBer'], ['P6', 'P8', 1392, 'LupusreginaBeta'], ['P7', 'P8', 1368, 'Vulnerar'], ['P5', 'P8', 1212, 'FreeExit'], ['P3', 'P8', 100, 'test2relay'], ['P3', 'P7', 100, 'RDPdotSH'], ['P2', 'P3', 100, 'Digitalcourage4ip7a']] , {'P7', 'P6'}
+2023-04-10 12:37:29,665 - ERROR - [Thread-4] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:29,805 - ERROR - [SENDER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:30,057 - ERROR - [HEART BEAT] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:30,332 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P2', 610, 'sklep'], ['P1', 'P3', 1022, 'snowball'], ['P2', 'P4', 1102, 'LupusreginaBeta'], ['P3', 'P4', 1307, 'Vulnerar'], ['P4', 'P5', 1284, 'shhovh'], ['P4', 'P8', 1427, 'NTH41R4'], ['P6', 'P8', 1392, 'LupusreginaBeta'], ['P5', 'P8', 1212, 'FreeExit'], ['P3', 'P8', 100, 'test2relay'], ['P2', 'P3', 100, 'Digitalcourage4ip7a']] , {'P5', 'P6'}
+2023-04-10 12:37:30,688 - INFO - [Thread-4] - GRAPH: [['P1', 'P2', 610, 'sklep'], ['P1', 'P3', 1022, 'snowball'], ['P1', 'P7', 100, 'Quetzalcoatl'], ['P2', 'P4', 1102, 'LupusreginaBeta'], ['P3', 'P4', 1307, 'Vulnerar'], ['P4', 'P8', 1427, 'NTH41R4'], ['P6', 'P8', 1392, 'LupusreginaBeta'], ['P7', 'P8', 1368, 'Vulnerar'], ['P5', 'P8', 1212, 'FreeExit'], ['P3', 'P8', 100, 'test2relay'], ['P3', 'P7', 100, 'RDPdotSH'], ['P2', 'P3', 100, 'Digitalcourage4ip7a']]
+2023-04-10 12:37:30,688 - INFO - [Thread-4] - ROUTER: {'RID': 'P2', 'Port': 5002, 'Neighbours': 4, 'Neighbours Data': [{'NID': 'P1', 'Cost': 387, 'Hostname': '127.0.0.1', 'RP': 'sklep', 'FLAG': 0}, {'NID': 'P4', 'Cost': 695, 'Hostname': '127.0.0.1', 'RP': 'LupusreginaBeta', 'FLAG': 0}, {'NID': 'P7', 'Cost': 100, 'Hostname': '127.0.0.1', 'RP': 'ziggy5pacedust', 'FLAG': 0}, {'NID': 'P3', 'Cost': 100, 'Hostname': '127.0.0.1', 'RP': 'Digitalcourage4ip7a', 'FLAG': 0}], 'SN': 11, 'FLAG': 0, 'RP': set()}
+2023-04-10 12:37:30,688 - INFO - [Thread-4] - LSA_DB: {'P1': {'RID': 'P1', 'Port': 5001, 'Neighbours': 3, 'Neighbours Data': [{'NID': 'P2', 'Cost': 610, 'Hostname': '127.0.0.1', 'RP': 'sklep', 'FLAG': 0}, {'NID': 'P3', 'Cost': 1022, 'Hostname': '127.0.0.1', 'RP': 'snowball', 'FLAG': 0}, {'NID': 'P7', 'Cost': 100, 'Hostname': '127.0.0.1', 'RP': 'Quetzalcoatl', 'FLAG': 0}], 'SN': 11, 'FLAG': 1, 'DEAD': {'P5', 'P7'}}, 'P4': {'RID': 'P4', 'Port': 5004, 'Neighbours': 4, 'Neighbours Data': [{'NID': 'P2', 'Cost': 1102, 'Hostname': '127.0.0.1', 'RP': 'LupusreginaBeta', 'FLAG': 0}, {'NID': 'P3', 'Cost': 1307, 'Hostname': '127.0.0.1', 'RP': 'Vulnerar', 'FLAG': 0}, {'NID': 'P8', 'Cost': 1427, 'Hostname': '127.0.0.1', 'RP': 'NTH41R4', 'FLAG': 0}], 'SN': 13, 'FLAG': 1, 'DEAD': {'P5', 'P6'}}, 'P8': {'RID': 'P8', 'Port': 5008, 'Neighbours': 5, 'Neighbours Data': [{'NID': 'P6', 'Cost': 1392, 'Hostname': '127.0.0.1', 'RP': 'LupusreginaBeta', 'FLAG': 0}, {'NID': 'P7', 'Cost': 1368, 'Hostname': '127.0.0.1', 'RP': 'Vulnerar', 'FLAG': 0}, {'NID': 'P4', 'Cost': 1337, 'Hostname': '127.0.0.1', 'RP': 'NTH41R4', 'FLAG': 0}, {'NID': 'P5', 'Cost': 1212, 'Hostname': '127.0.0.1', 'RP': 'FreeExit', 'FLAG': 0}, {'NID': 'P3', 'Cost': 100, 'Hostname': '127.0.0.1', 'RP': 'test2relay', 'FLAG': 0}], 'SN': 11, 'FLAG': 1, 'RP': set()}, 'P3': {'RID': 'P3', 'Port': 5003, 'Neighbours': 5, 'Neighbours Data': [{'NID': 'P1', 'Cost': 663, 'Hostname': '127.0.0.1', 'RP': 'snowball', 'FLAG': 0}, {'NID': 'P4', 'Cost': 1143, 'Hostname': '127.0.0.1', 'RP': 'Vulnerar', 'FLAG': 0}, {'NID': 'P7', 'Cost': 100, 'Hostname': '127.0.0.1', 'RP': 'RDPdotSH', 'FLAG': 0}, {'NID': 'P8', 'Cost': 100, 'Hostname': '127.0.0.1', 'RP': 'test2relay', 'FLAG': 0}, {'NID': 'P2', 'Cost': 100, 'Hostname': '127.0.0.1', 'RP': 'Digitalcourage4ip7a', 'FLAG': 0}], 'SN': 13, 'FLAG': 1, 'DEAD': {'P7', 'P6'}}}
+2023-04-10 12:37:31,349 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:33,358 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P6'
+2023-04-10 12:37:33,362 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:33,366 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:33,368 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:33,374 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P6'
+2023-04-10 12:37:33,382 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:33,396 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:33,410 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P6'
+2023-04-10 12:37:33,434 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:33,463 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P6'
+2023-04-10 12:37:33,466 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P6'
+2023-04-10 12:37:33,511 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:33,516 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:33,521 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P6'
+2023-04-10 12:37:34,280 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P2', 610, 'sklep'], ['P1', 'P3', 1022, 'snowball'], ['P1', 'P7', 100, 'Quetzalcoatl'], ['P2', 'P4', 1102, 'LupusreginaBeta'], ['P3', 'P4', 1307, 'Vulnerar'], ['P4', 'P8', 1427, 'NTH41R4'], ['P6', 'P8', 1392, 'LupusreginaBeta'], ['P7', 'P8', 1368, 'Vulnerar'], ['P5', 'P8', 1212, 'FreeExit'], ['P3', 'P8', 100, 'test2relay'], ['P3', 'P7', 100, 'RDPdotSH'], ['P2', 'P3', 100, 'Digitalcourage4ip7a']] , {'P8'}
+2023-04-10 12:37:35,089 - ERROR - [HEART BEAT] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:36,292 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:37,295 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:37,310 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:37,349 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:38,373 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:39,165 - INFO - [RecvLoop_150.136] - On destroy: circuit #80000010
+2023-04-10 12:37:39,165 - INFO - [RecvLoop_150.136] - Destroy circuit #80000010
+2023-04-10 12:37:40,099 - ERROR - [HEART BEAT] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:40,397 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P2', 610, 'sklep'], ['P1', 'P3', 1022, 'snowball'], ['P1', 'P7', 100, 'Quetzalcoatl'], ['P2', 'P4', 1115, 'LupusreginaBeta'], ['P3', 'P4', 1300, 'Vulnerar'], ['P4', 'P8', 1427, 'NTH41R4'], ['P3', 'P7', 100, 'RDPdotSH'], ['P2', 'P3', 100, 'Digitalcourage4ip7a']] , {'P8'}
+2023-04-10 12:37:41,409 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:43,449 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:43,458 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:43,603 - INFO - [CONNECTION] - Neighbour connections (4) less than MIN_NEIGHBOUR_CONNECTIONS (7)
+2023-04-10 12:37:43,604 - INFO - [CONNECTION] - Candidate peers: []
+2023-04-10 12:37:43,604 - INFO - [CONNECTION] - Highest cost peers: [('P8', 2542), ('P6', 1592), ('P5', 1412), ('P4', 1115), ('P1', 300), ('P7', 200), ('P3', 100), ('P2', 0)]
+2023-04-10 12:37:43,604 - INFO - [CONNECTION] - No join peers found
+2023-04-10 12:37:44,830 - ERROR - [SENDER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:44,851 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:44,981 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:45,007 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:45,019 - WARNING - [Connect-Digitalcourage4ip7a] - Got SENDME
+2023-04-10 12:37:45,116 - ERROR - [HEART BEAT] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:46,167 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:46,212 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:50,131 - ERROR - [HEART BEAT] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:50,567 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:51,578 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:52,034 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:53,861 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:55,147 - ERROR - [HEART BEAT] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:56,661 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:58,677 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:58,678 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:58,894 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:37:59,860 - ERROR - [SENDER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:00,172 - ERROR - [HEART BEAT] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:00,739 - WARNING - [RecvLoop_185.181] - CellPadding has some unnecessary data: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+2023-04-10 12:38:00,739 - ERROR - [RecvLoop_185.181] - CellPadding() was received but no handlers for it
+2023-04-10 12:38:04,221 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:04,263 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:04,303 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:05,189 - ERROR - [HEART BEAT] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:06,963 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:08,016 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:10,215 - ERROR - [HEART BEAT] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:10,381 - ERROR - [Establish-ziggy5pacedust] - recv timeout
+2023-04-10 12:38:10,384 - INFO - [Establish-ziggy5pacedust] - Closing connection Establish-ziggy5pacedust
+2023-04-10 12:38:10,384 - INFO - [Establish-ziggy5pacedust] - Stream #9: closing (state = Closed)...
+2023-04-10 12:38:10,384 - WARNING - [Establish-ziggy5pacedust] - Stream #9: closed already
+2023-04-10 12:38:10,384 - INFO - [Establish-ziggy5pacedust] - Destroy circuit #8000000d
+2023-04-10 12:38:10,384 - WARNING - [Establish-ziggy5pacedust] - #8000000d circuit: has been destroyed already
+2023-04-10 12:38:10,384 - INFO - [Establish-ziggy5pacedust] - Closing guard connections (None)...
+2023-04-10 12:38:11,219 - WARNING - [Connect-sklep] - Got SENDME
+2023-04-10 12:38:11,280 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:11,325 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:11,366 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:11,982 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:14,897 - ERROR - [SENDER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:15,231 - ERROR - [HEART BEAT] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:17,036 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:20,271 - ERROR - [HEART BEAT] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:20,333 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:20,378 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:20,416 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:25,284 - ERROR - [HEART BEAT] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:27,064 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:29,372 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:29,422 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:29,431 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:29,923 - ERROR - [SENDER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:30,298 - ERROR - [HEART BEAT] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:30,314 - WARNING - [Connect-Digitalcourage4ip7a] - Got SENDME
+2023-04-10 12:38:30,340 - WARNING - [Connect-Digitalcourage4ip7a] - Got SENDME
+2023-04-10 12:38:35,323 - ERROR - [HEART BEAT] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:36,110 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:39,407 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:39,439 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:39,483 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:40,329 - ERROR - [HEART BEAT] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:42,207 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:43,668 - INFO - [CONNECTION] - Neighbour connections (4) less than MIN_NEIGHBOUR_CONNECTIONS (7)
+2023-04-10 12:38:43,669 - INFO - [CONNECTION] - Candidate peers: []
+2023-04-10 12:38:43,669 - INFO - [CONNECTION] - Highest cost peers: [('P8', 2542), ('P6', 1592), ('P5', 1412), ('P4', 400), ('P1', 300), ('P7', 200), ('P3', 100), ('P2', 0)]
+2023-04-10 12:38:43,669 - INFO - [CONNECTION] - No join peers found
+2023-04-10 12:38:44,955 - ERROR - [SENDER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:45,347 - ERROR - [HEART BEAT] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:45,444 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:45,485 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:48,241 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:48,662 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:50,362 - ERROR - [HEART BEAT] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:52,493 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:52,533 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:52,577 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:55,376 - ERROR - [HEART BEAT] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:56,805 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:58,826 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:38:59,984 - ERROR - [SENDER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:39:00,393 - ERROR - [HEART BEAT] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:39:00,532 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:39:00,619 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:39:02,301 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:39:03,708 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:39:05,440 - ERROR - [HEART BEAT] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:39:09,613 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:39:09,650 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:39:10,403 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:39:10,458 - ERROR - [HEART BEAT] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:39:11,669 - WARNING - [RecvLoop_185.181] - CellPadding has some unnecessary data: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+2023-04-10 12:39:11,669 - ERROR - [RecvLoop_185.181] - CellPadding() was received but no handlers for it
+2023-04-10 12:39:11,806 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:39:13,811 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:39:15,012 - ERROR - [SENDER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:39:15,497 - ERROR - [HEART BEAT] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:39:18,657 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:39:18,699 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:39:18,740 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:39:20,543 - ERROR - [HEART BEAT] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:39:20,763 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:39:25,474 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P2', 1098, 'sklep'], ['P1', 'P3', 1198, 'snowball'], ['P1', 'P7', 100, 'Quetzalcoatl'], ['P1', 'P4', 100, 'IAMWATCHINGYOU'], ['P2', 'P4', 1115, 'LupusreginaBeta'], ['P3', 'P4', 1300, 'Vulnerar'], ['P3', 'P7', 100, 'RDPdotSH'], ['P2', 'P3', 100, 'Digitalcourage4ip7a']] , {'P2'}
+2023-04-10 12:39:25,613 - ERROR - [HEART BEAT] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:39:27,491 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:39:29,656 - WARNING - [RecvLoop_185.181] - CellPadding has some unnecessary data: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+2023-04-10 12:39:29,656 - ERROR - [RecvLoop_185.181] - CellPadding() was received but no handlers for it
+2023-04-10 12:39:30,032 - ERROR - [SENDER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:39:30,630 - ERROR - [HEART BEAT] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:39:35,660 - ERROR - [HEART BEAT] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:39:40,684 - ERROR - [HEART BEAT] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:39:40,832 - INFO - [Thread-4] - Adding P3 to list of inactive
+2023-04-10 12:39:40,834 - INFO - [Thread-4] - DEAD ROUTES DETECTED: P3
+2023-04-10 12:39:40,835 - INFO - [Thread-4] - Removing P3 from neighbours
+2023-04-10 12:39:40,835 - INFO - [Thread-4] - Removed circuit for P3
+2023-04-10 12:39:40,835 - INFO - [Thread-4] - updateGraphOnly: [['P1', 'P2', 1098, 'sklep'], ['P1', 'P3', 1198, 'snowball'], ['P1', 'P7', 100, 'Quetzalcoatl'], ['P1', 'P4', 100, 'IAMWATCHINGYOU'], ['P2', 'P4', 1115, 'LupusreginaBeta'], ['P3', 'P4', 1300, 'Vulnerar'], ['P3', 'P7', 100, 'RDPdotSH']] , {'P3'}
+2023-04-10 12:39:40,849 - ERROR - [Thread-4] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:39:40,906 - WARNING - [Connect-sklep] - Got SENDME
+2023-04-10 12:39:40,971 - WARNING - [Connect-sklep] - Got SENDME
+2023-04-10 12:39:41,855 - INFO - [Thread-4] - GRAPH: [['P1', 'P2', 1098, 'sklep'], ['P1', 'P3', 1198, 'snowball'], ['P1', 'P7', 100, 'Quetzalcoatl'], ['P1', 'P4', 100, 'IAMWATCHINGYOU'], ['P2', 'P4', 1115, 'LupusreginaBeta'], ['P3', 'P4', 1300, 'Vulnerar']]
+2023-04-10 12:39:41,855 - INFO - [Thread-4] - ROUTER: {'RID': 'P2', 'Port': 5002, 'Neighbours': 3, 'Neighbours Data': [{'NID': 'P1', 'Cost': 712, 'Hostname': '127.0.0.1', 'RP': 'sklep', 'FLAG': 0}, {'NID': 'P4', 'Cost': 1184, 'Hostname': '127.0.0.1', 'RP': 'LupusreginaBeta', 'FLAG': 0}, {'NID': 'P7', 'Cost': 100, 'Hostname': '127.0.0.1', 'RP': 'ziggy5pacedust', 'FLAG': 0}], 'SN': 14, 'FLAG': 0, 'RP': set()}
+2023-04-10 12:39:41,856 - INFO - [Thread-4] - LSA_DB: {'P1': {'RID': 'P1', 'Port': 5001, 'Neighbours': 4, 'Neighbours Data': [{'NID': 'P2', 'Cost': 1098, 'Hostname': '127.0.0.1', 'RP': 'sklep', 'FLAG': 0}, {'NID': 'P3', 'Cost': 1198, 'Hostname': '127.0.0.1', 'RP': 'snowball', 'FLAG': 0}, {'NID': 'P7', 'Cost': 100, 'Hostname': '127.0.0.1', 'RP': 'Quetzalcoatl', 'FLAG': 0}, {'NID': 'P4', 'Cost': 100, 'Hostname': '127.0.0.1', 'RP': 'IAMWATCHINGYOU', 'FLAG': 0}], 'SN': 14, 'FLAG': 1, 'RP': set()}, 'P4': {'RID': 'P4', 'Port': 5004, 'Neighbours': 4, 'Neighbours Data': [{'NID': 'P2', 'Cost': 1115, 'Hostname': '127.0.0.1', 'RP': 'LupusreginaBeta', 'FLAG': 0}, {'NID': 'P3', 'Cost': 1300, 'Hostname': '127.0.0.1', 'RP': 'Vulnerar', 'FLAG': 0}, {'NID': 'P1', 'Cost': 100, 'Hostname': '127.0.0.1', 'RP': 'IAMWATCHINGYOU', 'FLAG': 0}], 'SN': 17, 'FLAG': 1, 'RP': set()}}
+2023-04-10 12:39:43,729 - INFO - [CONNECTION] - Neighbour connections (3) less than MIN_NEIGHBOUR_CONNECTIONS (7)
+2023-04-10 12:39:43,729 - INFO - [CONNECTION] - Candidate peers: ['P3']
+2023-04-10 12:39:43,729 - INFO - [CONNECTION] - Highest cost peers: [('P8', 2542), ('P3', 2296), ('P6', 1592), ('P5', 1412), ('P7', 1198), ('P4', 1115), ('P1', 1098), ('P2', 0)]
+2023-04-10 12:39:43,739 - INFO - [CONNECTION] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-10 12:39:45,088 - ERROR - [SENDER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:39:45,344 - INFO - [CONNECTION] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-10 12:39:45,434 - INFO - [MainThread] - ['ESTABLISH', 'mentor', b'91d99e7b445f9224e6a9']
+2023-04-10 12:39:45,434 - INFO - [MainThread] - Got ESTABLISH to relay mentor:b'91d99e7b445f9224e6a9' via staysafeandgoodluck
+2023-04-10 12:39:45,440 - INFO - [Establish-mentor] - Establishing RP to mentor
+2023-04-10 12:39:45,479 - INFO - [Establish-mentor] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-10 12:39:45,700 - ERROR - [HEART BEAT] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:39:47,715 - INFO - [Establish-mentor] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-10 12:39:47,720 - INFO - [Establish-mentor] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13)... (None)
+2023-04-10 12:39:47,866 - INFO - [Establish-mentor] - Creating new circuit #80000011 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13) router...
+2023-04-10 12:39:47,924 - INFO - [Establish-mentor] - Building -1 hops circuit...
+2023-04-10 12:39:47,928 - INFO - [Establish-mentor] - Extending the circuit #80000011 with 72.14.177.164:9001 (mentor; Tor 0.4.7.13)...
+2023-04-10 12:39:47,930 - INFO - [Establish-mentor] - Getting descriptor for 72.14.177.164:9001 (mentor; Tor 0.4.7.13)...
+2023-04-10 12:39:47,935 - INFO - [Establish-mentor] - Connecting to guard node 95.80.27.102:12302 (schulze2; Tor 0.4.7.13)... (Internal dir client)
+2023-04-10 12:39:48,089 - INFO - [Establish-mentor] - Creating new circuit #80000012 with 95.80.27.102:12302 (schulze2; Tor 0.4.7.13) router...
+2023-04-10 12:39:48,179 - INFO - [Establish-mentor] - Building 0 hops circuit...
+2023-04-10 12:39:48,179 - INFO - [Establish-mentor] - Stream #11: creating attached to #80000012 circuit...
+2023-04-10 12:39:48,180 - INFO - [Establish-mentor] - Stream #11: connecting to hsdir
+2023-04-10 12:39:48,211 - INFO - [RecvLoop_95.80.2] - Stream #11: connected (remote ip '')
+2023-04-10 12:39:48,452 - INFO - [RecvLoop_95.80.2] - Stream #11: remote disconnected (reason = DONE)
+2023-04-10 12:39:48,453 - INFO - [Establish-mentor] - Stream #11: closing (state = Disconnected)...
+2023-04-10 12:39:48,453 - INFO - [Establish-mentor] - Got descriptor
+2023-04-10 12:39:49,438 - INFO - [Establish-mentor] - <class 'torpy.circuit.TorCircuit'>
+2023-04-10 12:39:49,605 - INFO - [Establish-mentor] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-04-10 12:39:49,605 - INFO - [Establish-mentor] - Waiting for connections at relay mentor for cookie b'91d99e7b445f9224e6a9' ...
+2023-04-10 12:39:50,751 - ERROR - [HEART BEAT] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:39:52,710 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:39:55,441 - INFO - [CONNECTION] - Sending JOIN to P3 at relay mentor
+2023-04-10 12:39:55,771 - ERROR - [HEART BEAT] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:40:00,108 - ERROR - [SENDER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:40:00,782 - ERROR - [HEART BEAT] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:40:01,774 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:40:05,574 - ERROR - [Connect-Digitalcourage4ip7a] - Got RELAY_END
+2023-04-10 12:40:05,794 - ERROR - [HEART BEAT] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:40:08,242 - ERROR - [RECEIVER] - send_to_stream: Key not found: 'P7'
+2023-04-10 12:40:09,594 - ERROR - [Connect-sklep] - Got DESTROY
+2023-04-10 12:40:10,812 - ERROR - [HEART BEAT] - send_to_stream: Key not found: 'P7'

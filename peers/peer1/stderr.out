@@ -6,7 +6,7 @@
 + python3 ./../../rtun-routing/rtun.py -v INFO -g staysafeandgoodluck -f rendezvous.txt -l -t peer1peer2 -n default -i 1 -d 2
 /home/vboxuser/Git/imt4905/rtun-routing/lsr.py:549: SyntaxWarning: "is" with a literal. Did you mean "=="?
   if args[3] is 1:
-Exception in thread Establish-ForPrivacyNET:
+Exception in thread Establish-shhovh:
 Traceback (most recent call last):
   File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
     self.run()
@@ -15,7 +15,7 @@ Traceback (most recent call last):
   File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
     raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
 torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-incircuitryrelay:
+Exception in thread Establish-brokolimc4:
 Traceback (most recent call last):
   File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
     self.run()
@@ -24,7 +24,7 @@ Traceback (most recent call last):
   File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
     raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
 torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-relayon3169:
+Exception in thread Establish-giesskanne:
 Traceback (most recent call last):
   File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
     self.run()
@@ -33,7 +33,7 @@ Traceback (most recent call last):
   File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
     raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
 torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-wearethehackerscom:
+Exception in thread Establish-Quetzalcoatl:
 Traceback (most recent call last):
   File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
     self.run()
@@ -42,7 +42,7 @@ Traceback (most recent call last):
   File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
     raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
 torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-s6tor2:
+Exception in thread Establish-fvesca:
 Traceback (most recent call last):
   File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
     self.run()
@@ -51,7 +51,28 @@ Traceback (most recent call last):
   File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
     raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
 torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-franovgnet:
+Exception in thread Establish-Unnamed:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/vboxuser/Git/imt4905/rtun-routing/rendezvous.py", line 78, in run
+    circuit = self.build_circuit(guard_router, [ rendp_router ])
+  File "/home/vboxuser/Git/imt4905/rtun-routing/rendezvous.py", line 191, in build_circuit
+    circuit =  guard_router.create_circuit(hops_count=-1, extend_routers=extend_routers)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/utils.py", line 79, in newfn
+    return func(*args, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/guard.py", line 147, in create_circuit
+    circuit.extend(router)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 321, in wrapped
+    return fn(self, *args, **kwargs)
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 575, in extend
+    recv_cell = self.send_relay_wait(
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 551, in send_relay_wait
+    return w.get()
+  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayExtended2 or CellRelayTruncated
+Exception in thread Establish-FreeBeer:
 Traceback (most recent call last):
   File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
     self.run()
@@ -60,16 +81,7 @@ Traceback (most recent call last):
   File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
     raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
 torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-relayon2144:
-Traceback (most recent call last):
-  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
-    self.run()
-  File "/home/vboxuser/Git/imt4905/rtun-routing/rendezvous.py", line 86, in run
-    rendezvous2_cell = w.get(timeout=self.timeout)
-  File "/home/vboxuser/Git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
-    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
-torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-Quintex54:
+Exception in thread Establish-KagamineLenStar:
 Traceback (most recent call last):
   File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
     self.run()
