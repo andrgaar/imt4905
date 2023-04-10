@@ -1,0 +1,334 @@
+2023-04-10 11:54:15,568 - INFO - [MainThread] - Initialized router P1 at port 5001 PID 22531
+2023-04-10 11:54:15,570 - INFO - [MainThread] - Adding listener for sklep
+2023-04-10 11:54:15,570 - INFO - [Establish-sklep] - Establishing RP to sklep
+2023-04-10 11:54:15,573 - INFO - [MainThread] - Adding a connection to snowball
+2023-04-10 11:54:15,574 - INFO - [Connect-snowball] - Calling connect_to_rendezvous_point
+2023-04-10 11:54:15,574 - INFO - [Connect-snowball] - Connect to rendezvous point snowball
+2023-04-10 11:54:15,577 - INFO - [Establish-sklep] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-10 11:54:15,589 - INFO - [MainThread] - Starting testing thread
+2023-04-10 11:54:15,591 - INFO - [Connect-snowball] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-10 11:54:15,602 - INFO - [TESTER] - Started tester
+2023-04-10 11:54:15,629 - INFO - [MainThread] - Starting connection thread
+2023-04-10 11:54:15,697 - INFO - [MainThread] - Starting log thread
+2023-04-10 11:54:15,974 - INFO - [Connect-snowball] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-10 11:54:16,089 - INFO - [Establish-sklep] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-10 11:54:16,092 - INFO - [Establish-sklep] - Connecting to guard node 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13)... (None)
+2023-04-10 11:54:16,151 - INFO - [Establish-sklep] - Creating new circuit #80000001 with 185.181.61.23:443 (staysafeandgoodluck; Tor 0.4.7.13) router...
+2023-04-10 11:54:16,165 - INFO - [Establish-sklep] - Building -1 hops circuit...
+2023-04-10 11:54:16,165 - INFO - [Establish-sklep] - Extending the circuit #80000001 with 95.216.22.24:9090 (sklep; Tor 0.4.7.10)...
+2023-04-10 11:54:16,165 - INFO - [Establish-sklep] - Getting descriptor for 95.216.22.24:9090 (sklep; Tor 0.4.7.10)...
+2023-04-10 11:54:16,170 - INFO - [Establish-sklep] - Connecting to guard node 51.77.140.69:9001 (Unnamed; Tor 0.4.5.10)... (Internal dir client)
+2023-04-10 11:54:16,217 - INFO - [Connect-snowball] - Connected to rendezvous point snowball
+2023-04-10 11:54:16,218 - INFO - [Connect-snowball] - Waiting for peer to open stream
+2023-04-10 11:54:16,257 - INFO - [Connect-snowball] - Received cell: <class 'torpy.cells.CellDestroy'>
+2023-04-10 11:54:16,260 - WARNING - [Connect-snowball] - Could not connect to rendezvous point snowball: Receive CellDestroy from RP, 11 attempts left...
+2023-04-10 11:54:16,378 - INFO - [Establish-sklep] - Creating new circuit #80000002 with 51.77.140.69:9001 (Unnamed; Tor 0.4.5.10) router...
+2023-04-10 11:54:16,431 - INFO - [Establish-sklep] - Building 0 hops circuit...
+2023-04-10 11:54:16,431 - INFO - [Establish-sklep] - Stream #1: creating attached to #80000002 circuit...
+2023-04-10 11:54:16,431 - INFO - [Establish-sklep] - Stream #1: connecting to hsdir
+2023-04-10 11:54:16,483 - INFO - [RecvLoop_51.77.1] - Stream #1: connected (remote ip '')
+2023-04-10 11:54:16,732 - INFO - [RecvLoop_51.77.1] - Stream #1: remote disconnected (reason = DONE)
+2023-04-10 11:54:16,733 - INFO - [Establish-sklep] - Stream #1: closing (state = Disconnected)...
+2023-04-10 11:54:16,733 - INFO - [Establish-sklep] - Got descriptor
+2023-04-10 11:54:16,765 - INFO - [Establish-sklep] - <class 'torpy.circuit.TorCircuit'>
+2023-04-10 11:54:16,799 - INFO - [Establish-sklep] - Rendezvous established (CellRelayRendezvousEstablished())
+2023-04-10 11:54:16,799 - INFO - [Establish-sklep] - Waiting for connections at relay sklep for cookie b'eb688e4f52df90278060' ...
+2023-04-10 11:54:19,699 - INFO - [Establish-sklep] - Got REND2 message from sklep
+2023-04-10 11:54:19,699 - INFO - [Establish-sklep] - Entered circuit context with id 0x80000001
+2023-04-10 11:54:19,699 - INFO - [Establish-sklep] - Stream #2: creating attached to #80000001 circuit...
+2023-04-10 11:54:19,699 - INFO - [Establish-sklep] - Stream #2: connecting to ('127.0.0.1', 5000)
+2023-04-10 11:54:19,759 - INFO - [RecvLoop_185.181] - Stream #2: connected (remote ip '127.0.0.1')
+2023-04-10 11:54:19,901 - INFO - [Establish-sklep] - Sending HELLO to peer
+2023-04-10 11:54:19,901 - INFO - [Establish-sklep] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P1\x94ua.'
+2023-04-10 11:54:19,902 - INFO - [RECEIVER] - Added neighbour P2
+2023-04-10 11:54:21,265 - INFO - [Connect-snowball] - Calling connect_to_rendezvous_point
+2023-04-10 11:54:21,266 - INFO - [Connect-snowball] - Connect to rendezvous point snowball
+2023-04-10 11:54:21,270 - INFO - [Connect-snowball] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-10 11:54:21,467 - INFO - [Connect-snowball] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-10 11:54:21,674 - INFO - [Connect-snowball] - Connected to rendezvous point snowball
+2023-04-10 11:54:21,674 - INFO - [Connect-snowball] - Waiting for peer to open stream
+2023-04-10 11:54:21,712 - INFO - [Connect-snowball] - Received cell: <class 'torpy.cells.CellDestroy'>
+2023-04-10 11:54:21,713 - WARNING - [Connect-snowball] - Could not connect to rendezvous point snowball: Receive CellDestroy from RP, 10 attempts left...
+2023-04-10 11:54:26,719 - INFO - [Connect-snowball] - Calling connect_to_rendezvous_point
+2023-04-10 11:54:26,719 - INFO - [Connect-snowball] - Connect to rendezvous point snowball
+2023-04-10 11:54:26,721 - INFO - [Connect-snowball] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-10 11:54:26,933 - INFO - [Connect-snowball] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-10 11:54:27,165 - INFO - [Connect-snowball] - Connected to rendezvous point snowball
+2023-04-10 11:54:27,165 - INFO - [Connect-snowball] - Waiting for peer to open stream
+2023-04-10 11:54:27,266 - INFO - [Connect-snowball] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-04-10 11:54:27,266 - INFO - [Connect-snowball] - Stream opened successfully
+2023-04-10 11:54:27,267 - INFO - [Connect-snowball] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P1\x94ua.'
+2023-04-10 11:54:27,466 - INFO - [RECEIVER] - Added neighbour P3
+2023-04-10 11:55:15,756 - INFO - [CONNECTION] - Highest cost peers: [('P5', 300), ('P4', 200), ('P2', 100), ('P3', 100), ('P1', 0)]
+2023-04-10 11:55:15,756 - INFO - [CONNECTION] - Latency for P5 is 300 - max 500
+2023-04-10 11:55:15,756 - INFO - [CONNECTION] - Latency for P4 is 200 - max 500
+2023-04-10 11:55:15,757 - INFO - [CONNECTION] - Latency for P2 is 100 - max 500
+2023-04-10 11:55:15,757 - INFO - [CONNECTION] - Latency for P3 is 100 - max 500
+2023-04-10 11:55:15,757 - INFO - [CONNECTION] - Latency for P1 is 0 - max 500
+2023-04-10 11:55:15,757 - INFO - [CONNECTION] - No join peer selected for circuit switch
+2023-04-10 11:55:16,900 - INFO - [RecvLoop_51.77.1] - On destroy: circuit #80000002
+2023-04-10 11:55:16,900 - INFO - [RecvLoop_51.77.1] - Destroy circuit #80000002
+2023-04-10 11:55:30,759 - WARNING - [Connect-snowball] - Got SENDME
+2023-04-10 11:55:43,892 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P2', 100, 'sklep'], ['P2', 'P4', 100, 'LupusreginaBeta'], ['P1', 'P3', 100, 'snowball'], ['P3', 'P4', 100, 'Vulnerar'], ['P4', 'P5', 100, 'shhovh'], ['P5', 'P6', 100, 'taipe'], ['P5', 'P7', 100, 'RMK'], ['P6', 'P8', 100, 'LupusreginaBeta'], ['P7', 'P8', 100, 'Vulnerar']] , {'P6'}
+2023-04-10 11:56:03,453 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P2', 100, 'sklep'], ['P2', 'P4', 100, 'LupusreginaBeta'], ['P1', 'P3', 100, 'snowball'], ['P3', 'P4', 100, 'Vulnerar'], ['P4', 'P5', 100, 'shhovh'], ['P5', 'P7', 100, 'RMK'], ['P7', 'P8', 100, 'Vulnerar'], ['P6', 'P8', 100, 'LupusreginaBeta']] , {'P5'}
+2023-04-10 11:56:06,566 - WARNING - [RECEIVER] - TTL reached from path to P6 from P4
+2023-04-10 11:56:15,727 - WARNING - [RECEIVER] - Routing loop from P4 to P8: P4-P3-P1-P3-P1
+2023-04-10 11:56:15,727 - WARNING - [RECEIVER] - TTL reached from path to P8 from P4
+2023-04-10 11:56:15,770 - INFO - [CONNECTION] - Highest cost peers: [('P6', 600), ('P8', 500), ('P7', 400), ('P5', 300), ('P4', 200), ('P2', 100), ('P3', 100), ('P1', 0)]
+2023-04-10 11:56:15,770 - INFO - [CONNECTION] - Latency for P6 is 600 - max 500
+2023-04-10 11:56:15,770 - INFO - [CONNECTION] - Latency for P8 is 500 - max 500
+2023-04-10 11:56:15,770 - INFO - [CONNECTION] - Latency for P7 is 400 - max 500
+2023-04-10 11:56:15,770 - INFO - [CONNECTION] - Latency for P5 is 300 - max 500
+2023-04-10 11:56:15,770 - INFO - [CONNECTION] - Latency for P4 is 200 - max 500
+2023-04-10 11:56:15,770 - INFO - [CONNECTION] - Latency for P2 is 100 - max 500
+2023-04-10 11:56:15,770 - INFO - [CONNECTION] - Latency for P3 is 100 - max 500
+2023-04-10 11:56:15,770 - INFO - [CONNECTION] - Latency for P1 is 0 - max 500
+2023-04-10 11:56:15,770 - INFO - [CONNECTION] - No join peer selected for circuit switch
+2023-04-10 11:56:25,692 - WARNING - [RECEIVER] - TTL reached from path to P8 from P4
+2023-04-10 11:56:26,490 - WARNING - [Connect-snowball] - Got SENDME
+2023-04-10 11:56:26,533 - WARNING - [Connect-snowball] - Got SENDME
+2023-04-10 11:56:35,711 - WARNING - [RECEIVER] - TTL reached from path to P5 from P4
+2023-04-10 11:56:53,751 - WARNING - [RECEIVER] - Routing loop from P4 to P8: P4-P3-P1-P2-P1
+2023-04-10 11:56:53,751 - WARNING - [RECEIVER] - TTL reached from path to P8 from P4
+2023-04-10 11:56:53,797 - WARNING - [RECEIVER] - Routing loop from P4 to P5: P4-P3-P1-P2-P1
+2023-04-10 11:56:53,797 - WARNING - [RECEIVER] - TTL reached from path to P5 from P4
+2023-04-10 11:57:07,852 - WARNING - [RECEIVER] - Routing loop from P4 to P6: P4-P3-P1-P2-P1
+2023-04-10 11:57:07,852 - WARNING - [RECEIVER] - TTL reached from path to P6 from P4
+2023-04-10 11:57:07,965 - WARNING - [RECEIVER] - TTL reached from path to P8 from P4
+2023-04-10 11:57:15,802 - INFO - [CONNECTION] - Highest cost peers: [('P6', 947), ('P8', 847), ('P7', 747), ('P5', 647), ('P4', 547), ('P3', 447), ('P2', 294), ('P1', 0)]
+2023-04-10 11:57:15,802 - INFO - [CONNECTION] - Latency for P6 is 947 - max 500
+2023-04-10 11:57:15,802 - INFO - [CONNECTION] - Latency for P8 is 847 - max 500
+2023-04-10 11:57:15,802 - INFO - [CONNECTION] - Latency for P7 is 747 - max 500
+2023-04-10 11:57:15,802 - INFO - [CONNECTION] - Latency for P5 is 647 - max 500
+2023-04-10 11:57:15,802 - INFO - [CONNECTION] - Latency for P4 is 547 - max 500
+2023-04-10 11:57:15,802 - INFO - [CONNECTION] - Latency for P3 is 447 - max 500
+2023-04-10 11:57:15,802 - INFO - [CONNECTION] - Latency for P2 is 294 - max 500
+2023-04-10 11:57:15,802 - INFO - [CONNECTION] - Latency for P1 is 0 - max 500
+2023-04-10 11:57:15,802 - INFO - [CONNECTION] - No join peer selected for circuit switch
+2023-04-10 11:57:20,065 - WARNING - [Connect-snowball] - Got SENDME
+2023-04-10 11:57:25,085 - WARNING - [RECEIVER] - TTL reached from path to P5 from P4
+2023-04-10 11:57:32,791 - WARNING - [RECEIVER] - TTL reached from path to P5 from P4
+2023-04-10 11:57:43,410 - WARNING - [RECEIVER] - TTL reached from path to P8 from P4
+2023-04-10 11:57:43,471 - WARNING - [RECEIVER] - Routing loop from P4 to P5: P4-P3-P1-P2-P1
+2023-04-10 11:57:43,472 - WARNING - [RECEIVER] - TTL reached from path to P5 from P4
+2023-04-10 11:58:09,936 - WARNING - [Connect-snowball] - Got SENDME
+2023-04-10 11:58:09,977 - WARNING - [Connect-snowball] - Got SENDME
+2023-04-10 11:58:15,862 - INFO - [CONNECTION] - Highest cost peers: [('P6', 2948), ('P8', 2289), ('P7', 2189), ('P5', 1425), ('P4', 764), ('P3', 447), ('P2', 294), ('P1', 0)]
+2023-04-10 11:58:15,862 - INFO - [CONNECTION] - Latency for P6 is 2948 - max 500
+2023-04-10 11:58:15,863 - INFO - [CONNECTION] - Latency for P8 is 2289 - max 500
+2023-04-10 11:58:15,863 - INFO - [CONNECTION] - Latency for P7 is 2189 - max 500
+2023-04-10 11:58:15,863 - INFO - [CONNECTION] - Latency for P5 is 1425 - max 500
+2023-04-10 11:58:15,863 - INFO - [CONNECTION] - Latency for P4 is 764 - max 500
+2023-04-10 11:58:15,863 - INFO - [CONNECTION] - Latency for P3 is 447 - max 500
+2023-04-10 11:58:15,863 - INFO - [CONNECTION] - Latency for P2 is 294 - max 500
+2023-04-10 11:58:15,863 - INFO - [CONNECTION] - Latency for P1 is 0 - max 500
+2023-04-10 11:58:15,863 - INFO - [CONNECTION] - No join peer selected for circuit switch
+2023-04-10 11:58:37,174 - WARNING - [RECEIVER] - TTL reached from path to P5 from P4
+2023-04-10 11:59:11,263 - WARNING - [Connect-snowball] - Got SENDME
+2023-04-10 11:59:15,870 - INFO - [CONNECTION] - Highest cost peers: [('P6', 2948), ('P8', 2289), ('P7', 2189), ('P5', 1425), ('P4', 764), ('P3', 447), ('P2', 294), ('P1', 0)]
+2023-04-10 11:59:15,870 - INFO - [CONNECTION] - Latency for P6 is 2948 - max 500
+2023-04-10 11:59:15,871 - INFO - [CONNECTION] - Latency for P8 is 2289 - max 500
+2023-04-10 11:59:15,871 - INFO - [CONNECTION] - Latency for P7 is 2189 - max 500
+2023-04-10 11:59:15,871 - INFO - [CONNECTION] - Latency for P5 is 1425 - max 500
+2023-04-10 11:59:15,871 - INFO - [CONNECTION] - Latency for P4 is 764 - max 500
+2023-04-10 11:59:15,871 - INFO - [CONNECTION] - Latency for P3 is 447 - max 500
+2023-04-10 11:59:15,871 - INFO - [CONNECTION] - Latency for P2 is 294 - max 500
+2023-04-10 11:59:15,871 - INFO - [CONNECTION] - Latency for P1 is 0 - max 500
+2023-04-10 11:59:15,871 - INFO - [CONNECTION] - No join peer selected for circuit switch
+2023-04-10 11:59:43,597 - WARNING - [RECEIVER] - TTL reached from path to P5 from P4
+2023-04-10 12:00:14,394 - WARNING - [Connect-snowball] - Got SENDME
+2023-04-10 12:00:15,929 - INFO - [CONNECTION] - Highest cost peers: [('P6', 2359), ('P8', 1700), ('P7', 1600), ('P5', 1500), ('P4', 839), ('P3', 611), ('P2', 325), ('P1', 0)]
+2023-04-10 12:00:15,930 - INFO - [CONNECTION] - Latency for P6 is 2359 - max 500
+2023-04-10 12:00:15,930 - INFO - [CONNECTION] - Latency for P8 is 1700 - max 500
+2023-04-10 12:00:15,930 - INFO - [CONNECTION] - Latency for P7 is 1600 - max 500
+2023-04-10 12:00:15,930 - INFO - [CONNECTION] - Latency for P5 is 1500 - max 500
+2023-04-10 12:00:15,930 - INFO - [CONNECTION] - Latency for P4 is 839 - max 500
+2023-04-10 12:00:15,930 - INFO - [CONNECTION] - Latency for P3 is 611 - max 500
+2023-04-10 12:00:15,930 - INFO - [CONNECTION] - Latency for P2 is 325 - max 500
+2023-04-10 12:00:15,930 - INFO - [CONNECTION] - Latency for P1 is 0 - max 500
+2023-04-10 12:00:15,930 - INFO - [CONNECTION] - No join peer selected for circuit switch
+2023-04-10 12:00:16,123 - WARNING - [Connect-snowball] - Got SENDME
+2023-04-10 12:00:47,497 - WARNING - [RECEIVER] - TTL reached from path to P3 from P7
+2023-04-10 12:00:57,299 - WARNING - [RECEIVER] - TTL reached from path to P3 from P7
+2023-04-10 12:01:05,402 - WARNING - [RECEIVER] - TTL reached from path to P3 from P7
+2023-04-10 12:01:10,990 - WARNING - [RECEIVER] - TTL reached from path to P3 from P7
+2023-04-10 12:01:14,527 - WARNING - [Connect-snowball] - Got SENDME
+2023-04-10 12:01:15,990 - INFO - [CONNECTION] - Highest cost peers: [('P6', 2126), ('P8', 1314), ('P7', 1214), ('P5', 1114), ('P3', 611), ('P4', 425), ('P2', 325), ('P1', 0)]
+2023-04-10 12:01:15,991 - INFO - [CONNECTION] - Latency for P6 is 2126 - max 500
+2023-04-10 12:01:15,991 - INFO - [CONNECTION] - Latency for P8 is 1314 - max 500
+2023-04-10 12:01:15,991 - INFO - [CONNECTION] - Latency for P7 is 1214 - max 500
+2023-04-10 12:01:15,991 - INFO - [CONNECTION] - Latency for P5 is 1114 - max 500
+2023-04-10 12:01:15,991 - INFO - [CONNECTION] - Latency for P3 is 611 - max 500
+2023-04-10 12:01:15,991 - INFO - [CONNECTION] - Latency for P4 is 425 - max 500
+2023-04-10 12:01:15,991 - INFO - [CONNECTION] - Latency for P2 is 325 - max 500
+2023-04-10 12:01:15,992 - INFO - [CONNECTION] - Latency for P1 is 0 - max 500
+2023-04-10 12:01:15,992 - INFO - [CONNECTION] - No join peer selected for circuit switch
+2023-04-10 12:01:45,241 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P2', 325, 'sklep'], ['P2', 'P4', 100, 'jokulhops'], ['P1', 'P3', 611, 'snowball'], ['P3', 'P4', 744, 'Vulnerar'], ['P4', 'P5', 689, 'shhovh'], ['P5', 'P7', 100, 'p1onX01'], ['P7', 'P8', 1061, 'hawksTorRelay'], ['P6', 'P8', 812, 'LupusreginaBeta']] , {'P7'}
+2023-04-10 12:01:49,715 - WARNING - [RECEIVER] - Routing loop from P1 to P8: P1-P3-P1
+2023-04-10 12:01:49,822 - WARNING - [RECEIVER] - Routing loop from P1 to P8: P1-P3-P1-P2-P1
+2023-04-10 12:01:49,822 - WARNING - [RECEIVER] - TTL reached from path to P8 from P1
+2023-04-10 12:01:51,510 - WARNING - [RECEIVER] - TTL reached from path to P8 from P4
+2023-04-10 12:01:51,519 - WARNING - [RECEIVER] - Routing loop from P4 to P7: P4-P3-P1-P3-P1
+2023-04-10 12:01:51,519 - WARNING - [RECEIVER] - TTL reached from path to P7 from P4
+2023-04-10 12:01:55,733 - WARNING - [RECEIVER] - Routing loop from P3 to P7: P3-P1-P3-P1
+2023-04-10 12:01:58,637 - WARNING - [RECEIVER] - Routing loop from P1 to P7: P1-P2-P1
+2023-04-10 12:01:58,726 - WARNING - [RECEIVER] - Routing loop from P1 to P8: P1-P3-P1
+2023-04-10 12:01:58,729 - WARNING - [RECEIVER] - Routing loop from P1 to P6: P1-P3-P4-P2-P1
+2023-04-10 12:01:58,729 - WARNING - [RECEIVER] - TTL reached from path to P6 from P1
+2023-04-10 12:01:58,791 - WARNING - [RECEIVER] - Routing loop from P1 to P8: P1-P3-P1-P2-P1
+2023-04-10 12:01:58,791 - WARNING - [RECEIVER] - TTL reached from path to P8 from P1
+2023-04-10 12:02:00,498 - WARNING - [RECEIVER] - TTL reached from path to P8 from P4
+2023-04-10 12:02:00,551 - WARNING - [RECEIVER] - Routing loop from P4 to P6: P4-P3-P1-P3-P1
+2023-04-10 12:02:00,551 - WARNING - [RECEIVER] - TTL reached from path to P6 from P4
+2023-04-10 12:02:01,212 - WARNING - [Connect-snowball] - Got SENDME
+2023-04-10 12:02:01,255 - WARNING - [Connect-snowball] - Got SENDME
+2023-04-10 12:02:03,644 - WARNING - [RECEIVER] - Routing loop from P1 to P6: P1-P2-P1
+2023-04-10 12:02:06,776 - WARNING - [RECEIVER] - Routing loop from P1 to P8: P1-P2-P4-P3-P1
+2023-04-10 12:02:06,776 - WARNING - [RECEIVER] - TTL reached from path to P8 from P1
+2023-04-10 12:02:11,321 - WARNING - [RECEIVER] - Routing loop from P3 to P8: P3-P1-P2-P1
+2023-04-10 12:02:13,756 - WARNING - [RECEIVER] - Routing loop from P1 to P6: P1-P3-P1
+2023-04-10 12:02:13,757 - WARNING - [RECEIVER] - Routing loop from P1 to P8: P1-P2-P1
+2023-04-10 12:02:13,865 - WARNING - [RECEIVER] - Routing loop from P1 to P7: P1-P2-P1
+2023-04-10 12:02:16,052 - INFO - [CONNECTION] - Highest cost peers: [('P6', 3087), ('P8', 2275), ('P5', 1271), ('P7', 1214), ('P4', 582), ('P3', 567), ('P2', 482), ('P1', 0)]
+2023-04-10 12:02:16,052 - INFO - [CONNECTION] - Latency for P6 is 3087 - max 500
+2023-04-10 12:02:16,052 - INFO - [CONNECTION] - Latency for P8 is 2275 - max 500
+2023-04-10 12:02:16,052 - INFO - [CONNECTION] - Latency for P5 is 1271 - max 500
+2023-04-10 12:02:16,052 - INFO - [CONNECTION] - Latency for P7 is 1214 - max 500
+2023-04-10 12:02:16,053 - INFO - [CONNECTION] - Latency for P4 is 582 - max 500
+2023-04-10 12:02:16,053 - INFO - [CONNECTION] - Latency for P3 is 567 - max 500
+2023-04-10 12:02:16,053 - INFO - [CONNECTION] - Latency for P2 is 482 - max 500
+2023-04-10 12:02:16,053 - INFO - [CONNECTION] - Latency for P1 is 0 - max 500
+2023-04-10 12:02:16,053 - INFO - [CONNECTION] - No join peer selected for circuit switch
+2023-04-10 12:02:19,278 - WARNING - [RECEIVER] - TTL reached from path to P6 from P4
+2023-04-10 12:02:19,352 - WARNING - [RECEIVER] - TTL reached from path to P7 from P4
+2023-04-10 12:02:21,320 - WARNING - [RECEIVER] - Routing loop from P2 to P8: P2-P1-P2-P1
+2023-04-10 12:02:24,972 - WARNING - [RECEIVER] - Routing loop from P1 to P7: P1-P2-P4-P2-P1
+2023-04-10 12:02:24,972 - WARNING - [RECEIVER] - TTL reached from path to P7 from P1
+2023-04-10 12:02:27,440 - WARNING - [RECEIVER] - Routing loop from P2 to P8: P2-P1-P3-P1
+2023-04-10 12:02:31,726 - WARNING - [RECEIVER] - Routing loop from P1 to P6: P1-P3-P1
+2023-04-10 12:02:31,786 - WARNING - [RECEIVER] - Routing loop from P1 to P7: P1-P3-P1
+2023-04-10 12:02:31,854 - WARNING - [RECEIVER] - Routing loop from P1 to P6: P1-P3-P1-P3-P1
+2023-04-10 12:02:31,854 - WARNING - [RECEIVER] - TTL reached from path to P6 from P1
+2023-04-10 12:02:31,857 - WARNING - [RECEIVER] - Routing loop from P1 to P7: P1-P3-P1-P2-P1
+2023-04-10 12:02:31,858 - WARNING - [RECEIVER] - TTL reached from path to P7 from P1
+2023-04-10 12:02:31,947 - WARNING - [RECEIVER] - Routing loop from P1 to P8: P1-P2-P4-P3-P1
+2023-04-10 12:02:31,948 - WARNING - [RECEIVER] - TTL reached from path to P8 from P1
+2023-04-10 12:02:32,561 - WARNING - [RECEIVER] - Routing loop from P4 to P8: P4-P2-P1-P3-P1
+2023-04-10 12:02:32,561 - WARNING - [RECEIVER] - TTL reached from path to P8 from P4
+2023-04-10 12:02:34,497 - WARNING - [RECEIVER] - Routing loop from P2 to P6: P2-P1-P3-P1
+2023-04-10 12:02:36,289 - WARNING - [Connect-snowball] - Got SENDME
+2023-04-10 12:02:42,643 - WARNING - [RECEIVER] - TTL reached from path to P8 from P4
+2023-04-10 12:02:42,710 - WARNING - [RECEIVER] - Routing loop from P1 to P6: P1-P2-P1
+2023-04-10 12:02:42,763 - WARNING - [RECEIVER] - Routing loop from P3 to P8: P3-P1-P2-P1
+2023-04-10 12:02:43,502 - WARNING - [RECEIVER] - Routing loop from P2 to P8: P2-P1-P3-P1
+2023-04-10 12:02:49,713 - WARNING - [RECEIVER] - TTL reached from path to P7 from P4
+2023-04-10 12:02:50,729 - WARNING - [RECEIVER] - Routing loop from P1 to P6: P1-P2-P1
+2023-04-10 12:02:50,785 - WARNING - [RECEIVER] - Routing loop from P1 to P8: P1-P2-P1
+2023-04-10 12:02:50,917 - WARNING - [RECEIVER] - Routing loop from P1 to P7: P1-P3-P4-P2-P1
+2023-04-10 12:02:50,918 - WARNING - [RECEIVER] - TTL reached from path to P7 from P1
+2023-04-10 12:02:51,377 - WARNING - [RECEIVER] - Routing loop from P3 to P8: P3-P1-P2-P1
+2023-04-10 12:02:56,665 - INFO - [RECEIVER] - updateGraphOnly: [['P1', 'P2', 482, 'sklep'], ['P2', 'P4', 100, 'jokulhops'], ['P1', 'P3', 567, 'snowball'], ['P3', 'P4', 543, 'Vulnerar'], ['P4', 'P5', 689, 'shhovh'], ['P6', 'P8', 812, 'LupusreginaBeta'], ['P7', 'P8', 877, 'hawksTorRelay']] , {'P5'}
+2023-04-10 12:02:58,687 - WARNING - [RECEIVER] - Routing loop from P1 to P6: P1-P3-P1
+2023-04-10 12:02:59,697 - WARNING - [RECEIVER] - Routing loop from P2 to P8: P2-P1-P2-P1
+2023-04-10 12:02:59,730 - WARNING - [RECEIVER] - Routing loop from P1 to P6: P1-P3-P1-P3-P1
+2023-04-10 12:02:59,730 - WARNING - [RECEIVER] - TTL reached from path to P6 from P1
+2023-04-10 12:03:01,755 - WARNING - [RECEIVER] - TTL reached from path to P7 from P4
+2023-04-10 12:03:05,757 - WARNING - [RECEIVER] - Routing loop from P1 to P8: P1-P2-P1
+2023-04-10 12:03:05,789 - WARNING - [RECEIVER] - Routing loop from P1 to P7: P1-P2-P1
+2023-04-10 12:03:05,823 - WARNING - [RECEIVER] - Routing loop from P1 to P8: P1-P2-P1-P2-P1
+2023-04-10 12:03:05,824 - WARNING - [RECEIVER] - TTL reached from path to P8 from P1
+2023-04-10 12:03:06,855 - WARNING - [RECEIVER] - Routing loop from P1 to P6: P1-P3-P1
+2023-04-10 12:03:09,016 - WARNING - [RECEIVER] - Routing loop from P3 to P7: P3-P1-P2-P1
+2023-04-10 12:03:10,741 - WARNING - [RECEIVER] - Routing loop from P4 to P8: P4-P3-P1-P2-P1
+2023-04-10 12:03:10,741 - WARNING - [RECEIVER] - TTL reached from path to P8 from P4
+2023-04-10 12:03:10,771 - WARNING - [RECEIVER] - Routing loop from P4 to P7: P4-P2-P1-P2-P1
+2023-04-10 12:03:10,771 - WARNING - [RECEIVER] - TTL reached from path to P7 from P4
+2023-04-10 12:03:10,826 - WARNING - [RECEIVER] - Routing loop from P4 to P6: P4-P3-P1-P2-P1
+2023-04-10 12:03:10,826 - WARNING - [RECEIVER] - TTL reached from path to P6 from P4
+2023-04-10 12:03:12,766 - WARNING - [RECEIVER] - Routing loop from P1 to P8: P1-P2-P1
+2023-04-10 12:03:12,856 - WARNING - [RECEIVER] - Routing loop from P1 to P6: P1-P3-P4-P2-P1
+2023-04-10 12:03:12,857 - WARNING - [RECEIVER] - TTL reached from path to P6 from P1
+2023-04-10 12:03:14,453 - WARNING - [Connect-snowball] - Got SENDME
+2023-04-10 12:03:14,496 - WARNING - [Connect-snowball] - Got SENDME
+2023-04-10 12:03:16,109 - INFO - [CONNECTION] - Highest cost peers: [('P6', 3087), ('P8', 2275), ('P5', 1271), ('P7', 1214), ('P4', 1004), ('P3', 567), ('P2', 482), ('P1', 0)]
+2023-04-10 12:03:16,110 - INFO - [CONNECTION] - Latency for P6 is 3087 - max 500
+2023-04-10 12:03:16,110 - INFO - [CONNECTION] - Latency for P8 is 2275 - max 500
+2023-04-10 12:03:16,110 - INFO - [CONNECTION] - Latency for P5 is 1271 - max 500
+2023-04-10 12:03:16,110 - INFO - [CONNECTION] - Latency for P7 is 1214 - max 500
+2023-04-10 12:03:16,110 - INFO - [CONNECTION] - Latency for P4 is 1004 - max 500
+2023-04-10 12:03:16,110 - INFO - [CONNECTION] - Latency for P3 is 567 - max 500
+2023-04-10 12:03:16,110 - INFO - [CONNECTION] - Latency for P2 is 482 - max 500
+2023-04-10 12:03:16,110 - INFO - [CONNECTION] - Latency for P1 is 0 - max 500
+2023-04-10 12:03:16,110 - INFO - [CONNECTION] - No join peer selected for circuit switch
+2023-04-10 12:03:17,804 - WARNING - [RECEIVER] - Routing loop from P1 to P6: P1-P3-P1
+2023-04-10 12:03:17,907 - WARNING - [RECEIVER] - Routing loop from P1 to P6: P1-P3-P1-P3-P1
+2023-04-10 12:03:17,908 - WARNING - [RECEIVER] - TTL reached from path to P6 from P1
+2023-04-10 12:03:18,795 - WARNING - [RECEIVER] - TTL reached from path to P7 from P4
+2023-04-10 12:03:20,499 - WARNING - [RECEIVER] - Routing loop from P2 to P6: P2-P1-P2-P1
+2023-04-10 12:03:24,158 - WARNING - [RECEIVER] - Routing loop from P3 to P7: P3-P1-P3-P1
+2023-04-10 12:03:26,831 - WARNING - [RECEIVER] - Routing loop from P4 to P8: P4-P3-P1-P3-P1
+2023-04-10 12:03:26,831 - WARNING - [RECEIVER] - TTL reached from path to P8 from P4
+2023-04-10 12:03:27,926 - WARNING - [RECEIVER] - Routing loop from P1 to P6: P1-P2-P4-P3-P1
+2023-04-10 12:03:27,926 - WARNING - [RECEIVER] - TTL reached from path to P6 from P1
+2023-04-10 12:03:28,024 - WARNING - [RECEIVER] - Routing loop from P1 to P7: P1-P2-P4-P3-P1
+2023-04-10 12:03:28,024 - WARNING - [RECEIVER] - TTL reached from path to P7 from P1
+2023-04-10 12:03:33,817 - WARNING - [RECEIVER] - Routing loop from P1 to P6: P1-P3-P1
+2023-04-10 12:03:33,889 - WARNING - [RECEIVER] - Routing loop from P1 to P8: P1-P2-P4-P2-P1
+2023-04-10 12:03:33,890 - WARNING - [RECEIVER] - TTL reached from path to P8 from P1
+2023-04-10 12:03:34,728 - INFO - [RECEIVER] - Added relay cakeallergy from P3 to JOIN queue
+2023-04-10 12:03:34,728 - INFO - [MainThread] - ['JOIN', 'cakeallergy', b'c52fa649b9828efaaede']
+2023-04-10 12:03:34,728 - INFO - [MainThread] - Got JOIN to relay cakeallergy, waiting 10 sec to connect
+2023-04-10 12:03:34,729 - INFO - [Connect-cakeallergy] - Calling connect_to_rendezvous_point
+2023-04-10 12:03:34,731 - INFO - [Connect-cakeallergy] - Connect to rendezvous point cakeallergy
+2023-04-10 12:03:34,774 - INFO - [Connect-cakeallergy] - Loading cached NetworkStatusDocument from TorCacheDirStorage: /root/.local/share/torpy/network_status
+2023-04-10 12:03:35,451 - INFO - [Connect-cakeallergy] - Loading cached DirKeyCertificateList from TorCacheDirStorage: /root/.local/share/torpy/dir_key_certificates
+2023-04-10 12:03:36,197 - INFO - [Connect-cakeallergy] - Connected to rendezvous point cakeallergy
+2023-04-10 12:03:36,197 - INFO - [Connect-cakeallergy] - Waiting for peer to open stream
+2023-04-10 12:03:36,501 - INFO - [Connect-cakeallergy] - Received cell: <class 'torpy.cells.CellRelay'>
+2023-04-10 12:03:36,501 - INFO - [Connect-cakeallergy] - Stream opened successfully
+2023-04-10 12:03:36,502 - INFO - [Connect-cakeallergy] - Sending HELLO to peer: b'\x80\x04\x95&\x00\x00\x00\x00\x00\x00\x00]\x94}\x94(\x8c\x07Message\x94\x8c\x05HELLO\x94\x8c\x04Peer\x94\x8c\x02P1\x94ua.'
+2023-04-10 12:03:36,906 - INFO - [RECEIVER] - Added neighbour P3
+2023-04-10 12:03:40,501 - WARNING - [RECEIVER] - Routing loop from P2 to P6: P2-P1-P2-P1
+2023-04-10 12:03:40,916 - WARNING - [RECEIVER] - TTL reached from path to P7 from P4
+2023-04-10 12:03:41,020 - WARNING - [RECEIVER] - TTL reached from path to P6 from P4
+2023-04-10 12:03:43,834 - WARNING - [RECEIVER] - Routing loop from P1 to P6: P1-P2-P1
+2023-04-10 12:03:47,894 - WARNING - [RECEIVER] - Routing loop from P4 to P7: P4-P2-P1-P2-P1
+2023-04-10 12:03:47,895 - WARNING - [RECEIVER] - TTL reached from path to P7 from P4
+2023-04-10 12:03:48,092 - WARNING - [RECEIVER] - Routing loop from P4 to P8: P4-P2-P1-P3-P1
+2023-04-10 12:03:48,092 - WARNING - [RECEIVER] - TTL reached from path to P8 from P4
+2023-04-10 12:03:48,377 - WARNING - [RECEIVER] - TTL reached from path to P6 from P4
+2023-04-10 12:03:48,855 - WARNING - [RECEIVER] - Routing loop from P1 to P8: P1-P2-P1
+2023-04-10 12:03:49,294 - WARNING - [RECEIVER] - Routing loop from P1 to P6: P1-P3-P4-P3-P1
+2023-04-10 12:03:49,294 - WARNING - [RECEIVER] - TTL reached from path to P6 from P1
+2023-04-10 12:03:54,489 - WARNING - [RECEIVER] - Routing loop from P3 to P7: P3-P1-P3-P1
+2023-04-10 12:03:54,646 - WARNING - [RECEIVER] - Routing loop from P3 to P6: P3-P1-P3-P1
+2023-04-10 12:03:54,802 - WARNING - [RECEIVER] - Routing loop from P3 to P8: P3-P1-P3-P1
+2023-04-10 12:03:56,828 - WARNING - [RECEIVER] - Routing loop from P1 to P6: P1-P2-P1
+2023-04-10 12:03:56,936 - WARNING - [RECEIVER] - Routing loop from P1 to P8: P1-P2-P4-P2-P1
+2023-04-10 12:03:56,936 - WARNING - [RECEIVER] - TTL reached from path to P8 from P1
+2023-04-10 12:03:57,006 - WARNING - [RECEIVER] - Routing loop from P1 to P7: P1-P2-P4-P2-P1
+2023-04-10 12:03:57,006 - WARNING - [RECEIVER] - TTL reached from path to P7 from P1
+2023-04-10 12:03:59,995 - WARNING - [RECEIVER] - TTL reached from path to P6 from P4
+2023-04-10 12:04:06,164 - WARNING - [RECEIVER] - TTL reached from path to P6 from P4
+2023-04-10 12:04:06,583 - WARNING - [RECEIVER] - Routing loop from P3 to P7: P3-P1-P3-P1
+2023-04-10 12:04:06,890 - WARNING - [RECEIVER] - Routing loop from P3 to P8: P3-P1-P3-P1
+2023-04-10 12:04:07,593 - WARNING - [RECEIVER] - Routing loop from P2 to P8: P2-P1-P2-P1
+2023-04-10 12:04:08,089 - WARNING - [Connect-cakeallergy] - Got SENDME
+2023-04-10 12:04:08,325 - WARNING - [RECEIVER] - Routing loop from P1 to P7: P1-P3-P4-P2-P1
+2023-04-10 12:04:08,325 - WARNING - [RECEIVER] - TTL reached from path to P7 from P1
+2023-04-10 12:04:14,922 - WARNING - [RECEIVER] - Routing loop from P1 to P7: P1-P2-P1
+2023-04-10 12:04:14,960 - WARNING - [RECEIVER] - Routing loop from P1 to P8: P1-P2-P4-P2-P1
+2023-04-10 12:04:14,960 - WARNING - [RECEIVER] - TTL reached from path to P8 from P1
+2023-04-10 12:04:15,014 - WARNING - [RECEIVER] - Routing loop from P1 to P7: P1-P2-P1-P2-P1
+2023-04-10 12:04:15,015 - WARNING - [RECEIVER] - TTL reached from path to P7 from P1
+2023-04-10 12:04:15,093 - WARNING - [RECEIVER] - Routing loop from P1 to P6: P1-P3-P1
+2023-04-10 12:04:16,170 - INFO - [CONNECTION] - Highest cost peers: [('P6', 3087), ('P8', 2275), ('P5', 1271), ('P7', 1214), ('P2', 482), ('P4', 200), ('P3', 100), ('P1', 0)]
+2023-04-10 12:04:16,170 - INFO - [CONNECTION] - Latency for P6 is 3087 - max 500
+2023-04-10 12:04:16,170 - INFO - [CONNECTION] - Latency for P8 is 2275 - max 500
+2023-04-10 12:04:16,170 - INFO - [CONNECTION] - Latency for P5 is 1271 - max 500
+2023-04-10 12:04:16,171 - INFO - [CONNECTION] - Latency for P7 is 1214 - max 500
+2023-04-10 12:04:16,171 - INFO - [CONNECTION] - Latency for P2 is 482 - max 500
+2023-04-10 12:04:16,171 - INFO - [CONNECTION] - Latency for P4 is 200 - max 500
+2023-04-10 12:04:16,171 - INFO - [CONNECTION] - Latency for P3 is 100 - max 500
+2023-04-10 12:04:16,171 - INFO - [CONNECTION] - Latency for P1 is 0 - max 500
+2023-04-10 12:04:16,171 - INFO - [CONNECTION] - No join peer selected for circuit switch
