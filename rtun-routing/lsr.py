@@ -31,15 +31,15 @@ import rendezvous as rnd
 import logging
 logger = logging.getLogger(__name__)
 
-UPDATE_INTERVAL = 15
-ROUTE_UPDATE_INTERVAL = 15
-PERIODIC_HEART_BEAT = 5
-NODE_FAILURE_INTERVAL = 10
-TIMEOUT = 15
-LATENCY_SAMPLES = 30
-PERIODIC_CONN_CHECK = 60
-MIN_NEIGHBOUR_CONNECTIONS = 2
-MAX_CONNECTION_TIME = 600
+ROUTE_UPDATE_INTERVAL = 6000 #  interval for sending LSA
+PERIODIC_HEART_BEAT = 10 # interval for sending HB
+NODE_FAILURE_INTERVAL = 10 # interval for inactive route check
+TIMEOUT = 60 # time for when route considered dead
+LATENCY_SAMPLES = 3 # number of times samples collected before updated
+PERIODIC_CONN_CHECK = 120 # interval for checking connections
+MIN_NEIGHBOUR_CONNECTIONS = 3 # number of required connnections
+MAX_CONNECTION_TIME = 120 # max time a circuit should live
+NOGUI = True
 
 # Log metrics to file
 graph_metrics_file = "router.log"
@@ -57,7 +57,7 @@ rendp_conn = set()
 display_paths = None
 threadLock = None
 threads = None
-HB_time = 0 #  the last HB to be sent
+HB_time = {} #  the last HB to be sent
 join_queue = [] # relays to join
 log_queue = None # log data
 receiver_thread = None
@@ -112,6 +112,7 @@ class ReceiveThread(Thread):
         self.inactive_list = set()
         self.inactive_list_size = 0
         self.forward_set = set()
+        self.join_seen = {} # which JOINs we have gotten
 
 
     def __exit__(self, exc_type, exc_value, traceback):
@@ -126,8 +127,9 @@ class ReceiveThread(Thread):
                 self.serverSide(queue_data)
 
         except Exception as e:
-            logger.error("Error in ReceiveThread: " + str(e))
-            traceback.print_exc()
+            template = "An exception of type {0} occurred in ReceiveThread. Arguments:\n{1!r}"
+            message = template.format(type(e).__name__, e.args)
+            logger.error(message)
 
 
     def __str__(self):
@@ -287,9 +289,10 @@ class ReceiveThread(Thread):
             self.inactive_list.remove(peer_id)
             self.inactive_list_size = len(self.inactive_list)
 
-        add_neighbour(peer_id, '127.0.0.1', rendpoint, 100, circuit, circuit_id, stream, stream_id, receive_node, extend_node, receive_socket, thread_id)
-        global_router['FLAG'] = 1 # update LSA
-        global_router['SN'] = global_router['SN'] + 1 # increment to trigger update LSA
+        add_neighbour(peer_id, '127.0.0.1', rendpoint, 1000, circuit, circuit_id, stream, stream_id, receive_node, extend_node, receive_socket, thread_id)
+        self.transmitNewLSA(None)
+        #global_router['FLAG'] = 1 # update LSA
+        #global_router['SN'] = global_router['SN'] + 1 # increment to trigger update LSA
 
 
     # Handle receive of HeartBeat
@@ -318,12 +321,14 @@ class ReceiveThread(Thread):
             # Craft a response HB message if it is a ping
             if HBresp == 0:
                 HB_message = [{'Message' : 'HB', 'RID' : global_router['RID'], 'HBref' : HBref, 'HBresp' : now}]
-                #logger.info("Sending HB response to " + str(RID))
                 message = pickle.dumps(HB_message)
-                send_to_stream( RID, message)
+                try:
+                    send_to_stream( RID, message)
+                except Exception:
+                    logger.warn(f"Failed to send HB response to {RID} with HBref {HBref}")
 
             # Last sent HB timestamp matches received HB
-            elif HBref == HB_time:
+            elif RID in HB_time and HBref == HB_time[RID]:
                 # Set the latency for the neighbour
                 latency_list = neighbour_stats[RID]['Latencies MS']
                 latency = now - HBref
@@ -337,12 +342,14 @@ class ReceiveThread(Thread):
                     for i in range(len(global_router['Neighbours Data'])):
                         if global_router['Neighbours Data'][i]['NID'] == RID:
                             global_router['Neighbours Data'][i]['Cost'] = int(avg_latency)
-                            global_router['FLAG'] = 1 # update LSA
-                            global_router['SN'] = global_router['SN'] + 1 # increment to trigger update LSA
+                            #global_router['FLAG'] = 1 # update LSA
+                            #global_router['SN'] = global_router['SN'] + 1 # increment to trigger update LSA
                             #log_metrics("APPLIED LATENCY", json.dumps({RID : latency}))
                             break
 
                     neighbour_stats[RID]['Latencies MS'] = latency_list 
+                    # update others
+                    self.transmitNewLSA(None)
             else:
                 logger.debug("HBref does not match last sent, skipping")
 
@@ -403,6 +410,7 @@ class ReceiveThread(Thread):
         source = msg_data[0]['Source']
         relay = msg_data[0]['Relay']
         cookie = msg_data[0]['Cookie']
+        join_id = msg_data[0]['ID']
 
         # If we are the source - drop it
         if source == global_router['RID']:
@@ -411,25 +419,17 @@ class ReceiveThread(Thread):
 
         # If it's for us - add it to join queue
         if destination == global_router['RID']:
-            logger.debug(f"We are destination of JOIN message")
-            #neighbours = set()
-            #for n in global_router['Neighbours Data']:
-            #    neighbours.add(n['NID'])
-            
-            #if source in neighbours:
-                # remove neighbour connection
-            #    self.remove_neighbour([source])
-
+            if join_id in self.join_seen:
+                return
             self.conn_queue.put_nowait(["JOIN", relay, cookie])
+            self.join_seen[join_id] = 1
             logger.info(f"Added relay {relay} from {source} to JOIN queue")
-            #else:
-            #    logger.info(f"{source} already a neighbour")
 
             return 
 
         # If for someone else - route it along
         logger.debug(f"Routing JOIN message")
-        route_message(msg_data)
+        flood_message(msg_data)
 
     # Handles a LOOKUP message
     def handle_LOOKUP(self, msg_data):
@@ -525,22 +525,25 @@ class ReceiveThread(Thread):
         updated_global_router['RID'] = global_router['RID']
         updated_global_router['Port'] = global_router['Port']
 
-        global_router['Neighbours'] = global_router['Neighbours'] - 1
-
-        updated_global_router['Neighbours'] = global_router['Neighbours']
+        updated_global_router['Neighbours'] = len(global_router['Neighbours Data'])
         updated_global_router['Neighbours Data'] = global_router['Neighbours Data']
 
         global_router['SN'] = global_router['SN'] + 1
         updated_global_router['SN'] = global_router['SN']
 
         updated_global_router['FLAG'] = 1
-        updated_global_router['DEAD'] = inactive_list
+
+        if inactive_list and len(inactive_list) > 0:
+            updated_global_router['DEAD'] = inactive_list
 
         new_data = pickle.dumps(updated_global_router)
 
         for router in global_router['Neighbours Data']:
-            send_to_stream(router['NID'], new_data)
-            neighbour_stats[router['NID']]['LSA sent'] += 1
+            try:
+                send_to_stream(router['NID'], new_data)
+                neighbour_stats[router['NID']]['LSA sent'] += 1
+            except Exception:
+                continue
 
         time.sleep(1)
 
@@ -853,11 +856,14 @@ class SendThread(Thread):
             message = pickle.dumps(lsa_tmp)
             
             for dict in global_router['Neighbours Data']:
-                send_to_stream(dict['NID'], message)
-                neighbour_stats[dict['NID']]['LSA sent'] += 1
+                try:
+                    send_to_stream(dict['NID'], message)
+                    neighbour_stats[dict['NID']]['LSA sent'] += 1
+                except Exception:
+                    continue
 
             global_router['FLAG'] = 0 # reset update LSA
-            time.sleep(UPDATE_INTERVAL)
+            time.sleep(ROUTE_UPDATE_INTERVAL)
 
 class HeartBeatThread(Thread):
 
@@ -875,10 +881,11 @@ class HeartBeatThread(Thread):
         global HB_time
 
         while True:
-            HB_time = current_milli_time()
-            HB_message = [{'Message' : 'HB', 'RID' : global_router['RID'], 'HBref' : HB_time, 'HBresp' : 0}]
 
             for neighbour in global_router['Neighbours Data']:
+                current_time = current_milli_time()
+                HB_time[neighbour['NID']] = current_time
+                HB_message = [{'Message' : 'HB', 'RID' : global_router['RID'], 'HBref' : current_time, 'HBresp' : 0}]
                 message = pickle.dumps(HB_message)
                 try:
                     send_to_stream( neighbour['NID'], message)
@@ -920,7 +927,7 @@ class ConnectionThread(Thread):
         self.name = name
         self.conn_queue = conn_queue
         self.rcv_queue = rcv_queue
-        self.max_latency = 1000
+        self.max_latency = 10
         self.min_alive = 60
 
     def run(self):
@@ -933,9 +940,8 @@ class ConnectionThread(Thread):
         while True:
             time.sleep(PERIODIC_CONN_CHECK)
 
-            # check if we have enough connections
-            #len_n = len(global_router['Neighbours Data'])
             if global_router['Neighbours'] >= MIN_NEIGHBOUR_CONNECTIONS:
+                # Check existing connections
                 join_peer = None
                 # find oldest connection to kill
                 neighbours = set()
@@ -967,9 +973,10 @@ class ConnectionThread(Thread):
                     except Exception:
                         route = ""
 
-                    message = [{'Message' : 'JOIN', 'Destination' : join_peer, 'Source' : RID, 'TTL': 5, 
+                    msg_id = RID + "_" + str(current_milli_time())
+                    message = [{'Message' : 'JOIN', 'Destination' : join_peer, 'Source' : RID, 'ID': msg_id, 'TTL': 10, 
                                 'Route': route, 'Relay' : rp_relay.nickname, 'Cookie' : rp_cookie}]
-                    route_message(message)
+                    flood_message(message)
 
 
                 else:
@@ -1017,6 +1024,7 @@ class ConnectionThread(Thread):
 
                 continue
 
+            # Set up new connections if are below minimum
             neighbours = set()
             for n in global_router['Neighbours Data']:
                 neighbours.add(n['NID'])
@@ -1038,15 +1046,21 @@ class ConnectionThread(Thread):
             # remove neighbours from peers
             candidates = list(peers - neighbours)
             logger.info(f"Candidate peers: {candidates}")
+            
+            join_peer = None
+            if len(candidates) > 0:
+                join_peer = random.choice(candidates)
+                logger.info(f"Selected {join_peer} to join")
+            else:
+                logger.info("No candidates to join")
 
             # find a candidate peer to join with highest latency
-            join_peer = None
-            peers_sorted = sorted(path_cost.items(), key=lambda x:x[1], reverse=True)
-            logger.info(f"Highest cost peers: {peers_sorted}")
-            for p in peers_sorted:
-                if p[0] in candidates:
-                    join_peer = p[0]
-                    break
+            #peers_sorted = sorted(path_cost.items(), key=lambda x:x[1], reverse=True)
+            #logger.info(f"Highest cost peers: {peers_sorted}")
+            #for p in peers_sorted:
+            #    if p[0] in candidates:
+            #        join_peer = p[0]
+            #        break
                        
             if not join_peer:
                 logger.info("No join peers found")
@@ -1065,9 +1079,10 @@ class ConnectionThread(Thread):
             except Exception:
                 route = ""
 
-            message = [{'Message' : 'JOIN', 'Destination' : join_peer, 'Source' : RID, 'TTL': 5, 
+            msg_id = RID + "_" + str(current_milli_time())
+            message = [{'Message' : 'JOIN', 'Destination' : join_peer, 'Source' : RID, 'ID': msg_id, 'TTL': 5, 
                         'Route': route, 'Relay' : rp_relay.nickname, 'Cookie' : cookie}]
-            route_message(message)
+            flood_message(message)
 
 
     def __del__(self):
@@ -1094,10 +1109,69 @@ def remove_circuit(inactive_list):
         #    del rnd.threads[tid]
 
 # Routes it along the least cost path
-def route_message(msg_data):
+def route_message(msg_data, flood=False):
     logger.debug(f"route_message: {msg_data}")
 
     dst_relay = None
+    message = msg_data[0]['Message']
+    destination = msg_data[0]['Destination']
+    source = msg_data[0]['Source']
+    ttl = msg_data[0]['TTL']
+
+    try:
+        msgid = msg_data[0]['ID']
+    except Exception:
+        msgid = 0
+    
+    # If it's for us
+    if destination == global_router['RID']:
+        return destination
+
+    msg_data[0]['TTL'] -= 1 # decrement TTL
+    # check if TTL is reached
+    if msg_data[0]['TTL'] == 0:
+        logger.warn(f"TTL reached to {destination} from {source}")
+        return 0
+
+    # try to pop the next hop from the route field
+    try:
+        dst_relay = msg_data[0]['Route'].pop(0)
+        route = "ROUTED"
+    except Exception:
+        route = "RANDOM"
+        pass
+
+    # Find the neighbour with the least cost path to destination
+    #if not dst_relay:
+    #    dst_relay = next_hop(destination)
+    if dst_relay:
+        # send the message to next hop
+        try:
+            send_to_stream(dst_relay, pickle.dumps(msg_data))
+        except Exception:
+            dst_relay = next_hop(destination)
+            if not dst_relay:
+                # try a random neighbour
+                neighbours = global_router['Neighbours Data']
+                dst_relay = neighbours[random.randint(0, len(neighbours) - 1)]['NID']
+            try:
+                send_to_stream(dst_relay, pickle.dumps(msg_data))
+            except Exception:
+                return -1
+ 
+    with open('routed.log', 'a') as f:
+        now = datetime.now()
+        rid = global_router['RID']
+        msg = json.dumps({'Message': message, 'Destination': destination, 'Source': source, 'ID': msgid, 'Route': route, 'Next_hop': dst_relay, 'TTL': ttl})
+        f.write(f"{now};{rid};{msg};\n")  
+
+    return dst_relay
+
+def flood_message(msg_data):
+    logger.debug(f"flood_message: {msg_data}")
+
+    dst_relay = None
+    message = msg_data[0]['Message']
     destination = msg_data[0]['Destination']
     source = msg_data[0]['Source']
     ttl = msg_data[0]['TTL']
@@ -1117,33 +1191,26 @@ def route_message(msg_data):
         logger.warn(f"TTL reached from path to {destination} from {source}")
         return 0
 
-    # try to pop the next hop from the route field
-    try:
-        dst_relay = msg_data[0]['Route'].pop(0)
-        route = "ROUTED"
-    except Exception:
-        route = "RANDOM"
-        pass
+    # send to all neighbours except source
+    route = "FLOOD"
+    sentto = 0
+    neighbours = global_router['Neighbours Data']
+    for n in neighbours:
+        dst_relay = n['NID']
+        try:
+            send_to_stream(dst_relay, pickle.dumps(msg_data))
+        except Exception:
+            continue
 
-    # Find the neighbour with the least cost path to destination
-    #if not dst_relay:
-    #    dst_relay = next_hop(destination)
-    if dst_relay:
-        # send the message to next hop
-        send_to_stream(dst_relay, pickle.dumps(msg_data))
-    else:
-        # try a random neighbour
-        neighbours = global_router['Neighbours Data']
-        dst_relay = neighbours[random.randint(0, len(neighbours) - 1)]['NID']
-        send_to_stream(dst_relay, pickle.dumps(msg_data))
- 
-    with open('routed.log', 'a') as f:
-        now = datetime.now()
-        rid = global_router['RID']
-        msg = json.dumps({'Destination': destination, 'Source': source, 'ID': msgid, 'Route': route, 'Next_hop': dst_relay})
-        f.write(f"{now};{rid};{msg};\n")  
+        with open('routed.log', 'a') as f:
+            now = datetime.now()
+            rid = global_router['RID']
+            msg = json.dumps({'Message': message, 'Destination': destination, 'Source': source, 'ID': msgid, 'Route': route, 'Next_hop': dst_relay, 'TTL': ttl})
+            f.write(f"{now};{rid};{msg};\n")  
+            sentto += 1
+    
+    return sentto
 
-    return dst_relay
 # Return the next hop in least cost path
 def next_hop(dst_peer):
     logger.debug(f"next_hop: {global_least_cost_path}")
@@ -1183,6 +1250,17 @@ def lookup_neighbour(NID, item):
 def print_stats():
 
     while True:
+        # output the topology to file
+        time_stamp = time.time()
+        with open('topology.log', "a") as f:
+            f.write("{0};{1};{2}\n".format(time_stamp, 
+                                            global_router['RID'], 
+                                            json.dumps(graph)))
+
+        if NOGUI:
+            time.sleep(3)
+            continue
+
         os.system('clear')
         print("Router ID: " + str(global_router['RID']))
         print("SN: " + str(global_router['SN']))
@@ -1192,15 +1270,17 @@ def print_stats():
         print()
         print("Neighbours:")
         print()
-        print(" %-15s %5s %8s %8s %8s %8s" % ('Peer', 'Cost', 'HB sent', 'HB rcvd', 'LSA sent', 'LSA rcvd'))
+        print(" %-15s %5s %8s %8s %8s %8s %8s" % ('Peer', 'Cost', 'HB sent', 'HB rcvd', 'LSA sent', 'LSA rcvd', 'Latencies'))
     
         for neighbour in global_router['Neighbours Data']:
-            print( " %-15s %5s %8s %8s %8s %8s" % 
+            print( " %-15s %5s %8s %8s %8s %8s %8s" % 
                 (neighbour['NID'], neighbour['Cost'], 
                  neighbour_stats[neighbour['NID']]['HB sent'],
                  neighbour_stats[neighbour['NID']]['HB received'],
                  neighbour_stats[neighbour['NID']]['LSA sent'],
-                 neighbour_stats[neighbour['NID']]['LSA received'])
+                 neighbour_stats[neighbour['NID']]['LSA received'],
+                 ','.join(str(x) for x in neighbour_stats[neighbour['NID']]['Latencies MS'])
+                 )
                 )
     
         print()
@@ -1225,13 +1305,7 @@ def print_stats():
         for tid, thread in rnd.threads.items():
             print(tid, thread.name, thread.rendezvous_cookie)
         
-        # output the topology to file
-        time_stamp = time.time()
-        with open('topology.log', "a") as f:
-            f.write("{0};{1};{2}\n".format(time_stamp, 
-                                            global_router['RID'], 
-                                            json.dumps(graph)))
-
+        
 
         time.sleep(3)
 
@@ -1463,8 +1537,10 @@ def send_to_stream(router_id, message):
                         stream_data['Stream ID'])
     except KeyError as e:
         logger.error(f"send_to_stream: Key not found: {e}")
+        raise
     except Exception as e:
         logger.error("send_to_stream: {0} {1} {2}".format(type(e).__name__, e, message))
+        raise
 
     #log_metrics("DATA SENT", "Payload: {0} bytes".format(sys.getsizeof(message)))
 

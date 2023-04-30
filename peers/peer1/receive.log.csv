@@ -1,64 +1,467 @@
-Timestamp;Offset;Peer;Received;Source;Payload
-2023-04-03 08:47:30.208000;0;P1;HELLO;P2;{"Message": "HELLO", "Peer": "P2"}
-2023-04-03 08:47:31.753000;2;P1;LOOKUP;P1;{"Message": "LOOKUP", "Destination": "P2", "Source": "P1", "TTL": 4, "ID": "P1_1680504451752", "Route": null, "Path": ["P1"]}
-2023-04-03 08:47:31.813000;2;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1680504451745, "HBresp": 1680504451785}
-2023-04-03 08:47:33.379000;3;P1;HELLO;P3;{"Message": "HELLO", "Peer": "P3"}
-2023-04-03 08:47:34.341000;4;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1680504454306, "HBresp": 0}
-2023-04-03 08:47:36.727000;7;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1680504456661, "HBresp": 0}
-2023-04-03 08:47:36.824000;7;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1680504456749, "HBresp": 1680504456785}
-2023-04-03 08:47:36.918000;7;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1680504456749, "HBresp": 1680504456858}
-2023-04-03 08:47:38.481000;8;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1680504458452", "Route": null, "Path": ["P2", "P1"]}
-2023-04-03 08:47:39.344000;9;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1680504459311, "HBresp": 0}
-2023-04-03 08:47:39.886000;10;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 2, "ID": "P3_1680504459683", "Route": null, "Path": ["P3", "P4", "P3", "P1"]}
-2023-04-03 08:47:41.750000;12;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1680504461666, "HBresp": 0}
-2023-04-03 08:47:41.758000;12;P1;LOOKUP;P1;{"Message": "LOOKUP", "Destination": "P2", "Source": "P1", "TTL": 4, "ID": "P1_1680504461756", "Route": null, "Path": ["P1"]}
-2023-04-03 08:47:41.759000;12;P1;LOOKUP;P1;{"Message": "LOOKUP", "Destination": "P3", "Source": "P1", "TTL": 4, "ID": "P1_1680504461758", "Route": null, "Path": ["P1"]}
-2023-04-03 08:47:41.837000;12;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1680504461756, "HBresp": 1680504461798}
-2023-04-03 08:47:42.886000;13;P1;LOOKUP;P1;{"Message": "LOOKUP", "Destination": "P3", "Source": "P1", "TTL": 2, "ID": "P1_1680504461758", "Route": null, "Path": ["P1", "P2", "P1"]}
-2023-04-03 08:47:43.496000;13;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1680504463458", "Route": [], "Path": ["P2", "P1"]}
-2023-04-03 08:47:44.377000;14;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1680504464318, "HBresp": 0}
-2023-04-03 08:47:44.575000;14;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 2, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 100, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}], "SN": 2, "FLAG": 1, "RP": []}
-2023-04-03 08:47:46.637000;16;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1680504466516", "Route": [], "Path": ["P4", "P2", "P1"]}
-2023-04-03 08:47:46.721000;17;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 2, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "RMK", "FLAG": 0}, {"NID": "P4", "Cost": 100, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}], "SN": 2, "FLAG": 1, "RP": []}
-2023-04-03 08:47:47.724000;18;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1680504466673, "HBresp": 0}
-2023-04-03 08:47:47.725000;18;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 2, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "RMK", "FLAG": 0}, {"NID": "P4", "Cost": 100, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}], "SN": 2, "FLAG": 1, "RP": []}
-2023-04-03 08:47:47.725000;18;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1680504466760, "HBresp": 1680504466811}
-2023-04-03 08:47:47.769000;18;P1;LOOKUP;P1;{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "TTL": 4, "ID": "P1_1680504467768", "Route": ["P4"], "Path": ["P1"]}
-2023-04-03 08:47:47.770000;18;P1;LOOKUP;P1;{"Message": "LOOKUP", "Destination": "P2", "Source": "P1", "TTL": 4, "ID": "P1_1680504467769", "Route": [], "Path": ["P1"]}
-2023-04-03 08:47:47.770000;18;P1;LOOKUP;P1;{"Message": "LOOKUP", "Destination": "P3", "Source": "P1", "TTL": 4, "ID": "P1_1680504467770", "Route": [], "Path": ["P1"]}
-2023-04-03 08:47:48.788000;19;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1680504466760, "HBresp": 1680504468760}
-2023-04-03 08:47:49.362000;19;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1680504469326, "HBresp": 0}
-2023-04-03 08:47:49.468000;19;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 2, "Neighbours Data": [{"NID": "P2", "Cost": 100, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 100, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}], "SN": 2, "FLAG": 1, "RP": []}
-2023-04-03 08:47:51.474000;21;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 2, "Neighbours Data": [{"NID": "P2", "Cost": 100, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 100, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}], "SN": 2, "FLAG": 1, "RP": []}
-2023-04-03 08:47:51.474000;21;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 4, "ID": "P3_1680504469696", "Route": [], "Path": ["P3", "P1"]}
-2023-04-03 08:47:51.474000;21;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1680504470464", "Route": [], "Path": ["P2", "P1"]}
-2023-04-03 08:47:51.742000;22;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P2", "Source": "P3", "TTL": 3, "ID": "P3_1680504469697", "Route": [], "Path": ["P3", "P1"]}
-2023-04-03 08:47:51.743000;22;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1680504471679, "HBresp": 0}
-2023-04-03 08:47:51.833000;22;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1680504471766, "HBresp": 1680504471800}
-2023-04-03 08:47:51.928000;22;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1680504471766, "HBresp": 1680504471873}
-2023-04-03 08:47:54.374000;24;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1680504474334, "HBresp": 0}
-2023-04-03 08:47:56.758000;27;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1680504476685, "HBresp": 0}
-2023-04-03 08:47:56.920000;27;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1680504476773, "HBresp": 1680504476845}
-2023-04-03 08:47:56.949000;27;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1680504476773, "HBresp": 1680504476884}
-2023-04-03 08:47:57.783000;28;P1;LOOKUP;P1;{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "TTL": 4, "ID": "P1_1680504477781", "Route": ["P4"], "Path": ["P1"]}
-2023-04-03 08:47:57.784000;28;P1;LOOKUP;P1;{"Message": "LOOKUP", "Destination": "P2", "Source": "P1", "TTL": 4, "ID": "P1_1680504477782", "Route": [], "Path": ["P1"]}
-2023-04-03 08:47:57.784000;28;P1;LOOKUP;P1;{"Message": "LOOKUP", "Destination": "P3", "Source": "P1", "TTL": 4, "ID": "P1_1680504477783", "Route": [], "Path": ["P1"]}
-2023-04-03 08:47:58.767000;29;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 4, "ID": "P3_1680504478707", "Route": [], "Path": ["P3", "P1"]}
-2023-04-03 08:47:58.812000;29;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P2", "Source": "P3", "TTL": 3, "ID": "P3_1680504478708", "Route": [], "Path": ["P3", "P1"]}
-2023-04-03 08:47:59.387000;29;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 2, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 100, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}], "SN": 2, "FLAG": 0, "RP": []}
-2023-04-03 08:47:59.529000;29;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1680504479469", "Route": [], "Path": ["P2", "P1"]}
-2023-04-03 08:48:01.747000;32;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 2, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "RMK", "FLAG": 0}, {"NID": "P4", "Cost": 100, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}], "SN": 2, "FLAG": 0, "RP": []}
-2023-04-03 08:48:01.789000;32;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1680504481691, "HBresp": 0}
-2023-04-03 08:48:01.839000;32;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1680504481780, "HBresp": 1680504481810}
-2023-04-03 08:48:01.887000;32;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1680504481780, "HBresp": 1680504481832}
-2023-04-03 08:48:02.640000;32;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1680504482540", "Route": [], "Path": ["P4", "P2", "P1"]}
-2023-04-03 08:48:04.398000;34;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1680504484347, "HBresp": 0}
-2023-04-03 08:48:04.774000;35;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 4, "ID": "P3_1680504484716", "Route": [], "Path": ["P3", "P1"]}
-2023-04-03 08:48:04.793000;35;P1;LOOKUP;P1;{"Message": "LOOKUP", "Destination": "P4", "Source": "P1", "TTL": 4, "ID": "P1_1680504484791", "Route": ["P4"], "Path": ["P1"]}
-2023-04-03 08:48:04.794000;35;P1;LOOKUP;P1;{"Message": "LOOKUP", "Destination": "P2", "Source": "P1", "TTL": 4, "ID": "P1_1680504484793", "Route": [], "Path": ["P1"]}
-2023-04-03 08:48:04.794000;35;P1;LOOKUP;P1;{"Message": "LOOKUP", "Destination": "P3", "Source": "P1", "TTL": 4, "ID": "P1_1680504484794", "Route": [], "Path": ["P1"]}
-2023-04-03 08:48:04.815000;35;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P2", "Source": "P3", "TTL": 3, "ID": "P3_1680504484717", "Route": [], "Path": ["P3", "P1"]}
-2023-04-03 08:48:05.513000;35;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1680504485478", "Route": [], "Path": ["P2", "P1"]}
-2023-04-03 08:48:06.768000;37;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1680504486699, "HBresp": 0}
-2023-04-03 08:48:06.852000;37;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1680504486788, "HBresp": 1680504486821}
-2023-04-03 08:48:06.948000;37;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1680504486788, "HBresp": 1680504486894}
+Timestamp;Peer;Received;Source;Payload
+2023-04-14 12:15:17.128000;P1;HELLO;P2;{"Message": "HELLO", "Peer": "P2"}
+2023-04-14 12:15:18.137000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 1, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}], "SN": 1, "FLAG": 1}
+2023-04-14 12:15:22.367000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467322330", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:15:23.338000;P1;HELLO;P3;{"Message": "HELLO", "Peer": "P3"}
+2023-04-14 12:15:24.341000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 1, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}], "SN": 1, "FLAG": 1}
+2023-04-14 12:15:25.367000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 1, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}], "SN": 1, "FLAG": 1}
+2023-04-14 12:15:25.843000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 2, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 100, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}], "SN": 2, "FLAG": 1}
+2023-04-14 12:15:26.846000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 2, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 100, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}], "SN": 2, "FLAG": 1}
+2023-04-14 12:15:26.846000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 1, "Neighbours Data": [{"NID": "P2", "Cost": 100, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}], "SN": 1, "FLAG": 1}
+2023-04-14 12:15:28.851000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467326255, "HBresp": 1681467326888}
+2023-04-14 12:15:28.851000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 2, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 100, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}], "SN": 2, "FLAG": 1}
+2023-04-14 12:15:29.854000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 4, "ID": "P3_1681467327337", "Route": [], "Path": ["P3", "P1"]}
+2023-04-14 12:15:29.854000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467326255, "HBresp": 1681467327817}
+2023-04-14 12:15:29.854000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 2, "Neighbours Data": [{"NID": "P2", "Cost": 100, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 100, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}], "SN": 2, "FLAG": 1}
+2023-04-14 12:15:31.859000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 2, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 100, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}], "SN": 2, "FLAG": 1}
+2023-04-14 12:15:31.859000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467331238, "HBresp": 0}
+2023-04-14 12:15:31.859000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467331341", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:15:34.065000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467334003", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:15:35.379000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467335312, "HBresp": 0}
+2023-04-14 12:15:36.417000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 4, "ID": "P3_1681467336350", "Route": [], "Path": ["P3", "P1"]}
+2023-04-14 12:15:40.427000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467340352", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:15:41.351000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467341272, "HBresp": 1681467341324}
+2023-04-14 12:15:41.381000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467341272, "HBresp": 1681467341320}
+2023-04-14 12:15:44.074000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467344014", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:15:46.282000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467346254, "HBresp": 0}
+2023-04-14 12:15:46.424000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 4, "ID": "P3_1681467346361", "Route": [], "Path": ["P3", "P1"]}
+2023-04-14 12:15:50.080000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467350020", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:15:50.387000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467350361", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:15:50.396000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467350329, "HBresp": 0}
+2023-04-14 12:15:52.435000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 4, "ID": "P3_1681467352368", "Route": [], "Path": ["P3", "P1"]}
+2023-04-14 12:15:56.365000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467356288, "HBresp": 1681467356337}
+2023-04-14 12:15:56.398000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467356289, "HBresp": 1681467356336}
+2023-04-14 12:15:56.438000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467356368", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:15:57.087000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467357029", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:15:58.442000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 4, "ID": "P3_1681467358376", "Route": [], "Path": ["P3", "P1"]}
+2023-04-14 12:16:01.304000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467361271, "HBresp": 0}
+2023-04-14 12:16:03.093000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467363037", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:16:03.413000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467363376", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:16:05.410000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467365346, "HBresp": 0}
+2023-04-14 12:16:05.455000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 4, "ID": "P3_1681467365381", "Route": [], "Path": ["P3", "P1"]}
+2023-04-14 12:16:09.110000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467369045", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:16:10.420000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467370384", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:16:11.433000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467371305, "HBresp": 1681467371386}
+2023-04-14 12:16:11.564000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467371310, "HBresp": 1681467371437}
+2023-04-14 12:16:14.457000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 4, "ID": "P3_1681467374390", "Route": [], "Path": ["P3", "P1"]}
+2023-04-14 12:16:15.113000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467375052", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:16:16.323000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 2, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 100, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}], "SN": 2, "FLAG": 0, "RP": []}
+2023-04-14 12:16:16.394000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467376289, "HBresp": 0}
+2023-04-14 12:16:16.440000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467376399", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:16:16.513000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 2, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 76, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}], "SN": 3, "FLAG": 1}
+2023-04-14 12:16:17.517000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 2, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 76, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}], "SN": 3, "FLAG": 1}
+2023-04-14 12:16:20.419000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 2, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 100, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}], "SN": 2, "FLAG": 0, "RP": []}
+2023-04-14 12:16:20.512000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 2, "ID": "P3_1681467380396", "Route": [], "Path": ["P3", "P4", "P2", "P1"]}
+2023-04-14 12:16:20.521000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467380355, "HBresp": 0}
+2023-04-14 12:16:20.522000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 2, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 100, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}], "SN": 3, "FLAG": 1}
+2023-04-14 12:16:21.525000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 2, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 100, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}], "SN": 3, "FLAG": 1}
+2023-04-14 12:16:21.759000;P1;JOIN;P1;{"Message": "JOIN", "Destination": "P4", "Source": "P1", "ID": "P1_1681467381657", "TTL": 3, "Route": "", "Relay": "Assange027es", "Cookie": "17a17d318e6ae16aea23"}
+2023-04-14 12:16:22.451000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467382418", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:16:22.569000;P1;HELLO;P4;{"Message": "HELLO", "Peer": "P4"}
+2023-04-14 12:16:23.575000;P1;JOIN;P1;{"Message": "JOIN", "Destination": "P4", "Source": "P1", "ID": "P1_1681467381657", "TTL": 3, "Route": "", "Relay": "Assange027es", "Cookie": "17a17d318e6ae16aea23"}
+2023-04-14 12:16:23.575000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 3, "Neighbours Data": [{"NID": "P2", "Cost": 100, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 100, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "Assange027es", "FLAG": 0}], "SN": 3, "FLAG": 1}
+2023-04-14 12:16:25.579000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 3, "Neighbours Data": [{"NID": "P2", "Cost": 100, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 100, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "Assange027es", "FLAG": 0}], "SN": 3, "FLAG": 1}
+2023-04-14 12:16:25.579000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 3, "Neighbours Data": [{"NID": "P2", "Cost": 100, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 100, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "Assange027es", "FLAG": 0}], "SN": 3, "FLAG": 1}
+2023-04-14 12:16:25.579000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467384550, "HBresp": 0}
+2023-04-14 12:16:25.580000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 3, "Neighbours Data": [{"NID": "P2", "Cost": 100, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 100, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "Assange027es", "FLAG": 0}], "SN": 3, "FLAG": 0, "RP": []}
+2023-04-14 12:16:25.580000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467385063", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:16:25.693000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 3, "Neighbours Data": [{"NID": "P2", "Cost": 100, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 346, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "Assange027es", "FLAG": 0}], "SN": 4, "FLAG": 1}
+2023-04-14 12:16:27.700000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 3, "Neighbours Data": [{"NID": "P2", "Cost": 100, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 346, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "Assange027es", "FLAG": 0}], "SN": 4, "FLAG": 1}
+2023-04-14 12:16:27.700000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 3, "Neighbours Data": [{"NID": "P2", "Cost": 100, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 346, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "Assange027es", "FLAG": 0}], "SN": 4, "FLAG": 1}
+2023-04-14 12:16:27.700000;P1;JOIN;P2;{"Message": "JOIN", "Destination": "P3", "Source": "P2", "ID": "P2_1681467386631", "TTL": 3, "Route": "", "Relay": "relayon1173", "Cookie": "17a17d318e6ae16aea23"}
+2023-04-14 12:16:27.701000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467386328, "HBresp": 1681467386635}
+2023-04-14 12:16:27.701000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467386328, "HBresp": 1681467386685}
+2023-04-14 12:16:27.701000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467386327, "HBresp": 1681467386657}
+2023-04-14 12:16:27.701000;P1;JOIN;P2;{"Message": "JOIN", "Destination": "P3", "Source": "P2", "ID": "P2_1681467386631", "TTL": 2, "Route": "", "Relay": "relayon1173", "Cookie": "17a17d318e6ae16aea23"}
+2023-04-14 12:16:27.702000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 76, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 100, "Hostname": "127.0.0.1", "RP": "relayon1173", "FLAG": 0}], "SN": 4, "FLAG": 1}
+2023-04-14 12:16:29.705000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 100, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 100, "Hostname": "127.0.0.1", "RP": "relayon1173", "FLAG": 0}], "SN": 4, "FLAG": 1}
+2023-04-14 12:16:31.711000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 100, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 100, "Hostname": "127.0.0.1", "RP": "relayon1173", "FLAG": 0}], "SN": 4, "FLAG": 1}
+2023-04-14 12:16:31.711000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 76, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 100, "Hostname": "127.0.0.1", "RP": "relayon1173", "FLAG": 0}], "SN": 4, "FLAG": 1}
+2023-04-14 12:16:31.711000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 76, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 100, "Hostname": "127.0.0.1", "RP": "relayon1173", "FLAG": 0}], "SN": 4, "FLAG": 1}
+2023-04-14 12:16:31.711000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 100, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 100, "Hostname": "127.0.0.1", "RP": "relayon1173", "FLAG": 0}], "SN": 4, "FLAG": 1}
+2023-04-14 12:16:31.711000;P1;JOIN;P3;{"Message": "JOIN", "Destination": "P2", "Source": "P3", "ID": "P3_1681467390801", "TTL": 3, "Route": "", "Relay": "spinat", "Cookie": "17a17d318e6ae16aea23"}
+2023-04-14 12:16:31.713000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467391305, "HBresp": 0}
+2023-04-14 12:16:31.713000;P1;JOIN;P2;{"Message": "JOIN", "Destination": "P3", "Source": "P2", "ID": "P2_1681467386631", "TTL": 1, "Route": "", "Relay": "relayon1173", "Cookie": "17a17d318e6ae16aea23"}
+2023-04-14 12:16:31.713000;P1;JOIN;P2;{"Message": "JOIN", "Destination": "P3", "Source": "P2", "ID": "P2_1681467386631", "TTL": 0, "Route": "", "Relay": "relayon1173", "Cookie": "17a17d318e6ae16aea23"}
+2023-04-14 12:16:31.719000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 100, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 100, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 5, "FLAG": 1}
+2023-04-14 12:16:33.723000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 76, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 100, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 5, "FLAG": 1}
+2023-04-14 12:16:35.728000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467392426", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:16:35.728000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 76, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 100, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 5, "FLAG": 1}
+2023-04-14 12:16:35.728000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 100, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 100, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 5, "FLAG": 1}
+2023-04-14 12:16:35.728000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 100, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 100, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 5, "FLAG": 1}
+2023-04-14 12:16:35.728000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467392411", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:16:35.728000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 76, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 100, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 5, "FLAG": 1}
+2023-04-14 12:16:35.728000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 4, "ID": "P4_1681467395074", "Route": [], "Path": ["P4", "P1"]}
+2023-04-14 12:16:35.728000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467395372, "HBresp": 0}
+2023-04-14 12:16:35.785000;P1;JOIN;P3;{"Message": "JOIN", "Destination": "P2", "Source": "P3", "ID": "P3_1681467390801", "TTL": 1, "Route": "", "Relay": "spinat", "Cookie": "17a17d318e6ae16aea23"}
+2023-04-14 12:16:39.633000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467399567, "HBresp": 0}
+2023-04-14 12:16:40.473000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467400435", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:16:41.149000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 4, "ID": "P4_1681467401082", "Route": [], "Path": ["P4", "P1"]}
+2023-04-14 12:16:41.418000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467401345, "HBresp": 1681467401393}
+2023-04-14 12:16:41.451000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467401346, "HBresp": 1681467401388}
+2023-04-14 12:16:41.469000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467401346, "HBresp": 1681467401405}
+2023-04-14 12:16:42.516000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467402424", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:16:46.355000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467406320, "HBresp": 0}
+2023-04-14 12:16:46.471000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467406443", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:16:47.517000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467407431", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:16:50.475000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467410388, "HBresp": 0}
+2023-04-14 12:16:51.163000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 4, "ID": "P4_1681467411094", "Route": [], "Path": ["P4", "P1"]}
+2023-04-14 12:16:52.527000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467412438", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:16:54.639000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467414574, "HBresp": 0}
+2023-04-14 12:16:56.443000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467416363, "HBresp": 1681467416416}
+2023-04-14 12:16:56.495000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467416363, "HBresp": 1681467416412}
+2023-04-14 12:16:56.495000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467416364, "HBresp": 1681467416433}
+2023-04-14 12:16:56.515000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467416456", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:16:57.529000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467417444", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:16:58.162000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 4, "ID": "P4_1681467418102", "Route": [], "Path": ["P4", "P1"]}
+2023-04-14 12:17:01.371000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467421337, "HBresp": 0}
+2023-04-14 12:17:03.174000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 4, "ID": "P4_1681467423109", "Route": [], "Path": ["P4", "P1"]}
+2023-04-14 12:17:04.536000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467424451", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:17:08.547000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467426465", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:17:08.580000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467425405, "HBresp": 0}
+2023-04-14 12:17:09.659000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467429592, "HBresp": 0}
+2023-04-14 12:17:09.780000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 3, "Neighbours Data": [{"NID": "P2", "Cost": 100, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 346, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P1", "Cost": 615, "Hostname": "127.0.0.1", "RP": "Assange027es", "FLAG": 0}], "SN": 5, "FLAG": 1}
+2023-04-14 12:17:11.786000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 3, "Neighbours Data": [{"NID": "P2", "Cost": 100, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 346, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P1", "Cost": 615, "Hostname": "127.0.0.1", "RP": "Assange027es", "FLAG": 0}], "SN": 5, "FLAG": 1}
+2023-04-14 12:17:11.786000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 3, "Neighbours Data": [{"NID": "P2", "Cost": 100, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 346, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P1", "Cost": 615, "Hostname": "127.0.0.1", "RP": "Assange027es", "FLAG": 0}], "SN": 5, "FLAG": 1}
+2023-04-14 12:17:11.786000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467431380, "HBresp": 1681467431479}
+2023-04-14 12:17:12.788000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467431379, "HBresp": 1681467431747}
+2023-04-14 12:17:12.788000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467431380, "HBresp": 1681467431799}
+2023-04-14 12:17:13.179000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 4, "ID": "P4_1681467433119", "Route": [], "Path": ["P4", "P1"]}
+2023-04-14 12:17:13.872000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467432462", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:17:15.509000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467435476", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:17:16.383000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 76, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 100, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 5, "FLAG": 0, "RP": []}
+2023-04-14 12:17:16.456000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467436353, "HBresp": 0}
+2023-04-14 12:17:17.548000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467437468", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:17:18.184000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467438126", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:17:20.481000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 100, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 100, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 5, "FLAG": 0, "RP": []}
+2023-04-14 12:17:20.525000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467440423, "HBresp": 0}
+2023-04-14 12:17:20.635000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 100, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 896, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 6, "FLAG": 1}
+2023-04-14 12:17:22.642000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 100, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 896, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 6, "FLAG": 1}
+2023-04-14 12:17:22.642000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 100, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 896, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 6, "FLAG": 1}
+2023-04-14 12:17:22.642000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467442484", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:17:24.553000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467444476", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:17:24.667000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467444608, "HBresp": 0}
+2023-04-14 12:17:24.730000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 3, "Neighbours Data": [{"NID": "P2", "Cost": 100, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 346, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P1", "Cost": 615, "Hostname": "127.0.0.1", "RP": "Assange027es", "FLAG": 0}], "SN": 5, "FLAG": 0, "RP": []}
+2023-04-14 12:17:24.736000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 3, "Neighbours Data": [{"NID": "P2", "Cost": 559, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 346, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P1", "Cost": 615, "Hostname": "127.0.0.1", "RP": "Assange027es", "FLAG": 0}], "SN": 6, "FLAG": 1}
+2023-04-14 12:17:26.741000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 3, "Neighbours Data": [{"NID": "P2", "Cost": 559, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 346, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P1", "Cost": 615, "Hostname": "127.0.0.1", "RP": "Assange027es", "FLAG": 0}], "SN": 6, "FLAG": 1}
+2023-04-14 12:17:26.741000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467446385, "HBresp": 1681467446444}
+2023-04-14 12:17:26.741000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467446136", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:17:26.803000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467446384, "HBresp": 1681467446742}
+2023-04-14 12:17:29.534000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467449494", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:17:29.605000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467449484", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:17:31.193000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467451142", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:17:31.399000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467451370, "HBresp": 0}
+2023-04-14 12:17:31.501000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 76, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 128, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 6, "FLAG": 1}
+2023-04-14 12:17:33.509000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 76, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 128, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 6, "FLAG": 1}
+2023-04-14 12:17:35.268000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 76, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 128, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 6, "FLAG": 1}
+2023-04-14 12:17:35.503000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467455439, "HBresp": 0}
+2023-04-14 12:17:36.579000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467456492", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:17:38.531000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467458504", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:17:39.691000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467459625, "HBresp": 0}
+2023-04-14 12:17:39.777000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 3, "Neighbours Data": [{"NID": "P2", "Cost": 559, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 338, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P1", "Cost": 615, "Hostname": "127.0.0.1", "RP": "Assange027es", "FLAG": 0}], "SN": 7, "FLAG": 1}
+2023-04-14 12:17:41.781000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 3, "Neighbours Data": [{"NID": "P2", "Cost": 559, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 338, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P1", "Cost": 615, "Hostname": "127.0.0.1", "RP": "Assange027es", "FLAG": 0}], "SN": 7, "FLAG": 1}
+2023-04-14 12:17:41.781000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 3, "Neighbours Data": [{"NID": "P2", "Cost": 559, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 338, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P1", "Cost": 615, "Hostname": "127.0.0.1", "RP": "Assange027es", "FLAG": 0}], "SN": 7, "FLAG": 1}
+2023-04-14 12:17:41.781000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467461402, "HBresp": 1681467461470}
+2023-04-14 12:17:41.792000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467460153", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:17:41.841000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467461402, "HBresp": 1681467461779}
+2023-04-14 12:17:45.547000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467465513", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:17:46.429000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467466386, "HBresp": 0}
+2023-04-14 12:17:49.229000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467469164", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:17:50.525000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467470458, "HBresp": 0}
+2023-04-14 12:17:51.602000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467471512", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:17:54.552000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467474516", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:17:54.700000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467474642, "HBresp": 0}
+2023-04-14 12:17:56.501000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467476419, "HBresp": 1681467476472}
+2023-04-14 12:17:56.529000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467476419, "HBresp": 1681467476467}
+2023-04-14 12:17:56.545000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467476420, "HBresp": 1681467476485}
+2023-04-14 12:17:57.606000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467477519", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:17:59.231000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467479174", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:17:59.553000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467479518", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:18:01.435000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467481402, "HBresp": 0}
+2023-04-14 12:18:01.491000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 66, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 128, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 7, "FLAG": 1}
+2023-04-14 12:18:03.496000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 66, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 128, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 7, "FLAG": 1}
+2023-04-14 12:18:03.496000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 66, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 128, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 7, "FLAG": 1}
+2023-04-14 12:18:05.549000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467485474, "HBresp": 0}
+2023-04-14 12:18:05.699000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467485527", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:18:06.563000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467486527", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:18:08.251000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467488186", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:18:09.727000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467489659, "HBresp": 0}
+2023-04-14 12:18:09.838000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 3, "Neighbours Data": [{"NID": "P2", "Cost": 559, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 338, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P1", "Cost": 597, "Hostname": "127.0.0.1", "RP": "Assange027es", "FLAG": 0}], "SN": 8, "FLAG": 1}
+2023-04-14 12:18:11.845000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 3, "Neighbours Data": [{"NID": "P2", "Cost": 559, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 338, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P1", "Cost": 597, "Hostname": "127.0.0.1", "RP": "Assange027es", "FLAG": 0}], "SN": 8, "FLAG": 1}
+2023-04-14 12:18:11.845000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 3, "Neighbours Data": [{"NID": "P2", "Cost": 559, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 338, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P1", "Cost": 597, "Hostname": "127.0.0.1", "RP": "Assange027es", "FLAG": 0}], "SN": 8, "FLAG": 1}
+2023-04-14 12:18:11.845000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467491436, "HBresp": 1681467491534}
+2023-04-14 12:18:12.848000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467491435, "HBresp": 1681467491816}
+2023-04-14 12:18:12.848000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467491436, "HBresp": 1681467491840}
+2023-04-14 12:18:13.929000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467493193", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:18:14.573000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467494538", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:18:16.413000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 66, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 128, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 7, "FLAG": 0, "RP": []}
+2023-04-14 12:18:16.489000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467496417, "HBresp": 0}
+2023-04-14 12:18:20.495000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 100, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 896, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 6, "FLAG": 0, "RP": []}
+2023-04-14 12:18:20.552000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467500492, "HBresp": 0}
+2023-04-14 12:18:20.623000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467500546", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:18:20.659000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 100, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 132, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 7, "FLAG": 1}
+2023-04-14 12:18:22.666000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 100, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 132, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 7, "FLAG": 1}
+2023-04-14 12:18:22.666000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467501547", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:18:22.666000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 100, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 132, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 7, "FLAG": 1}
+2023-04-14 12:18:22.685000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467502204", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:18:24.746000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 3, "Neighbours Data": [{"NID": "P2", "Cost": 559, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 338, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P1", "Cost": 597, "Hostname": "127.0.0.1", "RP": "Assange027es", "FLAG": 0}], "SN": 8, "FLAG": 0, "RP": []}
+2023-04-14 12:18:26.531000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467506449, "HBresp": 1681467506501}
+2023-04-14 12:18:26.559000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467506449, "HBresp": 1681467506498}
+2023-04-14 12:18:26.619000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467506450, "HBresp": 1681467506544}
+2023-04-14 12:18:28.601000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467508555", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:18:28.673000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467508555", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:18:31.279000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467511215", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:18:31.449000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467511420, "HBresp": 0}
+2023-04-14 12:18:31.556000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 66, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 358, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 8, "FLAG": 1}
+2023-04-14 12:18:33.560000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 66, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 358, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 8, "FLAG": 1}
+2023-04-14 12:18:33.560000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 66, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 358, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 8, "FLAG": 1}
+2023-04-14 12:18:33.648000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467513557", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:18:35.581000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467515510, "HBresp": 0}
+2023-04-14 12:18:35.713000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 1153, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 132, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 8, "FLAG": 1}
+2023-04-14 12:18:37.718000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 1153, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 132, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 8, "FLAG": 1}
+2023-04-14 12:18:37.718000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 1153, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 132, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 8, "FLAG": 1}
+2023-04-14 12:18:37.718000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467517561", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:18:37.738000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467516221", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:18:39.747000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467519682, "HBresp": 0}
+2023-04-14 12:18:41.553000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467521466, "HBresp": 1681467521521}
+2023-04-14 12:18:41.576000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467521467, "HBresp": 1681467521515}
+2023-04-14 12:18:41.621000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467521467, "HBresp": 1681467521534}
+2023-04-14 12:18:42.660000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467522567", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:18:44.309000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467524230", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:18:45.615000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467525571", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:18:46.492000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467526440, "HBresp": 0}
+2023-04-14 12:18:48.660000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467528575", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:18:50.297000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467530236", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:18:50.581000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467530512, "HBresp": 0}
+2023-04-14 12:18:50.608000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467530578", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:18:54.766000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467534698, "HBresp": 0}
+2023-04-14 12:18:56.567000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467536479, "HBresp": 1681467536526}
+2023-04-14 12:18:56.587000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467536480, "HBresp": 1681467536524}
+2023-04-14 12:18:56.601000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467536480, "HBresp": 1681467536541}
+2023-04-14 12:18:56.639000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467536586", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:18:56.711000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467536584", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:18:58.305000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467538245", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:19:01.491000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467541452, "HBresp": 0}
+2023-04-14 12:19:01.673000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467541589", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:19:04.313000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467544249", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:19:05.597000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467545529, "HBresp": 0}
+2023-04-14 12:19:06.640000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467546597", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:19:09.783000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467549715, "HBresp": 0}
+2023-04-14 12:19:09.874000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 3, "Neighbours Data": [{"NID": "P2", "Cost": 559, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 2314, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P1", "Cost": 597, "Hostname": "127.0.0.1", "RP": "Assange027es", "FLAG": 0}], "SN": 9, "FLAG": 1}
+2023-04-14 12:19:11.884000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 3, "Neighbours Data": [{"NID": "P2", "Cost": 559, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 2314, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P1", "Cost": 597, "Hostname": "127.0.0.1", "RP": "Assange027es", "FLAG": 0}], "SN": 9, "FLAG": 1}
+2023-04-14 12:19:11.884000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 3, "Neighbours Data": [{"NID": "P2", "Cost": 559, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 2314, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P1", "Cost": 597, "Hostname": "127.0.0.1", "RP": "Assange027es", "FLAG": 0}], "SN": 9, "FLAG": 1}
+2023-04-14 12:19:11.884000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467551603", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:19:11.884000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467551497, "HBresp": 1681467551605}
+2023-04-14 12:19:12.887000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467551496, "HBresp": 1681467551847}
+2023-04-14 12:19:12.887000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467551497, "HBresp": 1681467551873}
+2023-04-14 12:19:15.975000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467554259", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:19:16.438000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 66, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 358, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 8, "FLAG": 0, "RP": []}
+2023-04-14 12:19:16.516000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467556468, "HBresp": 0}
+2023-04-14 12:19:16.637000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467556610", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:19:20.499000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 1153, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 132, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 8, "FLAG": 0, "RP": []}
+2023-04-14 12:19:20.608000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467560546, "HBresp": 0}
+2023-04-14 12:19:20.712000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 1153, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 111, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 9, "FLAG": 1}
+2023-04-14 12:19:22.715000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 1153, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 111, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 9, "FLAG": 1}
+2023-04-14 12:19:22.715000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 1153, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 111, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 9, "FLAG": 1}
+2023-04-14 12:19:22.749000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467561609", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:19:24.805000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467564729, "HBresp": 0}
+2023-04-14 12:19:24.924000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 3, "Neighbours Data": [{"NID": "P2", "Cost": 559, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 2314, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P1", "Cost": 804, "Hostname": "127.0.0.1", "RP": "Assange027es", "FLAG": 0}], "SN": 10, "FLAG": 1}
+2023-04-14 12:19:26.930000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 3, "Neighbours Data": [{"NID": "P2", "Cost": 559, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 2314, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P1", "Cost": 804, "Hostname": "127.0.0.1", "RP": "Assange027es", "FLAG": 0}], "SN": 10, "FLAG": 1}
+2023-04-14 12:19:26.930000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 3, "Neighbours Data": [{"NID": "P2", "Cost": 559, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 2314, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P1", "Cost": 804, "Hostname": "127.0.0.1", "RP": "Assange027es", "FLAG": 0}], "SN": 10, "FLAG": 1}
+2023-04-14 12:19:26.930000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467565620", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:19:26.930000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467566513, "HBresp": 1681467566577}
+2023-04-14 12:19:26.938000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467566512, "HBresp": 1681467566899}
+2023-04-14 12:19:26.989000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467566512, "HBresp": 1681467566920}
+2023-04-14 12:19:29.405000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467569278", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:19:31.519000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467571480, "HBresp": 0}
+2023-04-14 12:19:31.624000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 66, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 116, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 9, "FLAG": 1}
+2023-04-14 12:19:33.630000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 66, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 116, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 9, "FLAG": 1}
+2023-04-14 12:19:33.630000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 66, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 116, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 9, "FLAG": 1}
+2023-04-14 12:19:33.659000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467573626", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:19:35.334000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467575284", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:19:35.627000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467575563, "HBresp": 0}
+2023-04-14 12:19:35.706000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467575625", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:19:39.810000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467579747, "HBresp": 0}
+2023-04-14 12:19:40.666000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467580629", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:19:41.603000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467581525, "HBresp": 1681467581577}
+2023-04-14 12:19:41.629000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467581526, "HBresp": 1681467581571}
+2023-04-14 12:19:41.681000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467581526, "HBresp": 1681467581622}
+2023-04-14 12:19:42.348000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467582289", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:19:42.717000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467582634", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:19:45.670000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467585636", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:19:46.530000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467586496, "HBresp": 0}
+2023-04-14 12:19:46.584000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 54, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 116, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 10, "FLAG": 1}
+2023-04-14 12:19:48.592000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 54, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 116, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 10, "FLAG": 1}
+2023-04-14 12:19:48.719000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 54, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 116, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 10, "FLAG": 1}
+2023-04-14 12:19:49.732000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467589646", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:19:50.645000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467590581, "HBresp": 0}
+2023-04-14 12:19:52.351000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467592297", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:19:54.827000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467594759, "HBresp": 0}
+2023-04-14 12:19:55.703000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467595651", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:19:56.629000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467596541, "HBresp": 1681467596600}
+2023-04-14 12:19:56.648000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467596542, "HBresp": 1681467596589}
+2023-04-14 12:19:56.666000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467596542, "HBresp": 1681467596607}
+2023-04-14 12:19:58.368000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467598301", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:19:58.937000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467598684", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:20:01.572000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467601511, "HBresp": 0}
+2023-04-14 12:20:05.378000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467605309", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:20:05.667000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467605597, "HBresp": 0}
+2023-04-14 12:20:05.693000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467605664", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:20:05.767000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 99, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 111, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 10, "FLAG": 1}
+2023-04-14 12:20:07.773000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 99, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 111, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 10, "FLAG": 1}
+2023-04-14 12:20:07.773000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 99, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 111, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 10, "FLAG": 1}
+2023-04-14 12:20:07.801000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467606710", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:20:09.833000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467609774, "HBresp": 0}
+2023-04-14 12:20:11.653000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467611557, "HBresp": 1681467611627}
+2023-04-14 12:20:11.724000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467611557, "HBresp": 1681467611663}
+2023-04-14 12:20:12.777000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467611557, "HBresp": 1681467611674}
+2023-04-14 12:20:12.804000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467612765", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:20:13.853000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467613317", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:20:14.807000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467614718", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:20:16.511000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 54, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 116, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 10, "FLAG": 0, "RP": []}
+2023-04-14 12:20:16.588000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467616519, "HBresp": 0}
+2023-04-14 12:20:18.818000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467618781", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:20:20.564000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 99, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 111, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 10, "FLAG": 0, "RP": []}
+2023-04-14 12:20:20.686000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467620623, "HBresp": 0}
+2023-04-14 12:20:20.797000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 99, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 360, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 11, "FLAG": 1}
+2023-04-14 12:20:22.802000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 99, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 360, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 11, "FLAG": 1}
+2023-04-14 12:20:22.802000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 99, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 360, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 11, "FLAG": 1}
+2023-04-14 12:20:22.829000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467622325", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:20:23.809000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467623722", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:20:24.861000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467624790, "HBresp": 0}
+2023-04-14 12:20:24.861000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 3, "Neighbours Data": [{"NID": "P2", "Cost": 559, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 2314, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P1", "Cost": 804, "Hostname": "127.0.0.1", "RP": "Assange027es", "FLAG": 0}], "SN": 10, "FLAG": 0, "RP": []}
+2023-04-14 12:20:24.979000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 3, "Neighbours Data": [{"NID": "P2", "Cost": 559, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 2314, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P1", "Cost": 122, "Hostname": "127.0.0.1", "RP": "Assange027es", "FLAG": 0}], "SN": 11, "FLAG": 1}
+2023-04-14 12:20:27.045000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 3, "Neighbours Data": [{"NID": "P2", "Cost": 559, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 2314, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P1", "Cost": 122, "Hostname": "127.0.0.1", "RP": "Assange027es", "FLAG": 0}], "SN": 11, "FLAG": 1}
+2023-04-14 12:20:27.045000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 3, "Neighbours Data": [{"NID": "P2", "Cost": 559, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 2314, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P1", "Cost": 122, "Hostname": "127.0.0.1", "RP": "Assange027es", "FLAG": 0}], "SN": 11, "FLAG": 1}
+2023-04-14 12:20:27.045000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467625789", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:20:27.045000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467626575, "HBresp": 1681467626642}
+2023-04-14 12:20:27.077000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467626573, "HBresp": 1681467627039}
+2023-04-14 12:20:27.162000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467626574, "HBresp": 1681467627039}
+2023-04-14 12:20:30.409000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467630332", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:20:31.563000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467631525, "HBresp": 0}
+2023-04-14 12:20:31.678000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 54, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 361, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 11, "FLAG": 1}
+2023-04-14 12:20:33.685000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 54, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 361, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 11, "FLAG": 1}
+2023-04-14 12:20:33.685000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467631801", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:20:33.685000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467631771", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:20:33.685000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 54, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 361, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 11, "FLAG": 1}
+2023-04-14 12:20:35.840000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467635749, "HBresp": 0}
+2023-04-14 12:20:36.881000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467636787", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:20:37.871000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467637827", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:20:39.429000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467639342", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:20:39.872000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467639807, "HBresp": 0}
+2023-04-14 12:20:41.711000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467641588, "HBresp": 1681467641683}
+2023-04-14 12:20:41.714000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467641589, "HBresp": 1681467641652}
+2023-04-14 12:20:41.721000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467641589, "HBresp": 1681467641661}
+2023-04-14 12:20:42.919000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467642872", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:20:43.824000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467641794", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:20:46.579000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467646537, "HBresp": 0}
+2023-04-14 12:20:47.406000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467647348", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:20:47.911000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467647876", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:20:50.850000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467650780, "HBresp": 0}
+2023-04-14 12:20:51.874000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 4, "ID": "P3_1681467651806", "Route": [], "Path": ["P3", "P1"]}
+2023-04-14 12:20:52.411000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467652354", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:20:54.898000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467654829, "HBresp": 0}
+2023-04-14 12:20:56.713000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467656606, "HBresp": 1681467656651}
+2023-04-14 12:20:56.732000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467656606, "HBresp": 1681467656670}
+2023-04-14 12:20:56.747000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467656605, "HBresp": 1681467656664}
+2023-04-14 12:20:57.910000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467657881", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:21:01.435000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467661372", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:21:01.587000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467661554, "HBresp": 0}
+2023-04-14 12:21:01.902000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 4, "ID": "P3_1681467661824", "Route": [], "Path": ["P3", "P1"]}
+2023-04-14 12:21:05.862000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467665796, "HBresp": 0}
+2023-04-14 12:21:05.919000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467665891", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:21:06.783000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467666683", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:21:08.898000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 4, "ID": "P3_1681467668833", "Route": [], "Path": ["P3", "P1"]}
+2023-04-14 12:21:09.914000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467669847, "HBresp": 0}
+2023-04-14 12:21:10.929000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467670897", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:21:11.727000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467671638, "HBresp": 1681467671699}
+2023-04-14 12:21:11.798000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467671641, "HBresp": 1681467671732}
+2023-04-14 12:21:12.800000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467671639, "HBresp": 1681467671750}
+2023-04-14 12:21:15.917000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 4, "ID": "P3_1681467675844", "Route": [], "Path": ["P3", "P1"]}
+2023-04-14 12:21:16.573000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 54, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 361, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 11, "FLAG": 0, "RP": []}
+2023-04-14 12:21:16.651000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467676575, "HBresp": 0}
+2023-04-14 12:21:16.763000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467676704", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:21:17.935000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467677905", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:21:20.633000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 99, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 360, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 11, "FLAG": 0, "RP": []}
+2023-04-14 12:21:20.878000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467680814, "HBresp": 0}
+2023-04-14 12:21:20.986000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 102, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 360, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 12, "FLAG": 1}
+2023-04-14 12:21:23.013000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 102, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 360, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 12, "FLAG": 1}
+2023-04-14 12:21:23.013000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 4, "ID": "P3_1681467681849", "Route": [], "Path": ["P3", "P1"]}
+2023-04-14 12:21:23.013000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 102, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 373, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 13, "FLAG": 1}
+2023-04-14 12:21:25.063000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 102, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 360, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 12, "FLAG": 1}
+2023-04-14 12:21:25.063000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 102, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 373, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 13, "FLAG": 1}
+2023-04-14 12:21:25.063000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 102, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 373, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 13, "FLAG": 1}
+2023-04-14 12:21:25.063000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 3, "Neighbours Data": [{"NID": "P2", "Cost": 559, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 2314, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P1", "Cost": 122, "Hostname": "127.0.0.1", "RP": "Assange027es", "FLAG": 0}], "SN": 11, "FLAG": 0, "RP": []}
+2023-04-14 12:21:25.063000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467684922", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:21:25.063000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467684865, "HBresp": 0}
+2023-04-14 12:21:25.195000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 3, "Neighbours Data": [{"NID": "P2", "Cost": 559, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 2314, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P1", "Cost": 160, "Hostname": "127.0.0.1", "RP": "Assange027es", "FLAG": 0}], "SN": 12, "FLAG": 1}
+2023-04-14 12:21:27.204000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 3, "Neighbours Data": [{"NID": "P2", "Cost": 559, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 2314, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P1", "Cost": 160, "Hostname": "127.0.0.1", "RP": "Assange027es", "FLAG": 0}], "SN": 12, "FLAG": 1}
+2023-04-14 12:21:27.204000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 3, "Neighbours Data": [{"NID": "P2", "Cost": 559, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 2314, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P1", "Cost": 160, "Hostname": "127.0.0.1", "RP": "Assange027es", "FLAG": 0}], "SN": 12, "FLAG": 1}
+2023-04-14 12:21:27.204000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467686660, "HBresp": 1681467686726}
+2023-04-14 12:21:27.219000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467686657, "HBresp": 1681467687159}
+2023-04-14 12:21:27.220000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467686721", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:21:27.259000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467686660, "HBresp": 1681467687192}
+2023-04-14 12:21:27.926000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 4, "ID": "P3_1681467687858", "Route": [], "Path": ["P3", "P1"]}
+2023-04-14 12:21:29.963000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467689929", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:21:31.644000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467691589, "HBresp": 0}
+2023-04-14 12:21:31.736000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 54, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 123, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 12, "FLAG": 1}
+2023-04-14 12:21:33.749000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 54, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 123, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 12, "FLAG": 1}
+2023-04-14 12:21:33.749000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467692736", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:21:33.749000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 54, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 123, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 12, "FLAG": 1}
+2023-04-14 12:21:33.939000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 4, "ID": "P3_1681467693866", "Route": [], "Path": ["P3", "P1"]}
+2023-04-14 12:21:34.989000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467694947", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:21:35.907000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467695832, "HBresp": 0}
+2023-04-14 12:21:37.808000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467697742", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:21:39.978000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467699875", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:21:39.982000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467699888, "HBresp": 0}
+2023-04-14 12:21:40.991000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467700958", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:21:41.786000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467701677, "HBresp": 1681467701739}
+2023-04-14 12:21:41.791000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467701678, "HBresp": 1681467701725}
+2023-04-14 12:21:41.807000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467701680, "HBresp": 1681467701745}
+2023-04-14 12:21:45.811000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467705752", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:21:46.655000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467706605, "HBresp": 0}
+2023-04-14 12:21:47.986000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467707881", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:21:48.060000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467707968", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:21:50.926000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467710856, "HBresp": 0}
+2023-04-14 12:21:52.826000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467712760", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:21:52.997000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467712884", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:21:54.982000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467714904, "HBresp": 0}
+2023-04-14 12:21:55.022000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467714977", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:21:56.782000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467716699, "HBresp": 1681467716752}
+2023-04-14 12:21:56.827000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467716701, "HBresp": 1681467716764}
+2023-04-14 12:21:58;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467717893", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:22:00.040000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467719986", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:22:00.836000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467720768", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:22:01.658000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467721621, "HBresp": 0}
+2023-04-14 12:22:03.090000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467722912", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:22:05.854000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467725777", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:22:05.933000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467716700, "HBresp": 1681467716749}
+2023-04-14 12:22:05.933000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467725873, "HBresp": 0}
+2023-04-14 12:22:09.993000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467729923, "HBresp": 0}
+2023-04-14 12:22:10.017000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467729920", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:22:10.088000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467729997", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:22:11.846000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467731721, "HBresp": 1681467731780}
+2023-04-14 12:22:11.857000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467731722, "HBresp": 1681467731787}
+2023-04-14 12:22:12.862000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467731721, "HBresp": 1681467731811}
+2023-04-14 12:22:15.043000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467734925", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:22:16.642000;P1;LSA;P2;{"RID": "P2", "Port": 5002, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "sklep", "FLAG": 0}, {"NID": "P4", "Cost": 54, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 123, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 12, "FLAG": 0, "RP": []}
+2023-04-14 12:22:16.716000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467736646, "HBresp": 0}
+2023-04-14 12:22:18.881000;P1;LOOKUP;P4;{"Message": "LOOKUP", "Destination": "P1", "Source": "P4", "TTL": 3, "ID": "P4_1681467738792", "Route": [], "Path": ["P4", "P2", "P1"]}
+2023-04-14 12:22:20.047000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467739934", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:22:20.123000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467740017", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:22:20.733000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 102, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 373, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 13, "FLAG": 0, "RP": []}
+2023-04-14 12:22:20.978000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467740904, "HBresp": 0}
+2023-04-14 12:22:21.094000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 102, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 118, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 14, "FLAG": 1}
+2023-04-14 12:22:23.105000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 102, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 118, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 14, "FLAG": 1}
+2023-04-14 12:22:23.105000;P1;LSA;P3;{"RID": "P3", "Port": 5003, "Neighbours": 3, "Neighbours Data": [{"NID": "P1", "Cost": 100, "Hostname": "127.0.0.1", "RP": "snowball", "FLAG": 0}, {"NID": "P4", "Cost": 102, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P2", "Cost": 118, "Hostname": "127.0.0.1", "RP": "spinat", "FLAG": 0}], "SN": 14, "FLAG": 1}
+2023-04-14 12:22:24.992000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 3, "Neighbours Data": [{"NID": "P2", "Cost": 559, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 2314, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P1", "Cost": 160, "Hostname": "127.0.0.1", "RP": "Assange027es", "FLAG": 0}], "SN": 12, "FLAG": 0, "RP": []}
+2023-04-14 12:22:25.079000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467744942, "HBresp": 0}
+2023-04-14 12:22:25.209000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 3, "Neighbours Data": [{"NID": "P2", "Cost": 559, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 2314, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P1", "Cost": 154, "Hostname": "127.0.0.1", "RP": "Assange027es", "FLAG": 0}], "SN": 13, "FLAG": 1}
+2023-04-14 12:22:27.249000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 3, "Neighbours Data": [{"NID": "P2", "Cost": 559, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 2314, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P1", "Cost": 154, "Hostname": "127.0.0.1", "RP": "Assange027es", "FLAG": 0}], "SN": 13, "FLAG": 1}
+2023-04-14 12:22:27.249000;P1;LSA;P4;{"RID": "P4", "Port": 5004, "Neighbours": 3, "Neighbours Data": [{"NID": "P2", "Cost": 559, "Hostname": "127.0.0.1", "RP": "LupusreginaBeta", "FLAG": 0}, {"NID": "P3", "Cost": 2314, "Hostname": "127.0.0.1", "RP": "Vulnerar", "FLAG": 0}, {"NID": "P1", "Cost": 154, "Hostname": "127.0.0.1", "RP": "Assange027es", "FLAG": 0}], "SN": 13, "FLAG": 1}
+2023-04-14 12:22:27.249000;P1;HB;P4;{"Message": "HB", "RID": "P4", "HBref": 1681467746744, "HBresp": 1681467746818}
+2023-04-14 12:22:27.249000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467746741, "HBresp": 1681467747183}
+2023-04-14 12:22:27.290000;P1;HB;P3;{"Message": "HB", "RID": "P3", "HBref": 1681467746743, "HBresp": 1681467747216}
+2023-04-14 12:22:29.040000;P1;LOOKUP;P3;{"Message": "LOOKUP", "Destination": "P1", "Source": "P3", "TTL": 3, "ID": "P3_1681467748946", "Route": [], "Path": ["P3", "P2", "P1"]}
+2023-04-14 12:22:30.086000;P1;LOOKUP;P2;{"Message": "LOOKUP", "Destination": "P1", "Source": "P2", "TTL": 4, "ID": "P2_1681467750043", "Route": [], "Path": ["P2", "P1"]}
+2023-04-14 12:22:31.703000;P1;HB;P2;{"Message": "HB", "RID": "P2", "HBref": 1681467751664, "HBresp": 0}

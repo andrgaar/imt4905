@@ -65,34 +65,35 @@ with open(fname, "r") as f:
     fout.close()
 
     df = pd.read_csv(fout_name, sep=';')
-
-    upload = df[['Timestamp', 'Peer', 'Upload']]
-    upload['Timestamp'] = pd.to_datetime(upload['Timestamp'])  
-    #df['Delta'] = df["Timestamp"].apply(lambda dt: datetime_to_timedelta(dt)) 
     
-    #df['Delta'] = pd.to_timedelta(df['Delta'])  
-    upload.set_index('Timestamp', inplace=True)
+    df = df.loc[df['Peer'] == "P1"]
+    df = df.tail(-5)
+
+    df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+    t0 = df.min()['Timestamp']
+    df['Offset'] = (df['Timestamp'] - t0).dt.total_seconds()
+    df['Offset'] = pd.to_timedelta(df['Offset'], unit='sec')
+
+    upload = df[['Offset', 'Peer', 'Upload', 'Download']]
+    df.set_index('Offset', inplace=True)
     print(upload)
-    upload.resample("30S").mean().plot(color="black", style="-o", figsize=(10, 5), legend=False);
+    #upload.resample("30S").mean().plot(color="black", style="-o", figsize=(10, 5), legend=False);
 
-    df2 = df.describe()
-    print(df2)
+    df1 = df.groupby([pd.Grouper(freq='1s'), 'Peer']).agg(Upload=('Upload', np.mean), Download=('Download', np.mean)).reset_index()
+    df1['Offset'] = df1['Offset'].dt.total_seconds()
+    df1[ '30s upload avg' ] = df1.Upload.rolling(30).mean()
+    df1[ '30s download avg' ] = df1.Download.rolling(30).mean()
+    print(df1)
 
-    plt.xlabel("Time")
-    plt.ylabel("Bytes/sec") 
-    plt.show()
-    sys.exit()
+    f, (ax1, ax2) = plt.subplots(2, 1, sharex=True, layout='constrained')
 
-    df_g = df.groupby([pd.Grouper(freq='10s'), 'Peer']).agg(Upload=('Upload', np.mean), Download=('Download', np.mean))
-    print(df_g)
-    #print(df_g)
-    #df.plot(kind='line', y=["Upload"])
-    #res = sns.lineplot(x="Delta", y="Upload", data=df)
-    sns.relplot(
-        data=df_g, kind="line", legend=False,
-        x="Timestamp", y="Upload", col="Peer", 
-        hue="Peer", #size="Peer", style="Peer",
-        facet_kws=dict(sharex=False), col_wrap=2, palette=['k']
-        )
+    df1.plot(ax=ax1, x='Offset', y='Upload', kind='line', color="k", legend=True, xlabel = "Time (s)", ylabel = "Bytes / sec")
+    df1.plot(ax=ax1, x='Offset', y='30s upload avg', kind='line', style="r-", legend=True, xlabel = "Time (s)", ylabel = "Bytes / sec")
     
+    df1.plot(ax=ax2, x='Offset', y='Download', kind='line', color="k", legend=True, xlabel = "Time (s)", ylabel = "Bytes / sec")
+    df1.plot(ax=ax2, x='Offset', y='30s download avg', kind='line', style="r-", legend=True, xlabel = "Time (s)", ylabel = "Bytes / sec")
+
+    plt.show()
+   
+    print(df1.describe())
             

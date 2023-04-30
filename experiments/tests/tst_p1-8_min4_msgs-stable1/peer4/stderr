@@ -1,6 +1,0 @@
-++ dirname ./startserver.sh
-+ BASEDIR=.
-+ SCRIPTPATH=./../../rtun-routing
-+ export PYTHONPATH=./../../torpy-rtun-fork/
-+ PYTHONPATH=./../../torpy-rtun-fork/
-+ python3 ./../../rtun-routing/rtun.py -v INFO -g NeelTorRelay2 -f rendezvous.txt -t peer1peer2 -n default -i 4 -d 5

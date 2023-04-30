@@ -26,6 +26,9 @@ class RtunTest(Thread):
         logger.info("Started tester")
         my_id = lsr.global_router['RID']
         
+        with open('sent.log', 'w') as f:
+            f.write("Timestamp;Peer;ID;Destination;Route\n")
+        
         while True:
             peers = set()
             edges = lsr.graph
@@ -34,6 +37,8 @@ class RtunTest(Thread):
                 peers.add(e[1])
 
             for peer in peers:
+                #if peer != 'P1':
+                #    continue
                 if peer == my_id:
                     continue
                 ms = my_id + "_" + str(lsr.current_milli_time())
@@ -46,7 +51,9 @@ class RtunTest(Thread):
                 message = [{'Message' : 'LOOKUP', 'Destination' : peer, 'Source' : my_id, 'TTL': 5, 'ID': ms, 'Route': route, 'Path' : [my_id]}]
                 try:
                     relay_hop = lsr.route_message(message)
-                    #lsr.log_metrics("LOOKUP SENT", json.dumps( {'Peer':peer, 'ID': ms, 'Relay':relay_hop} )) 
+                    with open('sent.log', 'a') as f:
+                        f.write(';'.join([str(lsr.current_milli_time()), my_id, ms, peer, str(route)]))
+                        f.write("\n")
                     lsr.log_queue.put_nowait( message )
                 except Exception as e:
                     logger.error(e)

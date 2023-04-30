@@ -1,1 +1,0 @@
-CONNECT muddybits eb688e4f52df90278060 3 127.0.0.1:5003

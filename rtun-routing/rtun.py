@@ -136,11 +136,10 @@ if args.file:
     # Display program statistics
     Thread(name='Thread-Stats', target=lsr.print_stats).start()
 
-    if my_id:
+    if my_id == 'P1':
         # Start a tester thread
         logger.info("Starting testing thread")
-        tester_thread = RtunTest()
-        tester_thread.start()
+        tester_thread = RtunTest().start()
 
     # Start ConnectionThread
     logger.info("Starting connection thread")

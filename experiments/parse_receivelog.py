@@ -24,7 +24,8 @@ def main():
         return
 
     outf = open(csvfile, "w")
-    outf.write("Timestamp;Peer;Received;Source;Payload\n")
+    outf.write("Timestamp;Peer;Received;Source;ID;Payload\n")
+    print("Timestamp;Peer;Received;Source;ID;Payload")
 
     with open(fname, "rb") as f:
         while True:
@@ -69,7 +70,12 @@ def parse(data):
             d['Cookie'] =  d['Cookie'].decode("utf-8") 
         payload = json.dumps(d)
 
-        retval = ';'.join([str(dt_event), data[1], d['Message'], source, payload])
+        if 'ID' in d:
+            msgid = d['ID']
+        else:
+            msgid = ""
+
+        retval = ';'.join([str(dt_event), data[1], d['Message'], source, msgid, payload])
 
     elif type(data[2]) is dict: # LSA
         lsa = data[2]

@@ -15,3 +15,4 @@ rm -f peer*/receive.log
 rm -f peer*/messages.log
 rm -f peer*/routed.log
 rm -f peer*/stderr.out
+rm -f peer*/sent.log

@@ -23,14 +23,14 @@ def main():
     # how much they overlap with peers
 
     fout = open(csvfile, "w")
-    fout.write("Timestamp;Offset;Convergence\n")
+    fout.write("Timestamp;Peer;Convergence;Clustering;NodeClustering;AvgDegree;Degree;AvgPathLen;AvgCost\n")
     prev_timestamp = None
 
     with open(fname, "r") as f:
         x = list()
         y = list()
 
-        print("Timestamp;Peer;Neighbour;Path;Cost")
+        #print("Timestamp;Peer;Neighbour;Path;Cost")
 
         for line in f:
             timestamp, peer, data = line.strip().split(';')
@@ -61,21 +61,49 @@ def main():
             
             G = nx.Graph(adjacency_list)
             equal_pct = convergence(G, peer)
-           
-            # output 
-            fout.write("{0};{1};{2};{3}\n".format(dt_event, dt_offset, equal_pct, json.dumps(rp_nodes)))
             try:
-                #pathlen = nx.shortest_path_length(G, peer, weight='weight')
-                for n in nx.nodes(G):
-                    if n == peer:
-                        continue
-                    paths = nx.all_simple_paths(G, peer, n) 
-                    for p in paths:
-                        a = [str(dt_event), peer, n, '-'.join(p), str(nx.path_weight(G, p, weight='weight'))]
-                        print( ';'.join(a))
+                clustering = nx.average_clustering(G)
+                node_clustering = nx.clustering(G, peer)
+            except Exception:
+                clustering = 0
+                node_clustering = 0
+            try:
+                avg_shortest_path = nx.average_shortest_path_length(G, weight='weight')
             except Exception as e:
+                print(e)
+                avg_shortest_path = 0
+
+            degrees = [val for (node, val) in G.degree()]
+            if len(degrees) > 0:
+                avg_degrees = round( sum(degrees) / len(degrees), 4 )
+            else:
+                avg_degrees = 0
+            degree = G.degree(peer)
+            if str(degree) == '[]':
+                degree = 0
+
+            try:
+                #shortest_paths = nx.shortest_path(G, peer, weight='weight')
+                p = [l for l in nx.shortest_path_length(G, peer).values()]           
+                avgpath = sum(p) / (len(p)-1)
+            except Exception:
+                pathlens = []
+                avgpath = 0
+            
+            # output 
+            fout.write("{0};{1};{2};{3};{4};{5};{6};{7};{8}\n".format(dt_event, peer, equal_pct, str(clustering), str(node_clustering), str(avg_degrees), str(degree), str(avgpath), str(avg_shortest_path)))
+            #try:
+                #pathlen = nx.shortest_path_length(G, peer, weight='weight')
+            #    for n in nx.nodes(G):
+            #        if n == peer:
+            #            continue
+            #        paths = nx.all_simple_paths(G, peer, n) 
+            #        for p in paths:
+            #            a = [str(dt_event), peer, n, '-'.join(p), str(nx.path_weight(G, p, weight='weight'))]
+            #            print( ';'.join(a))
+            #except Exception as e:
                 #print(e) 
-                pass
+            #    pass
 
 
         fout.close()
