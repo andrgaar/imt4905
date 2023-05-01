@@ -63,7 +63,7 @@ class RtunTest(Thread):
                 try:
                     relay_hop = lsr.route_message(message)
                     with open('sent.log', 'a') as f:
-                        f.write(';'.join([str(lsr.current_milli_time()), my_id, ms, peer, str(route)]))
+                        f.write(';'.join([datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')[:-3], my_id, ms, peer, str(route)]))
                         f.write("\n")
                     lsr.log_queue.put_nowait( message )
                 except Exception as e:

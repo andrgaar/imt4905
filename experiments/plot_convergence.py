@@ -111,7 +111,7 @@ def plot_latency(ax, sent, receive, title):
 
     receive_df = pd.read_csv(receive, sep=";")
     receive_df = receive_df.loc[receive_df['Received'] == 'LOOKUP']
-    receive_df['Timestamp'] = pd.to_datetime(sent_df['Timestamp'], unit='ms')
+    receive_df['Timestamp'] = pd.to_datetime(receive_df['Timestamp'])
     #receive_df = to_offset(receive_df).reset_index()
     #receive_df['Result'] = 'Success'
     receive_df = receive_df[['Timestamp', 'ID']]
