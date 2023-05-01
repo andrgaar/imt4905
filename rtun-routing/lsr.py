@@ -147,7 +147,9 @@ class ReceiveThread(Thread):
         try:
             local_copy_LSA = pickle.loads(queue_data[0]['data'])
         except Exception as e:
-            logger.error(e)
+            template = "An exception of type {0} occurred in ReceiveThread.serverSide. Arguments:\n{1!r}"
+            message = template.format(type(e).__name__, e.args)
+            logger.error(message)
             return
 
         circuit = queue_data[0]['circuit']
