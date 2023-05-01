@@ -25,8 +25,8 @@ CUTOFF=600
 def main():
 
     #receivelog(arg1)
-    f, ((ax1, ax2), (ax3, ax4), (ax5, ax6)) = plt.subplots(3, 2, sharex=True
-            , layout='constrained')
+    #f, ((ax1, ax2), (ax3, ax4), (ax5, ax6)) = plt.subplots(3, 2, sharex=True
+    #        , layout='constrained')
     for arg in argv:
         print("-----------------------------------")
         print(arg)
@@ -106,7 +106,7 @@ def plot_latency(ax, sent, receive, title):
     sent_df = pd.read_csv(sent, sep=";")
     sent_df['Timestamp'] = pd.to_datetime(sent_df['Timestamp'])
     sent_df = to_offset(sent_df).reset_index()
-    sent_df = sent_df[['Timestamp', 'Offset', 'ID', 'Route']]
+    sent_df = sent_df[['Timestamp', 'Offset', 'ID', 'Route', 'Shortest']]
     print(sent_df)
 
     receive_df = pd.read_csv(receive, sep=";")
@@ -132,19 +132,25 @@ def plot_latency(ax, sent, receive, title):
     indicator=False,
     validate=None,
     )
-    #result = result.replace(np.nan, 'Failed')
-    #result.set_index('Offset', inplace=True)
-    #result = result.groupby([pd.Grouper(freq = FREQ), 'Result'])['Result'].size().unstack().reset_index()
-    result['Offset'] = result['Offset'].dt.total_seconds()
     #result = result.loc[result['Offset'] <= CUTOFF]
     #result = result.replace(np.nan, 0)
     result['Latency'] = result.Timestamp_y - result.Timestamp_x
     result['Latency'] = result['Latency'].dt.total_seconds() * 1000
+    #result.set_index('Offset', inplace=True)
+    #result = result.groupby([pd.Grouper(freq = FREQ),'Shortest'])['Latency'].mean().unstack().reset_index()
+    result['Offset'] = result['Offset'].dt.total_seconds()
+    result = result.reset_index()
+    #result = result.replace(True, "Yes")
+    #result = result.replace(False, "No")
+    result = result.rename(columns={"Shortest": "Measured shortest path"})
+    print(result)
 
-    print(result.to_string())
+    #lp.plot(ax=ax, x='Offset', kind='line', colormap="tab20", legend=True,
+    #      xlabel = "Time (s)", ylabel = "Latency (ms)")
 
-    result.plot(ax=ax, x='Offset', y='Latency', kind='line', colormap="tab20", legend=False,
-          xlabel = "Time (s)", ylabel = "Latency (ms)")
+    p = sns.scatterplot(data=result, x='Offset', y='Latency', hue='Measured shortest path', style='Measured shortest path')
+    p.set(xlabel='Time (s)', ylabel='Latency (ms)')
+
 
 
 def plot_avgdegree(ax, csvfile, title):
