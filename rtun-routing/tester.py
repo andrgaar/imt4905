@@ -53,6 +53,7 @@ class RtunTest(Thread):
                 #    continue
                 ms = my_id + "_" + str(lsr.current_milli_time())
                 route = path
+                route.pop(0) # remove ref to self
                 #try:
                 #    route = lsr.shortest_paths[peer].copy()
                 #    route.pop(0)

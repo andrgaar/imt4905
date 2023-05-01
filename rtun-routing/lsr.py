@@ -200,7 +200,7 @@ class ReceiveThread(Thread):
 
             RID = local_copy_LSA['RID']
 
-            logger.debug("Received LSA from {0} with SN: {1} and FLAG: {2}".format(RID, local_copy_LSA['SN'], local_copy_LSA['FLAG']))
+            logger.info("Received LSA from {0} with SN: {1} and FLAG: {2}".format(RID, local_copy_LSA['SN'], local_copy_LSA['FLAG']))
 
             # Might get a LSA from non-neighbour
             try:
@@ -274,6 +274,7 @@ class ReceiveThread(Thread):
                         try:
                             send_to_stream(router['NID'], pickle.dumps(local_copy_LSA))
                             neighbour_stats[router['NID']]['LSA sent'] += 1
+                            logger.info(f"receivedLSA: LSA sent to {router['NID']}")
                             time.sleep(1)
                         except KeyError as e:
                             logger.warn("{0} already removed from router".format(router['NID']))
@@ -545,6 +546,7 @@ class ReceiveThread(Thread):
             try:
                 send_to_stream(router['NID'], new_data)
                 neighbour_stats[router['NID']]['LSA sent'] += 1
+                logger.info(f"transmitNewLSA: LSA sent to {router['NID']}")
             except Exception:
                 continue
 
@@ -862,6 +864,7 @@ class SendThread(Thread):
                 try:
                     send_to_stream(dict['NID'], message)
                     neighbour_stats[dict['NID']]['LSA sent'] += 1
+                    logger.info(f"clientSide: LSA sent to {dict['NID']}")
                 except Exception:
                     continue
 
