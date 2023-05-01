@@ -268,18 +268,21 @@ class ReceiveThread(Thread):
                     logger.debug("Update LSA is old, forwarding only")
 
             # Forward the LSA to our neighbours if it hasn't already
-            if RID != global_router['RID'] and self.LSA_SN_forwarded[RID] < local_copy_LSA['SN']:
-                for router in neighbour_routers:
-                    if router['NID'] != local_copy_LSA['RID'] and local_copy_LSA['RID'] in self.LSA_DB:
-                        try:
-                            send_to_stream(router['NID'], pickle.dumps(local_copy_LSA))
-                            neighbour_stats[router['NID']]['LSA sent'] += 1
-                            logger.info(f"receivedLSA: LSA sent to {router['NID']}")
-                            time.sleep(1)
-                        except KeyError as e:
-                            logger.warn("{0} already removed from router".format(router['NID']))
-                # Update the forwarded SN for this peer
-                self.LSA_SN_forwarded.update({local_copy_LSA['RID']: local_copy_LSA['SN']})
+            lock = threading.Lock()
+            with lock:
+                if RID != global_router['RID'] and self.LSA_SN_forwarded[RID] < local_copy_LSA['SN']:
+                    # Update the forwarded SN for this peer
+                    self.LSA_SN_forwarded.update({local_copy_LSA['RID']: local_copy_LSA['SN']})
+
+                    for router in neighbour_routers:
+                        if router['NID'] != local_copy_LSA['RID'] and local_copy_LSA['RID'] in self.LSA_DB:
+                            try:
+                                send_to_stream(router['NID'], pickle.dumps(local_copy_LSA))
+                                neighbour_stats[router['NID']]['LSA sent'] += 1
+                                logger.info(f"receivedLSA: LSA sent to {router['NID']}")
+                                time.sleep(1)
+                            except KeyError as e:
+                                logger.warn("{0} already removed from router".format(router['NID']))
 
 
 
