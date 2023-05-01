@@ -125,7 +125,7 @@ class ReceiveThread(Thread):
             while True:
                 queue_data = self.queue.get()
                 #self.serverSide(queue_data)
-                Thread(target=self.serverSide, args=(queue_data)).start()
+                Thread(target=self.serverSide, args=(self, queue_data)).start()
 
         except Exception as e:
             template = "An exception of type {0} occurred in ReceiveThread. Arguments:\n{1!r}"
