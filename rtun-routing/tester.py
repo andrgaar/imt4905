@@ -2,6 +2,7 @@ import sys
 import json
 import random
 import time
+import networkx as nx
 from threading import Thread
 
 import lsr
@@ -36,18 +37,27 @@ class RtunTest(Thread):
                 peers.add(e[0])
                 peers.add(e[1])
 
-            for peer in peers:
+            if not lsr.G:
+                continue
+            try:
+                paths = list(nx.shortest_simple_paths(lsr.G, 'P1', 'P5'))
+            except Exception:
+                paths = []
+
+            for path in paths:
+                peer = 'P5'
+            #for peer in peers:
                 #if peer != 'P1':
                 #    continue
-                if peer == my_id:
-                    continue
+                #if peer == my_id:
+                #    continue
                 ms = my_id + "_" + str(lsr.current_milli_time())
-                route = None
-                try:
-                    route = lsr.shortest_paths[peer].copy()
-                    route.pop(0)
-                except Exception:
-                    pass
+                route = path
+                #try:
+                #    route = lsr.shortest_paths[peer].copy()
+                #    route.pop(0)
+                #except Exception:
+                #    pass
                 message = [{'Message' : 'LOOKUP', 'Destination' : peer, 'Source' : my_id, 'TTL': 5, 'ID': ms, 'Route': route, 'Path' : [my_id]}]
                 try:
                     relay_hop = lsr.route_message(message)
@@ -58,5 +68,5 @@ class RtunTest(Thread):
                 except Exception as e:
                     logger.error(e)
             
-            time.sleep(random.randint(5,10))
+            time.sleep(random.randint(5,5))
 

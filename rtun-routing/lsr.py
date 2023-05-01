@@ -37,9 +37,9 @@ NODE_FAILURE_INTERVAL = 10 # interval for inactive route check
 TIMEOUT = 60 # time for when route considered dead
 LATENCY_SAMPLES = 3 # number of times samples collected before updated
 PERIODIC_CONN_CHECK = 120 # interval for checking connections
-MIN_NEIGHBOUR_CONNECTIONS = 3 # number of required connnections
+MIN_NEIGHBOUR_CONNECTIONS = 1 # number of required connnections
 MAX_CONNECTION_TIME = 120 # max time a circuit should live
-NOGUI = True
+NOGUI = False
 
 # Log metrics to file
 graph_metrics_file = "router.log"
@@ -124,7 +124,8 @@ class ReceiveThread(Thread):
 
             while True:
                 queue_data = self.queue.get()
-                self.serverSide(queue_data)
+                #self.serverSide(queue_data)
+                Thread(target=self.serverSide, args=(queue_data))
 
         except Exception as e:
             template = "An exception of type {0} occurred in ReceiveThread. Arguments:\n{1!r}"

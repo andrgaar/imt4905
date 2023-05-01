@@ -31,20 +31,21 @@ def main():
         print("-----------------------------------")
         print(arg)
         print("-----------------------------------")
-        plot_convergence(ax1, arg + '/combined-topology.log.csv', '2 peers, s=n/a')
-        plot_reliability(ax2, arg + '/peer1/sent.log', arg + '/combined-receive.log.csv', '2 peers, s=n/a')
-        plot_avgdegree(ax3, arg + '/combined-topology.log.csv', '2 peers, s=n/a')
-        plot_clustering(ax4, arg + '/combined-topology.log.csv', '2 peers, s=n/a')
-        plot_nodeclustering(ax5, arg + '/combined-topology.log.csv', '2 peers, s=n/a')
-        plot_avgcost(ax6, arg + '/combined-topology.log.csv', '2 peers, s=n/a')
+        #plot_convergence(ax1, arg + '/combined-topology.log.csv', '2 peers, s=n/a')
+        #plot_reliability(ax2, arg + '/peer1/sent.log', arg + '/combined-receive.log.csv', '2 peers, s=n/a')
+        #plot_avgdegree(ax3, arg + '/combined-topology.log.csv', '2 peers, s=n/a')
+        #plot_clustering(ax4, arg + '/combined-topology.log.csv', '2 peers, s=n/a')
+        #plot_nodeclustering(ax5, arg + '/combined-topology.log.csv', '2 peers, s=n/a')
+        #plot_avgcost(ax6, arg + '/combined-topology.log.csv', '2 peers, s=n/a')
+        plot_latency(None, arg + '/peer1/sent.log', arg + '/peer5/receive.log.csv', '')
 
     #plt.tight_layout()
-    f.suptitle('5 peers, min=3, s=3, hb=10', fontsize=12)
-    plt.show()
+    #f.suptitle('5 peers, min=3, s=3, hb=10', fontsize=12)
+    #plt.show()
 
     #plot_routes(None, arg + "/combined-routes.csv", '')
-    plot_msgdist(None, arg + "/combined-receive.log.csv")
-    plt.show()
+    #plot_msgdist(None, arg + "/combined-receive.log.csv")
+    #plt.show()
 
 
 def to_offset(df):
@@ -100,6 +101,50 @@ def plot_reliability(ax, sent, receive, title):
 
     result.plot(ax=ax, x='Offset', y='SuccessRate', kind='line', colormap="tab20", legend=False,
           xlabel = "Time (s)", ylabel = "Reliability (%)")
+
+def plot_latency(ax, sent, receive, title):
+    sent_df = pd.read_csv(sent, sep=";")
+    sent_df['Timestamp'] = pd.to_datetime(sent_df['Timestamp'], unit='ms')
+    #sent_df = to_offset(sent_df).reset_index()
+    sent_df = sent_df[['Timestamp', 'ID']]
+    print(sent_df)
+
+    receive_df = pd.read_csv(receive, sep=";")
+    receive_df = receive_df.loc[receive_df['Received'] == 'LOOKUP']
+    receive_df['Timestamp'] = pd.to_datetime(sent_df['Timestamp'], unit='ms')
+    #receive_df = to_offset(receive_df).reset_index()
+    #receive_df['Result'] = 'Success'
+    receive_df = receive_df[['Timestamp', 'ID']]
+    print(receive_df)
+
+    result = pd.merge(
+    sent_df,
+    receive_df,
+    how="left",
+    on='ID',
+    left_on=None,
+    right_on=None,
+    left_index=False,
+    right_index=False,
+    sort=True,
+    suffixes=("_x", "_y"),
+    copy=True,
+    indicator=False,
+    validate=None,
+    )
+    #result = result.replace(np.nan, 'Failed')
+    #result.set_index('Offset', inplace=True)
+    #result = result.groupby([pd.Grouper(freq = FREQ), 'Result'])['Result'].size().unstack().reset_index()
+    #result['Offset'] = result['Offset'].dt.total_seconds()
+    #result = result.loc[result['Offset'] <= CUTOFF]
+    #result = result.replace(np.nan, 0)
+    result['Latency'] = result.Timestamp_y - result.Timestamp_x
+
+    print(result.to_string())
+
+    #result.plot(ax=ax, x='Offset', y='SuccessRate', kind='line', colormap="tab20", legend=False,
+    #      xlabel = "Time (s)", ylabel = "Reliability (%)")
+
 
 def plot_avgdegree(ax, csvfile, title):
     df = pd.read_csv(csvfile, sep=";")
