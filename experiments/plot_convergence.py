@@ -45,7 +45,7 @@ def main():
 
     #plot_routes(None, arg + "/combined-routes.csv", '')
     #plot_msgdist(None, arg + "/combined-receive.log.csv")
-    #plt.show()
+    plt.show()
 
 
 def to_offset(df):
@@ -104,9 +104,9 @@ def plot_reliability(ax, sent, receive, title):
 
 def plot_latency(ax, sent, receive, title):
     sent_df = pd.read_csv(sent, sep=";")
-    sent_df['Timestamp'] = pd.to_datetime(sent_df['Timestamp'], unit='ms')
-    #sent_df = to_offset(sent_df).reset_index()
-    sent_df = sent_df[['Timestamp', 'ID']]
+    sent_df['Timestamp'] = pd.to_datetime(sent_df['Timestamp'])
+    sent_df = to_offset(sent_df).reset_index()
+    sent_df = sent_df[['Timestamp', 'Offset', 'ID', 'Route']]
     print(sent_df)
 
     receive_df = pd.read_csv(receive, sep=";")
@@ -135,15 +135,16 @@ def plot_latency(ax, sent, receive, title):
     #result = result.replace(np.nan, 'Failed')
     #result.set_index('Offset', inplace=True)
     #result = result.groupby([pd.Grouper(freq = FREQ), 'Result'])['Result'].size().unstack().reset_index()
-    #result['Offset'] = result['Offset'].dt.total_seconds()
+    result['Offset'] = result['Offset'].dt.total_seconds()
     #result = result.loc[result['Offset'] <= CUTOFF]
     #result = result.replace(np.nan, 0)
     result['Latency'] = result.Timestamp_y - result.Timestamp_x
+    result['Latency'] = result['Latency'].dt.total_seconds() * 1000
 
     print(result.to_string())
 
-    #result.plot(ax=ax, x='Offset', y='SuccessRate', kind='line', colormap="tab20", legend=False,
-    #      xlabel = "Time (s)", ylabel = "Reliability (%)")
+    result.plot(ax=ax, x='Offset', y='Latency', kind='line', colormap="tab20", legend=False,
+          xlabel = "Time (s)", ylabel = "Latency (ms)")
 
 
 def plot_avgdegree(ax, csvfile, title):

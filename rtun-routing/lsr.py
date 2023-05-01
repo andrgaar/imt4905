@@ -268,7 +268,7 @@ class ReceiveThread(Thread):
                     logger.debug("Update LSA is old, forwarding only")
 
             # Forward the LSA to our neighbours if it hasn't already
-            lock = threading.Lock()
+            lock = Lock()
             with lock:
                 if RID != global_router['RID'] and self.LSA_SN_forwarded[RID] < local_copy_LSA['SN']:
                     # Update the forwarded SN for this peer
@@ -1156,14 +1156,17 @@ def route_message(msg_data, flood=False):
     if dst_relay:
         # send the message to next hop
         try:
+            logger.info(f"ROUTED send to {dst_relay}")
             send_to_stream(dst_relay, pickle.dumps(msg_data))
         except Exception:
             dst_relay = next_hop(destination)
             if not dst_relay:
                 # try a random neighbour
+                logger.info(f"RANDOM send to {dst_relay}")
                 neighbours = global_router['Neighbours Data']
                 dst_relay = neighbours[random.randint(0, len(neighbours) - 1)]['NID']
             try:
+                logger.info(f"NEXT_HOP send to {dst_relay}")
                 send_to_stream(dst_relay, pickle.dumps(msg_data))
             except Exception:
                 return -1

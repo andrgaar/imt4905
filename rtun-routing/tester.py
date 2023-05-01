@@ -2,6 +2,7 @@ import sys
 import json
 import random
 import time
+from datetime import datetime
 import networkx as nx
 from threading import Thread
 
@@ -28,7 +29,7 @@ class RtunTest(Thread):
         my_id = lsr.global_router['RID']
         
         with open('sent.log', 'w') as f:
-            f.write("Timestamp;Peer;ID;Destination;Route\n")
+            f.write("Timestamp;Peer;ID;Destination;Route;Shortest\n")
         
         while True:
             peers = set()
@@ -44,16 +45,26 @@ class RtunTest(Thread):
             except Exception:
                 paths = []
 
+            peer = 'P5'
+            try:
+                shortest_path = lsr.shortest_paths[peer].copy()
+            except Exception:
+                shortest_path = []
+
             for path in paths:
-                peer = 'P5'
             #for peer in peers:
                 #if peer != 'P1':
                 #    continue
                 #if peer == my_id:
                 #    continue
                 ms = my_id + "_" + str(lsr.current_milli_time())
-                route = path
-                #route.pop(0) # remove ref to self
+                route = path.copy()
+                if route == shortest_path:
+                    is_shortest = True
+                else:
+                    is_shortest = False
+
+                route.pop(0) # remove ref to self
                 #try:
                 #    route = lsr.shortest_paths[peer].copy()
                 #    route.pop(0)
@@ -63,7 +74,7 @@ class RtunTest(Thread):
                 try:
                     relay_hop = lsr.route_message(message)
                     with open('sent.log', 'a') as f:
-                        f.write(';'.join([datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')[:-3], my_id, ms, peer, str(route)]))
+                        f.write(';'.join([datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')[:-3], my_id, ms, peer, str(path), str(is_shortest)]))
                         f.write("\n")
                     lsr.log_queue.put_nowait( message )
                 except Exception as e:
