@@ -26,7 +26,10 @@ def main():
 
     #receivelog(arg1)
     #f, ((ax1, ax2), (ax3, ax4), (ax5, ax6)) = plt.subplots(3, 2, sharex=True
-    #        , layout='constrained')
+    f, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, sharex=True
+            , layout='constrained')
+    axes = [ax1,ax2,ax3,ax4]
+    i = 0
     for arg in argv:
         print("-----------------------------------")
         print(arg)
@@ -37,7 +40,8 @@ def main():
         #plot_clustering(ax4, arg + '/combined-topology.log.csv', '2 peers, s=n/a')
         #plot_nodeclustering(ax5, arg + '/combined-topology.log.csv', '2 peers, s=n/a')
         #plot_avgcost(ax6, arg + '/combined-topology.log.csv', '2 peers, s=n/a')
-        plot_latency(None, arg + '/peer1/sent.log', arg + '/peer5/receive.log.csv', '')
+        plot_latency(axes[i], arg + '/peer1/sent.log', arg + '/peer5/receive.log.csv', f"Set {i+1}")
+        i += 1
 
     #plt.tight_layout()
     #f.suptitle('5 peers, min=3, s=3, hb=10', fontsize=12)
@@ -132,24 +136,28 @@ def plot_latency(ax, sent, receive, title):
     indicator=False,
     validate=None,
     )
-    #result = result.loc[result['Offset'] <= CUTOFF]
     #result = result.replace(np.nan, 0)
     result['Latency'] = result.Timestamp_y - result.Timestamp_x
     result['Latency'] = result['Latency'].dt.total_seconds() * 1000
-    #result.set_index('Offset', inplace=True)
+    result = result.loc[result['Latency'] <= 1000]
+    result.set_index('Offset', inplace=True)
     #result = result.groupby([pd.Grouper(freq = FREQ),'Shortest'])['Latency'].mean().unstack().reset_index()
+    result = result.groupby([pd.Grouper(freq = FREQ),'Shortest'])['Latency'].mean().reset_index()
     result['Offset'] = result['Offset'].dt.total_seconds()
-    result = result.reset_index()
-    #result = result.replace(True, "Yes")
-    #result = result.replace(False, "No")
-    result = result.rename(columns={"Shortest": "Measured shortest path"})
+    #result = result.reset_index()
+    result = result.replace(True, "Shortest (Dijkstra)")
+    result = result.replace(False, "Others")
+    result = result.rename(columns={"Shortest": "Actual latency"})
     print(result)
 
-    #lp.plot(ax=ax, x='Offset', kind='line', colormap="tab20", legend=True,
+    #result.plot(ax=ax, x='Offset', kind='line', colormap="tab20", legend=True,
     #      xlabel = "Time (s)", ylabel = "Latency (ms)")
 
-    p = sns.scatterplot(data=result, x='Offset', y='Latency', hue='Measured shortest path', style='Measured shortest path')
-    p.set(xlabel='Time (s)', ylabel='Latency (ms)')
+    p = sns.lineplot(ax=ax, data=result, x='Offset', y='Latency', hue='Actual latency', style='Actual latency')
+    ax.set_title(title)
+    ax.set(xlabel='Time (s)', ylabel='Latency (ms)')
+    #p = sns.scatterplot(data=result, x='Offset', y='Latency', hue='Measured shortest path', style='Measured shortest path')
+    #p = sns.kdeplot(data=result, x='Offset', y='Latency', hue='Measured shortest path', style='Measured shortest path')
 
 
 
