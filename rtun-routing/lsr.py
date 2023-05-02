@@ -36,9 +36,10 @@ PERIODIC_HEART_BEAT = 10 # interval for sending HB
 NODE_FAILURE_INTERVAL = 10 # interval for inactive route check
 TIMEOUT = 60 # time for when route considered dead
 LATENCY_SAMPLES = 3 # number of times samples collected before updated
-PERIODIC_CONN_CHECK = 120 # interval for checking connections
-MIN_NEIGHBOUR_CONNECTIONS = 1 # number of required connnections
+PERIODIC_CONN_CHECK = 60 # interval for checking connections
+MIN_NEIGHBOUR_CONNECTIONS = 2 # number of required connnections
 MAX_CONNECTION_TIME = 120 # max time a circuit should live
+SWITCH_CIRCUITS = False
 NOGUI = True
 
 # Log metrics to file
@@ -949,7 +950,7 @@ class ConnectionThread(Thread):
         while True:
             time.sleep(PERIODIC_CONN_CHECK)
 
-            if global_router['Neighbours'] >= MIN_NEIGHBOUR_CONNECTIONS:
+            if SWITCH_CIRCUITS and global_router['Neighbours'] >= MIN_NEIGHBOUR_CONNECTIONS:
                 # Check existing connections
                 join_peer = None
                 # find oldest connection to kill
