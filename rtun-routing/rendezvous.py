@@ -32,6 +32,8 @@ from messages import HelloMessage
 MIN_CONNECTION_TTL = 60
 MAX_CONNECTION_TTL = 120
 GLOBAL_CIRCUIT_ID = 0x81000002
+RANDOM_DIE=(120, 500)
+#RANDOM_DIE=None
 
 threads = {}
 
@@ -222,6 +224,7 @@ class RendezvousConnect(Thread):
         self.name = f"Connect-{self.rendp_nick}"
         self.ALIVE = True
         self.attempts = 12 # num of attempts to connect to RP
+        self.random_die = None
 
     def run(self):
         # Add self to thread info
@@ -229,6 +232,11 @@ class RendezvousConnect(Thread):
         self.id = tid
         thread = threading.current_thread()
         threads[tid] = thread
+
+        # Test die after random time
+        if RANDOM_DIE:
+            self.random_die = random.randint(RANDOM_DIE[0], RANDOM_DIE[1])
+            logger.warn(f"Will die in {self.random_die} seconds")
 
         # Try to connect to rendezvous point - restart on failure
         while True:
@@ -299,6 +307,10 @@ class RendezvousConnect(Thread):
         self.start_time = time.time()
 
         while self.ALIVE:
+            if self.random_die and time.time() > self.start_time + self.random_die:
+                self.ALIVE = False
+                continue
+
             try:
                 r, w, _ = select.select([rcv_sock.ssl_socket], [], [])
                 if rcv_sock.ssl_socket in r:
@@ -333,7 +345,7 @@ class RendezvousConnect(Thread):
             except Exception as e:
                 logger.error("Error in receive on socket: " + str(e))
                 continue
-        
+        logger.warn(f"ALIVE is {self.ALIVE}, sending DESTROY") 
         inner_cell = CellDestroy(CircuitReason.FINISHED, circuit_id)
         relay_cell = CellRelay(inner_cell, stream_id=0, circuit_id=circuit_id)
         rcv_cn.encrypt_forward(relay_cell)

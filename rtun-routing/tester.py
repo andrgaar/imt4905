@@ -40,18 +40,20 @@ class RtunTest(Thread):
 
             if not lsr.G:
                 continue
-            try:
-                paths = list(nx.shortest_simple_paths(lsr.G, 'P1', 'P5'))
-            except Exception:
-                paths = []
+            #try:
+            #    paths = list(nx.shortest_simple_paths(lsr.G, 'P1', 'P5'))
+            #except Exception:
+            #    paths = []
 
-            peer = 'P5'
+            peer = random.choice(list(lsr.shortest_paths))
             try:
                 shortest_path = lsr.shortest_paths[peer].copy()
             except Exception:
                 shortest_path = []
+            path = shortest_path
 
-            for path in paths:
+            if peer and peer != my_id:
+            #for path in paths:
             #for peer in peers:
                 #if peer != 'P1':
                 #    continue
@@ -59,10 +61,11 @@ class RtunTest(Thread):
                 #    continue
                 ms = my_id + "_" + str(lsr.current_milli_time())
                 route = path.copy()
-                if route == shortest_path:
-                    is_shortest = True
-                else:
-                    is_shortest = False
+                #if route == shortest_path:
+                #    is_shortest = True
+                #else:
+                #    is_shortest = False
+                is_shortest = True
 
                 route.pop(0) # remove ref to self
                 #try:
@@ -80,5 +83,5 @@ class RtunTest(Thread):
                 except Exception as e:
                     logger.error(e)
             
-            time.sleep(random.randint(5,5))
+            time.sleep(random.randint(5,15))
 

@@ -36,8 +36,8 @@ PERIODIC_HEART_BEAT = 10 # interval for sending HB
 NODE_FAILURE_INTERVAL = 10 # interval for inactive route check
 TIMEOUT = 60 # time for when route considered dead
 LATENCY_SAMPLES = 3 # number of times samples collected before updated
-PERIODIC_CONN_CHECK = 60 # interval for checking connections
-MIN_NEIGHBOUR_CONNECTIONS = 2 # number of required connnections
+PERIODIC_CONN_CHECK = (30,90) # interval for checking connections
+MIN_NEIGHBOUR_CONNECTIONS = 6 # number of required connnections
 MAX_CONNECTION_TIME = 120 # max time a circuit should live
 SWITCH_CIRCUITS = False
 NOGUI = True
@@ -201,7 +201,7 @@ class ReceiveThread(Thread):
 
             RID = local_copy_LSA['RID']
 
-            logger.info("Received LSA from {0} with SN: {1} and FLAG: {2}".format(RID, local_copy_LSA['SN'], local_copy_LSA['FLAG']))
+            logger.debug("Received LSA from {0} with SN: {1} and FLAG: {2}".format(RID, local_copy_LSA['SN'], local_copy_LSA['FLAG']))
 
             # Might get a LSA from non-neighbour
             try:
@@ -280,7 +280,7 @@ class ReceiveThread(Thread):
                             try:
                                 send_to_stream(router['NID'], pickle.dumps(local_copy_LSA))
                                 neighbour_stats[router['NID']]['LSA sent'] += 1
-                                logger.info(f"receivedLSA: LSA sent to {router['NID']}")
+                                logger.debug(f"receivedLSA: LSA sent to {router['NID']}")
                                 time.sleep(1)
                             except KeyError as e:
                                 logger.warn("{0} already removed from router".format(router['NID']))
@@ -368,7 +368,7 @@ class ReceiveThread(Thread):
 
     # Removes a dead route
     def remove_inactive(self, inactive_list):
-        logger.info("DEAD ROUTES DETECTED: {0}".format( ','.join(inactive_list)))
+        logger.warn("DEAD ROUTES DETECTED: {0}".format( ','.join(inactive_list)))
 
         # Update this router's list of neighbours using inactive list
         self.updateNeighboursList(inactive_list)
@@ -550,7 +550,7 @@ class ReceiveThread(Thread):
             try:
                 send_to_stream(router['NID'], new_data)
                 neighbour_stats[router['NID']]['LSA sent'] += 1
-                logger.info(f"transmitNewLSA: LSA sent to {router['NID']}")
+                logger.debug(f"transmitNewLSA: LSA sent to {router['NID']}")
             except Exception:
                 continue
 
@@ -868,7 +868,7 @@ class SendThread(Thread):
                 try:
                     send_to_stream(dict['NID'], message)
                     neighbour_stats[dict['NID']]['LSA sent'] += 1
-                    logger.info(f"clientSide: LSA sent to {dict['NID']}")
+                    logger.debug(f"clientSide: LSA sent to {dict['NID']}")
                 except Exception:
                     continue
 
@@ -938,7 +938,7 @@ class ConnectionThread(Thread):
         self.conn_queue = conn_queue
         self.rcv_queue = rcv_queue
         self.max_latency = 10
-        self.min_alive = 60
+        self.min_alive = 30
 
     def run(self):
         self.connections()
@@ -948,9 +948,10 @@ class ConnectionThread(Thread):
         RID = global_router['RID']
 
         while True:
-            time.sleep(PERIODIC_CONN_CHECK)
+            time_sleep = random.randint(PERIODIC_CONN_CHECK[0], PERIODIC_CONN_CHECK[1])
+            time.sleep(time_sleep)
 
-            if SWITCH_CIRCUITS and global_router['Neighbours'] >= MIN_NEIGHBOUR_CONNECTIONS:
+            if SWITCH_CIRCUITS and len(global_router['Neighbours Data']) >= MIN_NEIGHBOUR_CONNECTIONS:
                 # Check existing connections
                 join_peer = None
                 # find oldest connection to kill
@@ -1032,6 +1033,10 @@ class ConnectionThread(Thread):
                  #               'Route': route, 'Relay' : rp_relay.nickname, 'Cookie' : rp_cookie}]
                  #   route_message(message)
 
+                continue
+
+            if len(global_router['Neighbours Data']) >= MIN_NEIGHBOUR_CONNECTIONS:
+                logger.info("Min. neigbour connections satisfied")
                 continue
 
             # Set up new connections if are below minimum
@@ -1157,17 +1162,17 @@ def route_message(msg_data, flood=False):
     if dst_relay:
         # send the message to next hop
         try:
-            logger.info(f"ROUTED send to {dst_relay}")
+            logger.debug(f"ROUTED send to {dst_relay}")
             send_to_stream(dst_relay, pickle.dumps(msg_data))
         except Exception:
             dst_relay = next_hop(destination)
             if not dst_relay:
                 # try a random neighbour
-                logger.info(f"RANDOM send to {dst_relay}")
+                logger.debug(f"RANDOM send to {dst_relay}")
                 neighbours = global_router['Neighbours Data']
                 dst_relay = neighbours[random.randint(0, len(neighbours) - 1)]['NID']
             try:
-                logger.info(f"NEXT_HOP send to {dst_relay}")
+                logger.debug(f"NEXT_HOP send to {dst_relay}")
                 send_to_stream(dst_relay, pickle.dumps(msg_data))
             except Exception:
                 return -1
@@ -1253,10 +1258,10 @@ def current_milli_time():
 # Lookup a value in the Neighbours list
 def lookup_neighbour(NID, item):
 
-    logger.info(f"Lookup {NID} : {item}")
+    logger.debug(f"Lookup {NID} : {item}")
     for n in global_router['Neighbours Data']:
         if n['NID'] == NID:
-            logger.info(f"Lookup return: {n[item]}")
+            logger.debug(f"Lookup return: {n[item]}")
             return n[item]
     return "<none>"
 
@@ -1269,6 +1274,13 @@ def print_stats():
             f.write("{0};{1};{2}\n".format(time_stamp, 
                                             global_router['RID'], 
                                             json.dumps(graph)))
+
+        with open('neighbours.log', "a") as f:
+            f.write("{0};{1};{2}\n".format(time_stamp, 
+                                            global_router['RID'], 
+                                            json.dumps(global_router['Neighbours Data'])
+                                            ))
+            
 
         if NOGUI:
             time.sleep(3)

@@ -2,24 +2,18 @@
 
 echo Start tests...
 
-for i in 1 2 3 4 5
+for i in 1 2
 do
 	DATE=`date '+%Y%m%d%H%M%S'`
-	FOLDER=/home/vboxuser/Git/imt4905/experiments/tests/5_peers_latency_${DATE}
+	FOLDER=../experiments/tests/8_peers_60_s3min6_randfail_noswitch_${DATE}
 
 	echo Start test $i : $DATE
 
+	rm -f peer*/*.log
+	rm -f peer*/*.csv
+	rm -f peer*/*.out
 
-	rm -f peer*/rtun.log
-	rm -f peer*/router.log
-	rm -f peer*/topology.log
-	rm -f peer*/receive.log
-	rm -f peer*/messages.log
-	rm -f peer*/routed.log
-	rm -f peer*/stderr.out
-	rm -f peer*/sent.log
-
-	for PEER in peer1 peer5
+	for PEER in peer1 peer2 peer3 peer4 peer5 peer6 peer7 peer8
 	do
 		cd $PEER
 		./startserver.sh > stderr.out &
@@ -27,14 +21,14 @@ do
 	done
 
 	echo Wait for test to end...
-	sleep 600
+	sleep 3600
 	echo Kill processes
 	pkill startserver.sh
 	pkill python3
 	
 	echo Copy logs...
-	mkdir $FOLDER
-	for PEER in peer1 peer5
+	mkdir -p $FOLDER
+	for PEER in peer1 peer2 peer3 peer4 peer5 peer6 peer7 peer8
 	do
 		cp -r $PEER $FOLDER
 	done
