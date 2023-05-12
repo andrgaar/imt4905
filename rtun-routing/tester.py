@@ -27,6 +27,7 @@ class RtunTest(Thread):
         # e.g. [['P2', 'P3', 364, 'TERRAHOSTrocks'], ['P1', 'P2', 126, 'SidRelay']]
         logger.info("Started tester")
         my_id = lsr.global_router['RID']
+        msg_id = lsr.current_milli_time()
         
         with open('sent.log', 'w') as f:
             f.write("Timestamp;Peer;ID;Destination;Route;Shortest\n")
@@ -45,7 +46,9 @@ class RtunTest(Thread):
             #except Exception:
             #    paths = []
 
-            peer = random.choice(list(lsr.shortest_paths))
+            candidates = list(lsr.shortest_paths)
+            candidates.remove(my_id)
+            peer = random.choice(candidates)
             try:
                 shortest_path = lsr.shortest_paths[peer].copy()
             except Exception:
@@ -59,7 +62,8 @@ class RtunTest(Thread):
                 #    continue
                 #if peer == my_id:
                 #    continue
-                ms = my_id + "_" + str(lsr.current_milli_time())
+                msg_id += 1
+                ms = my_id + "_L_" + str(msg_id)
                 route = path.copy()
                 #if route == shortest_path:
                 #    is_shortest = True
@@ -83,5 +87,5 @@ class RtunTest(Thread):
                 except Exception as e:
                     logger.error(e)
             
-            time.sleep(random.randint(5,15))
+            time.sleep(random.randint(5,10))
 

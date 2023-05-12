@@ -31,7 +31,7 @@ import rendezvous as rnd
 import logging
 logger = logging.getLogger(__name__)
 
-ROUTE_UPDATE_INTERVAL = 6000 #  interval for sending LSA
+ROUTE_UPDATE_INTERVAL = 60 #  interval for sending LSA
 PERIODIC_HEART_BEAT = 10 # interval for sending HB
 NODE_FAILURE_INTERVAL = 10 # interval for inactive route check
 TIMEOUT = 60 # time for when route considered dead
@@ -1064,19 +1064,20 @@ class ConnectionThread(Thread):
             
             join_peer = None
             if len(candidates) > 0:
-                join_peer = random.choice(candidates)
+                #join_peer = random.choice(candidates)
+
+                # find a candidate peer to join with highest latency
+                peers_sorted = sorted(path_cost.items(), key=lambda x:x[1], reverse=True)
+                logger.info(f"Highest cost peers: {peers_sorted}")
+                for p in peers_sorted:
+                    if p[0] in candidates:
+                        join_peer = p[0]
+                        break
+
                 logger.info(f"Selected {join_peer} to join")
             else:
                 logger.info("No candidates to join")
 
-            # find a candidate peer to join with highest latency
-            #peers_sorted = sorted(path_cost.items(), key=lambda x:x[1], reverse=True)
-            #logger.info(f"Highest cost peers: {peers_sorted}")
-            #for p in peers_sorted:
-            #    if p[0] in candidates:
-            #        join_peer = p[0]
-            #        break
-                       
             if not join_peer:
                 logger.info("No join peers found")
                 continue
@@ -1094,7 +1095,7 @@ class ConnectionThread(Thread):
             except Exception:
                 route = ""
 
-            msg_id = RID + "_" + str(current_milli_time())
+            msg_id = RID + "_J_" + str(current_milli_time())
             message = [{'Message' : 'JOIN', 'Destination' : join_peer, 'Source' : RID, 'ID': msg_id, 'TTL': 5, 
                         'Route': route, 'Relay' : rp_relay.nickname, 'Cookie' : cookie}]
             flood_message(message)

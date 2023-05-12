@@ -127,7 +127,7 @@ class TorCellSocket:
                 cell = next(self._cells_builder)
                 yield cell
                 self._next_len = next(self._cells_builder)
-        logger.debug('Need more data (%i bytes, has %i bytes)', self._next_len, len(self._data))
+        #logger.debug('Need more data (%i bytes, has %i bytes)', self._next_len, len(self._data))
 
     def _cells_builder_gen(self):
         while self._socket:
