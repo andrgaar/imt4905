@@ -23,8 +23,9 @@ def main():
     # how much they overlap with peers
 
     fout = open(csvfile, "w")
-    fout.write("Timestamp;Peer;Convergence;Clustering;NodeClustering;AvgDegree;Degree;AvgPathLen;AvgCost\n")
+    fout.write("Timestamp;Peer;Convergence;Clustering;NodeClustering;AvgDegree;Degree;AvgPathLen;AvgCost;NodeCount;NodesConnected\n")
     prev_timestamp = None
+    draw_G = []
 
     with open(fname, "r") as f:
         x = list()
@@ -60,10 +61,15 @@ def main():
                     d[ik] = {'weight': d[ik]}
             
             G = nx.Graph(adjacency_list)
+            
+            node_count = G.number_of_nodes()
+
+            num_connected = nx.number_connected_components(G)
+
             equal_pct = convergence(G, peer)
             try:
                 clustering = nx.average_clustering(G)
-                node_clustering = nx.clustering(G, peer)
+                node_clustering = round(nx.clustering(G, peer), 3)
             except Exception:
                 clustering = 0
                 node_clustering = 0
@@ -91,22 +97,26 @@ def main():
                 avgpath = 0
             
             # output 
-            fout.write("{0};{1};{2};{3};{4};{5};{6};{7};{8}\n".format(dt_event, peer, equal_pct, str(clustering), str(node_clustering), str(avg_degrees), str(degree), str(avgpath), str(avg_shortest_path)))
-            #try:
-                #pathlen = nx.shortest_path_length(G, peer, weight='weight')
-            #    for n in nx.nodes(G):
-            #        if n == peer:
-            #            continue
-            #        paths = nx.all_simple_paths(G, peer, n) 
-            #        for p in paths:
-            #            a = [str(dt_event), peer, n, '-'.join(p), str(nx.path_weight(G, p, weight='weight'))]
-            #            print( ';'.join(a))
-            #except Exception as e:
-                #print(e) 
-            #    pass
+            try:
+                fout.write("{0};{1};{2};{3};{4};{5};{6};{7};{8};{9};{10}\n".format(dt_event, peer, 
+                            equal_pct, str(round(clustering,3)), 
+                            str(node_clustering), 
+                            str(round(avg_degrees,3)), 
+                            str(round(degree,3)), 
+                            str(round(avgpath,3)), 
+                            str(round(avg_shortest_path,3)),
+                            str(node_count),
+                            str(num_connected),
+                            ))
+            except Exception as e:
+                print(e)
+                print(line)
 
+            #if peer == "P1" and dt_offset % 100 == 0:
+            #    draw_graph(G, f"t = {dt_offset}")
 
         fout.close()
+
 
     
 
@@ -150,7 +160,7 @@ def convergence(G, peer):
     return total_equal
 
 
-def draw_graph(G):
+def draw_graph(G, title):
     # Topology graph
     elarge = [(u, v) for (u, v, d) in G.edges(data=True) if d["weight"] > 1]
     esmall = [(u, v) for (u, v, d) in G.edges(data=True) if d["weight"] <= 0]
@@ -178,6 +188,7 @@ def draw_graph(G):
     ax.margins(0.08)
     plt.axis("off")
     plt.tight_layout()
+    plt.title(title)
     plt.show()
 
 

@@ -24,8 +24,7 @@ def main():
         return
 
     outf = open(csvfile, "w")
-    outf.write("Timestamp;Peer;Received;Source;Destination;ID;Payload\n")
-#    print("Timestamp;Peer;Received;Source;ID;Payload")
+    outf.write("Timestamp;Peer;Received;Source;ID;Payload\n")
 
     with open(fname, "rb") as f:
         while True:
@@ -35,7 +34,7 @@ def main():
             except EOFError:
                 break
             s = parse(data)
- #           print(s)
+            print(s)
             outf.write(f"{s}\n")
 
     outf.close()
@@ -55,7 +54,6 @@ def parse(data):
     #dt_offset = round((dt_event - dt_prev).total_seconds())
 
     source = ""
-    destination = ""
     payload = ""
 
     if type(data[2]) is list: # Message
@@ -66,10 +64,8 @@ def parse(data):
             source = d['RID']
         elif d['Message'] == "LOOKUP":
             source = d['Source']
-            destination = d['Destination']
         elif d['Message'] == "JOIN":
             source = d['Source']
-            destination = d['Destination']
             d['Cookie'] =  d['Cookie'].decode("utf-8") 
         payload = json.dumps(d)
 
@@ -78,7 +74,7 @@ def parse(data):
         else:
             msgid = ""
 
-        retval = ';'.join([str(dt_event), data[1], d['Message'], source, destination, msgid, payload])
+        retval = ';'.join([str(dt_event), data[1], d['Message'], source, msgid, payload])
 
     elif type(data[2]) is dict: # LSA
         lsa = data[2]
