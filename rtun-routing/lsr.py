@@ -37,7 +37,7 @@ NODE_FAILURE_INTERVAL = 10 # interval for inactive route check
 TIMEOUT = 60 # time for when route considered dead
 LATENCY_SAMPLES = 3 # number of times samples collected before updated
 PERIODIC_CONN_CHECK = (30,90) # interval for checking connections
-MIN_NEIGHBOUR_CONNECTIONS = 6 # number of required connnections
+MIN_NEIGHBOUR_CONNECTIONS = 2 # number of required connnections
 MAX_CONNECTION_TIME = 120 # max time a circuit should live
 SWITCH_CIRCUITS = False
 NOGUI = True
@@ -48,6 +48,7 @@ graph_metrics_file = "router.log"
 # Global graph object to represent network topology
 G = None
 graph = {}
+graph_lock = Lock()
 global_least_cost_path = {}
 shortest_paths = None
 path_cost = {}
@@ -476,11 +477,14 @@ class ReceiveThread(Thread):
     # in the topology fails
     def updateGraphOnly(self, graph_arg, dead_list):
         logger.info(f"updateGraphOnly: {graph_arg} , {dead_list}")
+        graph_lock.acquire()
         for node in graph_arg:
             if node[0] in dead_list:
                 graph_arg.remove(node)
             elif node[1] in dead_list:
                 graph_arg.remove(node)
+
+        graph_lock.release()
 
     # Update this router's local link-state database
     # after a router fails
@@ -587,6 +591,8 @@ class ReceiveThread(Thread):
     # Dijkstra function to compute shortest path
     def updateGraph(self, graph_arg, lsa_data, flag):
 
+        graph_lock.acquire()
+        
         if flag == 1:
 
             graph.clear()
@@ -612,6 +618,8 @@ class ReceiveThread(Thread):
                         break
                 if exists is False:
                     graph_arg.append(node)
+
+        graph_lock.release()
 
         # Get adjacency list and list of graph nodes
         adjacency_list , graph_nodes, rp_nodes = self.organizeGraph(graph_arg)
@@ -658,8 +666,10 @@ class ReceiveThread(Thread):
     # (represented using python 'dict') which in turn is
     # used by the Dijkstra function to compute shortest paths
     def organizeGraph(self, graph_arg):
-
         logger.debug(f"organizeGraph(graph_arg): {graph_arg}")
+
+        graph_lock.acquire()
+
         # Set to contain nodes within graph
         nodes = set()
 
@@ -703,6 +713,7 @@ class ReceiveThread(Thread):
                 new_RP[source_node].update({node : rp_node})
 
 
+        graph_lock.release()
         # Return adjacency list and least_cost_path dict
         # to use for Dijkstra Computation
         return (new_LL , sorted_nodes, new_RP)
@@ -1051,10 +1062,12 @@ class ConnectionThread(Thread):
             logger.info("Neighbour connections ({0}) less than MIN_NEIGHBOUR_CONNECTIONS ({1})".format(len(neighbours), MIN_NEIGHBOUR_CONNECTIONS))
     
             # find all peers in network 
+            graph_lock.acquire()
             peers = set()
             for e in graph:
                 peers.add(e[0])
                 peers.add(e[1])
+            graph_lock.release()
             # remove myself from peers
             if RID in peers:
                 peers.remove(RID)
@@ -1480,7 +1493,9 @@ def add_neighbour(r_id, r_hostname, rendpoint, r_cost, circuit, circuit_id, stre
         temp_graph.append(graph_data)
 
     # Copy over the data in temporary graph to global graph object (used elsewhere)
+    graph_lock.acquire()
     graph = temp_graph[:]
+    graph_lock.release()
 
     logger.info("Added neighbour " + str(r_id))
     #log_metrics("NEIGHBOUR CONNECTION", r_id)

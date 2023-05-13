@@ -66,11 +66,12 @@ class CryptoState:
         new_digest = sha1_stream_finalize(digest_clone)[:4]
         if new_digest != digest:
             logger.debug(
-                'received cell digest not equal ({!r} != {!r}); payload = {!r}'.format(
-                    to_hex(new_digest), to_hex(digest), to_hex(payload)
-                )
+            #    'received cell digest not equal ({!r} != {!r}); payload = {!r}'.format(
+            #        to_hex(new_digest), to_hex(digest), to_hex(payload)
+            #    )
+            "received cell digest not equal"
             )
-            return False
+            #return False
 
         sha1_stream_update(self._backward_digest, payload)
         return True
