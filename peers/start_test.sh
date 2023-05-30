@@ -5,7 +5,7 @@ echo Start tests...
 for i in 1 2
 do
 	DATE=`date '+%Y%m%d%H%M%S'`
-	FOLDER=../experiments/tests/8_peers_30_s3min6_nofail_noswitch_lsa_${DATE}
+	FOLDER=../experiments/tests/8_peers_30_s3min2_randfail_noswitch_lsa_${DATE}
 
 	echo Start test $i : $DATE
 

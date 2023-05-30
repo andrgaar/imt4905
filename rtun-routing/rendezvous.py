@@ -32,8 +32,8 @@ from messages import HelloMessage
 MIN_CONNECTION_TTL = 60
 MAX_CONNECTION_TTL = 120
 GLOBAL_CIRCUIT_ID = 0x81000002
-#RANDOM_DIE=(120, 500)
-RANDOM_DIE=None
+RANDOM_DIE=(120, 600)
+#RANDOM_DIE=None
 
 threads = {}
 
@@ -101,32 +101,32 @@ class RendezvousEstablish(Thread):
         circuit._circuit_nodes.append(extend_node)
 
         # Set up streams
-        sock_r, sock_w = socket.socketpair()
+        #sock_r, sock_w = socket.socketpair()
 
-        events = {TorStream: {'data': Event(), 'close': Event()},
-                  socket.socket: {'data': Event(), 'close': Event()}}
+        #events = {TorStream: {'data': Event(), 'close': Event()},
+        #          socket.socket: {'data': Event(), 'close': Event()}}
 
         with guard_router as guard:
 
-            def recv_callback(sock_or_stream, mask):
-                logger.debug(f'recv_callback {sock_or_stream}')
-                kind = type(sock_or_stream)
-                data = sock_or_stream.recv(1024)
-                logger.debug('%s', kind.__name__)
+            #def recv_callback(sock_or_stream, mask):
+            #    logger.debug(f'recv_callback {sock_or_stream}')
+            #    kind = type(sock_or_stream)
+            #    data = sock_or_stream.recv(1024)
+            #    logger.debug('%s', kind.__name__)
 
-                if data:
-                    events[kind]['data'].set()
-                    #Put the received data into the ReceiverThread input queue with circuit data
-                    self.receive_queue.put_nowait( [{'data' : data, 
-                                            'circuit' : circuit, 
-                                            'circuit_id' : circuit.id, 
-                                            'stream' : stream, 
-                                            'stream_id' : stream.id}]
-                                        )
-                else:
-                    logger.debug('closing')
-                    guard.unregister(sock_or_stream)
-                    events[kind]['close'].set()
+             #   if data:
+             #       events[kind]['data'].set()
+             #       #Put the received data into the ReceiverThread input queue with circuit data
+             #       self.receive_queue.put_nowait( [{'data' : data, 
+             #                               'circuit' : circuit, 
+             #                               'circuit_id' : circuit.id, 
+             #                               'stream' : stream, 
+             #                               'stream_id' : stream.id}]
+             #                           )
+             #   else:
+             #       logger.debug('closing')
+             #       guard.unregister(sock_or_stream)
+             #       events[kind]['close'].set()
 
             with circuit as c:
 
@@ -136,10 +136,10 @@ class RendezvousEstablish(Thread):
                     
                     #logger.info("Entered stream context with id " + hex(stream.id))
 
-                    def recv_stream_callback(event):
-                        logger.debug(f"Receive callback event: {event}")
-                        data_str = stream._buffer.decode('utf-8')
-                        logger.debug(f"Data: {data_str}")
+                    #def recv_stream_callback(event):
+                    #    logger.debug(f"Receive callback event: {event}")
+                    #    data_str = stream._buffer.decode('utf-8')
+                    #    logger.debug(f"Data: {data_str}")
         
                     logger.info(f"Sending HELLO to peer")
                     # Send a HELLO message to the other side

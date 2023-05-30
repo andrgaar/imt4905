@@ -1,12 +1,27 @@
 ++ dirname ./startserver.sh
++ BASEDIR=.
++ SCRIPTPATH=./../../rtun-routing
++ export PYTHONPATH=./../../torpy-rtun-fork/
++ PYTHONPATH=./../../torpy-rtun-fork/
++ python3 ./../../rtun-routing/rtun.py -v INFO -g Shayepe -f rendezvous.txt -t peer1peer2 -n default -i 7 -d 2
+++ dirname ./startserver.sh
+++ dirname ./startserver.sh
+++ dirname ./startserver.sh
 ++ dirname ./startserver.sh
 + BASEDIR=.
 + SCRIPTPATH=./../../rtun-routing
 + export PYTHONPATH=./../../torpy-rtun-fork/
 + PYTHONPATH=./../../torpy-rtun-fork/
++ python3 ./../../rtun-routing/rtun.py -v INFO -g PeachUnknown -f rendezvous.txt -t peer1peer2 -n default -i 4 -d 5
+++ dirname ./startserver.sh
 + BASEDIR=.
 + SCRIPTPATH=./../../rtun-routing
++ export PYTHONPATH=./../../torpy-rtun-fork/
++ PYTHONPATH=./../../torpy-rtun-fork/
 + python3 ./../../rtun-routing/rtun.py -v INFO -g staysafeandgoodluck -f rendezvous.txt -l -t peer1peer2 -n default -i 1 -d 2
+++ dirname ./startserver.sh
++ BASEDIR=.
++ SCRIPTPATH=./../../rtun-routing
 + export PYTHONPATH=./../../torpy-rtun-fork/
 + PYTHONPATH=./../../torpy-rtun-fork/
 + python3 ./../../rtun-routing/rtun.py -v INFO -g Logforme3 -f rendezvous.txt -t peer1peer2 -n default -i 2 -d 1
@@ -15,23 +30,13 @@
 + SCRIPTPATH=./../../rtun-routing
 + export PYTHONPATH=./../../torpy-rtun-fork/
 + PYTHONPATH=./../../torpy-rtun-fork/
-+ python3 ./../../rtun-routing/rtun.py -v INFO -g Lule -f rendezvous.txt -t peer1peer2 -n default -i 3 -d 2
-++ dirname ./startserver.sh
-++ dirname ./startserver.sh
-+ BASEDIR=.
-+ SCRIPTPATH=./../../rtun-routing
-+ export PYTHONPATH=./../../torpy-rtun-fork/
-+ BASEDIR=.
-+ PYTHONPATH=./../../torpy-rtun-fork/
-+ SCRIPTPATH=./../../rtun-routing
-+ export PYTHONPATH=./../../torpy-rtun-fork/
 + python3 ./../../rtun-routing/rtun.py -v INFO -g NeelTorRelay2 -f rendezvous.txt -t peer1peer2 -n default -i 6 -d 2
-+ PYTHONPATH=./../../torpy-rtun-fork/
-+ python3 ./../../rtun-routing/rtun.py -v INFO -g Shayepe -f rendezvous.txt -t peer1peer2 -n default -i 7 -d 2
-++ dirname ./startserver.sh
-++ dirname ./startserver.sh
-++ dirname ./startserver.sh
 + BASEDIR=.
++ SCRIPTPATH=./../../rtun-routing
++ export PYTHONPATH=./../../torpy-rtun-fork/
++ PYTHONPATH=./../../torpy-rtun-fork/
++ BASEDIR=.
++ python3 ./../../rtun-routing/rtun.py -v INFO -g Lule -f rendezvous.txt -t peer1peer2 -n default -i 3 -d 2
 + SCRIPTPATH=./../../rtun-routing
 + export PYTHONPATH=./../../torpy-rtun-fork/
 + PYTHONPATH=./../../torpy-rtun-fork/
@@ -40,380 +45,441 @@
 + SCRIPTPATH=./../../rtun-routing
 + export PYTHONPATH=./../../torpy-rtun-fork/
 + PYTHONPATH=./../../torpy-rtun-fork/
-+ python3 ./../../rtun-routing/rtun.py -v INFO -g PeachUnknown -f rendezvous.txt -t peer1peer2 -n default -i 4 -d 5
++ python3 ./../../rtun-routing/rtun.py -v INFO -g taipe -f rendezvous.txt -t peer1peer2 -n default -i 8 -d 2
+/home/agaa/git/imt4905/rtun-routing/lsr.py:565: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if args[3] is 1:
+/home/agaa/git/imt4905/rtun-routing/lsr.py:565: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if args[3] is 1:
+/home/agaa/git/imt4905/rtun-routing/lsr.py:565: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if args[3] is 1:
+/home/agaa/git/imt4905/rtun-routing/lsr.py:565: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if args[3] is 1:
+/home/agaa/git/imt4905/rtun-routing/lsr.py:565: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if args[3] is 1:
+/home/agaa/git/imt4905/rtun-routing/lsr.py:565: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if args[3] is 1:
+/home/agaa/git/imt4905/rtun-routing/lsr.py:565: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if args[3] is 1:
+/home/agaa/git/imt4905/rtun-routing/lsr.py:565: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if args[3] is 1:
+Exception in thread Thread-1549:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/agaa/git/imt4905/rtun-routing/lsr.py", line 657, in shortest_paths
+    cost = nx.path_weight(G, v, 'weight')
+  File "/usr/local/lib/python3.9/dist-packages/networkx/classes/function.py", line 1288, in path_weight
+    raise nx.NetworkXNoPath("path does not exist")
+networkx.exception.NetworkXNoPath: path does not exist
+Exception in thread Thread-1550:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/agaa/git/imt4905/rtun-routing/lsr.py", line 657, in shortest_paths
+    cost = nx.path_weight(G, v, 'weight')
+  File "/usr/local/lib/python3.9/dist-packages/networkx/classes/function.py", line 1288, in path_weight
+    raise nx.NetworkXNoPath("path does not exist")
+networkx.exception.NetworkXNoPath: path does not exist
+Exception in thread Thread-1551:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/agaa/git/imt4905/rtun-routing/lsr.py", line 657, in shortest_paths
+    cost = nx.path_weight(G, v, 'weight')
+  File "/usr/local/lib/python3.9/dist-packages/networkx/classes/function.py", line 1288, in path_weight
+    raise nx.NetworkXNoPath("path does not exist")
+networkx.exception.NetworkXNoPath: path does not exist
+Exception in thread Thread-1552:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/agaa/git/imt4905/rtun-routing/lsr.py", line 657, in shortest_paths
+    cost = nx.path_weight(G, v, 'weight')
+  File "/usr/local/lib/python3.9/dist-packages/networkx/classes/function.py", line 1288, in path_weight
+    raise nx.NetworkXNoPath("path does not exist")
+networkx.exception.NetworkXNoPath: path does not exist
+Exception in thread Thread-1553:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/agaa/git/imt4905/rtun-routing/lsr.py", line 657, in shortest_paths
+    cost = nx.path_weight(G, v, 'weight')
+  File "/usr/local/lib/python3.9/dist-packages/networkx/classes/function.py", line 1288, in path_weight
+    raise nx.NetworkXNoPath("path does not exist")
+networkx.exception.NetworkXNoPath: path does not exist
+Exception in thread Thread-1554:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/agaa/git/imt4905/rtun-routing/lsr.py", line 657, in shortest_paths
+    cost = nx.path_weight(G, v, 'weight')
+  File "/usr/local/lib/python3.9/dist-packages/networkx/classes/function.py", line 1288, in path_weight
+    raise nx.NetworkXNoPath("path does not exist")
+networkx.exception.NetworkXNoPath: path does not exist
+Exception in thread Thread-1558:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/agaa/git/imt4905/rtun-routing/lsr.py", line 657, in shortest_paths
+    cost = nx.path_weight(G, v, 'weight')
+  File "/usr/local/lib/python3.9/dist-packages/networkx/classes/function.py", line 1288, in path_weight
+    raise nx.NetworkXNoPath("path does not exist")
+networkx.exception.NetworkXNoPath: path does not exist
+Exception in thread Thread-1751:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/agaa/git/imt4905/rtun-routing/lsr.py", line 657, in shortest_paths
+    cost = nx.path_weight(G, v, 'weight')
+  File "/usr/local/lib/python3.9/dist-packages/networkx/classes/function.py", line 1288, in path_weight
+    raise nx.NetworkXNoPath("path does not exist")
+networkx.exception.NetworkXNoPath: path does not exist
+Exception in thread Establish-begonia:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Establish-Damnation:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Establish-JimmyBulanik:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Thread-1568:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/agaa/git/imt4905/rtun-routing/lsr.py", line 657, in shortest_paths
+    cost = nx.path_weight(G, v, 'weight')
+  File "/usr/local/lib/python3.9/dist-packages/networkx/classes/function.py", line 1288, in path_weight
+    raise nx.NetworkXNoPath("path does not exist")
+networkx.exception.NetworkXNoPath: path does not exist
+Exception in thread Thread-1195:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/agaa/git/imt4905/rtun-routing/lsr.py", line 657, in shortest_paths
+    cost = nx.path_weight(G, v, 'weight')
+  File "/usr/local/lib/python3.9/dist-packages/networkx/classes/function.py", line 1288, in path_weight
+    raise nx.NetworkXNoPath("path does not exist")
+networkx.exception.NetworkXNoPath: path does not exist
+Exception in thread Thread-985:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/agaa/git/imt4905/rtun-routing/lsr.py", line 657, in shortest_paths
+    cost = nx.path_weight(G, v, 'weight')
+  File "/usr/local/lib/python3.9/dist-packages/networkx/classes/function.py", line 1288, in path_weight
+    raise nx.NetworkXNoPath("path does not exist")
+networkx.exception.NetworkXNoPath: path does not exist
+Exception in thread Establish-oracle:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Establish-LaserSystem:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Establish-3v1lc0rp666:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Establish-idideditheconfig:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Establish-RNVR217:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Thread-1015:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/agaa/git/imt4905/rtun-routing/lsr.py", line 657, in shortest_paths
+    cost = nx.path_weight(G, v, 'weight')
+  File "/usr/local/lib/python3.9/dist-packages/networkx/classes/function.py", line 1288, in path_weight
+    raise nx.NetworkXNoPath("path does not exist")
+networkx.exception.NetworkXNoPath: path does not exist
+Exception in thread Establish-as212520:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Establish-recodex:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Establish-NTH33R4:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Establish-UenoStation56:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Establish-Quintex96:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Establish-CelestialRoom:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Thread-1557:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/agaa/git/imt4905/rtun-routing/lsr.py", line 657, in shortest_paths
+    cost = nx.path_weight(G, v, 'weight')
+  File "/usr/local/lib/python3.9/dist-packages/networkx/classes/function.py", line 1288, in path_weight
+    raise nx.NetworkXNoPath("path does not exist")
+networkx.exception.NetworkXNoPath: path does not exist
+Exception in thread Establish-insula:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Establish-bauruine:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Thread-1470:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/agaa/git/imt4905/rtun-routing/lsr.py", line 657, in shortest_paths
+    cost = nx.path_weight(G, v, 'weight')
+  File "/usr/local/lib/python3.9/dist-packages/networkx/classes/function.py", line 1288, in path_weight
+    raise nx.NetworkXNoPath("path does not exist")
+networkx.exception.NetworkXNoPath: path does not exist
+Exception in thread Thread-1352:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/agaa/git/imt4905/rtun-routing/lsr.py", line 657, in shortest_paths
+    cost = nx.path_weight(G, v, 'weight')
+  File "/usr/local/lib/python3.9/dist-packages/networkx/classes/function.py", line 1288, in path_weight
+    raise nx.NetworkXNoPath("path does not exist")
+networkx.exception.NetworkXNoPath: path does not exist
+Exception in thread Establish-MightyDinoRelay:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Establish-notgoodatmath:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+++ dirname ./startserver.sh
+++ dirname ./startserver.sh
++ BASEDIR=.
++ SCRIPTPATH=./../../rtun-routing
++ export PYTHONPATH=./../../torpy-rtun-fork/
++ PYTHONPATH=./../../torpy-rtun-fork/
++ python3 ./../../rtun-routing/rtun.py -v INFO -g staysafeandgoodluck -f rendezvous.txt -l -t peer1peer2 -n default -i 1 -d 2
++ BASEDIR=.
++ SCRIPTPATH=./../../rtun-routing
++ export PYTHONPATH=./../../torpy-rtun-fork/
++ PYTHONPATH=./../../torpy-rtun-fork/
++ python3 ./../../rtun-routing/rtun.py -v INFO -g Logforme3 -f rendezvous.txt -t peer1peer2 -n default -i 2 -d 1
+++ dirname ./startserver.sh
++ BASEDIR=.
++ SCRIPTPATH=./../../rtun-routing
++ export PYTHONPATH=./../../torpy-rtun-fork/
++ PYTHONPATH=./../../torpy-rtun-fork/
++ python3 ./../../rtun-routing/rtun.py -v INFO -g NeelTorRelay2 -f rendezvous.txt -t peer1peer2 -n default -i 6 -d 2
+++ dirname ./startserver.sh
++ BASEDIR=.
++ SCRIPTPATH=./../../rtun-routing
++ export PYTHONPATH=./../../torpy-rtun-fork/
++ PYTHONPATH=./../../torpy-rtun-fork/
++ python3 ./../../rtun-routing/rtun.py -v INFO -g Lule -f rendezvous.txt -t peer1peer2 -n default -i 3 -d 2
+++ dirname ./startserver.sh
++ BASEDIR=.
++ SCRIPTPATH=./../../rtun-routing
++ export PYTHONPATH=./../../torpy-rtun-fork/
++ PYTHONPATH=./../../torpy-rtun-fork/
++ python3 ./../../rtun-routing/rtun.py -v INFO -g lw -f rendezvous.txt -t peer1peer2 -n default -i 5 -d 6
+++ dirname ./startserver.sh
++ BASEDIR=.
++ SCRIPTPATH=./../../rtun-routing
++ export PYTHONPATH=./../../torpy-rtun-fork/
++ PYTHONPATH=./../../torpy-rtun-fork/
++ python3 ./../../rtun-routing/rtun.py -v INFO -g Shayepe -f rendezvous.txt -t peer1peer2 -n default -i 7 -d 2
+++ dirname ./startserver.sh
+++ dirname ./startserver.sh
 + BASEDIR=.
 + SCRIPTPATH=./../../rtun-routing
 + export PYTHONPATH=./../../torpy-rtun-fork/
 + PYTHONPATH=./../../torpy-rtun-fork/
 + python3 ./../../rtun-routing/rtun.py -v INFO -g taipe -f rendezvous.txt -t peer1peer2 -n default -i 8 -d 2
-Exception in thread Establish-HoMStor:
-Traceback (most recent call last):
-  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
-    self.run()
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
-    rendezvous2_cell = w.get(timeout=self.timeout)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
-    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
-torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-Unnamed:
-Traceback (most recent call last):
-  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
-    self.run()
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 80, in run
-    circuit = self.build_circuit(guard_router, [ rendp_router ])
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 193, in build_circuit
-    circuit =  guard_router.create_circuit(hops_count=-1, extend_routers=extend_routers)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/utils.py", line 79, in newfn
-    return func(*args, **kwargs)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/guard.py", line 147, in create_circuit
-    circuit.extend(router)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 321, in wrapped
-    return fn(self, *args, **kwargs)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 575, in extend
-    recv_cell = self.send_relay_wait(
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 551, in send_relay_wait
-    return w.get()
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
-    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
-torpy.circuit.CellTimeoutError: Timeout wait for CellRelayExtended2 or CellRelayTruncated
-Exception in thread Establish-Unnamed:
-Traceback (most recent call last):
-  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
-    self.run()
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 80, in run
-    circuit = self.build_circuit(guard_router, [ rendp_router ])
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 193, in build_circuit
-    circuit =  guard_router.create_circuit(hops_count=-1, extend_routers=extend_routers)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/utils.py", line 79, in newfn
-    return func(*args, **kwargs)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/guard.py", line 147, in create_circuit
-    circuit.extend(router)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 321, in wrapped
-    return fn(self, *args, **kwargs)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 575, in extend
-    recv_cell = self.send_relay_wait(
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 551, in send_relay_wait
-    return w.get()
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
-    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
-torpy.circuit.CellTimeoutError: Timeout wait for CellRelayExtended2 or CellRelayTruncated
-Exception in thread Establish-Unnamed:
-Traceback (most recent call last):
-  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
-    self.run()
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 80, in run
-    circuit = self.build_circuit(guard_router, [ rendp_router ])
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 193, in build_circuit
-    circuit =  guard_router.create_circuit(hops_count=-1, extend_routers=extend_routers)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/utils.py", line 79, in newfn
-    return func(*args, **kwargs)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/guard.py", line 147, in create_circuit
-    circuit.extend(router)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 321, in wrapped
-    return fn(self, *args, **kwargs)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 575, in extend
-    recv_cell = self.send_relay_wait(
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 551, in send_relay_wait
-    return w.get()
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
-    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
-torpy.circuit.CellTimeoutError: Timeout wait for CellRelayExtended2 or CellRelayTruncated
-Exception in thread Establish-DTFNODE64:
-Traceback (most recent call last):
-  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
-    self.run()
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 80, in run
-    circuit = self.build_circuit(guard_router, [ rendp_router ])
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 193, in build_circuit
-    circuit =  guard_router.create_circuit(hops_count=-1, extend_routers=extend_routers)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/utils.py", line 79, in newfn
-    return func(*args, **kwargs)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/guard.py", line 147, in create_circuit
-    circuit.extend(router)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 321, in wrapped
-    return fn(self, *args, **kwargs)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 575, in extend
-    recv_cell = self.send_relay_wait(
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 551, in send_relay_wait
-    return w.get()
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
-    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
-torpy.circuit.CellTimeoutError: Timeout wait for CellRelayExtended2 or CellRelayTruncated
-Exception in thread Establish-prsv:
-Traceback (most recent call last):
-  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
-    self.run()
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
-    rendezvous2_cell = w.get(timeout=self.timeout)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
-    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
-torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Thread-4174:
++ BASEDIR=.
++ SCRIPTPATH=./../../rtun-routing
++ export PYTHONPATH=./../../torpy-rtun-fork/
++ PYTHONPATH=./../../torpy-rtun-fork/
++ python3 ./../../rtun-routing/rtun.py -v INFO -g PeachUnknown -f rendezvous.txt -t peer1peer2 -n default -i 4 -d 5
+Exception in thread Thread-883:
 Traceback (most recent call last):
   File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
     self.run()
   File "/usr/lib/python3.9/threading.py", line 1266, in run
     self.function(*self.args, **self.kwargs)
-  File "/home/agaa/git/imt4905/rtun-routing/lsr.py", line 649, in shortest_paths
+  File "/home/agaa/git/imt4905/rtun-routing/lsr.py", line 657, in shortest_paths
     cost = nx.path_weight(G, v, 'weight')
   File "/usr/local/lib/python3.9/dist-packages/networkx/classes/function.py", line 1288, in path_weight
     raise nx.NetworkXNoPath("path does not exist")
 networkx.exception.NetworkXNoPath: path does not exist
-Exception in thread Thread-4175:
+Exception in thread Establish-bashfulbear:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Thread-886:
 Traceback (most recent call last):
   File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
     self.run()
   File "/usr/lib/python3.9/threading.py", line 1266, in run
     self.function(*self.args, **self.kwargs)
-  File "/home/agaa/git/imt4905/rtun-routing/lsr.py", line 649, in shortest_paths
+  File "/home/agaa/git/imt4905/rtun-routing/lsr.py", line 657, in shortest_paths
     cost = nx.path_weight(G, v, 'weight')
   File "/usr/local/lib/python3.9/dist-packages/networkx/classes/function.py", line 1288, in path_weight
     raise nx.NetworkXNoPath("path does not exist")
 networkx.exception.NetworkXNoPath: path does not exist
-Exception in thread Establish-LandShrimp:
+Exception in thread Thread-887:
 Traceback (most recent call last):
   File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
     self.run()
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
-    rendezvous2_cell = w.get(timeout=self.timeout)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
-    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
-torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-Quetzalcoatl:
-Traceback (most recent call last):
-  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
-    self.run()
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
-    rendezvous2_cell = w.get(timeout=self.timeout)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
-    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
-torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-Waeswynn:
-Traceback (most recent call last):
-  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
-    self.run()
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
-    rendezvous2_cell = w.get(timeout=self.timeout)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
-    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
-torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-4711938732524403:
-Traceback (most recent call last):
-  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
-    self.run()
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
-    rendezvous2_cell = w.get(timeout=self.timeout)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
-    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
-torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-toritico01:
-Traceback (most recent call last):
-  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
-    self.run()
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
-    rendezvous2_cell = w.get(timeout=self.timeout)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
-    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
-torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-freefallinn:
-Traceback (most recent call last):
-  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
-    self.run()
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
-    rendezvous2_cell = w.get(timeout=self.timeout)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
-    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
-torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-WGL4Freedom:
-Traceback (most recent call last):
-  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
-    self.run()
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
-    rendezvous2_cell = w.get(timeout=self.timeout)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
-    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
-torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-uaiblaine:
-Traceback (most recent call last):
-  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
-    self.run()
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
-    rendezvous2_cell = w.get(timeout=self.timeout)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
-    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
-torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-torNotBombs:
-Traceback (most recent call last):
-  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
-    self.run()
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
-    rendezvous2_cell = w.get(timeout=self.timeout)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
-    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
-torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-NTH10R2:
-Traceback (most recent call last):
-  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
-    self.run()
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
-    rendezvous2_cell = w.get(timeout=self.timeout)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
-    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
-torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-ForMyFreedom:
-Traceback (most recent call last):
-  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
-    self.run()
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
-    rendezvous2_cell = w.get(timeout=self.timeout)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
-    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
-torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-SanMarino:
-Traceback (most recent call last):
-  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
-    self.run()
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
-    rendezvous2_cell = w.get(timeout=self.timeout)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
-    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
-torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-relayon0160:
-Traceback (most recent call last):
-  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
-    self.run()
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
-    rendezvous2_cell = w.get(timeout=self.timeout)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
-    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
-torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-tauro:
-Traceback (most recent call last):
-  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
-    self.run()
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
-    rendezvous2_cell = w.get(timeout=self.timeout)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
-    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
-torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-relayon1176:
-Traceback (most recent call last):
-  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
-    self.run()
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
-    rendezvous2_cell = w.get(timeout=self.timeout)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
-    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
-torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-AccessNow003:
-Traceback (most recent call last):
-  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
-    self.run()
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
-    rendezvous2_cell = w.get(timeout=self.timeout)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
-    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
-torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-OnionRaspberrySoup:
-Traceback (most recent call last):
-  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
-    self.run()
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
-    rendezvous2_cell = w.get(timeout=self.timeout)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
-    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
-torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-flodder:
-Traceback (most recent call last):
-  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
-    self.run()
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
-    rendezvous2_cell = w.get(timeout=self.timeout)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
-    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
-torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-HouseDimir:
-Traceback (most recent call last):
-  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
-    self.run()
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
-    rendezvous2_cell = w.get(timeout=self.timeout)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
-    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
-torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-marylou4:
-Traceback (most recent call last):
-  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
-    self.run()
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
-    rendezvous2_cell = w.get(timeout=self.timeout)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
-    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
-torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-linuxenbyJP:
-Traceback (most recent call last):
-  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
-    self.run()
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
-    rendezvous2_cell = w.get(timeout=self.timeout)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
-    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
-torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-Bayswater:
-Traceback (most recent call last):
-  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
-    self.run()
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
-    rendezvous2_cell = w.get(timeout=self.timeout)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
-    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
-torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-tendies2:
-Traceback (most recent call last):
-  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
-    self.run()
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
-    rendezvous2_cell = w.get(timeout=self.timeout)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
-    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
-torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-Serge:
-Traceback (most recent call last):
-  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
-    self.run()
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
-    rendezvous2_cell = w.get(timeout=self.timeout)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
-    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
-torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-relayon3170:
-Traceback (most recent call last):
-  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
-    self.run()
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
-    rendezvous2_cell = w.get(timeout=self.timeout)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
-    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
-torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-NTH11R1:
-Traceback (most recent call last):
-  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
-    self.run()
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
-    rendezvous2_cell = w.get(timeout=self.timeout)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
-    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
-torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-atlien:
-Traceback (most recent call last):
-  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
-    self.run()
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
-    rendezvous2_cell = w.get(timeout=self.timeout)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
-    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
-torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-RouTOR:
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/agaa/git/imt4905/rtun-routing/lsr.py", line 657, in shortest_paths
+    cost = nx.path_weight(G, v, 'weight')
+  File "/usr/local/lib/python3.9/dist-packages/networkx/classes/function.py", line 1288, in path_weight
+    raise nx.NetworkXNoPath("path does not exist")
+networkx.exception.NetworkXNoPath: path does not exist
+Exception in thread Establish-hawk:
 Traceback (most recent call last):
   File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
     self.run()
@@ -431,7 +497,7 @@ Traceback (most recent call last):
   File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
     raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
 torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-tapatapatapa:
+Exception in thread Establish-Lapras:
 Traceback (most recent call last):
   File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
     self.run()
@@ -440,7 +506,7 @@ Traceback (most recent call last):
   File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
     raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
 torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-Wackelkontakt:
+Exception in thread Establish-Unnamed:
 Traceback (most recent call last):
   File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
     self.run()
@@ -449,7 +515,7 @@ Traceback (most recent call last):
   File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
     raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
 torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-TorOnionsAreGreat:
+Exception in thread Establish-TorDotTeitelNet:
 Traceback (most recent call last):
   File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
     self.run()
@@ -458,7 +524,7 @@ Traceback (most recent call last):
   File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
     raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
 torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-mendicantbias:
+Exception in thread Establish-Unnamed:
 Traceback (most recent call last):
   File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
     self.run()
@@ -467,7 +533,7 @@ Traceback (most recent call last):
   File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
     raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
 torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-ahahahohohoh:
+Exception in thread Establish-Assange029us:
 Traceback (most recent call last):
   File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
     self.run()
@@ -476,7 +542,22 @@ Traceback (most recent call last):
   File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
     raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
 torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-anus11:
+Exception in thread Establish-Unnamed:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 84, in run
+    self.establish_rendezvous(circuit, self.rendezvous_cookie)
+  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 202, in establish_rendezvous
+    circuit._rendezvous_establish(rendezvous_cookie)
+  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 611, in _rendezvous_establish
+    cell_established = self.send_relay_wait(inner_cell, CellRelayRendezvousEstablished)
+  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 551, in send_relay_wait
+    return w.get()
+  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvousEstablished
+Exception in thread Establish-Unnamed:
 Traceback (most recent call last):
   File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
     self.run()
@@ -485,45 +566,29 @@ Traceback (most recent call last):
   File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
     raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
 torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-politeeyes:
-Traceback (most recent call last):
-  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
-    self.run()
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
-    rendezvous2_cell = w.get(timeout=self.timeout)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
-    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
-torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-torname2021:
-Traceback (most recent call last):
-  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
-    self.run()
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
-    rendezvous2_cell = w.get(timeout=self.timeout)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
-    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
-torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-quichupps:
-Traceback (most recent call last):
-  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
-    self.run()
-  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
-    rendezvous2_cell = w.get(timeout=self.timeout)
-  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
-    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
-torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Thread-5187:
+Exception in thread Thread-912:
 Traceback (most recent call last):
   File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
     self.run()
   File "/usr/lib/python3.9/threading.py", line 1266, in run
     self.function(*self.args, **self.kwargs)
-  File "/home/agaa/git/imt4905/rtun-routing/lsr.py", line 649, in shortest_paths
+  File "/home/agaa/git/imt4905/rtun-routing/lsr.py", line 657, in shortest_paths
     cost = nx.path_weight(G, v, 'weight')
   File "/usr/local/lib/python3.9/dist-packages/networkx/classes/function.py", line 1288, in path_weight
     raise nx.NetworkXNoPath("path does not exist")
 networkx.exception.NetworkXNoPath: path does not exist
-Exception in thread Establish-Quintex64:
+Exception in thread Thread-1303:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/agaa/git/imt4905/rtun-routing/lsr.py", line 657, in shortest_paths
+    cost = nx.path_weight(G, v, 'weight')
+  File "/usr/local/lib/python3.9/dist-packages/networkx/classes/function.py", line 1288, in path_weight
+    raise nx.NetworkXNoPath("path does not exist")
+networkx.exception.NetworkXNoPath: path does not exist
+Exception in thread Establish-xmission1:
 Traceback (most recent call last):
   File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
     self.run()
@@ -532,7 +597,7 @@ Traceback (most recent call last):
   File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
     raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
 torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-NTH34R2:
+Exception in thread Establish-PacketPusher:
 Traceback (most recent call last):
   File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
     self.run()
@@ -541,7 +606,29 @@ Traceback (most recent call last):
   File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
     raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
 torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-BEEzar:
+Exception in thread Thread-1598:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/agaa/git/imt4905/rtun-routing/lsr.py", line 657, in shortest_paths
+    cost = nx.path_weight(G, v, 'weight')
+  File "/usr/local/lib/python3.9/dist-packages/networkx/classes/function.py", line 1288, in path_weight
+    raise nx.NetworkXNoPath("path does not exist")
+networkx.exception.NetworkXNoPath: path does not exist
+Exception in thread Thread-1680:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/agaa/git/imt4905/rtun-routing/lsr.py", line 657, in shortest_paths
+    cost = nx.path_weight(G, v, 'weight')
+  File "/usr/local/lib/python3.9/dist-packages/networkx/classes/function.py", line 1288, in path_weight
+    raise nx.NetworkXNoPath("path does not exist")
+networkx.exception.NetworkXNoPath: path does not exist
+Exception in thread Establish-artikel10ber10:
 Traceback (most recent call last):
   File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
     self.run()
@@ -550,7 +637,103 @@ Traceback (most recent call last):
   File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
     raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
 torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-sFtor4:
+Exception in thread Establish-tornode789:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Establish-Bates1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Thread-1369:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/agaa/git/imt4905/rtun-routing/lsr.py", line 657, in shortest_paths
+    cost = nx.path_weight(G, v, 'weight')
+  File "/usr/local/lib/python3.9/dist-packages/networkx/classes/function.py", line 1288, in path_weight
+    raise nx.NetworkXNoPath("path does not exist")
+networkx.exception.NetworkXNoPath: path does not exist
+Exception in thread Establish-NTH6R3:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Thread-1148:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/agaa/git/imt4905/rtun-routing/lsr.py", line 657, in shortest_paths
+    cost = nx.path_weight(G, v, 'weight')
+  File "/usr/local/lib/python3.9/dist-packages/networkx/classes/function.py", line 1288, in path_weight
+    raise nx.NetworkXNoPath("path does not exist")
+networkx.exception.NetworkXNoPath: path does not exist
+Exception in thread Establish-Ichotolot63:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Establish-bananaanarchy161:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Establish-4717:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Thread-1587:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 1266, in run
+    self.function(*self.args, **self.kwargs)
+  File "/home/agaa/git/imt4905/rtun-routing/lsr.py", line 657, in shortest_paths
+    cost = nx.path_weight(G, v, 'weight')
+  File "/usr/local/lib/python3.9/dist-packages/networkx/classes/function.py", line 1288, in path_weight
+    raise nx.NetworkXNoPath("path does not exist")
+networkx.exception.NetworkXNoPath: path does not exist
+Exception in thread Establish-relayon3189:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Establish-fffb:
 Traceback (most recent call last):
   File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
     self.run()
@@ -568,7 +751,7 @@ Traceback (most recent call last):
   File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
     raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
 torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-GoodColours:
+Exception in thread Establish-PancakeWhore:
 Traceback (most recent call last):
   File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
     self.run()
@@ -577,7 +760,7 @@ Traceback (most recent call last):
   File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
     raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
 torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-GenericRelay:
+Exception in thread Establish-Snowfall:
 Traceback (most recent call last):
   File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
     self.run()
@@ -586,7 +769,7 @@ Traceback (most recent call last):
   File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
     raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
 torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-pIetr0d1C4rB04711:
+Exception in thread Establish-Unnamed:
 Traceback (most recent call last):
   File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
     self.run()
@@ -595,7 +778,7 @@ Traceback (most recent call last):
   File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
     raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
 torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-nil:
+Exception in thread Establish-k8r:
 Traceback (most recent call last):
   File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
     self.run()
@@ -604,7 +787,7 @@ Traceback (most recent call last):
   File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
     raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
 torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Exception in thread Establish-jhsthirdtorrelay:
+Exception in thread Establish-t1saczhbu0dgljekrq:
 Traceback (most recent call last):
   File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
     self.run()
@@ -613,11 +796,48 @@ Traceback (most recent call last):
   File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
     raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
 torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
-Terminated
-Terminated
-Terminated
-Terminated
-Terminated
-Terminated
-Terminated
-Terminated
+Exception in thread Establish-zinha:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Establish-TheAdopter:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Establish-QuintexAirVPN8:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Establish-thedoctor:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
+Exception in thread Establish-IAmMrNimbus:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "/home/agaa/git/imt4905/rtun-routing/rendezvous.py", line 88, in run
+    rendezvous2_cell = w.get(timeout=self.timeout)
+  File "/home/agaa/git/imt4905/torpy-rtun-fork/torpy/circuit.py", line 134, in get
+    raise CellTimeoutError('Timeout wait for ' + cells_format(self._cell_types))
+torpy.circuit.CellTimeoutError: Timeout wait for CellRelayRendezvous2
