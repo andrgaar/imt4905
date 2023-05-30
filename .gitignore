@@ -1,3 +1,4 @@
+pat.txt
 __pycache__
-torpy-rtun-fork/**
-experiments/tests/**
+#torpy-rtun-fork/**
+experiments/**
