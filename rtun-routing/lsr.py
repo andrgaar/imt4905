@@ -1,3 +1,12 @@
+# 
+# lsr.py
+#
+# A routing and connection protocol for P2P network using Tor rendezvous relays.
+#
+# 2023 andrgaar
+#
+# Initial version based on code from Github: https://github.com/farhanghazi97/Link-State-Routing-Protocol
+#
 import os
 import sys
 import pickle
